@@ -9,19 +9,20 @@ This repository is here to help you quickly bootstrap and use your own OpenFisca
 This set of instructions will create your own copy of this boilerplate directory and customise it to the country you want to work on:
 
 ```sh
-COUNTRY_NAME=france  # for instance
-CAPITALIZED_COUNTRY_NAME=France  # for instance
+COUNTRY_NAME=France  # set the name of your country here; you should keep all capitals, and replace any spaces in the name by underscores
 
-mkdir openfisca-$COUNTRY_NAME
-cd openfisca-$COUNTRY_NAME
+lowercase_country_name=$(echo $COUNTRY_NAME | tr '[:upper:]' '[:lower:]')
+
+mkdir openfisca-$lowercase_country_name
+cd openfisca-$lowercase_country_name
 git init
 git clone https://github.com/openfisca/country-template.git  # download this template code
 
 # remove all references to `openfisca_country_template` in the code base:
-sed -i '' -e "s/country_template/$COUNTRY_NAME/g" "MANIFEST.in"
-sed -i '' -e "s/country_template/$COUNTRY_NAME/g" "openfisca_country_template/base.py"
-sed -i '' -e "s/country_template/$COUNTRY_NAME/g" "openfisca_country_template/model.py"
-sed -i '' -e "s/Country-Template/$CAPITALIZED_COUNTRY_NAME/g" "setup.py"
+sed -i '' -e "s/country_template/$lowercase_country_name/g" "MANIFEST.in"
+sed -i '' -e "s/country_template/$lowercase_country_name/g" "openfisca_country_template/base.py"
+sed -i '' -e "s/country_template/$lowercase_country_name/g" "openfisca_country_template/model.py"
+sed -i '' -e "s/Country-Template/$COUNTRY_NAME/g" "setup.py"
 mv openfisca_country_template openfisca_$COUNTRY_NAME
 ```
 
