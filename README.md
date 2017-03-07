@@ -17,6 +17,7 @@ mkdir openfisca-$lowercase_country_name
 cd openfisca-$lowercase_country_name
 git init
 git clone https://github.com/openfisca/country-template.git  # download this template code
+git remote remove origin
 
 # remove all references to `openfisca_country_template` in the code base:
 sed -i '' "s/country_template/$lowercase_country_name/g" MANIFEST.in openfisca_country_template/base.py openfisca_country_template/model.py
