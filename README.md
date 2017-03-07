@@ -19,10 +19,8 @@ git init
 git clone https://github.com/openfisca/country-template.git  # download this template code
 
 # remove all references to `openfisca_country_template` in the code base:
-sed -i '' -e "s/country_template/$lowercase_country_name/g" "MANIFEST.in"
-sed -i '' -e "s/country_template/$lowercase_country_name/g" "openfisca_country_template/base.py"
-sed -i '' -e "s/country_template/$lowercase_country_name/g" "openfisca_country_template/model.py"
-sed -i '' -e "s/Country-Template/$COUNTRY_NAME/g" "setup.py"
+sed -i '' "s/country_template/$lowercase_country_name/g" MANIFEST.in openfisca_country_template/base.py openfisca_country_template/model.py
+sed -i '' "s/Country-Template/$COUNTRY_NAME/g" setup.py
 mv openfisca_country_template openfisca_$COUNTRY_NAME
 ```
 
