@@ -18,7 +18,7 @@ git init
 
 Then, download this template code:
 ```sh
-git pull https://github.com/openfisca/country-template.git
+git clone https://github.com/openfisca/country-template.git
 ```
 
 Finally, remove all references to `openfisca_country_template` in the code base:
