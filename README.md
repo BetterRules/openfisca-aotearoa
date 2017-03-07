@@ -6,7 +6,7 @@ This repository is here to help you quickly bootstrap and use your own OpenFisca
 ## Bootstrapping a country package
 
 
-First, create a directory and set up a git repository : 
+First, create a directory and set up a git repository: 
 
 ```sh
 COUNTRY_NAME=france # for instance
@@ -21,7 +21,7 @@ Then, download this template code:
 git pull https://github.com/openfisca/country-template.git
 ```
 
-Finally, remove all references to `openfisca_country_template` in the code base :
+Finally, remove all references to `openfisca_country_template` in the code base:
 
 ```sh
 CAPITALIZED_COUNTRY_NAME=France # for instance
@@ -37,7 +37,7 @@ mv openfisca_country_template openfisca_$COUNTRY_NAME
 
 > We recommend that you [use a virtualenv](https://doc.openfisca.fr/for_developers.html#create-a-virtualenv) to install OpenFisca. If you don't, you may need to add `--user` at the end of all commands starting by `pip`.
 
-To install your country package, run :
+To install your country package, run:
 
 ```
 pip install -e .
@@ -51,13 +51,13 @@ openfisca-run-test openfisca_$COUNTRY_NAME/test.yaml
 
 > [Learn more about tests](https://doc.openfisca.fr/coding-the-legislation/writing_yaml_tests.html)
 
-Your country package is now installed and ready !
+Your country package is now installed and ready!
 
 ## Serving your country package with the OpenFisca web API
 
 If you are considering building a web application, you can plug the OpenFisca web api to your country package.
 
-First, install the OpenFisca wep api :
+First, install the OpenFisca wep api:
 ```sh
 pip install openfisca-web-api
 ```
