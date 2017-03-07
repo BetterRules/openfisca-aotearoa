@@ -13,16 +13,16 @@ COUNTRY_NAME=France  # set the name of your country here; you should keep all ca
 
 lowercase_country_name=$(echo $COUNTRY_NAME | tr '[:upper:]' '[:lower:]')
 
-mkdir openfisca-$lowercase_country_name
-cd openfisca-$lowercase_country_name
-git init
 git clone https://github.com/openfisca/country-template.git  # download this template code
-git remote remove origin
 
 # remove all references to `openfisca_country_template` in the code base:
+mv country-template openfisca-$lowercase_country_name
+cd openfisca-$lowercase_country_name
+git remote remove origin
 sed -i '' "s/country_template/$lowercase_country_name/g" MANIFEST.in openfisca_country_template/base.py openfisca_country_template/model.py
 sed -i '' "s/Country-Template/$COUNTRY_NAME/g" setup.py
-mv openfisca_country_template openfisca_$COUNTRY_NAME
+mv openfisca_country_template openfisca_$lowercase_country_name
+rm README.md
 ```
 
 ## Installation
