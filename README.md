@@ -6,26 +6,18 @@ This repository is here to help you quickly bootstrap and use your own OpenFisca
 ## Bootstrapping a country package
 
 
-First, create a directory and set up a git repository: 
+This set of instructions will create your own copy of this boilerplate directory and customise it to the country you want to work on:
 
 ```sh
-COUNTRY_NAME=france # for instance
+COUNTRY_NAME=france  # for instance
+CAPITALIZED_COUNTRY_NAME=France  # for instance
 
 mkdir openfisca-$COUNTRY_NAME
 cd openfisca-$COUNTRY_NAME
 git init
-```
+git clone https://github.com/openfisca/country-template.git  # download this template code
 
-Then, download this template code:
-```sh
-git clone https://github.com/openfisca/country-template.git
-```
-
-Finally, remove all references to `openfisca_country_template` in the code base:
-
-```sh
-CAPITALIZED_COUNTRY_NAME=France # for instance
-
+# remove all references to `openfisca_country_template` in the code base:
 sed -i '' -e "s/country_template/$COUNTRY_NAME/g" "MANIFEST.in"
 sed -i '' -e "s/country_template/$COUNTRY_NAME/g" "openfisca_country_template/base.py"
 sed -i '' -e "s/country_template/$COUNTRY_NAME/g" "openfisca_country_template/model.py"
