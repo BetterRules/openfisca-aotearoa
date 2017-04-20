@@ -15,8 +15,13 @@ setup(
     license='http://www.fsf.org/licensing/licenses/agpl-3.0.html',
     include_package_data = True,  # Will read MANIFEST.in
     install_requires=[
-        'OpenFisca-Core >= 6.1.0, < 10.0',
+        'OpenFisca-Core >= 6.1.0, < 11.0',
         ],
+    extras_require = {
+        'api': [
+            'OpenFisca-Web-API >= 4.0.0, < 6.0',
+            ],
+        },
     packages=find_packages(),
     test_suite='nose.collector',
     )
