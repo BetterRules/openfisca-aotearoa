@@ -49,9 +49,9 @@ Your country package is now installed and ready!
 
 If you are considering building a web application, you can plug the OpenFisca web api to your country package.
 
-First, install the OpenFisca wep api:
+First, install the OpenFisca web API:
 ```sh
-pip install openfisca-web-api
+pip install -e '.[api]'
 ```
 
 Then run : 
