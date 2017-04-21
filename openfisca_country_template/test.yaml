@@ -9,11 +9,3 @@
     salary: 10000
   output_variables:
     income_tax: 1500
-
-# - name: "Failing test"
-#   description: Someone making 10000 should pay 1500 of taxes
-#   period: 2017-01
-#   input_variables:
-#     salaire: 10000
-#   output_variables:
-#     impot_revenus: 2000
