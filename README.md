@@ -5,7 +5,6 @@ This repository is here to help you quickly bootstrap and use your own OpenFisca
 
 ## Bootstrapping a country package
 
-
 This set of instructions will create your own copy of this boilerplate directory and customise it to the country you want to work on:
 
 ```sh
@@ -25,7 +24,8 @@ mv openfisca_country_template openfisca_$lowercase_country_name
 rm README.md
 ```
 
-## Installation
+
+## Installing
 
 > We recommend that you [use a virtualenv](https://doc.openfisca.fr/for_developers.html#create-a-virtualenv) to install OpenFisca. If you don't, you may need to add `--user` at the end of all commands starting by `pip`.
 
@@ -45,6 +45,7 @@ openfisca-run-test openfisca_$COUNTRY_NAME/test.yaml
 
 Your country package is now installed and ready!
 
+
 ## Serving your country package with the OpenFisca web API
 
 If you are considering building a web application, you can plug the OpenFisca web api to your country package.
@@ -54,7 +55,7 @@ First, install the OpenFisca web API:
 pip install -e '.[api]'
 ```
 
-Then run : 
+Then run :
 ```sh
 openfisca-serve --port 2000
 ```
@@ -65,4 +66,4 @@ You can make sure that the api is working by requesting:
 curl "http://localhost:2000/api/2/formula/income_tax?salary=4000"
 ```
 
-> [Learn more about the api](https://doc.openfisca.fr/openfisca-web-api/index.html)
+> [Learn more about the API](https://doc.openfisca.fr/openfisca-web-api/index.html)
