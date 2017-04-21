@@ -24,6 +24,21 @@ mv openfisca_country_template openfisca_$lowercase_country_name
 rm README.md
 ```
 
+## Writing the legislation
+
+The country whose law is modelled in this template has a very simple tax and benefit system.
+
+- It has a flat rate tax whose rates increase every year.
+- On the first of December, 2015, it introduced a basic income for all its citizens of age who have no income.
+- On the first of December, 2016, it removed the income condition, providing all its adult citizens with a basic income.
+
+These elements are described in different folders. All the modelling happens within the `openfisca_country_template` folder.
+
+- The rates are in the `parameters` folder.
+- The formulas are in the `variables` folder.
+
+The files that are outside from the `openfisca_country_template` folder are used to set up the development environment.
+
 
 ## Installing
 
