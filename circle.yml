@@ -1,0 +1,11 @@
+machine:
+  python:
+    version: 2.7
+dependencies:
+  override:
+    - pip install --upgrade pip wheel  # pip >= 8.0 needed to be compatible with "manylinux" wheels, used by numpy >= 1.11
+    - pip install --editable .[test]
+test:
+  override:
+    - flake8
+    - openfisca-run-test .
