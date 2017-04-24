@@ -1,4 +1,6 @@
 <!-- This file contains parameters of the legislation. Unlike variables, parameters are not specific to a certain person or family. They are set by the legislation on depend on time. -->
-<CODE code="basic_income">
-  <VALUE deb="2015-12-01" fuzzy="true" valeur="600" />
-</CODE>
+<NODE code="benefit">
+  <CODE code="basic_income">
+    <VALUE deb="2015-12-01" fuzzy="true" valeur="600" />
+  </CODE>
+</NODE>
