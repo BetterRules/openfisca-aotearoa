@@ -21,6 +21,10 @@ setup(
         'api': [
             'OpenFisca-Web-API >= 4.0.0, < 6.0',
             ],
+        'test': [
+            'flake8',
+            'flake8-print',
+            ]
         },
     packages=find_packages(),
     test_suite='nose.collector',
