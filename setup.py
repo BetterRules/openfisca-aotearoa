@@ -24,6 +24,7 @@ setup(
         'test': [
             'flake8',
             'flake8-print',
+            'nose',
             ]
         },
     packages=find_packages(),
