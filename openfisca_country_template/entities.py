@@ -14,6 +14,7 @@ Household = build_entity(
             'plural': 'parents',
             'label': u'Parents',
             'max': 2,
+            'subroles': ['first_parent', 'second_parent']
             },
         {
             'key': 'child',
