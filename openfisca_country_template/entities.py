@@ -18,7 +18,7 @@ Household = build_entity(
             },
         {
             'key': 'child',
-            'plural': 'child',
+            'plural': 'children',
             'label': u'Child',
             }
         ]
