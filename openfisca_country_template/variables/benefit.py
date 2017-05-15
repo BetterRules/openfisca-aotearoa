@@ -26,3 +26,16 @@ class basic_income(DatedVariable):
         age_condition = person('age', period) >= legislation(period).general.age_of_majority
         salary_condition = person('salary', period) == 0
         return age_condition * salary_condition * legislation(period).benefit.basic_income  # The '*' is also used as a vectorial 'and'. See https://doc.openfisca.fr/coding-the-legislation/25_vectorial_computing.html#forbidden-operations-and-alternatives
+
+
+class housing_allowance(Variable):
+    column = FloatCol
+    entity = Household
+    definition_period = MONTH
+    label = "Housing allowange"
+    url = "https://law.gov.example/housing_allowance"  # Always use the most official source
+    start_date = date(1980, 1, 1)
+    stop_date = date(2015, 11, 30)
+
+    def function(household, period, legislation):
+        return household('rent', period) * legislation(period).benefit.housing_allowance

@@ -3,4 +3,8 @@
   <CODE code="basic_income">
     <VALUE deb="2015-12-01" valeur="600" />
   </CODE>
+  <CODE code="housing_allowance" description="Housing allowance amount (fraction of the rent)">
+    <END deb="2016-12-01"/>
+    <VALUE deb="2010-01-01" valeur="0.25" />
+  </CODE>
 </NODE>
