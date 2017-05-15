@@ -30,3 +30,16 @@ class social_security_contribution(Variable):
         scale = legislation(period).tax.social_security_contribution
 
         return scale.calc(salary)
+
+
+class housing_tax(Variable):
+    column = FloatCol
+    entity = Household
+    definition_period = YEAR
+    label = u"Tax paid by each household proportionnally to the size of its accommodation"
+    url = "https://law.gov.example/social_security_contribution"  # Always use the most official source
+
+    def function(household, period, legislation):
+        january = period.first_month
+        return household('accomodation_size', january) * 10
+
