@@ -7,6 +7,7 @@ from openfisca_country_template.entities import *
 
 
 class age(Variable):
-    column = IntCol
+    column = IntCol(default = 40)  # By default, is no value is set for a simulation, we consider the people involed in a simulation to be 40.
     entity = Person
     definition_period = MONTH
+    label = u"Person's age"
