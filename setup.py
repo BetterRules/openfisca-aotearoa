@@ -13,6 +13,7 @@ setup(
     description=u'Template of a tax and benefit system for OpenFisca',
     keywords='benefit microsimulation social tax',
     license='http://www.fsf.org/licensing/licenses/agpl-3.0.html',
+    url='https://github.com/openfisca/openfisca-country-template',
     include_package_data = True,  # Will read MANIFEST.in
     install_requires=[
         'OpenFisca-Core >= 6.1.0, < 11.0',
