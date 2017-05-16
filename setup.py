@@ -10,7 +10,7 @@ setup(
     version='1.0.0',
     author='OpenFisca Team',
     author_email='contact@openfisca.fr',
-    description=u'Template of a tax and benefit system for OpenFisca',
+    description=u'OpenFisca tax and benefit system for Country-Template',
     keywords='benefit microsimulation social tax',
     license='http://www.fsf.org/licensing/licenses/agpl-3.0.html',
     url='https://github.com/openfisca/openfisca-country-template',
