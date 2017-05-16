@@ -23,9 +23,9 @@ class CountryTaxBenefitSystem(TaxBenefitSystem):
         # We add to our tax and benefit system all the legislation parameters defined in the  parameters files
         param_files = [
             '__root__.xml',
-            'benefit.xml',
+            'benefits.xml',
             'general.xml',
-            'tax.xml',
+            'taxes.xml',
             ]
 
         for param_file in param_files:
