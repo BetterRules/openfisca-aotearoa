@@ -1,0 +1,14 @@
+<!-- This file contains parameters of the legislation. -->
+<!-- Unlike variables, parameters are not specific to a certain person or household. They are set by the legislation and depend on time. -->
+<!-- See https://doc.openfisca.fr/parameters.html -->
+<NODE code="benefits">
+  <CODE code="basic_income" description="Amount of the basic income">
+    <!-- This parameter is only defined since the 1st of Dec 2015.-->
+    <VALUE deb="2015-12-01" valeur="600" />
+  </CODE>
+  <CODE code="housing_allowance" description="Housing allowance amount (as a fraction of the rent)">
+    <!-- This parameter is only defined from the 1st of Jan 2010 to the 3Oth of Nov 2016.-->
+    <END deb="2016-12-01"/>
+    <VALUE deb="2010-01-01" valeur="0.25" />
+  </CODE>
+</NODE>

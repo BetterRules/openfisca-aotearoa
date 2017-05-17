@@ -1,0 +1,50 @@
+<!-- This file contains parameters of the legislation. -->
+<!-- Unlike variables, parameters are not specific to a certain person or household. They are set by the legislation on depend on time. -->
+<!-- See https://doc.openfisca.fr/parameters.html -->
+<NODE code="taxes">
+  <CODE code="income_tax_rate" description="Income tax rate">
+    <!-- We expect this parameter to change on the 1st of Jan 2016-->
+    <!-- Placeholders have no impact on calculations. They are just metadata to indicate that we expect a parameter to change at a certain date.-->
+    <PLACEHOLDER deb="2016-01-01"/>
+    <!-- This parameter has changed over time -->
+    <VALUE deb="2015-01-01" valeur="0.15" />
+    <VALUE deb="2014-01-01" valeur="0.14" />
+    <VALUE deb="2013-01-01" valeur="0.13" />
+    <VALUE deb="2012-01-01" valeur="0.16" />
+  </CODE>
+  <!-- The social_security_contribution is calculated with a marginal scale. Marginal scales are represented with a specific structure. -->
+  <BAREME code="social_security_contribution" description="Social security contribution tax scale">
+    <TRANCHE>
+      <SEUIL>
+        <VALUE deb="2013-01-01" valeur="0" />
+      </SEUIL>
+      <TAUX>
+        <VALUE deb="2017-01-01" valeur="0.02" />
+        <VALUE deb="2015-01-01" valeur="0.04" />
+        <VALUE deb="2013-01-01" valeur="0.03" />
+      </TAUX>
+    </TRANCHE>
+    <TRANCHE>
+      <SEUIL>
+        <VALUE deb="2017-01-01" valeur="6000" />
+        <VALUE deb="2016-01-01" valeur="12300" />
+        <VALUE deb="2015-01-01" valeur="12200" />
+        <VALUE deb="2014-01-01" valeur="12100" />
+        <VALUE deb="2013-01-01" valeur="12000" />
+      </SEUIL>
+      <TAUX>
+        <VALUE deb="2017-01-01" valeur="0.06" />
+        <VALUE deb="2015-01-01" valeur="0.12" />
+        <VALUE deb="2013-01-01" valeur="0.10" />
+      </TAUX>
+    </TRANCHE>
+    <TRANCHE>
+      <SEUIL>
+        <VALUE deb="2017-01-01" valeur="12400" />
+      </SEUIL>
+      <TAUX>
+        <VALUE deb="2017-01-01" valeur="0.12" />
+      </TAUX>
+    </TRANCHE>
+  </BAREME>
+</NODE>

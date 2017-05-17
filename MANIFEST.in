@@ -1,1 +1,1 @@
-include openfisca_country_template/parameters.xml
+recursive-include * *

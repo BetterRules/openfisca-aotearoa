@@ -1,15 +1,14 @@
-# OpenFisca country package template
+# OpenFisca Country-Template
 
 This repository is here to help you quickly bootstrap and use your own OpenFisca country package.
 
-
 ## Bootstrapping a country package
-
 
 This set of instructions will create your own copy of this boilerplate directory and customise it to the country you want to work on:
 
 ```sh
 COUNTRY_NAME=France  # set the name of your country here; you should keep all capitals, and replace any spaces in the name by underscores
+URL=https://github.com/openfisca/openfisca-france  # set here the URL of the repository where you will publish your code.
 
 lowercase_country_name=$(echo $COUNTRY_NAME | tr '[:upper:]' '[:lower:]')
 
@@ -19,31 +18,49 @@ git clone https://github.com/openfisca/country-template.git  # download this tem
 mv country-template openfisca-$lowercase_country_name
 cd openfisca-$lowercase_country_name
 git remote remove origin
-sed -i '' "s/country_template/$lowercase_country_name/g" MANIFEST.in openfisca_country_template/base.py openfisca_country_template/model.py
-sed -i '' "s/Country-Template/$COUNTRY_NAME/g" setup.py
+sed -i '' '3,27d' README.md  # Remove these instructions lines
+sed -i '' "s|country_template|$lowercase_country_name|g" README.md setup.py check-version-bump.sh `find openfisca_country_template -type f`
+sed -i '' "s|Country-Template|$COUNTRY_NAME|g" README.md setup.py check-version-bump.sh .github/PULL_REQUEST_TEMPLATE.md CONTRIBUTING.md `find openfisca_country_template -type f`
+sed -i '' "s|https://github.com/openfisca/openfisca-country-template|$URL|g" setup.py
 mv openfisca_country_template openfisca_$lowercase_country_name
-rm README.md
 ```
 
-## Installation
+## Writing the legislation
+
+The country whose law is modelled here has a very simple tax and benefit system.
+
+- It has a flat rate tax whose rates increase every year.
+- On the first of December, 2015, it introduced a basic income for all its citizens of age who have no income.
+- On the first of December, 2016, it removed the income condition, providing all its adult citizens with a basic income.
+
+These elements are described in different folders. All the modelling happens within the `openfisca_country_template` folder.
+
+- The rates are in the `parameters` folder.
+- The formulas are in the `variables` folder.
+
+The files that are outside from the `openfisca_country_template` folder are used to set up the development environment.
+
+
+## Installing
 
 > We recommend that you [use a virtualenv](https://doc.openfisca.fr/for_developers.html#create-a-virtualenv) to install OpenFisca. If you don't, you may need to add `--user` at the end of all commands starting by `pip`.
 
 To install your country package, run:
 
 ```
-pip install -e .
+pip install -e ".[test]"
 ```
 
-You can make sure that everything is working by running the provided test:
+You can make sure that everything is working by running the provided tests:
 
 ```sh
-openfisca-run-test openfisca_$COUNTRY_NAME/test.yaml
+make test
 ```
 
 > [Learn more about tests](https://doc.openfisca.fr/coding-the-legislation/writing_yaml_tests.html)
 
 Your country package is now installed and ready!
+
 
 ## Serving your country package with the OpenFisca web API
 
@@ -54,7 +71,7 @@ First, install the OpenFisca web API:
 pip install -e '.[api]'
 ```
 
-Then run : 
+Then run:
 ```sh
 openfisca-serve --port 2000
 ```
@@ -65,4 +82,4 @@ You can make sure that the api is working by requesting:
 curl "http://localhost:2000/api/2/formula/income_tax?salary=4000"
 ```
 
-> [Learn more about the api](https://doc.openfisca.fr/openfisca-web-api/index.html)
+> [Learn more about the API](https://doc.openfisca.fr/openfisca-web-api/index.html)

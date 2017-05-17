@@ -1,0 +1,10 @@
+<!-- This file contains parameters of the legislation. -->
+<!-- Unlike variables, parameters are not specific to a certain person or household. They are set by the legislation on depend on time. -->
+<!-- See https://doc.openfisca.fr/parameters.html -->
+<NODE code="general">
+  <CODE code="age_of_majority" description="Age of majority (in years)">
+    <!-- This parameter has last changed on the 1st of Jan 1971. -->
+    <VALUE deb="1971-01-01" valeur="18" />
+    <VALUE deb="1945-01-01" valeur="21" />
+  </CODE>
+</NODE>

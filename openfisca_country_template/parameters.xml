@@ -1,6 +1,0 @@
-<!-- This file contains the parameters of the legislation. Unlike variables, parameters are not specific to a certain person or family. They are set by the legislation on depend on time. -->
-<NODE code="root">
-    <CODE code="income_tax_rate" format="percent">
-      <VALUE deb="2013-01-01" fuzzy="true" valeur="0.15" />
-    </CODE>
-</NODE>

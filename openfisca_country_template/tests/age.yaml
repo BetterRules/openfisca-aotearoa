@@ -1,0 +1,12 @@
+
+# Test files describe situations and their expected outcomes
+# We can run this test on our command line using `openfisca-run-test age.yaml`
+
+- name: Person born on the 15th of Jan 1980
+  period: 2015-01
+  input_variables:
+    birth: 1980-01-15
+  output_variables:
+    age:
+      2015-01: 34
+      2015-02: 35
