@@ -16,7 +16,7 @@ class age(Variable):
     column = IntCol
     entity = Person
     definition_period = MONTH
-    label = u"Person's age"
+    label = u"Person's age (in years)"
 
     # A person's age is computed according to its birth date.
     def function(person, period, legislation):
