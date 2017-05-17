@@ -1,15 +1,19 @@
+# Python builds
+
 *.egg-info
-*.mo
 *.pyc
-*~
-.DS_Store
+build
+dist
+
+# Editors
+
 .project
-.project
-.pydevproject
 .pydevproject
 .settings
 .spyderproject
-.spyderproject
 .vscode
-build
-dist
+
+# OS stuff
+
+.DS_Store
+*~
