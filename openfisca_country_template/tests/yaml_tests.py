@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# This file browses the country package to find yaml tests and runs them.
+# This file browses the country package to find tests written in the YAML format and runs them.
 # It is usually not necessary to edit it.
 
 import os

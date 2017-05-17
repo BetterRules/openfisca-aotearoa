@@ -17,7 +17,7 @@ class basic_income(DatedVariable):
     label = "Basic income provided to adults"
     url = "https://law.gov.example/basic_income"  # Always use the most official source
 
-    # Since Dec 1st 2016, the basic income is provided to any adult, without cousidering their income.
+    # Since Dec 1st 2016, the basic income is provided to any adult, without considering their income.
     @dated_function(start = date(2016, 12, 1))
     def function_from_2016_12(person, period, legislation):
         age_condition = person('age', period) >= legislation(period).general.age_of_majority
