@@ -48,7 +48,7 @@ Examples:
 
 ### Changelog
 
-OpenFisca-Country-Template changes must be understood by users who don't necessarily work on the code. The Changelog must therefore be as explicit as possible. 
+OpenFisca-Country-Template changes must be understood by users who don't necessarily work on the code. The Changelog must therefore be as explicit as possible.
 
 Each change must be documented with the following elements:
 
@@ -63,14 +63,14 @@ Each change must be documented with the following elements:
 > ### 13.1.5 - [#684](https://github.com/openfisca/openfisca-france/pull/684)
 
 - The second line indicates the type of the change. The possible types are:
- - `Tax and benefit system evolution`: Calculation improvement, fix, or update. Impacts the users interested in calculations. 
+ - `Tax and benefit system evolution`: Calculation improvement, fix, or update. Impacts the users interested in calculations.
  - `Technical improvement`: Performances improvement, installing process change, formula syntax change… Impacts the users who write legislation and/or deploy their own instance.
  - `Crash fix`: Impact all reusers.
  - `Minor change`: Refactoring, metadata… Has no impact on users.
 
 - In the case of a `Tax and benefit system evolution`, the following elements must then be specified:
   - The periods impacted by the change. To avoid any ambiguity, the start day and/or the end day of the impacted periods must be precised. For instance, `from 01/01/2017` is correct, but `from 2017` is not, as it is ambiguous: it is not clear wheter 2017 is included or not in the impacted period.
-  - The tax and benefit system areas impacted by the change. These areas are described by the relative paths to the modified files, without the `.py` extension. 
+  - The tax and benefit system areas impacted by the change. These areas are described by the relative paths to the modified files, without the `.py` extension.
 
 > For instance :
 > - Impacted periods: Until 31/12/2015.
@@ -91,7 +91,7 @@ Each change must be documented with the following elements:
 > * Details :
 >  - Use OpenFisca-Core `12.0.0`
 >  - Change the syntax used to declare parameters:
->      - Remove "fuzzy" attribute 
+>      - Remove "fuzzy" attribute
 >      - Remove "end" attribute
 >      - All parameters are assumed to be valid until and end date is explicitely specified with an `<END>` tag
 
