@@ -1,10 +1,12 @@
 #! /usr/bin/env bash
 
-current_version=`python setup.py --version`
+VERSION_CHANGE_TRIGGERS="setup.py MANIFEST.in openfisca_country_template"
 
-if git diff-index --quiet origin/master openfisca_country_template
+if git diff-index --quiet origin/master $VERSION_CHANGE_TRIGGERS ":(exclude)*.md"
 then exit 0  # there are no changes at all, the version is correct
 fi
+
+current_version=`python setup.py --version`
 
 if git rev-parse --verify --quiet $current_version
 then
