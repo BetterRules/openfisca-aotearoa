@@ -37,6 +37,8 @@ These elements are described in different folders. All the modelling happens wit
 
 - The rates are in the `parameters` folder.
 - The formulas are in the `variables` folder.
+- This country template comes also with *reforms* in the `reforms` folder. This is optional: your country may exist without defining any reform.
+    - In this country, there is [a reform project](./openfisca_country_template/reforms/modify_social_security_taxation.py) aiming to modify the social security taxation, deleting the first bracket, raising the intermediary ones and adding a new bracket with a higher tax rate of `40 %` for people earning more than `40000`. This reform project would apply starting from `2017-01-01`.
 
 The files that are outside from the `openfisca_country_template` folder are used to set up the development environment.
 
