@@ -13,7 +13,7 @@ from openfisca_core.model_api import *
 class social_security_contribution(Variable):
     # Variable metadata don't need to be redefined. By default, the reference variable metadatas will be used.
 
-    def function(person, period, legislation):
+    def formula(person, period, legislation):
         return person('salary', period) * 0.03
 
 
