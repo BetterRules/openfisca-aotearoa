@@ -2,7 +2,7 @@
 
 This repository is here to help you quickly bootstrap and use your own OpenFisca country package.
 
-## Bootstrapping a country package
+## Bootstrapping Your Country Package
 
 This set of instructions will create your own copy of this boilerplate directory and customise it to the country you want to work on:
 
@@ -25,7 +25,7 @@ sed -i '' "s|https://github.com/openfisca/openfisca-country-template|$URL|g" set
 mv openfisca_country_template openfisca_$lowercase_country_name
 ```
 
-## Writing the legislation
+## Writing the Legislation
 
 The country whose law is modelled here has a very simple tax and benefit system.
 
@@ -42,46 +42,159 @@ These elements are described in different folders. All the modelling happens wit
 
 The files that are outside from the `openfisca_country_template` folder are used to set up the development environment.
 
+## Packaging Your Country Package for Distribution
 
-## Installing
+If you wish to distribute your package via `pip install`, follow the steps given by the [Python Packaging Authority](https://python-packaging-user-guide.readthedocs.io/distributing/).
 
-> We recommend that you [use a virtualenv](https://doc.openfisca.fr/for_developers.html#create-a-virtualenv) to install OpenFisca. If you don't, you may need to add `--user` at the end of all commands starting by `pip`.
+If not, edit out the following sections:
+- the [Minimal Installation (pip install) section](#minimal-installation-pip-install) of the [Install instructions](#install-instructions);
+- the lines pertaining to the "minimal install" in the [section on serving the OpenFisca Web API](#serve-your-country-package-with-the-openFisca-web-api).
 
-To install your country package, run:
+## Install Instructions for Users and Contributors
 
+This package requires Python 2.7.
+
+Supported platforms:
+- GNU/Linux distributions (in particular Debian and Ubuntu);
+- Mac OS X;
+- Microsoft Windows (we recommend using [ConEmu](https://conemu.github.io/) instead of the default console).
+
+Other OS should work if they can execute Python and NumPy.
+
+### Setting-up a Virtual Environment with Pew
+
+We recommend using a [virtual environment](https://virtualenv.pypa.io/en/stable/) (abbreviated as "virtualenv") with a virtualenv manager such as [pew](https://github.com/berdario/pew).
+
+- A [virtualenv](https://virtualenv.pypa.io/en/stable/) is a project specific environment created to suit the needs of the project you are working on.
+- A virtualenv manager, such as [pew](https://github.com/berdario/pew), lets you easily create, remove and toggle between several virtualenvs.
+
+To install pew, launch a terminal on your computer and follow these instructions:
+
+```sh
+pip install --upgrade pip
+pip install pew  # answer "Y" to the question about modifying your shell config file.
 ```
-pip install -e ".[test]"
+To set-up and create a new a virtualenv named **openfisca** running python2.7:
+
+```sh
+pew new openfisca --python=python2.7
+```
+
+The virtualenv you just created will be automatically activated. This means you will operate in the virtualenv immediately.
+- Exit the virtualenv with `exit` (or Ctrl-D).
+- Re-enter with `pew workon openfisca`.
+
+### Minimal Installation (Pip Install)
+
+Follow this installation if you wish to:
+- run calculations on a large population;
+- create tax & benefits simulations;
+- write an extension to this legislation (e.g. city specific tax & benefits);
+- serve your Country Package with the OpenFisca Web API.
+
+For more advanced uses, head to the [Advanced Installation](#advanced-installation-git-clone).
+
+#### Install this Country Package with Pip Install
+
+Inside your virtualenv, check the prerequisites:
+
+```sh
+python --version  # should print "Python 2.7.xx".
+#if not, make sure you pass the python version as an argument when creating your virtualenv
+```
+
+```sh
+pip --version  # should print at least 9.0.
+#if not, run "pip install --upgrade pip"
+```
+Install the Country Package:
+
+```sh
+#Example: Openfisca-France
+pip install openfisca-france
+```
+
+#### Next Steps
+
+- To learn how to use OpenFisca, follow our [tutorials](https://doc.openfisca.fr/getting-started.html).
+- To serve this Country Package, serve the [OpenFisca web API](#serve-your-country-package-with-the-openFisca-web-api).
+
+Depending on what you want to do with OpenFisca, you may want to install yet other packages in your virtualenv:
+- To install extensions or write on top of this Country Package, head to the [Extensions documentation](https://doc.openfisca.fr/contribute/extensions.html).
+- To plot simulation results, try [matplotlib](http://matplotlib.org/).
+- To manage data, check out [pandas](http://pandas.pydata.org/).
+
+### Advanced Installation (Git Clone)
+
+Follow this tutorial if you wish to:
+- create or change this Country Package's legislation;
+- contribute to the source code.
+
+#### Clone this Country Package with Git
+
+First of all, make sure [Git](https://www.git-scm.com/) is installed on your machine.
+
+Set your working directory to the location where you want this OpenFisca Country Package cloned.
+
+Inside your virtualenv, check the prerequisites:
+
+```sh
+python --version  # should print "Python 2.7.xx".
+#if not, make sure you pass the python version as an argument when creating your virtualenv
+```
+
+```sh
+pip --version  # should print at least 9.0.
+#if not, run "pip install --upgrade pip"
+```
+Clone this Country Package on your machine:
+
+```sh
+#Example: Openfisca-France
+git clone https://github.com/openfisca/openfisca-france.git
+cd openfisca-france
 ```
 
 You can make sure that everything is working by running the provided tests:
 
 ```sh
+pip install -e ".[test]"
 make test
 ```
-
 > [Learn more about tests](https://doc.openfisca.fr/coding-the-legislation/writing_yaml_tests.html)
 
-Your country package is now installed and ready!
+The OpenFisca Country Package is now installed and ready!
 
+#### Next Steps
 
-## Serving your country package with the OpenFisca web API
+- To write new legislation, read the [Coding the legislation](https://doc.openfisca.fr/coding-the-legislation/index.html) section to know how to write legislation.
+- To contribute to the code, read our [Contribution Guidebook](https://doc.openfisca.fr/contribute/index.html).
 
-If you are considering building a web application, you can plug the OpenFisca web api to your country package.
+## Serve this Country Package with the OpenFisca Web API
+
+If you are considering building a web application, you can plug the OpenFisca Web API to your Country Package.
 
 First, install the OpenFisca web API:
-```sh
-pip install -e '.[api]'
-```
+- if you completed the minimal install, run: 
+    ```sh
+    #Example: Openfisca-France
+    pip install openfisca-france[api]
+    ```
+- if you completed the advanced install, run:
+    ```sh
+    pip install -e '.[api]'
+    ```
 
-Then run:
+Then serve the Openfisca Web API locally:
+
 ```sh
 openfisca-serve --port 2000
 ```
 
-You can make sure that the api is working by requesting:
+You can make sure that your instance of the API is working by requesting:
 
 ```sh
-curl "http://localhost:2000/api/2/formula/income_tax?salary=4000"
+curl "http://localhost:2000/api/1/swagger"
 ```
 
-> [Learn more about the API](https://doc.openfisca.fr/openfisca-web-api/index.html)
+To learn more, go to the [OpenFisca Web API documentation](https://doc.openfisca.fr/openfisca-web-api/index.html)
