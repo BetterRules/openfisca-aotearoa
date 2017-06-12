@@ -7,7 +7,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='OpenFisca-Country-Template',
-    version='1.1.0',
+    version='1.2.0',
     author='OpenFisca Team',
     author_email='contact@openfisca.fr',
     description=u'OpenFisca tax and benefit system for Country-Template',
@@ -16,7 +16,7 @@ setup(
     url='https://github.com/openfisca/openfisca-country-template',
     include_package_data = True,  # Will read MANIFEST.in
     install_requires=[
-        'OpenFisca-Core >= 12.0.0, < 13.0',
+        'OpenFisca-Core >= 14.0.0, < 15.0',
         ],
     extras_require = {
         'api': [

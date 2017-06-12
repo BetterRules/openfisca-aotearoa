@@ -18,7 +18,7 @@ class income_tax(Variable):
     url = "https://law.gov.example/income_tax"  # Always use the most official source
 
     # The formula to compute the income tax for a given person at a given period
-    def function(person, period, legislation):
+    def formula(person, period, legislation):
         return person('salary', period) * legislation(period).taxes.income_tax_rate
 
 
@@ -29,7 +29,7 @@ class social_security_contribution(Variable):
     label = u"Progressive contribution paid on salaries to finance social security"
     url = "https://law.gov.example/social_security_contribution"  # Always use the most official source
 
-    def function(person, period, legislation):
+    def formula(person, period, legislation):
         salary = person('salary', period)
 
         # The social_security_contribution is computed according to a marginal scale.
@@ -45,7 +45,7 @@ class housing_tax(Variable):
     label = u"Tax paid by each household proportionnally to the size of its accommodation"
     url = "https://law.gov.example/housing_tax"  # Always use the most official source
 
-    def function(household, period, legislation):
+    def formula(household, period, legislation):
         # The housing tax is defined for a year, but depends on the `accomodation_size` on the first month of the year.
         # Here period is a year. We can get the first month of a year with the following shortcut.
         # To build different periods, see https://doc.openfisca.fr/coding-the-legislation/35_periods.html#calculating-dependencies-for-a-specific-period
