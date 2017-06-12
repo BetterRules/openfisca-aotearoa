@@ -1,11 +1,15 @@
-# 1.1.0 - [#7](https://github.com/openfisca/country-template/pull/7)
+# Changelog
 
-* Tax and benefit system evolution: add a reform modifying the brackets of a scale
+## 1.1.0 - [#7](https://github.com/openfisca/country-template/pull/7)
+
+* Tax and benefit system evolution
 * Impacted periods: from 2013-01-01
-* Impacted areas: `openfisca_country_template/parameters/taxes.xml`
+* Impacted areas:
+   - Reform: `modify_social_security_taxation`
 * Details:
-  - Show how to add, modify and remove a bracket.
-  - Add corresponding tests.
+  - Add a reform modifying the brackets of a scale
+      - Show how to add, modify and remove a bracket.
+      - Add corresponding tests.
 
 # 1.0.0 - [#4](https://github.com/openfisca/country-template/pull/4)
 
