@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.2.0 - [#10](https://github.com/openfisca/country-template/pull/10)
+
+* Technical improvement
+* Details:
+  - Upgrade OpenFisca-Core
+    - Update the way we define formulas start dates and variables stop dates.
+    - Update the naming conventions for variable formulas.
+    - See the [OpenFisca-Core Changelog](https://github.com/openfisca/openfisca-core/blob/master/CHANGELOG.md#1400---522).
+
 ## 1.1.0 - [#7](https://github.com/openfisca/country-template/pull/7)
 
 * Tax and benefit system evolution
