@@ -19,7 +19,7 @@ mv country-template openfisca-$lowercase_country_name
 cd openfisca-$lowercase_country_name
 git remote remove origin
 sed -i '' '3,27d' README.md  # Remove these instructions lines
-sed -i '' "s|country_template|$lowercase_country_name|g" README.md setup.py check-version-bump.sh `find openfisca_country_template -type f`
+sed -i '' "s|country_template|$lowercase_country_name|g" README.md setup.py check-version-bump.sh Makefile `find openfisca_country_template -type f`
 sed -i '' "s|Country-Template|$COUNTRY_NAME|g" README.md setup.py check-version-bump.sh .github/PULL_REQUEST_TEMPLATE.md CONTRIBUTING.md `find openfisca_country_template -type f`
 sed -i '' "s|https://github.com/openfisca/openfisca-country-template|$URL|g" setup.py
 mv openfisca_country_template openfisca_$lowercase_country_name
@@ -37,7 +37,7 @@ These elements are described in different folders. All the modelling happens wit
 
 - The rates are in the `parameters` folder.
 - The formulas are in the `variables` folder.
-- This country template comes also with *reforms* in the `reforms` folder. This is optional: your country may exist without defining any reform.
+- This country package comes also with *reforms* in the `reforms` folder. This is optional: your country may exist without defining any reform.
     - In this country, there is [a reform project](./openfisca_country_template/reforms/modify_social_security_taxation.py) aiming to modify the social security taxation, deleting the first bracket, raising the intermediary ones and adding a new bracket with a higher tax rate of `40 %` for people earning more than `40000`. This reform project would apply starting from `2017-01-01`.
 
 The files that are outside from the `openfisca_country_template` folder are used to set up the development environment.

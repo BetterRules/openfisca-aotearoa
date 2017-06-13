@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.1 - [#11](https://github.com/openfisca/country-template/pull/11)
+
+* Technical improvement
+* Details:
+  - Make `make test` command not ignore failing tests.
+
 ## 1.2.0 - [#10](https://github.com/openfisca/country-template/pull/10)
 
 * Technical improvement
