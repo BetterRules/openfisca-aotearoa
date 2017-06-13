@@ -4,4 +4,4 @@ clean:
 
 test:
 	flake8
-	nosetests
+	openfisca-run-test --country_package openfisca_country_template openfisca_country_template/tests
