@@ -52,7 +52,7 @@ If not, edit out the following sections:
 
 ## Install Instructions for Users and Contributors
 
-This package requires Python 2.7.
+This package requires [Python 2.7](https://www.python.org/downloads/).
 
 Supported platforms:
 - GNU/Linux distributions (in particular Debian and Ubuntu);
@@ -69,6 +69,11 @@ We recommend using a [virtual environment](https://virtualenv.pypa.io/en/stable/
 - A virtualenv manager, such as [pew](https://github.com/berdario/pew), lets you easily create, remove and toggle between several virtualenvs.
 
 To install pew, launch a terminal on your computer and follow these instructions:
+
+```sh
+Python -V # You should have python 2.7 or better installed on your computer.
+# If not, visit http://www.python.org to install it.
+```
 
 ```sh
 pip install --upgrade pip
