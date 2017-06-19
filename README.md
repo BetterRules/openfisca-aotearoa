@@ -84,7 +84,7 @@ The virtualenv you just created will be automatically activated. This means you 
 - Exit the virtualenv with `exit` (or Ctrl-D).
 - Re-enter with `pew workon openfisca`.
 
-### Minimal Installation (Pip Install)
+### A. Minimal Installation (Pip Install)
 
 Follow this installation if you wish to:
 - run calculations on a large population;
@@ -124,7 +124,7 @@ Depending on what you want to do with OpenFisca, you may want to install yet oth
 - To plot simulation results, try [matplotlib](http://matplotlib.org/).
 - To manage data, check out [pandas](http://pandas.pydata.org/).
 
-### Advanced Installation (Git Clone)
+### B. Advanced Installation (Git Clone)
 
 Follow this tutorial if you wish to:
 - create or change this Country Package's legislation;
