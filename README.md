@@ -71,7 +71,7 @@ We recommend using a [virtual environment](https://virtualenv.pypa.io/en/stable/
 To install pew, launch a terminal on your computer and follow these instructions:
 
 ```sh
-Python -V # You should have python 2.7 or better installed on your computer.
+Python -V # You should have python 2.7.9 or better installed on your computer.
 # If not, visit http://www.python.org to install it.
 ```
 
@@ -118,6 +118,8 @@ Install the Country Package:
 #Example: Openfisca-France
 pip install openfisca-france
 ```
+
+:tada: The OpenFisca Country Package is now installed and ready!
 
 #### Next Steps
 
@@ -168,7 +170,7 @@ make test
 ```
 > [Learn more about tests](https://doc.openfisca.fr/coding-the-legislation/writing_yaml_tests.html)
 
-The OpenFisca Country Package is now installed and ready!
+:tada: The OpenFisca Country Package is now installed and ready!
 
 #### Next Steps
 
@@ -202,4 +204,4 @@ You can make sure that your instance of the API is working by requesting:
 curl "http://localhost:2000/api/1/swagger"
 ```
 
-To learn more, go to the [OpenFisca Web API documentation](https://doc.openfisca.fr/openfisca-web-api/index.html)
+:tada: The OpenFisca Country Package is now served by the OpenFisca Web API! To learn more, go to the [OpenFisca Web API documentation](https://doc.openfisca.fr/openfisca-web-api/index.html)
