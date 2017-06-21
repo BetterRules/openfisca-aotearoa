@@ -2,7 +2,7 @@
 
 This repository is here to help you quickly bootstrap and use your own OpenFisca country package.
 
-## Bootstrapping Your Country Package
+## Bootstrapping your Country Package
 
 This set of instructions will create your own copy of this boilerplate directory and customise it to the country you want to work on:
 
@@ -42,13 +42,9 @@ These elements are described in different folders. All the modelling happens wit
 
 The files that are outside from the `openfisca_country_template` folder are used to set up the development environment.
 
-## Packaging Your Country Package for Distribution
+## Packaging your Country Package for Distribution
 
-If you wish to distribute your package via `pip install`, follow the steps given by the [Python Packaging Authority](https://python-packaging-user-guide.readthedocs.io/distributing/).
-
-If not, edit out the following sections:
-- the [Minimal Installation (pip install) section](#minimal-installation-pip-install) of the [Install instructions](#install-instructions);
-- the lines pertaining to the "minimal install" in the [section on serving the OpenFisca Web API](#serve-your-country-package-with-the-openFisca-web-api).
+Country packages are python distributions. To distribute your package via `pip install`, follow the steps given by the [Python Packaging Authority](https://python-packaging-user-guide.readthedocs.io/distributing/).
 
 ## Install Instructions for Users and Contributors
 
@@ -85,11 +81,10 @@ To set-up and create a new a virtualenv named **openfisca** running python2.7:
 pew new openfisca --python=python2.7
 ```
 
-The virtualenv you just created will be automatically activated. This means you will operate in the virtualenv immediately. You should see a prompt ressembling this (depending on the OS you are using) :
+The virtualenv you just created will be automatically activated. This means you will operate in the virtualenv immediately. You should see a prompt resembling this :
 ```sh
 Installing setuptools, pip, wheel...done.
 Launching subshell in virtual environment. Type 'exit' or 'Ctrl+D' to return.
-openfiscabash-3.2$ 
 ```
 Additional information :
 - Exit the virtualenv with `exit` (or Ctrl-D).
@@ -125,11 +120,10 @@ pip --version  # should print at least 9.0.
 Install the Country Package:
 
 ```sh
-#Example: Openfisca-France
-pip install openfisca-france
+pip install openfisca_country_template
 ```
 
-:tada: The OpenFisca Country Package is now installed and ready!
+:tada: This OpenFisca Country Package is now installed and ready!
 
 #### Next Steps
 
@@ -167,8 +161,7 @@ pip --version  # should print at least 9.0.
 Clone this Country Package on your machine:
 
 ```sh
-#Example: Openfisca-France
-git clone https://github.com/openfisca/openfisca-france.git
+git clone https://github.com/openfisca/openfisca-country-template.git
 cd openfisca-france
 ```
 
@@ -180,7 +173,7 @@ make test
 ```
 > [Learn more about tests](https://doc.openfisca.fr/coding-the-legislation/writing_yaml_tests.html)
 
-:tada: The OpenFisca Country Package is now installed and ready!
+:tada: This OpenFisca Country Package is now installed and ready!
 
 #### Next Steps
 
@@ -194,8 +187,7 @@ If you are considering building a web application, you can plug the OpenFisca We
 First, install the OpenFisca web API:
 - if you completed the minimal install, run: 
     ```sh
-    #Example: Openfisca-France
-    pip install openfisca-france[api]
+    pip install openfisca-country-template[api]
     ```
 - if you completed the advanced install, run:
     ```sh
@@ -214,4 +206,4 @@ You can make sure that your instance of the API is working by requesting:
 curl "http://localhost:2000/api/1/swagger"
 ```
 
-:tada: The OpenFisca Country Package is now served by the OpenFisca Web API! To learn more, go to the [OpenFisca Web API documentation](https://doc.openfisca.fr/openfisca-web-api/index.html)
+:tada: This OpenFisca Country Package is now served by the OpenFisca Web API! To learn more, go to the [OpenFisca Web API documentation](https://doc.openfisca.fr/openfisca-web-api/index.html)
