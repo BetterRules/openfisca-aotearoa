@@ -18,8 +18,9 @@ git clone https://github.com/openfisca/country-template.git  # download this tem
 mv country-template openfisca-$lowercase_country_name
 cd openfisca-$lowercase_country_name
 git remote remove origin
-sed -i '' '3,27d' README.md  # Remove these instructions lines
+sed -i '' '3,28d' README.md  # Remove these instructions lines
 sed -i '' "s|country_template|$lowercase_country_name|g" README.md setup.py check-version-bump.sh Makefile `find openfisca_country_template -type f`
+sed -i '' "s|country-template|$lowercase_country_name|g" README.md
 sed -i '' "s|Country-Template|$COUNTRY_NAME|g" README.md setup.py check-version-bump.sh .github/PULL_REQUEST_TEMPLATE.md CONTRIBUTING.md `find openfisca_country_template -type f`
 sed -i '' "s|https://github.com/openfisca/openfisca-country-template|$URL|g" setup.py
 mv openfisca_country_template openfisca_$lowercase_country_name
