@@ -164,7 +164,7 @@ Clone this Country Package on your machine:
 ```sh
 git clone https://github.com/openfisca/openfisca-country-template.git
 cd openfisca-country-template
-pip install -e '.'
+pip install -e .
 ```
 
 You can make sure that everything is working by running the provided tests:
@@ -191,7 +191,7 @@ First, install the OpenFisca web API:
     ```sh
     pip install openfisca-country-template[api]
     ```
-- if you completed the advanced install, run:
+- if you completed the advanced install, run the following command in your openfisca-country-template repository:
     ```sh
     pip install -e '.[api]'
     ```
