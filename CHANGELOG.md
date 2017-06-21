@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.2.2 - [#12](https://github.com/openfisca/country-template/pull/12)
+
+* Tax and benefit system evolution
+* Details
+  - Allow to declare a yearly amount for `salary`.
+  - The yearly amount will be spread over the months contained in the year
+
 ## 1.2.1 - [#11](https://github.com/openfisca/country-template/pull/11)
 
 * Technical improvement
