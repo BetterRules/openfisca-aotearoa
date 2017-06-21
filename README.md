@@ -44,7 +44,7 @@ The files that are outside from the `openfisca_country_template` folder are used
 
 ## Packaging your Country Package for Distribution
 
-Country packages are python distributions. To distribute your package via `pip install`, follow the steps given by the [Python Packaging Authority](https://python-packaging-user-guide.readthedocs.io/distributing/).
+Country packages are python distributions. To distribute your package via `pip`, follow the steps given by the [Python Packaging Authority](https://python-packaging-user-guide.readthedocs.io/tutorials/distributing-packages/#packaging-your-project).
 
 ## Install Instructions for Users and Contributors
 
@@ -163,6 +163,7 @@ Clone this Country Package on your machine:
 ```sh
 git clone https://github.com/openfisca/openfisca-country-template.git
 cd openfisca-country-template
+pip install -e '.'
 ```
 
 You can make sure that everything is working by running the provided tests:
