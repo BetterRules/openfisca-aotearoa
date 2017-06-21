@@ -67,7 +67,7 @@ We recommend using a [virtual environment](https://virtualenv.pypa.io/en/stable/
 To install pew, launch a terminal on your computer and follow these instructions:
 
 ```sh
-python -V # You should have python 2.7.9 or better installed on your computer.
+python --version # You should have python 2.7.9 or better installed on your computer.
 # If not, visit http://www.python.org to install it and install pip as well.
 ```
 
@@ -81,12 +81,12 @@ To set-up and create a new a virtualenv named **openfisca** running python2.7:
 pew new openfisca --python=python2.7
 ```
 
-The virtualenv you just created will be automatically activated. This means you will operate in the virtualenv immediately. You should see a prompt resembling this :
+The virtualenv you just created will be automatically activated. This means you will operate in the virtualenv immediately. You should see a prompt resembling this:
 ```sh
 Installing setuptools, pip, wheel...done.
 Launching subshell in virtual environment. Type 'exit' or 'Ctrl+D' to return.
 ```
-Additional information :
+Additional information:
 - Exit the virtualenv with `exit` (or Ctrl-D).
 - Re-enter with `pew workon openfisca`.
 
