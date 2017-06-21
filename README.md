@@ -52,7 +52,7 @@ If not, edit out the following sections:
 
 ## Install Instructions for Users and Contributors
 
-This package requires [Python 2.7](https://www.python.org/downloads/).
+This package requires [Python 2.7](https://www.python.org/downloads/) and [pip](https://pip.pypa.io/en/stable/installing/) .
 
 Supported platforms:
 - GNU/Linux distributions (in particular Debian and Ubuntu);
@@ -71,13 +71,13 @@ We recommend using a [virtual environment](https://virtualenv.pypa.io/en/stable/
 To install pew, launch a terminal on your computer and follow these instructions:
 
 ```sh
-Python -V # You should have python 2.7.9 or better installed on your computer.
-# If not, visit http://www.python.org to install it.
+python -V # You should have python 2.7.9 or better installed on your computer.
+# If not, visit http://www.python.org to install it and install pip as well.
 ```
 
 ```sh
 pip install --upgrade pip
-pip install pew  # answer "Y" to the question about modifying your shell config file.
+pip install pew  # if asked, answer "Y" to the question about modifying your shell config file.
 ```
 To set-up and create a new a virtualenv named **openfisca** running python2.7:
 
@@ -85,9 +85,19 @@ To set-up and create a new a virtualenv named **openfisca** running python2.7:
 pew new openfisca --python=python2.7
 ```
 
-The virtualenv you just created will be automatically activated. This means you will operate in the virtualenv immediately.
+The virtualenv you just created will be automatically activated. This means you will operate in the virtualenv immediately. You should see a prompt ressembling this (depending on the OS you are using) :
+```sh
+Installing setuptools, pip, wheel...done.
+Launching subshell in virtual environment. Type 'exit' or 'Ctrl+D' to return.
+openfiscabash-3.2$ 
+```
+Additional information :
 - Exit the virtualenv with `exit` (or Ctrl-D).
 - Re-enter with `pew workon openfisca`.
+
+:tada: You are now ready to install this OpenFisca Country Package!
+
+We offer 2 install procedures. Pick procedure A or B below depending on how you plan to use this Country Package. 
 
 ### A. Minimal Installation (Pip Install)
 
