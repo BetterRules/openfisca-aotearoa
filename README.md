@@ -162,7 +162,7 @@ Clone this Country Package on your machine:
 
 ```sh
 git clone https://github.com/openfisca/openfisca-country-template.git
-cd openfisca-france
+cd openfisca-country-template
 ```
 
 You can make sure that everything is working by running the provided tests:
