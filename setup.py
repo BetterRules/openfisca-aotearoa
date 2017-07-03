@@ -16,11 +16,11 @@ setup(
     url='https://github.com/openfisca/openfisca-country-template',
     include_package_data = True,  # Will read MANIFEST.in
     install_requires=[
-        'OpenFisca-Core >= 14.0.0, < 15.0',
+        'OpenFisca-Core >= 15.0.0, < 16.0',
         ],
     extras_require = {
         'api': [
-            'OpenFisca-Web-API >= 4.0.0, < 6.0',
+            'OpenFisca-Web-API >= 4.0.0, < 7.0',
             ],
         'test': [
             'flake8',
