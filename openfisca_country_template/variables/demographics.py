@@ -30,4 +30,4 @@ class birth(Variable):
     entity = Person
     label = u"Birth date"
     definition_period = ETERNITY  # This variable cannot change over time.
-    url = "https://en.wiktionary.org/wiki/birthdate"
+    reference = "https://en.wiktionary.org/wiki/birthdate"

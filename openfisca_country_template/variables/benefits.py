@@ -15,7 +15,7 @@ class basic_income(Variable):
     entity = Person
     definition_period = MONTH
     label = "Basic income provided to adults"
-    url = "https://law.gov.example/basic_income"  # Always use the most official source
+    reference = "https://law.gov.example/basic_income"  # Always use the most official source
 
     # Since Dec 1st 2016, the basic income is provided to any adult, without considering their income.
     def formula_2016_12(person, period, legislation):
@@ -35,7 +35,7 @@ class housing_allowance(Variable):
     entity = Household
     definition_period = MONTH
     label = "Housing allowange"
-    url = "https://law.gov.example/housing_allowance"  # Always use the most official source
+    reference = "https://law.gov.example/housing_allowance"  # Always use the most official source
     end = '2016-11-30'  # This allowance was removed on the 1st of Dec 2016. Calculating it before this date will always return the variable default value, 0.
 
     # This allowance was introduced on the 1st of Jan 1980. Calculating it before this date will always return the variable default value, 0.

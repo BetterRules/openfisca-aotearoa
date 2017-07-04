@@ -15,7 +15,7 @@ class income_tax(Variable):
     entity = Person
     definition_period = MONTH
     label = u"Income tax"
-    url = "https://law.gov.example/income_tax"  # Always use the most official source
+    reference = "https://law.gov.example/income_tax"  # Always use the most official source
 
     # The formula to compute the income tax for a given person at a given period
     def formula(person, period, legislation):
@@ -27,7 +27,7 @@ class social_security_contribution(Variable):
     entity = Person
     definition_period = MONTH
     label = u"Progressive contribution paid on salaries to finance social security"
-    url = "https://law.gov.example/social_security_contribution"  # Always use the most official source
+    reference = "https://law.gov.example/social_security_contribution"  # Always use the most official source
 
     def formula(person, period, legislation):
         salary = person('salary', period)
@@ -43,7 +43,7 @@ class housing_tax(Variable):
     entity = Household
     definition_period = YEAR  # This housing tax is defined for a year.
     label = u"Tax paid by each household proportionnally to the size of its accommodation"
-    url = "https://law.gov.example/housing_tax"  # Always use the most official source
+    reference = "https://law.gov.example/housing_tax"  # Always use the most official source
 
     def formula(household, period, legislation):
         # The housing tax is defined for a year, but depends on the `accomodation_size` on the first month of the year.

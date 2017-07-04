@@ -1,5 +1,11 @@
 # Changelog
 
+# 1.2.3 - [#9](https://github.com/openfisca/country-template/pull/9)
+
+* Technical improvement: adapt to version `15.0.0` of Openfisca-Core
+* Details:
+  - Rename Variable attribute `url` to `reference`
+
 ## 1.2.2 - [#12](https://github.com/openfisca/country-template/pull/12)
 
 * Tax and benefit system evolution
