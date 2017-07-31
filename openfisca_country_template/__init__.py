@@ -21,13 +21,5 @@ class CountryTaxBenefitSystem(TaxBenefitSystem):
         self.add_variables_from_directory(os.path.join(COUNTRY_DIR, 'variables'))
 
         # We add to our tax and benefit system all the legislation parameters defined in the  parameters files
-        param_files = [
-            '__root__.xml',
-            'benefits.xml',
-            'general.xml',
-            'taxes.xml',
-            ]
-
-        for param_file in param_files:
-            param_path = os.path.join(COUNTRY_DIR, 'parameters', param_file)
-            self.add_legislation_params(param_path)
+        param_path = os.path.join(COUNTRY_DIR, 'parameters')
+        self.add_legislation_params(param_path)
