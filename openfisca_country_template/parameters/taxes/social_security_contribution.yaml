@@ -1,3 +1,4 @@
+# The social_security_contribution is calculated with a marginal scale. Marginal scales are represented with a specific structure.
 brackets:
 - rate:
     2013-01-01:
