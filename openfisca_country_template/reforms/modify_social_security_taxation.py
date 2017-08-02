@@ -17,14 +17,14 @@ class modify_social_security_taxation(Reform):
         # This parameter is declared in `taxes.xml` using a `<BAREME>` XML element, the French name for "scale".
         #
         # See https://doc.openfisca.fr/coding-the-legislation/legislation_parameters.html
-        self.modify_legislation_json(modifier_function=self.modify_brackets)
+        self.modify_legislation(modifier_function=self.modify_brackets)
 
-    def modify_brackets(self, reference_legislation_json_copy):
-        # This function takes an argument `reference_legislation_json_copy` which is a JSON-like representation
+    def modify_brackets(self, reference_legislation_copy):
+        # This function takes an argument `reference_legislation_copy` which is a JSON-like representation
         # of the XML element. It can be modified and must be returned.
 
         # Access the right legislation node:
-        scale = reference_legislation_json_copy['children']['taxes']['children']['social_security_contribution']
+        scale = reference_legislation_copy['children']['taxes']['children']['social_security_contribution']
         brackets = scale['brackets']
 
         # Add 0.1 to the rates of the second bracket, keeping the same thresholds:
@@ -40,4 +40,4 @@ class modify_social_security_taxation(Reform):
             'threshold': [{'start': '2017-01-01', 'value': 40000}]
             })
 
-        return reference_legislation_json_copy
+        return reference_legislation_copy
