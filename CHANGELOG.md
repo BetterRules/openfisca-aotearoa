@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.2.4 - [#16](https://github.com/openfisca/country-template/pull/16)
+
+* Tax and benefit system evolution
+* Details
+  - Introduce `housing_occupancy_status`
+  - Take the housing occupancy status into account in the housing tax
+
 # 1.2.3 - [#9](https://github.com/openfisca/country-template/pull/9)
 
 * Technical improvement: adapt to version `15.0.0` of Openfisca-Core

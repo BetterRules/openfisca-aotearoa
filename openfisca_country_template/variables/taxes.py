@@ -9,6 +9,8 @@ from openfisca_core.model_api import *
 # Import the entities specifically defined for this tax and benefit system
 from openfisca_country_template.entities import *
 
+from housing import HOUSING_OCCUPANCY_STATUS
+
 
 class income_tax(Variable):
     column = FloatCol
@@ -46,8 +48,17 @@ class housing_tax(Variable):
     reference = "https://law.gov.example/housing_tax"  # Always use the most official source
 
     def formula(household, period, legislation):
-        # The housing tax is defined for a year, but depends on the `accomodation_size` on the first month of the year.
+        # The housing tax is defined for a year, but depends on the `accomodation_size` and `housing_occupancy_status` on the first month of the year.
         # Here period is a year. We can get the first month of a year with the following shortcut.
         # To build different periods, see https://doc.openfisca.fr/coding-the-legislation/35_periods.html#calculating-dependencies-for-a-specific-period
         january = period.first_month
-        return household('accomodation_size', january) * 10
+        accommodation_size = household('accomodation_size', january)
+
+        # `housing_occupancy_status` is an Enum. To access an enum element, we use the [] notation.
+        # Note than HOUSING_OCCUPANCY_STATUS has been imported on the beginning of this file.
+        occupancy_status = household('housing_occupancy_status', january)
+        tenant = (occupancy_status == HOUSING_OCCUPANCY_STATUS['Tenant'])
+        owner = (occupancy_status == HOUSING_OCCUPANCY_STATUS['Owner'])
+
+        # The tax is applied only if the household owns or rents its main residency
+        return (owner + tenant) * accommodation_size * 10

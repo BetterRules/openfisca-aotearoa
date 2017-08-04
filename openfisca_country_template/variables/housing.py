@@ -24,3 +24,20 @@ class rent(Variable):
     entity = Household
     definition_period = MONTH
     label = u"Rent paid by the household"
+
+
+#  Possible values for the housing_occupancy_status variable, defined further down
+HOUSING_OCCUPANCY_STATUS = Enum([
+    u'Tenant',
+    u'Owner',
+    u'Free logder',
+    u'Homeless'])
+
+
+class housing_occupancy_status(Variable):
+    column = EnumCol(
+        enum = HOUSING_OCCUPANCY_STATUS
+        )
+    entity = Household
+    definition_period = MONTH
+    label = u"Legal housing situation of the household concerning their main residence"
