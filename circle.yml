@@ -18,6 +18,7 @@ test:
     - ./check-version-bump.sh
 deployment:
   master:
+    owner: openfisca  # update this to your GitHub user (or organisation) name, in order to prevent failed builds on forks
     branch: master
     commands:
       - ./deploy-if-version-bump.sh
