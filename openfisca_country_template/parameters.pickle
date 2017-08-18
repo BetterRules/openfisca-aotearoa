@@ -3,7 +3,7 @@ p0
 ccopy_reg
 _reconstructor
 p1
-(copenfisca_core.legislations
+(copenfisca_core.parameters
 Node
 p2
 c__builtin__
@@ -34,7 +34,7 @@ sg9
 S'basic_income'
 p16
 g1
-(copenfisca_core.legislations
+(copenfisca_core.parameters
 Parameter
 p17
 g3
@@ -45,7 +45,7 @@ S'values_list'
 p21
 (lp22
 g1
-(copenfisca_core.legislations
+(copenfisca_core.parameters
 ValueAtInstant
 p23
 g3
@@ -124,7 +124,7 @@ sg9
 S'social_security_contribution'
 p53
 g1
-(copenfisca_core.legislations
+(copenfisca_core.parameters
 Scale
 p54
 g3
@@ -135,7 +135,7 @@ S'brackets'
 p58
 (lp59
 g1
-(copenfisca_core.legislations
+(copenfisca_core.parameters
 Bracket
 p60
 g3
@@ -145,7 +145,7 @@ Rp62
 S'threshold'
 p64
 g1
-(copenfisca_core.legislations
+(copenfisca_core.parameters
 ValuesHistory
 p65
 g3

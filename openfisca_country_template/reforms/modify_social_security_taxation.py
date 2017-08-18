@@ -17,14 +17,14 @@ class modify_social_security_taxation(Reform):
         # This parameter is declared in `parameters/taxes/social_security_contribution.yaml`.
         #
         # See https://doc.openfisca.fr/coding-the-legislation/legislation_parameters.html
-        self.modify_legislation(modifier_function=self.modify_brackets)
+        self.modify_parameters(modifier_function=self.modify_brackets)
 
-    def modify_brackets(self, legislation):
-        # This function takes an argument `legislation` which is a in-memory representation
+    def modify_brackets(self, parameters):
+        # This function takes an argument `parameters` which is a in-memory representation
         # of the YAML parameters. It can be modified and must be returned.
 
-        # Access the right legislation node:
-        brackets = legislation.taxes.social_security_contribution.brackets
+        # Access the right parameter node:
+        brackets = parameters.taxes.social_security_contribution.brackets
 
         # Add 0.1 to the rates of the second bracket, keeping the same thresholds:
         for rate in brackets[1].rate.values_list:
@@ -34,7 +34,7 @@ class modify_social_security_taxation(Reform):
         del brackets[0]
 
         # Add a new bracket with a higher tax rate for rich people:
-        new_bracket = legislations.Bracket(
+        new_bracket = Bracket(
             'new_bracket',
             validated_yaml = {
                 'rate': {'2017-01-01': {'value': 0.4}},
@@ -43,4 +43,4 @@ class modify_social_security_taxation(Reform):
             )
         brackets.append(new_bracket)
 
-        return legislation
+        return parameters
