@@ -1,0 +1,6 @@
+description: Housing allowance amount (as a fraction of the rent)
+values:
+  2010-01-01:
+    value: 0.25
+  2016-12-01:
+    value: null

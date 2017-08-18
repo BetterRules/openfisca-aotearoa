@@ -1,0 +1,6 @@
+description: Age of majority (in years)
+values:
+  1945-01-01:
+    value: 21.0
+  1971-01-01:
+    value: 18.0
