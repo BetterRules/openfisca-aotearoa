@@ -22,4 +22,4 @@ class CountryTaxBenefitSystem(TaxBenefitSystem):
 
         # We add to our tax and benefit system all the legislation parameters defined in the  parameters files
         param_path = os.path.join(COUNTRY_DIR, 'parameters')
-        self.add_parameter_path(param_path)
+        self.load_parameters(param_path)

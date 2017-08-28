@@ -36,7 +36,7 @@ class modify_social_security_taxation(Reform):
         # Add a new bracket with a higher tax rate for rich people:
         new_bracket = Bracket(
             'new_bracket',
-            yaml_object = {
+            data = {
                 'rate': {'2017-01-01': {'value': 0.4}},
                 'threshold': {'2017-01-01': {'value': 40000}},
                 },

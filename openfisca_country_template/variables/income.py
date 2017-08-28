@@ -27,7 +27,7 @@ class disposable_income(Variable):
     label = "Actual amount available to the person at the end of the month"
     reference = "https://stats.gov.example/disposable_income"  # Some variables represent quantities used in economic models, and not defined by law. Always give the source of your definition.
 
-    def formula(person, period, legislation):
+    def formula(person, period, parameters):
         return (
             + person('salary', period)
             + person('basic_income', period)
