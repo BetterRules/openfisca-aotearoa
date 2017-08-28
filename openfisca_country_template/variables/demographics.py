@@ -19,7 +19,7 @@ class age(Variable):
     label = u"Person's age (in years)"
 
     # A person's age is computed according to its birth date.
-    def formula(person, period, legislation):
+    def formula(person, period, parameters):
         birth = person('birth', period)
         return (datetime64(period.date) - birth).astype('timedelta64[Y]')
 

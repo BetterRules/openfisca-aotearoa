@@ -14,30 +14,33 @@ class modify_social_security_taxation(Reform):
     # See https://doc.openfisca.fr/coding-the-legislation/reforms.html#writing-a-reform
     def apply(self):
         # Our reform modifies the `social_security_contribution` parameter, which is a scale.
-        # This parameter is declared in `taxes.xml` using a `<BAREME>` XML element, the French name for "scale".
+        # This parameter is declared in `parameters/taxes/social_security_contribution.yaml`.
         #
         # See https://doc.openfisca.fr/coding-the-legislation/legislation_parameters.html
-        self.modify_legislation_json(modifier_function=self.modify_brackets)
+        self.modify_parameters(modifier_function=self.modify_brackets)
 
-    def modify_brackets(self, reference_legislation_json_copy):
-        # This function takes an argument `reference_legislation_json_copy` which is a JSON-like representation
-        # of the XML element. It can be modified and must be returned.
+    def modify_brackets(self, parameters):
+        # This function takes an argument `parameters` which is a in-memory representation
+        # of the YAML parameters. It can be modified and must be returned.
 
-        # Access the right legislation node:
-        scale = reference_legislation_json_copy['children']['taxes']['children']['social_security_contribution']
-        brackets = scale['brackets']
+        # Access the right parameter node:
+        brackets = parameters.taxes.social_security_contribution.brackets
 
         # Add 0.1 to the rates of the second bracket, keeping the same thresholds:
-        for rate in brackets[1]['rate']:
-            rate['value'] += 0.1
+        for rate in brackets[1].rate.values_list:
+            rate.value += 0.1
 
         # Remove the first bracket:
         del brackets[0]
 
         # Add a new bracket with a higher tax rate for rich people:
-        brackets.append({
-            'rate': [{'start': '2017-01-01', 'value': 0.4}],
-            'threshold': [{'start': '2017-01-01', 'value': 40000}]
-            })
+        new_bracket = Bracket(
+            'new_bracket',
+            data = {
+                'rate': {'2017-01-01': {'value': 0.4}},
+                'threshold': {'2017-01-01': {'value': 40000}},
+                },
+            )
+        brackets.append(new_bracket)
 
-        return reference_legislation_json_copy
+        return parameters

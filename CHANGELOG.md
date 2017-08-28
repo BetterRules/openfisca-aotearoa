@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.5 - [#17](https://github.com/openfisca/country-template/pull/17)
+
+* Technical improvement: adapt to version `17.0.0` of Openfisca-Core
+* Details:
+  - Transform XML parameter files to YAML parameter files.
+
 ## 1.2.4 - [#16](https://github.com/openfisca/country-template/pull/16)
 
 * Tax and benefit system evolution
@@ -7,7 +13,7 @@
   - Introduce `housing_occupancy_status`
   - Take the housing occupancy status into account in the housing tax
 
-# 1.2.3 - [#9](https://github.com/openfisca/country-template/pull/9)
+## 1.2.3 - [#9](https://github.com/openfisca/country-template/pull/9)
 
 * Technical improvement: adapt to version `15.0.0` of Openfisca-Core
 * Details:
