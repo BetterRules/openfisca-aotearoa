@@ -8,6 +8,12 @@ Household = build_entity(
     key = "household",
     plural = "households",
     label = u'Household',
+    doc = '''
+    A group entity.
+    Contains multiple natural persons with specific roles.
+    From zero to two parents with 'first_parent' and 'second_parent' subroles.
+    And an unlimited number of children.
+    ''',
     roles = [
         {
             'key': 'parent',
@@ -23,22 +29,18 @@ Household = build_entity(
             }
         ]
     )
-"""
-A group entity.
-Contains multiple natural persons with specific roles.
-From zero to two parents with 'first_parent' and 'second_parent' subroles.
-And an unlimited number of children.
-"""
+
 
 Person = build_entity(
     key = "person",
     plural = "persons",
     label = u'Person',
+    doc = '''
+    The minimal legal entity on which a legislation might be applied.
+    Represents a natural person.
+    ''',
     is_person = True,
     )
-"""
-The minimal legal entity on which a legislation might be applied.
-Represents a natural person.
-"""
+
 
 entities = [Household, Person]
