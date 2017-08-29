@@ -14,6 +14,15 @@ Household = build_entity(
     Contains multiple natural persons with specific roles.
     From zero to two parents with 'first_parent' and 'second_parent' subroles.
     And an unlimited number of children.
+
+    Example: 
+    Housing variables like 'housing_tax' are usually defined for an entity 'Household'.
+
+    Usage: 
+    Access a role or a subrole like 'first_parent' with: Household.FIRST_PARENT
+    Calculate a variable applied to a 'Person' like 'salary' on the whole 'Household' with: simulation.household.members('salary', period = MONTH) 
+
+    For more information, see: https://doc.openfisca.fr/coding-the-legislation/50_entities.html
     '''),
     roles = [
         {
@@ -39,6 +48,14 @@ Person = build_entity(
     doc = textwrap.dedent('''
     The minimal legal entity on which a legislation might be applied.
     Represents a natural person.
+
+    Example: 
+    'salary' and 'income_tax' variables are usually defined for the entity 'Person'.
+
+    Usage: 
+    Calculate a variable applied to a 'Person' like 'salary' on a specific month with: person('salary', "2017-05")
+
+    For more information, see: https://doc.openfisca.fr/coding-the-legislation/50_entities.html
     '''),
     is_person = True,
     )
