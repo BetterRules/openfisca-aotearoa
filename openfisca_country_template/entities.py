@@ -23,7 +23,12 @@ Household = build_entity(
             }
         ]
     )
-
+"""
+A group entity.
+Contains multiple natural persons with specific roles.
+From zero to two parents with 'first_parent' and 'second_parent' subroles.
+And an unlimited number of children.
+"""
 
 Person = build_entity(
     key = "person",
@@ -31,5 +36,9 @@ Person = build_entity(
     label = u'Person',
     is_person = True,
     )
+"""
+The minimal legal entity on which a legislation might be applied.
+Represents a natural person.
+"""
 
 entities = [Household, Person]
