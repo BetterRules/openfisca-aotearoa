@@ -29,12 +29,14 @@ Household = build_entity(
             'plural': 'parents',
             'label': u'Parents',
             'max': 2,
-            'subroles': ['first_parent', 'second_parent']
+            'subroles': ['first_parent', 'second_parent'],
+            'doc': u'The one or two adults in charge of the household.'
             },
         {
             'key': 'child',
             'plural': 'children',
             'label': u'Child',
+            'doc': u'Other individuals living in the household.'
             }
         ]
     )
