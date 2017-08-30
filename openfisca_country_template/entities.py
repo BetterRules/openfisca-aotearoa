@@ -11,15 +11,15 @@ Household = build_entity(
     label = u'Household',
     doc = textwrap.dedent('''
     Household is an example of a group entity.
-    A group entity contains one or more natural persons. Each person in a group entity has a role (e.g. parent or children).
-    Some roles can only be held by a limited number of persons (e.g. a 'first_parent' can only be held by one person), where other can have unlimited number of persons (e.g. 'children').
+    A group entity contains one or more individual·s. Each individual in a group entity has a role (e.g. parent or children).
+    Some roles can only be held by a limited number of individuals (e.g. a 'first_parent' can only be held by one individual), where other can have unlimited number of individuals (e.g. 'children').
 
     Example:
     Housing variables like 'housing_tax' are usually defined for a group entity such as 'Household'.
 
     Usage:
-    Check the number of persons of a specific role (e.g. if there is a 'second_parent' with household.nb_persons(Household.SECOND_PARENT)).
-    Calculate a variable applied to each person of the group entity (e.g. the 'salary' of each member of the 'Household' with salaries = household.members('salary', period = MONTH); sum_salaries = household.sum(salaries)).
+    Check the number of individuals of a specific role (e.g. if there is a 'second_parent' with household.nb_persons(Household.SECOND_PARENT)).
+    Calculate a variable applied to each individual of the group entity (e.g. the 'salary' of each member of the 'Household' with salaries = household.members('salary', period = MONTH); sum_salaries = household.sum(salaries)).
 
     For more information, see: https://doc.openfisca.fr/coding-the-legislation/50_entities.html
     '''),
@@ -45,7 +45,7 @@ Person = build_entity(
     plural = "persons",
     label = u'Person',
     doc = textwrap.dedent('''
-    A Person represents a natural person, the minimal legal entity on which a legislation might be applied.
+    A Person represents an individual, the minimal legal entity on which a legislation might be applied.
 
     Example:
     'salary' and 'income_tax' variables are usually defined for the entity 'Person'.
