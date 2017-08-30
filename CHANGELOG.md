@@ -1,9 +1,15 @@
 # Changelog
 
+## 1.2.6 - [#20](https://github.com/openfisca/country-template/pull/20)
+
+* Minor change
+  - Document entities
+
 ## 1.2.5 - [#17](https://github.com/openfisca/country-template/pull/17)
 
-* Technical improvement: adapt to version `17.0.0` of Openfisca-Core
+* Technical improvement
 * Details:
+  - Adapt to version `17.0.0` of Openfisca-Core
   - Transform XML parameter files to YAML parameter files.
 
 ## 1.2.4 - [#16](https://github.com/openfisca/country-template/pull/16)
