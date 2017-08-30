@@ -10,17 +10,16 @@ Household = build_entity(
     plural = "households",
     label = u'Household',
     doc = textwrap.dedent('''
-    A group entity.
-    Contains multiple natural persons with specific roles.
-    From zero to two parents with 'first_parent' and 'second_parent' subroles.
-    And an unlimited number of children.
+    Household is an example of a group entity.
+    A group entity contains one or more natural persons. Each person in a group entity has a role (e.g. parent or children).
+    Some roles can only be held by a limited number of persons (e.g. a 'first_parent' can only be held by one person), where other can have unlimited number of persons (e.g. 'children').
 
-    Example: 
-    Housing variables like 'housing_tax' are usually defined for an entity 'Household'.
+    Example:
+    Housing variables like 'housing_tax' are usually defined for a group entity such as 'Household'.
 
-    Usage: 
-    Access a role or a subrole like 'first_parent' with: Household.FIRST_PARENT
-    Calculate a variable applied to a 'Person' like 'salary' on the whole 'Household' with: simulation.household.members('salary', period = MONTH) 
+    Usage:
+    Check the number of persons of a specific role (e.g. if there is a 'second_parent' with household.nb_persons(Household.SECOND_PARENT)).
+    Calculate a variable applied to each person of the group entity (e.g. the 'salary' of each member of the 'Household' with salaries = household.members('salary', period = MONTH); sum_salaries = household.sum(salaries)).
 
     For more information, see: https://doc.openfisca.fr/coding-the-legislation/50_entities.html
     '''),
@@ -46,14 +45,14 @@ Person = build_entity(
     plural = "persons",
     label = u'Person',
     doc = textwrap.dedent('''
-    The minimal legal entity on which a legislation might be applied.
-    Represents a natural person.
+    A Person represents a natural person, the minimal legal entity on which a legislation might be applied.
 
-    Example: 
+    Example:
     'salary' and 'income_tax' variables are usually defined for the entity 'Person'.
 
-    Usage: 
-    Calculate a variable applied to a 'Person' like 'salary' on a specific month with: person('salary', "2017-05")
+    Usage:
+    Calculate a variable applied to a 'Person' (e.g. access the 'salary' of a specific month with person('salary', "2017-05")).
+    Check the role of a 'Person' in a group entity (e.g. check if a the 'Person' is a 'first_parent' in a 'Household' entity with person.has_role(Household.FIRST_PARENT)).
 
     For more information, see: https://doc.openfisca.fr/coding-the-legislation/50_entities.html
     '''),
