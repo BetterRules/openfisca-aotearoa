@@ -2,7 +2,7 @@
 
 # This file defines a reform.
 # A reform is a set of modifications to be applied to a reference tax and benefit system to carry out experiments.
-# See https://doc.openfisca.fr/reforms.html
+# See http://openfisca.org/doc/reforms.html
 
 
 # Import from openfisca-core the common python objects used to code the legislation in OpenFisca
@@ -19,6 +19,6 @@ class social_security_contribution(Variable):
 
 class flat_social_security_contribution(Reform):
     # A reform always defines an `apply` method that builds the reformed tax and benefit system from the reference one.
-    # See https://doc.openfisca.fr/coding-the-legislation/reforms.html#writing-a-reform
+    # See http://openfisca.org/doc/coding-the-legislation/reforms.html#writing-a-reform
     def apply(self):
         self.update_variable(social_security_contribution)
