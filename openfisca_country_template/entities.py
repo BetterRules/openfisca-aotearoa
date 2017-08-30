@@ -1,15 +1,13 @@
 # -*- coding: utf-8 -*-
 
 # This file defines the entities needed by our legislation.
-import textwrap
-
 from openfisca_core.entities import build_entity
 
 Household = build_entity(
     key = "household",
     plural = "households",
     label = u'Household',
-    doc = textwrap.dedent('''
+    doc = '''
     Household is an example of a group entity.
     A group entity contains one or more individual·s.
     Each individual in a group entity has a role (e.g. parent or children). Some roles can only be held by a limited number of individuals (e.g. a 'first_parent' can only be held by one individual), while others can have an unlimited number of individuals (e.g. 'children').
@@ -22,7 +20,7 @@ Household = build_entity(
     Calculate a variable applied to each individual of the group entity (e.g. calculate the 'salary' of each member of the 'Household' with salaries = household.members('salary', period = MONTH); sum_salaries = household.sum(salaries)).
 
     For more information, see: https://doc.openfisca.fr/coding-the-legislation/50_entities.html
-    '''),
+    ''',
     roles = [
         {
             'key': 'parent',
@@ -46,7 +44,7 @@ Person = build_entity(
     key = "person",
     plural = "persons",
     label = u'Person',
-    doc = textwrap.dedent('''
+    doc = '''
     A Person represents an individual, the minimal legal entity on which a legislation might be applied.
 
     Example:
@@ -57,7 +55,7 @@ Person = build_entity(
     Check the role of a 'Person' in a group entity (e.g. check if a the 'Person' is a 'first_parent' in a 'Household' entity with person.has_role(Household.FIRST_PARENT)).
 
     For more information, see: https://doc.openfisca.fr/coding-the-legislation/50_entities.html
-    '''),
+    ''',
     is_person = True,
     )
 
