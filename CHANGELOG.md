@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.7 - [#21](https://github.com/openfisca/country-template/pull/21)
+
+* Minor change
+  - Use the technical documentation new address
+
 ## 1.2.6 - [#20](https://github.com/openfisca/country-template/pull/20)
 
 * Minor change

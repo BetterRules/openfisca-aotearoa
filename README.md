@@ -128,11 +128,11 @@ pip install openfisca_country_template
 
 #### Next Steps
 
-- To learn how to use OpenFisca, follow our [tutorials](https://doc.openfisca.fr/getting-started.html).
+- To learn how to use OpenFisca, follow our [tutorials](http://openfisca.org/doc/getting-started.html).
 - To serve this Country Package, serve the [OpenFisca web API](#serve-your-country-package-with-the-openFisca-web-api).
 
 Depending on what you want to do with OpenFisca, you may want to install yet other packages in your virtualenv:
-- To install extensions or write on top of this Country Package, head to the [Extensions documentation](https://doc.openfisca.fr/contribute/extensions.html).
+- To install extensions or write on top of this Country Package, head to the [Extensions documentation](http://openfisca.org/doc/contribute/extensions.html).
 - To plot simulation results, try [matplotlib](http://matplotlib.org/).
 - To manage data, check out [pandas](http://pandas.pydata.org/).
 
@@ -173,14 +173,14 @@ You can make sure that everything is working by running the provided tests:
 pip install -e ".[test]"
 make test
 ```
-> [Learn more about tests](https://doc.openfisca.fr/coding-the-legislation/writing_yaml_tests.html)
+> [Learn more about tests](http://openfisca.org/doc/coding-the-legislation/writing_yaml_tests.html)
 
 :tada: This OpenFisca Country Package is now installed and ready!
 
 #### Next Steps
 
-- To write new legislation, read the [Coding the legislation](https://doc.openfisca.fr/coding-the-legislation/index.html) section to know how to write legislation.
-- To contribute to the code, read our [Contribution Guidebook](https://doc.openfisca.fr/contribute/index.html).
+- To write new legislation, read the [Coding the legislation](http://openfisca.org/doc/coding-the-legislation/index.html) section to know how to write legislation.
+- To contribute to the code, read our [Contribution Guidebook](http://openfisca.org/doc/contribute/index.html).
 
 ## Serve this Country Package with the OpenFisca Web API
 
@@ -208,4 +208,4 @@ You can make sure that your instance of the API is working by requesting:
 curl "http://localhost:2000/api/1/swagger"
 ```
 
-:tada: This OpenFisca Country Package is now served by the OpenFisca Web API! To learn more, go to the [OpenFisca Web API documentation](https://doc.openfisca.fr/openfisca-web-api/index.html)
+:tada: This OpenFisca Country Package is now served by the OpenFisca Web API! To learn more, go to the [OpenFisca Web API documentation](http://openfisca.org/doc/openfisca-web-api/index.html)
