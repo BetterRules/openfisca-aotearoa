@@ -1,5 +1,21 @@
 # Changelog
 
+## 1.3.0 - [#22](https://github.com/openfisca/country-template/pull/22)
+
+* Tax and benefit system evolution
+* Impacted periods: all
+* Impacted areas: `stats`
+* Details:
+  - Introduce `total_benefits`
+  - Introduce `total_taxes`
+
+<!-- -->
+
+* Minor change
+* Details:
+  - Introduce situation examples
+    - These examples can be imported with: `from openfisca_country_template.situation_examples import single, couple`
+
 ## 1.2.7 - [#21](https://github.com/openfisca/country-template/pull/21)
 
 * Minor change
