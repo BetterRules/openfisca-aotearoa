@@ -11,7 +11,7 @@ from openfisca_country_template.entities import *
 
 
 class basic_income(Variable):
-    column = FloatCol
+    value_type = float
     entity = Person
     definition_period = MONTH
     label = "Basic income provided to adults"
@@ -31,7 +31,7 @@ class basic_income(Variable):
 
 
 class housing_allowance(Variable):
-    column = FloatCol
+    value_type = float
     entity = Household
     definition_period = MONTH
     label = "Housing allowange"

@@ -13,7 +13,7 @@ from housing import HOUSING_OCCUPANCY_STATUS
 
 
 class income_tax(Variable):
-    column = FloatCol
+    value_type = float
     entity = Person
     definition_period = MONTH
     label = u"Income tax"
@@ -25,7 +25,7 @@ class income_tax(Variable):
 
 
 class social_security_contribution(Variable):
-    column = FloatCol
+    value_type = float
     entity = Person
     definition_period = MONTH
     label = u"Progressive contribution paid on salaries to finance social security"
@@ -41,7 +41,7 @@ class social_security_contribution(Variable):
 
 
 class housing_tax(Variable):
-    column = FloatCol
+    value_type = float
     entity = Household
     definition_period = YEAR  # This housing tax is defined for a year.
     label = u"Tax paid by each household proportionnally to the size of its accommodation"

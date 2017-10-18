@@ -12,7 +12,7 @@ from openfisca_country_template.entities import *
 
 # This variable is a pure input: it doesn't have a formula
 class accomodation_size(Variable):
-    column = FloatCol
+    value_type = float
     entity = Household
     definition_period = MONTH
     label = u"Size of the accomodation, in square metters"
@@ -20,7 +20,7 @@ class accomodation_size(Variable):
 
 # This variable is a pure input: it doesn't have a formula
 class rent(Variable):
-    column = FloatCol
+    value_type = float
     entity = Household
     definition_period = MONTH
     label = u"Rent paid by the household"
@@ -35,9 +35,8 @@ HOUSING_OCCUPANCY_STATUS = Enum([
 
 
 class housing_occupancy_status(Variable):
-    column = EnumCol(
-        enum = HOUSING_OCCUPANCY_STATUS
-        )
+    value_type = Enum
+    possible_values = HOUSING_OCCUPANCY_STATUS
     entity = Household
     definition_period = MONTH
     label = u"Legal housing situation of the household concerning their main residence"

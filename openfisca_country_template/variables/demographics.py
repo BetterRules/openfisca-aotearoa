@@ -13,7 +13,7 @@ from numpy import datetime64
 
 
 class age(Variable):
-    column = IntCol
+    value_type = int
     entity = Person
     definition_period = MONTH
     label = u"Person's age (in years)"
@@ -26,7 +26,8 @@ class age(Variable):
 
 # This variable is a pure input: it doesn't have a formula
 class birth(Variable):
-    column = DateCol(default = date(1970, 1, 1))  # By default, is no value is set for a simulation, we consider the people involed in a simulation to be born on the 1st of Jan 1970.
+    value_type = date
+    default_value = date(1970, 1, 1)  # By default, is no value is set for a simulation, we consider the people involed in a simulation to be born on the 1st of Jan 1970.
     entity = Person
     label = u"Birth date"
     definition_period = ETERNITY  # This variable cannot change over time.
