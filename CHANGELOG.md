@@ -1,12 +1,20 @@
 # Changelog
 
-## 1.3.2 - [#25](https://github.com/openfisca/country-template/pull/25)
+## 1.4.0 - [#26](https://github.com/openfisca/country-template/pull/26)
+
+* Technical improvement
+* Details:
+  - Upgrade to Core v20
+
+### 1.3.2 - [#25](https://github.com/openfisca/country-template/pull/25)
 
 * Declare package compatible with OpenFisca Core v19
 
-## 1.3.1 - [#23](https://github.com/openfisca/country-template/pull/23)
+### 1.3.1 - [#23](https://github.com/openfisca/country-template/pull/23)
 
-* Declare package compatible with OpenFisca Core v18
+* Technical improvement
+* Details:
+  - Declare package compatible with OpenFisca Core v18
 
 ## 1.3.0 - [#22](https://github.com/openfisca/country-template/pull/22)
 
