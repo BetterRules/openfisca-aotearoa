@@ -1,5 +1,77 @@
 # Changelog
 
+## 2.0.0 - [#24](https://github.com/openfisca/country-template/pull/24)
+
+* Technical change
+* Details:
+  - Introduce the use of a string identifier to reference enum item.
+  - When setting an Enums (e.g. housing_occupancy_status), set the relevant string identifier (e.g. `free_lodger`). Indexes (e.g.`2`) and phrases (e.g. `Free Lodgers`) cannot be used anymore.
+  - The default value is indicated for each enum variable instead of being implicitly the first item of the enum.
+
+#### Web API request/response
+
+Before:
+
+```
+"persons": {
+    "Bill": {}
+},
+"households": {
+    "_": {
+        "parent": ["Bill"]
+        "housing_occupancy_status": "Free Lodger"
+    }
+}
+```
+Now:
+
+```
+"persons": {
+    "Bill": {}
+},
+"households": {
+    "_": {
+        "parent": ["Bill"]
+        housing_occupancy_status: "free_lodger"
+    }
+}
+```
+
+#### YAML testing
+Before:
+
+```
+name: Household living in a 40 sq.meters accomodation while free_lodgers
+  period: 2017
+  input_variables:
+    accomodation_size:
+      2017-01: 40
+    housing_occupancy_status:
+      2017-01: 2
+  output_variables:
+    housing_tax: 0
+```
+Now:
+
+```
+name: Household living in a 40 sq.meters accomodation while free_lodgers
+  period: 2017
+  input_variables:
+    accomodation_size:
+      2017-01: 40
+    housing_occupancy_status:
+      2017-01: free_lodger
+  output_variables:
+    housing_tax: 0
+```
+
+#### Python API
+
+When calculating an enum variable in Python, the output will be an array of enum items.
+> Each enum item has:
+> - a `name` property that contains its key (e.g. `tenant`)
+> - a `value` property that contains its description (e.g. `"Tenant or lodger who pays a monthly rent"`)
+
 ## 1.4.0 - [#26](https://github.com/openfisca/country-template/pull/26)
 
 * Technical improvement
