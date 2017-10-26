@@ -7,7 +7,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='OpenFisca-Country-Template',
-    version='1.3.1',
+    version='1.3.2',
     author='OpenFisca Team',
     author_email='contact@openfisca.fr',
     description=u'OpenFisca tax and benefit system for Country-Template',
