@@ -184,28 +184,22 @@ make test
 
 ## Serve this Country Package with the OpenFisca Web API
 
-If you are considering building a web application, you can plug the OpenFisca Web API to your Country Package.
+If you are considering building a web application, you can use the packaged OpenFisca Web API with your Country Package.
 
-First, install the OpenFisca web API:
-- if you completed the minimal install, run: 
-    ```sh
-    pip install openfisca-country-template[api]
-    ```
-- if you completed the advanced install, run the following command in your openfisca-country-template repository:
-    ```sh
-    pip install -e '.[api]'
-    ```
-
-Then serve the Openfisca Web API locally:
+To serve the Openfisca Web API locally, run:
 
 ```sh
-openfisca-serve --port 2000
+openfisca serve --port 5000
 ```
+
+To read more about the `openfisca serve` command, check out its [documentation](https://openfisca.readthedocs.io/en/latest/openfisca_serve.html).
 
 You can make sure that your instance of the API is working by requesting:
 
 ```sh
-curl "http://localhost:2000/api/1/swagger"
+curl "http://localhost:5000/spec"
 ```
+
+This endpoint returns the [Open API specification](https://www.openapis.org/) of your API.
 
 :tada: This OpenFisca Country Package is now served by the OpenFisca Web API! To learn more, go to the [OpenFisca Web API documentation](http://openfisca.org/doc/openfisca-web-api/index.html)

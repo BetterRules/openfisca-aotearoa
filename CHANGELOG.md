@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.2 - [#25](https://github.com/openfisca/country-template/pull/25)
+
+* Declare package compatible with OpenFisca Core v19
+
 ## 1.3.1 - [#23](https://github.com/openfisca/country-template/pull/23)
 
 * Declare package compatible with OpenFisca Core v18
