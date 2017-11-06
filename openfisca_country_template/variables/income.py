@@ -12,7 +12,7 @@ from openfisca_country_template.entities import *
 
 # This variable is a pure input: it doesn't have a formula
 class salary(Variable):
-    column = FloatCol
+    value_type = float
     entity = Person
     definition_period = MONTH
     set_input = set_input_divide_by_period  # Optional attribute. Allows user to declare a salary for a year. OpenFisca will spread the yearly amount over the months contained in the year.
@@ -21,7 +21,7 @@ class salary(Variable):
 
 
 class disposable_income(Variable):
-    column = FloatCol
+    value_type = float
     entity = Person
     definition_period = MONTH
     label = "Actual amount available to the person at the end of the month"

@@ -11,7 +11,7 @@ from openfisca_country_template.entities import *
 
 
 class total_benefits(Variable):
-    column = FloatCol
+    value_type = float
     entity = Household
     definition_period = MONTH
     label = "Sum of the benefits perceived by a household"
@@ -27,7 +27,7 @@ class total_benefits(Variable):
 
 
 class total_taxes(Variable):
-    column = FloatCol
+    value_type = float
     entity = Household
     definition_period = MONTH
     label = "Sum of the taxes paid by a household"
