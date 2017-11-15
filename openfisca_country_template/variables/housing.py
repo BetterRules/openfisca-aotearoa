@@ -38,7 +38,7 @@ class HousingOccupancyStatus(Enum):
 class housing_occupancy_status(Variable):
     value_type = Enum
     possible_values = HousingOccupancyStatus
-    default = HousingOccupancyStatus.tenant
+    default_value = HousingOccupancyStatus.tenant
     entity = Household
     definition_period = MONTH
     label = u"Legal housing situation of the household concerning their main residence"

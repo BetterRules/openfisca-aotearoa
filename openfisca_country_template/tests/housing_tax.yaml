@@ -28,3 +28,5 @@
       2017-01: 100
   output_variables:
     housing_tax: 1000
+    housing_occupancy_status:
+      2017-01: tenant
