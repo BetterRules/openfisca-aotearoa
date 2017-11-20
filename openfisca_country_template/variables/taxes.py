@@ -54,7 +54,7 @@ class housing_tax(Variable):
         january = period.first_month
         accommodation_size = household('accomodation_size', january)
 
-        # `housing_occupancy_status` is an Enum. To access an enum element, we use the [] notation.
+        # `housing_occupancy_status` is an Enum. To access an enum element, we use the . notation.
         # Note than HousingOccupancyStatus has been imported on the beginning of this file.
         occupancy_status = household('housing_occupancy_status', january)
         tenant = (occupancy_status == HousingOccupancyStatus.tenant)
