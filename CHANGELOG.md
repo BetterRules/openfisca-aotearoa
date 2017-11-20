@@ -2,8 +2,10 @@
 
 ## 2.0.0 - [#24](https://github.com/openfisca/country-template/pull/24)
 
-* Technical change
+#### breaking change
+
 * Details:
+  - Upgrade to Core v21
   - Introduce the use of a string identifier to reference enum item.
   - When setting an Enums (e.g. housing_occupancy_status), set the relevant string identifier (e.g. `free_lodger`). Indexes (e.g.`2`) and phrases (e.g. `Free Lodgers`) cannot be used anymore.
   - The default value is indicated for each enum variable instead of being implicitly the first item of the enum.
