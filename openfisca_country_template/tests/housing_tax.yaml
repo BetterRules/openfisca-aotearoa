@@ -1,7 +1,7 @@
 # Test files describe situations and their expected outcomes
 # We can run this test on our command line using `openfisca-run-test housing_tax.yaml`
 
-- name: Household living in a 40 sq.meters accomodation while tenants
+- name: Tenantd living in a 40 sq.meters accomodation
   period: 2017
   input_variables:
     accomodation_size:
@@ -11,7 +11,7 @@
   output_variables:
     housing_tax: 400
 
-- name: Household living in a 40 sq.meters accomodation while free_lodgers
+- name: Free_lodgers living in a 40 sq.meters accomodation
   period: 2017
   input_variables:
     accomodation_size:
