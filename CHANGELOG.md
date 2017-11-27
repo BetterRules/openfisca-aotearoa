@@ -6,9 +6,9 @@
 
 * Details:
   - Upgrade to Core v21
-  - Introduce the use of a string identifier to reference enum item.
-  - When setting an Enums (e.g. housing_occupancy_status), set the relevant string identifier (e.g. `free_lodger`). Indexes (e.g.`2`) and phrases (e.g. `Free Lodgers`) cannot be used anymore.
-  - The default value is indicated for each enum variable instead of being implicitly the first item of the enum.
+  - Introduce the use of a string identifier to reference Enum items.
+  - When setting an Enum (e.g. housing_occupancy_status), set the relevant string identifier (e.g. `free_lodger`). Indexes (e.g.`2`) and phrases (e.g. `Free Lodgers`) cannot be used anymore.
+  - The default value is indicated for each Enum variable instead of being implicitly the first item of the enum.
 
 #### Web API request/response
 
@@ -43,7 +43,7 @@ Now:
 Before:
 
 ```
-name: Household living in a 40 sq.meters accomodation while free_lodgers
+name: Household living in a 40 sq.meters accomodation while being free lodgers
   period: 2017
   input_variables:
     accomodation_size:
@@ -56,7 +56,7 @@ name: Household living in a 40 sq.meters accomodation while free_lodgers
 Now:
 
 ```
-name: Household living in a 40 sq.meters accomodation while free_lodgers
+name: Household living in a 40 sq.meters accomodation while being free lodgers
   period: 2017
   input_variables:
     accomodation_size:
@@ -69,8 +69,9 @@ name: Household living in a 40 sq.meters accomodation while free_lodgers
 
 #### Python API
 
-When calculating an enum variable in Python, the output will be an array of enum items.
-> Each enum item has:
+When calculating an enum variable in Python, the output will be an array of Enum items.
+
+> Each Enum item has:
 > - a `name` property that contains its key (e.g. `tenant`)
 > - a `value` property that contains its description (e.g. `"Tenant or lodger who pays a monthly rent"`)
 
