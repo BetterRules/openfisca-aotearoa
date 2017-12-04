@@ -34,7 +34,7 @@ Now:
 "households": {
     "_": {
         "parent": ["Bill"]
-        housing_occupancy_status: "free_lodger"
+        "housing_occupancy_status": "free_lodger"
     }
 }
 ```
