@@ -8,6 +8,7 @@
 from openfisca_core.model_api import *
 # Import the entities specifically defined for this tax and benefit system
 from openfisca_country_template.entities import *
+from enum import Enum
 
 
 # This variable is a pure input: it doesn't have a formula
@@ -27,16 +28,17 @@ class rent(Variable):
 
 
 #  Possible values for the housing_occupancy_status variable, defined further down
-HOUSING_OCCUPANCY_STATUS = Enum([
-    u'Tenant',
-    u'Owner',
-    u'Free logder',
-    u'Homeless'])
+class HousingOccupancyStatus(Enum):
+    tenant = u'Tenant'
+    owner = u'Owner'
+    free_lodger = u'Free logder'
+    homeless = u'Homeless'
 
 
 class housing_occupancy_status(Variable):
     value_type = Enum
-    possible_values = HOUSING_OCCUPANCY_STATUS
+    possible_values = HousingOccupancyStatus
+    default_value = HousingOccupancyStatus.tenant
     entity = Household
     definition_period = MONTH
     label = u"Legal housing situation of the household concerning their main residence"

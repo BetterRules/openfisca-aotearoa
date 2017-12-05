@@ -9,7 +9,7 @@ from openfisca_core.model_api import *
 # Import the entities specifically defined for this tax and benefit system
 from openfisca_country_template.entities import *
 
-from housing import HOUSING_OCCUPANCY_STATUS
+from housing import HousingOccupancyStatus
 
 
 class income_tax(Variable):
@@ -54,11 +54,11 @@ class housing_tax(Variable):
         january = period.first_month
         accommodation_size = household('accomodation_size', january)
 
-        # `housing_occupancy_status` is an Enum. To access an enum element, we use the [] notation.
-        # Note than HOUSING_OCCUPANCY_STATUS has been imported on the beginning of this file.
+        # `housing_occupancy_status` is an Enum. To access an enum element, we use the . notation.
+        # Note than HousingOccupancyStatus has been imported on the beginning of this file.
         occupancy_status = household('housing_occupancy_status', january)
-        tenant = (occupancy_status == HOUSING_OCCUPANCY_STATUS['Tenant'])
-        owner = (occupancy_status == HOUSING_OCCUPANCY_STATUS['Owner'])
+        tenant = (occupancy_status == HousingOccupancyStatus.tenant)
+        owner = (occupancy_status == HousingOccupancyStatus.owner)
 
         # The tax is applied only if the household owns or rents its main residency
         return (owner + tenant) * accommodation_size * 10
