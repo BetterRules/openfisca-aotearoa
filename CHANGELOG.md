@@ -1,8 +1,10 @@
 # Changelog
 
-## 2.0.0 - [#24](https://github.com/openfisca/country-template/pull/24)
+## 2.0.1 - [#24](https://github.com/openfisca/country-template/pull/24) [#27](https://github.com/openfisca/country-template/pull/27)
 
-#### breaking change
+_Note: the 2.0.0 version has been unpublished due to performance issues_
+
+#### Breaking change
 
 * Details:
   - Upgrade to Core v21
@@ -69,11 +71,9 @@ name: Household living in a 40 sq.meters accomodation while being free lodgers
 
 #### Python API
 
-When calculating an enum variable in Python, the output will be an array of Enum items.
+When calculating an enum variable in Python, the output will be an [EnumArray](http://openfisca.readthedocs.io/en/latest/enum_array.html#module-openfisca_core.indexed_enums).
 
-> Each Enum item has:
-> - a `name` property that contains its key (e.g. `tenant`)
-> - a `value` property that contains its description (e.g. `"Tenant or lodger who pays a monthly rent"`)
+See more on the OpenFisca-Core [changelog](https://github.com/openfisca/openfisca-core/blob/enums-perfs/CHANGELOG.md#2102-589-600-605).
 
 ## 1.4.0 - [#26](https://github.com/openfisca/country-template/pull/26)
 

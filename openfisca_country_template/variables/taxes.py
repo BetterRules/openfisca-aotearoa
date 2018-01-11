@@ -9,8 +9,6 @@ from openfisca_core.model_api import *
 # Import the entities specifically defined for this tax and benefit system
 from openfisca_country_template.entities import *
 
-from housing import HousingOccupancyStatus
-
 
 class income_tax(Variable):
     value_type = float
@@ -54,9 +52,10 @@ class housing_tax(Variable):
         january = period.first_month
         accommodation_size = household('accomodation_size', january)
 
-        # `housing_occupancy_status` is an Enum. To access an enum element, we use the . notation.
-        # Note than HousingOccupancyStatus has been imported on the beginning of this file.
+        # `housing_occupancy_status` is an Enum variable
         occupancy_status = household('housing_occupancy_status', january)
+        HousingOccupancyStatus = occupancy_status.possible_values  # Get the enum associated with the variable
+        # To access an enum element, we use the . notation.
         tenant = (occupancy_status == HousingOccupancyStatus.tenant)
         owner = (occupancy_status == HousingOccupancyStatus.owner)
 
