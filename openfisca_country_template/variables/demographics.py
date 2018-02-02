@@ -13,18 +13,13 @@ from numpy import datetime64
 
 
 class age(Variable):
-    # By default, you can use utf-8 characters in a variable. OpenFisca web API manages utf-8 encoding.
     value_type = int
     entity = Person
     definition_period = MONTH
-    label = u"Person's age (in years). In french : Âge d'une personne (en années)."
-    reference = u"https://ar.wikipedia.org/wiki/العمر"
+    label = u"Person's age (in years)"
 
+    # A person's age is computed according to its birth date.
     def formula(person, period, parameters):
-        '''
-        A person's age is computed according to its birth date.
-        In french : L'âge d'une personne est calculé d'après sa date de naissance.
-        '''
         birth = person('birth', period)
         return (datetime64(period.date) - birth).astype('timedelta64[Y]')
 
@@ -36,3 +31,4 @@ class birth(Variable):
     entity = Person
     label = u"Birth date"
     definition_period = ETERNITY  # This variable cannot change over time.
+    reference = u"https://en.wiktionary.org/wiki/birthdate"
