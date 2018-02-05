@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.1.0
+
+* Tax and benefit system evolution
+* Impacted areas: 
+  - Parameters `general`
+  - Variables `benefits`
+* Details:
+  - Add a parameter and a variable with non ascii characters 
+    - Introduce `age_of_retirement` parameter
+    - Introduce `pension` variable
+
 ## 2.0.1 - [#24](https://github.com/openfisca/country-template/pull/24) [#27](https://github.com/openfisca/country-template/pull/27)
 
 _Note: the 2.0.0 version has been unpublished due to performance issues_

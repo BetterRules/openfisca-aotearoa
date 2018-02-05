@@ -41,3 +41,20 @@ class housing_allowance(Variable):
     # This allowance was introduced on the 1st of Jan 1980. Calculating it before this date will always return the variable default value, 0.
     def formula_1980(household, period, parameters):
         return household('rent', period) * parameters(period).benefits.housing_allowance
+
+
+# By default, you can use utf-8 characters in a variable. OpenFisca web API manages utf-8 encoding.
+class pension(Variable):
+    value_type = float
+    entity = Person
+    definition_period = MONTH
+    label = "Pension for the elderly. Pension attribuée aux personnes âgées."
+    reference = [u"https://fr.wikipedia.org/wiki/Retraite_(économie)", u"https://ar.wikipedia.org/wiki/تقاعد"]
+
+    def formula(person, period):
+        '''
+        A person's pension depends on its birth date.
+        In french : La pension d'une personne est attribuée d'après la date de naissance.
+        '''
+        age_condition = person('age', period) >= parameters(period).general.age_of_retirement
+        return age_condition
