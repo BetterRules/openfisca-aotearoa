@@ -1,6 +1,6 @@
 # Changelog
 
-## 2.1.0 - [#29](https://github.com/openfisca/country-template/pull/29)
+## 2.1.0 - [#29](https://github.com/openfisca/country-template/pull/29) [#30](https://github.com/openfisca/country-template/pull/30)
 
 * Tax and benefit system evolution
 * Impacted areas: 
