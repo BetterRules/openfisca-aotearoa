@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-VERSION_CHANGE_TRIGGERS="setup.py MANIFEST.in openfisca_country_template"
+VERSION_CHANGE_TRIGGERS="setup.py MANIFEST.in openfisca_aotearoa"
 
 if git diff-index --quiet origin/master -- $VERSION_CHANGE_TRIGGERS ":(exclude)*.md"
 then exit 0  # there are no changes at all, the version is correct
