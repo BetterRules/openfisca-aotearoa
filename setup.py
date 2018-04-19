@@ -7,9 +7,9 @@ from setuptools import setup, find_packages
 
 setup(
     name='OpenFisca-Aotearoa',
-    version='2.1.0',
-    author='OpenFisca Team',
-    author_email='contact@openfisca.fr',
+    version='2.2.0',
+    author='Service Innovation Lab',
+    author_email='hamish.fraser@dia.govt.nz',
     description=u'OpenFisca tax and benefit system for Aotearoa',
     keywords='benefit microsimulation social tax',
     license='http://www.fsf.org/licensing/licenses/agpl-3.0.html',

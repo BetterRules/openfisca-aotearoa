@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 
 # This file defines the variables of our legislation.
-# A variable is property of a person, or an entity (e.g. a household).
+# A variable is property of a person, or an entity (e.g. a property).
 # See http://openfisca.org/doc/variables.html
 
 # Import from openfisca-core the common python objects used to code the legislation in OpenFisca
 from openfisca_core.model_api import *
 # Import the entities specifically defined for this tax and benefit system
-from openfisca_aotearoa.entities import *
+from openfisca_aotearoa.entities import Person
 
 from numpy import datetime64
 
@@ -27,7 +27,7 @@ class age(Variable):
 # This variable is a pure input: it doesn't have a formula
 class birth(Variable):
     value_type = date
-    default_value = date(1970, 1, 1)  # By default, is no value is set for a simulation, we consider the people involed in a simulation to be born on the 1st of Jan 1970.
+    default_value = date(1970, 1, 1)  # By default, is no value is set for a simulation, we consider the people involved in a simulation to be born on the 1st of Jan 1970.
     entity = Person
     label = u"Birth date"
     definition_period = ETERNITY  # This variable cannot change over time.

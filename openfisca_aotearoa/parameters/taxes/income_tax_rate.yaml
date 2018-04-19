@@ -1,13 +1,47 @@
+brackets:
+- rate:
+    2000-04-01:
+      value: 0.15
+    2008-10-01:
+      value: 0.125
+    2010-10-01:
+      value: 0.105
+  threshold:
+    2000-04-01:
+      value: 0.0
+- rate:
+    2000-04-01:
+      value: 0.21
+    2010-10-01:
+      value: 0.175
+  threshold:
+    2000-04-01:
+      value: 9501.0
+    2008-10-01:
+      value: 14001.0
+- rate:
+    2000-04-01:
+      value: 0.33
+    2010-10-01:
+      value: 0.3
+  threshold:
+    2000-04-01:
+      value: 38001.0
+    2008-10-01:
+      value: 40001.0
+    2009-04-01:
+      value: 48001.0
+- rate:
+    2000-04-01:
+      value: 0.39
+    2009-04-01:
+      value: 0.38
+    2010-10-01:
+      value: 0.33
+  threshold:
+    2000-04-01:
+      value: 60001.0
+    2008-10-01:
+      value: 70001.0
 description: Income tax rate
-values:
-  2012-01-01:
-    value: 0.16
-  2013-01-01:
-    value: 0.13
-  2014-01-01:
-    value: 0.14
-  2015-01-01:
-    value: 0.15
-  # We expect this parameter to change on the 1st of Jan 2016
-  # Placeholders have no impact on calculations. They are just metadata to indicate that we expect a parameter to change at a certain date.
-  2016-01-01: expected
+reference: https://www.parliament.nz/en/pb/research-papers/document/00PLEcoC5191/income-tax-rates

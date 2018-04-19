@@ -1,0 +1,31 @@
+# Test files describe situations and their expected outcomes
+# We can run this test on our command line using `openfisca-run-test openfisca_aotearoa/tests/rates_rebates.yaml`
+
+# these tests need testing, outputs not yet validated
+- name: Someone earning 32103 with no dependants and rates of 2000 should get a rebate of 313 in 2017
+  period: 2017
+  absolute_error_margin: 1
+  input_variables:
+    salary: 32103
+    dependants: 0
+    rates: 2000
+  output_variables:
+    rates_rebate: 313
+- name: Someone earning 35000 with two dependants and rates of 2200 should get a rebate of 84 in 2017
+  period: 2017
+  absolute_error_margin: 1
+  input_variables:
+    salary: 35000
+    dependants: 2
+    rates: 2200
+  output_variables:
+    rates_rebate: 84
+- name: Someone earning 70000 with two dependants and rates of 2200 should get a rebate of 0 in 2017
+  period: 2017
+  absolute_error_margin: 1
+  input_variables:
+    salary: 70000
+    dependants: 2
+    rates: 2000
+  output_variables:
+    rates_rebate: 0

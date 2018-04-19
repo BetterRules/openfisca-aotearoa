@@ -1,7 +1,8 @@
 description: Age of majority (in years)
+reference: http://www.legislation.govt.nz/act/public/1970/0137/latest/whole.html
 values:
   # This parameter has last changed on the 1st of Jan 1971.
-  1945-01-01:
-    value: 21.0
-  1971-01-01:
-    value: 18.0
+  1970-12-02:
+    value: 20.0
+  # proposed 2018 https://www.parliament.nz/en/pb/bills-and-laws/proposed-members-bills/document/52HOH_MEMBILL007_1/age-of-majority-attainment-at-18-years-amendment-bill
+  # value: 18.0

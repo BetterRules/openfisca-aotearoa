@@ -1,0 +1,6 @@
+# A parameter can contain utf-8 characters.
+description: Age of superannuation (entitlement)
+reference: http://legislation.govt.nz/act/public/2001/0084/latest/DLM113987.html
+values:
+  1898-01-01: # this date is not correct, historical analysis required for superannuation
+    value: 65.0

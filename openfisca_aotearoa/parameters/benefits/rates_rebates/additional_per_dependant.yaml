@@ -1,0 +1,6 @@
+description: Additional allowable income per dependant
+values:
+  1973-06-01:
+    value: 156.0
+  2006-06-01:
+    value: 500.0

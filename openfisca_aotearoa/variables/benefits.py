@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 
 # This file defines the variables of our legislation.
-# A variable is property of a person, or an entity (e.g. a household).
+# A variable is property of a person, or an entity (e.g. a property).
 # See http://openfisca.org/doc/variables.html
 
 # Import from openfisca-core the common python objects used to code the legislation in OpenFisca
 from openfisca_core.model_api import *
 # Import the entities specifically defined for this tax and benefit system
-from openfisca_aotearoa.entities import *
+from openfisca_aotearoa.entities import _Property, Person
 
 
 class basic_income(Variable):
@@ -32,15 +32,15 @@ class basic_income(Variable):
 
 class housing_allowance(Variable):
     value_type = float
-    entity = Household
+    entity = _Property
     definition_period = MONTH
     label = "Housing allowange"
     reference = "https://law.gov.example/housing_allowance"  # Always use the most official source
     end = '2016-11-30'  # This allowance was removed on the 1st of Dec 2016. Calculating it before this date will always return the variable default value, 0.
 
     # This allowance was introduced on the 1st of Jan 1980. Calculating it before this date will always return the variable default value, 0.
-    def formula_1980(household, period, parameters):
-        return household('rent', period) * parameters(period).benefits.housing_allowance
+    def formula_1980(_property, period, parameters):
+        return _property('rent', period) * parameters(period).benefits.housing_allowance
 
 
 # By default, you can use utf-8 characters in a variable. OpenFisca web API manages utf-8 encoding.
