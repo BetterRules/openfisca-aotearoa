@@ -14,3 +14,5 @@
     rent: 400
   output_variables:
     housing_allowance: 0
+
+# This file is from the OpenFisca default country template and as such can be removed

@@ -4,22 +4,22 @@
 from openfisca_core.entities import build_entity
 
 
-# to be renamed, currently experimenting with structure
-_Property = build_entity(
-    key = "_property",
-    plural = "_properties",
-    label = u'_Property',
+# Using middle english spelling due to "property being a python keyword. 
+Propertee = build_entity(
+    key = "propertee",
+    plural = "properties",
+    label = u'Property',
     doc = '''
-    _Property is an example of a group entity.
+    Propertee is an example of a group entity.
     A group entity contains one or more individual·s.
     Each individual in a group entity has a role (e.g. rate payer, owner, resident). Some roles can only be held by a limited number of individuals (e.g. a 'first_parent' can only be held by one individual), while others can have an unlimited number of individuals (e.g. 'children').
 
     Example:
-    _Property variables (e.g. _property rates') are usually defined for a group entity such as '_Property'.
+    Propertee variables (e.g. properties rates') are usually defined for a group entity such as 'Propertee'.
 
     Usage:
-    Check the number of individuals of a specific role (e.g. check if there is a 'rate_payer'  _property.nb_persons(_Property.RATE_PAYER)).
-    Calculate a variable applied to each individual of the group entity (e.g. calculate the 'salary' of each member of the 'Property' with salaries = _property.members('salary', period = MONTH); sum_salaries = _property.sum(salaries)).
+    Check the number of individuals of a specific role (e.g. check if there is a 'rate_payer'  properties.nb_persons(Propertee.RATE_PAYER)).
+    Calculate a variable applied to each individual of the group entity (e.g. calculate the 'salary' of each member of the 'Property' with salaries = properties.members('salary', period = MONTH); sum_salaries = properties.sum(salaries)).
 
     For more information, see: http://openfisca.org/doc/coding-the-legislation/50_entities.html
     ''',
@@ -29,7 +29,6 @@ _Property = build_entity(
             'plural': 'owners',
             'label': u'Owners',
             'max': 2,
-            'subroles': ['rate_payer'],
             'doc': u'The one or more persons who hold title for the property.'
             },
         {
@@ -60,4 +59,4 @@ Person = build_entity(
     is_person = True,
     )
 
-entities = [_Property, Person]
+entities = [Propertee, Person]

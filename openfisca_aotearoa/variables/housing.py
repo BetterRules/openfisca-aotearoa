@@ -7,13 +7,13 @@
 # Import from openfisca-core the common python objects used to code the legislation in OpenFisca
 from openfisca_core.model_api import *
 # Import the entities specifically defined for this tax and benefit system
-from openfisca_aotearoa.entities import _Property
+from openfisca_aotearoa.entities import Propertee
 
 
 # This variable is a pure input: it doesn't have a formula
 class accomodation_size(Variable):
     value_type = float
-    entity = _Property
+    entity = Propertee
     definition_period = MONTH
     label = u"Size of the accomodation, in square metres"
 
@@ -21,7 +21,7 @@ class accomodation_size(Variable):
 # This variable is a pure input: it doesn't have a formula
 class rent(Variable):
     value_type = float
-    entity = _Property
+    entity = Propertee
     definition_period = MONTH
     label = u"Rent paid by the property"
 
@@ -39,6 +39,8 @@ class housing_occupancy_status(Variable):
     value_type = Enum
     possible_values = HousingOccupancyStatus
     default_value = HousingOccupancyStatus.tenant
-    entity = _Property
+    entity = Propertee
     definition_period = MONTH
     label = u"Legal housing situation of the property concerning their main residence"
+
+# This file is from the OpenFisca default country template and as such can be removed

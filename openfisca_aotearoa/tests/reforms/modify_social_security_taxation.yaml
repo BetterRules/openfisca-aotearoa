@@ -28,3 +28,5 @@
     salary: 50000
   output_variables:
     social_security_contribution: 8336
+
+# This file is from the OpenFisca default country template and as such can be removed

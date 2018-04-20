@@ -19,7 +19,7 @@
     dependants: 2
     rates: 2200
   output_variables:
-    rates_rebate: 84
+    rates_rebate: 208
 - name: Someone earning 70000 with two dependants and rates of 2200 should get a rebate of 0 in 2017
   period: 2017
   absolute_error_margin: 1
@@ -29,3 +29,4 @@
     rates: 2000
   output_variables:
     rates_rebate: 0
+

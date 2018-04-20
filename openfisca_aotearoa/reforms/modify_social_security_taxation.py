@@ -44,3 +44,5 @@ class modify_social_security_taxation(Reform):
         brackets.append(new_bracket)
 
         return parameters
+
+# This file is from the OpenFisca default country template and as such can be removed

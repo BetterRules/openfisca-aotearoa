@@ -32,3 +32,5 @@ class birth(Variable):
     label = u"Birth date"
     definition_period = ETERNITY  # This variable cannot change over time.
     reference = u"https://en.wiktionary.org/wiki/birthdate"
+
+# This file is from the OpenFisca default country template and as such can be removed

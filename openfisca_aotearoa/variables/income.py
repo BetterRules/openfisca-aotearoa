@@ -34,3 +34,5 @@ class disposable_income(Variable):
             - person('income_tax', period)
             - person('social_security_contribution', period)
             )
+
+# This file is from the OpenFisca default country template and as such can be removed

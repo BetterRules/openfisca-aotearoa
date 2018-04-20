@@ -15,3 +15,5 @@ class removal_basic_income(Reform):
     def apply(self):
         # Our reform neutralizes the `basic_income` variable. When this reform is applied, calculating `basic_income` will always return its default value, 0.
         self.neutralize_variable('basic_income')
+
+# This file is from the OpenFisca default country template and as such can be removed

@@ -48,3 +48,5 @@
     age: 18
   output_variables:
     basic_income: 600
+
+# This file is from the OpenFisca default country template and as such can be removed

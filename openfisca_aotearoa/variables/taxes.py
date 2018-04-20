@@ -8,7 +8,7 @@
 from openfisca_core.model_api import *
 # attempt to reference calc
 # Import the entities specifically defined for this tax and benefit system
-from openfisca_aotearoa.entities import _Property, Person
+from openfisca_aotearoa.entities import Propertee, Person
 
 
 class income_tax(Variable):
@@ -25,6 +25,7 @@ class income_tax(Variable):
         return bareme.calc(salary)
 
 
+# This variable is from the OpenFisca default country template and as such can be removed
 class social_security_contribution(Variable):
     value_type = float
     entity = Person
@@ -41,22 +42,23 @@ class social_security_contribution(Variable):
         return scale.calc(salary)
 
 
+# This variable is from the OpenFisca default country template and as such can be removed
 class housing_tax(Variable):
     value_type = float
-    entity = _Property
+    entity = Propertee
     definition_period = YEAR  # This housing tax is defined for a year.
     label = u"Tax paid by each property proportionnally to the size of its accommodation"
     reference = "https://law.gov.example/housing_tax"  # Always use the most official source
 
-    def formula(_property, period, parameters):
+    def formula(properties, period, parameters):
         # The housing tax is defined for a year, but depends on the `accomodation_size` and `housing_occupancy_status` on the first month of the year.
         # Here period is a year. We can get the first month of a year with the following shortcut.
         # To build different periods, see http://openfisca.org/doc/coding-the-legislation/35_periods.html#calculating-dependencies-for-a-specific-period
         january = period.first_month
-        accommodation_size = _property('accomodation_size', january)
+        accommodation_size = properties('accomodation_size', january)
 
         # `housing_occupancy_status` is an Enum variable
-        occupancy_status = _property('housing_occupancy_status', january)
+        occupancy_status = properties('housing_occupancy_status', january)
         HousingOccupancyStatus = occupancy_status.possible_values  # Get the enum associated with the variable
         # To access an enum element, we use the . notation.
         tenant = (occupancy_status == HousingOccupancyStatus.tenant)

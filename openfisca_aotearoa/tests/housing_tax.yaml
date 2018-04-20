@@ -30,3 +30,5 @@
     housing_tax: 1000
     housing_occupancy_status:
       2017-01: tenant
+
+# This file is from the OpenFisca default country template and as such can be removed

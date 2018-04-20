@@ -22,3 +22,5 @@ class flat_social_security_contribution(Reform):
     # See http://openfisca.org/doc/coding-the-legislation/reforms.html#writing-a-reform
     def apply(self):
         self.update_variable(social_security_contribution)
+
+# This file is from the OpenFisca default country template and as such can be removed

@@ -5,3 +5,5 @@ values:
     value: 0.25
   2016-12-01:
     value: null
+
+# This file is from the OpenFisca default country template and as such can be removed

@@ -35,3 +35,5 @@ brackets:
     2017-01-01:
       value: 12400.0
 description: Social security contribution tax scale
+
+# This file is from the OpenFisca default country template and as such can be removed

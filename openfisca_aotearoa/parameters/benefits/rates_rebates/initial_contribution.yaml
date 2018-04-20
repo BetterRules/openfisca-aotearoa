@@ -1,4 +1,5 @@
 description: Initial contribution by ratepayer
+reference: Obtained from spreadsheet at Department Of Internal Affairs Innovation Lab
 values:
   1973-06-01:
     value: 50.0
@@ -12,3 +13,6 @@ values:
     value: 40.0
   1990-06-01:
     value: 160.0
+
+# best practice indicates we should repeat values when a value is determined in an Act, even if it's the same
+# as such this file needs more research before it can be considered complete

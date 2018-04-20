@@ -3,3 +3,5 @@ values:
   # This parameter is only defined since the 1st of Dec 2015.
   2015-12-01:
     value: 600.0
+
+# This file is from the OpenFisca default country template and as such can be removed

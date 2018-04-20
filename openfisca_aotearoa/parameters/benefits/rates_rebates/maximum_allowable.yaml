@@ -1,4 +1,5 @@
 description: Maximum allowable rates rebate
+reference: Obtained from spreadsheet at Department Of Internal Affairs Innovation Lab
 values:
   1973-06-01:
     value: null
@@ -29,4 +30,5 @@ values:
   2016-06-01:
     value: 620.0
 
-
+# best practice indicates we should repeat values when a value is determined in an Act, even if it's the same
+# as such this file needs more research before it can be considered complete

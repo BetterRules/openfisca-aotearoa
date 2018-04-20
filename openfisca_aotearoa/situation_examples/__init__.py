@@ -15,3 +15,5 @@ def parse(file_name):
 
 single = parse('single.json')
 couple = parse('couple.json')
+
+# This file is from the OpenFisca default country template and as such can be removed

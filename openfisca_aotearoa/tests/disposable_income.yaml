@@ -63,3 +63,5 @@
     salary: 10000
   output_variables:
     disposable_income: 8740
+
+# This file is from the OpenFisca default country template and as such can be removed
