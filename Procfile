@@ -1,1 +1,1 @@
-web: openfisca serve --country-package openfisca_aotearoa --port 80
+web: openfisca serve --country-package openfisca_aotearoa --port 80 --bind 0.0.0.0
