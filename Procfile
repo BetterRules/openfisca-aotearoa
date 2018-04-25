@@ -1,1 +1,1 @@
-web: openfisca serve --country-package openfisca_aotearoa
+web: openfisca serve --country-package openfisca_aotearoa --port $PORT
