@@ -43,7 +43,7 @@ values:
     value: 24440.0
   2016-06-01:
     value: 24470.0
-  2016-06-01:
+  2017-06-01:
     value: 24790.0
 
 # best practice indicates we should repeat values when a value is determined in an Act, even if it's the same
