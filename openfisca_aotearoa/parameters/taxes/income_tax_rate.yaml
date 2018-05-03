@@ -1,3 +1,5 @@
+description: Income tax rate
+reference: http://www.legislation.govt.nz/act/public/2007/0097/latest/versions.aspx
 brackets:
 - rate:
     2000-04-01:
@@ -43,8 +45,7 @@ brackets:
       value: 60001.0
     2008-10-01:
       value: 70001.0
-description: Income tax rate
-reference: https://www.parliament.nz/en/pb/research-papers/document/00PLEcoC5191/income-tax-rates
+
 
 # best practice indicates we should repeat values when a value is determined in an Act, even if it's the same
 # as such this file needs more research before it can be considered complete
