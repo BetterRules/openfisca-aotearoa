@@ -26,10 +26,6 @@ jobs:
           paths:
             - /usr/local/lib/python2.7/site-packages/
 
-  test:
-    docker:
-      - image: circleci/python:2.7-jessie
-    steps:
       - run:
           name: Run tests
           command: make test
@@ -57,12 +53,9 @@ workflows:
   build_and_test:
     jobs:
       - build
-      - test:
-          requires:
-            - build
       - deploy:
           requires:
-            - test
+            - build
           filters:
             # owner: ServiceInnovationLab  # prevent failed builds on forks # This filter is not valid yet in CircleCI 2.0, see <https://discuss.circleci.com/t/20443>
             branches:
