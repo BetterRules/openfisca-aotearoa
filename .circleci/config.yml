@@ -7,7 +7,8 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-          key: dependency-cache-{{ checksum "setup.py" }}
+          environment:
+          key: cache-{{ checksum "setup.py" }}
 
       - run:
           name: Install execution dependencies
@@ -21,7 +22,9 @@ jobs:
           command: pip install --user twine
 
       - save_cache:
-          key: dependency-cache-{{ checksum "setup.py" }}
+          key: cache-{{ checksum "setup.py" }}
+          paths:
+            - /usr/local/lib/python2.7/site-packages/
 
   test:
     docker:
