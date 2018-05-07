@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
 
-# This file defines the variables of our legislation.
-# A variable is property of a person, or an entity (e.g. a property).
-# See http://openfisca.org/doc/variables.html
-
 # Import from openfisca-core the common python objects used to code the legislation in OpenFisca
 from openfisca_core.model_api import *
 # Import the entities specifically defined for this tax and benefit system
@@ -61,7 +57,7 @@ class maximum_income_for_full_rebate(Variable):
     entity = Propertee
     definition_period = YEAR
     label = "Maximum income eligible for the full rebate, less than this number should get full rebate"
-    reference = "https://stats.gov.example/disposable_income"  # Some variables represent quantities used in economic models, and not defined by law. Always give the source of your definition.
+    reference = ""
 
     def formula(properties, period, parameters):
         ratesperiod = period.offset(-6, 'month')
@@ -82,7 +78,7 @@ class minimum_income_for_no_rebate(Variable):
     entity = Propertee
     definition_period = YEAR
     label = "Minimum income that returns no rebate. Less than this number gets a rebate"
-    reference = "https://stats.gov.example/disposable_income"  # Some variables represent quantities used in economic models, and not defined by law. Always give the source of your definition.
+    reference = ""
 
     def formula(properties, period, parameters):
         ratesperiod = period.offset(-6, 'month')
