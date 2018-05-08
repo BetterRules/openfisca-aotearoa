@@ -8,33 +8,36 @@ jobs:
       - checkout
       - restore_cache:
           environment:
-          key: cache-userdeps-{{ checksum "setup.py" }}
+          key: cache-virtualenv-{{ checksum "setup.py" }}
 
       - run:
-          name: Install execution dependencies
+          name: Update package manager
           command: |
             pip install --upgrade pip wheel  # pip >= 8.0 needed to be compatible with "manylinux" wheels, used by numpy >= 1.11
+
+      - run:
+          name: Set up virtualenv
+          command: |
+            sudo pip install pew
+            pew new openfisca --python=python2.7
             # pip install --editable git+https://github.com/openfisca/openfisca-core.git@BRANCH_NAME#egg=OpenFisca-Core  # use a specific branch of OpenFisca-Core
-            pip install .[test] --user --upgrade
+            pew workon openfisca
+            pip install .[test] --upgrade
 
       - run:
           name: Install deployment dependencies
-          command: pip install --user twine
+          command: pip install twine
 
       - save_cache:
-          key: cache-userdeps-{{ checksum "setup.py" }}
+          key: cache-virtualenv-{{ checksum "setup.py" }}
           paths:
-            - $HOME/.local/lib/python2.7/site-packages/
+            - $HOME/.local/share/virtualenvs/openfisca
 
       - run:
-          environment:
-            - PATH: $HOME/.local/bin:$PATH
           name: Run tests
           command: make test
 
       - run:
-          environment:
-            - PATH: $HOME/.local/bin:$PATH
           name: Check version number has been properly updated
           command: |
             git fetch
