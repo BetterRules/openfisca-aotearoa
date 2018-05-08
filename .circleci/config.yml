@@ -1,0 +1,70 @@
+# CircleCI 2.0 configuration file. See <https://circleci.com/docs/2.0/language-python/>.
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/python:2.7-jessie
+    steps:
+      - checkout
+      - run:
+          name: Allow cache restore
+          command: |
+            sudo chown -R circleci:circleci /usr/local/bin
+            sudo chown -R circleci:circleci /usr/local/lib/python2.7/site-packages
+
+      - restore_cache:
+          environment:
+          key: cache-root-{{ checksum "setup.py" }}
+
+      - run:
+          name: Install execution dependencies
+          command: |
+            sudo pip install --upgrade pip wheel  # pip >= 8.0 needed to be compatible with "manylinux" wheels, used by numpy >= 1.11
+            # sudo pip install --editable git+https://github.com/openfisca/openfisca-core.git@BRANCH_NAME#egg=OpenFisca-Core  # use a specific branch of OpenFisca-Core
+            sudo pip install .[test] --upgrade
+
+      - run:
+          name: Install deployment dependencies
+          command: sudo pip install twine
+
+      - save_cache:
+          key: cache-root-{{ checksum "setup.py" }}
+          paths:
+            - /usr/local/lib/python2.7/site-packages/
+            - /usr/local/bin
+
+      - run:
+          name: Run tests
+          command: make test
+
+      - run:
+          name: Check version number has been properly updated
+          command: |
+            git fetch
+            ./check-version-bump.sh
+
+  deploy:
+    docker:
+      - image: circleci/python:2.7-jessie
+    environment:
+      - PATH: $HOME/.local/bin:$PATH
+      - PYPI_USERNAME: nzlabplus-bot  # here be the name of the Government Innovation Service Lab Pypi account to automatically publish the OpenFisca-Aotearoa package to Pypi
+    # - PYPI_PASSWORD: this value will have to be set in CircleCI's web interface; do not set it here, it is a secret!
+    steps:
+      - run:
+          name: Upload package to Pypi if functional changes were made
+          command: ./deploy-if-version-bump.sh
+
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            # owner: ServiceInnovationLab  # prevent failed builds on forks # This filter is not valid yet in CircleCI 2.0, see <https://discuss.circleci.com/t/20443>
+            branches:
+              only: master
