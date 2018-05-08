@@ -1,33 +1,33 @@
 description: Maximum allowable rates rebate
 reference: Obtained from spreadsheet at Department Of Internal Affairs Innovation Lab
 values:
-  1973-06-01:
+  1973-07:
     value: null
-  1979-06-01:
+  1979-07:
     value: 200.0
-  1990-04-01:
+  1990-04:
     value: 50.0
-  1990-06-01:
+  1990-07:
     value: 200.0
-  2006-06-01:
+  2006-07:
     value: 500.0
-  2008-06-01:
+  2008-07:
     value: 530.0
-  2009-06-01:
+  2009-07:
     value: 550.0
-  2010-06-01:
+  2010-07:
     value: 570.0
-  2011-06-01:
+  2011-07:
     value: 580.0
-  2012-06-01:
+  2012-07:
     value: 590.0
-  2013-06-01:
+  2013-07:
     value: 595.0
-  2014-06-01:
+  2014-07:
     value: 605.0
-  2015-06-01:
+  2015-07:
     value: 610.0
-  2017-06-01:
+  2017-07:
     value: 620.0
 
 # best practice indicates we should repeat values when a value is determined in an Act, even if it's the same

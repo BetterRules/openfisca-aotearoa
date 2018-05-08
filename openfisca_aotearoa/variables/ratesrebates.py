@@ -34,13 +34,14 @@ class rates_rebate(Variable):
     reference = "https://stats.gov.example/disposable_income"  # Some variables represent quantities used in economic models, and not defined by law. Always give the source of your definition.
 
     def formula(properties, period, parameters):
-        income_threshold = parameters(period).benefits.rates_rebates.income_threshold
-        additional_per_dependant = parameters(period).benefits.rates_rebates.additional_per_dependant
-        initial_contribution = parameters(period).benefits.rates_rebates.initial_contribution
-        maximum_allowable = parameters(period).benefits.rates_rebates.maximum_allowable
+        ratesperiod = period.offset(-6, 'month')
+        income_threshold = parameters(ratesperiod).benefits.rates_rebates.income_threshold
+        additional_per_dependant = parameters(ratesperiod).benefits.rates_rebates.additional_per_dependant
+        initial_contribution = parameters(ratesperiod).benefits.rates_rebates.initial_contribution
+        maximum_allowable = parameters(ratesperiod).benefits.rates_rebates.maximum_allowable
 
         # sum allowable income including all the dependants for property
-        allowable_income = (properties.sum(properties.members('dependants', period)) * additional_per_dependant) + income_threshold
+        allowable_income = (properties.sum(properties.members('dependants', ratesperiod)) * additional_per_dependant) + income_threshold
         
         # calculate the excess income based on the allowable income
         excess_income = (properties.sum(properties.members('salary', period)) - allowable_income) / 8
@@ -63,12 +64,13 @@ class maximum_income_for_full_rebate(Variable):
     reference = "https://stats.gov.example/disposable_income"  # Some variables represent quantities used in economic models, and not defined by law. Always give the source of your definition.
 
     def formula(properties, period, parameters):
-        income_threshold = parameters(period).benefits.rates_rebates.income_threshold
-        additional_per_dependant = parameters(period).benefits.rates_rebates.additional_per_dependant
-        initial_contribution = parameters(period).benefits.rates_rebates.initial_contribution
+        ratesperiod = period.offset(-6, 'month')
+        income_threshold = parameters(ratesperiod).benefits.rates_rebates.income_threshold
+        additional_per_dependant = parameters(ratesperiod).benefits.rates_rebates.additional_per_dependant
+        initial_contribution = parameters(ratesperiod).benefits.rates_rebates.initial_contribution
 
         # sum allowable income including all the dependants for property
-        allowable_income = (properties.sum(properties.members('dependants', period)) * additional_per_dependant) + income_threshold
+        allowable_income = (properties.sum(properties.members('dependants', ratesperiod)) * additional_per_dependant) + income_threshold
         # what we're using to compute the maximum salary for full rebate
         rebate = parameters(period).benefits.rates_rebates.maximum_allowable
 
@@ -83,12 +85,13 @@ class minimum_income_for_no_rebate(Variable):
     reference = "https://stats.gov.example/disposable_income"  # Some variables represent quantities used in economic models, and not defined by law. Always give the source of your definition.
 
     def formula(properties, period, parameters):
-        income_threshold = parameters(period).benefits.rates_rebates.income_threshold
-        additional_per_dependant = parameters(period).benefits.rates_rebates.additional_per_dependant
-        initial_contribution = parameters(period).benefits.rates_rebates.initial_contribution
+        ratesperiod = period.offset(-6, 'month')
+        income_threshold = parameters(ratesperiod).benefits.rates_rebates.income_threshold
+        additional_per_dependant = parameters(ratesperiod).benefits.rates_rebates.additional_per_dependant
+        initial_contribution = parameters(ratesperiod).benefits.rates_rebates.initial_contribution
 
         # sum allowable income including all the dependants for property
-        allowable_income = (properties.sum(properties.members('dependants', period)) * additional_per_dependant) + income_threshold
+        allowable_income = (properties.sum(properties.members('dependants', ratesperiod)) * additional_per_dependant) + income_threshold
         # what we're using to compute the maximum salary for full rebate
         rebate = 0
 
