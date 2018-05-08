@@ -60,10 +60,11 @@ workflows:
   build_and_test:
     jobs:
       - build
-      - deploy:
-          requires:
-            - build
-          filters:
-            # owner: ServiceInnovationLab  # prevent failed builds on forks # This filter is not valid yet in CircleCI 2.0, see <https://discuss.circleci.com/t/20443>
-            branches:
-              only: master
+      # Uncomment the lines below when you have a Pypi account and you are ready to deploy your country package to reusers.
+      # - deploy:
+      #     requires:
+      #       - build
+      #     filters:
+      #       # owner: ServiceInnovationLab  # prevent failed builds on forks # This filter is not valid yet in CircleCI 2.0, see <https://discuss.circleci.com/t/20443>
+      #       branches:
+      #         only: master
