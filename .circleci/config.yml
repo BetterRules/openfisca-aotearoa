@@ -6,32 +6,32 @@ jobs:
       - image: circleci/python:2.7-jessie
     steps:
       - checkout
+      - run:
+          name: Allow cache restore
+          command: |
+            sudo chown -R circleci:circleci /usr/local/bin
+            sudo chown -R circleci:circleci /usr/local/lib/python2.7/site-packages
+
       - restore_cache:
           environment:
-          key: cache-virtualenv-{{ checksum "setup.py" }}
+          key: cache-root-{{ checksum "setup.py" }}
 
       - run:
-          name: Update package manager
+          name: Install execution dependencies
           command: |
-            pip install --upgrade pip wheel  # pip >= 8.0 needed to be compatible with "manylinux" wheels, used by numpy >= 1.11
-
-      - run:
-          name: Set up virtualenv
-          command: |
-            sudo pip install pew
-            pew new openfisca --python=python2.7
-            # pip install --editable git+https://github.com/openfisca/openfisca-core.git@BRANCH_NAME#egg=OpenFisca-Core  # use a specific branch of OpenFisca-Core
-            pew workon openfisca
-            pip install .[test] --upgrade
+            sudo pip install --upgrade pip wheel  # pip >= 8.0 needed to be compatible with "manylinux" wheels, used by numpy >= 1.11
+            # sudo pip install --editable git+https://github.com/openfisca/openfisca-core.git@BRANCH_NAME#egg=OpenFisca-Core  # use a specific branch of OpenFisca-Core
+            sudo pip install .[test] --upgrade
 
       - run:
           name: Install deployment dependencies
-          command: pip install twine
+          command: sudo pip install twine
 
       - save_cache:
-          key: cache-virtualenv-{{ checksum "setup.py" }}
+          key: cache-root-{{ checksum "setup.py" }}
           paths:
-            - $HOME/.local/share/virtualenvs/openfisca
+            - /usr/local/lib/python2.7/site-packages/
+            - /usr/local/bin
 
       - run:
           name: Run tests
