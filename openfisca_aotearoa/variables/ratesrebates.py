@@ -46,10 +46,10 @@ class rates_rebate(Variable):
         excess_income = (properties.sum(properties.members('salary', period)) - allowable_income) / 8
 
         # minus the initial contribution
-        ratesminuscontribution = properties('rates', period) - initial_contribution
+        rates_minus_contribution = properties('rates', period) - initial_contribution
 
         # perform the calculation
-        rebate = ratesminuscontribution - ((ratesminuscontribution / 3) + excess_income)
+        rebate = rates_minus_contribution - ((rates_minus_contribution / 3) + excess_income)
 
         # clips the results between 0 and the maximum_allowable
         return clip(rebate, 0, maximum_allowable)
