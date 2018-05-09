@@ -41,7 +41,7 @@ class rates_rebate(Variable):
 
         # sum allowable income including all the dependants for property
         allowable_income = (properties.sum(properties.members('dependants', period)) * additional_per_dependant) + income_threshold
-        
+
         # calculate the excess income based on the allowable income
         excess_income = (properties.sum(properties.members('salary', period)) - allowable_income) / 8
 
