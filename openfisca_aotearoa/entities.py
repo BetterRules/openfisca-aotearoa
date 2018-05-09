@@ -10,18 +10,13 @@ Propertee = build_entity(
     plural = "properties",
     label = u'Property',
     doc = '''
-    Propertee is an example of a group entity.
-    A group entity contains one or more individual·s.
-    Each individual in a group entity has a role (e.g. rate payer, owner, resident). Some roles can only be held by a limited number of individuals (e.g. a 'first_parent' can only be held by one individual), while others can have an unlimited number of individuals (e.g. 'children').
+    A Property represents accommodation that is owned by a group of Persons.
 
-    Example:
-    Propertee variables (e.g. properties rates') are usually defined for a group entity such as 'Propertee'.
+    Example usage:
+    Check the number of individuals of a specific role: check how many persons co-own the property: `properties.nb_persons(Propertee.OWNER)`.
+    Calculate a variable applied to each tenant of the group entity: calculate the income of each member of the Property: `tenants_incomes = properties.members('income', period = MONTH); tenants_total_income = properties.sum(tenants_incomes)`.
 
-    Usage:
-    Check the number of individuals of a specific role (e.g. check if there is a 'rate_payer'  properties.nb_persons(Propertee.RATE_PAYER)).
-    Calculate a variable applied to each individual of the group entity (e.g. calculate the 'salary' of each member of the 'Property' with salaries = properties.members('salary', period = MONTH); sum_salaries = properties.sum(salaries)).
-
-    For more information, see: http://openfisca.org/doc/coding-the-legislation/50_entities.html
+    For more information on group entities, see: http://openfisca.org/doc/coding-the-legislation/50_entities.html
     ''',
     roles = [
         {
@@ -54,7 +49,7 @@ Person = build_entity(
     Calculate a variable applied to a 'Person' (e.g. access the 'salary' of a specific month with person('salary', "2017-05")).
     Check the role of a 'Person' in a group entity (e.g. check if a the 'Person' is a 'first_parent' in a 'Property' entity with person.has_role(Property.FIRST_PARENT)).
 
-    For more information, see: http://openfisca.org/doc/coding-the-legislation/50_entities.html
+    For more information on entities, see: http://openfisca.org/doc/coding-the-legislation/50_entities.html
     ''',
     is_person = True,
     )
