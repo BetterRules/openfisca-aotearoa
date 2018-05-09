@@ -41,19 +41,18 @@ jobs:
           name: Check version number has been properly updated
           command: |
             git fetch
-            ./check-version-bump.sh
+            ./.circleci/check-version-bump.sh
 
   deploy:
     docker:
       - image: circleci/python:2.7-jessie
     environment:
-      - PATH: $HOME/.local/bin:$PATH
       - PYPI_USERNAME: nzlabplus-bot  # here be the name of the Government Innovation Service Lab Pypi account to automatically publish the OpenFisca-Aotearoa package to Pypi
     # - PYPI_PASSWORD: this value will have to be set in CircleCI's web interface; do not set it here, it is a secret!
     steps:
       - run:
           name: Upload package to Pypi if functional changes were made
-          command: ./deploy-if-version-bump.sh
+          command: ./.circleci/deploy-if-version-bump.sh
 
 
 workflows:
@@ -61,10 +60,11 @@ workflows:
   build_and_test:
     jobs:
       - build
-      - deploy:
-          requires:
-            - build
-          filters:
-            # owner: ServiceInnovationLab  # prevent failed builds on forks # This filter is not valid yet in CircleCI 2.0, see <https://discuss.circleci.com/t/20443>
-            branches:
-              only: master
+      # Uncomment the lines below when you have a Pypi account and you are ready to deploy your country package to reusers.
+      # - deploy:
+      #     requires:
+      #       - build
+      #     filters:
+      #       # owner: ServiceInnovationLab  # prevent failed builds on forks # This filter is not valid yet in CircleCI 2.0, see <https://discuss.circleci.com/t/20443>
+      #       branches:
+      #         only: master
