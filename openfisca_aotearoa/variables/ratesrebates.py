@@ -30,8 +30,8 @@ class rates_rebate(Variable):
     value_type = float
     entity = Propertee
     definition_period = YEAR
-    reference = "https://stats.gov.example/disposable_income"  # Some variables represent quantities used in economic models, and not defined by law. Always give the source of your definition.
     label = "Yearly rebate applied to housing rates. Defined on a calendar year, not a fiscal year."
+    reference = ""
 
     def formula(properties, period, parameters):
         income_threshold = parameters(period).benefits.rates_rebates.income_threshold
