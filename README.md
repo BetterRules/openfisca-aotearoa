@@ -2,17 +2,20 @@
 
 ## Writing the Legislation
 
-The country whose law is modelled here has a very simple tax and benefit system.
+Aotearoa New Zealand's legislation as code utilising Open Fisca. 
+Initially the focus is on developing some use-cases and best practice standards around both code and presentation of the legislation
 
-- It has a flat rate tax whose rates increase every year.
-- On the first of December, 2015, it introduced a basic income for all its citizens of age who have no income.
-- On the first of December, 2016, it removed the income condition, providing all its adult citizens with a basic income.
+Branches currently as follows:
+
+- feature/rates_rebate, first use case - this branch is being used in a live alpha
+- feature/income_tax, initial approach to develop a best practice standard. Comments, pull requests welcomed
+- feature/paid_parental_leave, work started on the paid parental leave legislation
 
 These elements are described in different folders. All the modelling happens within the `openfisca_aotearoa` folder.
 
 - The rates are in the `parameters` folder.
 - The formulas are in the `variables` folder.
-- This country package comes also with *reforms* in the `reforms` folder. This is optional: your country may exist without defining any reform.
+- The *reforms* are in the `reforms` folder. This is currently just the initial OpenFisca country template reforms.
     - In this country, there is [a reform project](./openfisca_aotearoa/reforms/modify_social_security_taxation.py) aiming to modify the social security taxation, deleting the first bracket, raising the intermediary ones and adding a new bracket with a higher tax rate of `40 %` for people earning more than `40000`. This reform project would apply starting from `2017-01-01`.
 
 The files that are outside from the `openfisca_aotearoa` folder are used to set up the development environment.
@@ -176,4 +179,4 @@ curl "http://localhost:5000/spec"
 
 This endpoint returns the [Open API specification](https://www.openapis.org/) of your API.
 
-:tada: This OpenFisca Country Package is now served by the OpenFisca Web API! To learn more, go to the [OpenFisca Web API documentation](http://openfisca.org/doc/openfisca-web-api/index.html)
+:tada: OpenFisca Aotearoa is now served by the OpenFisca Web API! To learn more, go to the [OpenFisca Web API documentation](http://openfisca.org/doc/openfisca-web-api/index.html)
