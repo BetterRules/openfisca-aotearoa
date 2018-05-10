@@ -2,7 +2,7 @@
 
 # These tests have been created with the Universal Rates Rebate Calculator spreadsheet provided by the DIA Rates Rebate team
 - name: Someone earning 32103 with no dependants and rates of 2000
-  period: 2017
+  period: 2018
   absolute_error_margin: 1
   input_variables:
     salary: 32103
@@ -11,7 +11,7 @@
   output_variables:
     rates_rebate: 312.67
 - name: Someone earning 35000 with two dependants and rates of 2200
-  period: 2017
+  period: 2018
   absolute_error_margin: 1
   input_variables:
     salary: 35000
@@ -20,7 +20,7 @@
   output_variables:
     rates_rebate: 209
 - name: Someone earning 70000 with two dependants and rates of 2200
-  period: 2017
+  period: 2018
   absolute_error_margin: 1
   input_variables:
     salary: 70000
