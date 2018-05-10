@@ -5,7 +5,7 @@
 * Tax and benefit system evolution
 * Impacted periods: from 1973-07
 * Impacted areas: 
-  - Parameters `benefits/rates_rebates`,`taxes`
+  - Parameters `benefits/rates_rebates`
   - Variables `rates_rebates`
   - Entities
 * Details:
@@ -28,7 +28,7 @@
 * Details:
   - Introduce new general legislation parameters
     - Introduce `general/age_of_majority` parameter
-    - Introduce `genearl/age_of_superannuation` parameter
+    - Introduce `general/age_of_superannuation` parameter
 <!-- -->
 * Tax and benefit system evolution
 * Impacted periods: from 2000-04-01
