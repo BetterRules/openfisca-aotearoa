@@ -56,11 +56,11 @@ Each change must be documented with the following elements:
 
 
 > For instance :
-> # 13.0.0 - [#671](https://github.com/openfisca/openfisca-france/pull/671)
+> # 13.0.0 - [#671](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/671)
 >
-> ## 13.2.0 - [#676](https://github.com/openfisca/openfisca-france/pull/676)
+> ## 13.2.0 - [#676](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/676)
 >
-> ### 13.1.5 - [#684](https://github.com/openfisca/openfisca-france/pull/684)
+> ### 13.1.5 - [#684](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/684)
 
 - The second line indicates the type of the change. The possible types are:
  - `Tax and benefit system evolution`: Calculation improvement, fix, or update. Impacts the users interested in calculations.
