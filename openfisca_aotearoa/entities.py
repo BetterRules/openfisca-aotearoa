@@ -23,14 +23,7 @@ Propertee = build_entity(
             'key': 'owner',
             'plural': 'owners',
             'label': u'Owners',
-            'max': 2,
             'doc': u'The one or more persons who hold title for the property.'
-            },
-        {
-            'key': 'tenant',
-            'plural': 'tenants',
-            'label': u'Tenant',
-            'doc': u'One or more persons who live at the property.'
             }
         ]
     )
@@ -47,7 +40,7 @@ Person = build_entity(
 
     Usage:
     Calculate a variable applied to a 'Person' (e.g. access the 'salary' of a specific month with person('salary', "2017-05")).
-    Check the role of a 'Person' in a group entity (e.g. check if a the 'Person' is a 'first_parent' in a 'Property' entity with person.has_role(Property.FIRST_PARENT)).
+    Check the role of a 'Person' in a group entity (e.g. check if a the 'Person' is a 'owner' in a 'Propertee' entity with person.has_role(Propertee.owner)).
 
     For more information on entities, see: http://openfisca.org/doc/coding-the-legislation/50_entities.html
     ''',

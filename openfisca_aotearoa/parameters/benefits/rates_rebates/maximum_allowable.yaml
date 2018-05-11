@@ -31,4 +31,4 @@ values:
     value: 620.0
 
 # best practice indicates we should repeat values when a value is determined in an Act, even if it's the same
-# as such this file needs more research before it can be considered complete
+# as such this file needs revisiting to complete a more accurate picture of the legislative history

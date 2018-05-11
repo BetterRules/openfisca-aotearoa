@@ -35,7 +35,7 @@
     dependants: 2
     rates: 2000
   output_variables:
-    minimum_income_for_no_rebate: 34603
+    minimum_income_for_no_rebate: 35603
 - name: The maximum income required for the full rebate with 3 dependants and rates of $2400 
   period: 2018
   absolute_error_margin: 1
@@ -43,7 +43,7 @@
     dependants: 3
     rates: 2400
   output_variables:
-    maximum_income_for_full_rebate: 31776
+    maximum_income_for_full_rebate: 33276
 - name: Proof of maximum income required for the full rebate with 3 dependants and rates of $2400 
   period: 2018
   absolute_error_margin: 1
@@ -62,3 +62,13 @@
     rates: 2400
   output_variables:
     rates_rebate: 620
+- name: Test for Tauranga 2018 launch 
+  period: 2018
+  absolute_error_margin: 0.5
+  input_variables:
+    dependants: 0
+    rates: 4268.58
+  output_variables:
+    maximum_income_for_full_rebate: 41742
+    minimum_income_for_no_rebate: 46702
+
