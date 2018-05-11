@@ -1,8 +1,0 @@
-# A parameter can contain utf-8 characters.
-description: Age of retirement (in years). Âge de la retraite (en années).
-reference: https://fr.wikipedia.org/wiki/Retraite_(économie)
-values:
-  2017-01-01:
-    value: 62.0
-  1951-07-01:
-    value: 60.33

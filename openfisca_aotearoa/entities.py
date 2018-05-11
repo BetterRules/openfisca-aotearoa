@@ -3,38 +3,27 @@
 # This file defines the entities needed by our legislation.
 from openfisca_core.entities import build_entity
 
-Household = build_entity(
-    key = "household",
-    plural = "households",
-    label = u'Household',
+
+# Using middle English spelling due to `property` being a Python keyword.
+Propertee = build_entity(
+    key = "propertee",
+    plural = "properties",
+    label = u'Property',
     doc = '''
-    Household is an example of a group entity.
-    A group entity contains one or more individual·s.
-    Each individual in a group entity has a role (e.g. parent or children). Some roles can only be held by a limited number of individuals (e.g. a 'first_parent' can only be held by one individual), while others can have an unlimited number of individuals (e.g. 'children').
+    A Property represents accommodation that is owned by a group of Persons.
 
-    Example:
-    Housing variables (e.g. housing_tax') are usually defined for a group entity such as 'Household'.
+    Example usage:
+    Check the number of individuals of a specific role: check how many persons co-own the property: `properties.nb_persons(Propertee.OWNER)`.
+    Calculate a variable applied to each tenant of the group entity: calculate the income of each member of the Property: `tenants_incomes = properties.members('income', period = MONTH); tenants_total_income = properties.sum(tenants_incomes)`.
 
-    Usage:
-    Check the number of individuals of a specific role (e.g. check if there is a 'second_parent' with household.nb_persons(Household.SECOND_PARENT)).
-    Calculate a variable applied to each individual of the group entity (e.g. calculate the 'salary' of each member of the 'Household' with salaries = household.members('salary', period = MONTH); sum_salaries = household.sum(salaries)).
-
-    For more information, see: http://openfisca.org/doc/coding-the-legislation/50_entities.html
+    For more information on group entities, see: http://openfisca.org/doc/coding-the-legislation/50_entities.html
     ''',
     roles = [
         {
-            'key': 'parent',
-            'plural': 'parents',
-            'label': u'Parents',
-            'max': 2,
-            'subroles': ['first_parent', 'second_parent'],
-            'doc': u'The one or two adults in charge of the household.'
-            },
-        {
-            'key': 'child',
-            'plural': 'children',
-            'label': u'Child',
-            'doc': u'Other individuals living in the household.'
+            'key': 'owner',
+            'plural': 'owners',
+            'label': u'Owners',
+            'doc': u'The one or more persons who hold title for the property.'
             }
         ]
     )
@@ -51,11 +40,11 @@ Person = build_entity(
 
     Usage:
     Calculate a variable applied to a 'Person' (e.g. access the 'salary' of a specific month with person('salary', "2017-05")).
-    Check the role of a 'Person' in a group entity (e.g. check if a the 'Person' is a 'first_parent' in a 'Household' entity with person.has_role(Household.FIRST_PARENT)).
+    Check the role of a 'Person' in a group entity (e.g. check if a the 'Person' is a 'owner' in a 'Propertee' entity with person.has_role(Propertee.owner)).
 
-    For more information, see: http://openfisca.org/doc/coding-the-legislation/50_entities.html
+    For more information on entities, see: http://openfisca.org/doc/coding-the-legislation/50_entities.html
     ''',
     is_person = True,
     )
 
-entities = [Household, Person]
+entities = [Propertee, Person]

@@ -1,0 +1,74 @@
+# We can run this test on our command line using `openfisca-run-test openfisca_aotearoa/tests/rates_rebates.yaml`
+
+# These tests have been created with the Universal Rates Rebate Calculator spreadsheet provided by the DIA Rates Rebate team
+- name: Someone earning 32103 with no dependants and rates of 2000
+  period: 2018
+  absolute_error_margin: 1
+  input_variables:
+    salary: 32103
+    dependants: 0
+    rates: 2000
+  output_variables:
+    rates_rebate: 312.67
+- name: Someone earning 35000 with two dependants and rates of 2200
+  period: 2018
+  absolute_error_margin: 1
+  input_variables:
+    salary: 35000
+    dependants: 2
+    rates: 2200
+  output_variables:
+    rates_rebate: 209
+- name: Someone earning 70000 with two dependants and rates of 2200
+  period: 2018
+  absolute_error_margin: 1
+  input_variables:
+    salary: 70000
+    dependants: 2
+    rates: 2000
+  output_variables:
+    rates_rebate: 0
+- name: The minimum income required for no rebate with 2 dependants and rates of $2000 
+  period: 2018
+  absolute_error_margin: 1
+  input_variables:
+    dependants: 2
+    rates: 2000
+  output_variables:
+    minimum_income_for_no_rebate: 35603
+- name: The maximum income required for the full rebate with 3 dependants and rates of $2400 
+  period: 2018
+  absolute_error_margin: 1
+  input_variables:
+    dependants: 3
+    rates: 2400
+  output_variables:
+    maximum_income_for_full_rebate: 33276
+- name: Proof of maximum income required for the full rebate with 3 dependants and rates of $2400 
+  period: 2018
+  absolute_error_margin: 1
+  input_variables:
+    salary: 31776
+    dependants: 3
+    rates: 2400
+  output_variables:
+    rates_rebate: 620
+- name: Proof of maximum income required for the full rebate with 3 dependants and rates of $2400 
+  period: 2018
+  absolute_error_margin: 0.5
+  input_variables:
+    salary: 33001
+    dependants: 3
+    rates: 2400
+  output_variables:
+    rates_rebate: 620
+- name: Test for Tauranga 2018 launch 
+  period: 2018
+  absolute_error_margin: 0.5
+  input_variables:
+    dependants: 0
+    rates: 4268.58
+  output_variables:
+    maximum_income_for_full_rebate: 41742
+    minimum_income_for_no_rebate: 46702
+
