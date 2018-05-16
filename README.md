@@ -3,11 +3,10 @@
 ## Writing the Legislation
 
 Aotearoa New Zealand's legislation as code utilising Open Fisca. 
-Initially the focus is on developing some use-cases and best practice standards around both code and presentation of the legislation
+Early development phase.
 
 Branches currently as follows:
 
-- feature/rates_rebate, first use case - this branch is being used in a live alpha
 - feature/income_tax, initial approach to develop a best practice standard. Comments, pull requests welcomed
 - feature/paid_parental_leave, work started on the paid parental leave legislation
 
@@ -15,8 +14,7 @@ These elements are described in different folders. All the modelling happens wit
 
 - The rates are in the `parameters` folder.
 - The formulas are in the `variables` folder.
-- The *reforms* are in the `reforms` folder. This is currently just the initial OpenFisca country template reforms.
-    - In this country, there is [a reform project](./openfisca_aotearoa/reforms/modify_social_security_taxation.py) aiming to modify the social security taxation, deleting the first bracket, raising the intermediary ones and adding a new bracket with a higher tax rate of `40 %` for people earning more than `40000`. This reform project would apply starting from `2017-01-01`.
+- The *reforms* are in the `reforms` folder. 
 
 The files that are outside from the `openfisca_aotearoa` folder are used to set up the development environment.
 
