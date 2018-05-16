@@ -2,15 +2,15 @@
 
 ## Writing the Legislation Wiki
 
-Guide to writing legislation as code for Aotearoa New Zealand. This documentation is to be considered an introduction to OpenFisca and a style guide for OpenFisca Aotearoa. For technical documentation on OpenFisca please refer to the [Open Fisca Docs](http://openfisca.org/doc/)
+Guide to writing legislation as code for Aotearoa New Zealand. This documentation is to be considered an introduction to OpenFisca and specifically how to approach OpenFisca Aotearoa. For technical documentation on OpenFisca please refer to the [Open Fisca Docs](http://openfisca.org/doc/)
 
 ### Meta considerations
 
 The goal of the project is foremost an accurate computational representation of Aotearoa's legislation. For programmers this can require losing some "best practice" habits in achieving optimal outcomes with respect to the legislation. This wiki's goal is give clarity and a sense of consistency to contributors contributing to OpenFisca Aotearoa. 
 
-Your first consideration when approaching this project is that it will never be finished, precisely because our legislative environment doesn't look like it'll stop making changes any time soon. As such there will be multiple ongoing legislative changes and breaking changes as term use changes. This makes good practice around change tracking essential. It's also envisaged that OpenFisca is deployed per use rather than in a centralise manner. This frees the project to grow, adapt and moves the responsibility of accurate/up-to-date deployments along with decisions to upgrade on those deploying the instances. 
+Your first consideration when approaching this project is that it will never be finished because our legislative environment is unlikely to stop making changes any time soon. This makes good practice around change tracking essential. It's also envisaged that OpenFisca will be deployed per use rather than in a centralise manner. This frees the project to grow, adapt and moves the responsibility of accurate/up-to-date deployments along with decisions required to upgrade with those deploying the instances. 
 
-The second consideration is that OpenFisca Aotearoa is more of a platform than a product and it sits on the OpenFisca Core which is the underlying computational engine. As a platform it has a very open folder structure and any organisation of file names and terminology is up to those working on the project.
+The second consideration is that OpenFisca Aotearoa is more of a platform than a product and it sits on the OpenFisca Core which is the underlying computational engine. As a platform it has a very open folder structure and the organisation of file names and terminology is up to those working on the project.
 
 ### Guide to Ontology
 
@@ -46,7 +46,7 @@ Review the [Key Concepts](http://openfisca.org/doc/key-concepts.html) on the Ope
 
 ### Referencing Legislation
 
-New Zealand legislation is referencable on [legislation.govt.nz] (http://www.legislation.govt.nz/).
+New Zealand legislation is referencable on [legislation.govt.nz](http://www.legislation.govt.nz/).
 Open Fisca allows for direct referencing of parameters and variables. 
 When creating a parameter or variable include a reference as you believe most appropriate. Some examples of how that can be done with respects to the "age of majority" defined in the Age of Majority Act 1970.
 
@@ -68,6 +68,7 @@ Options include:
 
 ### Time Periods
 
+When working on computations, early consideration is needed to determine if the calculation should be based on a yearly or monthly period, see the OpenFisca docs on [periods](http://openfisca.org/doc/periodsinstants.html)
 
 ### Parameters
 
@@ -82,3 +83,5 @@ Variables allow for formulas, when writing for formulas be aware all calculation
 ### Testing
 
 Start every formula with a test and work to build up the test case libraries with unique situations as they come to the fore. The opportunity to add new test cases to OpenFisca Aotearoa adds to the human orientated nature of the project. It allows for an increasingly nuanced response to the various circumstances faced by the people the project is designed to serve. The tests also add real world scenarios that researchers can include in their work when modelling the impacts various proposed scenarios might create.
+
+Enjoy your OpenFisca Aotearoa experience.
