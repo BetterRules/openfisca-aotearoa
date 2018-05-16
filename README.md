@@ -10,11 +10,7 @@ Branches currently as follows:
 - feature/income_tax, initial approach to develop a best practice standard. Comments, pull requests welcomed
 - feature/paid_parental_leave, work started on the paid parental leave legislation
 
-These elements are described in different folders. All the modelling happens within the `openfisca_aotearoa` folder.
-
-- The rates are in the `parameters` folder.
-- The formulas are in the `variables` folder.
-- The *reforms* are in the `reforms` folder. 
+These elements are found in different folders. All the modelling happens within the `openfisca_aotearoa` folder.
 
 The files that are outside from the `openfisca_aotearoa` folder are used to set up the development environment.
 
