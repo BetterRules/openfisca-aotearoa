@@ -3,20 +3,10 @@
 ## Writing the Legislation
 
 Aotearoa New Zealand's legislation as code utilising Open Fisca. 
-Early development phase.
-
-Branches currently as follows:
-
-- feature/income_tax, initial approach to develop a best practice standard. Comments, pull requests welcomed
-- feature/paid_parental_leave, work started on the paid parental leave legislation
-
-These elements are found in different folders. All the modelling happens within the `openfisca_aotearoa` folder.
+Early development phase. 
+Please also read [the wiki](https://github.com/ServiceInnovationLab/openfisca-aotearoa/wiki) as a way of introduction.
 
 The files that are outside from the `openfisca_aotearoa` folder are used to set up the development environment.
-
-## Packaging your Country Package for Distribution
-
-Country packages are python distributions. To distribute your package via `pip`, follow the steps given by the [Python Packaging Authority](https://python-packaging-user-guide.readthedocs.io/tutorials/distributing-packages/#packaging-your-project).
 
 ## Install Instructions for Users and Contributors
 
@@ -113,11 +103,11 @@ Follow this tutorial if you wish to:
 - create or change this Country Package's legislation;
 - contribute to the source code.
 
-#### Clone this Country Package with Git
+#### Clone OpenFisca Aotearoa with Git
 
 First of all, make sure [Git](https://www.git-scm.com/) is installed on your machine.
 
-Set your working directory to the location where you want this OpenFisca Country Package cloned.
+Set your working directory to the location where you want OpenFisca Aotearoa cloned.
 
 Inside your virtualenv, check the prerequisites:
 
@@ -130,7 +120,7 @@ python --version  # should print "Python 2.7.xx".
 pip --version  # should print at least 9.0.
 #if not, run "pip install --upgrade pip"
 ```
-Clone this Country Package on your machine:
+Clone OpenFisca Aotearoa on your machine:
 
 ```sh
 git clone https://github.com/ServiceInnovationLab/openfisca-aotearoa.git
@@ -146,16 +136,16 @@ make test
 ```
 > [Learn more about tests](http://openfisca.org/doc/coding-the-legislation/writing_yaml_tests.html)
 
-:tada: This OpenFisca Country Package is now installed and ready!
+:tada: This OpenFisca Aotearoa Package is now installed and ready!
 
 #### Next Steps
 
-- To write new legislation, read the [Coding the legislation](http://openfisca.org/doc/coding-the-legislation/index.html) section to know how to write legislation.
-- To contribute to the code, read our [Contribution Guidebook](http://openfisca.org/doc/contribute/index.html).
+- To write new legislation, read [the wiki](https://github.com/ServiceInnovationLab/openfisca-aotearoa/wiki) along with the OpenFisca [Coding the legislation](http://openfisca.org/doc/coding-the-legislation/index.html) section.
+- To contribute to the code, read our [contribution doc](https://github.com/ServiceInnovationLab/openfisca-aotearoa/blob/master/CONTRIBUTING.md).
 
-## Serve this Country Package with the OpenFisca Web API
+## Serve OpenFisca Aotearoa with the OpenFisca Web API
 
-If you are considering building a web application, you can use the packaged OpenFisca Web API with your Country Package.
+If you are considering building a web application, you can use the packaged OpenFisca Web API.
 
 To serve the Openfisca Web API locally, run:
 
