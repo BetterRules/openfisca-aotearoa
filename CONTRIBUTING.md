@@ -1,8 +1,4 @@
-> This file defines the rules to follow to contribute to your repository.
-> The rules suggested here are what we generally use for OpenFisca country packages.
-> You can of course edit them, and you should probably remove this block :)
-
-Thank you for wanting to contribute to OpenFisca! :smiley:
+Thank you for wanting to contribute to OpenFisca Aotearoa! :smiley:
 
 TL;DR: [GitHub Flow](https://guides.github.com/introduction/flow/), [SemVer](http://semver.org/).
 
