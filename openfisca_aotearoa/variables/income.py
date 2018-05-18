@@ -68,6 +68,14 @@ class net_loss(Variable):
             )
 
 
+class available_tax_loss(Variable):
+    value_type = float
+    entity = Person
+    definition_period = YEAR
+    label = "Available tax loss"
+    reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1520575.html#DLM1520774"
+
+
 class taxable_income(Variable):
     value_type = float
     entity = Person
@@ -78,11 +86,4 @@ class taxable_income(Variable):
     def formula(person, period, parameters):
         return (person('net_income', period) - person('available_tax_loss', period))
 
-
-class available_tax_loss(Variable):
-    value_type = float
-    entity = Person
-    definition_period = YEAR
-    label = "Available tax loss"
-    reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1520575.html#DLM1520774"
 
