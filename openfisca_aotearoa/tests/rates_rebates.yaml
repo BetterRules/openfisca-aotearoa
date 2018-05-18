@@ -71,4 +71,12 @@
   output_variables:
     maximum_income_for_full_rebate: 41742
     minimum_income_for_no_rebate: 46702
-
+- name: Tests rounding behaviour within existing infrastructure
+  period: 2018
+  absolute_error_margin: 0.01
+  input_variables:
+    salary: 50000
+    dependants: 0
+    rates: 5363.95
+  output_variables:
+    rates_rebate: 318.30
