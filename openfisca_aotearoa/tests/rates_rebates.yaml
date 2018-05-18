@@ -5,69 +5,69 @@
   period: 2018
   absolute_error_margin: 1
   input_variables:
-    salary: 32103
-    dependants: 0
-    rates: 2000
+    combined_income_as_per_rates_rebates: 32103
+    dependants_as_per_rates_rebates: 0
+    rates_total_as_per_rates_rebates: 2000
   output_variables:
     rates_rebate: 312.67
 - name: Someone earning 35000 with two dependants and rates of 2200
   period: 2018
   absolute_error_margin: 1
   input_variables:
-    salary: 35000
-    dependants: 2
-    rates: 2200
+    combined_income_as_per_rates_rebates: 35000
+    dependants_as_per_rates_rebates: 2
+    rates_total_as_per_rates_rebates: 2200
   output_variables:
     rates_rebate: 209
 - name: Someone earning 70000 with two dependants and rates of 2200
   period: 2018
   absolute_error_margin: 1
   input_variables:
-    salary: 70000
-    dependants: 2
-    rates: 2000
+    combined_income_as_per_rates_rebates: 70000
+    dependants_as_per_rates_rebates: 2
+    rates_total_as_per_rates_rebates: 2000
   output_variables:
     rates_rebate: 0
 - name: The minimum income required for no rebate with 2 dependants and rates of $2000 
   period: 2018
   absolute_error_margin: 1
   input_variables:
-    dependants: 2
-    rates: 2000
+    dependants_as_per_rates_rebates: 2
+    rates_total_as_per_rates_rebates: 2000
   output_variables:
     minimum_income_for_no_rebate: 35603
 - name: The maximum income required for the full rebate with 3 dependants and rates of $2400 
   period: 2018
   absolute_error_margin: 1
   input_variables:
-    dependants: 3
-    rates: 2400
+    dependants_as_per_rates_rebates: 3
+    rates_total_as_per_rates_rebates: 2400
   output_variables:
     maximum_income_for_full_rebate: 33276
 - name: Proof of maximum income required for the full rebate with 3 dependants and rates of $2400 
   period: 2018
   absolute_error_margin: 1
   input_variables:
-    salary: 31776
-    dependants: 3
-    rates: 2400
+    combined_income_as_per_rates_rebates: 31776
+    dependants_as_per_rates_rebates: 3
+    rates_total_as_per_rates_rebates: 2400
   output_variables:
     rates_rebate: 620
 - name: Proof of maximum income required for the full rebate with 3 dependants and rates of $2400 
   period: 2018
   absolute_error_margin: 0.5
   input_variables:
-    salary: 33001
-    dependants: 3
-    rates: 2400
+    combined_income_as_per_rates_rebates: 33001
+    dependants_as_per_rates_rebates: 3
+    rates_total_as_per_rates_rebates: 2400
   output_variables:
     rates_rebate: 620
 - name: Test for Tauranga 2018 launch 
   period: 2018
   absolute_error_margin: 0.5
   input_variables:
-    dependants: 0
-    rates: 4268.58
+    dependants_as_per_rates_rebates: 0
+    rates_total_as_per_rates_rebates: 4268.58
   output_variables:
     maximum_income_for_full_rebate: 41742
     minimum_income_for_no_rebate: 46702
@@ -75,8 +75,8 @@
   period: 2018
   absolute_error_margin: 0.01
   input_variables:
-    salary: 50000
-    dependants: 0
-    rates: 5363.95
+    combined_income_as_per_rates_rebates: 50000
+    dependants_as_per_rates_rebates: 0
+    rates_total_as_per_rates_rebates: 5363.95
   output_variables:
     rates_rebate: 318.30
