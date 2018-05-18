@@ -1,12 +1,14 @@
 # Changelog
 
 # 1.0.1 - [#9](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/9)
+
 * Tax and benefit system evolution
 * Impacted periods: from 1973-07
 * Impacted areas: 
   - Variables `rates_rebates`
 * Details:
-  - Modify unlegislated 'floor' into variable rates_rebates calculation to match existing infrasture responses, this is to ensure rate payers can receive rebates 
+  - Addition of Math floor function to conform rates_rebates variable with existing infrastructure.
+
 
 # 1.0.0 - [#6](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/6)
 
