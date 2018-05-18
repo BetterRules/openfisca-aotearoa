@@ -1,18 +1,18 @@
 description: Initial contribution by ratepayer
 reference: Obtained from spreadsheet at Department Of Internal Affairs Innovation Lab
 values:
-  1973-06-01:
+  1973-07:
     value: 50.0
-  1979-06-01:
+  1979-07:
     value: 100.0
-  1981-06-01:
+  1981-07:
     value: 120.0
-  1982-06-01:
+  1982-07:
     value: 160.0
-  1990-04-01:
+  1990-04:
     value: 40.0
-  1990-06-01:
+  1990-07:
     value: 160.0
 
 # best practice indicates we should repeat values when a value is determined in an Act, even if it's the same
-# as such this file needs more research before it can be considered complete
+# as such this file needs revisiting to complete a more accurate picture of the legislative history

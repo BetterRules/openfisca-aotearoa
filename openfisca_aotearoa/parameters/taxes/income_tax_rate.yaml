@@ -46,7 +46,6 @@ brackets:
     2008-10-01:
       value: 70001.0
 
-
 # best practice indicates we should repeat values when a value is determined in an Act, even if it's the same
-# as such this file needs more research before it can be considered complete
-# Historical data is missing from the spreadsheet, source required
+# as such this file needs revisiting to complete a more accurate picture of the legislative history
+# Historical data pre 2000-04 is missing from the spreadsheet, source required

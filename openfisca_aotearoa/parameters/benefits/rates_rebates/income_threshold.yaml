@@ -1,50 +1,50 @@
 description: Income threshold
 reference: Obtained from spreadsheet at Department Of Internal Affairs Innovation Lab
 values:
-  1973-06-01:
+  1973-07:
     value: 2340.0
-  1974-06-01:
+  1974-07:
     value: 2800.0
-  1975-06-01:
+  1975-07:
     value: 3400.0
-  1976-06-01:
+  1976-07:
     value: 3760.0
-  1978-06-01:
+  1978-07:
     value: 4235.0
-  1979-06-01:
+  1979-07:
     value: 4850.0
-  1981-06-01:
+  1981-07:
     value: 5700.0
-  1985-06-01:
+  1985-07:
     value: 6527.0
-  1989-06-01:
+  1989-07:
     value: 6920.0
-  1990-04-01:
+  1990-04:
     value: 1730.0
-  1990-06-01:
+  1990-07:
     value: 7400.0
-  2006-06-01:
+  2006-07:
     value: 20000.0
-  2008-06-01:
+  2008-07:
     value: 21180.0
-  2009-06-01:
+  2009-07:
     value: 21910.0
-  2010-06-01:
+  2010-07:
     value: 22340.0
-  2011-06-01:
+  2011-07:
     value: 23240.0
-  2012-06-01:
+  2012-07:
     value: 23650.0
-  2013-06-01:
+  2013-07:
     value: 23870.0
-  2014-06-01:
+  2014-07:
     value: 24250.0
-  2015-06-01:
+  2015-07:
     value: 24440.0
-  2016-06-01:
+  2016-07:
     value: 24470.0
-  2017-06-01:
+  2017-07:
     value: 24790.0
 
 # best practice indicates we should repeat values when a value is determined in an Act, even if it's the same
-# as such this file needs more research before it can be considered complete
+# as such this file needs revisiting to complete a more accurate picture of the legislative history

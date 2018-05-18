@@ -1,8 +1,4 @@
-> This file defines the rules to follow to contribute to your repository.
-> The rules suggested here are what we generally use for OpenFisca country packages.
-> You can of course edit them, and you should probably remove this block :)
-
-Thank you for wanting to contribute to OpenFisca! :smiley:
+Thank you for wanting to contribute to OpenFisca Aotearoa! :smiley:
 
 TL;DR: [GitHub Flow](https://guides.github.com/introduction/flow/), [SemVer](http://semver.org/).
 
@@ -56,11 +52,11 @@ Each change must be documented with the following elements:
 
 
 > For instance :
-> # 13.0.0 - [#671](https://github.com/openfisca/openfisca-france/pull/671)
+> # 13.0.0 - [#671](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/671)
 >
-> ## 13.2.0 - [#676](https://github.com/openfisca/openfisca-france/pull/676)
+> ## 13.2.0 - [#676](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/676)
 >
-> ### 13.1.5 - [#684](https://github.com/openfisca/openfisca-france/pull/684)
+> ### 13.1.5 - [#684](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/684)
 
 - The second line indicates the type of the change. The possible types are:
  - `Tax and benefit system evolution`: Calculation improvement, fix, or update. Impacts the users interested in calculations.
