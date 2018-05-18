@@ -4,7 +4,7 @@
 from openfisca_core.model_api import *
 # Import the entities specifically defined for this tax and benefit system
 from openfisca_aotearoa.entities import Propertee, Person
-from numpy import clip
+from numpy import clip, floor
 
 
 class dependants(Variable):
@@ -38,7 +38,11 @@ class rates_rebate(Variable):
         allowable_income = (properties.sum(properties.members('dependants', period)) * additional_per_dependant) + income_threshold
 
         # calculate the excess income based on the allowable income
-        excess_income = (properties.sum(properties.members('salary', period)) - allowable_income) / 8
+
+        # wrapping floor math function is non legislative and only to conform output of variable with existing infrastracture.
+        # legislatively correct line of code:
+        # excess_income = (properties.sum(properties.members('salary', period)) - allowable_income) / 8
+        excess_income = floor((properties.sum(properties.members('salary', period)) - allowable_income) / 8)
 
         # minus the initial contribution
         rates_minus_contribution = properties('rates', period) - initial_contribution
