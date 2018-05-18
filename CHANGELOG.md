@@ -1,6 +1,6 @@
 # Changelog
 
-# 1.0.1 - [#9](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/9)
+# 1.0.1 - [#10](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/10)
 
 * Tax and benefit system evolution
 * Impacted periods: from 1973-07
