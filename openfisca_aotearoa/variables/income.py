@@ -86,11 +86,3 @@ class available_tax_loss(Variable):
     label = "Available tax loss"
     reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1520575.html#DLM1520774"
 
-
-# Currently in use by rates_rebates and needs renaming specifically for rates_rebates or made obsolete
-class salary(Variable):
-    value_type = float
-    entity = Person
-    definition_period = YEAR
-    set_input = set_input_divide_by_period  # Allows user to declare a salary for a year. OpenFisca will spread the yearly amount over the months contained in the year.
-    label = "Salary"
