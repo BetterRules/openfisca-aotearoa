@@ -8,7 +8,10 @@
   - Variables `rates_rebates`
   - Entities `Propertee`
 * Details:
-  - Renaming of rates_rebates variables and the Titled_Property entity (from Propertee)
+  - Renaming Titled_Property entity (from Propertee)
+  - Renaming of combined_income_as_per_rates_rebates (from salary)
+  - Renaming of dependants_as_per_rates_rebates (from dependants)
+  - Renaming of rates_total_as_per_rates_rebates (from rates)
   
 
 # 1.0.1 - [#10](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/10)

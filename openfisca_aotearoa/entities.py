@@ -4,7 +4,6 @@
 from openfisca_core.entities import build_entity
 
 
-# Using middle English spelling due to `property` being a Python keyword.
 Titled_Property = build_entity(
     key = "titled_property",
     plural = "titled_properties",
