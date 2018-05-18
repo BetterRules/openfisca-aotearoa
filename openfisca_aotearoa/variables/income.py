@@ -85,5 +85,3 @@ class taxable_income(Variable):
 
     def formula(person, period, parameters):
         return (person('net_income', period) - person('available_tax_loss', period))
-
-

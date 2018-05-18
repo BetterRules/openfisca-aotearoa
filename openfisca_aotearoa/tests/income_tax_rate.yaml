@@ -33,3 +33,13 @@
     annual_total_deduction: 12000
   output_variables:
     net_loss: 0
+- name: Tests the taxable_income formula calculation
+  period: 2018
+  absolute_error_margin: 1
+  input_variables:
+    net_income: 60000
+    available_tax_loss: 12000
+  output_variables:
+    taxable_income: 48000
+
+    
