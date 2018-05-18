@@ -40,8 +40,6 @@ class rates_rebate(Variable):
         # calculate the excess income based on the allowable income
 
         # wrapping floor math function is non legislative and only to conform output of variable with existing infrastracture.
-        # legislatively correct line of code:
-        # excess_income = (properties.sum(properties.members('salary', period)) - allowable_income) / 8
         excess_income = floor((properties.sum(properties.members('salary', period)) - allowable_income) / 8)
 
         # minus the initial contribution

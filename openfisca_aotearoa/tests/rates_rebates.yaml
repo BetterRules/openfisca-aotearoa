@@ -71,7 +71,7 @@
   output_variables:
     maximum_income_for_full_rebate: 41742
     minimum_income_for_no_rebate: 46702
-- name: Rounding issue for Tauranga 2018 launch 
+- name: Tests rounding behaviour within existing infrastructure
   period: 2018
   absolute_error_margin: 0.01
   input_variables:
