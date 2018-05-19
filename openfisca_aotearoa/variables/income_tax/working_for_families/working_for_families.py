@@ -27,6 +27,14 @@ class received_childrens_pension_as_per_veterans_support(Variable):
     label = u'Number of Persons classified as receiving a parents allowance'
     reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/whole.html#DLM1518484"
 
+class resident_as_per_income_tax(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = YEAR
+    label = u'Number of Persons classified as meeting residence requirements'
+    reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1518482.html"
+    # This should really be a forumla based variable covering the full residency criteria.
+
 
 class dependants_as_per_income_tax(Variable):
     value_type = bool
@@ -52,4 +60,15 @@ class eligible_for_working_for_families(Variable):
         received_childrens_pension  = person('received_childrens_pension_as_per_veterans_support', period)     
 
         return received_tested_benefit == False and received_parents_allowance == False and received_childrens_pension == False
+
+class eligible_for_best_start_tax_credit(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = YEAR
+    label = u'Number of Persons classified as eligible for best start tax credit'
+    reference = "http://legislation.govt.nz/bill/government/2017/0004/15.0/DLM7512349.html"
+
+    def formula(person, period, parameters):
+        
+        return True # TODO - Base eligibility of ages of children as per legislation.
 
