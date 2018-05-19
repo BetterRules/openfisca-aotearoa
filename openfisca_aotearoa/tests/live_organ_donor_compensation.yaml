@@ -1,6 +1,6 @@
 # We can run this test on our command line using `openfisca-run-test openfisca_aotearoa/tests/live_organ_donor_compensation.yaml`
 
-- name: An employee earning mixed salary for the last 52 weeks not enrolled in Kiwisaver, no ACC payment in past year
+- name: An employee with earnings for the last 52 weeks not enrolled in Kiwisaver, no ACC payment in past year
   period: 2018
   absolute_error_margin: 0.0001
   input_variables:
@@ -10,7 +10,17 @@
   output_variables:
     weekly_compensation_before_tax: 1201.92
 
-- name: An employee earning mixed salary for the last 52 weeks not enrolled in Kiwisaver, with ACC over 6 weeks
+- name: An employee with earnings for the last 20 weeks not enrolled in Kiwisaver, no ACC payment in past year
+  period: 2018
+  absolute_error_margin: 0.0001
+  input_variables:
+    sum_of_earnings_in_last_52_weeks: 30000
+    earnings_period_in_weeks: 20
+    kiwisaver_member: no
+  output_variables:
+    weekly_compensation_before_tax: 1500
+
+- name: An employee with earnings for the last 52 weeks not enrolled in Kiwisaver, with ACC over 6 weeks
   period: 2018
   absolute_error_margin: 0.0001
   input_variables:
@@ -22,7 +32,19 @@
   output_variables:
     weekly_compensation_before_tax: 1228.26
 
-- name: A self-employed person earning mixed salary for the last 52 weeks not enrolled in Kiwisaver, with ACC over 6 weeks
+- name: An employee  with earnings for the last 52 weeks with 4% Kiwisaver, no ACC payment in last year
+  period: 2018
+  absolute_error_margin: 0.0001
+  input_variables:
+    sum_of_earnings_in_last_52_weeks: 26000
+    earnings_period_in_weeks: 26
+    kiwisaver_member: yes
+    kiwisaver_employee_deduction_percentage: 4
+  output_variables:
+    weekly_compensation_before_tax: 1000
+    kiwisaver_employee_deduction: 40
+
+- name: A self-employed person  with earnings for the last 52 weeks not enrolled in Kiwisaver, with ACC over 6 weeks
   period: 2018
   absolute_error_margin: 0.0001
   input_variables:

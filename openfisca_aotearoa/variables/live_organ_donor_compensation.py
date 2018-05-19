@@ -11,6 +11,7 @@ class weekly_compensation_before_tax(Variable):
     entity = Person
     definition_period = YEAR # TODO - determine whether we need to get WEEK to work
     label = u"The amount payable as compensation per week before tax"
+
     def formula(persons, period, parameters):
         earnings_amount = persons('sum_of_earnings_in_last_52_weeks', period) 
         compensation_amount = persons('sum_of_earnings_during_compensation_period_in_last_52_weeks', period)
@@ -28,6 +29,31 @@ class weekly_compensation_before_tax(Variable):
         
         return round(employee_weekly_earnings + self_employed_weekly_earnings, 2)
 
+class kiwisaver_employee_deduction(Variable):
+    value_type = float
+    entity = Person
+    definition_period = YEAR # TODO - determine whether we need to get WEEK to work
+    label = u"The amount deducted as a kiwisaver contribution"
+
+    def formula(persons, period, parameters):
+        earnings_amount = persons('sum_of_earnings_in_last_52_weeks', period) 
+        compensation_amount = persons('sum_of_earnings_during_compensation_period_in_last_52_weeks', period)
+        earnings_excluding_compensation_amount = earnings_amount - compensation_amount
+
+        earnings_period = persons('earnings_period_in_weeks', period)
+        compensation_period = persons('compensation_period_in_weeks', period)
+        earnings_excluding_compensation_period = earnings_period - compensation_period
+
+        self_employed_earnings_in_most_recent_tax_year = persons('sum_of_self_employed_earnings_in_most_recently_completed_tax_year', period)
+        most_recent_tax_year_period = persons('number_of_weeks_in_most_recently_completed_tax_year', period)
+
+        employee_weekly_earnings = earnings_excluding_compensation_amount / earnings_excluding_compensation_period
+        self_employed_weekly_earnings = self_employed_earnings_in_most_recent_tax_year / most_recent_tax_year_period
+        
+        weekly_compensation = round(employee_weekly_earnings + self_employed_weekly_earnings, 2)
+
+        kiwisaver_employee_deduction_percentage = persons('kiwisaver_employee_deduction_percentage', period)
+        return round(weekly_compensation * kiwisaver_employee_deduction_percentage / 100, 2)
 
 # class PayFrequency(Enum):
 #     weekly = u'Weekly'
@@ -93,4 +119,11 @@ class number_of_weeks_in_most_recently_completed_tax_year(Variable):
     default_value = 52
     entity = Person
     label = u"The number of weeks in the most recently completed tax year"
+    definition_period = YEAR
+
+class kiwisaver_employee_deduction_percentage(Variable):
+    value_type = int
+    default_value = 0
+    entity = Person
+    label = u"Kiwisaver employee deduction percentage "
     definition_period = YEAR
