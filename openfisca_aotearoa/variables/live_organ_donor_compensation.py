@@ -12,7 +12,13 @@ class weekly_compensation_before_tax(Variable):
     definition_period = YEAR # TODO - determine whether we need to get WEEK to work
     label = u"The amount payable as compensation per week before tax"
     def formula(persons, period, parameters):
-        return round(persons('sum_of_earnings_in_last_52_weeks', period) / persons('earnings_period_in_weeks', period), 2)
+        earnings_amount = persons('sum_of_earnings_in_last_52_weeks', period) 
+        compensation_amount = persons('sum_of_earnings_during_compensation_period_in_last_52_weeks', period)
+        earnings_excluding_compensation_amount = earnings_amount - compensation_amount
+        earnings_period = persons('earnings_period_in_weeks', period)
+        compensation_period = persons('compensation_period_in_weeks', period)
+        earnings_excluding_compensation_period = earnings_period - compensation_period
+        return round(earnings_excluding_compensation_amount / earnings_excluding_compensation_period , 2)
 
 # class PayFrequency(Enum):
 #     weekly = u'Weekly'
@@ -51,5 +57,17 @@ class earnings_period_in_weeks(Variable):
     value_type = int
     entity = Person
     label = u"The number of weeks over which earnings have been earned"
+    definition_period = YEAR
+
+class sum_of_earnings_during_compensation_period_in_last_52_weeks(Variable):
+    value_type = float
+    entity = Person
+    label = u"Earnings during the period in which the donor was entitled to weekly compensation (as defined in section 6(1) of the Accident Compensation Act 2001)"
+    definition_period = YEAR
+
+class compensation_period_in_weeks(Variable):
+    value_type = int
+    entity = Person
+    label = u"The number of weeks in which the donor was entitled to weekly compensation (as defined in section 6(1) of the Accident Compensation Act 2001) over the last 52 weeks"
     definition_period = YEAR
 

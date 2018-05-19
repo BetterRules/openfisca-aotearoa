@@ -10,3 +10,14 @@
   output_variables:
     weekly_compensation_before_tax: 1201.92
 
+- name: An employee earning mixed salary for the last 52 weeks not enrolled in Kiwisaver, with ACC over 6 weeks
+  period: 2018
+  absolute_error_margin: 0.0001
+  input_variables:
+    sum_of_earnings_in_last_52_weeks: 62500
+    earnings_period_in_weeks: 52
+    sum_of_earnings_during_compensation_period_in_last_52_weeks: 6000
+    compensation_period_in_weeks: 6
+    kiwisaver_member: no
+  output_variables:
+    weekly_compensation_before_tax: 1228.26
