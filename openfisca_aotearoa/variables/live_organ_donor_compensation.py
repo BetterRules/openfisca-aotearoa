@@ -12,7 +12,7 @@ class weekly_compensation_before_tax(Variable):
     definition_period = YEAR # TODO - determine whether we need to get WEEK to work
     label = u"The amount payable as compensation per week before tax"
     def formula(persons, period, parameters):
-        return persons('salary_per_pay', period)
+        return persons('sum_of_earnings_in_last_52_weeks', period) / persons('earnings_period_in_weeks', period)
 
 class PayFrequency(Enum):
     weekly = u'Weekly'
@@ -40,3 +40,16 @@ class kiwisaver_member(Variable):
     entity = Person
     label = u"Whether the person currently pays into Kiwisaver"
     definition_period = YEAR
+
+class sum_of_earnings_in_last_52_weeks(Variable):
+    value_type = float
+    entity = Person
+    label = u"Total earnings over last 52 weeks"
+    definition_period = YEAR
+
+class earnings_period_in_weeks(Variable):
+    value_type = int
+    entity = Person
+    label = u"The number of weeks over which earnings have been earned"
+    definition_period = YEAR
+
