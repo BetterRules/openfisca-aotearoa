@@ -1,5 +1,18 @@
 # Changelog
 
+# 2.0.1 - [#13](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/13)
+
+* Tax and benefit system evolution
+* Impacted periods: from 1973-07
+* Impacted areas: 
+  - Variables `rates_rebates`
+  - Entities `Propertee`
+* Details:
+  - Renaming Titled_Property entity (from Propertee)
+  - Renaming of combined_income_as_per_rates_rebates (from salary)
+  - Renaming of dependants_as_per_rates_rebates (from dependants)
+  - Renaming of rates_total_as_per_rates_rebates (from rates)
+
 # 2.0.0 - [#12](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/12)
 
 * Tax and benefit system evolution
