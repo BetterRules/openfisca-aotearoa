@@ -6,10 +6,10 @@
   input_variables:
     pay_frequency: weekly
     salary_per_pay: 1200.00
-    tax_code: M
+#    tax_code: M
     kiwisaver_member: no
 # donor_surgery_date
   output_variables:
-    weekly_conpensation_before_tax: 1200.00
-    weekly_conpensation_after_tax: 957.56
+    weekly_compensation_before_tax: 1200.00
+#    weekly_compensation_after_tax: 957.56
 
