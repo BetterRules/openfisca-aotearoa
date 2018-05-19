@@ -37,10 +37,10 @@ class rates_rebate(Variable):
     reference = "Obtained from spreadsheet at Department Of Internal Affairs Innovation Lab"
 
     def formula(titled_properties, period, parameters):
-        income_threshold = parameters(period).benefits.rates_rebates.income_threshold
-        additional_per_dependant = parameters(period).benefits.rates_rebates.additional_per_dependant
-        initial_contribution = parameters(period).benefits.rates_rebates.initial_contribution
-        maximum_allowable = parameters(period).benefits.rates_rebates.maximum_allowable
+        income_threshold = parameters(period).entitlements.rates_rebates.income_threshold
+        additional_per_dependant = parameters(period).entitlements.rates_rebates.additional_per_dependant
+        initial_contribution = parameters(period).entitlements.rates_rebates.initial_contribution
+        maximum_allowable = parameters(period).entitlements.rates_rebates.maximum_allowable
 
         # sum allowable income including all the dependants for property
         allowable_income = (titled_properties.sum(titled_properties.members('dependants_as_per_rates_rebates', period)) * additional_per_dependant) + income_threshold
@@ -66,14 +66,14 @@ class maximum_income_for_full_rebate(Variable):
     reference = "http://www.legislation.govt.nz/act/public/1973/0005/67.0/DLM409673.html?search=sw_096be8ed8161c2a5_divide_25_se&p=1"
 
     def formula(titled_properties, period, parameters):
-        income_threshold = parameters(period).benefits.rates_rebates.income_threshold
-        additional_per_dependant = parameters(period).benefits.rates_rebates.additional_per_dependant
-        initial_contribution = parameters(period).benefits.rates_rebates.initial_contribution
+        income_threshold = parameters(period).entitlements.rates_rebates.income_threshold
+        additional_per_dependant = parameters(period).entitlements.rates_rebates.additional_per_dependant
+        initial_contribution = parameters(period).entitlements.rates_rebates.initial_contribution
 
         # sum allowable income including all the dependants for property
         allowable_income = (titled_properties.sum(titled_properties.members('dependants_as_per_rates_rebates', period)) * additional_per_dependant) + income_threshold
         # what we're using to compute the maximum salary for full rebate
-        rebate = parameters(period).benefits.rates_rebates.maximum_allowable
+        rebate = parameters(period).entitlements.rates_rebates.maximum_allowable
 
         return (((((titled_properties('rates_total_as_per_rates_rebates', period) - initial_contribution) - rebate) - ((titled_properties('rates_total_as_per_rates_rebates', period) - initial_contribution) / 3)) * 8) + allowable_income)
 
@@ -86,9 +86,9 @@ class minimum_income_for_no_rebate(Variable):
     reference = "http://www.legislation.govt.nz/act/public/1973/0005/67.0/DLM409673.html?search=sw_096be8ed8161c2a5_divide_25_se&p=1"
 
     def formula(titled_properties, period, parameters):
-        income_threshold = parameters(period).benefits.rates_rebates.income_threshold
-        additional_per_dependant = parameters(period).benefits.rates_rebates.additional_per_dependant
-        initial_contribution = parameters(period).benefits.rates_rebates.initial_contribution
+        income_threshold = parameters(period).entitlements.rates_rebates.income_threshold
+        additional_per_dependant = parameters(period).entitlements.rates_rebates.additional_per_dependant
+        initial_contribution = parameters(period).entitlements.rates_rebates.initial_contribution
 
         # sum allowable income including all the dependants for property
         allowable_income = (titled_properties.sum(titled_properties.members('dependants_as_per_rates_rebates', period)) * additional_per_dependant) + income_threshold
