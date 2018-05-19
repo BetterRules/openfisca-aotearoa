@@ -21,3 +21,15 @@
     kiwisaver_member: no
   output_variables:
     weekly_compensation_before_tax: 1228.26
+
+- name: A self-employed person earning mixed salary for the last 52 weeks not enrolled in Kiwisaver, with ACC over 6 weeks
+  period: 2018
+  absolute_error_margin: 0.0001
+  input_variables:
+    sum_of_earnings_in_last_52_weeks: 20200
+    # earnings_period_in_weeks: 52
+    sum_of_self_employed_earnings_in_most_recently_completed_tax_year: 30300
+    number_of_weeks_in_most_recently_completed_tax_year: 53
+    kiwisaver_member: no
+  output_variables:
+    weekly_compensation_before_tax: 960.16

@@ -15,10 +15,19 @@ class weekly_compensation_before_tax(Variable):
         earnings_amount = persons('sum_of_earnings_in_last_52_weeks', period) 
         compensation_amount = persons('sum_of_earnings_during_compensation_period_in_last_52_weeks', period)
         earnings_excluding_compensation_amount = earnings_amount - compensation_amount
+
         earnings_period = persons('earnings_period_in_weeks', period)
         compensation_period = persons('compensation_period_in_weeks', period)
         earnings_excluding_compensation_period = earnings_period - compensation_period
-        return round(earnings_excluding_compensation_amount / earnings_excluding_compensation_period , 2)
+
+        self_employed_earnings_in_most_recent_tax_year = persons('sum_of_self_employed_earnings_in_most_recently_completed_tax_year', period)
+        most_recent_tax_year_period = persons('number_of_weeks_in_most_recently_completed_tax_year', period)
+
+        employee_weekly_earnings = earnings_excluding_compensation_amount / earnings_excluding_compensation_period
+        self_employed_weekly_earnings = self_employed_earnings_in_most_recent_tax_year / most_recent_tax_year_period
+        
+        return round(employee_weekly_earnings + self_employed_weekly_earnings, 2)
+
 
 # class PayFrequency(Enum):
 #     weekly = u'Weekly'
@@ -55,6 +64,7 @@ class sum_of_earnings_in_last_52_weeks(Variable):
 
 class earnings_period_in_weeks(Variable):
     value_type = int
+    default_value = 52
     entity = Person
     label = u"The number of weeks over which earnings have been earned"
     definition_period = YEAR
@@ -71,3 +81,16 @@ class compensation_period_in_weeks(Variable):
     label = u"The number of weeks in which the donor was entitled to weekly compensation (as defined in section 6(1) of the Accident Compensation Act 2001) over the last 52 weeks"
     definition_period = YEAR
 
+class sum_of_self_employed_earnings_in_most_recently_completed_tax_year(Variable):
+    value_type = float
+    default_value = 0
+    entity = Person
+    label = u"Self-employed earnings during the period in which the donor was entitled to weekly compensation (as defined in section 6(1) of the Accident Compensation Act 2001)"
+    definition_period = YEAR
+
+class number_of_weeks_in_most_recently_completed_tax_year(Variable):
+    value_type = int
+    default_value = 52
+    entity = Person
+    label = u"The number of weeks in the most recently completed tax year"
+    definition_period = YEAR
