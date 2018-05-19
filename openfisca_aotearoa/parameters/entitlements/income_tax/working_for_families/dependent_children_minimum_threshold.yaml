@@ -1,0 +1,6 @@
+description: Dependent children minimum threshold
+reference: http://legislation.govt.nz/act/public/2007/0097/latest/DLM1518480.html
+brackets:
+- threshold:
+    2017-04-01:
+      value: 1
