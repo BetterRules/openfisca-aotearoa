@@ -1,0 +1,7 @@
+description: Minimum percentage of exclusive care of a dependent child time that defines a principal caregiver
+reference: http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1518492.html
+values:
+  2017-04: # This is unresearched, dates of enactment to be determined
+    value: 0.33
+
+
