@@ -1,0 +1,7 @@
+description: Income threshold
+reference: "https://www.hnzc.co.nz/ways-we-can-help-you-to-own-a-home/kiwisaver-homestart-grant-and-savings-withdrawal/kiwisaver-homestart-grant/homestart-grant-eligibility-checklist/"
+values:
+single_buyer:
+  value: 85000
+multiple_buyer:
+  value: 130000
