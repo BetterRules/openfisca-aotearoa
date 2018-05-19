@@ -1,0 +1,5 @@
+description: Highest price of property in the areas of Hamilton, Tauranga, Western Bay of Plenty, Kapiti Coast, Porirua, Upper Hutt, Hutt City, Wellington, Tasman, Nelson, Waimakariri, Christchurch, Selwyn, Queenstown Lakes Disctrict
+reference:
+values:
+  Hamilton || Tauranga || Western Bay of Plenty || Kapiti Coast || Porirua || Upper Hutt || Hutt City || Wellington || Tasman || Nelson || Waimakariri || Christchurch || Selwyn || Queenstown Lakes Disctrict: # find date this was set
+    value: 500000
