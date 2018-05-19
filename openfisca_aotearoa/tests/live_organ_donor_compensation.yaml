@@ -1,0 +1,15 @@
+# We can run this test on our command line using `openfisca-run-test openfisca_aotearoa/tests/live_organ_donor_compensation.yaml`
+
+- name: An employee earning $1200 per week for the last 52 weeks not enrolled in Kiwisaver, no ACC payment in past year
+  period: 2018
+  absolute_error_margin: 1
+  input_variables:
+    pay_frequency: weekly
+    salary_per_pay: 1200.00
+#    tax_code: M
+    kiwisaver_member: no
+# donor_surgery_date
+  output_variables:
+    weekly_compensation_before_tax: 1200.00
+#    weekly_compensation_after_tax: 957.56
+
