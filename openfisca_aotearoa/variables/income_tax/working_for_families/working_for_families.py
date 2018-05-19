@@ -39,4 +39,17 @@ class dependants_as_per_income_tax(Variable):
         age = person('age', period)
         return age <= 18 # It's not this simple, this needs to be tweaked to inlcude the edge criteria.
 
+class eligible_for_working_for_families(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = YEAR
+    label = u'Number of Persons classified as eligible for working for families tax credits'    
+    reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1518477.html"
+
+    def formula(person, period, parameters):
+        received_tested_benefit     = person('received_income_tested_benefit_as_per_social_security', period)
+        received_parents_allowance  = person('received_parents_allowance_as_per_veterans_support', period)
+        received_childrens_pension  = person('received_childrens_pension_as_per_veterans_support', period)     
+
+        return received_tested_benefit == False and received_parents_allowance == False and received_childrens_pension == False
 
