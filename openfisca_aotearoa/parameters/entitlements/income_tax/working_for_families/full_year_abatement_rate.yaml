@@ -1,0 +1,9 @@
+description: Full year abatement rate
+reference: http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1518553.html
+brackets:
+- rate:
+    2017-04-01:
+      value: 0.225
+  threshold:
+    2017-04-01:
+      value: 36350
