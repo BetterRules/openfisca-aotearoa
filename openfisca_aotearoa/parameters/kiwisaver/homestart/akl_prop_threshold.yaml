@@ -1,5 +1,5 @@
 description: Property price threshold to be eligible for the Homestart grant for Auckland
 reference:
 values:
-  Auckland: # find date this was set
+  2006-01: # find date this was set
     value: 600000

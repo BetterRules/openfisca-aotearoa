@@ -1,5 +1,5 @@
 description: Income threshold
 reference: "https://www.hnzc.co.nz/ways-we-can-help-you-to-own-a-home/kiwisaver-homestart-grant-and-savings-withdrawal/kiwisaver-homestart-grant/homestart-grant-eligibility-checklist/"
 values:
-indiv_buyer: #find the date this was set
-  value: 85000
+  2006-01: #find the date this was set
+    value: 85000

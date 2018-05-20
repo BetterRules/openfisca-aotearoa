@@ -1,5 +1,5 @@
 description: Property price threshold to be eligible for the Homestart grant for the rest of NZ
 reference:
 values:
-  Rest of NZ: # find date this was set
+  2006-01: # find date this was set
     value: 400000
