@@ -80,7 +80,6 @@ class kiwisaver_member(Variable):
     default_value = True
     entity = Person
     label = u"Whether the person currently pays into Kiwisaver"
-    reference = "http://organiccoders.allengeer.com/definitions-number-of-weeks/"
     definition_period = YEAR
 
 class sum_of_earnings_in_last_52_weeks(Variable):
@@ -95,6 +94,7 @@ class earnings_period_in_weeks(Variable):
     default_value = 52
     entity = Person
     label = u"The number of weeks over which earnings have been earned"
+    reference = "http://organiccoders.allengeer.com/definitions-number-of-weeks/"
     definition_period = YEAR
 
 class sum_of_earnings_during_compensation_period_in_last_52_weeks(Variable):
