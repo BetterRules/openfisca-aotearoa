@@ -86,6 +86,7 @@ class sum_of_earnings_in_last_52_weeks(Variable):
     value_type = float
     entity = Person
     label = u"Total earnings over last 52 weeks"
+    reference = "http://organiccoders.allengeer.com/brk-1234-abcdfcrg234356/"
     definition_period = YEAR
 
 class earnings_period_in_weeks(Variable):
