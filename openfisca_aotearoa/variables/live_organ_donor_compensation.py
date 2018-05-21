@@ -11,6 +11,8 @@ class weekly_compensation_before_tax(Variable):
     entity = Person
     definition_period = YEAR # TODO - determine whether we need to get WEEK to work
     label = u"The amount payable as compensation per week before tax"
+    # note that this also implements http://www.legislation.govt.nz/act/public/2016/0096/latest/whole.html?search=ts_act%40bill%40regulation%40deemedreg_live+organ_resel_25_a#DLM6965116
+    reference = "http://www.legislation.govt.nz/act/public/2016/0096/latest/whole.html?search=ts_act%40bill%40regulation%40deemedreg_live+organ_resel_25_a#DLM6965123"
 
     def formula(persons, period, parameters):
         earnings_amount = persons('sum_of_earnings_in_last_52_weeks', period) 
@@ -34,6 +36,10 @@ class kiwisaver_employee_deduction(Variable):
     entity = Person
     definition_period = YEAR # TODO - determine whether we need to get WEEK to work
     label = u"The amount deducted as a kiwisaver contribution"
+    # Salary or wages includes a payment of earnings compensation under the Compensation for Live Organ Donors Act 2016;
+    # Ref: http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1519947.html?search=ts_act%40bill%40regulation%40deemedreg_live+organ_resel_25_a#DLM1519947
+    # KiwiSaver deductions:
+    reference = "http://www.legislation.govt.nz/act/public/2006/0040/latest/whole.html?search=ts_act%40bill%40regulation%40deemedreg_live+organ_resel_25_a#DLM379040"
 
     def formula(persons, period, parameters):
         earnings_amount = persons('sum_of_earnings_in_last_52_weeks', period) 
@@ -60,7 +66,6 @@ class kiwisaver_member(Variable):
     default_value = True
     entity = Person
     label = u"Whether the person currently pays into Kiwisaver"
-    reference = "http://organiccoders.allengeer.com/definitions-number-of-weeks/"
     definition_period = YEAR
 
 class sum_of_earnings_in_last_52_weeks(Variable):
@@ -75,6 +80,7 @@ class earnings_period_in_weeks(Variable):
     default_value = 52
     entity = Person
     label = u"The number of weeks over which earnings have been earned"
+    reference = "http://organiccoders.allengeer.com/definitions-number-of-weeks/"
     definition_period = YEAR
 
 class sum_of_earnings_during_compensation_period_in_last_52_weeks(Variable):
