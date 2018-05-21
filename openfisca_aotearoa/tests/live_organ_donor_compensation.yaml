@@ -6,7 +6,6 @@
   input_variables:
     sum_of_earnings_in_last_52_weeks: 62500
     earnings_period_in_weeks: 52
-    kiwisaver_member: no
   output_variables:
     weekly_compensation_before_tax: 1201.92
 
@@ -16,7 +15,6 @@
   input_variables:
     sum_of_earnings_in_last_52_weeks: 30000
     earnings_period_in_weeks: 20
-    kiwisaver_member: no
   output_variables:
     weekly_compensation_before_tax: 1500
 
@@ -28,23 +26,21 @@
     earnings_period_in_weeks: 52
     sum_of_earnings_during_compensation_period_in_last_52_weeks: 6000
     compensation_period_in_weeks: 6
-    kiwisaver_member: no
   output_variables:
     weekly_compensation_before_tax: 1228.26
 
-- name: An employee  with earnings for the last 52 weeks with 4% Kiwisaver, no ACC payment in last year
+- name: An employee with earnings for the last 26 weeks with 4% Kiwisaver, no ACC payment in last year
   period: 2018
   absolute_error_margin: 0.0001
   input_variables:
     sum_of_earnings_in_last_52_weeks: 26000
     earnings_period_in_weeks: 26
-    kiwisaver_member: yes
     kiwisaver_employee_deduction_percentage: 4
   output_variables:
     weekly_compensation_before_tax: 1000
     kiwisaver_employee_deduction: 40
 
-- name: A self-employed person  with earnings for the last 52 weeks not enrolled in Kiwisaver, with ACC over 6 weeks
+- name: A person who was both employed and self-employed in the previous year; not enrolled in Kiwisaver, no ACC payment in last year
   period: 2018
   absolute_error_margin: 0.0001
   input_variables:
@@ -52,6 +48,5 @@
     # earnings_period_in_weeks: 52
     sum_of_self_employed_earnings_in_most_recently_completed_tax_year: 30300
     number_of_weeks_in_most_recently_completed_tax_year: 53
-    kiwisaver_member: no
   output_variables:
     weekly_compensation_before_tax: 960.16
