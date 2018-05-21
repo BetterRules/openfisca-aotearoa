@@ -131,4 +131,5 @@ class kiwisaver_employee_deduction_percentage(Variable):
     default_value = 0
     entity = Person
     label = u"Kiwisaver employee deduction percentage "
+    reference = "http://www.legislation.govt.nz/act/public/2006/0040/latest/whole.html?search=ts_act%40bill%40regulation%40deemedreg_live+organ_resel_25_a#DLM379040"
     definition_period = YEAR
