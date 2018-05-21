@@ -7,6 +7,13 @@ from openfisca_aotearoa.entities import Person
 from numpy import round
 
 class weekly_compensation_before_tax(Variable):
+    """
+    Calculate the weekly compensation based on employee earnings over the last 52 weeks
+    and self-employed earnings in most recent tax year.
+    This relies on the user totalling the earnings over the last 52 weeks and the earnings period in weeks.
+    Ideally a user would be able to enter the earnings per week (over a period) and the totals would then
+    be calculated.
+    """
     value_type = float
     entity = Person
     definition_period = YEAR # TODO - determine whether we need to get WEEK to work
