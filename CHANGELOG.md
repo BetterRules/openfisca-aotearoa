@@ -5,7 +5,7 @@
 * Tax and benefit system evolution
 * Impacted periods: from 2000-04-01
 * Impacted areas: 
-  - Variables `income_tax/individual`
+  - Variables `tax_payer_filing_status__income_tax, annual_gross_income__income_tax, annual_total_deduction__income_tax, net_income__income_tax, net_loss__income_tax, available_tax_loss__income_tax, taxable_income__income_tax`
   - Parameters `individual_income_tax_rate`
 * Details:
   - Introducing some initial income_tax variables, laid out as per current best practice
