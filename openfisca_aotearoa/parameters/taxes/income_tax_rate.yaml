@@ -1,5 +1,6 @@
 description: Income tax rate
 reference: https://www.parliament.nz/en/pb/research-papers/document/00PLEcoC5191/income-tax-rates
+# Actual link to act: http://www.legislation.govt.nz/act/public/2007/0097/latest/versions.aspx
 brackets:
 - rate:
     2000-04-01:
@@ -74,4 +75,3 @@ brackets:
     2010-10-01:
       value: 70001.0
 
-# Actual link to act: http://www.legislation.govt.nz/act/public/2007/0097/latest/versions.aspx
