@@ -83,7 +83,7 @@ class sum_of_earnings_in_last_52_weeks(Variable):
     value_type = float
     entity = Person
     label = u"Total earnings over last 52 weeks"
-    reference = "https://github.com/OrganicCoders/openfisca-aotearoa/blob/data-definitions/openfisca_aotearoa/definitions/earnings_as_an_employee.md"
+    reference = "https://github.com/OrganicCoders/openfisca-aotearoa/blob/master/openfisca_aotearoa/definitions/earnings_as_an_employee.md"
     definition_period = YEAR
 
 
@@ -92,7 +92,7 @@ class earnings_period_in_weeks(Variable):
     default_value = 52
     entity = Person
     label = u"The number of weeks over which earnings have been earned"
-    reference = "https://github.com/OrganicCoders/openfisca-aotearoa/blob/data-definitions/openfisca_aotearoa/definitions/number_of_weeks.md"
+    reference = "https://github.com/OrganicCoders/openfisca-aotearoa/blob/master/openfisca_aotearoa/definitions/number_of_weeks.md"
     definition_period = YEAR
 
 
