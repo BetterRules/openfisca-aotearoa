@@ -80,8 +80,12 @@ class taxable_income__income_tax(Variable):
     value_type = float
     entity = Person
     definition_period = YEAR
-    label = "Net loss"
+    label = "Taxable income"
     reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1512344.html"
 
     def formula(person, period, parameters):
-        return (person('net_income__income_tax', period) - person('available_tax_loss__income_tax', period))
+        taxable_income = (person('net_income__income_tax', period) - person('available_tax_loss__income_tax', period))
+
+        return (
+            taxable_income * (taxable_income > 0)
+            )

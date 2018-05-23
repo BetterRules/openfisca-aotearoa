@@ -38,5 +38,11 @@
     available_tax_loss__income_tax: 12000
   output_variables:
     taxable_income__income_tax: 48000
-
-    
+- name: Tests the taxable_income formula calculation with a potential negative result
+  period: 2018
+  absolute_error_margin: 1
+  input_variables:
+    net_income__income_tax: 60000
+    available_tax_loss__income_tax: 72000
+  output_variables:
+    taxable_income__income_tax: 0
