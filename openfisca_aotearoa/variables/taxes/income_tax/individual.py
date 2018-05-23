@@ -46,10 +46,10 @@ class net_income__income_tax(Variable):
     reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1512339.html"
 
     def formula(person, period, parameters):
-        net_income_calc = person('annual_gross_income__income_tax', period) - person('annual_total_deduction__income_tax', period)
+        net_income = person('annual_gross_income__income_tax', period) - person('annual_total_deduction__income_tax', period)
 
         return (
-            net_income_calc * (net_income_calc > 0)
+            net_income * (net_income > 0)
             )
 
 
@@ -61,10 +61,10 @@ class net_loss__income_tax(Variable):
     reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1512339.html"
 
     def formula(person, period, parameters):
-        net_income = person('annual_gross_income__income_tax', period) - person('annual_total_deduction__income_tax', period)
+        net_loss = person('annual_gross_income__income_tax', period) - person('annual_total_deduction__income_tax', period)
 
         return (
-            net_income * (net_income < 0)
+            net_loss * (net_loss < 0)
             )
 
 
