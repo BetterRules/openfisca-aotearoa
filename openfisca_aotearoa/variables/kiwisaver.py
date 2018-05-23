@@ -14,13 +14,13 @@ class ks_duration(Variable):
     definition_period = MONTH
     label = u"Years the prospective home buyer has been a member of a kiwisaver account"
 
-class ks_contrib_duration(Variable):
+class contrib_duration__kiwisaver(Variable):
     value_type = int
     entity = Person
     definition_period = MONTH
     label = u"Years the prospective home buyer has been contributing continuously to their kiwisaver account"
 
-class ks_contrib_duration_satisfied(Variable):
+class contrib_duration__kiwisaver(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
@@ -29,22 +29,98 @@ class ks_contrib_duration_satisfied(Variable):
     def formula(persons, period):
         return persons('ks_contrib_duration', period) >= 3
 
-class homestart_grant(Variable):
+class homestart_grant__kiwisaver(Variable):
     value_type = float
     entity = Person
     definition_period = MONTH
     label = u"Amount available to you from the Homestart grant"
 
     def formula(persons, period):
-        duration = persons('ks_contrib_duration', period)
         HS_grant = persons('ks_contrib_duration', period) * persons('ks_contrib_duration_satisfied', period) * 1000
         return clip(HS_grant,0,5000)
 
+
 class purc_price(Variable):
     value_type = int
-    entity = Titled_Property
+    entity = Person
     definition_period = YEAR
     label = u"Purchase price of the proposed home"
+
+
+class lvr_deposit_req__kiwisaver(Variable):
+    value_type = float
+    entity = Person
+    definition_period = MONTH
+    label = u"Loan to value ratio deposit requirement"
+
+    def formula(persons, period):
+        return persons('purc_price', period) * 0.2
+
+
+class homestart_deposit_req__kiwisaver(Variable):
+    value_type = float
+    entity = Person
+    definition_period = MONTH
+    label = u"Homestart grant deposit requirement"
+
+    def formula(persons, period):
+        return persons('purc_price', period) * 0.1
+
+
+class total_savings__kiwisaver(Variable):
+    value_type = float
+    entity = Person
+    definition_period = MONTH
+    label = u"Homestart grant deposit requirement"
+
+    def formula(persons, period):
+        return persons('savings__kiwisaver', period) + persons('homestart_grant__kiwisaver', period) + persons('net__kiwisaver', period)
+
+
+class gross__kiwisaver(Variable):
+    value_type = float
+    entity = Person
+    definition_period = MONTH
+    label = u"Gross kiwi saver balance"
+
+
+class net__kiwisaver(Variable):
+    value_type = float
+    entity = Person
+    definition_period = MONTH
+    label = u"Gross kiwi saver balance"
+
+    def formula(persons, period):
+        return persons('gross__kiwisaver', period) - 1000
+
+
+# The savings variable is for the purposes of calculating how much deposit, it's not part of the kiwisaver legislation
+class savings__kiwisaver(Variable):
+    value_type = float
+    entity = Person
+    definition_period = MONTH
+    label = u"Personal cash savings in bank"
+
+
+class homestart_deposit_eligible(Variable):
+    value_type = float
+    entity = Person
+    definition_period = MONTH
+    label = u"Deposit amount needed to be eligble for homestart grant"
+
+    def formula(persons, period):
+        return persons('total_savings__kiwisaver', period) >= persons('homestart_deposit_req__kiwisaver', period)
+         
+
+class lvr_deposit_eligible(Variable):
+    value_type = float
+    entity = Person
+    definition_period = MONTH
+    label = u"Deposit amount needed to be eligble for homestart grant"
+
+    def formula(persons, period):
+        return persons('total_savings__kiwisaver', period) >= persons('lvr_deposit_req__kiwisaver', period)
+
 
 class indv_income_per_hs_grant(Variable):
     value_type = int
