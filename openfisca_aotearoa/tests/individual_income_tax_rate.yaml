@@ -1,6 +1,3 @@
-# We can run this test on our command line using `openfisca-run-test openfisca_aotearoa/tests/rates_rebates.yaml`
-
-# These tests have been created with the Universal Rates Rebate Calculator spreadsheet provided by the DIA Rates Rebate team
 - name: Tests the net_income formula
   period: 2018
   absolute_error_margin: 1
