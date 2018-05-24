@@ -1,5 +1,15 @@
 # Changelog
 
+# 2.1.0 - [#18](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/18)
+
+* Tax and benefit system evolution
+* Impacted periods: from 2000-04-01
+* Impacted areas: 
+  - Variables `tax_payer_filing_status__income_tax, annual_gross_income__income_tax, annual_total_deduction__income_tax, net_income__income_tax, net_loss__income_tax, available_tax_loss__income_tax, taxable_income__income_tax`
+  - Parameters `individual_income_tax_rate`
+* Details:
+  - Introducing some initial income_tax variables, laid out as per current best practice
+
 # 2.0.0 - [#12](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/12)
 
 * Tax and benefit system evolution
