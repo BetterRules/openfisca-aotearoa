@@ -53,8 +53,7 @@ Family = build_entity(
     doc = '''
     A Family represents a collection of related persons.
 
-    Example:
-    Family entities are required for calculation of working for families entitlements.
+    Family entities are required for calculations across a number of entitlements including for example "Working for families" and "Paid Parental Leave"
 
     A family can contain a number of roles, such as 'principal_caregiver', 'partner', 'dependant_child' & 'independant_child'.
 
