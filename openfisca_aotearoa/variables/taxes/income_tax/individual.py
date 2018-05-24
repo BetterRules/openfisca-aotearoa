@@ -12,7 +12,7 @@ class TaxPayerFilingStatus(Enum):
     reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1512331.html"
 
 
-class tax_payer_filing_status__income_tax(Variable):
+class tax_payer_filing_status__it(Variable):
     value_type = Enum
     possible_values = TaxPayerFilingStatus
     default_value = TaxPayerFilingStatus.non_filing
@@ -22,7 +22,7 @@ class tax_payer_filing_status__income_tax(Variable):
     reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1512331.html"
 
 
-class annual_gross_income__income_tax(Variable):
+class annual_gross_income__it(Variable):
     value_type = float
     entity = Person
     definition_period = YEAR
@@ -30,7 +30,7 @@ class annual_gross_income__income_tax(Variable):
     reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1512333.html"
 
 
-class annual_total_deduction__income_tax(Variable):
+class annual_total_deduction__it(Variable):
     value_type = float
     entity = Person
     definition_period = YEAR
@@ -38,7 +38,7 @@ class annual_total_deduction__income_tax(Variable):
     reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1512336.html"
 
 
-class net_income__income_tax(Variable):
+class net_income__it(Variable):
     value_type = float
     entity = Person
     definition_period = YEAR
@@ -46,14 +46,14 @@ class net_income__income_tax(Variable):
     reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1512339.html"
 
     def formula(person, period, parameters):
-        net_income = person('annual_gross_income__income_tax', period) - person('annual_total_deduction__income_tax', period)
+        net_income = person('annual_gross_income__it', period) - person('annual_total_deduction__it', period)
 
         return (
             net_income * (net_income > 0)
             )
 
 
-class net_loss__income_tax(Variable):
+class net_loss__it(Variable):
     value_type = float
     entity = Person
     definition_period = YEAR
@@ -61,14 +61,14 @@ class net_loss__income_tax(Variable):
     reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1512339.html"
 
     def formula(person, period, parameters):
-        net_loss = person('annual_gross_income__income_tax', period) - person('annual_total_deduction__income_tax', period)
+        net_loss = person('annual_gross_income__it', period) - person('annual_total_deduction__it', period)
 
         return (
             net_loss * (net_loss < 0)
             )
 
 
-class available_tax_loss__income_tax(Variable):
+class available_tax_loss__it(Variable):
     value_type = float
     entity = Person
     definition_period = YEAR
@@ -76,7 +76,7 @@ class available_tax_loss__income_tax(Variable):
     reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1520575.html#DLM1520774"
 
 
-class taxable_income__income_tax(Variable):
+class taxable_income__it(Variable):
     value_type = float
     entity = Person
     definition_period = YEAR
@@ -84,7 +84,7 @@ class taxable_income__income_tax(Variable):
     reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1512344.html"
 
     def formula(person, period, parameters):
-        taxable_income = (person('net_income__income_tax', period) - person('available_tax_loss__income_tax', period))
+        taxable_income = (person('net_income__it', period) - person('available_tax_loss__it', period))
 
         return (
             taxable_income * (taxable_income > 0)
