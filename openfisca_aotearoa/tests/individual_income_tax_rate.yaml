@@ -2,47 +2,47 @@
   period: 2018
   absolute_error_margin: 1
   input_variables:
-    annual_gross_income__it: 70000
-    annual_total_deduction__it: 12000
+    annual_gross_income_it: 70000
+    annual_total_deduction_it: 12000
   output_variables:
-    net_income__it: 58000
+    net_income_it: 58000
 - name: Tests the net_income formula for zero on negative calculation
   period: 2018
   absolute_error_margin: 1
   input_variables:
-    annual_gross_income__it: 70000
-    annual_total_deduction__it: 82000
+    annual_gross_income_it: 70000
+    annual_total_deduction_it: 82000
   output_variables:
-    net_income__it: 0
+    net_income_it: 0
 - name: Tests the net_loss formula
   period: 2018
   absolute_error_margin: 1
   input_variables:
-    annual_gross_income__it: 70000
-    annual_total_deduction__it: 82000
+    annual_gross_income_it: 70000
+    annual_total_deduction_it: 82000
   output_variables:
-    net_loss__it: -12000
+    net_loss_it: -12000
 - name: Tests the net_income formula for zero when no loss
   period: 2018
   absolute_error_margin: 1
   input_variables:
-    annual_gross_income__it: 70000
-    annual_total_deduction__it: 12000
+    annual_gross_income_it: 70000
+    annual_total_deduction_it: 12000
   output_variables:
-    net_loss__it: 0
+    net_loss_it: 0
 - name: Tests the taxable_income formula calculation
   period: 2018
   absolute_error_margin: 1
   input_variables:
-    net_income__it: 60000
-    available_tax_loss__it: 12000
+    net_income_it: 60000
+    available_tax_loss_it: 12000
   output_variables:
-    taxable_income__it: 48000
+    taxable_income_it: 48000
 - name: Tests the taxable_income formula calculation with a potential negative result
   period: 2018
   absolute_error_margin: 1
   input_variables:
-    net_income__it: 60000
-    available_tax_loss__it: 72000
+    net_income_it: 60000
+    available_tax_loss_it: 72000
   output_variables:
-    taxable_income__it: 0
+    taxable_income_it: 0

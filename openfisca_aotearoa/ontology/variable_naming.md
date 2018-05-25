@@ -22,10 +22,10 @@ Then we use that tag with the term as a suffix. The reason a suffix is chosen is
 We join these with a double underscore so that the variable `dependant` becomes `dependant__rates_rebates`.
 This started to be implemented but it was then discovered it made the code unreadable and lead to mistakes. An example of this is `available_tax_loss__income_tax` where `__income_tax` is the Income Tax Act.
 
-In response to this the next proposal is to replace the tag with a two letter identifier. In this situation `available_tax_loss__income_tax` -> `available_tax_loss__it` and
-`dependant__rates_rebates` -> `dependant__rr`
+In response to this the next proposal is to replace the tag with a two letter identifier. In this situation `available_tax_loss__income_tax` -> `available_tax_loss_it` and
+`dependant__rates_rebates` -> `dependant_rr`
 The downside to this approach is it introduces another abitary thing to learn for newcomers to the project. 
-The upside is it will allow for a unique way of searching within the docs. For example `__rr` would return all variables defined in relation to the `Rates Rebates Act 1973`.
+The upside is it will allow for a unique way of searching within the docs. For example `_rr` would return all variables defined in relation to the `Rates Rebates Act 1973`.
 
 When new acts are referenced within OpenFisca Aotearoa, please add them below with the chosen identifier.
 The format of this document could be changed to incorporate a more linked data approach to the list when a format is decided on.
