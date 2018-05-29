@@ -10,4 +10,3 @@ class citizen(Variable):
     definition_period = ETERNITY
     label = u"Number of Persons classified as dependant for the purposes of rates rebates"
     reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/whole.html"
-    
