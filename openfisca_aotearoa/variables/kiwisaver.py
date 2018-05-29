@@ -30,7 +30,7 @@ class meets_contrib_duration_requirement__kiwisaver(Variable):
     label = u"This flag returns true or false if the contribution period is valid"
 
     def formula(persons, period):
-        return persons('ks_contrib_duration', period) >= 3
+        return persons('contrib_duration__kiwisaver', period) >= 3
 
 
 class homestart_grant__kiwisaver(Variable):
