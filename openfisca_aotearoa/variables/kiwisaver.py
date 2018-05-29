@@ -45,7 +45,7 @@ class homestart_grant__kiwisaver(Variable):
         return clip(HS_grant, 0, 5000)
 
 
-class purc_price(Variable):
+class purchase_price(Variable):
     value_type = int
     entity = Person
     definition_period = YEAR
@@ -59,7 +59,7 @@ class lvr_deposit_req__kiwisaver(Variable):
     label = u"Loan to value ratio deposit requirement"
 
     def formula(persons, period):
-        return persons('purc_price', period) * 0.2
+        return persons('purchase_price', period) * 0.2
 
 
 class homestart_deposit_req__kiwisaver(Variable):
@@ -69,7 +69,7 @@ class homestart_deposit_req__kiwisaver(Variable):
     label = u"Homestart grant deposit requirement"
 
     def formula(persons, period):
-        return persons('purc_price', period) * 0.1
+        return persons('purchase_price', period) * 0.1
 
 
 class total_savings__kiwisaver(Variable):
