@@ -27,6 +27,6 @@ In response to this the next proposal is to replace the tag with a two letter id
 The downside to this approach is it introduces another abitary thing to learn for newcomers to the project. 
 The upside is it will allow for a unique way of searching within the docs. For example `_rr` would return all variables defined in relation to the `Rates Rebates Act 1973`.
 
-When new acts are referenced within OpenFisca Aotearoa, please add them below with the chosen identifier.
+When new acts are referenced within OpenFisca Aotearoa, please add them above with the chosen identifier.
 The format of this document could be changed to incorporate a more linked data approach to the list when a format is decided on.
 
