@@ -2,7 +2,7 @@
   period: 2018-01
   absolute_error_margin: 0
   input_variables:
-    contrib_duration_as_per_kiwisaver: 2
+    contrib_duration__kiwisaver: 2
   output_variables:
     homestart_grant__kiwisaver: 0
 
@@ -10,7 +10,7 @@
   period: 2018-01
   absolute_error_margin: 0
   input_variables:
-    contrib_duration_as_per_kiwisaver: 3
+    contrib_duration__kiwisaver: 3
   output_variables:
     homestart_grant__kiwisaver: 3000
 
@@ -18,7 +18,7 @@
   period: 2018-01
   absolute_error_margin: 0
   input_variables:
-    contrib_duration_as_per_kiwisaver: 4
+    contrib_duration__kiwisaver: 4
   output_variables:
     homestart_grant__kiwisaver: 4000
 
@@ -26,6 +26,6 @@
   period: 2018-01
   absolute_error_margin: 0
   input_variables:
-    contrib_duration_as_per_kiwisaver: 7
+    contrib_duration__kiwisaver: 7
   output_variables:
     homestart_grant__kiwisaver: 5000
