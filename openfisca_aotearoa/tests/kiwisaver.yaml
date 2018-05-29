@@ -4,7 +4,7 @@
   input_variables:
     contrib_duration_as_per_kiwisaver: 2
   output_variables:
-    homestart_grant: 0
+    homestart_grant__kiwisaver: 0
 
 - name: If contributed for 3 years, entitled to $3000
   period: 2018-01
@@ -12,7 +12,7 @@
   input_variables:
     contrib_duration_as_per_kiwisaver: 3
   output_variables:
-    homestart_grant: 3000
+    homestart_grant__kiwisaver: 3000
 
 - name: If contributed for 4 years, entitled to $4000
   period: 2018-01
@@ -20,7 +20,7 @@
   input_variables:
     contrib_duration_as_per_kiwisaver: 4
   output_variables:
-    homestart_grant: 4000
+    homestart_grant__kiwisaver: 4000
 
 - name: If contributed for over 5 years, entitled to $5000
   period: 2018-01
@@ -28,4 +28,4 @@
   input_variables:
     contrib_duration_as_per_kiwisaver: 7
   output_variables:
-    homestart_grant: 5000
+    homestart_grant__kiwisaver: 5000
