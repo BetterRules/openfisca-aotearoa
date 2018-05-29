@@ -23,7 +23,7 @@ class contrib_duration__kiwisaver(Variable):
     label = u"Years the prospective home buyer has been contributing continuously to their kiwisaver account"
 
 
-class contrib_duration__kiwisaver(Variable):
+class meets_contrib_duration_requirement__kiwisaver(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
