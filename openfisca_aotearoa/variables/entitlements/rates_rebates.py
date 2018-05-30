@@ -7,20 +7,20 @@ from openfisca_aotearoa.entities import Titled_Property, Person
 from numpy import clip, floor
 
 
-class dependants_rr(Variable):
+class rates_rebates__dependants(Variable):
     value_type = int
     entity = Person
     definition_period = YEAR
     label = u"Number of Persons classified as dependant for the purposes of rates rebates"
 
 
-class rates_total_rr(Variable):
+class rates_rebates__rates_total(Variable):
     value_type = float
     entity = Titled_Property
     definition_period = YEAR
 
 
-class combined_income_rr(Variable):
+class rates_rebates__combined_income(Variable):
     value_type = float
     entity = Person
     definition_period = YEAR
@@ -29,7 +29,7 @@ class combined_income_rr(Variable):
 
 
 # Reference is accurate as at the time this formula was written, link to legislation is: http://www.legislation.govt.nz/act/public/1973/0005/67.0/DLM409673.html?search=sw_096be8ed8161c2a5_divide_25_se&p=1
-class rates_rebate_rr(Variable):
+class rates_rebates__rebate(Variable):
     value_type = float
     entity = Titled_Property
     definition_period = YEAR
@@ -43,13 +43,13 @@ class rates_rebate_rr(Variable):
         maximum_allowable = parameters(period).benefits.rates_rebates.maximum_allowable
 
         # sum allowable income including all the dependants for property
-        allowable_income = (titled_properties.sum(titled_properties.members('dependants_rr', period)) * additional_per_dependant) + income_threshold
+        allowable_income = (titled_properties.sum(titled_properties.members('rates_rebates__dependants', period)) * additional_per_dependant) + income_threshold
 
         # wrapping floor math function is non legislative and only to conform output of variable with existing infrastracture.
-        excess_income = floor((titled_properties.sum(titled_properties.members('combined_income_rr', period)) - allowable_income) / 8)
+        excess_income = floor((titled_properties.sum(titled_properties.members('rates_rebates__combined_income', period)) - allowable_income) / 8)
 
         # minus the initial contribution
-        rates_minus_contribution = titled_properties('rates_total_rr', period) - initial_contribution
+        rates_minus_contribution = titled_properties('rates_rebates__rates_total', period) - initial_contribution
 
         # perform the calculation
         rebate = rates_minus_contribution - ((rates_minus_contribution / 3) + excess_income)
@@ -58,7 +58,7 @@ class rates_rebate_rr(Variable):
         return clip(rebate, 0, maximum_allowable)
 
 
-class maximum_income_for_full_rebate_rr(Variable):
+class rates_rebates__maximum_income_for_full_rebate(Variable):
     value_type = float
     entity = Titled_Property
     definition_period = YEAR
@@ -71,14 +71,14 @@ class maximum_income_for_full_rebate_rr(Variable):
         initial_contribution = parameters(period).benefits.rates_rebates.initial_contribution
 
         # sum allowable income including all the dependants for property
-        allowable_income = (titled_properties.sum(titled_properties.members('dependants_rr', period)) * additional_per_dependant) + income_threshold
+        allowable_income = (titled_properties.sum(titled_properties.members('rates_rebates__dependants', period)) * additional_per_dependant) + income_threshold
         # what we're using to compute the maximum salary for full rebate
         rebate = parameters(period).benefits.rates_rebates.maximum_allowable
 
-        return (((((titled_properties('rates_total_rr', period) - initial_contribution) - rebate) - ((titled_properties('rates_total_rr', period) - initial_contribution) / 3)) * 8) + allowable_income)
+        return (((((titled_properties('rates_rebates__rates_total', period) - initial_contribution) - rebate) - ((titled_properties('rates_rebates__rates_total', period) - initial_contribution) / 3)) * 8) + allowable_income)
 
 
-class minimum_income_for_no_rebate_rr(Variable):
+class rates_rebates__minimum_income_for_no_rebate(Variable):
     value_type = float
     entity = Titled_Property
     definition_period = YEAR
@@ -91,8 +91,8 @@ class minimum_income_for_no_rebate_rr(Variable):
         initial_contribution = parameters(period).benefits.rates_rebates.initial_contribution
 
         # sum allowable income including all the dependants for property
-        allowable_income = (titled_properties.sum(titled_properties.members('dependants_rr', period)) * additional_per_dependant) + income_threshold
+        allowable_income = (titled_properties.sum(titled_properties.members('rates_rebates__dependants', period)) * additional_per_dependant) + income_threshold
         # what we're using to compute the maximum salary for full rebate
         rebate = 0
 
-        return (((((titled_properties('rates_total_rr', period) - initial_contribution) - rebate) - ((titled_properties('rates_total_rr', period) - initial_contribution) / 3)) * 8) + allowable_income)
+        return (((((titled_properties('rates_rebates__rates_total', period) - initial_contribution) - rebate) - ((titled_properties('rates_rebates__rates_total', period) - initial_contribution) / 3)) * 8) + allowable_income)
