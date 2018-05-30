@@ -6,69 +6,72 @@ from openfisca_core.model_api import *
 from openfisca_aotearoa.entities import Titled_Property, Person
 from numpy import clip, floor
 
-class received_income_tested_benefit_as_per_social_security(Variable):
+class social_security__received_income_tested_benefit(Variable):
     value_type = bool
     entity = Person
     definition_period = YEAR
-    label = u'Number of Persons classified as receiving an income tested benefit'
+    label = u'Boolean for if a Person is classified as receiving an income tested benefit'
     reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/whole.html#DLM1518484"
 
-class received_parents_allowance_as_per_veterans_support(Variable):
+class veterans_support__received_parents_allowance(Variable):
     value_type = bool
     entity = Person
     definition_period = YEAR
-    label = u'Number of Persons classified as receiving a parents allowance'
+    label = u'Boolean for if a Person is classified as receiving a parents allowance'
     reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/whole.html#DLM1518484"
 
-class received_childrens_pension_as_per_veterans_support(Variable):
+class veterans_support__received_childrens_pension(Variable):
     value_type = bool
     entity = Person
     definition_period = YEAR
-    label = u'Number of Persons classified as receiving a parents allowance'
+    label = u'Boolean for if a Person is classified as receiving a parents allowance'
     reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/whole.html#DLM1518484"
 
-class resident_as_per_income_tax(Variable):
+class income_tax__resident(Variable):
     value_type = bool
     entity = Person
     definition_period = YEAR
-    label = u'Number of Persons classified as meeting residence requirements'
+    label = u'Boolean for if a Person is classified as meeting residence requirements'
     reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1518482.html"
     # This should really be a forumla based variable covering the full residency criteria.
 
 
-class dependants_as_per_income_tax(Variable):
+class income_tax__dependant(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    label = u'Number of Persons classified as financially dependant'
+    label = u'Boolean for if a Person is classified as financially dependant'
     reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/whole.html#DLM1520883"
 
     def formula(person, period, parameters):
         age = person('age', period)
-        return age <= 18 # It's not this simple, this needs to be tweaked to inlcude the edge criteria.
+        return age <= 18 
+        # TODO - It's not this simple, this needs to be tweaked to include the edge criteria.
 
-class eligible_for_working_for_families(Variable):
+class income_tax__eligible_for_working_for_families(Variable):
     value_type = bool
     entity = Person
     definition_period = YEAR
-    label = u'Number of Persons classified as eligible for working for families tax credits'    
+    label = u'Boolean for if a Person is classified as eligible for working for families tax credits'    
     reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1518477.html"
 
     def formula(person, period, parameters):
-        received_tested_benefit     = person('received_income_tested_benefit_as_per_social_security', period)
-        received_parents_allowance  = person('received_parents_allowance_as_per_veterans_support', period)
-        received_childrens_pension  = person('received_childrens_pension_as_per_veterans_support', period)     
+        received_tested_benefit     = person('social_security__received_income_tested_benefit', period)
+        received_parents_allowance  = person('veterans_support__received_parents_allowance', period)
+        received_childrens_pension  = person('veterans_support__received_childrens_pension', period)     
 
-        return received_tested_benefit == False and received_parents_allowance == False and received_childrens_pension == False
+        return not_(received_tested_benefit) * not_(received_parents_allowance) * not_(received_childrens_pension)
+        # TODO - Add remaining eligibility criteria as per legislation.
 
-class eligible_for_best_start_tax_credit(Variable):
+class income_tax__eligible_for_best_start_tax_credit(Variable):
     value_type = bool
     entity = Person
     definition_period = YEAR
-    label = u'Number of Persons classified as eligible for best start tax credit'
+    label = u'Boolean for if a Person is classified as eligible for best start tax credit'
     reference = "http://legislation.govt.nz/bill/government/2017/0004/15.0/DLM7512349.html"
 
     def formula(person, period, parameters):
         
-        return True # TODO - Base eligibility of ages of children as per legislation.
+        return True 
+        # TODO - Base eligibility of ages of children as per legislation.
 
