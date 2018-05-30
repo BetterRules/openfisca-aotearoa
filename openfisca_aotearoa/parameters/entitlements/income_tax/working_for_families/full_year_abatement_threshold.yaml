@@ -1,0 +1,5 @@
+description: Full year abatement threshold
+reference: http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1518553.html
+values:
+  2017-04: # This is unresearched, dates of enactment to be determined
+    value: 36350
