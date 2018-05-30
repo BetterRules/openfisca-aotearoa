@@ -1,5 +1,14 @@
 # Changelog
 
+# 3.0.0 - [#20](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/20)
+
+* Tax and benefit system evolution. 
+* Impacted periods: all.
+* Impacted areas: 
+  - Variables `income_tax__tax_payer_filing_status, income_tax__annual_gross_income, income_tax__annual_total_deduction, income_tax__net_income, income_tax__net_loss, income_tax__available_tax_loss, income_tax__taxable_income, rates_rebates__dependants, rates_rebates__rates_total, rates_rebates__combined_income, rates_rebates__rebate, rates_rebates__maximum_income_for_full_rebate, rates_rebates__minimum_income_for_no_rebate`
+* Details:
+  - Variable renaming, impacts the OpenFisca-Aotearoa public API (for instance renaming or removing a variable)
+
 # 2.1.0 - [#18](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/18)
 
 * Tax and benefit system evolution
