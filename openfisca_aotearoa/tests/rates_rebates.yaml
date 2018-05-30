@@ -5,78 +5,78 @@
   period: 2018
   absolute_error_margin: 1
   input_variables:
-    combined_income_as_per_rates_rebates: 32103
-    dependants_as_per_rates_rebates: 0
-    rates_total_as_per_rates_rebates: 2000
+    rates_rebates__combined_income: 32103
+    rates_rebates__dependants: 0
+    rates_rebates__rates_total: 2000
   output_variables:
-    rates_rebate: 312.67
+    rates_rebates__rebate: 312.67
 - name: Someone earning 35000 with two dependants and rates of 2200
   period: 2018
   absolute_error_margin: 1
   input_variables:
-    combined_income_as_per_rates_rebates: 35000
-    dependants_as_per_rates_rebates: 2
-    rates_total_as_per_rates_rebates: 2200
+    rates_rebates__combined_income: 35000
+    rates_rebates__dependants: 2
+    rates_rebates__rates_total: 2200
   output_variables:
-    rates_rebate: 209
+    rates_rebates__rebate: 209
 - name: Someone earning 70000 with two dependants and rates of 2200
   period: 2018
   absolute_error_margin: 1
   input_variables:
-    combined_income_as_per_rates_rebates: 70000
-    dependants_as_per_rates_rebates: 2
-    rates_total_as_per_rates_rebates: 2000
+    rates_rebates__combined_income: 70000
+    rates_rebates__dependants: 2
+    rates_rebates__rates_total: 2000
   output_variables:
-    rates_rebate: 0
+    rates_rebates__rebate: 0
 - name: The minimum income required for no rebate with 2 dependants and rates of $2000 
   period: 2018
   absolute_error_margin: 1
   input_variables:
-    dependants_as_per_rates_rebates: 2
-    rates_total_as_per_rates_rebates: 2000
+    rates_rebates__dependants: 2
+    rates_rebates__rates_total: 2000
   output_variables:
-    minimum_income_for_no_rebate: 35603
+    rates_rebates__minimum_income_for_no_rebate: 35603
 - name: The maximum income required for the full rebate with 3 dependants and rates of $2400 
   period: 2018
   absolute_error_margin: 1
   input_variables:
-    dependants_as_per_rates_rebates: 3
-    rates_total_as_per_rates_rebates: 2400
+    rates_rebates__dependants: 3
+    rates_rebates__rates_total: 2400
   output_variables:
-    maximum_income_for_full_rebate: 33276
+    rates_rebates__maximum_income_for_full_rebate: 33276
 - name: Proof of maximum income required for the full rebate with 3 dependants and rates of $2400 
   period: 2018
   absolute_error_margin: 1
   input_variables:
-    combined_income_as_per_rates_rebates: 31776
-    dependants_as_per_rates_rebates: 3
-    rates_total_as_per_rates_rebates: 2400
+    rates_rebates__combined_income: 31776
+    rates_rebates__dependants: 3
+    rates_rebates__rates_total: 2400
   output_variables:
-    rates_rebate: 620
+    rates_rebates__rebate: 620
 - name: Proof of maximum income required for the full rebate with 3 dependants and rates of $2400 
   period: 2018
   absolute_error_margin: 0.5
   input_variables:
-    combined_income_as_per_rates_rebates: 33001
-    dependants_as_per_rates_rebates: 3
-    rates_total_as_per_rates_rebates: 2400
+    rates_rebates__combined_income: 33001
+    rates_rebates__dependants: 3
+    rates_rebates__rates_total: 2400
   output_variables:
-    rates_rebate: 620
+    rates_rebates__rebate: 620
 - name: Test for Tauranga 2018 launch 
   period: 2018
   absolute_error_margin: 0.5
   input_variables:
-    dependants_as_per_rates_rebates: 0
-    rates_total_as_per_rates_rebates: 4268.58
+    rates_rebates__dependants: 0
+    rates_rebates__rates_total: 4268.58
   output_variables:
-    maximum_income_for_full_rebate: 41742
-    minimum_income_for_no_rebate: 46702
+    rates_rebates__maximum_income_for_full_rebate: 41742
+    rates_rebates__minimum_income_for_no_rebate: 46702
 - name: Tests rounding behaviour within existing infrastructure
   period: 2018
   absolute_error_margin: 0.01
   input_variables:
-    combined_income_as_per_rates_rebates: 50000
-    dependants_as_per_rates_rebates: 0
-    rates_total_as_per_rates_rebates: 5363.95
+    rates_rebates__combined_income: 50000
+    rates_rebates__dependants: 0
+    rates_rebates__rates_total: 5363.95
   output_variables:
-    rates_rebate: 318.30
+    rates_rebates__rebate: 318.30
