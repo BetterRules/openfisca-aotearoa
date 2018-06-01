@@ -9,7 +9,7 @@ from numpy import clip
 # All variables are according to the reference link http://www.legislation.govt.nz/act/public/2006/0040/latest/DLM379487.html#DLM379487
 
 
-class ks_duration(Variable):
+class duration__kiwisaver(Variable):
     value_type = int
     entity = Person
     definition_period = MONTH
@@ -40,8 +40,8 @@ class homestart_grant__kiwisaver(Variable):
     label = u"Amount available to you from the Homestart grant"
 
     def formula(persons, period):
-        HS_grant = persons('ks_contrib_duration', period) * \
-            persons('ks_contrib_duration_satisfied', period) * 1000
+        HS_grant = persons('duration__kiwisaver', period) * \
+            persons('contrib_duration__kiwisaver', period) * 1000
         return clip(HS_grant, 0, 5000)
 
 
