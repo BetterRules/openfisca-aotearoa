@@ -33,7 +33,7 @@ class kiwiserver__meets_contrib_duration_requirement(Variable):
         return persons('kiwisaver__contrib_duration', period) >= 3
 
 
-class homestart_grant__kiwisaver(Variable):
+class kiwisaver__homestart_grant(Variable):
     value_type = float
     entity = Person
     definition_period = MONTH
@@ -79,7 +79,7 @@ class kiwisaver__total_savings(Variable):
     label = u"Homestart grant deposit requirement"
 
     def formula(persons, period):
-        return persons('kiwisaver__savings', period) + persons('homestart_grant__kiwisaver', period) + persons('kiwisaver__net', period)
+        return persons('kiwisaver__savings', period) + persons('kiwisaver__homestart_grant', period) + persons('kiwisaver__net', period)
 
 
 class kiwisaver__gross(Variable):
