@@ -46,4 +46,45 @@ Person = build_entity(
     is_person = True,
     )
 
-entities = [Titled_Property, Person]
+Family = build_entity(
+    key = "family",
+    plural = "families",
+    label = u'Family',
+    doc = '''
+    A Family represents a collection of related persons.
+
+    Family entities are required for calculations across a number of entitlements including for example "Working for families" and "Paid Parental Leave"
+
+    A family can contain a number of roles, such as 'principal_caregiver', 'partner', 'dependant_child' & 'independant_child'.
+
+    For more information on entities, see: http://openfisca.org/doc/coding-the-legislation/50_entities.html
+    ''',
+    roles = [
+        {
+            'key': 'principal_caregiver',
+            'plural': 'principal_caregivers',
+            'label': u'Principal caregivers',
+            'doc': u'The one person who is the principal caregiver of a family.'
+            },
+        {
+            'key': 'partner',
+            'plural': 'partners',
+            'label': u'Partners',
+            'doc': u'The one or more persons who are partners of a family principal caregiver.'
+            },
+        {
+            'key': 'dependant_child',
+            'plural': 'dependant_children',
+            'label': u'Dependant children',
+            'doc': u'The one or more persons who are financially dependant children of a family principal caregiver.'
+            },
+        {
+            'key': 'independant_child',
+            'plural': 'independant_children',
+            'label': u'Independant children',
+            'doc': u'The one or more persons who are financially independant children of a family principal caregiver.'
+            }
+        ]
+    )
+
+entities = [Titled_Property, Person, Family]
