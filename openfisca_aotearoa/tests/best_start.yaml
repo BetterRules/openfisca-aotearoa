@@ -1,0 +1,79 @@
+# Complex family setup, doesn't actually make for a great test but was written to ensure this sort of complexity could be handled
+- name: Tests complex paid parental leave eligibility
+  period: 2018
+  absolute_error_margin: 0
+  persons:
+    - id: "Papatūānuku"
+      date_of_birth: 1979-08-30
+    - id: "Rakinui"
+      date_of_birth: 1977-10-13
+    - id: "Tāne"
+      date_of_birth: 2005-01-24
+    - id: "Rongo"
+      date_of_birth: 2007-03-08
+    - id: "Ikatere"
+      date_of_birth: 2008-12-27
+    - id: "Tāwhirimātea"
+      date_of_birth: 2011-12-29
+    - id: "Papatūānuku-2"
+      date_of_birth: 1979-08-30
+    - id: "Papatūānuku-3"
+      date_of_birth: 1979-08-30
+    - id: "Hemi"
+      date_of_birth: 1977-10-13
+    - id: "Samuel"
+      date_of_birth: 1968-10-13
+    - id: "Hemi-junior"
+      date_of_birth: 2018-06-18
+    - id: "Hemi-junior-early"
+      date_of_birth: 2018-05-30
+      due_date_of_birth: 2018-06-03
+    - id: "Tāne-2"
+      date_of_birth: 2005-01-24
+    - id: "Rongo-2"
+      date_of_birth: 2007-03-08
+  families:
+    - id: "First family"
+      principal_caregiver: "Papatūānuku"
+      partners: ["Rakinui"]
+      dependant_children: ["Tāne", "Rongo", "Ikatere", "Tāwhirimātea"]
+    - id: "Second family"
+      principal_caregiver: "Papatūānuku-2"
+      partners: ["Hemi"]
+      dependant_children: ["Tāne-2", "Rongo-2", "Hemi-junior"]
+    - id: "Third family"
+      principal_caregiver: "Papatūānuku-3"
+      partners: ["Samuel"]
+      dependant_children: ["Hemi-junior-early"]
+  titled_properties:
+    - id: "Earth"
+      owners: ["Papatūānuku", "Rakinui", "Tāne", "Rongo", "Ikatere", "Tāwhirimātea", "Papatūānuku-2", "Papatūānuku-3","Tāne-2", "Samuel", "Rongo-2", "Hemi", "Hemi-junior", "Hemi-junior-early"]
+  output_variables:
+    income_tax__family_has_children_eligible_for_best_start:
+      2018-06: [0, 1, 1]
+    income_tax__caregiver_eligible_for_best_start_tax_credit:
+      2018-06: [0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0]
+- name: Tests paid parental leave eligibility based on due date of baby only
+  period: 2018
+  absolute_error_margin: 0
+  persons:
+    - id: "Papatūānuku"
+      date_of_birth: 1979-08-30
+    - id: "Rakinui"
+      date_of_birth: 1977-10-13
+    - id: "Hemi-junior-early"
+      date_of_birth: 2018-05-30
+      due_date_of_birth: 2018-06-03
+  families:
+    - id: "First family"
+      principal_caregiver: "Papatūānuku"
+      partners: ["Rakinui"]
+      dependant_children: ["Hemi-junior-early"]
+  titled_properties:
+    - id: "Earth"
+      owners: ["Papatūānuku", "Rakinui", "Hemi-junior-early"]
+  output_variables:
+    income_tax__family_has_children_eligible_for_best_start:
+      2018-06: [1]
+    income_tax__caregiver_eligible_for_best_start_tax_credit:
+      2018-06: [1, 0, 0]

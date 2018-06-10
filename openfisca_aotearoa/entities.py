@@ -58,13 +58,15 @@ Family = build_entity(
     A family can contain a number of roles, such as 'principal_caregiver', 'partner', 'dependant_child' & 'independant_child'.
 
     For more information on entities, see: http://openfisca.org/doc/coding-the-legislation/50_entities.html
+
+    Families can have multiple principle_caregiver but as each entitlement is calculated in relation to the Principle Caregiver we recommend for modelling you create multiple family sets per caregiver to describe the scenario
     ''',
     roles = [
         {
             'key': 'principal_caregiver',
-            'plural': 'principal_caregivers',
-            'label': u'Principal caregivers',
-            'doc': u'The one person who is the principal caregiver of a family.'
+            'label': u'Principal caregiver',
+            'doc': u'The one person who is the principal caregiver of a family.',
+            'max': 1
             },
         {
             'key': 'partner',
