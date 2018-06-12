@@ -40,3 +40,17 @@ class income_tax__person_principal_carer_qualifies_under_family_scheme(Variable)
 
     def formula(persons, period, parameters):
         return persons.has_role(Family.PRINCIPAL_CAREGIVER) * persons.family("income_tax__family_has_dependent_children", period)
+
+
+class income_tax__family_scheme_income(Variable):
+        value_type = float
+        entity = Person
+        definition_period = YEAR
+        label = u'The annual gross income for all persons in a Family'
+        reference = "http://legislation.govt.nz/act/public/2007/0097/latest/DLM1518454.html#DLM1518454"
+
+        # TODO there is a myriad of conditions on this variable that represent a large body of work.
+        # def formula(person, period, parameters):
+
+            # See legislation reference above however currently "A person’s family scheme income is an amount based on their net income" is possibly the most common use case scenario
+            # return person('income_tax__net_income', period)
