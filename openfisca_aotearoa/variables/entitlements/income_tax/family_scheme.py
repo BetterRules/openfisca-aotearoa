@@ -10,7 +10,7 @@ class income_tax__qualifies_for_entitlements_under_family_scheme(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    label = u'Boolean for if a person is classified as eligible under the family scheme'
+    label = u'Is a person is classified as eligible under the family scheme'
     reference = "http://legislation.govt.nz/act/public/2007/0097/latest/DLM1518477.html"
 
     def formula(persons, period, parameters):
@@ -24,11 +24,11 @@ class income_tax__caregiver_age_qualifies_under_family_scheme(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    label = u'A person is only eligible under the family scheme if they are as old or older than specified'
+    label = u'Is a person  eligible under the family scheme age parameters'
     reference = "http://legislation.govt.nz/act/public/2007/0097/latest/DLM1518479.html#DLM1518479"
 
     def formula(persons, period, parameters):
-        return persons("age", period) >= 16  # TODO possibly set this as a parameter if it ever changes
+        return persons("age", period) >= parameters(period).entitlements.income_tax.working_for_families.principal_caregiver_age_threshold
 
 
 class income_tax__person_principal_carer_qualifies_under_family_scheme(Variable):
@@ -51,6 +51,5 @@ class income_tax__family_scheme_income(Variable):
 
         # TODO there is a myriad of conditions on this variable that represent a large body of work.
         # def formula(person, period, parameters):
-
-            # See legislation reference above however currently "A person’s family scheme income is an amount based on their net income" is possibly the most common use case scenario
-            # return person('income_tax__net_income', period)
+        # See legislation reference above however currently "A person’s family scheme income is an amount based on their net income" is possibly the most common use case scenario
+        # return person('income_tax__net_income', period)
