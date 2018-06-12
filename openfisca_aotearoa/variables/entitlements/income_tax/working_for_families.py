@@ -40,8 +40,6 @@ class income_tax__residence(Variable):
     # This should really be a forumla based variable covering the full residency criteria.
 
 
-
-
 class income_tax__eligible_for_working_for_families(Variable):
     value_type = bool
     entity = Person

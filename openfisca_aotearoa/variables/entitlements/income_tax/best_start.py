@@ -67,7 +67,6 @@ class income_tax__best_start_tax_credit_per_child(Variable):
         return dependant_eligible_full + dependant_eligible_abated_1 + dependant_eligible_abated_2
 
 
-
 class income_tax__entitlement_for_best_start_tax_credit(Variable):
     value_type = float
     entity = Person
@@ -78,4 +77,4 @@ class income_tax__entitlement_for_best_start_tax_credit(Variable):
     def formula(persons, period, parameters):
 
         # sum up families income
-        return persons.family.sum(persons.family.members("income_tax__best_start_tax_credit_per_child", period)) * persons("income_tax__caregiver_eligible_for_best_start_tax_credit",period)
+        return persons.family.sum(persons.family.members("income_tax__best_start_tax_credit_per_child", period)) * persons("income_tax__caregiver_eligible_for_best_start_tax_credit", period)
