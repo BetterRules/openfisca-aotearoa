@@ -81,6 +81,6 @@ class income_tax__dependent_child(Variable):
         # TODO - It's not this simple, this needs to be tweaked to include the edge criteria above.
         # not in a marriage, civil union, or de facto relationship
         # is or less than 15
-        # or 16 and 17 and not finanially independant
+        # or 16 and 17 and not financially independant
         # is 18 and many conditions (see act)
         return age <= 18
