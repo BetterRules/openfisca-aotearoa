@@ -1,22 +1,22 @@
 # Changelog
 
-# 3.0.1 - [#21](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/21)
+# 4.0.0 - [#22](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/22)
 
-* Tax and benefit system evolution. Minor change.
-* Impacted periods: none
-* Impacted areas: `variables/rates_rebates`
+* Tax and benefit system evolution. Major change.
+* Impacted periods: all
+* Impacted areas: `entities.families, tests/best_start, tests/family_scheme, tests/working_for_families, variables/demographics, variables/rates_rebates, variables/entitlements/income_tax/best_start.py, variables/entitlements/income_tax/family_scheme.py, variables/entitlements/income_tax/working_for_families.py`
 * Details:
-  - removed extraneous rates_rebates variable file
-- - - -
-These changes:
-- Change non-functional parts of this repository
-
+  - removed extraneous rates_rebates variable file,
+  - added `variables/demographics` section with variables (`date_of_birth, due_date_of_birth, age, age_of_youngest`)
+  - added `variables/entitlements/income_tax/best_start.py` with variables (`income_tax__caregiver_eligible_for_best_start_tax_credit, income_tax__family_has_children_eligible_for_best_start, income_tax__entitlement_for_best_start_tax_credit`)
+  - added `variables/entitlements/income_tax/family_scheme.py` with variables (`income_tax__qualifies_for_entitlements_under_family_scheme, income_tax__caregiver_age_qualifies_under_family_scheme, income_tax__person_principal_carer_qualifies_under_family_scheme`)
+  - added `variables/entitlements/income_tax/working_for_families.py` with variables (`social_security__received_income_tested_benefit, veterans_support__received_parents_allowance, veterans_support__received_childrens_pension, income_tax__resident, income_tax__family_has_dependent_children, income_tax__dependent_child`)
 
 # 3.0.0 - [#20](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/20)
 
-* Tax and benefit system evolution. 
+* Tax and benefit system evolution.
 * Impacted periods: all.
-* Impacted areas: 
+* Impacted areas:
   - Variables `income_tax__tax_payer_filing_status, income_tax__annual_gross_income, income_tax__annual_total_deduction, income_tax__net_income, income_tax__net_loss, income_tax__available_tax_loss, income_tax__taxable_income, rates_rebates__dependants, rates_rebates__rates_total, rates_rebates__combined_income, rates_rebates__rebate, rates_rebates__maximum_income_for_full_rebate, rates_rebates__minimum_income_for_no_rebate`
 * Details:
   - Variable renaming, impacts the OpenFisca-Aotearoa public API (for instance renaming or removing a variable)
