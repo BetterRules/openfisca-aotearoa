@@ -35,7 +35,7 @@ class income_tax__person_principal_carer_qualifies_under_family_scheme(Variable)
     value_type = bool
     entity = Person
     definition_period = MONTH
-    label = u'A person is only eligible under the family scheme if they are a primary carer of 1 or more dependant persons'
+    label = u'Is the person the principal caregiver and do they have dependent children'
     reference = "http://legislation.govt.nz/act/public/2007/0097/latest/DLM1518480.html"
 
     def formula(persons, period, parameters):
@@ -46,7 +46,7 @@ class income_tax__family_scheme_income(Variable):
         value_type = float
         entity = Person
         definition_period = YEAR
-        label = u'The annual gross income for all persons in a Family'
+        label = u'The annual net income for a person as relates to the family scheme'
         reference = "http://legislation.govt.nz/act/public/2007/0097/latest/DLM1518454.html#DLM1518454"
 
         # TODO there is a myriad of conditions on this variable that represent a large body of work.
