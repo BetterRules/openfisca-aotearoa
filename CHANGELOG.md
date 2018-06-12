@@ -1,5 +1,17 @@
 # Changelog
 
+# 3.0.1 - [#21](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/21)
+
+* Tax and benefit system evolution. Minor change.
+* Impacted periods: none
+* Impacted areas: `variables/rates_rebates`
+* Details:
+  - removed extraneous rates_rebates variable file
+- - - -
+These changes:
+- Change non-functional parts of this repository
+
+
 # 3.0.0 - [#20](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/20)
 
 * Tax and benefit system evolution. 
