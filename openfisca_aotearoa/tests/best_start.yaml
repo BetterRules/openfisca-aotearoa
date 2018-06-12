@@ -36,15 +36,15 @@
     - id: "First family"
       principal_caregiver: "Papatūānuku"
       partners: ["Rakinui"]
-      dependant_children: ["Tāne", "Rongo", "Ikatere", "Tāwhirimātea"]
+      children: ["Tāne", "Rongo", "Ikatere", "Tāwhirimātea"]
     - id: "Second family"
       principal_caregiver: "Papatūānuku-2"
       partners: ["Hemi"]
-      dependant_children: ["Tāne-2", "Rongo-2", "Hemi-junior"]
+      children: ["Tāne-2", "Rongo-2", "Hemi-junior"]
     - id: "Third family"
       principal_caregiver: "Papatūānuku-3"
       partners: ["Samuel"]
-      dependant_children: ["Hemi-junior-early"]
+      children: ["Hemi-junior-early"]
   titled_properties:
     - id: "Earth"
       owners: ["Papatūānuku", "Rakinui", "Tāne", "Rongo", "Ikatere", "Tāwhirimātea", "Papatūānuku-2", "Papatūānuku-3","Tāne-2", "Samuel", "Rongo-2", "Hemi", "Hemi-junior", "Hemi-junior-early"]
@@ -68,7 +68,7 @@
     - id: "First family"
       principal_caregiver: "Papatūānuku"
       partners: ["Rakinui"]
-      dependant_children: ["Hemi-junior-early"]
+      children: ["Hemi-junior-early"]
   titled_properties:
     - id: "Earth"
       owners: ["Papatūānuku", "Rakinui", "Hemi-junior-early"]

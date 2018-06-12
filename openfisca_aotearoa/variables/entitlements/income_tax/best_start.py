@@ -7,6 +7,19 @@ from openfisca_aotearoa.entities import Person, Family
 from numpy import datetime64
 
 
+class income_tax__caregiver_eligible_for_best_start_tax_credit(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = MONTH
+    label = u'Boolean for if a Person is classified as eligible for best start tax credit'
+    reference = "http://legislation.govt.nz/bill/government/2017/0004/15.0/DLM7512349.html"
+
+    def formula(persons, period, parameters):
+        qualifies = persons("income_tax__qualifies_for_entitlements_under_family_scheme", period)
+        family_is_eligible = persons.family("income_tax__family_has_children_eligible_for_best_start", period)
+        return qualifies * family_is_eligible
+
+
 class income_tax__family_has_children_eligible_for_best_start(Variable):
     value_type = bool
     entity = Family
@@ -19,19 +32,6 @@ class income_tax__family_has_children_eligible_for_best_start(Variable):
         families_have_children_due_after_launch_date = families.max(families.members("due_date_of_birth", period) >= datetime64('2018-06-01'))
         families_have_children_younger_than_three_years = families("age_of_youngest", period) < 3
         return ((families_have_children_born_after_launch_date + families_have_children_due_after_launch_date) > 0) * families_have_children_younger_than_three_years
-
-
-class income_tax__caregiver_eligible_for_best_start_tax_credit(Variable):
-    value_type = bool
-    entity = Person
-    definition_period = MONTH
-    label = u'Boolean for if a Person is classified as eligible for best start tax credit'
-    reference = "http://legislation.govt.nz/bill/government/2017/0004/15.0/DLM7512349.html"
-
-    def formula(persons, period, parameters):
-        is_primary_care_giver = persons.has_role(Family.PRINCIPAL_CAREGIVER)
-        family_is_eligible = persons.family("income_tax__family_has_children_eligible_for_best_start", period)
-        return family_is_eligible * is_primary_care_giver
 
 
 class income_tax__entitlement_for_best_start_tax_credit(Variable):

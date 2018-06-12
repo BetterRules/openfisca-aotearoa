@@ -55,11 +55,11 @@ Family = build_entity(
 
     Family entities are required for calculations across a number of entitlements including for example "Working for families" and "Paid Parental Leave"
 
-    A family can contain a number of roles, such as 'principal_caregiver', 'partner', 'dependant_child' & 'independant_child'.
+    A family can contain a number of roles, such as 'principal_caregiver', 'partner' & 'child'.
 
     For more information on entities, see: http://openfisca.org/doc/coding-the-legislation/50_entities.html
 
-    Families can have multiple principle_caregiver but as each entitlement is calculated in relation to the Principle Caregiver we recommend for modelling you create multiple family sets per caregiver to describe the scenario
+    Families can have multiple principle_caregivers but as each entitlement is calculated in relation to the Principle Caregiver we recommend for modelling you create multiple family sets per caregiver to describe each scenario
     ''',
     roles = [
         {
@@ -75,16 +75,10 @@ Family = build_entity(
             'doc': u'The one or more persons who are partners of a family principal caregiver.'
             },
         {
-            'key': 'dependant_child',
-            'plural': 'dependant_children',
-            'label': u'Dependant children',
-            'doc': u'The one or more persons who are financially dependant children of a family principal caregiver.'
-            },
-        {
-            'key': 'independant_child',
-            'plural': 'independant_children',
-            'label': u'Independant children',
-            'doc': u'The one or more persons who are financially independant children of a family principal caregiver.'
+            'key': 'child',
+            'plural': 'children',
+            'label': u'Children',
+            'doc': u'The children of a family.'
             }
         ]
     )

@@ -39,18 +39,6 @@ class income_tax__resident(Variable):
     # This should really be a forumla based variable covering the full residency criteria.
 
 
-class income_tax__dependant(Variable):
-    value_type = bool
-    entity = Person
-    definition_period = MONTH
-    label = u'Boolean for if a Person is classified as financially dependant'
-    reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/whole.html#DLM1520883"
-
-    def formula(person, period, parameters):
-        age = person('age', period)
-        return age <= 18  # TODO - It's not this simple, this needs to be tweaked to include the edge criteria.
-
-
 class income_tax__income(Variable):
         value_type = float
         entity = Person
