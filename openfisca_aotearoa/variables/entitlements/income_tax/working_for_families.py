@@ -40,12 +40,6 @@ class income_tax__residence(Variable):
     # This should really be a forumla based variable covering the full residency criteria.
 
 
-class income_tax__income(Variable):
-        value_type = float
-        entity = Person
-        definition_period = YEAR
-        label = u'The annual income for a Person in a Family.'
-        reference = ""  # TODO Add
 
 
 class income_tax__eligible_for_working_for_families(Variable):

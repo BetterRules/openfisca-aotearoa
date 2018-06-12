@@ -17,10 +17,12 @@
       date_of_birth: 2011-12-29
     - id: "Papatūānuku-2"
       date_of_birth: 1979-08-30
+      income_tax__family_scheme_income: 41000
     - id: "Papatūānuku-3"
       date_of_birth: 1979-08-30
     - id: "Hemi"
       date_of_birth: 1977-10-13
+      income_tax__family_scheme_income: 40000
     - id: "Samuel"
       date_of_birth: 1968-10-13
     - id: "Hemi-junior"
@@ -29,9 +31,9 @@
       date_of_birth: 2018-05-30
       due_date_of_birth: 2018-06-03
     - id: "Tāne-2"
-      date_of_birth: 2005-01-24
+      date_of_birth: 2017-05-24
     - id: "Rongo-2"
-      date_of_birth: 2007-03-08
+      date_of_birth: 2016-03-08
   families:
     - id: "First family"
       principal_caregiver: "Papatūānuku"
@@ -53,6 +55,10 @@
       2018-06: [0, 1, 1]
     income_tax__caregiver_eligible_for_best_start_tax_credit:
       2018-06: [0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0]
+    income_tax__best_start_tax_credit_per_child:
+      2018-06: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3120, 3120, 2700, 2700]
+    income_tax__entitlement_for_best_start_tax_credit:
+      2018-06: [0, 0, 0, 0, 0, 0, 8520, 3120, 0, 0, 0, 0, 0, 0]
 - name: Tests paid parental leave eligibility based on due date of baby only
   period: 2018
   absolute_error_margin: 0
@@ -77,3 +83,57 @@
       2018-06: [1]
     income_tax__caregiver_eligible_for_best_start_tax_credit:
       2018-06: [1, 0, 0]
+- name: Tests paid parental leave entitlement value full entitlement with baby due date after 1st July 2018
+  period: 2018
+  absolute_error_margin: 0
+  persons:
+    - id: "Papatūānuku"
+      date_of_birth: 1979-08-30
+    - id: "Rakinui"
+      date_of_birth: 1977-10-13
+      income_tax__family_scheme_income: 60000
+    - id: "Hemi-junior"
+      date_of_birth: 2018-06-18
+    - id: "Hemi-junior-early"
+      date_of_birth: 2018-05-30
+      due_date_of_birth: 2018-06-03
+  families:
+    - id: "First family"
+      principal_caregiver: "Papatūānuku"
+      partners: ["Rakinui"]
+      children: ["Hemi-junior", "Hemi-junior-early"]
+  titled_properties:
+    - id: "Earth"
+      owners: ["Papatūānuku", "Rakinui", "Hemi-junior", "Hemi-junior-early"]
+  output_variables:
+    income_tax__best_start_tax_credit_per_child:
+      2018-06: [0, 0, 3120, 3120]
+    income_tax__entitlement_for_best_start_tax_credit:
+      2018-06: [6240, 0, 0, 0]
+- name: Tests paid parental leave entitlement value with baby due date after 1st July 2018
+  period: 2018
+  absolute_error_margin: 0
+  persons:
+    - id: "Papatūānuku"
+      date_of_birth: 1979-08-30
+    - id: "Rakinui"
+      date_of_birth: 1977-10-13
+      income_tax__family_scheme_income: 90000
+    - id: "Hemi-junior"
+      date_of_birth: 2016-06-18
+    - id: "Hemi-junior-early"
+      date_of_birth: 2018-05-30
+      due_date_of_birth: 2018-06-03
+  families:
+    - id: "First family"
+      principal_caregiver: "Papatūānuku"
+      partners: ["Rakinui"]
+      children: ["Hemi-junior", "Hemi-junior-early"]
+  titled_properties:
+    - id: "Earth"
+      owners: ["Papatūānuku", "Rakinui", "Hemi-junior", "Hemi-junior-early"]
+  output_variables:
+    income_tax__best_start_tax_credit_per_child:
+      2018-06: [0, 0, 810, 3120]
+    income_tax__entitlement_for_best_start_tax_credit:
+      2018-06: [3930, 0, 0, 0]
