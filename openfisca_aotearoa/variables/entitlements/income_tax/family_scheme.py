@@ -42,6 +42,15 @@ class income_tax__person_principal_carer_qualifies_under_family_scheme(Variable)
         return persons.has_role(Family.PRINCIPAL_CAREGIVER) * persons.family("income_tax__family_has_dependent_children", period)
 
 
+class income_tax__proportion_as_principal_carer(Variable):
+        value_type = float
+        entity = Person
+        default_value = 1
+        definition_period = MONTH
+        label = u'Expression of the amount of time the child is with the family and principal carer where 1 is "all the time"'
+        reference = "http://legislation.govt.nz/act/public/2007/0097/latest/DLM1518454.html#DLM1518454"
+
+
 class income_tax__family_scheme_income(Variable):
         value_type = float
         entity = Person

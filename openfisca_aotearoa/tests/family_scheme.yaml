@@ -15,7 +15,7 @@
       owners: ["Papatūānuku", "Rakinui"]
   output_variables:
     income_tax__caregiver_age_qualifies_under_family_scheme:
-      2018-06: [0, 1]
+      2018-07: [0, 1]
 - name: Tests if family has dependent children in relation to the family scheme
   period: 2018
   absolute_error_margin: 0
@@ -33,4 +33,4 @@
       owners: ["Papatūānuku", "Hemi"]
   output_variables:
     income_tax__family_has_dependent_children:
-      2018-06: [1]
+      2018-07: [1]

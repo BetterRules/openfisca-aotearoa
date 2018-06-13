@@ -28,10 +28,35 @@ class income_tax__family_has_children_eligible_for_best_start(Variable):
     reference = "http://legislation.govt.nz/bill/government/2017/0004/15.0/DLM7512349.html"
 
     def formula(families, period, parameters):
-        families_have_children_born_after_launch_date = families.max(families.members("date_of_birth", period) >= datetime64('2018-06-01'))
-        families_have_children_due_after_launch_date = families.max(families.members("due_date_of_birth", period) >= datetime64('2018-06-01'))
+        families_have_children_born_after_launch_date = families.max(families.members("date_of_birth", period) >= datetime64('2018-07-01'))
+        families_have_children_due_after_launch_date = families.max(families.members("due_date_of_birth", period) >= datetime64('2018-07-01'))
         families_have_children_younger_than_three_years = families("age_of_youngest", period) < 3
         return ((families_have_children_born_after_launch_date + families_have_children_due_after_launch_date) > 0) * families_have_children_younger_than_three_years
+
+
+class income_tax__person_is_best_start_child_as_year(Variable):
+    value_type = float
+    entity = Person
+    definition_period = MONTH
+    label = u'Returns the year of eligibilty either 1, 2 or 3 otherwise returns zero'
+    reference = "http://legislation.govt.nz/bill/government/2017/0004/15.0/DLM7512349.html"
+
+    def formula(persons, period, parameters):
+        birth = persons('date_of_birth', period)
+        birth_year = birth.astype('datetime64[Y]').astype(int) + 1970
+        birth_month = birth.astype('datetime64[M]').astype(int) % 12 + 1
+        birth_day = (birth - birth.astype('datetime64[M]') + 1).astype(int)\
+
+
+        adjust_month = birth_month + (birth_day > 1)  # adjusts month for first full month after birth
+        is_birthday_month_past = (adjust_month <= period.start.month)
+        is_current_or_previous_year = birth_year <= period.start.year
+        whatyear = (period.start.year - birth_year) - where(is_birthday_month_past, 0, 1)
+
+        whatyear = whatyear + 1
+        whatyear = whatyear * (whatyear < 4) * is_current_or_previous_year * (((persons("date_of_birth", period) >= datetime64('2018-07-01')) + (persons("due_date_of_birth", period) >= datetime64('2018-07-01'))) > 0)
+
+        return whatyear
 
 
 class income_tax__best_start_tax_credit_per_child(Variable):
@@ -47,24 +72,25 @@ class income_tax__best_start_tax_credit_per_child(Variable):
         prescribed_amount = parameters(period).entitlements.income_tax.best_start.prescribed_amount
 
         # sum up families income
-        family_income = persons.family.sum(persons.family.members("income_tax__family_scheme_income", period.this_year))  # TODO understand the period approach
+        # http://legislation.govt.nz/act/public/2007/0097/latest/DLM1518488.html#DLM1518488
+        family_income = persons.family.sum(persons.family.members("income_tax__family_scheme_income", period.this_year))
 
         # calculate income over the threshold
         income_over_threshold = where((family_income - threshold) < 0, 0, family_income - threshold)
 
         # work out the ages for each family member
-        ages = persons('age', period)
+        years = persons('income_tax__person_is_best_start_child_as_year', period)
 
         # work out if each dependant child is eligible for full best start tax credit
-        dependant_eligible_full = (ages < 1) * prescribed_amount
+        dependant_eligible_full = (years == 1) * prescribed_amount
 
         # work out if each dependant child is eligible for abated best start tax credit
-        dependant_eligible_abated_1 = (ages == 1) * (prescribed_amount - (income_over_threshold * rate))
+        dependant_eligible_abated_1 = (years == 2) * (prescribed_amount - (income_over_threshold * rate))
 
-        dependant_eligible_abated_2 = (ages == 2) * (prescribed_amount - (income_over_threshold * rate))
+        dependant_eligible_abated_2 = (years == 3) * (prescribed_amount - (income_over_threshold * rate))
 
         # sum up the entitlement for each child
-        return dependant_eligible_full + dependant_eligible_abated_1 + dependant_eligible_abated_2
+        return (dependant_eligible_full + dependant_eligible_abated_1 + dependant_eligible_abated_2) / 12
 
 
 class income_tax__entitlement_for_best_start_tax_credit(Variable):
