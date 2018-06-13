@@ -1,0 +1,14 @@
+- name: Tests Accommodation Supplement Scenarios
+  period: 2017
+  absolute_error_margin: 0
+  input_variables:
+    age: 30
+    normally_lives_in_nz: True
+    is_nz_resident: True
+    has_accomodation_costs: True
+    has_social_housing: False
+    accommodation_supplement__below_income_threshold: True
+    accommodation_supplement__below_cash_threshold: True
+  # output_variables:
+  #   accommodation_supplement__eligible
+  #     2018-06: True
