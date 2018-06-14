@@ -1,0 +1,37 @@
+    # """
+# Benefit: Part 1D Child with Serious Disability (eligible):
+
+# If child.isDependent
+#     and child.hasSeriousDisability
+#     and child.requiresConstantCareAndAttention
+#     and child.hasMedicalCertification
+#     and applicapplicant_is_principal_carer
+#     and applicant.isNZResident
+#         then benefit.ChildDisabilityAllowance is PERMITTED
+# """
+
+- name: Tests Accommodation Supplement Scenarios
+  period: 2018
+  absolute_error_margin: 0
+  input_variables:
+    applicant_is_principal_carer: true
+    normally_lives_in_nz: true
+    is_nz_resident: true
+    child_is_dependant: true
+    child_has_serious_disability: true
+    child_requires_constant_care_and_attention: true
+    child_has_medical_certification: true
+  output_variables:
+    accommodation_supplement__eligible
+      2018-06: true
+
+- name: TestChildDisabilityAllowanceWhenNotDisabled
+  period: 2018
+  input_variables:
+    applicant_is_principal_carer: true
+    is_nz_resident: true
+    normally_lives_in_nz: true
+    child_is_dependant: true
+  output_variables:
+    accommodation_supplement__eligible
+      2018-06: false
