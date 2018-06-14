@@ -34,10 +34,9 @@ class income_tax__residence(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    default_value = True  # TODO residency is required as defined in the act
+    default_value = True
     label = u'Boolean for if a Person is classified as meeting residence requirements'
     reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1518482.html"
-    # This should really be a forumla based variable covering the full residency criteria.
 
 
 class income_tax__eligible_for_working_for_families(Variable):
