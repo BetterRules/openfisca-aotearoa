@@ -1,14 +1,44 @@
 - name: Tests Accommodation Supplement Scenarios
-  period: 2017
+  period: 2018-06
   absolute_error_margin: 0
   input_variables:
     age: 30
-    normally_lives_in_nz: True
-    is_nz_resident: True
-    has_accomodation_costs: True
-    has_social_housing: False
-    accommodation_supplement__below_income_threshold: True
-    accommodation_supplement__below_cash_threshold: True
-  # output_variables:
-  #   accommodation_supplement__eligible
-  #     2018-06: True
+    normally_lives_in_nz: true
+    is_nz_resident: true
+    has_accomodation_costs: true
+    # has_social_housing: false
+    # accommodation_supplement__below_income_threshold: true
+    # accommodation_supplement__below_cash_threshold: true
+  output_variables:
+    social_security__eligible_for_accommodation_supplement: true
+
+
+- name: Tests Accommodation Supplement, when applicant has no costs
+  period: 2018-06
+  absolute_error_margin: 0
+  input_variables:
+    age: 30
+    normally_lives_in_nz: true
+    is_nz_resident: true
+    has_accomodation_costs: false
+    # has_social_housing: false
+    # accommodation_supplement__below_income_threshold: true
+    # accommodation_supplement__below_cash_threshold: true
+  output_variables:
+    social_security__eligible_for_accommodation_supplement: false
+
+
+
+- name: Tests Accommodation Supplement, when applicant is too young
+  period: 2018-06
+  absolute_error_margin: 0
+  input_variables:
+    age: 15
+    normally_lives_in_nz: true
+    is_nz_resident: true
+    has_accomodation_costs: true
+    # has_social_housing: false
+    # accommodation_supplement__below_income_threshold: true
+    # accommodation_supplement__below_cash_threshold: true
+  output_variables:
+    social_security__eligible_for_accommodation_supplement: false

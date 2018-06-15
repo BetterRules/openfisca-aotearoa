@@ -1,0 +1,6 @@
+description: Minimum age to recieve accommodation supplement
+reference: TODO
+values:
+  2018-06:
+    value: 16
+    # <-- #todo
