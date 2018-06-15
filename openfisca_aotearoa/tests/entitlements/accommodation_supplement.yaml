@@ -1,0 +1,84 @@
+---
+- name: Accommodation Supplement for a resident
+  period: 2018-06
+  absolute_error_margin: 0
+  input_variables:
+    age: 30
+    normally_lives_in_nz: true
+    is_resident: true
+    has_accomodation_costs: true
+    has_social_housing: false
+    income_below_threshold_for_accommodation_supplement: true
+    cash_below_threshold_for_accommodation_supplement: true
+  output_variables:
+    social_security__eligible_for_accommodation_supplement: true
+
+- name: Accommodation Supplement for a permanent resident
+  period: 2018-06
+  absolute_error_margin: 0
+  input_variables:
+    age: 30
+    normally_lives_in_nz: true
+    is_permanent_resident: true
+    has_accomodation_costs: true
+    has_social_housing: false
+    income_below_threshold_for_accommodation_supplement: true
+    cash_below_threshold_for_accommodation_supplement: true
+  output_variables:
+    social_security__eligible_for_accommodation_supplement: true
+
+- name: Accommodation Supplement for a citizen
+  period: 2018-06
+  absolute_error_margin: 0
+  input_variables:
+    age: 30
+    normally_lives_in_nz: true
+    is_nz_citizen: true
+    has_accomodation_costs: true
+    has_social_housing: false
+    income_below_threshold_for_accommodation_supplement: true
+    cash_below_threshold_for_accommodation_supplement: true
+  output_variables:
+    social_security__eligible_for_accommodation_supplement: true
+
+- name: Tests Accommodation Supplement, when applicant has no costs
+  period: 2018-06
+  absolute_error_margin: 0
+  input_variables:
+    age: 30
+    normally_lives_in_nz: true
+    is_resident: true
+    has_accomodation_costs: false
+    has_social_housing: false
+    income_below_threshold_for_accommodation_supplement: true
+    cash_below_threshold_for_accommodation_supplement: true
+  output_variables:
+    social_security__eligible_for_accommodation_supplement: false
+
+- name: Tests Accommodation Supplement, when applicant is too young
+  period: 2018-06
+  absolute_error_margin: 0
+  input_variables:
+    age: 15
+    normally_lives_in_nz: true
+    is_resident: true
+    has_accomodation_costs: true
+    has_social_housing: false
+    income_below_threshold_for_accommodation_supplement: true
+    cash_below_threshold_for_accommodation_supplement: true
+  output_variables:
+    social_security__eligible_for_accommodation_supplement: false
+
+- name: Tests Accommodation Supplement, when applicant has social housing
+  period: 2018-06
+  absolute_error_margin: 0
+  input_variables:
+    age: 45
+    normally_lives_in_nz: true
+    is_resident: true
+    has_accomodation_costs: true
+    has_social_housing: true
+    income_below_threshold_for_accommodation_supplement: true
+    cash_below_threshold_for_accommodation_supplement: true
+  output_variables:
+    social_security__eligible_for_accommodation_supplement: false
