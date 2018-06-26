@@ -37,6 +37,11 @@ jobs:
           name: Run tests
           command: make test
 
+  version-bump:
+    docker:
+      - image: circleci/python:2.7-jessie
+    steps:
+      - checkout
       - run:
           name: Check version number has been properly updated
           command: |
@@ -60,6 +65,7 @@ workflows:
   build_and_test:
     jobs:
       - build
+      - version-bump
       # Uncomment the lines below when you have a Pypi account and you are ready to deploy your country package to reusers.
       # - deploy:
       #     requires:
