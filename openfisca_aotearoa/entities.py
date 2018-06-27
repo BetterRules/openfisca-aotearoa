@@ -5,10 +5,10 @@ from openfisca_core.entities import build_entity
 
 
 Titled_Property = build_entity(
-    key = "titled_property",
-    plural = "titled_properties",
-    label = u'Titled Property',
-    doc = '''
+    key="titled_property",
+    plural="titled_properties",
+    label=u'Titled Property',
+    doc='''
     A Titled property represents a property that is owned by a Person or group of Persons.
 
     Example usage:
@@ -17,7 +17,7 @@ Titled_Property = build_entity(
 
     For more information on group entities, see: http://openfisca.org/doc/coding-the-legislation/50_entities.html
     ''',
-    roles = [
+    roles=[
         {
             'key': 'owner',
             'plural': 'owners',
@@ -28,10 +28,10 @@ Titled_Property = build_entity(
     )
 
 Person = build_entity(
-    key = "person",
-    plural = "persons",
-    label = u'Person',
-    doc = '''
+    key="person",
+    plural="persons",
+    label=u'Person',
+    doc='''
     A Person represents an individual, the minimal legal entity on which a legislation might be applied.
 
     Example:
@@ -43,14 +43,14 @@ Person = build_entity(
 
     For more information on entities, see: http://openfisca.org/doc/coding-the-legislation/50_entities.html
     ''',
-    is_person = True,
+    is_person=True,
     )
 
 Family = build_entity(
-    key = "family",
-    plural = "families",
-    label = u'Family',
-    doc = '''
+    key="family",
+    plural="families",
+    label=u'Family',
+    doc='''
     A Family represents a collection of related persons.
 
     Family entities are required for calculations across a number of entitlements including for example "Working for families" and "Paid Parental Leave"
@@ -61,7 +61,7 @@ Family = build_entity(
 
     Families can have multiple principle_caregivers but as each entitlement is calculated in relation to the Principle Caregiver we recommend for modelling you create multiple family sets per caregiver to describe each scenario
     ''',
-    roles = [
+    roles=[
         {
             'key': 'principal_caregiver',
             'label': u'Principal caregiver',
