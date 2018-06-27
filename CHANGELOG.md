@@ -1,5 +1,10 @@
 # Changelog
 
+# 4.0.1 - [#42](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/42)
+Technical improvement.
+* Details:
+  - Moving the version bump check to its own segment of the circle ci config, This means it appears as a separate check within a github PR, and so we can see quickly that the input/output tests pass - and it's only the version bump that's missing.
+
 # 4.0.0 - [#22](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/22)
 
 * Tax and benefit system evolution. Major change.
