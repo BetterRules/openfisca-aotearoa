@@ -2,11 +2,11 @@
 
 ## Writing the Legislation
 
-Aotearoa New Zealand's legislation as code utilising Open Fisca. 
-Early development phase. 
-Please also read [the wiki](https://github.com/ServiceInnovationLab/openfisca-aotearoa/wiki) as a way of introduction.
+Aotearoa New Zealand’s legislation as code project, utilising OpenFisca.
 
-The files that are outside from the `openfisca_aotearoa` folder are used to set up the development environment.
+Source code hosted on [github.com](https://github.com/ServiceInnovationLab/openfisca-aotearoa/)
+
+Please also read [the wiki](https://github.com/ServiceInnovationLab/openfisca-aotearoa/wiki) as a way of introduction.
 
 ## Install Instructions for Users and Contributors
 
@@ -18,6 +18,8 @@ Supported platforms:
 - Microsoft Windows (we recommend using [ConEmu](https://conemu.github.io/) instead of the default console).
 
 Other OS should work if they can execute Python and NumPy.
+
+The files that are outside from the `openfisca_aotearoa` folder are used to set up the development environment.
 
 ### Setting-up a Virtual Environment with Pew
 
@@ -42,6 +44,10 @@ To set-up and create a new a virtualenv named **openfisca** running python2.7:
 ```sh
 pew new openfisca --python=python2.7
 ```
+(Windows users should use the following)
+```sh
+pew new openfisca --python=2.7
+```
 
 The virtualenv you just created will be automatically activated. This means you will operate in the virtualenv immediately. You should see a prompt resembling this:
 ```sh
@@ -54,7 +60,7 @@ Additional information:
 
 :tada: You are now ready to install this OpenFisca Country Package!
 
-We offer 2 install procedures. Pick procedure A or B below depending on how you plan to use this Country Package. 
+We offer 2 install procedures. Pick procedure A or B below depending on how you plan to use this Country Package.
 
 ### A. Minimal Installation (Pip Install)
 

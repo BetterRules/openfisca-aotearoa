@@ -1,5 +1,14 @@
 # Changelog
 
+# 4.0.2 - [#44](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/44)
+
+* Tax and benefit system evolution. Minor change.
+* Impacted periods: none
+* Impacted areas: setup.py,READE.md
+* Details:
+  - Improved setup.py to display documentation on pypi.org
+  - Update readme.md
+
 # 4.0.1 - [#42](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/42)
 Technical improvement.
 * Details:
