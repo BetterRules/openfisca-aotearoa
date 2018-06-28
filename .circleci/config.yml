@@ -62,13 +62,15 @@ workflows:
   build_and_test:
     jobs:
       - build
-      - version-bump
+      - version-bump:
+          requires:
+            - build
       # Uncomment the lines below when you have a Pypi account and you are ready to deploy your country package to reusers.
       - deploy:
-        requires:
-            - build
+          requires:
+            - version-bump
           filters:
-             # owner: ServiceInnovationLab  # prevent failed builds on forks # This filter is not valid yet in CircleCI 2.0, see <https://discuss.circleci.com/t/20443>
+            # owner: ServiceInnovationLab  # prevent failed builds on forks # This filter is not valid yet in CircleCI 2.0, see <https://discuss.circleci.com/t/20443>
             branches:
               only:
                 - master
