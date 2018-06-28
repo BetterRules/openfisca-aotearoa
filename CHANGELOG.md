@@ -4,7 +4,7 @@
 
 * Tax and benefit system evolution. Minor change.
 * Impacted periods: none
-* Impacted areas: setup.py,READE.md
+* Impacted areas: setup.py,README.md
 * Details:
   - Improved setup.py to display documentation on pypi.org
   - Update readme.md

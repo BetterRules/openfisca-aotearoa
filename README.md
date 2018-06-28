@@ -2,7 +2,7 @@
 
 ## Writing the Legislation
 
-Aotearoa New Zealand’s legislation as code project, utilising OpenFisca.
+Aotearoa New Zealand's legislation as code project, utilising OpenFisca.
 
 Source code hosted on [github.com](https://github.com/ServiceInnovationLab/openfisca-aotearoa/)
 
