@@ -52,6 +52,7 @@ jobs:
     docker:
       - image: circleci/python:2.7-stretch
     steps:
+      - checkout
       - run:
           name: Upload package to Pypi if functional changes were made
           command: ./.circleci/deploy-if-version-bump.sh

@@ -2,7 +2,7 @@
 
 # 4.0.2 - [#44](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/44)
 
-* Tax and benefit system evolution. Minor change.
+* Technical improvement.
 * Impacted periods: none
 * Impacted areas: setup.py,README.md
 * Details:
