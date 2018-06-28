@@ -51,9 +51,6 @@ jobs:
   deploy:
     docker:
       - image: circleci/python:2.7-stretch
-    environment:
-      - PYPI_USERNAME: nzlabplus-bot  # here be the name of the Government Innovation Service Lab Pypi account to automatically publish the OpenFisca-Aotearoa package to Pypi
-    # - PYPI_PASSWORD: this value will have to be set in CircleCI's web interface; do not set it here, it is a secret!
     steps:
       - run:
           name: Upload package to Pypi if functional changes were made
@@ -67,10 +64,12 @@ workflows:
       - build
       - version-bump
       # Uncomment the lines below when you have a Pypi account and you are ready to deploy your country package to reusers.
-      # - deploy:
-      #     requires:
-      #       - build
-      #     filters:
-      #       # owner: ServiceInnovationLab  # prevent failed builds on forks # This filter is not valid yet in CircleCI 2.0, see <https://discuss.circleci.com/t/20443>
-      #       branches:
-      #         only: master
+      - deploy:
+        requires:
+            - build
+          filters:
+             # owner: ServiceInnovationLab  # prevent failed builds on forks # This filter is not valid yet in CircleCI 2.0, see <https://discuss.circleci.com/t/20443>
+            branches:
+              only:
+                - master
+                - pip-release-improv
