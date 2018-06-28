@@ -9,7 +9,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name='OpenFisca-Aotearoa',
-    version='4.0.1',
+    version='4.0.2',
     author='Service Innovation Lab',
     author_email='hamish.fraser@dia.govt.nz',
     description=u'Aotearoa New Zealand’s legislation as code project, utilising OpenFisca',

@@ -1,8 +1,17 @@
 # Changelog
 
+# 4.0.2 - [#43](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/43)
+
+* Tax and benefit system evolution. Minor change.
+* Impacted periods: none
+* Impacted areas: setup.py,READE.md
+* Details:
+  - Improved setup.py to display documentation on pypi.org
+  - Update readme.md
+
 # 4.0.1 - [#42](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/42)
 Technical improvement.
-* Details:
+Details:
   - Moving the version bump check to its own segment of the circle ci config, This means it appears as a separate check within a github PR, and so we can see quickly that the input/output tests pass - and it's only the version bump that's missing.
 
 # 4.0.0 - [#22](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/22)
