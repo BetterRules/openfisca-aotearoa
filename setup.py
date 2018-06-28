@@ -4,13 +4,17 @@
 
 from setuptools import setup, find_packages
 
+with open("README.md", "r") as fh:
+    long_description = fh.read()
 
 setup(
     name='OpenFisca-Aotearoa',
-    version='4.0.1',
+    version='4.0.2',
     author='Service Innovation Lab',
     author_email='hamish.fraser@dia.govt.nz',
-    description=u'OpenFisca tax and benefit system for Aotearoa',
+    description=u'Aotearoa New Zealand’s legislation as code project, utilising OpenFisca',
+    long_description=long_description,
+    long_description_content_type="text/markdown",
     keywords='benefit microsimulation social tax',
     license='http://www.fsf.org/licensing/licenses/agpl-3.0.html',
     url='https://github.com/ServiceInnovationLab/openfisca-aotearoa',
