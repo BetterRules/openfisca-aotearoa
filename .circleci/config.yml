@@ -66,13 +66,22 @@ workflows:
       - version-bump:
           requires:
             - build
+          filters: #Note: The build job must also have a filters tags section, as it is a transient dependency of the deploy job.
+            tags:
+              only: /.*/
       # Uncomment the lines below when you have a Pypi account and you are ready to deploy your country package to reusers.
       - deploy:
           requires:
             - version-bump
           filters:
-            # owner: ServiceInnovationLab  # prevent failed builds on forks # This filter is not valid yet in CircleCI 2.0, see <https://discuss.circleci.com/t/20443>
+            tags:
+              only: /.*/
             branches:
-              only:
-                - master
-                - pip-release-improv
+              ignore: /.*/
+
+          # filters:
+            # owner: ServiceInnovationLab  # prevent failed builds on forks # This filter is not valid yet in CircleCI 2.0, see <https://discuss.circleci.com/t/20443>
+          #  branches:
+          #    only:
+          #      - master
+          #      - pip-release-improv
