@@ -28,12 +28,12 @@ class social_security__eligible_for_accommodation_supplement(Variable):
 
         resident_or_citizen = persons('is_resident', period) + persons('is_permanent_resident', period) + persons('is_nz_citizen', period)
         has_accomodation_costs = persons('has_accomodation_costs', period)
-        does_not_have_social_housing = (persons('has_social_housing', period) == 0)
+        not_social_housing = (persons('eligible_for_social_housing', period) == 0)
 
         income = persons('income_below_threshold_for_accommodation_supplement', period)
         cash = persons('cash_below_threshold_for_accommodation_supplement', period)
 
-        return age_requirement * resident_or_citizen * in_nz * has_accomodation_costs * does_not_have_social_housing * income * cash
+        return age_requirement * resident_or_citizen * in_nz * has_accomodation_costs * not_social_housing * income * cash
 
 
 class income_below_threshold_for_accommodation_supplement(Variable):
@@ -57,9 +57,10 @@ class has_accomodation_costs(Variable):
     definition_period = MONTH
 
 
-class has_social_housing(Variable):
+class eligible_for_social_housing(Variable):
     value_type = bool
     default_value = True
     entity = Person
     label = u"Has social housing?"
     definition_period = MONTH
+    reference = "Social Security Act 1964 - 61EA Accommodation supplement http://legislation.govt.nz/act/public/1964/0136/latest/whole.html#DLM362856"
