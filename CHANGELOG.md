@@ -1,5 +1,9 @@
 # Changelog
 
+# 4.0.2 - [#42](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/22)
+Legislation improvement.
+* Added Accommodation Supplement from the Social Security Act 1964
+
 # 4.0.1 - [#42](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/42)
 Technical improvement.
 * Details:
