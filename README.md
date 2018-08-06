@@ -2,11 +2,15 @@
 
 ## Writing the Legislation
 
-Aotearoa New Zealand's legislation as code utilising Open Fisca. 
-Early development phase. 
+Aotearoa New Zealand's legislation as code utilising Open Fisca.
+Early development phase.
 Please also read [the wiki](https://github.com/ServiceInnovationLab/openfisca-aotearoa/wiki) as a way of introduction.
 
 The files that are outside from the `openfisca_aotearoa` folder are used to set up the development environment.
+
+## Deploy to your own platform-as-a-service
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 ## Install Instructions for Users and Contributors
 
@@ -54,7 +58,7 @@ Additional information:
 
 :tada: You are now ready to install this OpenFisca Country Package!
 
-We offer 2 install procedures. Pick procedure A or B below depending on how you plan to use this Country Package. 
+We offer 2 install procedures. Pick procedure A or B below depending on how you plan to use this Country Package.
 
 ### A. Minimal Installation (Pip Install)
 
