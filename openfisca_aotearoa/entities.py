@@ -23,6 +23,12 @@ Titled_Property = build_entity(
             'plural': 'owners',
             'label': u'Owners',
             'doc': u'The one or more persons who hold title for the property.'
+            },
+        {
+            'key': 'other',
+            'plural': 'others',
+            'label': u'Others',
+            'doc': u'People who are not in any other role'
             }
         ]
     )
@@ -79,6 +85,12 @@ Family = build_entity(
             'plural': 'children',
             'label': u'Children',
             'doc': u'The children of a family.'
+            },
+        {
+            'key': 'other',
+            'plural': 'others',
+            'label': u'Other',
+            'doc': u'All other members of a family/whānau.'
             }
         ]
     )
