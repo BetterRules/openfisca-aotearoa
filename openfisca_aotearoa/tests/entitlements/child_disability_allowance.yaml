@@ -1,0 +1,32 @@
+
+
+- name: Tests Accommodation Supplement Scenarios
+  period: 2018
+  absolute_error_margin: 0
+  person:
+    - id: "Mama"
+      normally_lives_in_nz: true
+      is_resident: true
+    - id: "Tama"
+      has_serious_disability: true
+      requires_constant_care_and_attention: true
+      has_medical_certification: true
+  families:
+    - id: "Tahi"
+      principal_caregiver: ["Mama"]
+      children: ["Tama"]
+  input_variables:
+  output_variables:
+    social_security__eligible_for_child_disability_allowance:
+      2018-06: true
+
+# - name: TestChildDisabilityAllowanceWhenNotDisabled
+#   period: 2018
+#   input_variables:
+#     # applicant_is_principal_carer: true
+#     is_resident: true
+#     normally_lives_in_nz: true
+#     # child_is_dependant: true
+#   output_variables:
+#     social_security__eligible_for_child_disability_allowance:
+#       2018-06: false
