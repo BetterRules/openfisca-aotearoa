@@ -1,32 +1,60 @@
-
-
 - name: Tests Accommodation Supplement Scenarios
-  period: 2018
+  period: 2018-08
   absolute_error_margin: 0
-  person:
+  persons:
     - id: "Mama"
       normally_lives_in_nz: true
       is_resident: true
+    - id: "Papa"
+      normally_lives_in_nz: true
+      is_resident: true
     - id: "Tama"
-      has_serious_disability: true
-      requires_constant_care_and_attention: true
-      has_medical_certification: true
+      social_security__has_serious_disability: true
+      social_security__requires_constant_care_and_attention: true
+      social_security__has_medical_certification: true
+    - id: "Tamahine"
   families:
-    - id: "Tahi"
-      principal_caregiver: ["Mama"]
-      children: ["Tama"]
-  input_variables:
+    - id: "Whanau"
+      principal_caregiver: "Mama"
+      children:
+        - "Tama"
+        - "Tamahine"
+      others:
+        - "Papa"
+  titled_properties:
+    - id: whare
+      others: ["Mama", "Papa", "Tama", "Tamahine"]
   output_variables:
+    #Mama, Papa, Tama
+    social_security__child_meets_child_disability_allowance_criteria:
+        2018-08: [false, false, true, false]
     social_security__eligible_for_child_disability_allowance:
-      2018-06: true
+      2018-08:
+        - true # mama
+        - false # papa
+        - false # tama
+        - false # tamahine
 
-# - name: TestChildDisabilityAllowanceWhenNotDisabled
-#   period: 2018
-#   input_variables:
-#     # applicant_is_principal_carer: true
-#     is_resident: true
-#     normally_lives_in_nz: true
-#     # child_is_dependant: true
-#   output_variables:
-#     social_security__eligible_for_child_disability_allowance:
-#       2018-06: false
+- name: Tests Disability criteria
+  period: 2018-08
+  absolute_error_margin: 0
+  persons:
+    - id: "Tama"
+      social_security__has_serious_disability: true
+      social_security__requires_constant_care_and_attention: true
+      social_security__has_medical_certification: true
+    - id: "Kotiro"
+      social_security__has_serious_disability: true
+      social_security__requires_constant_care_and_attention: false
+      social_security__has_medical_certification: true
+  families:
+    - id: "Whanau"
+      children: ["Tama", "Kotiro"]
+  titled_properties:
+    - id: whare
+      others: ["Tama","Kotiro"]
+  output_variables:
+    social_security__child_meets_child_disability_allowance_criteria:
+      2018-08:
+        - true # Tama
+        - false # Kotiro

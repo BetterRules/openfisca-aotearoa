@@ -1,17 +1,5 @@
-from openfisca_aotearoa.entities import Person
+from openfisca_aotearoa.entities import Person, Family
 from openfisca_core.model_api import *
-
-# """
-# Benefit: Part 1D Child with Serious Disability (eligible):
-
-# If child.isDependent
-#     and child.hasSeriousDisability
-#     and child.requiresConstantCareAndAttention
-#     and child.hasMedicalCertification
-#     and applicapplicant_is_principal_carer
-#     and applicant.isNZResident
-#         then benefit.ChildDisabilityAllowance is PERMITTED
-# """
 
 
 class social_security__eligible_for_child_disability_allowance(Variable):
@@ -19,3 +7,64 @@ class social_security__eligible_for_child_disability_allowance(Variable):
     entity = Person
     definition_period = MONTH
     label = "Eligible for Child Disability Allowance"
+
+    def formula(persons, period, parameters):
+        # The applicant
+        in_nz = persons('normally_lives_in_nz', period)
+        resident_or_citizen = persons('is_resident', period) + \
+            persons('is_permanent_resident', period) + \
+            persons('is_nz_citizen', period)
+
+        is_principal_carer = persons.has_role(Family.PRINCIPAL_CAREGIVER)
+
+        has_disabled_child = persons.family("social_security__family_has_disabled_child", period)
+
+        return in_nz * \
+            resident_or_citizen * \
+            is_principal_carer * \
+            has_disabled_child
+
+
+class social_security__family_has_disabled_child(Variable):
+    value_type = bool
+    entity = Family
+    definition_period = MONTH
+    label = u'Does the family have a child who meets the criteria for disabled'
+    reference = "http://legislation.govt.nz/bill/government/2017/0004/15.0/DLM7512349.html"
+
+    def formula(families, period, parameters):
+        has_disability = families.members('social_security__child_meets_child_disability_allowance_criteria', period)
+        return families.any(has_disability, role=Family.CHILD)
+
+
+class social_security__child_meets_child_disability_allowance_criteria(Variable):
+    value_type = bool
+    entity = Person
+    label = u"Has serious disability"
+    definition_period = MONTH
+
+    def formula(persons, period, parameters):
+        return persons('social_security__has_serious_disability', period) * \
+            persons('social_security__requires_constant_care_and_attention', period) * \
+            persons('social_security__has_medical_certification', period)
+
+
+class social_security__has_serious_disability(Variable):
+    value_type = bool
+    entity = Person
+    label = u"Has serious disability"
+    definition_period = MONTH
+
+
+class social_security__requires_constant_care_and_attention(Variable):
+    value_type = bool
+    entity = Person
+    label = u"Requires constant care and attention"
+    definition_period = MONTH
+
+
+class social_security__has_medical_certification(Variable):
+    value_type = bool
+    entity = Person
+    label = u"Has medical certification"
+    definition_period = MONTH
