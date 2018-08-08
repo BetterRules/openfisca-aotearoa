@@ -1,5 +1,10 @@
 # Changelog
 
+# 4.1.0 - [#41](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/51)
+Calculation improvement.
+* Added "Others" role within a titled_property
+* Added "Others" role within a family
+
 # 4.0.2 - [#42](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/22)
 Legislation improvement.
 * Added Accommodation Supplement from the Social Security Act 1964
