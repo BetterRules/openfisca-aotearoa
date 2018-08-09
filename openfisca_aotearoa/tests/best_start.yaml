@@ -49,7 +49,7 @@
       children: ["Hemi-junior-early"]
   titled_properties:
     - id: "Earth"
-      owners: ["Papatūānuku", "Rakinui", "Tāne", "Rongo", "Ikatere", "Tāwhirimātea", "Papatūānuku-2", "Papatūānuku-3", "Tāne-2", "Samuel", "Rongo-2", "Hemi", "Hemi-junior", "Hemi-junior-early"]
+      others: ["Papatūānuku", "Rakinui", "Tāne", "Rongo", "Ikatere", "Tāwhirimātea", "Papatūānuku-2", "Papatūānuku-3", "Tāne-2", "Samuel", "Rongo-2", "Hemi", "Hemi-junior", "Hemi-junior-early"]
   output_variables:
     income_tax__family_has_children_eligible_for_best_start:
       2018-07: [0, 1, 1]
@@ -79,7 +79,7 @@
       children: ["Hemi-junior-early"]
   titled_properties:
     - id: "Earth"
-      owners: ["Papatūānuku", "Rakinui", "Hemi-junior-early"]
+      others: ["Papatūānuku", "Rakinui", "Hemi-junior-early"]
   output_variables:
     income_tax__family_has_children_eligible_for_best_start:
       2018-07: [1]
@@ -106,7 +106,7 @@
       children: ["Hemi-junior", "Hemi-junior-early"]
   titled_properties:
     - id: "Earth"
-      owners: ["Papatūānuku", "Rakinui", "Hemi-junior", "Hemi-junior-early"]
+      others: ["Papatūānuku", "Rakinui", "Hemi-junior", "Hemi-junior-early"]
   output_variables:
     income_tax__best_start_tax_credit_per_child:
       2018-07: [0, 0, 0, 260]
@@ -135,7 +135,7 @@
       children: ["Hemi-junior", "Hemi-junior-early"]
   titled_properties:
     - id: "Earth"
-      owners: ["Papatūānuku", "Rakinui", "Hemi-junior", "Hemi-junior-early"]
+      others: ["Papatūānuku", "Rakinui", "Hemi-junior", "Hemi-junior-early"]
   output_variables:
     income_tax__best_start_tax_credit_per_child:
       2018-07: [0, 0, 0, 260 ]
@@ -167,7 +167,7 @@
       children: ["Hemi-junior", "Hemi-junior-early"]
   titled_properties:
     - id: "Earth"
-      owners: ["Papatūānuku", "Rakinui", "Hemi-junior", "Hemi-junior-early"]
+      others: ["Papatūānuku", "Rakinui", "Hemi-junior", "Hemi-junior-early"]
   output_variables:
     income_tax__best_start_tax_credit_per_child:
       2019-04: [0, 0, 0, 260 ]
