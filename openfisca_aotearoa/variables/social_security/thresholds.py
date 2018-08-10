@@ -10,7 +10,7 @@ class accommodation_supplement__below_income_threshold(Variable):
     value_type = bool
     default_value = True
     entity = Person
-    label = u"Income is below threshold?"
+    label = u"Income is below Accommodation Supplement threshold?"
     definition_period = MONTH
 
 
@@ -18,5 +18,13 @@ class accommodation_supplement__below_cash_threshold(Variable):
     value_type = bool
     default_value = True
     entity = Person
-    label = u"Cash is below threshold?"
+    label = u"Cash is below Accommodation Supplement threshold?"
+    definition_period = MONTH
+
+
+class job_seeker_support__below_income_threshold(Variable):
+    value_type = bool
+    default_value = True
+    entity = Person
+    label = u"Income is below Job Seeker Support threshold?"
     definition_period = MONTH

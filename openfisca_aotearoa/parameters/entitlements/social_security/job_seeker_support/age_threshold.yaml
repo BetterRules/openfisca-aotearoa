@@ -1,0 +1,5 @@
+description: Minimum age to recieve Job Seeker
+reference: MSD Policy https://www.workandincome.govt.nz/products/a-z-benefits/accommodation-supplement.html
+values:
+  "2018":
+    value: 18
