@@ -12,7 +12,7 @@
       age: 5
       social_security__has_serious_disability: true
       social_security__requires_constant_care_and_attention: true
-      social_security__has_medical_certification: true
+      social_security__medical_certification_months: 12
     - id: "Tamahine (able bodied teenager)"
       age: 19
   families:
@@ -47,7 +47,7 @@
       age: 17
       social_security__has_serious_disability: true
       social_security__requires_constant_care_and_attention: true
-      social_security__has_medical_certification: true
+      social_security__medical_certification_months: 12
   families:
     - id: "Whanau"
       children: ["Tama (disabled child)"]
@@ -72,7 +72,7 @@
       age: 17
       social_security__has_serious_disability: true
       social_security__requires_constant_care_and_attention: false
-      social_security__has_medical_certification: true
+      social_security__medical_certification_months: 12
   families:
     - id: "Whanau"
       principal_caregiver: "Koro"
@@ -98,7 +98,7 @@
       age: 5
       social_security__has_serious_disability: true
       social_security__requires_constant_care_and_attention: true
-      social_security__has_medical_certification: true
+      social_security__medical_certification_months: 12
   families:
     - id: "Whanau"
       children: ["Tama (disabled child)"]
@@ -123,7 +123,7 @@
     - id: "Tama (disabled child)"
       social_security__has_serious_disability: true
       social_security__requires_constant_care_and_attention: true
-      social_security__has_medical_certification: true
+      social_security__medical_certification_months: 12
   families:
     - id: "Whanau"
       children: ["Tama (disabled child)"]
@@ -149,7 +149,7 @@
       age: 19
       social_security__has_serious_disability: true
       social_security__requires_constant_care_and_attention: true
-      social_security__has_medical_certification: true
+      social_security__medical_certification_months: 12
   families:
     - id: "Whanau"
       children: ["Tama (disabled child)"]

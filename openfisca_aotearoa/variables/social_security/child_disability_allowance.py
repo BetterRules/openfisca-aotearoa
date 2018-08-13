@@ -45,9 +45,17 @@ class social_security__child_meets_child_disability_allowance_criteria(Variable)
     definition_period = MONTH
 
     def formula(persons, period, parameters):
+        med_cert_required_months = 12
         return persons('social_security__has_serious_disability', period) * \
             persons('social_security__requires_constant_care_and_attention', period) * \
-            persons('social_security__has_medical_certification', period)
+            (persons('social_security__medical_certification_months', period) >= med_cert_required_months)
+
+
+class social_security__medical_certification_months(Variable):
+    value_type = int
+    entity = Person
+    label = u"Number of future months the disability is expected to last for, in months"
+    definition_period = MONTH
 
 
 class social_security__has_serious_disability(Variable):
@@ -61,11 +69,4 @@ class social_security__requires_constant_care_and_attention(Variable):
     value_type = bool
     entity = Person
     label = u"Requires constant care and attention"
-    definition_period = MONTH
-
-
-class social_security__has_medical_certification(Variable):
-    value_type = bool
-    entity = Person
-    label = u"Has medical certification"
     definition_period = MONTH
