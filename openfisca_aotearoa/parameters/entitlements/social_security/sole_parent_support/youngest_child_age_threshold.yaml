@@ -1,5 +1,5 @@
 description: Maximum age of youngest child, for parent to recieve Sole Parent Support
-reference: MSD Policy https://www.workandincome.govt.nz/products/a-z-benefits/sole-parent-support.html#null
+reference: http://www.legislation.govt.nz/act/public/1964/0136/latest/whole.html#DLM5468352 20D(1)(c)
 values:
   "2018":
-    value: 20
+    value: 14
