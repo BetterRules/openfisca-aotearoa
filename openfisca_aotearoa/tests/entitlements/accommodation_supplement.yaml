@@ -7,8 +7,8 @@
     is_resident: true
     has_accomodation_costs: true
     eligible_for_social_housing: false
-    income_below_threshold_for_accommodation_supplement: true
-    cash_below_threshold_for_accommodation_supplement: true
+    accommodation_supplement__below_income_threshold: true
+    accommodation_supplement__below_cash_threshold: true
   output_variables:
     social_security__eligible_for_accommodation_supplement: true
 
@@ -21,8 +21,8 @@
     is_permanent_resident: true
     has_accomodation_costs: true
     eligible_for_social_housing: false
-    income_below_threshold_for_accommodation_supplement: true
-    cash_below_threshold_for_accommodation_supplement: true
+    accommodation_supplement__below_income_threshold: true
+    accommodation_supplement__below_cash_threshold: true
   output_variables:
     social_security__eligible_for_accommodation_supplement: true
 
@@ -35,8 +35,8 @@
     is_nz_citizen: true
     has_accomodation_costs: true
     eligible_for_social_housing: false
-    income_below_threshold_for_accommodation_supplement: true
-    cash_below_threshold_for_accommodation_supplement: true
+    accommodation_supplement__below_income_threshold: true
+    accommodation_supplement__below_cash_threshold: true
   output_variables:
     social_security__eligible_for_accommodation_supplement: true
 
@@ -49,8 +49,8 @@
     is_resident: true
     has_accomodation_costs: false
     eligible_for_social_housing: false
-    income_below_threshold_for_accommodation_supplement: true
-    cash_below_threshold_for_accommodation_supplement: true
+    accommodation_supplement__below_income_threshold: true
+    accommodation_supplement__below_cash_threshold: true
   output_variables:
     social_security__eligible_for_accommodation_supplement: false
 
@@ -63,8 +63,8 @@
     is_resident: true
     has_accomodation_costs: true
     eligible_for_social_housing: false
-    income_below_threshold_for_accommodation_supplement: true
-    cash_below_threshold_for_accommodation_supplement: true
+    accommodation_supplement__below_income_threshold: true
+    accommodation_supplement__below_cash_threshold: true
   output_variables:
     social_security__eligible_for_accommodation_supplement: false
 
@@ -77,7 +77,7 @@
     is_resident: true
     has_accomodation_costs: true
     eligible_for_social_housing: true
-    income_below_threshold_for_accommodation_supplement: true
-    cash_below_threshold_for_accommodation_supplement: true
+    accommodation_supplement__below_income_threshold: true
+    accommodation_supplement__below_cash_threshold: true
   output_variables:
     social_security__eligible_for_accommodation_supplement: false
