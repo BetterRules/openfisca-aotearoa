@@ -2,6 +2,7 @@
 
 # 4.1.0 - [#41](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/51)
 Calculation improvement.
+* Added Child Disability Allowance
 * Added "Others" role within a titled_property
 * Added "Others" role within a family
 
