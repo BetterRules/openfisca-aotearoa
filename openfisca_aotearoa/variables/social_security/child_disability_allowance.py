@@ -16,7 +16,6 @@ class social_security__eligible_for_child_disability_allowance(Variable):
             persons('is_nz_citizen', period)
 
         is_principal_carer = persons.has_role(Family.PRINCIPAL_CAREGIVER)
-
         has_disabled_child = persons.family("social_security__family_has_disabled_child", period)
 
         return in_nz * \
@@ -34,7 +33,8 @@ class social_security__family_has_disabled_child(Variable):
 
     def formula(families, period, parameters):
         has_disability = families.members('social_security__child_meets_child_disability_allowance_criteria', period)
-        return families.any(has_disability, role=Family.CHILD)
+        is_child = families.members('age', period) <= 18
+        return families.any((has_disability * is_child), role=Family.CHILD)
 
 
 class social_security__child_meets_child_disability_allowance_criteria(Variable):
