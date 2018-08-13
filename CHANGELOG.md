@@ -1,7 +1,12 @@
 # Changelog
 
+# 4.1.1 - [#41](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/53)
+Calculation improvement.
+* Added Job Seeker Support
+
 # 4.1.0 - [#41](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/51)
 Calculation improvement.
+* Added Child Disability Allowance
 * Added "Others" role within a titled_property
 * Added "Others" role within a family
 
