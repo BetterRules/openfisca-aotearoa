@@ -35,6 +35,32 @@
         - false # tamahine (able bodied)
 
 
+
+- name: Tests - Eligible
+  period: 2018-08
+  absolute_error_margin: 0
+  persons:
+    - id: "Koro"
+      normally_lives_in_nz: true
+      is_resident: true
+    - id: "Tama (disabled child)"
+      age: 17
+      social_security__has_serious_disability: true
+      social_security__requires_constant_care_and_attention: true
+      social_security__has_medical_certification: true
+  families:
+    - id: "Whanau"
+      children: ["Tama (disabled child)"]
+      principal_caregiver: "Koro"
+  titled_properties:
+    - id: whare
+      others: ["Koro", "Tama (disabled child)"]
+  output_variables:
+    social_security__eligible_for_child_disability_allowance:
+      2018-08:
+        - true # Koro
+        - false # Tama
+
 - name: Tests - constant care not needed
   period: 2018-08
   absolute_error_margin: 0
