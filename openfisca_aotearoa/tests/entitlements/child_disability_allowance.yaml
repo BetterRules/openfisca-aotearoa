@@ -13,19 +13,19 @@
       social_security__has_serious_disability: true
       social_security__requires_constant_care_and_attention: true
       social_security__has_medical_certification: true
-    - id: "Tamahine (able bodied child)"
-
+    - id: "Tamahine (able bodied teenager)"
+      age: 19
   families:
     - id: "Whanau tahi"
       principal_caregiver: "Mama"
       children:
         - "Tama (disabled child)"
-        - "Tamahine (able bodied child)"
+        - "Tamahine (able bodied teenager)"
       others:
         - "Papa"
   titled_properties:
     - id: whare
-      others: ["Mama", "Papa", "Tama (disabled child)", "Tamahine (able bodied child)"]
+      others: ["Mama", "Papa", "Tama (disabled child)", "Tamahine (able bodied teenager)"]
   output_variables:
     social_security__eligible_for_child_disability_allowance:
       2018-08:
