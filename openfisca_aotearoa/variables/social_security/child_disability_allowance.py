@@ -34,7 +34,8 @@ class social_security__family_has_disabled_child(Variable):
 
     def formula(families, period, parameters):
         has_disability = families.members('social_security__child_meets_child_disability_allowance_criteria', period)
-        is_child = families.members('age', period) <= 18
+        child_age_threshold = parameters(period).entitlements.social_security.child_disability_allowance.child_age_threshold
+        is_child = families.members('age', period) <= child_age_threshold
         return families.any((has_disability * is_child), role=Family.CHILD)
 
 

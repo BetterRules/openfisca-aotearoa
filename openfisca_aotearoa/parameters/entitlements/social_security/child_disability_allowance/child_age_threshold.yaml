@@ -1,0 +1,5 @@
+description: Child must be under this age
+reference: MSD Policy https://www.workandincome.govt.nz/products/a-z-benefits/child-disability-allowance.html
+values:
+  "2018":
+    value: 18
