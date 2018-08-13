@@ -32,6 +32,7 @@ class social_security__eligible_for_sole_parent_support(Variable):
 
         years_in_nz = persons('sole_parent_support__meets_years_in_nz_requirement', period)
         age_requirement = persons('sole_parent_support__meets_age_threshold', period)
+        child_age_requirement = persons.family('sole_parent__family_has_child_under_age_limit', period)
 
         # TODO: There is only one parent
         # TODO isInadequatelySupportedByPartner
@@ -41,7 +42,19 @@ class social_security__eligible_for_sole_parent_support(Variable):
         income = persons('sole_parent_support__below_income_threshold', period)
 
         return in_nz * resident_or_citizen * \
-            age_requirement * income * years_in_nz
+            age_requirement * child_age_requirement * income * years_in_nz
+
+
+class sole_parent__family_has_child_under_age_limit(Variable):
+    value_type = bool
+    entity = Family
+    definition_period = MONTH
+    label = u'Does the family have a child who meets the criteria for disabled'
+
+    def formula(families, period, parameters):
+        youngest_child_age_threshold = parameters(period).entitlements.social_security.sole_parent_support.youngest_child_age_threshold
+        youngest_ages = families('age_of_youngest', period)
+        return youngest_ages < youngest_child_age_threshold
 
 
 class sole_parent_support__meets_age_threshold(Variable):
