@@ -9,7 +9,6 @@ from openfisca_aotearoa.entities import Person, Family
 # This variable is a pure input: it doesn't have a formula
 class date_of_birth(Variable):
     value_type = date
-    default_value = date(1970, 1, 1)  # By default, if no value is set for a simulation, we consider the people involved in a simulation to be born on the 1st of Jan 1970.
     entity = Person
     label = u"Birth date"
     definition_period = ETERNITY  # This variable cannot change over time.
@@ -19,7 +18,6 @@ class date_of_birth(Variable):
 # This variable is a pure input: it doesn't have a formula
 class due_date_of_birth(Variable):
     value_type = date
-    default_value = date(1970, 1, 1)  # By default, if no value is set for a simulation, we consider the people involved in a simulation to be born on the 1st of Jan 1970.
     entity = Person
     label = u"Birth due date"
     definition_period = ETERNITY  # This variable cannot change over time.

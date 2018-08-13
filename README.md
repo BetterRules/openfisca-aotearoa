@@ -1,5 +1,9 @@
 # OpenFisca Aotearoa
 
+[![CircleCI](https://circleci.com/gh/ServiceInnovationLab/openfisca-aotearoa/tree/master.svg?style=svg)](https://circleci.com/gh/ServiceInnovationLab/openfisca-aotearoa/tree/master)
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/ServiceInnovationLab/openfisca-aotearoa.svg?columns=all)](https://waffle.io/ServiceInnovationLab/openfisca-aotearoa)
+
+
 ## Writing the Legislation
 
 Aotearoa New Zealand's legislation as code utilising Open Fisca.
