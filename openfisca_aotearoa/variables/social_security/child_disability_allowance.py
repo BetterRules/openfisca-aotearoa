@@ -7,7 +7,7 @@ class social_security__eligible_for_child_disability_allowance(Variable):
     entity = Person
     definition_period = MONTH
     label = "Eligible for Child Disability Allowance"
-    docs = "https://www.workandincome.govt.nz/products/a-z-benefits/child-disability-allowance.html"
+    reference = "https://www.workandincome.govt.nz/products/a-z-benefits/child-disability-allowance.html"
 
     def formula(persons, period, parameters):
         # The applicant
