@@ -22,14 +22,8 @@
       age: 81
       sole_parent_support__below_income_threshold: true
       sole_parent_support__meets_years_in_nz_requirement: true
-#             "isInadequatelySupportedByPartner": True,
-#             "isMaintainingChild": True,
-# income
-#             "ofApplicantAndSpouse": 200,
-#             "fromMaintenancePayments": 200
     - id: "Tamaiti"
       age: 5
-#             "isDependent": True,
   families:
     - id: "Whanau"
       principal_caregiver: "Koro"
@@ -42,54 +36,72 @@
     social_security__eligible_for_sole_parent_support:
       2018-10:
         - true # koro
-        - false # tahi
+        - false # Tamaiti
+    has_a_partner:
+      2018-10:
+        - false # koro
+        - false # Tamaiti
+
+- name: Tests Sole Parent Support when in a relationship
+  period: 2018-10
+  absolute_error_margin: 0
+  persons:
+    - id: "Papa"
+      is_nz_citizen: true
+      normally_lives_in_nz: true
+      age: 21
+      sole_parent_support__below_income_threshold: true
+      sole_parent_support__meets_years_in_nz_requirement: true
+    - id: "Mama"
+      age: 19
+    - id: "Matilda"
+      age: 5
+  families:
+    - id: "Whanau"
+      principal_caregiver: "Papa"
+      partners:
+        - "Mama"
+      children:
+        - "Matilda"
+  titled_properties:
+    - id: whare
+      others: ["Papa", "Mama", "Matilda"]
+  output_variables:
+    social_security__eligible_for_sole_parent_support:
+      2018-10:
+        - false # papa
+        - false # mama
+        - false # Matilda
 
 
-#     def test_reasoning(self):
-#         self.assertTrue(self.is_permitted)
-
-
-#     """
-#     If applicant.relationshipStatus = "single"
-#         and applicant.isParent
-#         and applicant.isMaintainingChild
-#         and applicant.isNZResident
-#         and applicant.normallyLivesInNZ
-#         and 20 ≤ applicant.Age
-#         and child.Age < 14
-#         and child.isDependent
-#         and threshold.income.SoleParentSupport
-#         and applicant.normallyLivesInNZ
-#         and applicant.hasLivedInNZfor2Years
-#     then benefit.isSoleParentSupport is PERMITTED
-#     """
-# class TestSoleParentSupportSingle(Reasoner):
-#     key = 'isSoleParentSupport'
-
-#     body = {
-#         "applicant": {
-#             "isParent": True,
-#             "relationshipStatus": "single",
-#             "isMaintainingChild": True,
-#             "isNZResident": True,
-#             "Age": 20,
-#             "normallyLivesInNZ": True,
-#             "hasLivedInNZfor2Years": True
-#         },
-#         "child": {
-#             "isDependent": True,
-#             "Age": 5
-#         },
-#         "income": {
-#             "ofApplicantAndSpouse": 200,
-#             "fromMaintenancePayments": 200
-#         },
-#         "threshold": {
-#             "income": {
-#                 "SoleParentSupport": True
-#             }
-#         }
-#     }
-
-#     def test_reasoning(self):
-#         self.assertTrue(self.is_permitted)
+- name: Tests Sole Parent Support when inadequately supported by partner
+  period: 2018-10
+  absolute_error_margin: 0
+  persons:
+    - id: "Papa"
+      is_nz_citizen: true
+      normally_lives_in_nz: true
+      age: 21
+      sole_parent_support__below_income_threshold: true
+      sole_parent_support__meets_years_in_nz_requirement: true
+      is_adequately_supported_by_partner: false
+    - id: "Mama"
+      age: 29
+    - id: "Matilda"
+      age: 5
+  families:
+    - id: "Whanau"
+      principal_caregiver: "Papa"
+      partners:
+        - "Mama"
+      children:
+        - "Matilda"
+  titled_properties:
+    - id: whare
+      others: ["Papa", "Mama", "Matilda"]
+  output_variables:
+    social_security__eligible_for_sole_parent_support:
+      2018-10:
+        - true # papa
+        - false # mama
+        - false # Matilda

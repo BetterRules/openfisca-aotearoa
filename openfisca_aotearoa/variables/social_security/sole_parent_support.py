@@ -21,6 +21,7 @@ class social_security__eligible_for_sole_parent_support(Variable):
     entity = Person
     definition_period = MONTH
     label = "Eligible for Job Seeker Support"
+    reference = "https://www.workandincome.govt.nz/map/income-support/main-benefits/sole-parent-support/qualifications.html"
 
     def formula(persons, period, parameters):
         # The applicant
@@ -34,15 +35,42 @@ class social_security__eligible_for_sole_parent_support(Variable):
         age_requirement = persons('sole_parent_support__meets_age_threshold', period)
         child_age_requirement = persons.family('sole_parent__family_has_child_under_age_limit', period)
 
-        # TODO: There is only one parent
+        relationship_test = persons('sole_parent_support__meets_relationship_qualification', period)
         # TODO isInadequatelySupportedByPartner
         # TODO isMaintainingChild
 
         # income low enough?
-        income = persons('sole_parent_support__below_income_threshold', period)
+        low_income = persons('sole_parent_support__below_income_threshold', period)
 
-        return in_nz * resident_or_citizen * \
-            age_requirement * child_age_requirement * income * years_in_nz
+        return in_nz * resident_or_citizen * years_in_nz *\
+            age_requirement * child_age_requirement * \
+            relationship_test * low_income
+
+
+class sole_parent_support__meets_relationship_qualification(Variable):
+    value_type = bool
+    default_value = True
+    entity = Person
+    label = u"Meets the sole parent support test for not being in a relationship"
+    definition_period = MONTH
+    reference = "https://www.workandincome.govt.nz/map/income-support/main-benefits/sole-parent-support/qualifications.html"
+
+    """
+     be one of the following:
+        * living apart from their partner and lost the support or being inadequately
+            maintained by the spouse or partner
+        * divorced or had their civil union dissolved
+        * single (never had a partner)
+        * has lost the regular support of their partner as their partner has been imprisoned or
+            is subject to release or detention conditions that prevent employment or
+        * their spouse or partner has died
+    """
+    def formula(persons, period, parameters):
+        # Do they have a partner
+        no_partners = (persons('has_a_partner', period) == 0)
+        not_supported = (persons('is_adequately_supported_by_partner', period) == 0)
+        # no partnert, OR not supported by partner
+        return no_partners + not_supported
 
 
 class sole_parent__family_has_child_under_age_limit(Variable):
@@ -63,7 +91,7 @@ class sole_parent_support__meets_age_threshold(Variable):
     entity = Person
     label = u"Meets the age test for sole parent support?"
     definition_period = MONTH
-    reference = "TODO"
+    reference = "https://www.workandincome.govt.nz/products/a-z-benefits/sole-parent-support.html"
 
     def formula(persons, period, parameters):
         # old enough?
@@ -75,7 +103,7 @@ class sole_parent_support__meets_years_in_nz_requirement(Variable):
     value_type = bool
     default_value = True
     entity = Person
-    label = u"Meets the sole parent support test for number of continuous years lived in nz"
+    label = u"Has lived continuously in New Zealand for 2 years or more at any one time since becoming a New Zealand citizen or permanent resident?"
     definition_period = MONTH
     reference = "TODO"
 
