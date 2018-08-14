@@ -28,3 +28,11 @@ class job_seeker_support__below_income_threshold(Variable):
     entity = Person
     label = u"Income is below Job Seeker Support threshold?"
     definition_period = MONTH
+
+
+class sole_parent_support__below_income_threshold(Variable):
+    value_type = bool
+    default_value = True
+    entity = Person
+    label = u"Income is below Sole Parent Support threshold?"
+    definition_period = MONTH
