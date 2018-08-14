@@ -69,7 +69,7 @@ class sole_parent_support__meets_relationship_qualification(Variable):
         # Do they have a partner
         no_partners = (persons('has_a_partner', period) == 0)
         not_supported = (persons('is_adequately_supported_by_partner', period) == 0)
-        # no partnert, OR not supported by partner
+        # no partner, OR not supported by partner
         return no_partners + not_supported
 
 
