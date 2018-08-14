@@ -1,17 +1,3 @@
-# class TestSoleParentSupportNotSupported(Reasoner):
-#     """
-#     Benefit: Part 1B Sole Parent Support (eligibility in legislation):
-#         If applicant.isParent
-#             and applicant.isInadequatelySupportedByPartner
-#             and applicant.isMaintainingChild
-#             and applicant.isNZResident
-#             and 20 ≤ applicant.Age
-#             and child.Age < 14
-#             and child.isDependent
-#             and threshold.income.SoleParentSupport
-#         then benefit.isSoleParentSupport is PERMITTED
-#     """
-
 - name: Tests Sole Parent Support
   period: 2018-10
   absolute_error_margin: 0
