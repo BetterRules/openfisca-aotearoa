@@ -23,10 +23,6 @@
       2018-10:
         - true # koro
         - false # Tamaiti
-    has_a_partner:
-      2018-10:
-        - false # koro
-        - false # Tamaiti
 
 - name: Tests Sole Parent Support when in a relationship
   period: 2018-10
@@ -91,3 +87,30 @@
         - true # papa
         - false # mama
         - false # Matilda
+
+
+- name: Tests Sole Parent Support - child too old
+  period: 2018-10
+  absolute_error_margin: 0
+  persons:
+    - id: "Koro"
+      is_nz_citizen: true
+      normally_lives_in_nz: true
+      age: 81
+      sole_parent_support__below_income_threshold: true
+      sole_parent_support__meets_years_in_nz_requirement: true
+    - id: "Tamaiti"
+      age: 14
+  families:
+    - id: "Whanau"
+      principal_caregiver: "Koro"
+      children:
+        - "Tamaiti"
+  titled_properties:
+    - id: whare
+      others: ["Koro", "Tamaiti"]
+  output_variables:
+    social_security__eligible_for_sole_parent_support:
+      2018-10:
+        - false # koro
+        - false # Tamaiti
