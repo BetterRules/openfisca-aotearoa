@@ -114,3 +114,38 @@
       2018-10:
         - false # koro
         - false # Tamaiti
+
+
+- name: Tests Sole Parent Support - multiple children, should be eligible
+  period: 2018-10
+  absolute_error_margin: 0
+  persons:
+    - id: "Koro"
+      is_nz_citizen: true
+      normally_lives_in_nz: true
+      age: 81
+      sole_parent_support__below_income_threshold: true
+      sole_parent_support__meets_years_in_nz_requirement: true
+    - id: "Tahi"
+      age: 19
+    - id: "Rua"
+      age: 14
+    - id: "Toru"
+      age: 13
+  families:
+    - id: "Whanau"
+      principal_caregiver: "Koro"
+      children:
+        - "Tahi"
+        - "Rua"
+        - "Toru"
+  titled_properties:
+    - id: whare
+      others: ["Koro", "Tahi", "Rua", "Toru"]
+  output_variables:
+    social_security__eligible_for_sole_parent_support:
+      2018-10:
+        - true # koro
+        - false
+        - false
+        - false
