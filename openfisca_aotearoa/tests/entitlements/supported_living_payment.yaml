@@ -1,0 +1,217 @@
+- name: Tests Supported Living Payment - default false
+  period: 2018-10
+  absolute_error_margin: 0
+  persons:
+    - id: "Ruby"
+      age: 25
+      is_nz_citizen: true
+  families:
+    - id: "Whanau"
+      others: "Ruby"
+  titled_properties:
+    - id: whare
+      others:
+        - Ruby
+  output_variables:
+    social_security__eligible_for_supported_living_payment:
+      2018-10:
+        - false
+
+- name: Tests Supported Living Payment - totally blind
+  period: 2018-10
+  absolute_error_margin: 0
+  persons:
+    - id: "Ruby"
+      age: 25
+      is_nz_citizen: true
+      social_security__is_totally_blind: true
+      supported_living_payment__below_income_threshold: true
+  families:
+    - id: "Whanau"
+      others: "Ruby"
+  titled_properties:
+    - id: whare
+      others:
+        - Ruby
+  output_variables:
+    social_security__eligible_for_supported_living_payment:
+      2018-10:
+        - true
+
+- name: Tests Supported Living Payment - "severely" disabled
+  period: 2018-10
+  absolute_error_margin: 0
+  persons:
+    - id: "Ruby"
+      age: 25
+      is_nz_citizen: true
+      social_security__has_severely_restricted_capacity_for_work: true
+      supported_living_payment__below_income_threshold: true
+  families:
+    - id: "Whanau"
+      others: "Ruby"
+  titled_properties:
+    - id: whare
+      others:
+        - Ruby
+  output_variables:
+    social_security__eligible_for_supported_living_payment:
+      2018-10:
+        - true
+
+
+- name: Tests Supported Living Payment - self inflicted injury
+  period: 2018-10
+  absolute_error_margin: 0
+  persons:
+    - id: "Ruby"
+      age: 25
+      is_nz_citizen: true
+      social_security__has_severely_restricted_capacity_for_work: true
+      supported_living_payment__below_income_threshold: true
+      social_security__disability_was_self_inflicted: true
+  families:
+    - id: "Whanau"
+      others: "Ruby"
+  titled_properties:
+    - id: whare
+      others:
+        - Ruby
+  output_variables:
+    social_security__eligible_for_supported_living_payment:
+      2018-10:
+        - false
+
+- name: Tests Supported Living Payment - Carer looking after another person
+  period: 2018-10
+  absolute_error_margin: 0
+  persons:
+    - id: "Ruby"
+      age: 25
+      is_nz_citizen: true
+      social_security__is_required_to_give_fulltime_care: true
+      supported_living_payment__below_income_threshold: true
+  families:
+    - id: "Whanau"
+      principal_caregiver: "Ruby"
+  titled_properties:
+    - id: whare
+      others:
+        - "Ruby"
+  output_variables:
+    social_security__eligible_for_supported_living_payment:
+      2018-10:
+        - true
+
+# TODO
+# - name: Tests Supported Living Payment - Carer, looking after partner (not eligible)
+
+
+# class TestSupportedLivingPaymentCarer(Reasoner):
+#     """
+#     If applicant.isPrincipalCarer
+#         and applicant.isNZResident
+#         and 16 ≤ applicant.Age
+#         and child.hasSeriousDisability
+#         and child.hasMedicalCertification
+#         and threshold.income.SupportedLivingPayment
+#     then benefit.isSupportedLivingPayment is PERMITTED
+#     """
+
+#     key = 'isSupportedLivingPayment'
+#     body = {
+#         "applicant": {
+#             "isPrincipalCarer": True,
+#             "isNZResident": True,
+#             "Age": 45
+#         },
+#         "child": {
+#             "isDependent": True,
+#             "hasSeriousDisability": True,
+#             "hasMedicalCertification": True
+#         },
+#         "threshold": {
+#             "income": {
+#                 "SupportedLivingPayment": True
+#             }
+#         }
+
+#     }
+
+#     def test_reasoning(self):
+
+#         self.assertTrue(self.is_permitted)
+
+
+# class TestSupportedLivingPaymentSelfAppl(Reasoner):
+#     """
+#     Benefit: Part 1E Supported Living Payment (eligible self applicant):
+#     If applicant.isNZResident
+#         and 16 ≤ applicant.Age
+#         and applicant.hasMedicalCertificate
+#         and applicant.hasSeriousDisability
+#         and threshold.income.SupportedLivingPayment
+#     then benefit.isSupportedLivingPayment is PERMITTED
+#     """
+
+#     key = 'isSupportedLivingPayment'
+#     body = {
+#         "applicant": {
+#             "isNZResident": True,
+#             "Age": 45,
+#             "hasMedicalCertificate": True,
+#             "hasSeriousDisability": True
+#         },
+#         "threshold": {
+#             "income": {
+#                 "SupportedLivingPayment": True
+#             }
+#         }
+#     }
+
+
+# class TestSupportedLivingPaymentAmbigious(Reasoner):
+#     key = 'isSupportedLivingPayment'
+#     body = {
+#         "applicant": {
+#             "isNZResident": True,
+#         },
+#         "child": {
+#             "isDependent": True,
+#             "hasSeriousDisability": True,
+#             "hasMedicalCertification": True
+#         },
+#         "threshold": {
+#             "income": {
+#                 "SupportedLivingPayment": True
+#             }
+#         }
+#     }
+
+#     def test_reasoning(self):
+
+#         self.assertTrue(self.is_forbidden)
+
+
+# class TestSupportedLivingTooYoung(Reasoner):
+#     key = 'isSupportedLivingPayment'
+#     body = {
+#         "applicant": {
+#             "isNZResident": True,
+#             "Age": 15
+#         },
+#         "child": {
+#             "isDependent": True,
+#             "hasSeriousDisability": True,
+#             "hasMedicalCertification": True
+#         },
+#         "threshold": {
+#             "income": {
+#                 "SupportedLivingPayment": True
+#             }
+#         }
+#     }
+
+#     def test_reasoning(self):
+
+#         self.assertTrue(self.is_forbidden)

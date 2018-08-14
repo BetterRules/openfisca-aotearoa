@@ -10,7 +10,7 @@
       is_resident: true
     - id: "Tama (disabled child)"
       age: 5
-      social_security__has_serious_disability: true
+      social_security__social_security__has_serious_disability: true
       social_security__requires_constant_care_and_attention: true
       social_security__medical_certification_months: 12
     - id: "Tamahine (able bodied teenager)"
@@ -45,7 +45,7 @@
       is_resident: true
     - id: "Tama (disabled child)"
       age: 17
-      social_security__has_serious_disability: true
+      social_security__social_security__has_serious_disability: true
       social_security__requires_constant_care_and_attention: true
       social_security__medical_certification_months: 12
   families:
@@ -70,7 +70,7 @@
       is_resident: true
     - id: "Tama (disabled child)"
       age: 17
-      social_security__has_serious_disability: true
+      social_security__social_security__has_serious_disability: true
       social_security__requires_constant_care_and_attention: false
       social_security__medical_certification_months: 12
   families:
@@ -96,7 +96,7 @@
       is_resident: true
     - id: "Tama (disabled child)"
       age: 5
-      social_security__has_serious_disability: true
+      social_security__social_security__has_serious_disability: true
       social_security__requires_constant_care_and_attention: true
       social_security__medical_certification_months: 12
   families:
@@ -121,7 +121,7 @@
       normally_lives_in_nz: true
       is_resident: true
     - id: "Tama (disabled child)"
-      social_security__has_serious_disability: true
+      social_security__social_security__has_serious_disability: true
       social_security__requires_constant_care_and_attention: true
       social_security__medical_certification_months: 12
   families:
@@ -147,7 +147,7 @@
       is_resident: true
     - id: "Tama (disabled child)"
       age: 19
-      social_security__has_serious_disability: true
+      social_security__social_security__has_serious_disability: true
       social_security__requires_constant_care_and_attention: true
       social_security__medical_certification_months: 12
   families:
@@ -173,7 +173,7 @@
       is_resident: true
     - id: "Tama (disabled child)"
       age: 17
-      social_security__has_serious_disability: true
+      social_security__social_security__has_serious_disability: true
       social_security__requires_constant_care_and_attention: true
       social_security__medical_certification_months: 11
   families:

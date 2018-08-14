@@ -1,5 +1,9 @@
 # Changelog
 
+# 4.1.2 - [#41](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/55)
+Calculation improvement.
+* Added Sole Parent Support
+
 # 4.1.1 - [#41](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/53)
 Calculation improvement.
 * Added Job Seeker Support

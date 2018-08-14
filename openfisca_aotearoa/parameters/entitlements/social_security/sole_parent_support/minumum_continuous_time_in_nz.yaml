@@ -1,0 +1,5 @@
+description: Minimum time (in years), at one time, in NZ since becoming citizen or permanent resident
+reference: https://www.workandincome.govt.nz/products/a-z-benefits/sole-parent-support.html#null
+values:
+  "2018":
+    value: 2
