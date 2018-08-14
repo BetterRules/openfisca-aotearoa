@@ -1,5 +1,5 @@
-description: Minimum number of years in NZ before being eligible for Job Seeker
-reference: TODO MSD Policy https://www.workandincome.govt.nz/products/a-z-benefits/accommodation-supplement.html
+description: Minimum number of consecutive years in NZ before being eligible for Job Seeker
+reference: http://legislation.govt.nz/act/public/1964/0136/latest/DLM363796.html?search=ts_act%40bill%40regulation%40deemedreg_social+security_resel_25_a&p=1#DLM363796
 values:
   "2018":
     value: 2
