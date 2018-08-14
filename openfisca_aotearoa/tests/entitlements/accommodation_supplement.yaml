@@ -54,6 +54,20 @@
   output_variables:
     social_security__eligible_for_accommodation_supplement: false
 
+- name: Tests Accommodation Supplement, when applicant is just old enough
+  period: 2018-06
+  absolute_error_margin: 0
+  input_variables:
+    age: 16
+    normally_lives_in_nz: true
+    is_resident: true
+    has_accomodation_costs: true
+    eligible_for_social_housing: false
+    accommodation_supplement__below_income_threshold: true
+    accommodation_supplement__below_cash_threshold: true
+  output_variables:
+    social_security__eligible_for_accommodation_supplement: true
+
 - name: Tests Accommodation Supplement, when applicant is too young
   period: 2018-06
   absolute_error_margin: 0
