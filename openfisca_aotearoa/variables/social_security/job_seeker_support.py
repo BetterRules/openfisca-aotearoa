@@ -19,6 +19,7 @@ class social_security__eligible_for_job_seeker_support(Variable):
     entity = Person
     definition_period = MONTH
     label = "Eligible for Job Seeker Support"
+    reference = "http://legislation.govt.nz/act/public/1964/0136/latest/DLM5478526.html"
 
     def formula(persons, period, parameters):
         # The applicant
@@ -36,10 +37,12 @@ class social_security__eligible_for_job_seeker_support(Variable):
 
         # Prepared to work
         prepared = persons('job_seeker_support__is_prepared_for_employment', period)
-
-        return in_nz * resident_or_citizen * \
-            age_requirement * income * prepared * years_in_nz
-
+         
+        # unable to work?
+        unable_to_work = persons('is_unable_to_work', period) 
+        
+        return in_nz * resident_or_citizen * age_requirement * income * years_in_nz * prepared + \
+            in_nz * resident_or_citizen * age_requirement * income * years_in_nz * unable_to_work 
 
 class job_seeker_support__is_prepared_for_employment(Variable):
     value_type = bool
@@ -47,7 +50,7 @@ class job_seeker_support__is_prepared_for_employment(Variable):
     entity = Person
     label = u"Is prepared for employment?"
     definition_period = MONTH
-    reference = "TODO"
+    reference = "http://legislation.govt.nz/act/public/1964/0136/latest/DLM5478526.html"
 
 
 class job_seeker_support__meets_age_threshold(Variable):
@@ -56,10 +59,10 @@ class job_seeker_support__meets_age_threshold(Variable):
     entity = Person
     label = u"Meets the age test for job seeker support?"
     definition_period = MONTH
-    reference = "TODO"
+    reference = "http://legislation.govt.nz/act/public/1964/0136/latest/DLM5478526.html"
 
     def formula(persons, period, parameters):
-        # old enough?
+        # old enough? 
         age_threshold = parameters(period).entitlements.social_security.job_seeker_support.age_threshold
         return persons("age", period) >= age_threshold
 
@@ -70,7 +73,7 @@ class job_seeker_support__meets_years_in_nz_requirement(Variable):
     entity = Person
     label = u"Meets the job seeker support test for number of years lived in nz"
     definition_period = MONTH
-    reference = "TODO"
+    reference = "http://legislation.govt.nz/act/public/1964/0136/latest/DLM363796.html#DLM363796"
 
     def formula(persons, period, parameters):
         # been in NZ log enough?
