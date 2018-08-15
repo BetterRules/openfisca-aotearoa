@@ -34,13 +34,22 @@
       job_seeker_support__below_income_threshold: false
       job_seeker_support__is_prepared_for_employment: false
 
+- id: "Julz" # Julz is unable to work due to disability or accident
+      age: 35
+      normally_lives_in_nz: true
+      is_resident: true
+      number_of_years_lived_in_nz: 5
+      job_seeker_support__below_income_threshold: true
+      job_seeker_support__is_prepared_for_employment: false
+      is_unable_to_work: true
+
   families:
     - id: "Whanau"
       principal_caregiver: "Mama"
-      others: ["Tama", "Papa", "Alan"]
+      others: ["Tama", "Papa", "Alan", "Julz"]
   titled_properties:
     - id: whare
-      others: ["Mama", "Tama", "Papa", "Alan"]
+      others: ["Mama", "Tama", "Papa", "Alan", "Julz"]
 
   output_variables:
     # job_seeker_support__meets_age_threshold:
@@ -61,3 +70,4 @@
         - false # tama
         - false # papa
         - false # alan
+        - true # julz
