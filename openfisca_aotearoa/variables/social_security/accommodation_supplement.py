@@ -6,7 +6,8 @@ class social_security__eligible_for_accommodation_supplement(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    label = "Eligible for Accommodation Supplement"
+    label = "Eligible for Accommodation Supplement
+    reference = "http://legislation.govt.nz/act/public/1964/0136/latest/DLM362856.html"
 
     """
         age => 16
@@ -31,7 +32,8 @@ class social_security__eligible_for_accommodation_supplement(Variable):
         not_social_housing = (persons('eligible_for_social_housing', period) == 0)
 
         income = persons('accommodation_supplement__below_income_threshold', period)
-        cash = persons('accommodation_supplement__below_cash_threshold', period)
+        cash = persons("cash assets", period) <= accommodation_supplement_cash_threshold
+        reference = "http://legislation.govt.nz/act/public/1964/0136/latest/DLM362884.html" 
 
         return age_requirement * resident_or_citizen * in_nz * has_accomodation_costs * not_social_housing * income * cash
 
