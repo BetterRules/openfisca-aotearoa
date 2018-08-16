@@ -39,7 +39,6 @@
     - id: "Ruby"
       age: 25
       is_nz_citizen: true
-      has_serious_disability: true
       is_totally_blind: true
   families:
     - id: "Whanau"
@@ -51,7 +50,28 @@
   output_variables:
     social_security__eligible_for_supported_living_payment:
       2018-10:
-        - false
+        - true
+
+- name: Tests Supported Living Payment - "severely" disabled
+  period: 2018-10
+  absolute_error_margin: 0
+  persons:
+    - id: "Ruby"
+      age: 25
+      is_nz_citizen: true
+      social_security__has_severely_restricted_capacity_for_work: true
+  families:
+    - id: "Whanau"
+      others: "Ruby"
+  titled_properties:
+    - id: whare
+      others:
+        - Ruby
+  output_variables:
+    social_security__eligible_for_supported_living_payment:
+      2018-10:
+        - true
+
 
 - name: Tests Supported Living Payment - self inflicted injury
   period: 2018-10
@@ -60,7 +80,7 @@
     - id: "Ruby"
       age: 25
       is_nz_citizen: true
-      has_serious_disability: true
+      social_security__has_severely_restricted_capacity_for_work: true
       disability_was_self_inflicted: true
   families:
     - id: "Whanau"
@@ -81,48 +101,44 @@
     - id: "Ruby"
       age: 25
       is_nz_citizen: true
-    - id: "Shadow"
-      age: 25
-      is_nz_citizen: true
-      has_serious_disability: true
+      social_security__is_required_to_give_fulltime_care: true
   families:
     - id: "Whanau"
       principal_caregiver: "Ruby"
-      others:
-        - "Shadow"
   titled_properties:
     - id: whare
-      others: ["Ruby", "Shadow"]
+      others:
+        - "Ruby"
   output_variables:
     social_security__eligible_for_supported_living_payment:
       2018-10:
         - true
 
 
-- name: Tests Supported Living Payment - Carer, looking after partner (not eligible)
-  period: 2018-10
-  absolute_error_margin: 0
-  persons:
-    - id: "Ruby"
-      age: 18
-      is_nz_citizen: true
-      social_security__is_required_to_give_fulltime_care: true
-    - id: "Shadow"
-      is_nz_citizen: true
-      has_serious_disability: true
-  families:
-    - id: "Whanau"
-      principal_caregiver: "Ruby"
-      partners:
-        - "Shadow"
-  titled_properties:
-    - id: whare
-      others: ["Ruby", "Shadow"]
-  output_variables:
-    social_security__is_required_to_give_fulltime_care:
-      2018-10:
-       - true
-       - false
+# - name: Tests Supported Living Payment - Carer, looking after partner (not eligible)
+#   period: 2018-10
+#   absolute_error_margin: 0
+#   persons:
+#     - id: "Ruby"
+#       age: 18
+#       is_nz_citizen: true
+#       social_security__is_required_to_give_fulltime_care: true
+#     - id: "Shadow"
+#       is_nz_citizen: true
+#       has_serious_disability: true
+#   families:
+#     - id: "Whanau"
+#       principal_caregiver: "Ruby"
+#       partners:
+#         - "Shadow"
+#   titled_properties:
+#     - id: whare
+#       others: ["Ruby", "Shadow"]
+#   output_variables:
+#     social_security__is_required_to_give_fulltime_care:
+#       2018-10:
+#        - false
+#        - false
     # social_security__eligible_for_supported_living_payment:
     #   2018-10:
     #     - true
