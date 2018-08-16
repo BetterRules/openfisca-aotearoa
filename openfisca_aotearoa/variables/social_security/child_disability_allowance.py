@@ -35,8 +35,9 @@ class social_security__family_has_eligible_disabled_child(Variable):
     def formula(families, period, parameters):
         has_disability = families.members('social_security__child_meets_child_disability_allowance_criteria', period)
         child_age_threshold = parameters(period).entitlements.social_security.child_disability_allowance.child_age_threshold
-        is_child = families.members('age', period) <= child_age_threshold
-        return families.any((has_disability * is_child), role=Family.CHILD)
+        children = families.members('age', period) <= child_age_threshold
+        disabled_children = has_disability * children
+        return families.any(disabled_children, role=Family.CHILD)
 
 
 class social_security__child_meets_child_disability_allowance_criteria(Variable):
@@ -48,7 +49,7 @@ class social_security__child_meets_child_disability_allowance_criteria(Variable)
     def formula(persons, period, parameters):
         med_cert_required_months = parameters(period).entitlements.social_security.child_disability_allowance.medical_certification_required_months
 
-        return persons('social_security__has_serious_disability', period) * \
+        return persons('has_serious_disability', period) * \
             persons('social_security__requires_constant_care_and_attention', period) * \
             (persons('social_security__medical_certification_months', period) >= med_cert_required_months)
 
@@ -57,13 +58,6 @@ class social_security__medical_certification_months(Variable):
     value_type = int
     entity = Person
     label = u"Number of future months the disability is expected to last for, in months"
-    definition_period = MONTH
-
-
-class social_security__has_serious_disability(Variable):
-    value_type = bool
-    entity = Person
-    label = u"Has serious disability"
     definition_period = MONTH
 
 

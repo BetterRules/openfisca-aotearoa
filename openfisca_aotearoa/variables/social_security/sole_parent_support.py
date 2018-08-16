@@ -20,7 +20,7 @@ class social_security__eligible_for_sole_parent_support(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    label = "Eligible for Job Seeker Support"
+    label = "Eligible for Sole Parent Support"
     reference = "https://www.workandincome.govt.nz/map/income-support/main-benefits/sole-parent-support/qualifications.html"
 
     def formula(persons, period, parameters):

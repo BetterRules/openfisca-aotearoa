@@ -79,7 +79,6 @@ Family = build_entity(
             'plural': 'parents',
             'label': u'Parent',
             'doc': u'Parent of children in the whānau',
-            # 'max': 1
             },
         {
             'key': 'partner',
