@@ -49,7 +49,7 @@ class social_security__child_meets_child_disability_allowance_criteria(Variable)
     def formula(persons, period, parameters):
         med_cert_required_months = parameters(period).entitlements.social_security.child_disability_allowance.medical_certification_required_months
 
-        return persons('has_serious_disability', period) * \
+        return persons('social_security__child_with_serious_disability', period) * \
             persons('social_security__requires_constant_care_and_attention', period) * \
             (persons('social_security__medical_certification_months', period) >= med_cert_required_months)
 
