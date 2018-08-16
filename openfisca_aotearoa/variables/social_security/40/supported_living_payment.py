@@ -12,7 +12,6 @@ from openfisca_core.model_api import *
 """
 
 
-
 class social_security__is_required_to_give_fulltime_care(Variable):
     value_type = bool
     entity = Person
