@@ -5,7 +5,7 @@
     age: 30
     normally_lives_in_nz: true
     is_resident: true
-    has_accomodation_costs: true
+    social_security__has_accomodation_costs: true
     eligible_for_social_housing: false
     accommodation_supplement__below_income_threshold: true
     accommodation_supplement__below_cash_threshold: true
@@ -19,7 +19,7 @@
     age: 30
     normally_lives_in_nz: true
     is_permanent_resident: true
-    has_accomodation_costs: true
+    social_security__has_accomodation_costs: true
     eligible_for_social_housing: false
     accommodation_supplement__below_income_threshold: true
     accommodation_supplement__below_cash_threshold: true
@@ -33,7 +33,7 @@
     age: 30
     normally_lives_in_nz: true
     is_nz_citizen: true
-    has_accomodation_costs: true
+    social_security__has_accomodation_costs: true
     eligible_for_social_housing: false
     accommodation_supplement__below_income_threshold: true
     accommodation_supplement__below_cash_threshold: true
@@ -47,7 +47,7 @@
     age: 30
     normally_lives_in_nz: true
     is_resident: true
-    has_accomodation_costs: false
+    social_security__has_accomodation_costs: false
     eligible_for_social_housing: false
     accommodation_supplement__below_income_threshold: true
     accommodation_supplement__below_cash_threshold: true
@@ -61,7 +61,7 @@
     age: 15
     normally_lives_in_nz: true
     is_resident: true
-    has_accomodation_costs: true
+    social_security__has_accomodation_costs: true
     eligible_for_social_housing: false
     accommodation_supplement__below_income_threshold: true
     accommodation_supplement__below_cash_threshold: true
@@ -75,7 +75,7 @@
     age: 45
     normally_lives_in_nz: true
     is_resident: true
-    has_accomodation_costs: true
+    social_security__has_accomodation_costs: true
     eligible_for_social_housing: true
     accommodation_supplement__below_income_threshold: true
     accommodation_supplement__below_cash_threshold: true
