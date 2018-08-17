@@ -33,3 +33,14 @@ class number_of_years_lived_in_nz(Variable):
     entity = Person
     definition_period = ETERNITY
     label = u"Number of years lived in NZ"
+
+
+class is_citizen_or_resident(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = ETERNITY
+    label = u"NZ Citizen or Resident"
+    reference = "Immigration Act 2009 (interpretation) http://legislation.govt.nz/act/public/2009/0051/latest/whole.html#DLM1440311"
+
+    def formula(persons, period, parameters):
+        return persons('is_nz_citizen', period) + persons('is_permanent_resident', period) + persons('is_resident', period)

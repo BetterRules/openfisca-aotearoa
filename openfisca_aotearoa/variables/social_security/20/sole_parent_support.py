@@ -26,10 +26,7 @@ class social_security__eligible_for_sole_parent_support(Variable):
     def formula(persons, period, parameters):
         # The applicant
         in_nz = persons('normally_lives_in_nz', period)
-        resident_or_citizen = \
-            persons('is_resident', period) + \
-            persons('is_permanent_resident', period) + \
-            persons('is_nz_citizen', period)
+        resident_or_citizen = persons('is_citizen_or_resident', period)
 
         years_in_nz = persons('sole_parent_support__meets_years_in_nz_requirement', period)
         age_requirement = persons('sole_parent_support__meets_age_threshold', period)

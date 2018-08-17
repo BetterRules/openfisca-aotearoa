@@ -67,10 +67,7 @@ class social_security__eligible_for_supported_living_payment(Variable):
 
         # 40B (1B) An applicant for the supported living payment under
         # this section must meet the residential requirements in section 74AA.
-        is_resident_or_citizen = \
-            persons('is_resident', period) + \
-            persons('is_permanent_resident', period) + \
-            persons('is_nz_citizen', period)
+        is_resident_or_citizen = persons('is_citizen_or_resident', period)
 
         # # income low enough?
         income = persons('supported_living_payment__below_income_threshold', period)
