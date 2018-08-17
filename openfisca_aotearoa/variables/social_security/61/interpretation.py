@@ -36,7 +36,7 @@ class social_security__is_a_beneficiary(Variable):
     value_type = bool
     entity = Person
     label = "Person is a beneficiary"
-    definition_period = WEEK
+    definition_period = MONTH
     reference = """beneficiary means any person who is being paid -
         (a) jobseeker support, sole parent support, a supported living payment, a youth payment, a young parent payment, or an emergency benefit; or
         (b) New Zealand superannuation or a veteran's pension
@@ -47,7 +47,7 @@ class social_security__is_being_paid_jobseeker_benefit(Variable):
     value_type = bool
     entity = Person
     label = "Is being paid Jobseeker"
-    definition_period = WEEK
+    definition_period = MONTH
 
 
 class social_security__cash_assets(Variable):
