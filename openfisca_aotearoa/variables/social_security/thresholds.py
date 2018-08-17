@@ -22,7 +22,7 @@ class accommodation_supplement__below_cash_threshold(Variable):
     definition_period = MONTH
 
 
-class job_seeker_support__below_income_threshold(Variable):
+class jobseeker_support__below_income_threshold(Variable):
     value_type = bool
     default_value = True
     entity = Person
