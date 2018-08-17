@@ -13,6 +13,7 @@ from openfisca_core.model_api import *
 #     then benefit.isJobSeekerSupport is PERMITTED
 # """
 
+
 class jobseeker_support__is_prepared_for_employment(Variable):
     value_type = bool
     default_value = True
