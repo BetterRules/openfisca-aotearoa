@@ -26,7 +26,7 @@ class jobseeker_support__meets_age_threshold(Variable):
     value_type = bool
     default_value = True
     entity = Person
-    label = u"Meets the age test for job seeker support?"
+    label = u"Meets the age test for Jobseeker Support?"
     definition_period = MONTH
     reference = "TODO"
 
@@ -40,7 +40,7 @@ class jobseeker_support__meets_years_in_nz_requirement(Variable):
     value_type = bool
     default_value = True
     entity = Person
-    label = u"Meets the job seeker support test for number of years lived in nz"
+    label = u"Meets the Jobseeker Support test for number of years lived in nz"
     definition_period = MONTH
     reference = "TODO"
 
