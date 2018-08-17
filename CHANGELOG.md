@@ -1,5 +1,10 @@
 # Changelog
 
+# 4.1.3 - [#41](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/55)
+Calculation improvement.
+* Added Supported Living Payment
+* Restructured Social Security Act variables
+
 # 4.1.2 - [#41](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/55)
 Calculation improvement.
 * Added Sole Parent Support
