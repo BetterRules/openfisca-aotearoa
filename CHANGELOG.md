@@ -1,5 +1,15 @@
 # Changelog
 
+# 4.1.3 - [#41](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/55)
+Calculation improvement.
+* addded Supported living payment
+* Organising by numbered section of the act
+* Moved Social Security Act disability definitions to that folder
+* Move social security tests to folder with that name
+* refactored to add 'is_citizen_or_resident' variable
+* Renaming job seeker to Jobseeker Support
+* Restructured Social Security Act variables
+
 # 4.1.2 - [#41](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/55)
 Calculation improvement.
 * Added Sole Parent Support

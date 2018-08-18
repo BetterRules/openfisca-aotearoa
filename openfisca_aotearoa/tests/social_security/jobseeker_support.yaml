@@ -7,32 +7,32 @@
       normally_lives_in_nz: true
       is_resident: true
       number_of_years_lived_in_nz: 10
-      job_seeker_support__below_income_threshold: true
-      job_seeker_support__is_prepared_for_employment: true
+      jobseeker_support__below_income_threshold: true
+      jobseeker_support__is_prepared_for_employment: true
 
     - id: "Tama"
       age: 6
       normally_lives_in_nz: true
       is_resident: true
       number_of_years_lived_in_nz: 2
-      job_seeker_support__below_income_threshold: true
-      job_seeker_support__is_prepared_for_employment: true
+      jobseeker_support__below_income_threshold: true
+      jobseeker_support__is_prepared_for_employment: true
 
     - id: "Papa"
       age: 99
       normally_lives_in_nz: true
       is_resident: true
       number_of_years_lived_in_nz: 5
-      job_seeker_support__below_income_threshold: true
-      job_seeker_support__is_prepared_for_employment: false
+      jobseeker_support__below_income_threshold: true
+      jobseeker_support__is_prepared_for_employment: false
 
     - id: "Alan"
       age: 50
       normally_lives_in_nz: true
       is_resident: true
       number_of_years_lived_in_nz: 50
-      job_seeker_support__below_income_threshold: false
-      job_seeker_support__is_prepared_for_employment: false
+      jobseeker_support__below_income_threshold: false
+      jobseeker_support__is_prepared_for_employment: false
 
   families:
     - id: "Whanau"
@@ -43,19 +43,7 @@
       others: ["Mama", "Tama", "Papa", "Alan"]
 
   output_variables:
-    # job_seeker_support__meets_age_threshold:
-    #   2018-08:
-    #     - true # mama
-    #     - false # tama
-    #     - true # papa
-    #     - true # alan
-    # job_seeker_support__meets_years_in_nz_requirement:
-    #   2018-08:
-    #     - true # mama
-    #     - true # tama
-    #     - true # papa
-    #     - true # alan
-    social_security__eligible_for_job_seeker_support:
+    social_security__eligible_for_jobseeker_support:
       2018-08:
         - true # mama
         - false # tama
