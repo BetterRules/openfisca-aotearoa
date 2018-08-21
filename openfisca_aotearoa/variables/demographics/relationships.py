@@ -11,7 +11,7 @@ class has_a_partner(Variable):
     value_type = bool
     entity = Person
     label = u"Is this person in a relationship?"
-    definition_period = MONTH  # This variable cannot change over time.
+    definition_period = MONTH  # This variable changes over time.
     reference = u"TODO"
 
     def formula(persons, period, parameters):
