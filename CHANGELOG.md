@@ -1,5 +1,9 @@
 # Changelog
 
+# 4.1.4 - [#41](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/55)
+Calculation improvement.
+ * Added Jobseeker Support for 18 and 19 year olds
+
 # 4.1.3 - [#41](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/55)
 Calculation improvement.
 * addded Supported living payment
