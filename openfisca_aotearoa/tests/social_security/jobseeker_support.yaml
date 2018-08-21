@@ -10,6 +10,15 @@
       jobseeker_support__below_income_threshold: true
       jobseeker_support__is_prepared_for_employment: true
 
+    - id: "Dada"
+      age: 18
+      normally_lives_in_nz: true
+      is_resident: true
+      number_of_years_lived_in_nz: 10
+      social_security__has_dependant_child: true
+      jobseeker_support__below_income_threshold: true
+      jobseeker_support__is_prepared_for_employment: true
+
     - id: "Tama"
       age: 6
       normally_lives_in_nz: true
@@ -37,15 +46,16 @@
   families:
     - id: "Whanau"
       principal_caregiver: "Mama"
-      others: ["Tama", "Papa", "Alan"]
+      others: ["Tama", "Papa", "Alan", "Dada"]
   titled_properties:
     - id: whare
-      others: ["Mama", "Tama", "Papa", "Alan"]
+      others: ["Mama", "Tama", "Papa", "Alan", "Dada"]
 
   output_variables:
     social_security__eligible_for_jobseeker_support:
       2018-08:
         - true # mama
+        - true # dada
         - false # tama
         - false # papa
         - false # alan
