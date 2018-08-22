@@ -45,8 +45,6 @@ class jobseeker_support__meets_age_threshold(Variable):
         has_dependent_child = persons('social_security__has_dependant_child', period)
         over_age_threshold_with_dependent_child = (persons("age", period) >= jobseeker_age_with_dependent_child) * has_dependent_child
 
-        print(over_age_threshold_with_dependent_child)
-
         return over_age_threshold + over_age_threshold_with_dependent_child
 
 
