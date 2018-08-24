@@ -9,9 +9,7 @@ from openfisca_aotearoa.entities import Person
 class has_dependent_child(Variable):
     value_type = bool
     entity = Person
-    label = u"""Is adequately supported by their partner? (false if lost the regular support of
-    their partner as their partner has been imprisoned or is subject to release or detention conditions that prevent employment)
-    """
+    label = u"has a dependent child or dependent children"
     definition_period = MONTH
     default_value = True
 
