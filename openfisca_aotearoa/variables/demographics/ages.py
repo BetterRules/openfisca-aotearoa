@@ -8,6 +8,7 @@ from openfisca_aotearoa.entities import Person, Family
 
 # This variable is a pure input: it doesn't have a formula
 class date_of_birth(Variable):
+    # base_function = missing_value
     value_type = date
     entity = Person
     label = u"Birth date"
@@ -29,6 +30,8 @@ class age(Variable):
     entity = Person
     definition_period = MONTH
     label = u"The age of a Person (in years)"
+    unit = 'years'
+    default_value = -9999
     # A person's age is computed according to their birth date.
 
     def formula(persons, period, parameters):
