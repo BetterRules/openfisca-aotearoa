@@ -125,7 +125,7 @@
   persons:
     - id: "Mama"
       community_services_card__below_income_threshold: true
-      social_security__received_supperannuation: true
+      social_security__received_superannuation: true
   families:
     - id: "Whanau tahi"
       principal_caregiver: "Mama"
@@ -144,7 +144,7 @@
   persons:
     - id: "Mama"
       community_services_card__below_income_threshold: false
-      social_security__received_supperannuation: true
+      social_security__received_superannuation: true
   families:
     - id: "Whanau tahi"
       principal_caregiver: "Mama"

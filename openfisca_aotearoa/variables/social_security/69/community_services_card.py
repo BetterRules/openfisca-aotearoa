@@ -41,7 +41,7 @@ class social_security__eligible_for_community_services_card(Variable):
         low_income = persons('community_services_card__below_income_threshold', period)
         dependent_children = persons('social_security__has_dependant_child', period)
         is_fulltime_student = persons('social_security__is_fulltime_student', period)
-        received_superannuation = persons('social_security__received_supperannuation', period)
+        received_superannuation = persons('social_security__received_superannuation', period)
         eligible_for_wff = persons('income_tax__eligible_for_working_for_families', period.this_year)
         childs_benefit = \
             persons('social_security__received_orphans_benefit', period) +\
@@ -67,42 +67,43 @@ class social_security__received_orphans_benefit(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    label = "TODO"
-
+    label = "Received Orphan's Benefit"
+    reference = "http://www.legislation.govt.nz/act/public/1964/0136/latest/DLM5468365.html"
 
 class social_security__received_unsupported_childs_benefit(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    label = "TODO"
-
+    label = "Received Unsupported Child's Benefit"
+    reference = "http://www.legislation.govt.nz/act/public/1964/0136/latest/DLM361613.html"
 
 class social_security__received_child_disability_allowance(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    label = "TODO"
-
+    label = "Received Child Disability Allowance"
+    reference = "http://www.legislation.govt.nz/act/public/1964/0136/latest/DLM361659.html"
 
 class social_security__received_residential_care_subsidy(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    label = "TODO"
+    label = "Received Residential Care Subsidy"
 
 
 class veterans_support__received_veterans_pension(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    label = "TODO"
+    label = "Received Veteran's Pension"
+    reference = "http://www.legislation.govt.nz/act/public/2014/0056/latest/DLM5537967.html"
 
 
 class veterans_support__received_weekly_income_compensation(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    label = "TODO"
+    label = "Received Weekly Income Compensation"
     reference = "http://legislation.govt.nz/act/public/2014/0056/latest/link.aspx?id=DLM5537962"
 
 
@@ -110,19 +111,21 @@ class veterans_support__received_weekly_compensation(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    label = "TODO"
+    label = "Received Weekly Compensation"
     reference = "http://legislation.govt.nz/act/public/2014/0056/latest/link.aspx?id=DLM5602254"
 
 
-class social_security__received_supperannuation(Variable):
+class social_security__received_superannuation(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    label = "TODO"
+    label = "Received Superannuation"
+    reference = "http://legislation.govt.nz/act/public/1956/0047/latest/DLM446884.html"
 
 
 class social_security__is_fulltime_student(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    label = "TODO"
+    label = "Is a Full-time student"
+    reference = "http://www.legislation.govt.nz/act/public/1964/0136/latest/DLM359124.html"
