@@ -103,6 +103,7 @@ class veterans_support__received_weekly_income_compensation(Variable):
     entity = Person
     definition_period = MONTH
     label = "TODO"
+    reference = "http://legislation.govt.nz/act/public/2014/0056/latest/link.aspx?id=DLM5537962"
 
 
 class veterans_support__received_weekly_compensation(Variable):
@@ -110,6 +111,7 @@ class veterans_support__received_weekly_compensation(Variable):
     entity = Person
     definition_period = MONTH
     label = "TODO"
+    reference = "http://legislation.govt.nz/act/public/2014/0056/latest/link.aspx?id=DLM5602254"
 
 
 class social_security__received_supperannuation(Variable):
