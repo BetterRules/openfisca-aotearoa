@@ -71,7 +71,7 @@ class income_tax__family_scheme_income_for_month(Variable):
     value_type = float
     entity = Person
     definition_period = MONTH
-    label = u'The annual net income for a person as relates to the family scheme'
+    label = u'The monthly net income for a person as relates to the family scheme'
     reference = "http://legislation.govt.nz/act/public/2007/0097/latest/DLM1518454.html#DLM1518454"
 
     def formula(persons, period, parameters):
