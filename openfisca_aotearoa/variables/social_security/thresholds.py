@@ -36,3 +36,11 @@ class sole_parent_support__below_income_threshold(Variable):
     entity = Person
     label = u"Income is below Sole Parent Support threshold?"
     definition_period = MONTH
+
+
+class community_services_card__below_income_threshold(Variable):
+    value_type = bool
+    default_value = True
+    entity = Person
+    label = u"Income is below Community Services Card threshold?"
+    definition_period = MONTH
