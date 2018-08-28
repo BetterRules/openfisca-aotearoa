@@ -39,7 +39,7 @@ class social_security__meets_young_parent_payment_single_persons_requirements(Va
         living_with_parent_or_guardian = persons('living_with_parent_or_guardian', period)
         financially_supported_by_parent_or_guardian = persons('financially_supported_by_parent_or_guardian', period)
 
-        family_income_under_threshold = persons('social_security__family_income_under_young_parent_payment_threshold', period, options=[DIVIDE])
+        family_income_under_threshold = persons('social_security__family_income_under_young_parent_payment_threshold', period)
 
         exceptional_circumstances = persons('social_security__single_young_person_in_exceptional_circumstances', period)
 
