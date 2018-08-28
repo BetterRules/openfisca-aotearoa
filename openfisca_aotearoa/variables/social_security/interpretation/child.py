@@ -9,7 +9,7 @@ from openfisca_aotearoa.entities import Person
 class social_security__has_dependant_child(Variable):
     value_type = bool
     entity = Person
-    label = u"has a dependent child"
+    label = u"has a dependent child (or children)"
     definition_period = MONTH
 
 
