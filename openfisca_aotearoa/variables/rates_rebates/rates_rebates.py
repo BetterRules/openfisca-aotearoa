@@ -77,9 +77,9 @@ class rates_rebates__maximum_income_for_full_rebate(Variable):
         # what we're using to compute the maximum salary for full rebate
         rebate = parameters(period).entitlements.rates_rebates.maximum_allowable
 
-        return (((((titled_properties('rates_rebates__rates_total', period)
-                    - initial_contribution) - rebate) - ((titled_properties('rates_rebates__rates_total', period) - initial_contribution) / 3)) * 8)
-                + allowable_income)
+        rates_total = titled_properties('rates_rebates__rates_total', period)
+
+        return (((((rates_total - initial_contribution) - rebate) - ((rates_total - initial_contribution) / 3)) * 8) + allowable_income)
 
 
 class rates_rebates__minimum_income_for_no_rebate(Variable):
@@ -99,5 +99,6 @@ class rates_rebates__minimum_income_for_no_rebate(Variable):
         # what we're using to compute the maximum salary for full rebate
         rebate = 0
 
-        return (((((titled_properties('rates_rebates__rates_total', period) - initial_contribution) - rebate)
-                  - ((titled_properties('rates_rebates__rates_total', period) - initial_contribution) / 3)) * 8) + allowable_income)
+        rates_total = titled_properties('rates_rebates__rates_total', period)
+
+        return (((((rates_total - initial_contribution) - rebate) - ((rates_total - initial_contribution) / 3)) * 8) + allowable_income)
