@@ -70,6 +70,7 @@ class social_security__received_orphans_benefit(Variable):
     label = "Received Orphan's Benefit"
     reference = "http://www.legislation.govt.nz/act/public/1964/0136/latest/DLM5468365.html"
 
+
 class social_security__received_unsupported_childs_benefit(Variable):
     value_type = bool
     entity = Person
@@ -77,12 +78,14 @@ class social_security__received_unsupported_childs_benefit(Variable):
     label = "Received Unsupported Child's Benefit"
     reference = "http://www.legislation.govt.nz/act/public/1964/0136/latest/DLM361613.html"
 
+
 class social_security__received_child_disability_allowance(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
     label = "Received Child Disability Allowance"
     reference = "http://www.legislation.govt.nz/act/public/1964/0136/latest/DLM361659.html"
+
 
 class social_security__received_residential_care_subsidy(Variable):
     value_type = bool
