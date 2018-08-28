@@ -1,0 +1,55 @@
+- name: Young Parent Payment single young person
+  period: 2018-10
+  absolute_error_margin: 0
+  persons:
+    - id: "Ruby"
+      is_a_parent: true
+      has_dependent_child: true
+      age: 19
+      is_nz_citizen: true
+      monthly_income: 80000.0
+    - id: "Oliver"
+      is_a_parent: true
+      has_dependent_child: true
+      age: 16
+      is_nz_citizen: true
+      normally_lives_in_nz: true
+      monthly_income: 0.0
+      living_with_parent_or_guardian: true
+      income_tax__family_scheme_income_for_month: 10.0
+    - id: "Oscar"
+      is_a_parent: true
+      has_dependent_child: true
+      age: 17
+      is_permanent_resident: true
+      normally_lives_in_nz: true
+      monthly_income: 0.0
+      living_with_parent_or_guardian: false
+      social_security__single_young_person_in_exceptional_circumstances: true
+  families:
+    - id: "One"
+      principal_caregiver: "Ruby"
+      others: ["Oliver"]
+    - id: "Two"
+      principal_caregiver: "Oscar"
+  titled_properties:
+    - id: whare
+      others:
+        - "Ruby"
+        - "Oliver"
+        - "Oscar"
+  output_variables:
+    social_security__income_under_young_parent_payment_threshold:
+      2018-10:
+        - false # Ruby earns too much
+        - true
+        - true
+    social_security__meets_young_parent_payment_basic_requirements:
+        - false # Ruby earns too much
+        - true
+        - true
+    social_security__eligible_for_young_parent_payment:
+      2018-10:
+        - false
+        - true
+        - true

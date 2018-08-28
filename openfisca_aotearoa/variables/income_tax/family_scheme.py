@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Import from openfisca-core the common python objects used to code the legislation in OpenFisca
 from openfisca_core.model_api import *
-# Import the entities specifically defined for this tax and benefit system
 from openfisca_aotearoa.entities import Person, Family
 
 
@@ -43,22 +41,38 @@ class income_tax__person_principal_carer_qualifies_under_family_scheme(Variable)
 
 
 class income_tax__proportion_as_principal_carer(Variable):
-        value_type = float
-        entity = Person
-        default_value = 1
-        definition_period = MONTH
-        label = u'Expression of the amount of time the child is with the family and principal carer where 1 is "all the time"'
-        reference = "http://legislation.govt.nz/act/public/2007/0097/latest/DLM1518454.html#DLM1518454"
+    value_type = float
+    entity = Person
+    default_value = 1
+    definition_period = MONTH
+    label = u'Expression of the amount of time the child is with the family and principal carer where 1 is "all the time"'
+    reference = "http://legislation.govt.nz/act/public/2007/0097/latest/DLM1518454.html#DLM1518454"
 
 
 class income_tax__family_scheme_income(Variable):
-        value_type = float
-        entity = Person
-        definition_period = YEAR
-        label = u'The annual net income for a person as relates to the family scheme'
-        reference = "http://legislation.govt.nz/act/public/2007/0097/latest/DLM1518454.html#DLM1518454"
+    base_function = missing_value
+    value_type = float
+    entity = Person
+    definition_period = YEAR
+    label = u'The annual net income for a person as relates to the family scheme'
+    reference = "http://legislation.govt.nz/act/public/2007/0097/latest/DLM1518454.html#DLM1518454"
+    # Allows user to declare a salary for a year. OpenFisca will spread the yearly amount over the months contained in the year.
+    set_input = set_input_divide_by_period
 
-        # TODO there is a myriad of conditions on this variable that represent a large body of work.
-        # def formula(person, period, parameters):
-        # See legislation reference above however currently "A person’s family scheme income is an amount based on their net income" is possibly the most common use case scenario
-        # return person('income_tax__net_income', period)
+    # TODO there is a myriad of conditions on this variable that represent a large body of work.
+    # def formula(person, period, parameters):
+    # See legislation reference above however currently "A person’s family scheme income is an amount
+    # based on their net income" is possibly the most common use case scenario
+    # return person('income_tax__net_income', period)
+
+
+class income_tax__family_scheme_income_for_month(Variable):
+    base_function = missing_value
+    value_type = float
+    entity = Person
+    definition_period = MONTH
+    label = u'The annual net income for a person as relates to the family scheme'
+    reference = "http://legislation.govt.nz/act/public/2007/0097/latest/DLM1518454.html#DLM1518454"
+
+    def formula(persons, period, parameters):
+        return persons('income_tax__family_scheme_income', period, options=[DIVIDE])

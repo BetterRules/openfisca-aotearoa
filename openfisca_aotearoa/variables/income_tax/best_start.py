@@ -31,7 +31,8 @@ class income_tax__family_has_children_eligible_for_best_start(Variable):
         families_have_children_born_after_launch_date = families.max(families.members("date_of_birth", period) >= datetime64('2018-07-01'))
         families_have_children_due_after_launch_date = families.max(families.members("due_date_of_birth", period) >= datetime64('2018-07-01'))
         families_have_children_younger_than_three_years = families("age_of_youngest", period) < 3
-        return ((families_have_children_born_after_launch_date + families_have_children_due_after_launch_date) > 0) * families_have_children_younger_than_three_years
+        return ((families_have_children_born_after_launch_date + families_have_children_due_after_launch_date) > 0) * \
+            families_have_children_younger_than_three_years
 
 
 class income_tax__person_is_best_start_child_as_year(Variable):
@@ -54,7 +55,10 @@ class income_tax__person_is_best_start_child_as_year(Variable):
         whatyear = (period.start.year - birth_year) - where(is_birthday_month_past, 0, 1)
 
         whatyear = whatyear + 1
-        whatyear = whatyear * (whatyear < 4) * is_current_or_previous_year * (((persons("date_of_birth", period) >= datetime64('2018-07-01')) + (persons("due_date_of_birth", period) >= datetime64('2018-07-01'))) > 0)
+        whatyear = whatyear * \
+            (whatyear < 4) * \
+            is_current_or_previous_year * (((persons("date_of_birth", period) >=
+                                             datetime64('2018-07-01')) + (persons("due_date_of_birth", period) >= datetime64('2018-07-01'))) > 0)
 
         return whatyear
 
@@ -103,4 +107,6 @@ class income_tax__entitlement_for_best_start_tax_credit(Variable):
     def formula(persons, period, parameters):
 
         # sum up families income
-        return persons.family.sum(persons.family.members("income_tax__best_start_tax_credit_per_child", period)) * persons("income_tax__caregiver_eligible_for_best_start_tax_credit", period)
+        return persons.family.sum(
+            persons.family.members("income_tax__best_start_tax_credit_per_child", period)) * \
+            persons("income_tax__caregiver_eligible_for_best_start_tax_credit", period)
