@@ -1,0 +1,6 @@
+---
+description: Minimum age to recieve Community Services Card (without a dependent child)
+reference: "https://www.workandincome.govt.nz/map/card-services/community-services-card/qualifications.html"
+values:
+  "2018":
+    value: 16
