@@ -32,7 +32,7 @@ class social_security__eligible_for_community_services_card(Variable):
     entity = Person
     definition_period = MONTH
     label = "Eligible for Community Services Card"
-    reference = "https://www.workandincome.govt.nz/map/card-services/community-services-card/qualifications.html"
+    reference = "http://www.legislation.govt.nz/regulation/public/1993/0169/latest/DLM176710.html"
 
     def formula(persons, period, parameters):
         # The applicant
