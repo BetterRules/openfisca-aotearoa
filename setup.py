@@ -7,7 +7,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='OpenFisca-Aotearoa',
-    version='4.1.5',
+    version='4.1.6',
     author='New Zealand Government, Service Innovation Lab',
     author_email='brenda.wallace@dia.govt.nz',
     description=u'OpenFisca tax and benefit system for Aotearoa',
