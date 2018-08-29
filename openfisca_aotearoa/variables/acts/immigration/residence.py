@@ -41,7 +41,8 @@ class is_nz_citizen(Variable):
     value_type = bool
     entity = Person
     definition_period = ETERNITY
-    label = u"New Zealand citizen means a person who has New Zealand citizenship as provided in the Citizenship Act 1977 or the Citizenship (Western Samoa) Act 1982"
+    label = u"""New Zealand citizen means a person who has New Zealand citizenship as provided in
+        the Citizenship Act 1977 or the Citizenship (Western Samoa) Act 1982"""
     reference = "Immigration Act 2009 (interpretation) http://legislation.govt.nz/act/public/2009/0051/latest/whole.html#DLM1440311"
 
 
