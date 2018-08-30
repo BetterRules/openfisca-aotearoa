@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from openfisca_core.model_api import *
-from openfisca_aotearoa.entities import Person, Family
+from openfisca_aotearoa.entities import Person
 
 
 class student_allowance__eligible_for_basic_grant(Variable):

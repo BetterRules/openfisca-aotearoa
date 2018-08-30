@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from openfisca_core.model_api import *
-from openfisca_aotearoa.entities import Person, Family
+from openfisca_aotearoa.entities import Person
 
 
 class student_allowance__is_childless(Variable):
@@ -58,3 +58,54 @@ class student_allowance__is_married(Variable):
         (b) for the avoidance of doubt, does not include a person who is legally married
             but who does not have a spouse (as that term is defined in this subclause)
         """
+
+    def formula(families, period, parameters):
+        return persons('student_allowance__has_a_spouse')
+
+
+class student_allowance__has_a_supported_child(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = MONTH
+    label = "has a supported child as per Student Allowances Regulations 1998"
+    reference = """
+    https://legislation.govt.nz/regulation/public/1998/0277/latest/whole.html#DLM259968
+    supported child, in relation to a student applying for an allowance, means a person younger than 24—
+        (a)
+
+        whose well-being and financial support are the responsibility of the student; and
+        (b) who lives with that student at least half of the time; and
+        (c) who is not in receipt of—
+            (i) an allowance continued by regulation 3(a) to (c); or
+            (ii) jobseeker support, sole parent support, an emergency benefit, or a supported living payment under the Social Security Act 1964; or
+            (iii) New Zealand superannuation under the New Zealand Superannuation and Retirement Income Act 2001 or a veteran’s pension under
+                the Veterans’ Support Act 2014; or
+            (iv) payments under any government-assisted scheme (other than the Student Loan Scheme) which, in the opinion of the chief executive,
+                is similar to a benefit under the Social Security Act 1964; or
+            (v) income before tax from employment or self-employment which exceeds $80 per week; and
+        (d) in respect of whom no orphan’s benefit or unsupported child’s benefit is payable under the Social Security Act 1964
+    """
+
+
+class student_allowance__partner_has_a_supported_child(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = MONTH
+    label = "their spouse has a supported child as per Student Allowances Regulations 1998"
+
+
+class student_allowance__has_a_spouse(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = MONTH
+    label """Has spouse.
+    Spouse, in relation to an applicant, means a person who is legally married to that applicant if—
+        (a) both of them are of or over 24; or
+        (b) one or both of them are younger than 24 and at least 1 of them has a supported child"""
+
+    def formula(families, period, parameters):
+        part_a = (persons('age', period) >= 24) * (persons('age_of_partner', period) >= 24)
+        part_b = ((persons('age', period) >= 24) + (persons('age_of_partner', period) >= 24)) * \
+            (persons('student_allowance__has_a_supported_child', period) + persons('student_allowance__partner_has_a_supported_child'))
+
+        return part_a + part_b
