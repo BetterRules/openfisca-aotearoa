@@ -1,4 +1,10 @@
-class student_allowance__eligible_for_basic_grant(Variable):
+# -*- coding: utf-8 -*-
+
+from openfisca_core.model_api import *
+from openfisca_aotearoa.entities import Person, Family
+
+
+class student_allowance__eligible_for_independent_circumstances(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
@@ -17,5 +23,5 @@ class student_allowance__eligible_for_basic_grant(Variable):
     """
 
     def formula(families, period, parameters):
-        is_single =
+        is_single = not_(persons('is_married_or_in_a_civil_union_or_de_facto_relationship', period))
         no_children = not_(persons('has_child', period))
