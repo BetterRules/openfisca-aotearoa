@@ -5,6 +5,7 @@
   absolute_error_margin: 0
   persons:
     - id: "Mama"
+      age: 28
   families:
     - id: "Whanau tahi"
       principal_caregiver: "Mama"
@@ -14,8 +15,7 @@
   output_variables:
     social_security__eligible_for_community_services_card:
       2018-08:
-        - false # mama
-
+        - false  # mama
 
 
 - name: Community Services Card - eligible for people on income tested benefit
@@ -23,6 +23,7 @@
   absolute_error_margin: 0
   persons:
     - id: "Mama"
+      age: 28
       social_security__received_income_tested_benefit:
         2018: true
   families:
@@ -34,7 +35,7 @@
   output_variables:
     social_security__eligible_for_community_services_card:
       2018-08:
-        - true # mama
+        - true  # mama
 
 
 - name: Community Services Card - eligible for child on orphans benefit
@@ -42,7 +43,9 @@
   absolute_error_margin: 0
   persons:
     - id: "Mama"
+      age: 28
     - id: "Tama"
+      age: 3
       social_security__received_orphans_benefit: true
   families:
     - id: "Whanau tahi"
@@ -54,16 +57,19 @@
   output_variables:
     social_security__eligible_for_community_services_card:
       2018-08:
-        - false # mama
-        - true # tama (child)
+        - false  # mama
+        - true  # tama (child)
 
 
-- name: Community Services Card - eligible for child on unsupported child benefit
+- name: >
+    Community Services Card - eligible for child on unsupported child benefit
   period: 2018-08
   absolute_error_margin: 0
   persons:
     - id: "Mama"
+      age: 28
     - id: "Tama"
+      age: 8
       social_security__received_unsupported_childs_benefit: true
   families:
     - id: "Whanau tahi"
@@ -75,16 +81,19 @@
   output_variables:
     social_security__eligible_for_community_services_card:
       2018-08:
-        - false # mama
-        - true # tama (child)
+        - false  # mama
+        - true  # tama (child)
 
 
-- name: Community Services Card - eligible for child on disability allowance benefit
+- name: >
+    Community Services Card - eligible for child on disability allowance benefit
   period: 2018-08
   absolute_error_margin: 0
   persons:
     - id: "Mama"
+      age: 28
     - id: "Tama"
+      age: 8
       social_security__received_child_disability_allowance: true
   families:
     - id: "Whanau tahi"
@@ -97,15 +106,17 @@
   output_variables:
     social_security__eligible_for_community_services_card:
       2018-08:
-        - false # mama
-        - true # tama (child)
+        - false  # mama
+        - true  # tama (child)
 
 
-- name: Community Services Card - eligible if receive a residential care subsidy
+- name: >
+    Community Services Card - eligible if receive a residential care subsidy
   period: 2018-08
   absolute_error_margin: 0
   persons:
     - id: "Mama"
+      age: 28
       social_security__received_residential_care_subsidy: true
   families:
     - id: "Whanau tahi"
@@ -116,7 +127,7 @@
   output_variables:
     social_security__eligible_for_community_services_card:
       2018-08:
-        - true # mama
+        - true  # mama
 
 
 - name: Community Services Card - eligible if receive super
@@ -124,6 +135,7 @@
   absolute_error_margin: 0
   persons:
     - id: "Mama"
+      age: 28
       community_services_card__below_income_threshold: true
       social_security__received_superannuation: true
   families:
@@ -135,7 +147,7 @@
   output_variables:
     social_security__eligible_for_community_services_card:
       2018-08:
-        - true # mama
+        - true  # mama
 
 
 - name: Community Services Card - not eligible if above threshold
@@ -143,6 +155,7 @@
   absolute_error_margin: 0
   persons:
     - id: "Mama"
+      age: 28
       community_services_card__below_income_threshold: false
       social_security__received_superannuation: true
   families:
@@ -154,7 +167,7 @@
   output_variables:
     social_security__eligible_for_community_services_card:
       2018-08:
-        - false # mama
+        - false  # mama
 
 
 - name: Community Services Card - eligible if receive veterans pension
@@ -162,6 +175,7 @@
   absolute_error_margin: 0
   persons:
     - id: "Mama"
+      age: 28
       veterans_support__received_veterans_pension: true
   families:
     - id: "Whanau tahi"
@@ -172,7 +186,7 @@
   output_variables:
     social_security__eligible_for_community_services_card:
       2018-08:
-        - true # mama
+        - true  # mama
 
 
 - name: Community Services Card - eligible if receive weekly INCOME compensation
@@ -180,6 +194,7 @@
   absolute_error_margin: 0
   persons:
     - id: "Mama"
+      age: 28
       veterans_support__received_weekly_income_compensation: true
   families:
     - id: "Whanau tahi"
@@ -190,13 +205,14 @@
   output_variables:
     social_security__eligible_for_community_services_card:
       2018-08:
-        - true # mama
+        - true  # mama
 
 - name: Community Services Card - eligible if receive weekly compensation
   period: 2018-08
   absolute_error_margin: 0
   persons:
     - id: "Mama"
+      age: 28
       veterans_support__received_weekly_compensation: true
   families:
     - id: "Whanau tahi"
@@ -207,7 +223,7 @@
   output_variables:
     social_security__eligible_for_community_services_card:
       2018-08:
-        - true # mama
+        - true  # mama
 
 
 - name: Community Services Card - eligible if fulltime student
@@ -215,6 +231,7 @@
   absolute_error_margin: 0
   persons:
     - id: "Mama"
+      age: 28
       social_security__is_fulltime_student: true
       community_services_card__below_income_threshold: true
   families:
@@ -226,7 +243,7 @@
   output_variables:
     social_security__eligible_for_community_services_card:
       2018-08:
-        - true # mama
+        - true  # mama
 
 
 - name: Community Services Card - not eligible if above threshold
@@ -234,6 +251,7 @@
   absolute_error_margin: 0
   persons:
     - id: "Mama"
+      age: 28
       social_security__is_fulltime_student: true
       community_services_card__below_income_threshold: false
   families:
@@ -245,13 +263,15 @@
   output_variables:
     social_security__eligible_for_community_services_card:
       2018-08:
-        - false # mama
+        - false  # mama
 
-- name: Community Services Card - eligibility for resident with dependent children
+- name: >
+    Community Services Card - eligibility for resident with dependent children
   period: 2018-08
   absolute_error_margin: 0
   persons:
     - id: "Mama"
+      age: 28
       community_services_card__below_income_threshold: true
       is_citizen_or_resident: true
   families:
@@ -263,13 +283,15 @@
   output_variables:
     social_security__eligible_for_community_services_card:
       2018-08:
-        - true # mama
+        - true  # mama
 
-- name: Community Services Card - eligibility for non resident with dependent children
+- name: >
+    Community Services Card - for non resident with dependent children
   period: 2018-08
   absolute_error_margin: 0
   persons:
     - id: "Mama"
+      age: 28
       community_services_card__below_income_threshold: true
       is_citizen_or_resident: false
       social_security__has_dependant_child: true
@@ -285,7 +307,7 @@
   output_variables:
     social_security__eligible_for_community_services_card:
       2018-08:
-        - true # mama
+        - true  # mama
 
 
 - name: Community Services Card - eligibility for person without dependents
@@ -293,7 +315,7 @@
   absolute_error_margin: 0
   persons:
     - id: "Mama"
-      age: 20
+      age: 28
       community_services_card__below_income_threshold: true
       is_citizen_or_resident: true
       social_security__has_dependant_child: false
@@ -309,4 +331,4 @@
   output_variables:
     social_security__eligible_for_community_services_card:
       2018-08:
-        - true # mama
+        - true  # mama
