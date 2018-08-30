@@ -1,0 +1,76 @@
+---
+- name: Married Person
+  period: 2018-08
+  absolute_error_margin: 0
+  persons:
+  - id: "Person"
+    is_married: true
+  families:
+    - id: "Beatles"
+      others:
+        - Person
+  titled_properties:
+    - id: whare
+      others:
+        - Person
+  output_variables:
+    is_married_or_in_a_civil_union_or_de_facto_relationship:
+      2018-08:
+        - true
+
+
+- name: Not Married Person
+  period: 2018-08
+  absolute_error_margin: 0
+  persons:
+  - id: "Person"
+    is_married: false
+  families:
+    - id: "Beatles"
+      others:
+        - Person
+  titled_properties:
+    - id: whare
+      others:
+        - Person
+  output_variables:
+    is_married_or_in_a_civil_union_or_de_facto_relationship:
+      2018-08:
+        - false
+
+- name: Civil Union
+  period: 2018-08
+  absolute_error_margin: 0
+  persons:
+  - id: "Person"
+    is_in_civil_union: true
+  families:
+    - id: "Beatles"
+      others:
+        - Person
+  titled_properties:
+    - id: whare
+      others:
+        - Person
+  output_variables:
+    is_married_or_in_a_civil_union_or_de_facto_relationship:
+      2018-08:
+
+- name: De facto relationship
+  period: 2018-08
+  absolute_error_margin: 0
+  persons:
+  - id: "Person"
+    is_in_de_facto_relationship: true
+  families:
+    - id: "Beatles"
+      others:
+        - Person
+  titled_properties:
+    - id: whare
+      others:
+        - Person
+  output_variables:
+    is_married_or_in_a_civil_union_or_de_facto_relationship:
+      2018-08:
+        - true
