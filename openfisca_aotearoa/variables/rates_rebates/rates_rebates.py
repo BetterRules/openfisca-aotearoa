@@ -24,11 +24,13 @@ class rates_rebates__combined_income(Variable):
     value_type = float
     entity = Person
     definition_period = YEAR
-    set_input = set_input_divide_by_period  # Allows user to declare a salary for a year. OpenFisca will spread the yearly amount over the months contained in the year.
+    # Allows user to declare a salary for a year. OpenFisca will spread the yearly amount over the months contained in the year.
+    set_input = set_input_divide_by_period
     label = "Combined income"
 
 
-# Reference is accurate as at the time this formula was written, link to legislation is: http://www.legislation.govt.nz/act/public/1973/0005/67.0/DLM409673.html?search=sw_096be8ed8161c2a5_divide_25_se&p=1
+# Reference is accurate as at the time this formula was written,
+# link to legislation is: http://www.legislation.govt.nz/act/public/1973/0005/67.0/DLM409673.html?search=sw_096be8ed8161c2a5_divide_25_se&p=1
 class rates_rebates__rebate(Variable):
     value_type = float
     entity = Titled_Property
@@ -75,7 +77,9 @@ class rates_rebates__maximum_income_for_full_rebate(Variable):
         # what we're using to compute the maximum salary for full rebate
         rebate = parameters(period).entitlements.rates_rebates.maximum_allowable
 
-        return (((((titled_properties('rates_rebates__rates_total', period) - initial_contribution) - rebate) - ((titled_properties('rates_rebates__rates_total', period) - initial_contribution) / 3)) * 8) + allowable_income)
+        rates_total = titled_properties('rates_rebates__rates_total', period)
+
+        return (((((rates_total - initial_contribution) - rebate) - ((rates_total - initial_contribution) / 3)) * 8) + allowable_income)
 
 
 class rates_rebates__minimum_income_for_no_rebate(Variable):
@@ -95,4 +99,6 @@ class rates_rebates__minimum_income_for_no_rebate(Variable):
         # what we're using to compute the maximum salary for full rebate
         rebate = 0
 
-        return (((((titled_properties('rates_rebates__rates_total', period) - initial_contribution) - rebate) - ((titled_properties('rates_rebates__rates_total', period) - initial_contribution) / 3)) * 8) + allowable_income)
+        rates_total = titled_properties('rates_rebates__rates_total', period)
+
+        return (((((rates_total - initial_contribution) - rebate) - ((rates_total - initial_contribution) / 3)) * 8) + allowable_income)

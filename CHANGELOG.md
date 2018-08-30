@@ -1,5 +1,9 @@
 # Changelog
 
+# 4.1.6 - [#41](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/74)
+Calculation improvement.
+ * Added Young Parent Payment for single person
+
 # 4.1.5 - [#72](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/72)
 Calculation improvement.
   * Added Community Service Card

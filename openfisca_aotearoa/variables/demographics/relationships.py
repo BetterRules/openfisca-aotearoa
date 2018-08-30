@@ -29,3 +29,34 @@ class is_adequately_supported_by_partner(Variable):
     definition_period = MONTH
     reference = u"https://www.workandincome.govt.nz/map/income-support/main-benefits/sole-parent-support/qualifications.html"
     default_value = True
+
+
+class is_a_parent(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = MONTH
+
+
+class is_a_step_parent(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = MONTH
+
+
+class has_been_married_or_in_a_civil_union_or_de_facto_relationship(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = MONTH
+    reference = """
+        he or she is not married
+        but has been married or in a civil union or de facto relationship
+        """
+
+
+class is_married_or_in_a_civil_union_or_de_facto_relationship(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = MONTH
+    reference = """
+        he or she is married, or in a civil union or de facto relationship
+        """

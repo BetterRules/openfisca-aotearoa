@@ -1,5 +1,5 @@
 ---
-- name: Tests Job Seeker Support Scenarios
+- name: Child status
   period: 2018-08
   absolute_error_margin: 0
   persons:
