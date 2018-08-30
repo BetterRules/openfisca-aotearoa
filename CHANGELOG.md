@@ -1,5 +1,9 @@
 # Changelog
 
+# 4.2.0
+Hotfix
+ * Mark source code as UTF8
+
 # 4.1.6 - [#41](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/74)
 Calculation improvement.
  * Added Young Parent Payment for single person
