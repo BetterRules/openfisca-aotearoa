@@ -8,7 +8,7 @@ from openfisca_aotearoa.entities import Person, Family
 
 # This variable is a pure input: it doesn't have a formula
 class date_of_birth(Variable):
-    # base_function = missing_value
+    base_function = missing_value
     value_type = date
     entity = Person
     label = u"Birth date"
