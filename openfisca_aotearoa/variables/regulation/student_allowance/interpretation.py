@@ -53,7 +53,9 @@ class student_allowance__is_married(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    label = """married
+    label = "married as per Student Allowances Regulations 1998"
+    reference = """
+        https://legislation.govt.nz/regulation/public/1998/0277/latest/whole.html#DLM259903
         (a) means having a spouse; and
         (b) for the avoidance of doubt, does not include a person who is legally married
             but who does not have a spouse (as that term is defined in this subclause)
@@ -91,14 +93,16 @@ class student_allowance__partner_has_a_supported_child(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    label = "their spouse has a supported child as per Student Allowances Regulations 1998"
+    label = "their spouse has a supported child, as per Student Allowances Regulations 1998"
 
 
 class student_allowance__has_a_spouse(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    label """Has spouse.
+    label = "Has spouse as per Student Allowances Regulations 1998"
+    reference = """
+    https://legislation.govt.nz/regulation/public/1998/0277/latest/whole.html#DLM259958
     Spouse, in relation to an applicant, means a person who is legally married to that applicant if—
         (a) both of them are of or over 24; or
         (b) one or both of them are younger than 24 and at least 1 of them has a supported child"""
@@ -109,3 +113,10 @@ class student_allowance__has_a_spouse(Variable):
             (persons('student_allowance__has_a_supported_child', period) + persons('student_allowance__partner_has_a_supported_child'))
 
         return part_a + part_b
+
+
+class student_allowance__is_a_student(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = MONTH
+    label = "student means a person who is enrolled or intends to enrol in a recognised course of study"
