@@ -31,7 +31,9 @@ class student_allowance__eligible_for_basic_grant(Variable):
         criteria_b = is_tertiary_student * is_or_over_16 * is_under_18 * has_children
         criteria_c = (is_secondary_student + is_tertiary_student) * is_over_18
 
-        return criteria_a + criteria_b + criteria_c
+        student_allowance__eligible_for_certain_allowances = persons('student_allowance__eligible_for_certain_allowances', period)
+
+        return (criteria_a + criteria_b + criteria_c) * student_allowance__eligible_for_certain_allowances
 
     """
     TODO:
