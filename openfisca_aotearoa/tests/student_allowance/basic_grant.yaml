@@ -1,0 +1,51 @@
+- name: Student Allowance Basic Grant
+  period: 2018-08
+  absolute_error_margin: 0
+  persons:
+    - id: "Mama"
+      age: 21
+      normally_lives_in_nz: true
+      is_resident: true
+      number_of_years_lived_in_nz: 10
+
+    - id: "Dada"
+      age: 18
+      normally_lives_in_nz: true
+      is_resident: true
+      number_of_years_lived_in_nz: 10
+      social_security__has_dependant_child: true
+
+    - id: "Tama"
+      age: 6
+      normally_lives_in_nz: true
+      is_resident: true
+      number_of_years_lived_in_nz: 2
+
+    - id: "Papa"
+      age: 99
+      normally_lives_in_nz: true
+      is_resident: true
+      number_of_years_lived_in_nz: 5
+
+    - id: "Alan"
+      age: 50
+      normally_lives_in_nz: true
+      is_resident: true
+      number_of_years_lived_in_nz: 50
+
+  families:
+    - id: "Whanau"
+      principal_caregiver: "Mama"
+      others: ["Tama", "Papa", "Alan", "Dada"]
+  titled_properties:
+    - id: whare
+      others: ["Mama", "Tama", "Papa", "Alan", "Dada"]
+
+  output_variables:
+    student_allowance__eligible_for_basic_grant:
+      2018-08:
+        - true # mama
+        - true # dada
+        - false # tama
+        - false # papa
+        - false # alan
