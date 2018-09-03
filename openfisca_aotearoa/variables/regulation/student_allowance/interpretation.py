@@ -61,8 +61,8 @@ class student_allowance__is_married_or_partnered(Variable):
             but who does not have a spouse (as that term is defined in this subclause)
         """
 
-    def formula(families, period, parameters):
-        return persons('student_allowance__has_a_spouse')
+    def formula(persons, period, parameters):
+        return persons('student_allowance__has_a_spouse', period)
 
 
 class student_allowance__has_a_supported_child(Variable):
@@ -107,10 +107,10 @@ class student_allowance__has_a_spouse(Variable):
         (a) both of them are of or over 24; or
         (b) one or both of them are younger than 24 and at least 1 of them has a supported child"""
 
-    def formula(families, period, parameters):
+    def formula(persons, period, parameters):
         part_a = (persons('age', period) >= 24) * (persons('age_of_partner', period) >= 24)
         part_b = ((persons('age', period) >= 24) + (persons('age_of_partner', period) >= 24)) * \
-            (persons('student_allowance__has_a_supported_child', period) + persons('student_allowance__partner_has_a_supported_child'))
+            (persons('student_allowance__has_a_supported_child', period) + persons('student_allowance__partner_has_a_supported_child', period))
 
         return part_a + part_b
 

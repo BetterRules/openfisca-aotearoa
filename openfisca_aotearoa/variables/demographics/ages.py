@@ -61,5 +61,5 @@ class age_of_partner(Variable):
     definition_period = MONTH
     label = u"The age of partner in a family"
 
-    def formula(families, period, parameters):
+    def formula(persons, period, parameters):
         return persons.family.members("age", period, role=Family.PARTNER)
