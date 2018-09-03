@@ -52,11 +52,11 @@
   output_variables:
     student_allowance__eligible_for_basic_grant:
       2018-08:
-        - true # mama
-        - true # dada
-        - true # tama
-        - true # papa
-        - true # alan
+        - true  # mama
+        - true  # dada
+        - true  # tama
+        - true  # papa
+        - true  # alan
 
 
 # from . import Reasoner
