@@ -1,0 +1,92 @@
+- name: Student Allowance
+  period: 2018-08
+  absolute_error_margin: 0
+  persons:
+    - id: "uni student"
+      age: 21
+      normally_lives_in_nz: true
+      is_resident: true
+      number_of_years_lived_in_nz: 10
+      is_tertiary_student: true
+
+    - id: "Dada"
+      age: 18
+      normally_lives_in_nz: true
+      is_resident: true
+      number_of_years_lived_in_nz: 10
+      social_security__has_dependant_child: true
+      is_tertiary_student: true
+      is_secondary_student: true
+
+    - id: "Tama"
+      age: 6
+      normally_lives_in_nz: true
+      is_resident: true
+      number_of_years_lived_in_nz: 2
+      is_tertiary_student: true
+      is_secondary_student: true
+
+    - id: "Papa"
+      age: 99
+      normally_lives_in_nz: true
+      is_resident: true
+      number_of_years_lived_in_nz: 5
+      is_tertiary_student: true
+      is_secondary_student: false
+
+    - id: "Alan"
+      age: 50
+      normally_lives_in_nz: true
+      is_resident: true
+      number_of_years_lived_in_nz: 50
+      is_tertiary_student: false
+      is_secondary_student: false
+
+  families:
+    - id: "Whanau"
+      others: ["uni student", "Tama", "Papa", "Alan", "Dada"]
+  titled_properties:
+    - id: whare
+      others: ["uni student", "Tama", "Papa", "Alan", "Dada"]
+
+  output_variables:
+    student_allowance__eligible_for_basic_grant:
+      2018-08:
+        - true # mama
+        - true # dada
+        - true # tama
+        - true # papa
+        - true # alan
+
+
+# from . import Reasoner
+
+# """
+#  If applicant.isNZResident
+#     and applicant.normallyLivesInNZ
+#     and applicant.Age ≤ 65
+#     and 18 ≤ applicant.Age
+#     and applicant.isStudyingFullTime
+#     and not applicant.receivesIncomeTestedBenefit
+#         then benefit.isStudentAllowance is PERMITTED
+# """
+
+
+# class TestStudentAllowance(Reasoner):
+#     key = 'isStudentAllowance'
+
+#     body = {
+#         "applicant": {
+#             "isNZResident": True,
+#             "normallyLivesInNZ": True,
+#             "Age": 65,
+#             "isStudyingFullTime": True,
+#             "receivesIncomeTestedBenefit": False
+#         }
+
+#     }
+
+#     def test_reasoning(self):
+
+#         self.assertTrue(self.is_permitted)
+
