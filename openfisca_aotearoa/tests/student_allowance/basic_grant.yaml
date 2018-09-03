@@ -19,7 +19,7 @@
       student_allowance__approved_to_study_parttime: true
 
     - id: "Overseas student"
-      age: 6
+      age: 27
       is_nz_citizen: true
       is_tertiary_student: true
       student_allowance__approved_to_study_overseas: true
@@ -28,6 +28,8 @@
       age: 99
       immigration__is_recognised_refugee: true
       is_tertiary_student: true
+      student_allowance__is_enrolled_fulltime: true
+      student_allowance__meets_attendance_and_performance_requirements: true
 
     - id: "Not a student"
       age: 50
@@ -45,7 +47,7 @@
     student_allowance__eligible_for_basic_grant:
       2018-08:
         - true  # fulltime uni student
-        - true  # dada
-        - true  # tama
-        - true  # papa
+        - true  # part time
+        - true  # overseas
+        - true  # refugee
         - false  # Not a student
