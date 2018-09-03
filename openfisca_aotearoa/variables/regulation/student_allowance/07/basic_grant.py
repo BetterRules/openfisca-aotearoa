@@ -16,11 +16,18 @@ class student_allowance__eligible_for_basic_grant(Variable):
         (c) a secondary student or tertiary student who is of or over 18, whether living at home or away from home.
     """
 
-    def formula(families, period, parameters):
-        has_children = persons('has_child', period)
+    def formula(persons, period, parameters):
+        has_children = persons('student_allowance__has_a_supported_child', period)
+        is_secondary_student = persons('is_secondary_student', period)
+        is_tertiary_student = persons('is_tertiary_student', period)
 
-        criteria_a = is_secondary_student * is_over_16 * is_under_18 * is_married_or_partnered * has_children
-        criteria_b = is_tertiary_student * is_over_16 * is_under_18 * has_children
+        is_or_over_16 = persons('age', period) >= 16
+        is_under_18 = persons('age', period) < 18
+
+        is_married_or_partnered = persons('student_allowance__is_married_or_partnered', period)
+
+        criteria_a = is_secondary_student * is_or_over_16 * is_under_18 * is_married_or_partnered * has_children
+        criteria_b = is_tertiary_student * is_or_over_16 * is_under_18 * has_children
         criteria_b = (is_secondary_student + is_tertiary_student) * is_over_18
 
         return criteria_a + criteria_b + criteria_c

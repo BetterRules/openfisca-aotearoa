@@ -53,3 +53,13 @@ class age_of_youngest(Variable):
 
     def formula(families, period, parameters):
         return families.min(families.members("age", period))
+
+
+class age_of_partner(Variable):
+    value_type = int
+    entity = Person
+    definition_period = MONTH
+    label = u"The age of partner in a family"
+
+    def formula(families, period, parameters):
+        return persons.family.members("age", period, role=Family.PARTNER)

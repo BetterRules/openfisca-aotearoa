@@ -49,11 +49,11 @@ class student_allowance__is_living_with_a_parent(Variable):
     label = """living with a parent has the same meaning as in section 3(1) of the Social Security Act 1964"""
 
 
-class student_allowance__is_married(Variable):
+class student_allowance__is_married_or_partnered(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    label = "married as per Student Allowances Regulations 1998"
+    label = "married or partnered as per Student Allowances Regulations 1998"
     reference = """
         https://legislation.govt.nz/regulation/public/1998/0277/latest/whole.html#DLM259903
         (a) means having a spouse; and
