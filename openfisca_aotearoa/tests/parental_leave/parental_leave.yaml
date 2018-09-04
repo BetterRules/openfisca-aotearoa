@@ -5,7 +5,6 @@
   absolute_error_margin: 0
   persons:
     - id: "Has passed 6 months employment test"
-      age: 21
       is_nz_citizen: true
       parental_leave__is_primary_carer: true
       parental_leave__passes_6_month_employment_test: true
