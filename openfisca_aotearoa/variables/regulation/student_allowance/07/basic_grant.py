@@ -23,13 +23,13 @@ class student_allowance__eligible_for_basic_grant(Variable):
 
         is_or_over_16 = persons('age', period) >= 16
         is_under_18 = persons('age', period) < 18
-        is_over_18 = persons('age', period) >= 18
+        is_or_over_18 = persons('age', period) >= 18
 
         is_married_or_partnered = persons('student_allowance__is_married_or_partnered', period)
 
         criteria_a = student_allowance__is_secondary_student * is_or_over_16 * is_under_18 * is_married_or_partnered * has_children
         criteria_b = student_allowance__is_tertiary_student * is_or_over_16 * is_under_18 * has_children
-        criteria_c = (student_allowance__is_secondary_student + student_allowance__is_tertiary_student) * is_over_18
+        criteria_c = (student_allowance__is_secondary_student + student_allowance__is_tertiary_student) * is_or_over_18
 
         student_allowance__eligible_for_certain_allowances = persons('student_allowance__eligible_for_certain_allowances', period)
 
