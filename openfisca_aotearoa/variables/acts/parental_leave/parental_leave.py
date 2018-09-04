@@ -26,6 +26,7 @@ class parental_leave__is_primary_carer(Variable):
     """
     #if no, not eligible
 
+
 class parental_leave__passes_6_month_employment_test(Variable):
     value_type = bool
     entity = Person
@@ -43,6 +44,7 @@ class parental_leave__passes_6_month_employment_test(Variable):
           (ii) assumption of responsibility for the care of the child (in any other case).
     """
     #if no, not eligible
+
 
 class parental_leave__passes_12_month_employment_test(Variable):
     value_type = bool
@@ -73,6 +75,7 @@ class parental_leave__had_previous_parental_leave_in_last_six_months(Variable):
     entity = Person
     definition_period = YEAR
     #if yes, not eligible
+
 
 class parental_leave__has_returned_to_work_except_KIT(Variable):
     value_type = bool
