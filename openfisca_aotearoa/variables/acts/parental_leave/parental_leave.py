@@ -69,13 +69,13 @@ class parental_leave__applied_for_leave_or_stopped_working(Variable):
 
 
 class parental_leave__had_previous_parental_leave_in_last_six_months(Variable):
-    value_type = float
+    value_type = bool
     entity = Person
     definition_period = YEAR
     #if yes, not eligible
 
 class parental_leave__has_returned_to_work_except_KIT(Variable):
-    value_type = float
+    value_type = bool
     entity = Person
     definition_period = YEAR
     label = u"Has returned to work (except for Keeping In Touch (KIT) hours)"
