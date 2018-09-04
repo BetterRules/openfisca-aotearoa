@@ -13,6 +13,7 @@ class parental_leave__is_primary_carer(Variable):
     definition_period = YEAR
     label = u"Is primary carer"
     reference = """
+    http://www.legislation.govt.nz/act/public/1987/0129/latest/DLM120458.html?search=qs_act%40bill%40regulation%40deemedreg_parental+leave_resel_25_h&p=1#DLM120458
     Are you a primary carer that is:
     • an expectant mother (you are pregnant or have a baby under 1 year old)
     or
@@ -40,6 +41,21 @@ class parental_leave__passes_6_month_employment_test(Variable):
         (b) an employee meets the 12-month employment test if the employee will have been employed by the same employer for at least an average of 10 hours a week in the 12 months immediately preceding the expected date of—
           (i) delivery of the child (in the case of a child to be born to the employee or to the employee’s spouse or partner); or
           (ii) assumption of responsibility for the care of the child (in any other case).
+    """
+    #if no, not eligible
+
+class parental_leave__passes_12_month_employment_test(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = YEAR
+    label = u"Number of Persons classified as dependant for the purposes of rates rebates"
+    reference = """
+    http://www.legislation.govt.nz/act/public/1987/0129/latest/link.aspx?search=qs_act%40bill%40regulation%40deemedreg_parental+leave_resel_25_h&p=1&id=DLM6810651#DLM6810651
+
+    In this Act, the following tests are used to determine an employee’s entitlements to parental leave:
+    an employee meets the 12-month employment test if the employee will have been employed by the same employer for at least an average of 10 hours a week in the 12 months immediately preceding the expected date of—
+    (i) delivery of the child (in the case of a child to be born to the employee or to the employee’s spouse or partner); or
+    (ii) assumption of responsibility for the care of the child (in any other case).
     """
     #if no, not eligible
 

@@ -1,10 +1,10 @@
 ---
 
 - name: "Paid Parental Leave"
-  period: 2018-08
+  period: 2018-07
   absolute_error_margin: 0
   persons:
-    - id: "Primary Carer"
+    - id: "A Primary Carer"
       is_nz_citizen: true
       parental_leave__is_primary_carer: true
       parental_leave__passes_6_month_employment_test: true
