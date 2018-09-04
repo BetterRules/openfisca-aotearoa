@@ -8,7 +8,8 @@ class student_allowance__eligible_for_independent_circumstances(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    reference = u"""
+    reference = "legislation.govt.nz/regulation/public/1998/0277/latest/whole.html#DLM260312"
+    label = """
     8 Eligibility for independent circumstances grant
     (1) A single student without a supported child or children is eligible for an independent circumstances grant, if—
         (a) either—
@@ -21,4 +22,4 @@ class student_allowance__eligible_for_independent_circumstances(Variable):
         (3) Despite subclause (1), no student is eligible for an independent circumstances grant if the student receives
             a basic grant. (4) This regulation is subject to regulations 12 to 16, 20, 28 to 31, 34, 35, 40, and 44 to 48.
     """
-    # todo
+    # Forumla todo
