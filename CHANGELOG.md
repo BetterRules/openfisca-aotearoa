@@ -1,10 +1,15 @@
 # Changelog
 
-# 4.2.0 - [#78](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/78)
+# 4.2.3 - [#77](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/77)
+Technical improvement.
+ * Remove dependency on OpenFisca-Web-API (now included in Core)
+ * Update README.md with notes on updating OpenFisca-Core for existing developers
+
+# 4.2.2 - [#78](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/78)
 Calculation improvement.
  * Added Paid Parental Leave Regulations
 
-# 4.2.0 - [#75](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/75)
+# 4.2.1 - [#75](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/75)
 Calculation improvement.
  * Added Student Allowance Regulations
  * Seperated Acts and Regulations
