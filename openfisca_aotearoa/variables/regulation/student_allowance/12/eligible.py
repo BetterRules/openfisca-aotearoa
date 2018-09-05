@@ -32,6 +32,9 @@ class student_allowance__eligible_for_certain_allowances(Variable):
                         (ab) if the allowance is in respect of a course of study commencing on or after 1 January
                             2014, he or she is, when the course of study commences, under the age specified in
                             section 7(1) of the New Zealand Superannuation and Retirement Income Act 2001; and
+            (ab) if the allowance is in respect of a course of study commencing on or after 1 January 2014,
+                he or she is, when the course of study commences, under the age specified in section 7(1) of
+                the New Zealand Superannuation and Retirement Income Act 2001; and
             (b) he or she makes an application for an allowance in accordance with Part 7; and
             (c) he or she either—
                 (i) is enrolled in a full-time course at a tertiary provider or secondary school and meets
@@ -87,6 +90,11 @@ class student_allowance__eligible_for_certain_allowances(Variable):
         #                     section 7(1) of the New Zealand Superannuation and Retirement Income Act 2001; and
         # TODO!!!
 
+        # (ab) if the allowance is in respect of a course of study commencing on or after 1 January 2014,
+        #     he or she is, when the course of study commences, under the age specified in section 7(1) of
+        #     the New Zealand Superannuation and Retirement Income Act 2001; and
+        under_super_age = persons('age', period) < parameters(period).entitlements.superannuation.age_qualification
+
         #     (b) he or she makes an application for an allowance in accordance with Part 7; and
         #     (c) he or she either—
         #         (i) is enrolled in a full-time course at a tertiary provider or secondary school and meets
@@ -100,7 +108,7 @@ class student_allowance__eligible_for_certain_allowances(Variable):
         parttime = persons('student_allowance__approved_to_study_parttime', period)
 
         return (is_citizen + (normally_in_nz * lived_in_nz_3_years) + refugee_or_protected) \
-            * ((fulltime * attendance) + overseas + parttime)
+            * under_super_age * ((fulltime * attendance) + overseas + parttime)
 
 
 class student_allowance__is_enrolled_fulltime(Variable):
