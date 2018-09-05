@@ -8,7 +8,7 @@ class student_allowance__is_tertiary_student(Variable):
     value_type = bool
     entity = Person
     label = u"a tertiary student"
-    reference = "legislation.govt.nz/regulation/public/1998/0277/latest/whole.html#DLM259980"
+    reference = "http://legislation.govt.nz/regulation/public/1998/0277/latest/whole.html#DLM259980"
     definition_period = MONTH
     default_value = False
 
