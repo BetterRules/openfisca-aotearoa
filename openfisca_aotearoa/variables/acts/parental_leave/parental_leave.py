@@ -69,6 +69,7 @@ class parental_leave__had_previous_parental_leave_in_last_six_months(Variable):
     value_type = bool
     entity = Person
     definition_period = YEAR
+    label = u"Had previous parental leave in last six months"
 
 
 class parental_leave__has_returned_to_work_except_KIT(Variable):
@@ -85,15 +86,16 @@ class parental_leave__is_employed(Variable):
     label = u"Has worked for one employer for the last 52 weeks up to the due date or the date the child came into their care"
     # if yes, employer declaration required
     # if no, check if they are a doctor rotating between different district health boards, or
-      # a teacher who was employed by different boards of trustees in a state school or integrated school
-      # if either yes, then employer declaration required
+    # a teacher who was employed by different boards of trustees in a state school or integrated school
+    # if either yes, then employer declaration required
 
-      # if either no,
-        # Can just one employer verify that you have worked for them for at least an average of 10 hours
-        # per week for any 26 of the last 52 weeks?
-          # if yes, Can the same employer verify that you earned the income you have provided in this application?
-            # if yes, employer declaration required
-            # if no, Statutory declaration required
+    # if either no,
+    # Can just one employer verify that you have worked for them for at least an average of 10 hours
+    # per week for any 26 of the last 52 weeks?
+    # if yes, Can the same employer verify that you earned the income you have provided in this application?
+    # if yes, employer declaration required
+    # if no, Statutory declaration required
+
 
 class parental_leave__is_self_employed(Variable):
     value_type = bool
