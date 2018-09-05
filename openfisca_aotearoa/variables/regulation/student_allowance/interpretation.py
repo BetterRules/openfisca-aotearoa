@@ -125,3 +125,6 @@ class student_allowance__is_a_student(Variable):
     definition_period = MONTH
     label = "student means a person who is enrolled or intends to enrol in a recognised course of study"
     reference = "legislation.govt.nz/regulation/public/1998/0277/latest/whole.html#DLM259958"
+
+    def formula(persons, period, parameters):
+        return persons('student_allowance__is_tertiary_student', period) + persons('student_allowance__is_secondary_student', period)
