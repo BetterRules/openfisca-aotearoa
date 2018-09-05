@@ -3,8 +3,7 @@
 # Import from openfisca-core the common python objects used to code the legislation in OpenFisca
 from openfisca_core.model_api import *
 # Import the entities specifically defined for this tax and entitlement system
-from openfisca_aotearoa.entities import Titled_Property, Person
-from numpy import clip, floor
+from openfisca_aotearoa.entities import Person
 
 
 class parental_leave__is_primary_carer(Variable):
@@ -24,7 +23,6 @@ class parental_leave__is_primary_carer(Variable):
     Note: A primary carer does not include the spouse or partner of the expectant mother. The mother will
     need to apply (IR880) and transfer the entitlement (IR881).
     """
-    #if no, not eligible
 
 
 class parental_leave__passes_6_month_employment_test(Variable):
@@ -43,7 +41,6 @@ class parental_leave__passes_6_month_employment_test(Variable):
           (i) delivery of the child (in the case of a child to be born to the employee or to the employee’s spouse or partner); or
           (ii) assumption of responsibility for the care of the child (in any other case).
     """
-    #if no, not eligible
 
 
 class parental_leave__passes_12_month_employment_test(Variable):
@@ -59,7 +56,6 @@ class parental_leave__passes_12_month_employment_test(Variable):
     (i) delivery of the child (in the case of a child to be born to the employee or to the employee’s spouse or partner); or
     (ii) assumption of responsibility for the care of the child (in any other case).
     """
-    #if no, not eligible
 
 
 class parental_leave__applied_for_leave_or_stopped_working(Variable):
@@ -67,14 +63,12 @@ class parental_leave__applied_for_leave_or_stopped_working(Variable):
     entity = Person
     definition_period = YEAR
     label = u"Has applied for/taken leave or stopped working immediately"
-    #if no, not eligible
 
 
 class parental_leave__had_previous_parental_leave_in_last_six_months(Variable):
     value_type = bool
     entity = Person
     definition_period = YEAR
-    #if yes, not eligible
 
 
 class parental_leave__has_returned_to_work_except_KIT(Variable):
@@ -82,9 +76,7 @@ class parental_leave__has_returned_to_work_except_KIT(Variable):
     entity = Person
     definition_period = YEAR
     label = u"Has returned to work (except for Keeping In Touch (KIT) hours)"
-    # if yes, not eligible
 
-# TODO: Work verification for employee or self-employed
 
 class parental_leave__is_employed(Variable):
     value_type = bool
