@@ -4,6 +4,8 @@
 Calculation improvement.
  * Added Student Allowance Regulations
  * Seperated Acts and Regulations
+ * Adding Relationship status
+ * Adding Superannuation age qualifications.
 
 # 4.2.0
 Hotfix
