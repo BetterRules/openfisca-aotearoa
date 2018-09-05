@@ -97,14 +97,18 @@ class social_security__received_residential_care_subsidy(Variable):
     reference = """
         http://www.legislation.govt.nz/act/public/1964/0136/latest/DLM359124.html
 
-        residential care services means disability services supplied to a person with a disability in a residential disability care institution or rest home within the meaning of section 58(4) of the Health and Disability Services (Safety) Act 2001; and includes—
+        residential care services means disability services supplied to a person with a disability in a residential disability care institution or rest
+            home within the meaning of section 58(4) of the Health and Disability Services (Safety) Act 2001; and includes—
 
         (a) supervision and support services; and
-        (b) hotel-type services (including the provision of sleeping facilities, meals, laundry, cleaning services and supplies, household furniture and furnishings, lighting, heating, hot water, and other household utilities); and
+        (b) hotel-type services (including the provision of sleeping facilities, meals, laundry, cleaning services and supplies, household furniture and
+            furnishings, lighting, heating, hot water, and other household utilities); and
         (c) services that support daily living (including financial management and gardening); and
         (d) personal care services (including toileting, bathing, hair washing, teeth cleaning, nail care, feeding, and mobility); and
-        (e) services within that home intended to provide satisfying activity to the person (including the provision of educational, social, recreational, and other activities); and
-        (f) clinical support services, including personal health services (within the meaning of the New Zealand Public Health and Disability Act 2000), consultations with a medical practitioner, pharmaceuticals, incontinence aids, and other treatment costs
+        (e) services within that home intended to provide satisfying activity to the person (including the provision of educational, social, recreational,
+            and other activities); and
+        (f) clinical support services, including personal health services (within the meaning of the New Zealand Public Health and Disability Act 2000),
+            consultations with a medical practitioner, pharmaceuticals, incontinence aids, and other treatment costs
         """
 
 

@@ -1,5 +1,12 @@
 # Changelog
 
+# 4.2.0 - [#75](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/75)
+Calculation improvement.
+ * Added Student Allowance Regulations
+ * Seperated Acts and Regulations
+ * Adding Relationship status
+ * Adding Superannuation age qualifications.
+
 # 4.2.0
 Hotfix
  * Mark source code as UTF8
