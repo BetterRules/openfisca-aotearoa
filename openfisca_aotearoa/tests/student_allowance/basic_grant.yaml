@@ -53,7 +53,7 @@
         - false  # Not a student
 
 
-- name: Student Allowance Tertiary Students
+- name: Student Allowance Secondard school Students
   period: 2018-08
   absolute_error_margin: 0
   persons:
