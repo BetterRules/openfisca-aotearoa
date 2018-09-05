@@ -8,13 +8,8 @@ class student_allowance__eligible_for_basic_grant(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    reference = u"""
-    7 Eligibility for basic grant
-    (1) Every student is eligible for a basic grant if he or she is—
-        (a) a secondary student of or over 16 but younger than 18 who is married or partnered with a supported child or children; or
-        (b) a tertiary student of or over 16 but younger than 18 who has a supported child or children; or
-        (c) a secondary student or tertiary student who is of or over 18, whether living at home or away from home.
-    """
+    label = u"eligibily for Student Allowance basic grant"
+    reference = "http://legislation.govt.nz/regulation/public/1998/0277/latest/whole.html#DLM260306"
 
     def formula(persons, period, parameters):
         has_children = persons('student_allowance__has_a_supported_child', period)
