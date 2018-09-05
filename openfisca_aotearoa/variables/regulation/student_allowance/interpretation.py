@@ -16,10 +16,7 @@ class student_allowance__combined_income(Variable):
     value_type = float
     entity = Person
     definition_period = MONTH
-    label = """combined income, in relation to any student, means—
-    (a) the personal income of that student; and
-    (b) the spousal or partner’s income of that student
-    """
+    label = "the personal income of that student; and the spousal or partner’s income of that student"
     reference = "legislation.govt.nz/regulation/public/1998/0277/latest/whole.html#DLM259377"
 
 
@@ -27,7 +24,8 @@ class student_allowance__is_a_dependent_student(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    label = """dependent student, in relation to a parent whose income is being assessed, means a child of that parent—
+    label = "is a dependent student"
+    """dependent student, in relation to a parent whose income is being assessed, means a child of that parent—
     (a) who is attending a full-time course at a tertiary provider or a secondary school; and
     (b) who is not younger than 16 on 31 December in the year before the year of application
         and is not older than 23 on 1 January in the year of application; and
