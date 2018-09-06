@@ -49,7 +49,7 @@ class income_tax__eligible_for_working_for_families(Variable):
         received_tested_benefit = person('social_security__received_income_tested_benefit', period)
         received_parents_allowance = person('veterans_support__received_parents_allowance', period)
         received_childrens_pension = person('veterans_support__received_childrens_pension', period)
-        person_is_16_or_older = person('age', period) >= 16
+        person_is_16_or_older = person('age', period) >= 16 # http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1518479.html#DLM1518479
 
         return not_(received_tested_benefit) * not_(received_parents_allowance) * not_(received_childrens_pension) * person_is_16_or_older
         # TODO - Add remaining eligibility criteria as per legislation.
