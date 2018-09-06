@@ -8,7 +8,7 @@ from openfisca_aotearoa.entities import Person, Family
 class social_security__received_income_tested_benefit(Variable):
     value_type = bool
     entity = Person
-    definition_period = YEAR
+    definition_period = MONTH
     label = u'Boolean for if a Person is classified as receiving an income tested benefit'
     reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/whole.html#DLM1518484"
 
@@ -16,7 +16,7 @@ class social_security__received_income_tested_benefit(Variable):
 class veterans_support__received_parents_allowance(Variable):
     value_type = bool
     entity = Person
-    definition_period = YEAR
+    definition_period = MONTH
     label = u'Boolean for if a Person is classified as receiving a parents allowance'
     reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/whole.html#DLM1518484"
 
@@ -24,7 +24,7 @@ class veterans_support__received_parents_allowance(Variable):
 class veterans_support__received_childrens_pension(Variable):
     value_type = bool
     entity = Person
-    definition_period = YEAR
+    definition_period = MONTH
     label = u'Boolean for if a Person is classified as receiving a parents allowance'
     reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/whole.html#DLM1518484"
 
@@ -41,7 +41,7 @@ class income_tax__residence(Variable):
 class income_tax__eligible_for_working_for_families(Variable):
     value_type = bool
     entity = Person
-    definition_period = YEAR
+    definition_period = MONTH
     label = u'Boolean for if a Person is classified as eligible for working for families tax credits'
     reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1518477.html"
 
@@ -49,8 +49,9 @@ class income_tax__eligible_for_working_for_families(Variable):
         received_tested_benefit = person('social_security__received_income_tested_benefit', period)
         received_parents_allowance = person('veterans_support__received_parents_allowance', period)
         received_childrens_pension = person('veterans_support__received_childrens_pension', period)
+        person_is_16_or_older = person('age', period) >= 16
 
-        return not_(received_tested_benefit) * not_(received_parents_allowance) * not_(received_childrens_pension)
+        return not_(received_tested_benefit) * not_(received_parents_allowance) * not_(received_childrens_pension) * person_is_16_or_older
         # TODO - Add remaining eligibility criteria as per legislation.
 
 
