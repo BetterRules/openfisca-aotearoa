@@ -54,6 +54,6 @@ class parental_leave__eligible_employee(Variable):
 
     def formula(persons, period, parameters):
         return persons('parental_leave__is_primary_carer', period) * \
-        persons('parental_leave__applied_for_leave_or_stopped_working', period) * \
-        persons('parental_leave__passes_12_month_employment_test', period) * \
-        not_(persons('parental_leave__had_previous_parental_leave_in_last_six_months', period))
+            persons('parental_leave__applied_for_leave_or_stopped_working', period) * \
+            persons('parental_leave__passes_12_month_employment_test', period) * \
+            not_(persons('parental_leave__had_previous_parental_leave_in_last_six_months', period))
