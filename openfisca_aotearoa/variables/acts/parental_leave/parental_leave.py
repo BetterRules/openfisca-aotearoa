@@ -53,8 +53,7 @@ class parental_leave__eligible_employee(Variable):
     reference = u"http://www.legislation.govt.nz/act/public/1987/0129/latest/DLM121539.html?search=sw_096be8ed8179b676_eligible_25_se&p=1"
 
     def formula(persons, period, parameters):
-
-      return persons('parental_leave__is_primary_carer', period) * \
+        return persons('parental_leave__is_primary_carer', period) * \
         persons('parental_leave__applied_for_leave_or_stopped_working', period) * \
         persons('parental_leave__passes_12_month_employment_test', period) * \
         not_(persons('parental_leave__had_previous_parental_leave_in_last_six_months', period))
