@@ -1,0 +1,33 @@
+description: Full year entitlement amount
+reference: http://www.legislation.govt.nz/act/public/2007/0097/latest/LMS43536.html
+brackets:
+- rate:
+    2018-04-01: # This is unresearched, original dates of enactment to be determined
+      value: 3351
+    2018-07-01:
+      value: 4745
+  threshold:
+    2018-04-01:
+      value: 0
+- rate:
+    2018-04-01: # This is unresearched, original dates of enactment to be determined
+      value: 3822
+    2018-07-01:
+      value: 4745
+  threshold:
+    2018-04-01:
+      value: 13
+- rate:
+    2018-04-01: # This is unresearched, original dates of enactment to be determined
+      value: 4745
+    2018-07-01:
+      value: 4745
+  threshold:
+    2018-04-01:
+      value: 16
+- rate:
+    2018-04-01: # This is unresearched, original dates of enactment to be determined
+      value: 0
+  threshold:
+    2018-04-01:
+      value: 19
