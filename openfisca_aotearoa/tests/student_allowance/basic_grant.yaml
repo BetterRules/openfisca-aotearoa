@@ -25,7 +25,7 @@
       student_allowance__approved_to_study_overseas: true
 
     - id: "Refugee"
-      age: 99
+      age: 25
       immigration__is_recognised_refugee: true
       student_allowance__is_tertiary_student: true
       student_allowance__is_enrolled_fulltime: true
@@ -53,7 +53,7 @@
         - false  # Not a student
 
 
-- name: Student Allowance Tertiary Students
+- name: Student Allowance Secondard school Students
   period: 2018-08
   absolute_error_margin: 0
   persons:
@@ -157,3 +157,61 @@
         - false # default
         - false # "not attending"
         - false # "not citizen or resident"
+
+
+
+- name: "Student Allowance - Eligible but too old"
+  period: 2018-08
+  absolute_error_margin: 0
+  persons:
+    - id: "fulltime uni student"
+      age: 67
+      is_nz_citizen: true
+      student_allowance__is_tertiary_student: true
+      student_allowance__is_enrolled_fulltime: true
+      student_allowance__meets_attendance_and_performance_requirements: true
+
+    - id: "Parttime student"
+      age: 68
+      is_nz_citizen: true
+      student_allowance__is_tertiary_student: true
+      student_allowance__approved_to_study_parttime: true
+
+    - id: "Overseas student"
+      age: 70
+      is_nz_citizen: true
+      student_allowance__is_tertiary_student: true
+      student_allowance__approved_to_study_overseas: true
+
+    - id: "Refugee"
+      age: 99
+      immigration__is_recognised_refugee: true
+      student_allowance__is_tertiary_student: true
+      student_allowance__is_enrolled_fulltime: true
+      student_allowance__meets_attendance_and_performance_requirements: true
+
+  families:
+    - id: "Whanau"
+      others:
+       - fulltime uni student
+       - Parttime student
+       - Overseas student
+       - Refugee
+  titled_properties:
+    - id: whare
+      others:
+        - fulltime uni student
+        - Parttime student
+        - Overseas student
+        - Refugee
+
+  output_variables:
+    student_allowance__eligible_for_basic_grant:
+      2018-08:
+        - false  # fulltime uni student
+        - false  # part time
+        - false  # overseas
+        - false  # refugee
+
+
+

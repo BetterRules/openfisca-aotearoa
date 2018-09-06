@@ -8,28 +8,23 @@ class student_allowance__eligible_for_basic_grant(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    reference = u"""
-    7 Eligibility for basic grant
-    (1) Every student is eligible for a basic grant if he or she is—
-        (a) a secondary student of or over 16 but younger than 18 who is married or partnered with a supported child or children; or
-        (b) a tertiary student of or over 16 but younger than 18 who has a supported child or children; or
-        (c) a secondary student or tertiary student who is of or over 18, whether living at home or away from home.
-    """
+    label = u"eligibily for Student Allowance basic grant"
+    reference = "http://legislation.govt.nz/regulation/public/1998/0277/latest/whole.html#DLM260306"
 
     def formula(persons, period, parameters):
         has_children = persons('student_allowance__has_a_supported_child', period)
-        student_allowance__is_secondary_student = persons('student_allowance__is_secondary_student', period)
-        student_allowance__is_tertiary_student = persons('student_allowance__is_tertiary_student', period)
+        is_secondary_student = persons('student_allowance__is_secondary_student', period)
+        is_tertiary_student = persons('student_allowance__is_tertiary_student', period)
 
         is_or_over_16 = persons('age', period) >= 16
         is_under_18 = persons('age', period) < 18
-        is_over_18 = persons('age', period) >= 18
+        is_or_over_18 = persons('age', period) >= 18
 
         is_married_or_partnered = persons('student_allowance__is_married_or_partnered', period)
 
-        criteria_a = student_allowance__is_secondary_student * is_or_over_16 * is_under_18 * is_married_or_partnered * has_children
-        criteria_b = student_allowance__is_tertiary_student * is_or_over_16 * is_under_18 * has_children
-        criteria_c = (student_allowance__is_secondary_student + student_allowance__is_tertiary_student) * is_over_18
+        criteria_a = is_secondary_student * is_or_over_16 * is_under_18 * is_married_or_partnered * has_children
+        criteria_b = is_tertiary_student * is_or_over_16 * is_under_18 * has_children
+        criteria_c = (is_secondary_student + is_tertiary_student) * is_or_over_18
 
         student_allowance__eligible_for_certain_allowances = persons('student_allowance__eligible_for_certain_allowances', period)
 

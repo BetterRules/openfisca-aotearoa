@@ -9,25 +9,23 @@ class student_allowance__is_childless(Variable):
     entity = Person
     definition_period = MONTH
     label = "childless means not having a supported child or children"
-    reference = "legislation.govt.nz/regulation/public/1998/0277/latest/whole.html#DLM259374"
+    reference = "http://legislation.govt.nz/regulation/public/1998/0277/latest/whole.html#DLM259374"
 
 
 class student_allowance__combined_income(Variable):
     value_type = float
     entity = Person
     definition_period = MONTH
-    label = """combined income, in relation to any student, means—
-    (a) the personal income of that student; and
-    (b) the spousal or partner’s income of that student
-    """
-    reference = "legislation.govt.nz/regulation/public/1998/0277/latest/whole.html#DLM259377"
+    label = "the personal income of that student; and the spousal or partner’s income of that student"
+    reference = "http://legislation.govt.nz/regulation/public/1998/0277/latest/whole.html#DLM259377"
 
 
 class student_allowance__is_a_dependent_student(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    label = """dependent student, in relation to a parent whose income is being assessed, means a child of that parent—
+    label = "is a dependent student"
+    """dependent student, in relation to a parent whose income is being assessed, means a child of that parent—
     (a) who is attending a full-time course at a tertiary provider or a secondary school; and
     (b) who is not younger than 16 on 31 December in the year before the year of application
         and is not older than 23 on 1 January in the year of application; and
@@ -35,7 +33,7 @@ class student_allowance__is_a_dependent_student(Variable):
     (d) in respect of whom an orphan’s benefit is not paid; and
     (e) in respect of whom an unsupported child’s benefit is not paid; and
     (f) who receives financial support from that parent"""
-    reference = "legislation.govt.nz/regulation/public/1998/0277/latest/whole.html#DLM259381"
+    reference = "http://legislation.govt.nz/regulation/public/1998/0277/latest/whole.html#DLM259381"
 
 
 class student_allowance__income_before_tax(Variable):
@@ -50,7 +48,7 @@ class student_allowance__is_living_with_a_parent(Variable):
     entity = Person
     definition_period = MONTH
     label = """living with a parent has the same meaning as in section 3(1) of the Social Security Act 1964"""
-    reference = "legislation.govt.nz/regulation/public/1998/0277/latest/whole.html#DLM259900"
+    reference = "http://legislation.govt.nz/regulation/public/1998/0277/latest/whole.html#DLM259900"
 
 
 class student_allowance__is_married_or_partnered(Variable):
@@ -58,7 +56,7 @@ class student_allowance__is_married_or_partnered(Variable):
     entity = Person
     definition_period = MONTH
     label = "married or partnered as per Student Allowances Regulations 1998"
-    reference = "legislation.govt.nz/regulation/public/1998/0277/latest/whole.html#DLM259902"
+    reference = "http://legislation.govt.nz/regulation/public/1998/0277/latest/whole.html#DLM259902"
     """
     (a) means having a spouse; and
     (b) for the avoidance of doubt, does not include a person who is legally married
@@ -74,7 +72,7 @@ class student_allowance__has_a_supported_child(Variable):
     entity = Person
     definition_period = MONTH
     label = "has a supported child as per Student Allowances Regulations 1998"
-    reference = "legislation.govt.nz/regulation/public/1998/0277/latest/whole.html#DLM259968"
+    reference = "http://legislation.govt.nz/regulation/public/1998/0277/latest/whole.html#DLM259968"
     """
     supported child, in relation to a student applying for an allowance, means a person younger than 24—
         (a)
@@ -98,7 +96,7 @@ class student_allowance__partner_has_a_supported_child(Variable):
     entity = Person
     definition_period = MONTH
     label = "their spouse has a supported child, as per Student Allowances Regulations 1998"
-    reference = "http://www.legislation.govt.nz/regulation/public/1998/0277/latest/whole.html#DLM6530648"
+    reference = "www.legislation.govt.nz/regulation/public/1998/0277/latest/whole.html#DLM6530648"
 
 
 class student_allowance__has_a_spouse(Variable):
@@ -106,7 +104,7 @@ class student_allowance__has_a_spouse(Variable):
     entity = Person
     definition_period = MONTH
     label = "Has spouse as per Student Allowances Regulations 1998"
-    reference = "legislation.govt.nz/regulation/public/1998/0277/latest/whole.html#DLM259958"
+    reference = "http://legislation.govt.nz/regulation/public/1998/0277/latest/whole.html#DLM259958"
 
     """
     Spouse, in relation to an applicant, means a person who is legally married to that applicant if—
@@ -126,4 +124,7 @@ class student_allowance__is_a_student(Variable):
     entity = Person
     definition_period = MONTH
     label = "student means a person who is enrolled or intends to enrol in a recognised course of study"
-    reference = "legislation.govt.nz/regulation/public/1998/0277/latest/whole.html#DLM259958"
+    reference = "http://legislation.govt.nz/regulation/public/1998/0277/latest/whole.html#DLM259958"
+
+    def formula(persons, period, parameters):
+        return persons('student_allowance__is_tertiary_student', period) + persons('student_allowance__is_secondary_student', period)
