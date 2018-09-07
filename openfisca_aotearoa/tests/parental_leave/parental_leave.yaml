@@ -26,6 +26,13 @@
       parental_leave__applied_for_leave_or_stopped_working: true
       parental_leave__had_previous_parental_leave_in_last_six_months: false
 
+    - id: "Not a Primary Carer"
+      is_nz_citizen: true
+      parental_leave__is_primary_carer: false
+      parental_leave__threshold_tests: 6
+      parental_leave__applied_for_leave_or_stopped_working: true
+      parental_leave__had_previous_parental_leave_in_last_six_months: false
+
     - id: "Received Parental Leave"
       is_nz_citizen: true
       parental_leave__is_primary_carer: true
@@ -35,10 +42,10 @@
 
   families:
     - id: "Whanau"
-      others: ["Passes employee test", "Non-Citizen", "A Primary Carer", "Received Parental Leave"]
+      others: ["Passes employee test", "Non-Citizen", "A Primary Carer", "Not a Primary Carer", "Received Parental Leave"]
   titled_properties:
     - id: whare
-      others: ["Passes employee test", "Non-Citizen", "A Primary Carer", "Received Parental Leave"]
+      others: ["Passes employee test", "Non-Citizen", "A Primary Carer", "Not a Primary Carer", "Received Parental Leave"]
 
   output_variables:
     parental_leave__eligible_employee:
@@ -46,4 +53,5 @@
         - false   # Passes employee test
         - false   # Not a NZ Citizen
         - true    # A Primary Carer
+        - false   # ANot a Primary Carer
         - true    # Received Parental Leave
