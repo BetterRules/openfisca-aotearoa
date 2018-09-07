@@ -17,12 +17,12 @@
       date_of_birth: 2011-12-29
     - id: "Papatūānuku-2"
       date_of_birth: 1979-08-30
-      income_tax__family_scheme_income: 41000
+      family_scheme__assessable_income: 41000
     - id: "Papatūānuku-3"
       date_of_birth: 1979-08-30
     - id: "Hemi"
       date_of_birth: 1977-10-13
-      income_tax__family_scheme_income: 40000
+      family_scheme__assessable_income: 40000
     - id: "Samuel"
       date_of_birth: 1968-10-13
     - id: "Hemi-junior"
@@ -93,7 +93,7 @@
       date_of_birth: 1979-08-30
     - id: "Rakinui"
       date_of_birth: 1977-10-13
-      income_tax__family_scheme_income: 60000
+      family_scheme__assessable_income: 60000
     - id: "Hemi-junior"
       date_of_birth: 2018-07-18
     - id: "Hemi-junior-early"
@@ -120,7 +120,7 @@
       date_of_birth: 1979-08-30
     - id: "Rakinui"
       date_of_birth: 1977-10-13
-      income_tax__family_scheme_income:
+      family_scheme__assessable_income:
         2018: 90000
         2019: 82000
     - id: "Hemi-junior"
@@ -149,7 +149,7 @@
       date_of_birth: 1979-02-01
     - id: "Rakinui"
       date_of_birth: 1977-10-13
-      income_tax__family_scheme_income:
+      family_scheme__assessable_income:
         2018: 90000
         2019: 82000
         2020: 82000
