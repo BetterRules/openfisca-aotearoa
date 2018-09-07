@@ -49,5 +49,5 @@ class parental_leave__eligible_employee(Variable):
 
         return (is_citizen * persons('parental_leave__is_primary_carer', period) * \
             persons('parental_leave__applied_for_leave_or_stopped_working', period) * \
-            persons('parental_leave__threshold_tests', period) >= 6 * \
+            (persons('parental_leave__threshold_tests', period) >= 6) * \
             not_(persons('parental_leave__had_previous_parental_leave_in_last_six_months', period)))
