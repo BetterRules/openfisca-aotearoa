@@ -1,5 +1,9 @@
 # Changelog
 
+# 4.2.0 - [#78](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/78)
+Calculation improvement.
+ * Added Paid Parental Leave Regulations
+
 # 4.2.0 - [#75](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/75)
 Calculation improvement.
  * Added Student Allowance Regulations
