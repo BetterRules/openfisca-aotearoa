@@ -4,21 +4,25 @@ from openfisca_core.model_api import *
 from openfisca_aotearoa.entities import Person, Family
 
 
-class income_tax__qualifies_for_entitlements_under_family_scheme(Variable):
+class family_scheme__qualifies_for_entitlements(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
     label = u'Is a person is classified as eligible under the family scheme'
-    reference = "http://legislation.govt.nz/act/public/2007/0097/latest/DLM1518477.html"
+    reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1518477.html"
 
     def formula(persons, period, parameters):
-        age_qualifies = persons("income_tax__caregiver_age_qualifies_under_family_scheme", period)
-        principle_carer = persons("income_tax__person_principal_carer_qualifies_under_family_scheme", period)
+        received_tested_benefit = persons('social_security__received_income_tested_benefit', period)
+        received_parents_allowance = persons('veterans_support__received_parents_allowance', period)
+        received_childrens_pension = persons('veterans_support__received_childrens_pension', period)
+        age_qualifies = persons("family_scheme__caregiver_age_qualifies", period)
+        principle_carer = persons("family_scheme__qualifies_as_principal_carer", period)
         residence = persons("income_tax__residence", period)
-        return age_qualifies * principle_carer * residence
+        return not_(received_tested_benefit) * not_(received_parents_allowance) * not_(received_childrens_pension) * age_qualifies * principle_carer * residence
+        # TODO - Add remaining eligibility criteria as per legislation.
 
 
-class income_tax__caregiver_age_qualifies_under_family_scheme(Variable):
+class family_scheme__caregiver_age_qualifies(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
@@ -29,7 +33,7 @@ class income_tax__caregiver_age_qualifies_under_family_scheme(Variable):
         return persons("age", period) >= parameters(period).entitlements.income_tax.working_for_families.principal_caregiver_age_threshold
 
 
-class income_tax__person_principal_carer_qualifies_under_family_scheme(Variable):
+class family_scheme__qualifies_as_principal_carer(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
@@ -37,10 +41,10 @@ class income_tax__person_principal_carer_qualifies_under_family_scheme(Variable)
     reference = "http://legislation.govt.nz/act/public/2007/0097/latest/DLM1518480.html"
 
     def formula(persons, period, parameters):
-        return persons.has_role(Family.PRINCIPAL_CAREGIVER) * persons.family("income_tax__family_has_dependent_children", period)
+        return persons.has_role(Family.PRINCIPAL_CAREGIVER) * persons.family("family_scheme__has_dependent_children", period)
 
 
-class income_tax__proportion_as_principal_carer(Variable):
+class family_scheme__proportion_as_principal_carer(Variable):
     value_type = float
     entity = Person
     default_value = 1
@@ -49,7 +53,7 @@ class income_tax__proportion_as_principal_carer(Variable):
     reference = "http://legislation.govt.nz/act/public/2007/0097/latest/DLM1518454.html#DLM1518454"
 
 
-class income_tax__family_scheme_income(Variable):
+class family_scheme__assessable_income(Variable):
     base_function = missing_value
     value_type = float
     entity = Person
@@ -66,7 +70,7 @@ class income_tax__family_scheme_income(Variable):
     # return person('income_tax__net_income', period)
 
 
-class income_tax__family_scheme_income_for_month(Variable):
+class family_scheme__assessable_income_for_month(Variable):
     base_function = missing_value
     value_type = float
     entity = Person
@@ -75,4 +79,16 @@ class income_tax__family_scheme_income_for_month(Variable):
     reference = "http://legislation.govt.nz/act/public/2007/0097/latest/DLM1518454.html#DLM1518454"
 
     def formula(persons, period, parameters):
-        return persons('income_tax__family_scheme_income', period, options=[DIVIDE])
+        return persons('family_scheme__assessable_income', period, options=[DIVIDE])
+
+
+class family_scheme__has_dependent_children(Variable):
+    value_type = bool
+    entity = Family
+    definition_period = MONTH
+    label = u'A family has one or more people who qualify as financially dependant children'
+    reference = "http://legislation.govt.nz/act/public/2007/0097/latest/DLM1518480.html"
+
+    def formula(families, period, parameters):
+        return families.max(families.members("income_tax__dependent_child", period))
+

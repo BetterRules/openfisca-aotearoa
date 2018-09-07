@@ -15,7 +15,7 @@ class income_tax__caregiver_eligible_for_best_start_tax_credit(Variable):
     reference = "http://legislation.govt.nz/bill/government/2017/0004/15.0/DLM7512349.html"
 
     def formula(persons, period, parameters):
-        qualifies = persons("income_tax__qualifies_for_entitlements_under_family_scheme", period)
+        qualifies = persons("family_scheme__qualifies_for_entitlements", period)
         family_is_eligible = persons.family("income_tax__family_has_children_eligible_for_best_start", period)
         return qualifies * family_is_eligible
 
@@ -77,7 +77,7 @@ class income_tax__best_start_tax_credit_per_child(Variable):
 
         # sum up families income
         # http://legislation.govt.nz/act/public/2007/0097/latest/DLM1518488.html#DLM1518488
-        family_income = persons.family.sum(persons.family.members("income_tax__family_scheme_income", period.this_year))
+        family_income = persons.family.sum(persons.family.members("family_scheme__assessable_income", period.this_year))
 
         # calculate income over the threshold
         income_over_threshold = where((family_income - threshold) < 0, 0, family_income - threshold)

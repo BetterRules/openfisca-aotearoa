@@ -16,7 +16,7 @@
       normally_lives_in_nz: true
       monthly_income: 0.0
       living_with_parent_or_guardian: true
-      income_tax__family_scheme_income_for_month: 10.0
+      family_scheme__assessable_income_for_month: 10.0
     - id: "Oscar"
       is_a_parent: true
       has_dependent_child: true
@@ -76,7 +76,7 @@
       is_nz_citizen: true
       normally_lives_in_nz: true
       monthly_income: 0.0
-      income_tax__family_scheme_income_for_month: 10.0
+      family_scheme__assessable_income_for_month: 10.0
     - id: "Oscar"
       is_married_or_in_a_civil_union_or_de_facto_relationship: true
       has_been_married_or_in_a_civil_union_or_de_facto_relationship: false

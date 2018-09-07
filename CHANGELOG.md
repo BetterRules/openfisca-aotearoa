@@ -1,5 +1,19 @@
 # Changelog
 
+# 5.0.0 - [#22](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/...)
+* Tax and benefit system evolution. Major change.
+* Impacted periods: income_tax
+* Impacted areas: `tests/best_start, tests/family_scheme, tests/working_for_families, variables/entitlements/income_tax/best_start.py, variables/entitlements/income_tax/family_scheme.py, variables/entitlements/income_tax/working_for_families.py`
+* Details:
+  - renamed `income_tax__qualifies_for_entitlements_under_family_scheme` to `family_scheme__qualifies_for_entitlements` to better reflect law structure
+  - renamed `income_tax__caregiver_age_qualifies_under_family_scheme` to `family_scheme__caregiver_age_qualifies` to better reflect law structure
+  - renamed `income_tax__person_principal_carer_qualifies_under_family_scheme` to `family_scheme__qualifies_as_principal_carer` to better reflect law structure
+  - renamed `income_tax__family_scheme_income` to `family_scheme__assessable_income` to better reflect law structure
+  - renamed `income_tax__family_scheme_income_for_month` to `family_scheme__assessable_income_for_month` to better reflect law structure
+  - renamed `income_tax__proportion_as_principal_carer` to `family_scheme__proportion_as_principal_carer` to better reflect law structure
+  - renamed `income_tax__family_has_dependent_children` to `family_scheme__has_dependent_children` to better reflect law structure
+  - renamed `income_tax__eligible_for_working_for_families` to `family_scheme__qualifies_for_entitlements` to better reflect law structure
+
 # 4.2.3 - [#77](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/77)
 Technical improvement.
  * Remove dependency on OpenFisca-Web-API (now included in Core)
