@@ -1,6 +1,9 @@
 # Changelog
 
 # 4.2.3 - [#77](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/77)
+=======
+# 4.2.2 - [#77](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/77)
+>>>>>>> 3e457e6... Correct version number for release
 Technical improvement.
  * Remove dependency on OpenFisca-Web-API (now included in Core)
  * Update README.md with notes on updating OpenFisca-Core for existing developers
