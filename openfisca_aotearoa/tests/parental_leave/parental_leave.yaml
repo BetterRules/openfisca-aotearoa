@@ -53,5 +53,5 @@
         - false   # Passes employee test
         - false   # Not a NZ Citizen
         - true    # A Primary Carer
-        - false   # ANot a Primary Carer
+        - false   # Not a Primary Carer
         - true    # Received Parental Leave
