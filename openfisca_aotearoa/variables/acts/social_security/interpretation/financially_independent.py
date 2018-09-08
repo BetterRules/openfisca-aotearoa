@@ -53,6 +53,6 @@ class social_security__recieves_main_benefit(Variable):
 class social_security__received_income_tested_benefit(Variable):
     value_type = bool
     entity = Person
-    definition_period = MONTH
+    definition_period = YEAR
     label = u'Boolean for if a Person is classified as receiving an income tested benefit'
     reference = "http://www.legislation.govt.nz/act/public/1964/0136/latest/DLM359124.html#DLM360353"

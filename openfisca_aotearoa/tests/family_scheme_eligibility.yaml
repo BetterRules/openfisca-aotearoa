@@ -4,7 +4,8 @@
   absolute_error_margin: 1
   input_variables:
     date_of_birth: 1990-10-01
-    social_security__received_income_tested_benefit: True
+    social_security__received_income_tested_benefit:
+      2018: True
     veterans_support__received_parents_allowance: False
     veterans_support__received_childrens_pension: False
   output_variables:
@@ -14,7 +15,8 @@
   absolute_error_margin: 1
   input_variables:
     date_of_birth: 1990-10-01
-    social_security__received_income_tested_benefit: False
+    social_security__received_income_tested_benefit:
+      2018: False
     veterans_support__received_parents_allowance: True
     veterans_support__received_childrens_pension: False
   output_variables:
@@ -24,7 +26,8 @@
   absolute_error_margin: 1
   input_variables:
     date_of_birth: 1990-10-01
-    social_security__received_income_tested_benefit: False
+    social_security__received_income_tested_benefit:
+      2018: False
     veterans_support__received_parents_allowance: False
     veterans_support__received_childrens_pension: True
   output_variables:
@@ -34,7 +37,8 @@
   absolute_error_margin: 1
   input_variables:
     date_of_birth: 1990-10-01
-    social_security__received_income_tested_benefit: False
+    social_security__received_income_tested_benefit:
+      2018: False
     veterans_support__received_parents_allowance: False
     veterans_support__received_childrens_pension: False
   output_variables:
@@ -44,7 +48,8 @@
   absolute_error_margin: 1
   input_variables:
     date_of_birth: 2012-10-01
-    social_security__received_income_tested_benefit: False
+    social_security__received_income_tested_benefit:
+      2018: False
     veterans_support__received_parents_allowance: False
     veterans_support__received_childrens_pension: False
   output_variables:
