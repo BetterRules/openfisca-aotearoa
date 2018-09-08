@@ -12,7 +12,7 @@ class family_scheme__qualifies_for_entitlements(Variable):
     reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1518477.html"
 
     def formula(persons, period, parameters):
-        received_tested_benefit = persons('social_security__received_income_tested_benefit', period)
+        received_tested_benefit = persons('social_security__received_income_tested_benefit', period.this_year)
         received_parents_allowance = persons('veterans_support__received_parents_allowance', period)
         received_childrens_pension = persons('veterans_support__received_childrens_pension', period)
         age_qualifies = persons("family_scheme__caregiver_age_qualifies", period)
