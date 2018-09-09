@@ -1,56 +1,170 @@
 # We can run this test on our command line using `openfisca-run-test openfisca_aotearoa/tests/family_scheme_eligibility.yaml`
-- name: A Person receiving an income tested benefit is not eligible for working for families
-  period: 2018-10
-  absolute_error_margin: 1
-  input_variables:
-    date_of_birth: 1990-10-01
-    social_security__received_income_tested_benefit:
-      2018: True
-    veterans_support__received_parents_allowance: False
-    veterans_support__received_childrens_pension: False
+- name: A Person is of eligible age for the family scheme
+  period: 2018-08
+  absolute_error_margin: 0
+  persons:
+    - id: "Papatūānuku"
+      date_of_birth: 2003-01-01
+    - id: "Rakinui"
+      date_of_birth: 1996-01-01
+  families:
+    - id: "Whanau"
+      partners: ["Papatūānuku", "Rakinui"]
+  titled_properties:
+    - id: "Whare"
+      owners: ["Papatūānuku", "Rakinui"]
   output_variables:
-    family_scheme__qualifies_for_entitlements: False
-- name: A Person receiving a parents allowance is not eligible for working for families
-  period: 2018-10
-  absolute_error_margin: 1
-  input_variables:
-    date_of_birth: 1990-10-01
-    social_security__received_income_tested_benefit:
-      2018: False
-    veterans_support__received_parents_allowance: True
-    veterans_support__received_childrens_pension: False
+    family_scheme__caregiver_age_qualifies: [False, True]
+- name: A Person is qualified as a principal caregiver for the family scheme
+  period: 2018-08
+  absolute_error_margin: 0
+  persons:
+    - id: "Papatūānuku"
+      date_of_birth: 1996-01-01
+    - id: "Rakinui"
+      date_of_birth: 1996-01-01
+    - id: "Tāne"
+      date_of_birth: 2006-01-01
+  families:
+    - id: "Whanau"
+      principal_caregiver: "Papatūānuku"
+      partners: ["Rakinui"]
+      children: ["Tāne"]
+  titled_properties:
+    - id: "Whare"
+      owners: ["Papatūānuku", "Rakinui", "Tāne"]
   output_variables:
-    family_scheme__qualifies_for_entitlements: False
-- name: A Person receiving a childrens pension is not eligible for working for families
-  period: 2018-10
-  absolute_error_margin: 1
-  input_variables:
-    date_of_birth: 1990-10-01
-    social_security__received_income_tested_benefit:
-      2018: False
-    veterans_support__received_parents_allowance: False
-    veterans_support__received_childrens_pension: True
+    family_scheme__qualifies_as_principal_carer: [True, False, False]
+- name: A Person is qualified as a income tax residence for the family scheme
+  period: 2018-08
+  absolute_error_margin: 0
+  persons:
+    - id: "Papatūānuku"
+      date_of_birth: 1996-01-01
+      income_tax__residence: true
+    - id: "Rakinui"
+      date_of_birth: 1996-01-01
+      income_tax__residence: false
+  families:
+    - id: "Whanau"
+      partners: ["Papatūānuku", "Rakinui"]
+  titled_properties:
+    - id: "Whare"
+      owners: ["Papatūānuku", "Rakinui"]
   output_variables:
-    family_scheme__qualifies_for_entitlements: False
-- name: A Person is eligible for working for families
-  period: 2018-10
-  absolute_error_margin: 1
-  input_variables:
-    date_of_birth: 1990-10-01
-    social_security__received_income_tested_benefit:
-      2018: False
-    veterans_support__received_parents_allowance: False
-    veterans_support__received_childrens_pension: False
+    income_tax__residence: [True, False]
+- name: A Person is qualified for the family scheme
+  period: 2018-08
+  absolute_error_margin: 0
+  persons:
+    - id: "Papatūānuku"
+      date_of_birth: 1996-01-01
+      income_tax__residence: false
+    - id: "Rakinui"
+      date_of_birth: 1996-01-01
+      income_tax__residence: true
+      veterans_support__received_parents_allowance: False
+      veterans_support__received_childrens_pension: False
+      social_security__received_income_tested_benefit:
+        2018: False
+    - id: "Tāne"
+      date_of_birth: 2006-01-01
+  families:
+    - id: "Whanau"
+      principal_caregiver: "Rakinui"
+      partners: ["Papatūānuku"]
+      children: ["Tāne"]
+  titled_properties:
+    - id: "Whare"
+      owners: ["Papatūānuku", "Rakinui", "Tāne"]
   output_variables:
-    family_scheme__qualifies_for_entitlements: True
-- name: A Person is to young for working for families
-  period: 2018-10
-  absolute_error_margin: 1
-  input_variables:
-    date_of_birth: 2012-10-01
-    social_security__received_income_tested_benefit:
-      2018: False
-    veterans_support__received_parents_allowance: False
-    veterans_support__received_childrens_pension: False
+    family_scheme__qualifies_for_entitlements: [False, True, False]
+- name: A Person in a two people family would be qualified for the family scheme
+  period: 2018-08
+  absolute_error_margin: 0
+  persons:
+    - id: "Rakinui"
+      date_of_birth: 1996-01-01
+      income_tax__residence: true
+      veterans_support__received_parents_allowance: False
+      veterans_support__received_childrens_pension: False
+      social_security__received_income_tested_benefit:
+        2018: False
+    - id: "Tāne"
+      date_of_birth: 2012-01-01
+  families:
+    - id: "Whanau"
+      principal_caregiver: "Rakinui"
+      children: ["Tāne"]
+  titled_properties:
+    - id: "Whare"
+      owners: ["Rakinui", "Tāne"]
   output_variables:
-    family_scheme__qualifies_for_entitlements: False
+    family_scheme__qualifies_for_entitlements: [True, False]
+- name: A Person would be qualified for the family scheme but gets veterans support parent allowance
+  period: 2018-08
+  absolute_error_margin: 0
+  persons:
+    - id: "Rakinui"
+      date_of_birth: 1996-01-01
+      income_tax__residence: true
+      veterans_support__received_parents_allowance: True
+      veterans_support__received_childrens_pension: False
+      social_security__received_income_tested_benefit:
+        2018: False
+    - id: "Tāne"
+      date_of_birth: 2012-01-01
+  families:
+    - id: "Whanau"
+      principal_caregiver: "Rakinui"
+      children: ["Tāne"]
+  titled_properties:
+    - id: "Whare"
+      owners: ["Rakinui", "Tāne"]
+  output_variables:
+    family_scheme__qualifies_for_entitlements: [False, False]
+- name: A Person would be qualified for the family scheme but gets a childrens pension
+  period: 2018-08
+  absolute_error_margin: 0
+  persons:
+    - id: "Rakinui"
+      date_of_birth: 2000-01-01
+      income_tax__residence: true
+      veterans_support__received_parents_allowance: False
+      veterans_support__received_childrens_pension: True
+      social_security__received_income_tested_benefit:
+        2018: False
+    - id: "Tāne"
+      date_of_birth: 2012-01-01
+  families:
+    - id: "Whanau"
+      principal_caregiver: "Rakinui"
+      children: ["Tāne"]
+  titled_properties:
+    - id: "Whare"
+      owners: ["Rakinui", "Tāne"]
+  output_variables:
+    family_scheme__qualifies_for_entitlements: [False, False]
+- name: A Person would be qualified for the family scheme but receives an income tested benefit
+  period: 2018-08
+  absolute_error_margin: 0
+  persons:
+    - id: "Rakinui"
+      date_of_birth: 2000-01-01
+      income_tax__residence: true
+      veterans_support__received_parents_allowance: False
+      veterans_support__received_childrens_pension: False
+      social_security__received_income_tested_benefit:
+        2018: True
+    - id: "Tāne"
+      date_of_birth: 2012-01-01
+  families:
+    - id: "Whanau"
+      principal_caregiver: "Rakinui"
+      children: ["Tāne"]
+  titled_properties:
+    - id: "Whare"
+      owners: ["Rakinui", "Tāne"]
+  output_variables:
+    family_scheme__qualifies_for_entitlements: [False, False]
+

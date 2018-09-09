@@ -12,13 +12,14 @@ class family_scheme__qualifies_for_entitlements(Variable):
     reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1518477.html"
 
     def formula(persons, period, parameters):
-        received_tested_benefit = persons('social_security__received_income_tested_benefit', period.this_year)
-        received_parents_allowance = persons('veterans_support__received_parents_allowance', period)
-        received_childrens_pension = persons('veterans_support__received_childrens_pension', period)
         age_qualifies = persons("family_scheme__caregiver_age_qualifies", period)
         principle_carer = persons("family_scheme__qualifies_as_principal_carer", period)
-        residence = persons("income_tax__residence", period)
-        return not_(received_tested_benefit) * not_(received_parents_allowance) * not_(received_childrens_pension) * age_qualifies * principle_carer * residence
+        residence = persons("income_tax__residence", period) # this is for caregiver OR child, clarify the test
+        received_parents_allowance = persons('veterans_support__received_parents_allowance', period)
+        received_childrens_pension = persons('veterans_support__received_childrens_pension', period)
+        received_tested_benefit = persons('social_security__received_income_tested_benefit', period.this_year)
+
+        return age_qualifies * principle_carer * residence * not_(received_tested_benefit) * not_(received_parents_allowance) * not_(received_childrens_pension)
         # TODO - Add remaining eligibility criteria as per legislation.
 
 
