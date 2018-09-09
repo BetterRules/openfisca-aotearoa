@@ -7,4 +7,4 @@ class marriage__is_married(Variable):
     entity = Person
     definition_period = MONTH
     label = "is married (marriage means the union of 2 people, regardless of their sex, sexual orientation, or gender identity)"
-    reference = "www.legislation.govt.nz/act/public/1955/0092/latest/DLM292034.html#DLM5545702"
+    reference = "http://www.legislation.govt.nz/act/public/1955/0092/latest/DLM292034.html#DLM5545702"

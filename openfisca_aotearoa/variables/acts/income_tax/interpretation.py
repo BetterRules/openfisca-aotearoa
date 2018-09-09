@@ -4,9 +4,6 @@ from openfisca_core.model_api import *
 from openfisca_aotearoa.entities import *
 
 
-
-
-
 class income_tax__dependent_child(Variable):
     value_type = bool
     entity = Person
