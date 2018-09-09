@@ -1,0 +1,34 @@
+{
+    "immigration" : {
+        "Title":"Immigration Act 2009",
+        "Reference":"http://www.legislation.govt.nz/act/public/2009/0051/latest/DLM1440303.html"
+    },
+    "income_tax" : {
+        "Title":"Income Tax Act 2007",
+        "Reference":"http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1512301.html",
+        "Subs" : {
+            "family_scheme" : {
+                "Title":"Family Scheme",
+                "Reference":"http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1518405.html",
+                "Subs": {
+                    "best_start" : {
+                        "Title":"Best Start",
+                        "Reference":"http://www.legislation.govt.nz/act/public/2007/0097/latest/LMS63791.html"
+                    }
+                }
+            }
+        }
+    },
+    "rates_rebates" : {
+        "Title":"Rates Rebate Act 1973",
+        "Reference":"http://www.legislation.govt.nz/act/public/1973/0005/latest/DLM409296.html"
+    },
+    "social_security" : {
+        "Title":"Social Security Act 1964",
+        "Reference":"http://www.legislation.govt.nz/act/public/1964/0136/latest/DLM359107.html"
+    },
+    "veterans_support" : {
+        "Title":"Veterans' Support Act 2014",
+        "Reference":"http://www.legislation.govt.nz/act/public/2014/0056/latest/DLM5537774.html"
+    }
+}

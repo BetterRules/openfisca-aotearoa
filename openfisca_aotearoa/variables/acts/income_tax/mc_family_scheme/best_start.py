@@ -7,7 +7,7 @@ from openfisca_aotearoa.entities import Person, Family
 from numpy import datetime64
 
 
-class income_tax__caregiver_eligible_for_best_start_tax_credit(Variable):
+class best_start__eligibility(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
@@ -16,11 +16,11 @@ class income_tax__caregiver_eligible_for_best_start_tax_credit(Variable):
 
     def formula(persons, period, parameters):
         qualifies = persons("family_scheme__qualifies_for_entitlements", period)
-        family_is_eligible = persons.family("income_tax__family_has_children_eligible_for_best_start", period)
+        family_is_eligible = persons.family("best_start__family_has_children_eligible", period)
         return qualifies * family_is_eligible
 
 
-class income_tax__family_has_children_eligible_for_best_start(Variable):
+class best_start__family_has_children_eligible(Variable):
     value_type = bool
     entity = Family
     definition_period = MONTH
@@ -35,7 +35,7 @@ class income_tax__family_has_children_eligible_for_best_start(Variable):
             families_have_children_younger_than_three_years
 
 
-class income_tax__person_is_best_start_child_as_year(Variable):
+class best_start__year_of_child(Variable):
     value_type = float
     entity = Person
     definition_period = MONTH
@@ -63,7 +63,7 @@ class income_tax__person_is_best_start_child_as_year(Variable):
         return whatyear
 
 
-class income_tax__best_start_tax_credit_per_child(Variable):
+class best_start__tax_credit_per_child(Variable):
     value_type = float
     entity = Person
     definition_period = MONTH
@@ -83,7 +83,7 @@ class income_tax__best_start_tax_credit_per_child(Variable):
         income_over_threshold = where((family_income - threshold) < 0, 0, family_income - threshold)
 
         # work out the ages for each family member
-        years = persons('income_tax__person_is_best_start_child_as_year', period)
+        years = persons('best_start__year_of_child', period)
 
         # work out if each dependant child is eligible for full best start tax credit
         dependant_eligible_full = (years == 1) * prescribed_amount
@@ -97,7 +97,7 @@ class income_tax__best_start_tax_credit_per_child(Variable):
         return (dependant_eligible_full + dependant_eligible_abated_1 + dependant_eligible_abated_2) / 12
 
 
-class income_tax__entitlement_for_best_start_tax_credit(Variable):
+class best_start__entitlement(Variable):
     value_type = float
     entity = Person
     definition_period = MONTH
@@ -108,5 +108,5 @@ class income_tax__entitlement_for_best_start_tax_credit(Variable):
 
         # sum up families income
         return persons.family.sum(
-            persons.family.members("income_tax__best_start_tax_credit_per_child", period)) * \
-            persons("income_tax__caregiver_eligible_for_best_start_tax_credit", period)
+            persons.family.members("best_start__tax_credit_per_child", period)) * \
+            persons("best_start__eligibility", period)
