@@ -1,34 +1,55 @@
 {
+
+    "civil_union" : {
+        "Title":"Civil Union Act 2004",
+        "Type": "Act",
+        "Reference":"http://www.legislation.govt.nz/act/public/2004/0102/latest/whole.html"
+    },
     "immigration" : {
         "Title":"Immigration Act 2009",
+        "Type": "Act",
         "Reference":"http://www.legislation.govt.nz/act/public/2009/0051/latest/DLM1440303.html"
     },
     "income_tax" : {
         "Title":"Income Tax Act 2007",
+        "Type": "Act",
         "Reference":"http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1512301.html",
-        "Subs" : {
-            "family_scheme" : {
-                "Title":"Family Scheme",
-                "Reference":"http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1518405.html",
-                "Subs": {
-                    "best_start" : {
-                        "Title":"Best Start",
-                        "Reference":"http://www.legislation.govt.nz/act/public/2007/0097/latest/LMS63791.html"
-                    }
-                }
-            }
-        }
+        "Children": ["family_scheme"]
+    },
+    "marriage" : {
+        "Title":"Marriage Act 1955",
+        "Type": "Act",
+        "Reference":"http://www.legislation.govt.nz/act/public/1955/0092/latest/whole.html"
+    },
+    "property_relationships" : {
+        "Title":"Property (Relationships) Act 1976",
+        "Type": "Act",
+        "Reference":"http://www.legislation.govt.nz/act/public/1976/0166/latest/whole.html"
     },
     "rates_rebates" : {
         "Title":"Rates Rebate Act 1973",
+        "Type": "Act",
         "Reference":"http://www.legislation.govt.nz/act/public/1973/0005/latest/DLM409296.html"
     },
     "social_security" : {
         "Title":"Social Security Act 1964",
+        "Type": "Act",
         "Reference":"http://www.legislation.govt.nz/act/public/1964/0136/latest/DLM359107.html"
     },
     "veterans_support" : {
         "Title":"Veterans' Support Act 2014",
+        "Type": "Act",
         "Reference":"http://www.legislation.govt.nz/act/public/2014/0056/latest/DLM5537774.html"
+    },
+    "family_scheme" : {
+        "Title":"Family Scheme",
+        "Type": "Section",
+        "Reference":"http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1518405.html",
+        "Children": ["best_start"]
+    },
+    "best_start" : {
+        "Title":"Best Start",
+        "Type": "Section",
+        "Reference":"http://www.legislation.govt.nz/act/public/2007/0097/latest/LMS63791.html"
     }
 }

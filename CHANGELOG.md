@@ -19,6 +19,7 @@
   - renamed `income_tax__family_has_children_eligible_for_best_start` to `best_start__family_has_children_eligible` to better reflect law structure
   - renamed `income_tax__best_start_tax_credit_per_child` to `best_start__tax_credit_per_child` to better reflect law structure
   - renamed `income_tax__person_is_best_start_child_as_year` to `best_start__year_of_child` to better reflect law structure
+  - Added `family_scheme__working_for_families, family_scheme__family_tax_credit_entitlement, family_scheme__in_work_tax_credit_entitlement, family_scheme__child_tax_credit_entitlement, family_scheme__parental_tax_credit_entitlement` variables
 
 # 4.2.0 - [#75](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/75)
 Calculation improvement.

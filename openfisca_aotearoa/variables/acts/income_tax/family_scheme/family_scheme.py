@@ -20,7 +20,7 @@ class family_scheme__qualifies_for_entitlements(Variable):
         received_tested_benefit = persons('social_security__received_income_tested_benefit', period.this_year)
 
         return age_qualifies * principle_carer * residence * not_(received_tested_benefit) * not_(received_parents_allowance) * not_(received_childrens_pension)
-        # TODO - Add remaining eligibility criteria as per legislation.
+        # TODO - Add nuance contained in http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1518484.html
 
 
 class family_scheme__caregiver_age_qualifies(Variable):
@@ -92,4 +92,3 @@ class family_scheme__has_dependent_children(Variable):
 
     def formula(families, period, parameters):
         return families.max(families.members("income_tax__dependent_child", period))
-

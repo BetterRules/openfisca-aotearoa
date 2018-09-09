@@ -9,4 +9,4 @@ class property_relationships__is_in_de_facto_relationship(Variable):
     entity = Person
     definition_period = MONTH
     label = "in a de facto relationship, a relationship between 2 persons (whether a man and a woman, or a man and a man, or a woman and a woman)"
-    reference = "www.legislation.govt.nz/act/public/1976/0166/latest/DLM441113.html"
+    reference = "http://www.legislation.govt.nz/act/public/1976/0166/latest/DLM441113.html"
