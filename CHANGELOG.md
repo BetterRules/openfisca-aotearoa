@@ -14,6 +14,11 @@
   - renamed `income_tax__proportion_as_principal_carer` to `family_scheme__proportion_as_principal_carer` to better reflect law structure
   - renamed `income_tax__family_has_dependent_children` to `family_scheme__has_dependent_children` to better reflect law structure
   - renamed `income_tax__eligible_for_working_for_families` to `family_scheme__qualifies_for_entitlements` to better reflect law structure
+  - renamed `income_tax__caregiver_eligible_for_best_start_tax_credit` to `best_start__eligibility` to better reflect law structure
+  - renamed `income_tax__entitlement_for_best_start_tax_credit` to `best_start__entitlement` to better reflect law structure
+  - renamed `income_tax__family_has_children_eligible_for_best_start` to `best_start__family_has_children_eligible` to better reflect law structure
+  - renamed `income_tax__best_start_tax_credit_per_child` to `best_start__tax_credit_per_child` to better reflect law structure
+  - renamed `income_tax__person_is_best_start_child_as_year` to `best_start__year_of_child` to better reflect law structure
 
 # 4.2.0 - [#75](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/75)
 Calculation improvement.
