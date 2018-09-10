@@ -63,4 +63,4 @@ class home_help__eligible_for_home_help(Variable):
 
         return is_citizen *\
             persons('had_multiple_birth', period) +\
-            persons('home_help__adopted_2_or_more_children', period) *\
+            persons('home_help__adopted_2_or_more_children', period)
