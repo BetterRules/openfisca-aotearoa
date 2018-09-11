@@ -172,3 +172,15 @@ curl "http://localhost:5000/spec"
 This endpoint returns the [Open API specification](https://www.openapis.org/) of your API.
 
 :tada: OpenFisca Aotearoa is now served by the OpenFisca Web API! To learn more, go to the [OpenFisca Web API documentation](https://openfisca.org/doc/openfisca-web-api/index.html)
+
+## Ongoing setup updates.
+
+If you update openfisca-aotearoa after some time of having it installed you may need to update the underlying dependant libraries.
+
+In particular to update the underlying openfisca-core library if the openfisca-aotearoa dependancies have updated, run:
+
+```sh
+pip install OpenFisca-Core --upgrade --upgrade-strategy only-if-needed
+```
+
+:tada: You should now be up to date again and able to continue development.
