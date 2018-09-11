@@ -71,9 +71,9 @@ class best_start__tax_credit_per_child(Variable):
     reference = "http://legislation.govt.nz/bill/government/2017/0004/15.0/DLM7512349.html"
 
     def formula(persons, period, parameters):
-        threshold = parameters(period).entitlements.income_tax.best_start.full_year_abatement_threshold
-        rate = parameters(period).entitlements.income_tax.best_start.full_year_abatement_rate
-        prescribed_amount = parameters(period).entitlements.income_tax.best_start.prescribed_amount
+        threshold = parameters(period).entitlements.income_tax.family_scheme.best_start.full_year_abatement_threshold
+        rate = parameters(period).entitlements.income_tax.family_scheme.best_start.full_year_abatement_rate
+        prescribed_amount = parameters(period).entitlements.income_tax.family_scheme.best_start.prescribed_amount
 
         # sum up families income
         # http://legislation.govt.nz/act/public/2007/0097/latest/DLM1518488.html#DLM1518488
