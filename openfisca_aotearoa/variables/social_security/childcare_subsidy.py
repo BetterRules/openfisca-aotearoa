@@ -20,7 +20,7 @@ class childcare_subsidy__childs_age(Variable):
     label = u"Child's age"
     reference = "http://www.legislation.govt.nz/regulation/public/2004/0268/latest/DLM282545.html"
 
-class childcare_subsidy__child_is_attending_school(Variable):
+class childcare_subsidy__is_child_attending_school(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
@@ -48,7 +48,7 @@ class childcare_subsidy__eligibility(Variable):
 
 class childcare_subsidy__is_a_dependant_child(Variable):
         return is_citizen * persons('childcare_subsidy__is_primary_carer', period) * \
-        persons('childcare_subsidy__child_is_attending_school', period) * \
+        persons('childcare_subsidy__is_child_attending_school', period) * \
         (persons('childcare_subsidy__childs_age', period) =< 5) + \
         persons('childcare_subsidy__child_has_disability_allowance', period) * \
 

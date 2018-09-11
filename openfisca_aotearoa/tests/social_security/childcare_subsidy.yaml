@@ -9,42 +9,42 @@
       is_nz_citizen: true
       childcare_subsidy__is_a_dependant_child: true
       childcare_subsidy__childs_age: 4
-      childcare_subsidy__child_is_attending_school: false
+      childcare_subsidy__is_child_attending_school: false
       childcare_subsidy__child_has_disability_allowance: false
 
     - id: "Dependant Child attending school"
       is_nz_citizen: true
       childcare_subsidy__is_a_dependant_child: true
       childcare_subsidy__childs_age: 5
-      childcare_subsidy__child_is_attending_school: true
+      childcare_subsidy__is_child_attending_school: true
       childcare_subsidy__child_has_disability_allowance: false
 
     - id: "Child with a Disability"
       is_nz_citizen: true
       childcare_subsidy__is_a_dependant_child: true
       childcare_subsidy__childs_age: 5
-      childcare_subsidy__child_is_attending_school: false
+      childcare_subsidy__is_child_attending_school: false
       childcare_subsidy__child_has_disability_allowance: true
 
     - id: "Child without a Disability"
       is_nz_citizen: true
       childcare_subsidy__is_a_dependant_child: true
       childcare_subsidy__childs_age: 4
-      childcare_subsidy__child_is_attending_school: false
+      childcare_subsidy__is_child_attending_school: false
       childcare_subsidy__child_has_disability_allowance: false
 
     - id: "Not a Dependant Child"
       is_nz_citizen: true
       childcare_subsidy__is_a_dependant_child: false
       childcare_subsidy__childs_age: 18
-      childcare_subsidy__child_is_attending_school: true
+      childcare_subsidy__is_child_attending_school: true
       childcare_subsidy__child_has_disability_allowance: false
 
     - id: "Not a NZ Citizen"
       is_nz_citizen: false
       childcare_subsidy__is_a_dependant_child: true
       childcare_subsidy__childs_age: 12
-      childcare_subsidy__child_is_attending_school: true
+      childcare_subsidy__is_child_attending_school: true
       childcare_subsidy__child_has_disability_allowance: false
 
   families:
