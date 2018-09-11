@@ -5,60 +5,76 @@
   absolute_error_margin: 0
   persons:
 
-    - id: "Dependant Child"
+    - id: "Dependant Child not attending school"
       is_nz_citizen: true
-      childcare_subsidy__is_primary_carer: true
-      childcare_subsidy__threshold_tests: 1
-      childcare_subsidy__applied_for_leave_or_stopped_working: true
-      childcare_subsidy__had_previous_childcare_subsidy_in_last_six_months: false
+      childcare_subsidy__is_a_dependant_child: true
+      childcare_subsidy__childs_age: 4
+      childcare_subsidy__child_is_attending_school: false
+      childcare_subsidy__child_has_disability_allowance: false
 
     - id: "Dependant Child attending school"
       is_nz_citizen: true
-      childcare_subsidy__is_primary_carer: true
-      childcare_subsidy__threshold_tests: 1
-      childcare_subsidy__applied_for_leave_or_stopped_working: true
-      childcare_subsidy__had_previous_childcare_subsidy_in_last_six_months: false
+      childcare_subsidy__is_a_dependant_child: true
+      childcare_subsidy__childs_age: 5
+      childcare_subsidy__child_is_attending_school: true
+      childcare_subsidy__child_has_disability_allowance: false
 
-    - id: "Child with Disability"
-      is_nz_citizen: false
-      childcare_subsidy__is_primary_carer: true
-      childcare_subsidy__threshold_tests: 7
-      childcare_subsidy__applied_for_leave_or_stopped_working: true
-      childcare_subsidy__had_previous_childcare_subsidy_in_last_six_months: false
+    - id: "Child with a Disability"
+      is_nz_citizen: true
+      childcare_subsidy__is_a_dependant_child: true
+      childcare_subsidy__childs_age: 5
+      childcare_subsidy__child_is_attending_school: false
+      childcare_subsidy__child_has_disability_allowance: true
 
     - id: "Child without a Disability"
-      is_nz_citizen: false
-      childcare_subsidy__is_primary_carer: true
-      childcare_subsidy__threshold_tests: 7
-      childcare_subsidy__applied_for_leave_or_stopped_working: true
-      childcare_subsidy__had_previous_childcare_subsidy_in_last_six_months: false
+      is_nz_citizen: true
+      childcare_subsidy__is_a_dependant_child: true
+      childcare_subsidy__childs_age: 4
+      childcare_subsidy__child_is_attending_school: false
+      childcare_subsidy__child_has_disability_allowance: false
 
     - id: "Not a Dependant Child"
       is_nz_citizen: true
-      childcare_subsidy__is_primary_carer: true
-      childcare_subsidy__threshold_tests: 6
-      childcare_subsidy__applied_for_leave_or_stopped_working: true
-      childcare_subsidy__had_previous_childcare_subsidy_in_last_six_months: false
+      childcare_subsidy__is_a_dependant_child: false
+      childcare_subsidy__childs_age: 18
+      childcare_subsidy__child_is_attending_school: true
+      childcare_subsidy__child_has_disability_allowance: false
 
-    - id: "Not a Primary Carer"
-      is_nz_citizen: true
-      childcare_subsidy__is_primary_carer: false
-      childcare_subsidy__threshold_tests: 6
-      childcare_subsidy__applied_for_leave_or_stopped_working: true
-      childcare_subsidy__had_previous_childcare_subsidy_in_last_six_months: false
+    - id: "Not a NZ Citizen"
+      is_nz_citizen: false
+      childcare_subsidy__is_a_dependant_child: true
+      childcare_subsidy__childs_age: 12
+      childcare_subsidy__child_is_attending_school: true
+      childcare_subsidy__child_has_disability_allowance: false
 
   families:
     - id: "Whanau"
-      others: ["Passes employee test", "Non-Citizen", "A Primary Carer", "Not a Primary Carer", "Received Parental Leave"]
+      others:
+      [
+        "Dependant Child not attending school",
+        "Dependant Child attending school",
+        "Child with a Disability",
+        "Child without a Disability",
+        "Not a Dependant Child",
+        "Not a NZ Citizen"
+      ]
   titled_properties:
     - id: whare
-      others: ["Passes employee test", "Non-Citizen", "A Primary Carer", "Not a Primary Carer", "Received Parental Leave"]
+      others: [
+        "Dependant Child not attending school",
+        "Dependant Child attending school",
+        "Child with a Disability",
+        "Child without a Disability",
+        "Not a Dependant Child",
+        "Not a NZ Citizen"
+      ]
 
   output_variables:
     childcare_subsidy__eligible_employee:
       2018-08:
-        - false   # Passes employee test
-        - false   # Not a NZ Citizen
-        - true    # A Primary Carer
-        - false   # Not a Primary Carer
-        - true    # Received Parental Leave
+        - true   # Dependant Child not attending school
+        - false  # Dependant Child attending school
+        - true   # Child with a Disability
+        - true   # Child without a Disability
+        - false  # Not a Dependant Child
+        - false  # Not a NZ Citizen
