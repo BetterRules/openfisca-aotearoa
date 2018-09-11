@@ -1,0 +1,70 @@
+---
+
+- name: "Home Help"
+  period: 2018-08
+  absolute_error_margin: 0
+  persons:
+
+    - id: "NZ-Citizen"
+      is_nz_citizen: true
+      home_help__had_multiple_birth: true
+      home_help__adopted_2_or_more_children: false
+
+    - id: "Non-Citizen"
+      is_nz_citizen: false
+      home_help__had_multiple_birth: true
+      home_help__adopted_2_or_more_children: false
+
+    - id: "Has No Immediate Family"
+      is_nz_citizen: true
+      home_help__has_no_immediate_family: true
+      home_help__has_community_services_card: true
+
+    - id: "Has Immediate Family"
+      is_nz_citizen: true
+      home_help__has_no_immediate_family: false
+      home_help__has_community_services_card: true
+
+  families:
+    - id: "Whanau"
+      others: ["NZ-Citizen", "Non-Citizen", "Has No Immediate Family", "Has Immediate Family"]
+  titled_properties:
+    - id: whare
+      others: ["NZ-Citizen", "Non-Citizen", "Has No Immediate Family", "Has Immediate Family"]
+
+  output_variables:
+    home_help__eligible_for_home_help:
+      2018-08:
+        - true
+        - false
+        - true
+        - false
+# ---
+
+# - name: "Home Help"
+#   period: 2018-08
+#   absolute_error_margin: 0
+#   persons:
+
+#     - id: "NZ-Citizen"
+#       is_nz_citizen: true
+#       home_help__had_multiple_birth: true
+#       home_help__adopted_2_or_more_children: false
+
+#     - id: "Non-Citizen"
+#       is_nz_citizen: false
+#       home_help__had_multiple_birth: true
+#       home_help__adopted_2_or_more_children: false
+
+#   families:
+#     - id: "Whanau"
+#       others: ["NZ-Citizen", "Non-Citizen", "NZ-Citizen applying for home help"]
+#   titled_properties:
+#     - id: whare
+#       others: ["NZ-Citizen", "Non-Citizen", "NZ-Citizen applying for home help"]
+
+#   output_variables:
+#     home_help__eligible_for_home_help:
+#       2018-08:
+#         - true
+#         - false
