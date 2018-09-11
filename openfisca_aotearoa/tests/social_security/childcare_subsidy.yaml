@@ -1,0 +1,64 @@
+---
+
+- name: "Childcare Subsidy"
+  period: 2018-08
+  absolute_error_margin: 0
+  persons:
+
+    - id: "Dependant Child"
+      is_nz_citizen: true
+      childcare_subsidy__is_primary_carer: true
+      childcare_subsidy__threshold_tests: 1
+      childcare_subsidy__applied_for_leave_or_stopped_working: true
+      childcare_subsidy__had_previous_childcare_subsidy_in_last_six_months: false
+
+    - id: "Dependant Child attending school"
+      is_nz_citizen: true
+      childcare_subsidy__is_primary_carer: true
+      childcare_subsidy__threshold_tests: 1
+      childcare_subsidy__applied_for_leave_or_stopped_working: true
+      childcare_subsidy__had_previous_childcare_subsidy_in_last_six_months: false
+
+    - id: "Child with Disability"
+      is_nz_citizen: false
+      childcare_subsidy__is_primary_carer: true
+      childcare_subsidy__threshold_tests: 7
+      childcare_subsidy__applied_for_leave_or_stopped_working: true
+      childcare_subsidy__had_previous_childcare_subsidy_in_last_six_months: false
+
+    - id: "Child without a Disability"
+      is_nz_citizen: false
+      childcare_subsidy__is_primary_carer: true
+      childcare_subsidy__threshold_tests: 7
+      childcare_subsidy__applied_for_leave_or_stopped_working: true
+      childcare_subsidy__had_previous_childcare_subsidy_in_last_six_months: false
+
+    - id: "Not a Dependant Child"
+      is_nz_citizen: true
+      childcare_subsidy__is_primary_carer: true
+      childcare_subsidy__threshold_tests: 6
+      childcare_subsidy__applied_for_leave_or_stopped_working: true
+      childcare_subsidy__had_previous_childcare_subsidy_in_last_six_months: false
+
+    - id: "Not a Primary Carer"
+      is_nz_citizen: true
+      childcare_subsidy__is_primary_carer: false
+      childcare_subsidy__threshold_tests: 6
+      childcare_subsidy__applied_for_leave_or_stopped_working: true
+      childcare_subsidy__had_previous_childcare_subsidy_in_last_six_months: false
+
+  families:
+    - id: "Whanau"
+      others: ["Passes employee test", "Non-Citizen", "A Primary Carer", "Not a Primary Carer", "Received Parental Leave"]
+  titled_properties:
+    - id: whare
+      others: ["Passes employee test", "Non-Citizen", "A Primary Carer", "Not a Primary Carer", "Received Parental Leave"]
+
+  output_variables:
+    childcare_subsidy__eligible_employee:
+      2018-08:
+        - false   # Passes employee test
+        - false   # Not a NZ Citizen
+        - true    # A Primary Carer
+        - false   # Not a Primary Carer
+        - true    # Received Parental Leave
