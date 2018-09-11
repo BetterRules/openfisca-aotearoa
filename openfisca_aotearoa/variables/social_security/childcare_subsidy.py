@@ -49,5 +49,5 @@ class childcare_subsidy__eligibility(Variable):
 
         return is_citizen * persons('childcare_subsidy__is_primary_carer', period) * \
             persons('childcare_subsidy__is_child_attending_school', period) * \
-            (persons('childcare_subsidy__childs_age', period) =< 5) + \
+            (persons('childcare_subsidy__childs_age', period) <= 5) + \
             persons('childcare_subsidy__child_has_disability_allowance', period) * \
