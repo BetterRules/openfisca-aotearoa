@@ -43,7 +43,7 @@ class social_security__has_orphaned_child_in_family(Variable):
     reference = "http://www.legislation.govt.nz/act/public/1964/0136/latest/whole.html#DLM361606"
 
     def formula(families, period, parameters):
-        children_children = families.members(
+        children = families.members(
             'social_security__is_a_child', period)
         orphaned = families.members('social_security__is_orphaned', period)
         resident_or_citizen = families.members(
