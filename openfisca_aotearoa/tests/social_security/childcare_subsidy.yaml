@@ -5,76 +5,70 @@
   absolute_error_margin: 0
   persons:
 
-    - id: "Dependant Child not attending school"
+    - id: "Child"
       is_nz_citizen: true
       childcare_subsidy__is_a_dependant_child: true
-      childcare_subsidy__childs_age: 4
+      childcare_subsidy__child_is_no_older_than_5_years_28_days: true
       childcare_subsidy__is_child_attending_school: false
+      childcare_subsidy__child_will_be_enrolled_to_school_with_cohort_policy: false
       childcare_subsidy__child_has_disability_allowance: false
 
-    - id: "Dependant Child attending school"
+    - id: "Child is older than 5 years and 28 days"
       is_nz_citizen: true
       childcare_subsidy__is_a_dependant_child: true
-      childcare_subsidy__childs_age: 5
+      childcare_subsidy__child_is_no_older_than_5_years_28_days: false
+      childcare_subsidy__is_child_attending_school: false
+      childcare_subsidy__child_will_be_enrolled_to_school_with_cohort_policy: false
+      childcare_subsidy__child_has_disability_allowance: false
+
+    - id: "Child is attending school"
+      is_nz_citizen: true
+      childcare_subsidy__is_a_dependant_child: true
+      childcare_subsidy__child_is_no_older_than_5_years_28_days: true
       childcare_subsidy__is_child_attending_school: true
+      childcare_subsidy__child_will_be_enrolled_to_school_with_cohort_policy: false
       childcare_subsidy__child_has_disability_allowance: false
 
-    - id: "Child with a Disability"
+    - id: "Child is to be enrolled to school with cohort policy"
       is_nz_citizen: true
       childcare_subsidy__is_a_dependant_child: true
-      childcare_subsidy__childs_age: 5
+      childcare_subsidy__child_is_no_older_than_5_years_28_days: true
       childcare_subsidy__is_child_attending_school: false
+      childcare_subsidy__child_will_be_enrolled_to_school_with_cohort_policy: true
+      childcare_subsidy__child_has_disability_allowance: false
+
+    - id: "Child is receiving disability allowance"
+      is_nz_citizen: true
+      childcare_subsidy__is_a_dependant_child: true
+      childcare_subsidy__child_is_no_older_than_5_years_28_days: true
+      childcare_subsidy__is_child_attending_school: false
+      childcare_subsidy__child_will_be_enrolled_to_school_with_cohort_policy: false
       childcare_subsidy__child_has_disability_allowance: true
-
-    - id: "Child without a Disability"
-      is_nz_citizen: true
-      childcare_subsidy__is_a_dependant_child: true
-      childcare_subsidy__childs_age: 4
-      childcare_subsidy__is_child_attending_school: false
-      childcare_subsidy__child_has_disability_allowance: false
-
-    - id: "Not a Dependant Child"
-      is_nz_citizen: true
-      childcare_subsidy__is_a_dependant_child: false
-      childcare_subsidy__childs_age: 18
-      childcare_subsidy__is_child_attending_school: true
-      childcare_subsidy__child_has_disability_allowance: false
-
-    - id: "Not a NZ Citizen"
-      is_nz_citizen: false
-      childcare_subsidy__is_a_dependant_child: true
-      childcare_subsidy__childs_age: 12
-      childcare_subsidy__is_child_attending_school: true
-      childcare_subsidy__child_has_disability_allowance: false
 
   families:
     - id: "Whanau"
-      others:
-      [
-        "Dependant Child not attending school",
-        "Dependant Child attending school",
-        "Child with a Disability",
-        "Child without a Disability",
-        "Not a Dependant Child",
-        "Not a NZ Citizen"
+      others: [
+        "Child",
+        "Child is older than 5 years and 28 days",
+        "Child is attending school",
+        "Child is to be enrolled to school with cohort policy",
+        "Child is receiving disability allowance"
       ]
   titled_properties:
     - id: whare
       others: [
-        "Dependant Child not attending school",
-        "Dependant Child attending school",
-        "Child with a Disability",
-        "Child without a Disability",
-        "Not a Dependant Child",
-        "Not a NZ Citizen"
+        "Child",
+        "Child is older than 5 years and 28 days",
+        "Child is attending school",
+        "Child is to be enrolled to school with cohort policy",
+        "Child is receiving disability allowance"
       ]
 
   output_variables:
-    childcare_subsidy__eligible_employee:
+    childcare_subsidy__eligibility:
       2018-08:
-        - true   # Dependant Child not attending school
-        - false  # Dependant Child attending school
-        - true   # Child with a Disability
-        - true   # Child without a Disability
-        - false  # Not a Dependant Child
-        - false  # Not a NZ Citizen
+        - true   # Child
+        - false # Child is older than 5 years and 28 days
+        - false # Child is attending school
+        - true # Child is to be enrolled to school with cohort policy
+        - true # Child is receiving disability allowance
