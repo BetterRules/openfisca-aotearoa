@@ -34,7 +34,7 @@ class social_security__eligible_for_unsupported_childs_benefit(Variable):
 
         is_principal_carer = persons.has_role(Family.PRINCIPAL_CAREGIVER)
 
-        has_unsupported_child_in_family = persons(
+        has_unsupported_child_in_family = persons.family(
             'social_security__has_unsupported_child_in_family', period)
 
         return resident_or_citizen * not_the_parent * one_year * is_principal_carer * has_unsupported_child_in_family
