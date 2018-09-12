@@ -56,4 +56,4 @@ class social_security__is_orphaned(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    label = u'each of the child’s natural or adoptive parents is dead, or cannot be found, or suffers a serious long-term disablement which renders him or her unable to care for the child'
+    label = u"each of the child's natural or adoptive parents is dead, or cannot be found, or suffers a serious long-term disablement which renders him or her unable to care for the child"
