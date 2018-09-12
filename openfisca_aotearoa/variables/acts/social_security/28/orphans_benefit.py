@@ -21,6 +21,8 @@ class social_security__eligible_for_orphans_benefit(Variable):
     def formula(persons, period, parameters):
         resident_or_citizen = persons('is_citizen_or_resident', period)
 
+        age_test = persons('age', period) >= 18
+
         not_the_parent = not_(
             persons('social_security__is_the_parent_of_dependent_child', period))
         one_year = persons(
@@ -31,7 +33,7 @@ class social_security__eligible_for_orphans_benefit(Variable):
         has_orphaned_child_in_family = persons.family(
             'social_security__has_orphaned_child_in_family', period)
 
-        return resident_or_citizen * not_the_parent * one_year * is_principal_carer * has_orphaned_child_in_family
+        return resident_or_citizen * age_test * not_the_parent * one_year * is_principal_carer * has_orphaned_child_in_family
 
 
 class social_security__has_orphaned_child_in_family(Variable):
