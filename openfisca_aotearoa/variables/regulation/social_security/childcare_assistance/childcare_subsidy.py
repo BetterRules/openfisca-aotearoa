@@ -54,7 +54,7 @@ class family_has_resident_child_under_5_not_in_school(Variable):
     definition_period = MONTH
 
     def formula(families, period, parameters):
-        dependent_children = persons('is_dependent_child', period)
+        dependent_children = persons('social_security__is_dependent_child', period)
         not_in_school = not_(families.members(
             'is_attending_school', period))
         under_5 = families.members('age', period) < 5
@@ -69,7 +69,7 @@ class family_has_resident_child_aged_5_who_will_be_enrolled_in_school(Variable):
     definition_period = MONTH
 
     def formula(families, period, parameters):
-        dependent_children = persons('is_dependent_child', period)
+        dependent_children = persons('social_security__is_dependent_child', period)
         children_to_be_enrolled = families.members(
             'will_be_enrolled_in_school', period)
         aged_5 = (families.members('age', period) == 5)
@@ -84,7 +84,7 @@ class family_has_child_eligible_for_disability_allowance_child_under_6(Variable)
     definition_period = MONTH
 
     def formula(families, period, parameters):
-        dependent_children = persons('is_dependent_child', period)
+        dependent_children = persons('social_security__is_dependent_child', period)
         eligible_children = families(
             'disability_allowance__family_has_eligible_child', period)
         under_6 = families.members('age', period) < 6
