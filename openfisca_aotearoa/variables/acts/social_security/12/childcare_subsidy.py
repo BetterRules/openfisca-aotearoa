@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from openfisca_core.model_api import *
-from openfisca_aotearoa.entities import Person
+from openfisca_aotearoa.entities import Person, Family
 
 
 class childcare_subsidy__is_child_attending_school(Variable):
