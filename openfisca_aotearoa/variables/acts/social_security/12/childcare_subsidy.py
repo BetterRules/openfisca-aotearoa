@@ -53,7 +53,7 @@ class family_has_resident_child_under_5_not_in_school(Variable):
         under_5 = families.members('age', period) < 5
         citizens_and_residents = families.members(
             'is_citizen_or_resident', period)
-        return families.any((citizen_and_residents * not_in_school * under_5), role=Family.CHILD)
+        return families.any((citizens_and_residents * not_in_school * under_5), role=Family.CHILD)
 
 
 class family_has_resident_child_aged_5_who_will_be_enrolled_in_school(Variable):
