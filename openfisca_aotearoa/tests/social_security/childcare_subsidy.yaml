@@ -11,7 +11,7 @@
       age: 4
       is_nz_citizen: true
       childcare_subsidy__is_child_attending_school: false
-  titled_properies:
+  titled_properties:
     - id: "Whare"
       others: ["Mama", "Child"]
   families:
@@ -35,7 +35,7 @@
 #       is_nz_citizen: true
 #       childcare_subsidy__is_child_attending_school: false
 #       childcare_subsidy__child_will_be_enrolled_to_school_with_cohort_policy: false
-#   titled_properies:
+#   titled_properties:
 #     - id: "Whare"
 #       others: ["Mama", "Child"]
 #   families:
@@ -59,7 +59,7 @@
 #       is_nz_citizen: true
 #       childcare_subsidy__is_child_attending_school: true
 #       childcare_subsidy__child_will_be_enrolled_to_school_with_cohort_policy: false
-#   titled_properies:
+#   titled_properties:
 #     - id: "Whare"
 #       others: ["Mama", "Child"]
 #   families:
@@ -83,7 +83,7 @@
 #       is_nz_citizen: true
 #       childcare_subsidy__is_child_attending_school: false
 #       childcare_subsidy__child_will_be_enrolled_to_school_with_cohort_policy: true
-#   titled_properies:
+#   titled_properties:
 #     - id: "Whare"
 #       others: ["Mama", "Child"]
 #   families:
@@ -107,7 +107,7 @@
 #       is_nz_citizen: true
 #       childcare_subsidy__is_child_attending_school: false
 #       childcare_subsidy__child_will_be_enrolled_to_school_with_cohort_policy: false
-#   titled_properies:
+#   titled_properties:
 #     - id: "Whare"
 #       others: ["Mama", "Child"]
 #   families:
