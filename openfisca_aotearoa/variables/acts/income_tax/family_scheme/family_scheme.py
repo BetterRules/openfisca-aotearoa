@@ -4,30 +4,28 @@ from openfisca_core.model_api import *
 from openfisca_aotearoa.entities import Person, Family
 
 
-class family_scheme__qualifies_for_entitlements(Variable):
+class family_scheme__base_qualifies(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    label = u'Is a person is classified as eligible under the family scheme'
+    label = u'Is a person qualified as eligible under the family scheme'
     reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1518477.html"
 
     def formula(persons, period, parameters):
         age_qualifies = persons("family_scheme__caregiver_age_qualifies", period)
         principle_carer = persons("family_scheme__qualifies_as_principal_carer", period)
-        residence = persons("income_tax__residence", period) # this is for caregiver OR child, clarify the test
+        residence = persons("income_tax__residence", period)  # this is for caregiver OR child, clarify the test
         received_parents_allowance = persons('veterans_support__received_parents_allowance', period)
         received_childrens_pension = persons('veterans_support__received_childrens_pension', period)
-        received_tested_benefit = persons('social_security__received_income_tested_benefit', period.this_year)
 
-        return age_qualifies * principle_carer * residence * not_(received_tested_benefit) * not_(received_parents_allowance) * not_(received_childrens_pension)
-        # TODO - Add nuance contained in http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1518484.html
+        return age_qualifies * principle_carer * residence * not_(received_parents_allowance) * not_(received_childrens_pension)
 
 
 class family_scheme__caregiver_age_qualifies(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    label = u'Is a person  eligible under the family scheme age parameters'
+    label = u'Is a person qualified under the family scheme age parameters'
     reference = "http://legislation.govt.nz/act/public/2007/0097/latest/DLM1518479.html#DLM1518479"
 
     def formula(persons, period, parameters):

@@ -295,7 +295,7 @@
       community_services_card__below_income_threshold: true
       is_citizen_or_resident: false
       social_security__has_dependant_child: true
-      family_scheme__qualifies_for_entitlements:
+      family_scheme__qualifies_for_working_for_families:
         2018-08:
           true
   families:
@@ -319,7 +319,7 @@
       community_services_card__below_income_threshold: true
       is_citizen_or_resident: true
       social_security__has_dependant_child: false
-      family_scheme__qualifies_for_entitlements:
+      family_scheme__qualifies_for_working_for_families:
         2018-08:
           true
   families:

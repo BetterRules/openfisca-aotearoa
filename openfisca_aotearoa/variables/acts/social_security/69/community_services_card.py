@@ -44,7 +44,7 @@ class social_security__eligible_for_community_services_card(Variable):
         dependent_children = persons('social_security__has_dependant_child', period)
         is_fulltime_student = persons('social_security__is_fulltime_student', period)
         received_superannuation = persons('social_security__received_superannuation', period)
-        eligible_for_wff = persons('family_scheme__qualifies_for_entitlements', period)
+        eligible_for_wff = persons('family_scheme__qualifies_for_working_for_families', period)
         childs_benefit = \
             persons('social_security__received_orphans_benefit', period) +\
             persons('social_security__received_unsupported_childs_benefit', period) +\

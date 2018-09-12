@@ -15,8 +15,12 @@ class best_start__eligibility(Variable):
     reference = "http://legislation.govt.nz/bill/government/2017/0004/15.0/DLM7512349.html"
 
     def formula(persons, period, parameters):
-        qualifies = persons("family_scheme__qualifies_for_entitlements", period)
+        qualifies = persons("family_scheme__base_qualifies", period)
         family_is_eligible = persons.family("best_start__family_has_children_eligible", period)
+        # also does not qualify if receives
+        # (i) a parental tax credit:
+        # (iii) a parental leave payment or preterm baby payment under Part 7A of the Parental Leave and Employment Protection Act 1987.
+
         return qualifies * family_is_eligible
 
 

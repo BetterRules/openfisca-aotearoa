@@ -4,7 +4,18 @@ from openfisca_core.model_api import *
 from openfisca_aotearoa.entities import Person, Family
 
 
-class family_scheme__working_for_families(Variable):
+class family_scheme__qualifies_for_working_for_families(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = MONTH
+    label = u'Is a person is qualified as eligible for the working for families'
+    reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1518484.html"
+
+    def formula(persons, period, parameters):
+        return persons("family_scheme__base_qualifies", period)
+
+
+class family_scheme__working_for_families_entitlement(Variable):
     value_type = float
     entity = Person
     definition_period = MONTH
@@ -16,7 +27,7 @@ class family_scheme__working_for_families(Variable):
         in_work_tax_credit = persons('family_scheme__in_work_tax_credit_entitlement', period)
         child_tax_credit = persons('family_scheme__child_tax_credit_entitlement', period)
         parental_tax_credit_entitlement = persons('family_scheme__parental_tax_credit_entitlement', period)
-        credit_abatement = 5 * -1 # TODO need to insert abatement calculation
+        credit_abatement = 5 * -1  # TODO need to insert abatement calculation
         return family_tax_credit + (in_work_tax_credit or child_tax_credit) + parental_tax_credit_entitlement + credit_abatement
 
 
