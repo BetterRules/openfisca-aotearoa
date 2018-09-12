@@ -18,14 +18,17 @@ class social_security__eligible_for_unsupported_childs_benefit(Variable):
     # (e) either—
     # (i) the child is both resident and present in New Zealand; or
     # (ii) the applicant has been both resident and present in New Zealand for a continuous period of 12 months at any time.
-    
+
     def formula(persons, period, parameters):
         resident_or_citizen = persons('is_citizen_or_resident', period)
 
-        not_the_parent = not_(persons('social_security__is_the_parent_of_dependent_child', period))
-        one_year = persons('social_security__is_principal_carer_for_one_year_from_application_date', period)
+        not_the_parent = not_(
+            persons('social_security__is_the_parent_of_dependent_child', period))
+        one_year = persons(
+            'social_security__is_principal_carer_for_one_year_from_application_date', period)
 
         is_principal_carer = persons.has_role(Family.PRINCIPAL_CAREGIVER)
-        has_a_child = persons.family("social_security__has_child_in_family", period)
+        has_a_child = persons.family(
+            "social_security__has_child_in_family", period)
 
         return resident_or_citizen * not_the_parent * one_year * is_principal_carer * has_a_child
