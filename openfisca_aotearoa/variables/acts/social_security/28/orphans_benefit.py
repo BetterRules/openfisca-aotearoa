@@ -22,3 +22,4 @@ class social_security__eligible_for_orphans_benefit(Variable):
 
     def formula(persons, period, parameters):
       # todo
+      pass
