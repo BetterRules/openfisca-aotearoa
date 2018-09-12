@@ -18,9 +18,12 @@ class will_be_enrolled_in_school(Variable):
     entity = Person
     definition_period = MONTH
     label = u"Child will be enrolled in a school that has a cohort entry policy in place"
-    reference = """ http://www.legislation.govt.nz/regulation/public/2004/0268/latest/DLM282545.html
+    # (ba) who is 5, whose parent, principal caregiver, or guardian intends to enrol
+    # the child in a school that has a cohort entry policy in place, and who
+    # (under section 5B(2) of the Education Act 1989) may not be enrolled in that
+    # school until the term start date of the next term;"""
+    reference = "http://www.legislation.govt.nz/regulation/public/2004/0268/latest/DLM282545.html"
 
-      (ba) who is 5, whose parent, principal caregiver, or guardian intends to enrol the child in a school that has a cohort entry policy in place, and who (under section 5B(2) of the Education Act 1989) may not be enrolled in that school until the term start date of the next term;"""
 
 
 class social_security__eligible_for_childcare_subsidy(Variable):
