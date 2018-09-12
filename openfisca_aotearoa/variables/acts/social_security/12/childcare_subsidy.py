@@ -5,7 +5,7 @@ from openfisca_core.model_api import *
 from openfisca_aotearoa.entities import Person, Family
 
 
-class childcare_subsidy__is_child_attending_school(Variable):
+class is_attending_school(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
@@ -49,7 +49,7 @@ class family_has_resident_child_under_5_not_in_school(Variable):
 
     def formula(families, period, parameters):
         not_in_school = families.members(
-            'childcare_subsidy__is_child_attending_school', period)
+            'is_attending_school', period)
         under_5 = families.members('age', period) < 5
         citizens_and_residents = families.members(
             'is_citizen_or_resident', period)
