@@ -1,0 +1,38 @@
+
+---
+# If applicant.isPrincipalCarerForOneYearFromApplicationDate
+#     and parents.areUnableToProvideSufficientCare
+#     and 18 ≤ applicant.Age
+#     and not applicant.isParent
+#     and applicant.isNZResident
+#     and child.isDependent
+#         then benefit.isUnsupportedChildsBenefit is PERMITTED
+
+- name: Unsupported Child benefit
+  period: 2018-08
+  absolute_error_margin: 0
+  persons:
+    - id: "Mama"
+      normally_lives_in_nz: true
+      age: 21
+      is_resident: true
+      social_security__is_the_parent_of_dependent_child: false
+      social_security__is_principal_carer_for_one_year_from_application_date: true
+    - id: "Tama"
+      age: 5
+      social_security__parents_unable_to_provide_sufficient_care: true
+  families:
+    - id: "Whanau tahi"
+      principal_caregiver: "Mama"
+      children:
+        - "Tama"
+      others:
+        - "Papa"
+  titled_properties:
+    - id: whare
+      others: ["Mama", "Tama"]
+  output_variables:
+    social_security__eligible_for_child_disability_allowance:
+      2018-08:
+        - true # mama (principal carer)
+        - false # Tama
