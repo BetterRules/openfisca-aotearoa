@@ -27,7 +27,8 @@ class social_security__is_a_child(Variable):
         under_16 = persons('age', period) < 16
         under_18 = persons('age', period) < 18
 
-        financially_independent = persons('social_security__is_financially_independent', period)
+        financially_independent = persons(
+            'social_security__is_financially_independent', period)
 
         return under_16 + (under_18 * not_(financially_independent))
 
@@ -36,7 +37,7 @@ class social_security__has_child_in_family(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    
+
     def formula(persons, period, parameters):
         children = families.members('social_security__is_a_child', period)
         return families.any(children, role=Family.CHILD)
