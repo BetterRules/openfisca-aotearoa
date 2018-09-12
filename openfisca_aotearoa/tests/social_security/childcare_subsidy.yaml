@@ -67,8 +67,8 @@
   output_variables:
     childcare_subsidy__eligibility:
       2018-08:
-        - true   # Child
+        - true  # Child
         - false # Child is older than 5 years and 28 days
         - false # Child is attending school
-        - true # Child is to be enrolled to school with cohort policy
-        - true # Child is receiving disability allowance
+        - true  # Child is to be enrolled to school with cohort policy
+        - true  # Child is receiving disability allowance
