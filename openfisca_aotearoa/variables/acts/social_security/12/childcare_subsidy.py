@@ -34,15 +34,15 @@ class social_security__eligible_for_childcare_subsidy(Variable):
         is_citizen_or_resident = persons('is_citizen_or_resident', period)
 
         under_5_years_28_days_not_attending_school = persons.family(
-            'social_security__has_child_under_5_not_in_school', period)
+            'family_has_resident_child_under_5_not_in_school', period)
         is_5_and_will_be_enrolled = persons.family(
-            'social_security__has_child_aged_5_who_will_be_enrolled_in_school', period)
+            'family_has_resident_child_aged_5_who_will_be_enrolled_in_school', period)
         under_6_with_disability_allowance = persons.family(
-            'social_security__has_disability_allowance_child_under_6', period)
+            'family_has_child_eligible_for_disability_allowance_child_under_6', period)
         return is_citizen_or_resident * (under_5_years_28_days_not_attending_school + is_5_and_will_be_enrolled + under_6_with_disability_allowance)
 
 
-class social_security__has_child_under_5_not_in_school(Variable):
+class family_has_resident_child_under_5_not_in_school(Variable):
     value_type = bool
     entity = Family
     definition_period = MONTH
@@ -56,7 +56,7 @@ class social_security__has_child_under_5_not_in_school(Variable):
         return families.any((citizen_and_residents * not_in_school * under_5), role=Family.CHILD)
 
 
-class social_security__has_child_aged_5_who_will_be_enrolled_in_school(Variable):
+class family_has_resident_child_aged_5_who_will_be_enrolled_in_school(Variable):
     value_type = bool
     entity = Family
     definition_period = MONTH
@@ -70,7 +70,7 @@ class social_security__has_child_aged_5_who_will_be_enrolled_in_school(Variable)
         return families.any((citizens_and_residents * children_to_be_enrolled * aged_5), role=Family.CHILD)
 
 
-class social_security__has_disability_allowance_child_under_6(Variable):
+class family_has_child_eligible_for_disability_allowance_child_under_6(Variable):
     value_type = bool
     entity = Family
     definition_period = MONTH
