@@ -25,12 +25,12 @@ class family_scheme__family_tax_credit_entitlement(Variable):
     def formula(persons, period, parameters):
         # eldest_child_credit = parameters(period).entitlements.income_tax.family_scheme.family_tax_credit.eldest_child
         # subsequent_child_credit = parameters(period).entitlements.income_tax.family_scheme.family_tax_credit.subsequent_child
-        threshold = parameters(period).entitlements.income_tax.family_scheme.family_tax_credit.full_year_abatement_threshold
+        # threshold = parameters(period).entitlements.income_tax.family_scheme.family_tax_credit.full_year_abatement_threshold
         # rate = parameters(period).entitlements.income_tax.family_scheme.family_tax_credit.full_year_abatement_rate
 
         # sum up families income
         # http://legislation.govt.nz/act/public/2007/0097/latest/DLM1518488.html#DLM1518488
-        family_income = persons.family.sum(persons.family.members("family_scheme__assessable_income", period.this_year))
+        # family_income = persons.family.sum(persons.family.members("family_scheme__assessable_income", period.this_year))
 
         # calculate income over the threshold
         # income_over_threshold = where((family_income - threshold) < 0, 0, family_income - threshold)
