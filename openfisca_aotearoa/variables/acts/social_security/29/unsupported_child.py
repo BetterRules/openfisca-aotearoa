@@ -60,6 +60,7 @@ class social_security__is_the_parent_of_dependent_child(Variable):
     value_type = bool
     entity = Person
     definition_period = ETERNITY
+    default_value = True
 
 
 class social_security__is_principal_carer_for_one_year_from_application_date(Variable):
@@ -72,4 +73,3 @@ class social_security__parents_unable_to_provide_sufficient_care(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    default_value = True
