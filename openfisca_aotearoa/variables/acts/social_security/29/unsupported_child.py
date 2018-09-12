@@ -44,7 +44,7 @@ class social_security__has_unsupported_child_in_family(Variable):
     value_type = bool
     entity = Family
     definition_period = MONTH
-    label = u'each of the child’s natural or adoptive parents is dead, or cannot be found, or suffers a serious long-term disablement which renders him or her unable to care for the child'
+    label = u'because of a breakdown in the child’s family, no natural parent, adoptive parent, or step-parent of the child is able to care for the child or to provide fully for the child’s support'
     reference = "http://www.legislation.govt.nz/act/public/1964/0136/latest/whole.html#DLM361606"
 
     def formula(families, period, parameters):
