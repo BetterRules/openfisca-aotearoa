@@ -21,13 +21,17 @@
         - "Child"
   output_variables:
     is_citizen_or_resident:
-      2018-08: [true]  #  Whanau
+      2018-08:
+        - true  #  Whanau
     family_has_resident_child_under_5_not_in_school:
-      2018-08: [true]  #  Whanau
+      2018-08:
+        - true  #  Whanau
     family_has_resident_child_aged_5_who_will_be_enrolled_in_school:
-      2018-08: [false] #  Whanau
+      2018-08:
+        - false #  Whanau
     family_has_child_eligible_for_disability_allowance_child_under_6:
-      2018-08: [false]  #  Whanau
+      2018-08:
+        - false  #  Whanau
     social_security__eligible_for_childcare_subsidy:
       2018-08:
         - true  #  Mama
