@@ -29,7 +29,7 @@
     - id: whare
       others: ["Mama", "Tama"]
   output_variables:
-    social_security__eligible_for_child_disability_allowance:
+    social_security__eligible_for_unsupported_childs_benefit:
       2018-08:
         - true # mama (principal carer)
         - false # Tama
