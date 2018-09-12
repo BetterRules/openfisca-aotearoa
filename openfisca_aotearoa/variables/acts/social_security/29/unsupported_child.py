@@ -1,3 +1,6 @@
+from openfisca_aotearoa.entities import Person, Family
+from openfisca_core.model_api import *
+
 
 class social_security__eligible_for_unsupported_childs_benefit(Variable):
     value_type = bool
