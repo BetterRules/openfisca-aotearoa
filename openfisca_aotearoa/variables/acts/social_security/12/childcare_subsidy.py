@@ -51,7 +51,7 @@ class social_security__has_child_under_5_not_in_school(Variable):
         not_in_school = families.members(
             'childcare_subsidy__is_child_attending_school', period)
         under_5 = families.members('age', period) < 5
-        citizens_and_residents = famililes.members(
+        citizens_and_residents = families.members(
             'is_citizen_or_resident', period)
         return families.any((citizen_and_residents * not_in_school * under_5), role=Family.CHILD)
 
@@ -65,7 +65,7 @@ class social_security__has_child_aged_5_who_will_be_enrolled_in_school(Variable)
         children_to_be_enrolled = families.members(
             'childcare_subsidy__child_will_be_enrolled_to_school_with_cohort_policy', period)
         aged_5 = families.members('age', period) == 5
-        citizens_and_residents = famililes.members(
+        citizens_and_residents = families.members(
             'is_citizen_or_resident', period)
         return families.any((citizens_and_residents * children_to_be_enrolled * aged_5), role=Family.CHILD)
 
@@ -79,6 +79,6 @@ class social_security__has_disability_allowance_child_under_6(Variable):
         eligible_children = families(
             'social_security__family_has_eligible_disabled_child', period)
         under_6 = families.members('age', period) < 6
-        citizens_and_residents = famililes.members(
+        citizens_and_residents = families.members(
             'is_citizen_or_resident', period)
         return families.any((citizens_and_residents * eligible_children * under_6), role=Family.CHILD)
