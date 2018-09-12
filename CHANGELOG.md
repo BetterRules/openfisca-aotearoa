@@ -1,5 +1,9 @@
 # Changelog
 
+# 4.2.4 - [#84](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/84)
+Calculation improvement.
+ * Added Childcare Subsidy
+
 # 4.2.3 - [#77](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/77)
 Technical improvement.
  * Remove dependency on OpenFisca-Web-API (now included in Core)
