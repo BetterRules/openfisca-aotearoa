@@ -48,8 +48,8 @@ class family_has_resident_child_under_5_not_in_school(Variable):
     definition_period = MONTH
 
     def formula(families, period, parameters):
-        not_in_school = families.members(
-            'is_attending_school', period)
+        not_in_school = not_(families.members(
+            'is_attending_school', period))
         under_5 = families.members('age', period) < 5
         citizens_and_residents = families.members(
             'is_citizen_or_resident', period)

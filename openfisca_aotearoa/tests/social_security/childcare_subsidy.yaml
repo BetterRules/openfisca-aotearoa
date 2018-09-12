@@ -10,7 +10,7 @@
     - id: "Child"
       age: 4
       is_nz_citizen: true
-      is_attending_school: true
+      is_attending_school: false
   titled_properties:
     - id: "Whare"
       others: ["Mama", "Child"]
