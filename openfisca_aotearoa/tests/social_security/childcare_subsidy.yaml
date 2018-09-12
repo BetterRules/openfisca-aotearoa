@@ -51,7 +51,7 @@
 #     - id: "Child"
 #       is_nz_citizen: true
 #       is_attending_school: false
-#       childcare_subsidy__child_will_be_enrolled_to_school_with_cohort_policy: false
+#       will_be_enrolled_in_school: false
 #   titled_properties:
 #     - id: "Whare"
 #       others: ["Mama", "Child"]
@@ -77,7 +77,7 @@
 #     - id: "Child"
 #       is_nz_citizen: true
 #       is_attending_school: true
-#       childcare_subsidy__child_will_be_enrolled_to_school_with_cohort_policy: false
+#       will_be_enrolled_in_school: false
 #   titled_properties:
 #     - id: "Whare"
 #       others: ["Mama", "Child"]
@@ -103,7 +103,7 @@
 #     - id: "Child"
 #       is_nz_citizen: true
 #       is_attending_school: false
-#       childcare_subsidy__child_will_be_enrolled_to_school_with_cohort_policy: true
+#       will_be_enrolled_in_school: true
 #   titled_properties:
 #     - id: "Whare"
 #       others: ["Mama", "Child"]
@@ -129,7 +129,7 @@
 #     - id: "Child"
 #       is_nz_citizen: true
 #       is_attending_school: false
-#       childcare_subsidy__child_will_be_enrolled_to_school_with_cohort_policy: false
+#       will_be_enrolled_in_school: false
 #   titled_properties:
 #     - id: "Whare"
 #       others: ["Mama", "Child"]
