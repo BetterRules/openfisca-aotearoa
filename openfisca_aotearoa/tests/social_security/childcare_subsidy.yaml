@@ -4,71 +4,117 @@
   period: 2018-08
   absolute_error_margin: 0
   persons:
-
+    - id: "Mama"
+      has_dependent_child: true
+      is_nz_citizen: true
     - id: "Child"
+      age: 4
       is_nz_citizen: true
-      childcare_subsidy__is_a_dependant_child: true
-      childcare_subsidy__child_is_no_older_than_5_years_28_days: true
       childcare_subsidy__is_child_attending_school: false
-      childcare_subsidy__child_will_be_enrolled_to_school_with_cohort_policy: false
-      childcare_subsidy__child_has_disability_allowance: false
-
-    - id: "Child is older than 5 years and 28 days"
-      is_nz_citizen: true
-      childcare_subsidy__is_a_dependant_child: true
-      childcare_subsidy__child_is_no_older_than_5_years_28_days: false
-      childcare_subsidy__is_child_attending_school: false
-      childcare_subsidy__child_will_be_enrolled_to_school_with_cohort_policy: false
-      childcare_subsidy__child_has_disability_allowance: false
-
-    - id: "Child is attending school"
-      is_nz_citizen: true
-      childcare_subsidy__is_a_dependant_child: true
-      childcare_subsidy__child_is_no_older_than_5_years_28_days: true
-      childcare_subsidy__is_child_attending_school: true
-      childcare_subsidy__child_will_be_enrolled_to_school_with_cohort_policy: false
-      childcare_subsidy__child_has_disability_allowance: false
-
-    - id: "Child is to be enrolled to school with cohort policy"
-      is_nz_citizen: true
-      childcare_subsidy__is_a_dependant_child: true
-      childcare_subsidy__child_is_no_older_than_5_years_28_days: true
-      childcare_subsidy__is_child_attending_school: false
-      childcare_subsidy__child_will_be_enrolled_to_school_with_cohort_policy: true
-      childcare_subsidy__child_has_disability_allowance: false
-
-    - id: "Child is receiving disability allowance"
-      is_nz_citizen: true
-      childcare_subsidy__is_a_dependant_child: true
-      childcare_subsidy__child_is_no_older_than_5_years_28_days: true
-      childcare_subsidy__is_child_attending_school: false
-      childcare_subsidy__child_will_be_enrolled_to_school_with_cohort_policy: false
-      childcare_subsidy__child_has_disability_allowance: true
-
+  titled_properies:
+    - id: "Whare"
+      others: ["Mama", "Child"]
   families:
     - id: "Whanau"
-      others: [
-        "Child",
-        "Child is older than 5 years and 28 days",
-        "Child is attending school",
-        "Child is to be enrolled to school with cohort policy",
-        "Child is receiving disability allowance"
-      ]
-  titled_properties:
-    - id: whare
-      others: [
-        "Child",
-        "Child is older than 5 years and 28 days",
-        "Child is attending school",
-        "Child is to be enrolled to school with cohort policy",
-        "Child is receiving disability allowance"
-      ]
-
+      principal_carer: "Mama"
   output_variables:
-    childcare_subsidy__eligibility:
+    social_security__eligible_for_childcare_subsidy:
       2018-08:
-        - true  # Child
-        - false # Child is older than 5 years and 28 days
-        - false # Child is attending school
-        - true  # Child is to be enrolled to school with cohort policy
-        - true  # Child is receiving disability allowance
+        - true  #  Mama
+        - false #  child
+
+
+# - name: "Childcare Subsidy - Child is older than 5 years and 28 days"
+#   period: 2018-08
+#   absolute_error_margin: 0
+#   persons:
+#     - id: "Mama"
+#       has_dependent_child: true
+#       is_nz_citizen: true
+#     - id: "Child"
+#       is_nz_citizen: true
+#       childcare_subsidy__is_child_attending_school: false
+#       childcare_subsidy__child_will_be_enrolled_to_school_with_cohort_policy: false
+#   titled_properies:
+#     - id: "Whare"
+#       others: ["Mama", "Child"]
+#   families:
+#     - id: "Whanau"
+#       principal_carer: "Mama"
+#   output_variables:
+#     social_security__eligible_for_childcare_subsidy:
+#       2018-08:
+#         - true  #  Mama
+#         - false #  child
+
+
+# - name: "Childcare Subsidy - Child is attending school"
+#   period: 2018-08
+#   absolute_error_margin: 0
+#   persons:
+#     - id: "Mama"
+#       has_dependent_child: true
+#       is_nz_citizen: true
+#     - id: "Child"
+#       is_nz_citizen: true
+#       childcare_subsidy__is_child_attending_school: true
+#       childcare_subsidy__child_will_be_enrolled_to_school_with_cohort_policy: false
+#   titled_properies:
+#     - id: "Whare"
+#       others: ["Mama", "Child"]
+#   families:
+#     - id: "Whanau"
+#       principal_carer: "Mama"
+#   output_variables:
+#     social_security__eligible_for_childcare_subsidy:
+#       2018-08:
+#         - true  #  Mama
+#         - false #  child
+
+
+# - name: "Childcare Subsidy -Child is to be enrolled to school with cohort policy"
+#   period: 2018-08
+#   absolute_error_margin: 0
+#   persons:
+#     - id: "Mama"
+#       has_dependent_child: true
+#       is_nz_citizen: true
+#     - id: "Child"
+#       is_nz_citizen: true
+#       childcare_subsidy__is_child_attending_school: false
+#       childcare_subsidy__child_will_be_enrolled_to_school_with_cohort_policy: true
+#   titled_properies:
+#     - id: "Whare"
+#       others: ["Mama", "Child"]
+#   families:
+#     - id: "Whanau"
+#       principal_carer: "Mama"
+#   output_variables:
+#     social_security__eligible_for_childcare_subsidy:
+#       2018-08:
+#         - true  #  Mama
+#         - false #  child
+
+
+# - name: "Childcare Subsidy - Child is receiving disability allowance"
+#   period: 2018-08
+#   absolute_error_margin: 0
+#   persons:
+#     - id: "Mama"
+#       has_dependent_child: true
+#       is_nz_citizen: true
+#     - id: "Child"
+#       is_nz_citizen: true
+#       childcare_subsidy__is_child_attending_school: false
+#       childcare_subsidy__child_will_be_enrolled_to_school_with_cohort_policy: false
+#   titled_properies:
+#     - id: "Whare"
+#       others: ["Mama", "Child"]
+#   families:
+#     - id: "Whanau"
+#       principal_carer: "Mama"
+#   output_variables:
+#     social_security__eligible_for_childcare_subsidy:
+#       2018-08:
+#         - true  #  Mama
+#         - false #  child
