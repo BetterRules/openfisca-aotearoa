@@ -54,7 +54,7 @@ class family_has_resident_child_under_5_not_in_school(Variable):
     definition_period = MONTH
 
     def formula(families, period, parameters):
-        dependent_children = persons('social_security__is_dependent_child', period)
+        dependent_children = families.members('social_security__is_dependent_child', period)
         not_in_school = not_(families.members(
             'is_attending_school', period))
         under_5 = families.members('age', period) < 5
