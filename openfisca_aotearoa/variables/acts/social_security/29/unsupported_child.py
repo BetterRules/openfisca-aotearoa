@@ -51,7 +51,7 @@ class social_security__has_unsupported_child_in_family(Variable):
         children = families.members('social_security__is_a_child', period)
         parents_unable = families.members(
             'social_security__parents_unable_to_provide_sufficient_care', period)
-        resident_or_citizen = persons('is_citizen_or_resident', period)
+        resident_or_citizen = families.members('is_citizen_or_resident', period)
 
         return families.any((children * parents_unable * resident_or_citizen), role=Family.CHILD)
 
