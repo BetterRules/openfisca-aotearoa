@@ -20,9 +20,6 @@
       children:
         - "Child"
   output_variables:
-    is_citizen_or_resident:
-      2018-08:
-        - true  #  Whanau
     family_has_resident_child_under_5_not_in_school:
       2018-08:
         - true  #  Whanau
