@@ -1,5 +1,11 @@
 # Changelog
 
+
+# 4.2.4 - [#77](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/86)
+Calculation improvement.
+ * Added Unsupported Child Benefit
+ * Added Orphan's benefit
+
 # 4.2.3 - [#77](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/77)
 Technical improvement.
  * Remove dependency on OpenFisca-Web-API (now included in Core)
