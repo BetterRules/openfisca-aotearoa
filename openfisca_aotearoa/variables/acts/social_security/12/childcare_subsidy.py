@@ -5,22 +5,6 @@ from openfisca_core.model_api import *
 from openfisca_aotearoa.entities import Person
 
 
-class childcare_subsidy__is_a_dependant_child(Variable):
-    value_type = bool
-    entity = Person
-    definition_period = MONTH
-    label = u"Is a dependant child"
-    reference = "http://www.legislation.govt.nz/regulation/public/2004/0268/latest/DLM282545.html"
-
-
-class childcare_subsidy__child_is_no_older_than_5_years_28_days(Variable):
-    value_type = bool
-    entity = Person
-    definition_period = MONTH
-    label = u"Child is no older than 5 years 28_days"
-    reference = "http://www.legislation.govt.nz/regulation/public/2004/0268/latest/DLM282545.html"
-
-
 class childcare_subsidy__is_child_attending_school(Variable):
     value_type = bool
     entity = Person
