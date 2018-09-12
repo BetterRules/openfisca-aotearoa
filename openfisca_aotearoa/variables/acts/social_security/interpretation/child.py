@@ -36,6 +36,7 @@ class social_security__has_child_in_family(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
+    
     def formula(persons, period, parameters):
         children = families.members('social_security__is_a_child', period)
         return families.any(children, role=Family.CHILD)
