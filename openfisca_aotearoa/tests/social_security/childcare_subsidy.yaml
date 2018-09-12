@@ -16,7 +16,7 @@
       others: ["Mama", "Child"]
   families:
     - id: "Whanau"
-      principal_carer: "Mama"
+      principal_caregiver: "Mama"
   output_variables:
     social_security__eligible_for_childcare_subsidy:
       2018-08:
@@ -40,7 +40,7 @@
 #       others: ["Mama", "Child"]
 #   families:
 #     - id: "Whanau"
-#       principal_carer: "Mama"
+#       principal_caregiver: "Mama"
 #   output_variables:
 #     social_security__eligible_for_childcare_subsidy:
 #       2018-08:
@@ -64,7 +64,7 @@
 #       others: ["Mama", "Child"]
 #   families:
 #     - id: "Whanau"
-#       principal_carer: "Mama"
+#       principal_caregiver: "Mama"
 #   output_variables:
 #     social_security__eligible_for_childcare_subsidy:
 #       2018-08:
@@ -88,7 +88,7 @@
 #       others: ["Mama", "Child"]
 #   families:
 #     - id: "Whanau"
-#       principal_carer: "Mama"
+#       principal_caregiver: "Mama"
 #   output_variables:
 #     social_security__eligible_for_childcare_subsidy:
 #       2018-08:
@@ -112,7 +112,7 @@
 #       others: ["Mama", "Child"]
 #   families:
 #     - id: "Whanau"
-#       principal_carer: "Mama"
+#       principal_caregiver: "Mama"
 #   output_variables:
 #     social_security__eligible_for_childcare_subsidy:
 #       2018-08:
