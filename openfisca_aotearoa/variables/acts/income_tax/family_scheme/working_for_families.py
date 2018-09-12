@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from openfisca_core.model_api import *
-from openfisca_aotearoa.entities import Person, Family
+from openfisca_aotearoa.entities import Person
 
 
 class family_scheme__qualifies_for_working_for_families(Variable):
@@ -29,5 +29,3 @@ class family_scheme__working_for_families_entitlement(Variable):
         parental_tax_credit_entitlement = persons('family_scheme__parental_tax_credit_entitlement', period)
         credit_abatement = 5 * -1  # TODO need to insert abatement calculation
         return family_tax_credit + (in_work_tax_credit or child_tax_credit) + parental_tax_credit_entitlement + credit_abatement
-
-
