@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from openfisca_core.model_api import *
-from openfisca_aotearoa.entities import Person
+from openfisca_aotearoa.entities import Person, Family
 
 
 class social_security__has_dependant_child(Variable):
