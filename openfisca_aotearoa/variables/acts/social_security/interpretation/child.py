@@ -33,7 +33,7 @@ class social_security__is_a_child(Variable):
         return under_16 + (under_18 * not_(financially_independent))
 
 
-class is_dependent(Variable):
+class is_dependent_child(Variable):
     value_type = bool
     entity = Person
     label = "Is a dependent child"
@@ -62,4 +62,4 @@ class social_security__is_dependent_child(Variable):
     # (f) for the purposes of clause 1(a) and (b) of Schedule 18A (rates of winter energy payment), has the meaning given to it by clause 2 of Schedule 18A
 
     def formula(persons, period, parameters):
-        return persons('social_security__is_a_child', period) * persons('is_dependent', period)
+        return persons('social_security__is_a_child', period) * persons('is_dependent_child', period)
