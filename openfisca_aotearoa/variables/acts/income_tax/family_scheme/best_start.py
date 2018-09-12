@@ -7,7 +7,7 @@ from openfisca_aotearoa.entities import Person, Family
 from numpy import datetime64
 
 
-class income_tax__caregiver_eligible_for_best_start_tax_credit(Variable):
+class best_start__eligibility(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
@@ -15,12 +15,16 @@ class income_tax__caregiver_eligible_for_best_start_tax_credit(Variable):
     reference = "http://legislation.govt.nz/bill/government/2017/0004/15.0/DLM7512349.html"
 
     def formula(persons, period, parameters):
-        qualifies = persons("income_tax__qualifies_for_entitlements_under_family_scheme", period)
-        family_is_eligible = persons.family("income_tax__family_has_children_eligible_for_best_start", period)
+        qualifies = persons("family_scheme__base_qualifies", period)
+        family_is_eligible = persons.family("best_start__family_has_children_eligible", period)
+        # also does not qualify if receives
+        # (i) a parental tax credit:
+        # (iii) a parental leave payment or preterm baby payment under Part 7A of the Parental Leave and Employment Protection Act 1987.
+
         return qualifies * family_is_eligible
 
 
-class income_tax__family_has_children_eligible_for_best_start(Variable):
+class best_start__family_has_children_eligible(Variable):
     value_type = bool
     entity = Family
     definition_period = MONTH
@@ -35,7 +39,7 @@ class income_tax__family_has_children_eligible_for_best_start(Variable):
             families_have_children_younger_than_three_years
 
 
-class income_tax__person_is_best_start_child_as_year(Variable):
+class best_start__year_of_child(Variable):
     value_type = float
     entity = Person
     definition_period = MONTH
@@ -63,7 +67,7 @@ class income_tax__person_is_best_start_child_as_year(Variable):
         return whatyear
 
 
-class income_tax__best_start_tax_credit_per_child(Variable):
+class best_start__tax_credit_per_child(Variable):
     value_type = float
     entity = Person
     definition_period = MONTH
@@ -71,19 +75,19 @@ class income_tax__best_start_tax_credit_per_child(Variable):
     reference = "http://legislation.govt.nz/bill/government/2017/0004/15.0/DLM7512349.html"
 
     def formula(persons, period, parameters):
-        threshold = parameters(period).entitlements.income_tax.best_start.full_year_abatement_threshold
-        rate = parameters(period).entitlements.income_tax.best_start.full_year_abatement_rate
-        prescribed_amount = parameters(period).entitlements.income_tax.best_start.prescribed_amount
+        threshold = parameters(period).entitlements.income_tax.family_scheme.best_start.full_year_abatement_threshold
+        rate = parameters(period).entitlements.income_tax.family_scheme.best_start.full_year_abatement_rate
+        prescribed_amount = parameters(period).entitlements.income_tax.family_scheme.best_start.prescribed_amount
 
         # sum up families income
         # http://legislation.govt.nz/act/public/2007/0097/latest/DLM1518488.html#DLM1518488
-        family_income = persons.family.sum(persons.family.members("income_tax__family_scheme_income", period.this_year))
+        family_income = persons.family.sum(persons.family.members("family_scheme__assessable_income", period.this_year))
 
         # calculate income over the threshold
         income_over_threshold = where((family_income - threshold) < 0, 0, family_income - threshold)
 
         # work out the ages for each family member
-        years = persons('income_tax__person_is_best_start_child_as_year', period)
+        years = persons('best_start__year_of_child', period)
 
         # work out if each dependant child is eligible for full best start tax credit
         dependant_eligible_full = (years == 1) * prescribed_amount
@@ -97,7 +101,7 @@ class income_tax__best_start_tax_credit_per_child(Variable):
         return (dependant_eligible_full + dependant_eligible_abated_1 + dependant_eligible_abated_2) / 12
 
 
-class income_tax__entitlement_for_best_start_tax_credit(Variable):
+class best_start__entitlement(Variable):
     value_type = float
     entity = Person
     definition_period = MONTH
@@ -108,5 +112,5 @@ class income_tax__entitlement_for_best_start_tax_credit(Variable):
 
         # sum up families income
         return persons.family.sum(
-            persons.family.members("income_tax__best_start_tax_credit_per_child", period)) * \
-            persons("income_tax__caregiver_eligible_for_best_start_tax_credit", period)
+            persons.family.members("best_start__tax_credit_per_child", period)) * \
+            persons("best_start__eligibility", period)

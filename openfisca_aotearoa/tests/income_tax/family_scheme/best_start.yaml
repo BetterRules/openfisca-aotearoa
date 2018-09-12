@@ -17,12 +17,12 @@
       date_of_birth: 2011-12-29
     - id: "Papatūānuku-2"
       date_of_birth: 1979-08-30
-      income_tax__family_scheme_income: 41000
+      family_scheme__assessable_income: 41000
     - id: "Papatūānuku-3"
       date_of_birth: 1979-08-30
     - id: "Hemi"
       date_of_birth: 1977-10-13
-      income_tax__family_scheme_income: 40000
+      family_scheme__assessable_income: 40000
     - id: "Samuel"
       date_of_birth: 1968-10-13
     - id: "Hemi-junior"
@@ -51,14 +51,14 @@
     - id: "Earth"
       others: ["Papatūānuku", "Rakinui", "Tāne", "Rongo", "Ikatere", "Tāwhirimātea", "Papatūānuku-2", "Papatūānuku-3", "Tāne-2", "Samuel", "Rongo-2", "Hemi", "Hemi-junior", "Hemi-junior-early"]
   output_variables:
-    income_tax__family_has_children_eligible_for_best_start:
+    best_start__family_has_children_eligible:
       2018-07: [0, 1, 1]
-    income_tax__caregiver_eligible_for_best_start_tax_credit:
+    best_start__eligibility:
       2018-07: [0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0]
-    income_tax__best_start_tax_credit_per_child:
+    best_start__tax_credit_per_child:
       2018-07: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 260, 0, 0]
       2018-08: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 260, 260, 0, 0]
-    income_tax__entitlement_for_best_start_tax_credit:
+    best_start__entitlement:
       2018-07: [0, 0, 0, 0, 0, 0, 0, 260, 0, 0, 0, 0, 0, 0]
       2018-08: [0, 0, 0, 0, 0, 0, 260, 260, 0, 0, 0, 0, 0, 0]
 - name: Tests paid parental leave eligibility based on due date of baby only
@@ -81,9 +81,9 @@
     - id: "Earth"
       others: ["Papatūānuku", "Rakinui", "Hemi-junior-early"]
   output_variables:
-    income_tax__family_has_children_eligible_for_best_start:
+    best_start__family_has_children_eligible:
       2018-07: [1]
-    income_tax__caregiver_eligible_for_best_start_tax_credit:
+    best_start__eligibility:
       2018-07: [1, 0, 0]
 - name: Tests paid parental leave entitlement value full entitlement with baby due date after 1st July 2018
   period: 2018
@@ -93,7 +93,7 @@
       date_of_birth: 1979-08-30
     - id: "Rakinui"
       date_of_birth: 1977-10-13
-      income_tax__family_scheme_income: 60000
+      family_scheme__assessable_income: 60000
     - id: "Hemi-junior"
       date_of_birth: 2018-07-18
     - id: "Hemi-junior-early"
@@ -108,9 +108,9 @@
     - id: "Earth"
       others: ["Papatūānuku", "Rakinui", "Hemi-junior", "Hemi-junior-early"]
   output_variables:
-    income_tax__best_start_tax_credit_per_child:
+    best_start__tax_credit_per_child:
       2018-07: [0, 0, 0, 260]
-    income_tax__entitlement_for_best_start_tax_credit:
+    best_start__entitlement:
       2018-07: [260, 0, 0, 0]
 - name: Tests paid parental leave entitlement value with baby due date after 1st July 2018
   period: 2018
@@ -120,7 +120,7 @@
       date_of_birth: 1979-08-30
     - id: "Rakinui"
       date_of_birth: 1977-10-13
-      income_tax__family_scheme_income:
+      family_scheme__assessable_income:
         2018: 90000
         2019: 82000
     - id: "Hemi-junior"
@@ -137,9 +137,9 @@
     - id: "Earth"
       others: ["Papatūānuku", "Rakinui", "Hemi-junior", "Hemi-junior-early"]
   output_variables:
-    income_tax__best_start_tax_credit_per_child:
+    best_start__tax_credit_per_child:
       2018-07: [0, 0, 0, 260 ]
-    income_tax__entitlement_for_best_start_tax_credit:
+    best_start__entitlement:
       2018-07: [260, 0, 0, 0]
 - name: Tests paid parental leave entitlement value with baby due date after 1st July 2018
   period: 2018
@@ -149,7 +149,7 @@
       date_of_birth: 1979-02-01
     - id: "Rakinui"
       date_of_birth: 1977-10-13
-      income_tax__family_scheme_income:
+      family_scheme__assessable_income:
         2018: 90000
         2019: 82000
         2020: 82000
@@ -169,9 +169,9 @@
     - id: "Earth"
       others: ["Papatūānuku", "Rakinui", "Hemi-junior", "Hemi-junior-early"]
   output_variables:
-    income_tax__best_start_tax_credit_per_child:
+    best_start__tax_credit_per_child:
       2019-04: [0, 0, 0, 260 ]
-    income_tax__entitlement_for_best_start_tax_credit:
+    best_start__entitlement:
       2020-07: [415, 0, 0, 0]
       2020-08: [415, 0, 0, 0]
       2020-09: [415, 0, 0, 0]

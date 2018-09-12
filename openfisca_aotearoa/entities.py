@@ -65,7 +65,7 @@ Family = build_entity(
 
     For more information on entities, see: http://openfisca.org/doc/coding-the-legislation/50_entities.html
 
-    Families can have multiple principle_caregivers but as each entitlement is calculated in relation to the Principle Caregiver we recommend for modelling you create multiple family sets per caregiver to describe each scenario
+    Families can have multiple principle_caregivers but as each entitlement is calculated in relation to the Principle Caregiver it is recommended for modelling to create multiple family sets per caregiver to describe each scenario
     ''',
     roles=[
         {
