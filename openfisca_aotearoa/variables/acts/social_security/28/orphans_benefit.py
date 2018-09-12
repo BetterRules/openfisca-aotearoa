@@ -21,5 +21,5 @@ class social_security__eligible_for_orphans_benefit(Variable):
     # (ii) the applicant has been both resident and present in New Zealand for a continuous period of 12 months at any time.
 
     def formula(persons, period, parameters):
-      # todo
-      pass
+        # todo
+        pass
