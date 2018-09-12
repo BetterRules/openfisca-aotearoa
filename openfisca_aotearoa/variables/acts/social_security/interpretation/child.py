@@ -57,3 +57,4 @@ class social_security__parents_unable_to_provide_sufficient_care(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
+    default_value = True
