@@ -72,7 +72,7 @@ class social_security__has_disability_allowance_child_under_6(Variable):
     definition_period = MONTH
 
     def formula(families, period, parameters):
-        eligible_children = families.members(
+        eligible_children = families(
             'social_security__family_has_eligible_disabled_child', period)
         under_6 = families.members('age', period) < 6
         return families.any((eligible_children * under_6), role=Family.CHILD)
