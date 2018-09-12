@@ -17,11 +17,13 @@ class best_start__eligibility(Variable):
     def formula(persons, period, parameters):
         qualifies = persons("family_scheme__base_qualifies", period)
         family_is_eligible = persons.family("best_start__family_has_children_eligible", period)
+        received_parents_allowance = persons('veterans_support__received_parents_allowance', period)
+        received_childrens_pension = persons('veterans_support__received_childrens_pension', period)
         # also does not qualify if receives
         # (i) a parental tax credit:
         # (iii) a parental leave payment or preterm baby payment under Part 7A of the Parental Leave and Employment Protection Act 1987.
 
-        return qualifies * family_is_eligible
+        return qualifies * family_is_eligible * not_(received_parents_allowance) * not_(received_childrens_pension)
 
 
 class best_start__family_has_children_eligible(Variable):

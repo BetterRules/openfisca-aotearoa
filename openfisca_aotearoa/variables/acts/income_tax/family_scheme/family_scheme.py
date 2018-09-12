@@ -15,10 +15,8 @@ class family_scheme__base_qualifies(Variable):
         age_qualifies = persons("family_scheme__caregiver_age_qualifies", period)
         principle_carer = persons("family_scheme__qualifies_as_principal_carer", period)
         residence = persons("income_tax__residence", period)  # this is for caregiver OR child, clarify the test
-        received_parents_allowance = persons('veterans_support__received_parents_allowance', period)
-        received_childrens_pension = persons('veterans_support__received_childrens_pension', period)
 
-        return age_qualifies * principle_carer * residence * not_(received_parents_allowance) * not_(received_childrens_pension)
+        return age_qualifies * principle_carer * residence
 
 
 class family_scheme__caregiver_age_qualifies(Variable):

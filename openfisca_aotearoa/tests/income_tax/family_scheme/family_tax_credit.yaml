@@ -1,5 +1,5 @@
 # We can run this test on our command line using `openfisca-run-test openfisca_aotearoa/tests/income_tax/family_scheme/family_tax_credit.yaml`
-- name: Tests persons age eligibility in relation to the family scheme
+- name: Tests persons age eligibility in relation to the family tax credit
   period: 2018-08
   absolute_error_margin: 0
   persons:
@@ -26,4 +26,4 @@
     - id: "Whare"
       others: ["Papatūānuku", "Rakinui", "Tāne", "Rongo", "Ikatere"]
   output_variables:
-    family_scheme__family_tax_credit_entitlement: [3, 3, 3, 3, 3]
+    family_scheme__qualifies_for_family_tax_credit: [1, 0, 0, 0, 0]

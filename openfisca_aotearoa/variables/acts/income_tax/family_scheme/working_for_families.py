@@ -12,7 +12,10 @@ class family_scheme__qualifies_for_working_for_families(Variable):
     reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1518484.html"
 
     def formula(persons, period, parameters):
-        return persons("family_scheme__base_qualifies", period)
+        received_parents_allowance = persons('veterans_support__received_parents_allowance', period)
+        received_childrens_pension = persons('veterans_support__received_childrens_pension', period)
+
+        return persons("family_scheme__base_qualifies", period) * not_(received_parents_allowance) * not_(received_childrens_pension)
 
 
 class family_scheme__working_for_families_entitlement(Variable):
