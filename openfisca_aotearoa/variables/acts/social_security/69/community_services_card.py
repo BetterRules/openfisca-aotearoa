@@ -39,12 +39,18 @@ class social_security__eligible_for_community_services_card(Variable):
     def formula(persons, period, parameters):
         # The applicant
         resident_or_citizen = persons('is_citizen_or_resident', period)
-        age_requirement = persons("age", period) >= parameters(period).entitlements.social_security.community_services_card.age_threshold
-        low_income = persons('community_services_card__below_income_threshold', period)
-        dependent_children = persons('social_security__has_dependant_child', period)
-        is_fulltime_student = persons('social_security__is_fulltime_student', period)
-        received_superannuation = persons('social_security__received_superannuation', period)
-        eligible_for_wff = persons('family_scheme__qualifies_for_working_for_families', period)
+        age_requirement = persons("age", period) >= parameters(
+            period).entitlements.social_security.community_services_card.age_threshold
+        low_income = persons(
+            'community_services_card__below_income_threshold', period)
+        dependent_children = persons(
+            'social_security__has_dependant_child', period)
+        is_fulltime_student = persons(
+            'social_security__is_fulltime_student', period)
+        received_superannuation = persons(
+            'social_security__received_superannuation', period)
+        eligible_for_wff = persons(
+            'family_scheme__qualifies_for_working_for_families', period)
         childs_benefit = \
             persons('social_security__received_orphans_benefit', period) +\
             persons('social_security__received_unsupported_childs_benefit', period) +\
@@ -60,7 +66,8 @@ class social_security__eligible_for_community_services_card(Variable):
             (received_superannuation * low_income) +\
             (is_fulltime_student * low_income) +\
             (dependent_children * low_income * (resident_or_citizen + eligible_for_wff)) +\
-            not_(dependent_children) * low_income * resident_or_citizen * age_requirement
+            not_(dependent_children) * low_income * \
+            resident_or_citizen * age_requirement
 
 
 # TODO:
@@ -150,3 +157,11 @@ class social_security__is_fulltime_student(Variable):
     definition_period = MONTH
     label = "Is a Full-time student"
     reference = "http://www.legislation.govt.nz/act/public/1964/0136/latest/DLM359124.html"
+
+
+class has_community_services_card(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = MONTH
+    label = u"Has a current Community Services Card"
+    reference = u"https://www.workandincome.govt.nz/products/a-z-benefits/community-services-card.html"

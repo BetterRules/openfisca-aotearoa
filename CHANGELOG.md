@@ -4,6 +4,10 @@
 * Tax and benefit system evolution. 
   - added formula for is_permanent_resident
 
+# 5.0.1 - [#81](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/81)
+Calculation improvement.
+ * Added Home Help
+
 # 5.0.0 - [#83](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/83)
 * Tax and benefit system evolution. Major change.
 * Impacted periods: income_tax
@@ -33,6 +37,11 @@
   - renamed parameter `entitlements.income_tax.best_start.full_year_abate` to `entitlements.income_tax.family_scheme.best_start.full_year_abate`
   - renamed parameter `entitlements.income_tax.best_start.prescribed_amount` to `entitlements.income_tax.family_scheme.best_start.prescribed_amount`
   - moved family scheme tests sub folder `income_tax/family_scheme folder`
+
+
+# 4.2.6 - [#81](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/81)
+Calculation improvement.
+ * Added Home Help
 
 # 4.2.5 - [#84](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/87)
 Calculation improvement.
