@@ -1,8 +1,18 @@
 # Changelog
 
-# 4.2.4 - [#81](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/81)
+
+# 4.2.6 - [#81](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/81)
 Calculation improvement.
  * Added Home Help
+
+# 4.2.5 - [#84](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/87)
+Calculation improvement.
+ * Added Childcare Subsidy
+
+# 4.2.4 - [#77](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/86)
+Calculation improvement.
+ * Added Unsupported Child Benefit
+ * Added Orphan's benefit
 
 # 4.2.3 - [#77](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/77)
 Technical improvement.

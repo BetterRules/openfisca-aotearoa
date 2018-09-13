@@ -19,7 +19,7 @@ class social_security__is_financially_independent(Variable):
 
     def formula(persons, period, parameters):
         in_full_employment = persons('social_security__is_in_full_employment', period)
-        recieves_grant = person('social_security__in_receipt_of_basic_grant', period)
+        recieves_grant = persons('social_security__in_receipt_of_basic_grant', period)
         recieves_gov_assisted_payments = persons('social_security__recieves_goverment_assisted_scheme_payments', period)
         recieves_benefit = persons('social_security__recieves_main_benefit', period)
 
