@@ -34,6 +34,11 @@ Calculation improvement.
   - renamed parameter `entitlements.income_tax.best_start.prescribed_amount` to `entitlements.income_tax.family_scheme.best_start.prescribed_amount`
   - moved family scheme tests sub folder `income_tax/family_scheme folder`
 
+
+# 4.2.6 - [#81](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/81)
+Calculation improvement.
+ * Added Home Help
+
 # 4.2.5 - [#84](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/87)
 Calculation improvement.
  * Added Childcare Subsidy
