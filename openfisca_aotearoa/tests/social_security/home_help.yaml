@@ -18,12 +18,12 @@
     - id: "Has No Immediate Family"
       is_nz_citizen: true
       home_help__has_no_immediate_family: true
-      home_help__has_community_services_card: true
+      has_community_services_card: true
 
     - id: "Has Immediate Family"
       is_nz_citizen: true
       home_help__has_no_immediate_family: false
-      home_help__has_community_services_card: true
+      has_community_services_card: true
 
   families:
     - id: "Whanau"
