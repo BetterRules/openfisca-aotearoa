@@ -3,6 +3,7 @@
 from openfisca_core.model_api import *
 from openfisca_aotearoa.entities import Person
 
+
 class home_help__had_multiple_birth(Variable):
     value_type = bool
     entity = Person
@@ -35,9 +36,9 @@ class home_help__eligible_for_home_help(Variable):
     reference = u"https://www.workandincome.govt.nz/products/a-z-benefits/home-help.html"
 
     def formula(persons, period, parameters):
-        is_citizen = persons('is_nz_citizen', period)
+        resident_or_citizen = persons('is_citizen_or_resident', period)
 
-        return is_citizen *\
+        return resident_or_citizen *\
             persons('home_help__had_multiple_birth', period) +\
             persons('home_help__adopted_2_or_more_children', period) +\
             persons('home_help__has_no_immediate_family', period) *\
