@@ -30,6 +30,15 @@
   - renamed parameter `entitlements.income_tax.best_start.prescribed_amount` to `entitlements.income_tax.family_scheme.best_start.prescribed_amount`
   - moved family scheme tests sub folder `income_tax/family_scheme folder`
 
+# 4.2.5 - [#84](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/87)
+Calculation improvement.
+ * Added Childcare Subsidy
+
+# 4.2.4 - [#77](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/86)
+Calculation improvement.
+ * Added Unsupported Child Benefit
+ * Added Orphan's benefit
+
 # 4.2.3 - [#77](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/77)
 Technical improvement.
  * Remove dependency on OpenFisca-Web-API (now included in Core)
