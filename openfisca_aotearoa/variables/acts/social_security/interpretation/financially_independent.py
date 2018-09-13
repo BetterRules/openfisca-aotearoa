@@ -48,3 +48,11 @@ class social_security__recieves_main_benefit(Variable):
     default_value = False
     definition_period = MONTH
     label = "in receipt of a main benefit under Social Security Act"
+
+
+class social_security__received_income_tested_benefit(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = YEAR  # Questioning if there's a reason this is a year.
+    label = u'Boolean for if a Person is classified as receiving an income tested benefit'
+    reference = "http://www.legislation.govt.nz/act/public/1964/0136/latest/DLM359124.html#DLM360353"

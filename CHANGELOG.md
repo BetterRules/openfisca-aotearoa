@@ -1,5 +1,35 @@
 # Changelog
 
+# 5.0.0 - [#83](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/83)
+* Tax and benefit system evolution. Major change.
+* Impacted periods: income_tax
+* Impacted areas: `tests/best_start, tests/family_scheme, tests/working_for_families, variables/entitlements/income_tax/best_start.py, variables/entitlements/income_tax/family_scheme.py, variables/entitlements/income_tax/working_for_families.py`
+* Details:
+  - renamed `income_tax__qualifies_for_entitlements_under_family_scheme` to `family_scheme__qualifies_for_entitlements` to better reflect law structure
+  - renamed `income_tax__caregiver_age_qualifies_under_family_scheme` to `family_scheme__caregiver_age_qualifies` to better reflect law structure
+  - renamed `income_tax__person_principal_carer_qualifies_under_family_scheme` to `family_scheme__qualifies_as_principal_carer` to better reflect law structure
+  - renamed `income_tax__family_scheme_income` to `family_scheme__assessable_income` to better reflect law structure
+  - renamed `income_tax__family_scheme_income_for_month` to `family_scheme__assessable_income_for_month` to better reflect law structure
+  - renamed `income_tax__proportion_as_principal_carer` to `family_scheme__proportion_as_principal_carer` to better reflect law structure
+  - renamed `income_tax__family_has_dependent_children` to `family_scheme__has_dependent_children` to better reflect law structure
+  - renamed `income_tax__eligible_for_working_for_families` to `family_scheme__qualifies_for_working_for_families` to better reflect law structure
+  - renamed `income_tax__caregiver_eligible_for_best_start_tax_credit` to `best_start__eligibility` to better reflect law structure
+  - renamed `income_tax__entitlement_for_best_start_tax_credit` to `best_start__entitlement` to better reflect law structure
+  - renamed `income_tax__family_has_children_eligible_for_best_start` to `best_start__family_has_children_eligible` to better reflect law structure
+  - renamed `income_tax__best_start_tax_credit_per_child` to `best_start__tax_credit_per_child` to better reflect law structure
+  - renamed `income_tax__person_is_best_start_child_as_year` to `best_start__year_of_child` to better reflect law structure
+  - Added `family_scheme__base_qualifies` variable
+  - Added `family_scheme__working_for_families_entitlement,` variables
+  - Added `family_scheme__qualifies_for_child_tax_credit, family_scheme__child_tax_credit_entitlement` variables
+  - Added `family_scheme__qualifies_for_in_work_tax_credit, family_scheme__in_work_tax_credit_entitlement` variables
+  - Added `family_scheme__qualifies_for_parental_tax_credit, family_scheme__parental_tax_credit_entitlement` variables
+  - Added `family_scheme__qualifies_for_minimum_family_tax_credit` variable
+  - Added `family_scheme__qualifies_for_family_tax_credit, family_scheme__family_tax_credit_entitlement` variables
+  - renamed parameter `entitlements.income_tax.best_start.full_year_abatement_threshold` to `entitlements.income_tax.family_scheme.best_start.full_year_abatement_threshold`
+  - renamed parameter `entitlements.income_tax.best_start.full_year_abate` to `entitlements.income_tax.family_scheme.best_start.full_year_abate`
+  - renamed parameter `entitlements.income_tax.best_start.prescribed_amount` to `entitlements.income_tax.family_scheme.best_start.prescribed_amount`
+  - moved family scheme tests sub folder `income_tax/family_scheme folder`
+
 # 4.2.5 - [#84](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/87)
 Calculation improvement.
  * Added Childcare Subsidy

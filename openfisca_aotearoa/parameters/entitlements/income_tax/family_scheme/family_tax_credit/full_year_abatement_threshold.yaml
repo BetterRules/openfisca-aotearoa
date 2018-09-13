@@ -1,5 +1,7 @@
-description: Full year abatement rate
+description: Full year abatement threshold
 reference: http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1518553.html
 values:
   2017-04: # This is unresearched, dates of enactment to be determined
-    value: 0.225
+    value: 36350
+  2018-07:
+    value: 42700
