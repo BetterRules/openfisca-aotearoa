@@ -35,44 +35,18 @@
         - false #  child
 
 
-- name: "Childcare Subsidy - Child is older than 5 years, will enrol"
-  period: 2018-08
-  absolute_error_margin: 0
-  persons:
-    - id: "Mama"
-      is_nz_citizen: true
-    - id: "Child"
-      age: 5
-      is_dependent_child: true
-      is_nz_citizen: true
-      is_attending_school: false
-      will_be_enrolled_in_school: true
-  titled_properties:
-    - id: "Whare"
-      others: ["Mama", "Child"]
-  families:
-    - id: "Whanau"
-      principal_caregiver: "Mama"
-   children:
-      - "Child"
-  output_variables:
-    social_security__eligible_for_childcare_subsidy:
-      2018-08:
-        - true  #  Mama
-        - false #  child
-
-
-# - name: "Childcare Subsidy - Child is attending school"
+# - name: "Childcare Subsidy - Child is older than 5 years, will enrol"
 #   period: 2018-08
 #   absolute_error_margin: 0
 #   persons:
 #     - id: "Mama"
 #       is_nz_citizen: true
 #     - id: "Child"
+#       age: 5
+#       is_attending_school: false
 #       is_dependent_child: true
 #       is_nz_citizen: true
-#       is_attending_school: true
-#       will_be_enrolled_in_school: false
+#       will_be_enrolled_in_school: true
 #   titled_properties:
 #     - id: "Whare"
 #       others: ["Mama", "Child"]
@@ -85,6 +59,32 @@
 #     social_security__eligible_for_childcare_subsidy:
 #       2018-08:
 #         - true  #  Mama
+#         - false #  child
+
+
+# - name: "Childcare Subsidy - not eligible because child is attending school"
+#   period: 2018-08
+#   absolute_error_margin: 0
+#   persons:
+#     - id: "Mama"
+#       is_nz_citizen: true
+#     - id: "Child"
+#       age: 5
+#       is_dependent_child: true
+#       is_nz_citizen: true
+#       is_attending_school: true
+#   titled_properties:
+#     - id: "Whare"
+#       others: ["Mama", "Child"]
+#   families:
+#     - id: "Whanau"
+#       principal_caregiver: "Mama"
+#    children:
+#       - "Child"
+#   output_variables:
+#     social_security__eligible_for_childcare_subsidy:
+#       2018-08:
+#         - false  #  Mama
 #         - false #  child
 
 
