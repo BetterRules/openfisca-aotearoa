@@ -98,7 +98,7 @@
   families:
     - id: "Whanau tahi"
       principal_caregiver: "Mama"
-      income_tax__family_has_dependent_children: true
+      family_scheme__has_dependent_children: true
       children: ["Tama"]
   titled_properties:
     - id: whare
@@ -295,8 +295,8 @@
       community_services_card__below_income_threshold: true
       is_citizen_or_resident: false
       social_security__has_dependant_child: true
-      income_tax__eligible_for_working_for_families:
-        2018:
+      family_scheme__qualifies_for_working_for_families:
+        2018-08:
           true
   families:
     - id: "Whanau tahi"
@@ -319,8 +319,8 @@
       community_services_card__below_income_threshold: true
       is_citizen_or_resident: true
       social_security__has_dependant_child: false
-      income_tax__eligible_for_working_for_families:
-        2018:
+      family_scheme__qualifies_for_working_for_families:
+        2018-08:
           true
   families:
     - id: "Whanau tahi"

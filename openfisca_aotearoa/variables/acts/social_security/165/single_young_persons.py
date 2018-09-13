@@ -61,5 +61,5 @@ class social_security__family_income_under_young_parent_payment_threshold(Variab
 
     def formula(persons, period, parameters):
         yearly_income_threshold = 52 * parameters(period).entitlements.social_security.young_parent_payment.weekly_income_threshold
-        yearly_family_income = persons('income_tax__family_scheme_income_for_month', period) * 12
+        yearly_family_income = persons('family_scheme__assessable_income_for_month', period) * 12
         return yearly_family_income < yearly_income_threshold

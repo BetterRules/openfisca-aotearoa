@@ -4,6 +4,15 @@ from openfisca_core.model_api import *
 from openfisca_aotearoa.entities import *
 
 
+class income_tax__residence(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = MONTH
+    default_value = True
+    label = u'Boolean for if a Person is classified as meeting residence requirements'
+    reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1518482.html"
+
+
 class TaxPayerFilingStatus(Enum):
     __order__ = "non_filing filing filing_with_schedular_income"
     non_filing = u'Non-filing taxpayer'

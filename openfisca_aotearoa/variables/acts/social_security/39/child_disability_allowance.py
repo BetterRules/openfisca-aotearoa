@@ -15,7 +15,7 @@ class social_security__eligible_for_child_disability_allowance(Variable):
         resident_or_citizen = persons('is_citizen_or_resident', period)
 
         is_principal_carer = persons.has_role(Family.PRINCIPAL_CAREGIVER)
-        has_eligible_disabled_child = persons.family("social_security__family_has_eligible_disabled_child", period)
+        has_eligible_disabled_child = persons.family("disability_allowance__family_has_eligible_child", period)
 
         return in_nz * \
             resident_or_citizen * \
@@ -23,7 +23,7 @@ class social_security__eligible_for_child_disability_allowance(Variable):
             has_eligible_disabled_child
 
 
-class social_security__family_has_eligible_disabled_child(Variable):
+class disability_allowance__family_has_eligible_child(Variable):
     value_type = bool
     entity = Family
     definition_period = MONTH

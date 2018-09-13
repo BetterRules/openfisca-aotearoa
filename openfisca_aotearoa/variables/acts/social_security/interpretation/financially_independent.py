@@ -19,7 +19,7 @@ class social_security__is_financially_independent(Variable):
 
     def formula(persons, period, parameters):
         in_full_employment = persons('social_security__is_in_full_employment', period)
-        recieves_grant = person('social_security__in_receipt_of_basic_grant', period)
+        recieves_grant = persons('social_security__in_receipt_of_basic_grant', period)
         recieves_gov_assisted_payments = persons('social_security__recieves_goverment_assisted_scheme_payments', period)
         recieves_benefit = persons('social_security__recieves_main_benefit', period)
 
@@ -48,3 +48,11 @@ class social_security__recieves_main_benefit(Variable):
     default_value = False
     definition_period = MONTH
     label = "in receipt of a main benefit under Social Security Act"
+
+
+class social_security__received_income_tested_benefit(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = YEAR  # Questioning if there's a reason this is a year.
+    label = u'Boolean for if a Person is classified as receiving an income tested benefit'
+    reference = "http://www.legislation.govt.nz/act/public/1964/0136/latest/DLM359124.html#DLM360353"
