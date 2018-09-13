@@ -1,5 +1,9 @@
 # Changelog
 
+# 5.0.2 - [#88](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/88)
+* Tax and benefit system evolution. 
+  - added formula for is_permanent_resident
+
 # 5.0.0 - [#83](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/83)
 * Tax and benefit system evolution. Major change.
 * Impacted periods: income_tax
