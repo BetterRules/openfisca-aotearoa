@@ -30,6 +30,7 @@ class social_security__is_a_child(Variable):
 
         return under_16 + (under_18 * not_(financially_independent))
 
+
 class is_dependent_child(Variable):
     value_type = bool
     entity = Person
@@ -61,7 +62,7 @@ class social_security__is_dependent_child(Variable):
     def formula(persons, period, parameters):
         return persons('social_security__is_a_child', period) * persons('is_dependent_child', period)
 
-      
+
 class social_security__has_child_in_family(Variable):
     value_type = bool
     entity = Family
