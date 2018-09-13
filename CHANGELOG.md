@@ -1,6 +1,6 @@
 # Changelog
 
-# 4.2.5 - [#84](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/84)
+# 4.2.5 - [#84](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/87)
 Calculation improvement.
  * Added Childcare Subsidy
 
