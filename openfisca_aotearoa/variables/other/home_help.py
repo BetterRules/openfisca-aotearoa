@@ -3,6 +3,7 @@
 from openfisca_core.model_api import *
 from openfisca_aotearoa.entities import Person
 
+
 class home_help__had_multiple_birth(Variable):
     value_type = bool
     entity = Person
