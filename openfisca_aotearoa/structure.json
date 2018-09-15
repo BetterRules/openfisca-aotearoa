@@ -1,7 +1,7 @@
 {
     "accommodation_supplement" : {
-        "Title":"Accomodation Supplement",
-        "Type": "Act",
+        "Title":"Accommodation Supplement",
+        "Type": "Section",
         "Reference":"http://www.legislation.govt.nz/act/public/1964/0136/latest/DLM366918.html"
     },
     "best_start" : {
