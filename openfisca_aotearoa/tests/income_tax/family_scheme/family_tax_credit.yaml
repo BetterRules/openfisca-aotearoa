@@ -27,3 +27,46 @@
       others: ["Papatūānuku", "Rakinui", "Tāne", "Rongo", "Ikatere"]
   output_variables:
     family_scheme__qualifies_for_family_tax_credit: [1, 0, 0, 0, 0]
+
+- name: Family tax credit - too much income
+  period: 2018-08
+  absolute_error_margin: 0
+  persons:
+    - id: "Papatūānuku"
+      date_of_birth: 1999-01-01
+      family_scheme__assessable_income:
+        2018: 42700
+  families:
+    - id: "Whanau"
+      principal_caregiver: "Papatūānuku"
+  titled_properties:
+    - id: "Whare"
+      others: ["Papatūānuku"]
+  output_variables:
+    family_scheme__qualifies_for_family_tax_credit:
+      2018-08:
+        - false
+
+- name: Family tax credit - too much income
+  period: 2018-08
+  absolute_error_margin: 0
+  persons:
+    - id: "Papatūānuku"
+      date_of_birth: 1999-01-01
+      family_scheme__assessable_income:
+        2018: 14233
+    - id: "Rakinui"
+      date_of_birth: 1996-01-01
+      family_scheme__assessable_income:
+        2018: 28470
+  families:
+    - id: "Whanau"
+      principal_caregiver: "Papatūānuku"
+      partners: ["Rakinui"]
+  titled_properties:
+    - id: "Whare"
+      others: ["Papatūānuku", "Rakinui"]
+  output_variables:
+    family_scheme__qualifies_for_family_tax_credit:
+      2018-08:
+        - false
