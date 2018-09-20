@@ -1,5 +1,9 @@
 # Changelog
 
+# 5.1.0 - [#92](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/92)
+* Tax and benefit system evolution. 
+  - adding income test to Family Tax Credit
+
 # 5.0.2 - [#88](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/88)
 * Tax and benefit system evolution. 
   - added formula for is_permanent_resident
