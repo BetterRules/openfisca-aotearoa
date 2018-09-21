@@ -1,4 +1,9 @@
 {
+    "acc" : {
+        "Title":"Accident Compensation Act 2001",
+        "Type": "Act",
+        "Reference":"http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM99494.html"
+    },
     "accommodation_supplement" : {
         "Title":"Accommodation Supplement",
         "Type": "Section",
@@ -96,6 +101,11 @@
         "Title":"Student Allowances Regulations 1998",
         "Type": "Regulation",
         "Reference":"http://www.legislation.govt.nz/regulation/public/1998/0277/latest/DLM259351.html"
+    },
+    "super" : {
+        "Title":"New Zealand Superannuation and Retirement Income Act 2001",
+        "Type": "Act",
+        "Reference":"http://www.legislation.govt.nz/act/public/2001/0084/latest/whole.html"
     },
     "supported_living_payment" : {
         "Title":"Supported Living Payment",
