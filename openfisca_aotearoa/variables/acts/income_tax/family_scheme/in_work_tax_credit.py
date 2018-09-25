@@ -17,7 +17,25 @@ class family_scheme__qualifies_for_in_work_tax_credit(Variable):
         received_parents_allowance = persons('veterans_support__received_parents_allowance', period)
         received_childrens_pension = persons('veterans_support__received_childrens_pension', period)
 
-        return base_qualifies * not_(received_tested_benefit) * not_(received_parents_allowance) * not_(received_childrens_pension)
+        return base_qualifies * not_(received_tested_benefit) * not_(received_parents_allowance) \
+            * not_(received_childrens_pension) * persons('family_scheme__in_work_tax_credit_income_under_threshold', period) \
+            * persons('family_scheme__in_work_tax_credit_is_full_time_earner', period)
+
+
+class family_scheme__in_work_tax_credit_income_under_threshold(Variable):  # this variable is a proxy for the calculation "family_scheme__in_work_tax_credit_entitlement" which needs to be coded
+    value_type = bool
+    entity = Person
+    definition_period = MONTH
+    label = u'Is the income under the threshold for the in work tax credit'
+    reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1518484.html"
+
+
+class family_scheme__in_work_tax_credit_is_full_time_earner(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = MONTH
+    label = u'Is the income under the threshold for the in work tax credit'
+    reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1518419.html"
 
 
 class family_scheme__in_work_tax_credit_entitlement(Variable):
