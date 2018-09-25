@@ -12,12 +12,15 @@ class family_scheme__qualifies_for_family_tax_credit(Variable):
     reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1518484.html"
 
     def formula(persons, period, parameters):
-        family_income = persons.family.sum(persons.family.members(
-            "family_scheme__assessable_income", period.this_year))
-        threshold = parameters(
-            period).entitlements.income_tax.family_scheme.family_tax_credit.full_year_abatement_threshold
-        income_under_threshold = family_income < threshold
-        return persons("family_scheme__base_qualifies", period) * income_under_threshold
+        return persons("family_scheme__base_qualifies", period) * persons("family_scheme__family_tax_credit_income_under_threshold", period)
+
+
+class family_scheme__family_tax_credit_income_under_threshold(Variable):  # this variable is a proxy for the calculation "family_scheme__family_tax_credit_entitlement" which needs to be coded
+    value_type = bool
+    entity = Person
+    definition_period = MONTH
+    label = u'Is the person income under the threshold for the family tax credit'
+    reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1518484.html"
 
 
 class family_scheme__family_tax_credit_entitlement(Variable):
