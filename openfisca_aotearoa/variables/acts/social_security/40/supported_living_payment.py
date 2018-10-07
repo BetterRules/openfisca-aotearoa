@@ -69,7 +69,9 @@ class social_security__eligible_for_supported_living_payment(Variable):
         # this section must meet the residential requirements in section 74AA.
         is_resident_or_citizen = persons('is_citizen_or_resident', period)
 
+        resides_in_nz = persons('social_security__meets_residential_requirements_for_certain_benefits', period)
+
         # # income low enough?
         income = persons('supported_living_payment__below_income_threshold', period)
 
-        return (disabled + blind + carer) * not_self_inflicted * is_old_enough * is_resident_or_citizen * income
+        return resides_in_nz * (disabled + blind + carer) * not_self_inflicted * is_old_enough * is_resident_or_citizen * income
