@@ -7,6 +7,7 @@
     - id: "fulltime uni student"
       age: 21
       is_nz_citizen: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
       student_allowance__is_tertiary_student: true
       student_allowance__is_enrolled_fulltime: true
       student_allowance__meets_attendance_and_performance_requirements: true
@@ -15,12 +16,14 @@
     - id: "Parttime student"
       age: 18
       is_nz_citizen: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
       student_allowance__is_tertiary_student: true
       student_allowance__approved_to_study_parttime: true
 
     - id: "Overseas student"
       age: 27
       is_nz_citizen: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
       student_allowance__is_tertiary_student: true
       student_allowance__approved_to_study_overseas: true
 
@@ -34,6 +37,7 @@
     - id: "Not a student"
       age: 50
       is_nz_citizen: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
       student_allowance__is_tertiary_student: false
 
   families:
@@ -60,6 +64,7 @@
     - id: "married secondary school student with child"
       age: 16
       is_nz_citizen: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
       student_allowance__is_secondary_student: true
       student_allowance__is_married_or_partnered: true
       student_allowance__has_a_supported_child: true
@@ -70,6 +75,7 @@
     - id: "not married secondary school student with child"
       age: 16
       is_nz_citizen: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
       student_allowance__is_secondary_student: true
       student_allowance__is_married_or_partnered: false
       student_allowance__has_a_supported_child: true
@@ -79,6 +85,7 @@
     - id: "childless married secondary school student"
       age: 16
       is_nz_citizen: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
       student_allowance__is_secondary_student: true
       student_allowance__is_married_or_partnered: false
       student_allowance__has_a_supported_child: false
@@ -88,6 +95,7 @@
     - id: "18yo secondary student"
       age: 18
       is_nz_citizen: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
       student_allowance__is_secondary_student: true
       student_allowance__is_enrolled_fulltime: true
       student_allowance__meets_attendance_and_performance_requirements: true
@@ -128,6 +136,7 @@
     - id: "not attending"
       age: 21
       is_nz_citizen: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
       student_allowance__is_tertiary_student: true
       student_allowance__is_enrolled_fulltime: true
       student_allowance__meets_attendance_and_performance_requirements: false
@@ -167,6 +176,7 @@
     - id: "fulltime uni student"
       age: 67
       is_nz_citizen: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
       student_allowance__is_tertiary_student: true
       student_allowance__is_enrolled_fulltime: true
       student_allowance__meets_attendance_and_performance_requirements: true
@@ -174,12 +184,14 @@
     - id: "Parttime student"
       age: 68
       is_nz_citizen: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
       student_allowance__is_tertiary_student: true
       student_allowance__approved_to_study_parttime: true
 
     - id: "Overseas student"
       age: 70
       is_nz_citizen: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
       student_allowance__is_tertiary_student: true
       student_allowance__approved_to_study_overseas: true
 

@@ -39,6 +39,7 @@ class social_security__eligible_for_community_services_card(Variable):
     def formula(persons, period, parameters):
         # The applicant
         resident_or_citizen = persons('is_citizen_or_resident', period)
+        in_nz = persons('social_security__is_ordinarily_resident_in_new_zealand', period)
         age_requirement = persons("age", period) >= parameters(
             period).entitlements.social_security.community_services_card.age_threshold
         low_income = persons(
@@ -67,7 +68,7 @@ class social_security__eligible_for_community_services_card(Variable):
             (is_fulltime_student * low_income) +\
             (dependent_children * low_income * (resident_or_citizen + eligible_for_wff)) +\
             not_(dependent_children) * low_income * \
-            resident_or_citizen * age_requirement
+            resident_or_citizen * age_requirement * in_nz
 
 
 # TODO:

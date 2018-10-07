@@ -25,12 +25,19 @@ class social_security__eligible_for_young_parent_payment(Variable):
         """
 
     def formula(persons, period, parameters):
-        basic_requirements = persons('social_security__meets_young_parent_payment_basic_requirements', period)
+        basic_requirements = persons(
+            'social_security__meets_young_parent_payment_basic_requirements', period)
 
-        single_requirements = persons('social_security__meets_young_parent_payment_single_persons_requirements', period)
-        in_relationship_requirements = persons('social_security__meets_young_parent_payment_in_relationship_requirements', period)
+        single_requirements = persons(
+            'social_security__meets_young_parent_payment_single_persons_requirements', period)
+        in_relationship_requirements = persons(
+            'social_security__meets_young_parent_payment_in_relationship_requirements', period)
 
-        return basic_requirements * (single_requirements + in_relationship_requirements)
+        # 74AA (2)
+        residency = persons(
+            'social_security__meets_residential_requirements_for_certain_benefits', period)
+
+        return basic_requirements * (single_requirements + in_relationship_requirements) * residency
 
 
 class social_security__meets_young_parent_payment_basic_requirements(Variable):
@@ -59,13 +66,16 @@ class social_security__meets_young_parent_payment_basic_requirements(Variable):
 
     def formula(persons, period, parameters):
         # (a) is aged 16 to 19 years; and
-        age_test = (persons('age', period) >= 16) * (persons('age', period) < 20)
+        age_test = (persons('age', period) >= 16) * \
+            (persons('age', period) < 20)
 
         # (b) is a parent or step-parent of a dependent child or dependent children; and
-        is_parent_of_dependent_children = (persons('is_a_parent', period) + persons('is_a_step_parent', period)) * persons('has_dependent_child', period)
+        is_parent_of_dependent_children = (persons('is_a_parent', period) + persons(
+            'is_a_step_parent', period)) * persons('has_dependent_child', period)
 
         # (e) has no income or an income of less than the amount that would fully abate the young parent payment.
-        income_test = persons('social_security__income_under_young_parent_payment_threshold', period)
+        income_test = persons(
+            'social_security__income_under_young_parent_payment_threshold', period)
 
         return age_test * is_parent_of_dependent_children * income_test
 
@@ -77,5 +87,6 @@ class social_security__income_under_young_parent_payment_threshold(Variable):
 
     def formula(persons, period, parameters):
         yearly_income = (persons('monthly_income', period) * 12)
-        yearly_income_threshold = (52 * parameters(period).entitlements.social_security.young_parent_payment.weekly_income_threshold)
+        yearly_income_threshold = (
+            52 * parameters(period).entitlements.social_security.young_parent_payment.weekly_income_threshold)
         return yearly_income < yearly_income_threshold
