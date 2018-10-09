@@ -4,8 +4,8 @@
   persons:
     - id: "Koro"
       is_nz_citizen: true
-      normally_lives_in_nz: true
       age: 81
+      social_security__is_ordinarily_resident_in_new_zealand: true
       sole_parent_support__below_income_threshold: true
       sole_parent_support__meets_years_in_nz_requirement: true
     - id: "Tamaiti"
@@ -30,8 +30,8 @@
   persons:
     - id: "Papa"
       is_nz_citizen: true
-      normally_lives_in_nz: true
       age: 21
+      social_security__is_ordinarily_resident_in_new_zealand: true
       sole_parent_support__below_income_threshold: true
       sole_parent_support__meets_years_in_nz_requirement: true
     - id: "Mama"
@@ -62,8 +62,8 @@
   persons:
     - id: "Papa"
       is_nz_citizen: true
-      normally_lives_in_nz: true
       age: 21
+      social_security__is_ordinarily_resident_in_new_zealand: true
       sole_parent_support__below_income_threshold: true
       sole_parent_support__meets_years_in_nz_requirement: true
       is_adequately_supported_by_partner: false
@@ -95,8 +95,8 @@
   persons:
     - id: "Koro"
       is_nz_citizen: true
-      normally_lives_in_nz: true
       age: 81
+      social_security__is_ordinarily_resident_in_new_zealand: true
       sole_parent_support__below_income_threshold: true
       sole_parent_support__meets_years_in_nz_requirement: true
     - id: "Tamaiti"
@@ -122,8 +122,8 @@
   persons:
     - id: "Koro"
       is_nz_citizen: true
-      normally_lives_in_nz: true
       age: 81
+      social_security__is_ordinarily_resident_in_new_zealand: true
       sole_parent_support__below_income_threshold: true
       sole_parent_support__meets_years_in_nz_requirement: true
     - id: "Tahi"

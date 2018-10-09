@@ -25,7 +25,7 @@ class social_security__eligible_for_sole_parent_support(Variable):
 
     def formula(persons, period, parameters):
         # The applicant
-        in_nz = persons('normally_lives_in_nz', period)
+        resides_in_nz = persons('social_security__meets_residential_requirements_for_certain_benefits', period)
         resident_or_citizen = persons('is_citizen_or_resident', period)
 
         years_in_nz = persons('sole_parent_support__meets_years_in_nz_requirement', period)
@@ -39,7 +39,7 @@ class social_security__eligible_for_sole_parent_support(Variable):
         # income low enough?
         low_income = persons('sole_parent_support__below_income_threshold', period)
 
-        return in_nz * resident_or_citizen * years_in_nz *\
+        return resides_in_nz * resident_or_citizen * years_in_nz *\
             age_requirement * child_age_requirement * \
             relationship_test * low_income
 

@@ -24,6 +24,7 @@
   persons:
     - id: "Mama"
       age: 28
+      social_security__is_ordinarily_resident_in_new_zealand: true
       social_security__received_income_tested_benefit:
         2018: true
   families:
@@ -44,8 +45,10 @@
   persons:
     - id: "Mama"
       age: 28
+      social_security__is_ordinarily_resident_in_new_zealand: true
     - id: "Tama"
       age: 3
+      social_security__is_ordinarily_resident_in_new_zealand: true
       social_security__received_orphans_benefit: true
   families:
     - id: "Whanau tahi"
@@ -68,8 +71,10 @@
   persons:
     - id: "Mama"
       age: 28
+      social_security__is_ordinarily_resident_in_new_zealand: true
     - id: "Tama"
       age: 8
+      social_security__is_ordinarily_resident_in_new_zealand: true
       social_security__received_unsupported_childs_benefit: true
   families:
     - id: "Whanau tahi"
@@ -92,9 +97,11 @@
   persons:
     - id: "Mama"
       age: 28
+      social_security__is_ordinarily_resident_in_new_zealand: true
     - id: "Tama"
       age: 8
       social_security__received_child_disability_allowance: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
   families:
     - id: "Whanau tahi"
       principal_caregiver: "Mama"
@@ -117,6 +124,7 @@
   persons:
     - id: "Mama"
       age: 28
+      social_security__is_ordinarily_resident_in_new_zealand: true
       social_security__received_residential_care_subsidy: true
   families:
     - id: "Whanau tahi"
@@ -137,6 +145,7 @@
     - id: "Mama"
       age: 28
       community_services_card__below_income_threshold: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
       social_security__received_superannuation: true
   families:
     - id: "Whanau tahi"
@@ -158,6 +167,7 @@
       age: 28
       community_services_card__below_income_threshold: false
       social_security__received_superannuation: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
   families:
     - id: "Whanau tahi"
       principal_caregiver: "Mama"
@@ -177,6 +187,7 @@
     - id: "Mama"
       age: 28
       veterans_support__received_veterans_pension: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
   families:
     - id: "Whanau tahi"
       principal_caregiver: "Mama"
@@ -196,6 +207,7 @@
     - id: "Mama"
       age: 28
       veterans_support__received_weekly_income_compensation: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
   families:
     - id: "Whanau tahi"
       principal_caregiver: "Mama"
@@ -214,6 +226,7 @@
     - id: "Mama"
       age: 28
       veterans_support__received_weekly_compensation: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
   families:
     - id: "Whanau tahi"
       principal_caregiver: "Mama"
@@ -234,6 +247,7 @@
       age: 28
       social_security__is_fulltime_student: true
       community_services_card__below_income_threshold: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
   families:
     - id: "Whanau tahi"
       principal_caregiver: "Mama"
@@ -254,6 +268,7 @@
       age: 28
       social_security__is_fulltime_student: true
       community_services_card__below_income_threshold: false
+      social_security__is_ordinarily_resident_in_new_zealand: true
   families:
     - id: "Whanau tahi"
       principal_caregiver: "Mama"
@@ -274,6 +289,7 @@
       age: 28
       community_services_card__below_income_threshold: true
       is_citizen_or_resident: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
   families:
     - id: "Whanau tahi"
       principal_caregiver: "Mama"
@@ -295,6 +311,7 @@
       community_services_card__below_income_threshold: true
       is_citizen_or_resident: false
       social_security__has_dependant_child: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
       family_scheme__qualifies_for_working_for_families:
         2018-08:
           true
@@ -319,6 +336,7 @@
       community_services_card__below_income_threshold: true
       is_citizen_or_resident: true
       social_security__has_dependant_child: false
+      social_security__is_ordinarily_resident_in_new_zealand: true
       family_scheme__qualifies_for_working_for_families:
         2018-08:
           true

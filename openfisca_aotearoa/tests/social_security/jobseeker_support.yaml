@@ -4,7 +4,7 @@
   persons:
     - id: "Mama"
       age: 21
-      normally_lives_in_nz: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
       is_resident: true
       number_of_years_lived_in_nz: 10
       jobseeker_support__below_income_threshold: true
@@ -12,7 +12,7 @@
 
     - id: "Dada"
       age: 18
-      normally_lives_in_nz: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
       is_resident: true
       number_of_years_lived_in_nz: 10
       social_security__has_dependant_child: true
@@ -21,7 +21,7 @@
 
     - id: "Tama"
       age: 6
-      normally_lives_in_nz: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
       is_resident: true
       number_of_years_lived_in_nz: 2
       jobseeker_support__below_income_threshold: true
@@ -29,7 +29,7 @@
 
     - id: "Papa"
       age: 99
-      normally_lives_in_nz: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
       is_resident: true
       number_of_years_lived_in_nz: 5
       jobseeker_support__below_income_threshold: true
@@ -37,7 +37,7 @@
 
     - id: "Alan"
       age: 50
-      normally_lives_in_nz: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
       is_resident: true
       number_of_years_lived_in_nz: 50
       jobseeker_support__below_income_threshold: false
