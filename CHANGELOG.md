@@ -1,5 +1,8 @@
 # Changelog
 
+# 5.1.1 - [#94](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/94)
+* Added NZ Super
+
 # 5.0.2 - [#88](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/88)
 * Tax and benefit system evolution. 
   - added formula for is_permanent_resident
