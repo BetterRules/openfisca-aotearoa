@@ -1,0 +1,24 @@
+---
+
+- name: "NZ Super"
+  period: 2018-08
+  absolute_error_margin: 0
+  persons:
+
+    - id: "Is Receiving ACC"
+      is_nz_citizen: true
+      super__age: 65
+      super__is_receiving_compensation: true
+      super__has_partner: true
+
+  families:
+    - id: "Whanau"
+      others: ["Is Receiving ACC"]
+  titled_properties:
+    - id: whare
+      others: ["Is Receiving ACC"]
+
+  output_variables:
+    super__eligibility:
+      2018-08:
+        - true
