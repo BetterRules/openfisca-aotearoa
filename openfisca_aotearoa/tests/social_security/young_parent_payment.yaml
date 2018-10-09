@@ -7,13 +7,14 @@
       has_dependent_child: true
       age: 19
       is_nz_citizen: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
       monthly_income: 80000.0
     - id: "Oliver"
       is_a_parent: true
       has_dependent_child: true
       age: 16
       is_nz_citizen: true
-      normally_lives_in_nz: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
       monthly_income: 0.0
       living_with_parent_or_guardian: true
       family_scheme__assessable_income_for_month: 10.0
@@ -22,7 +23,7 @@
       has_dependent_child: true
       age: 17
       is_permanent_resident: true
-      normally_lives_in_nz: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
       monthly_income: 0.0
       living_with_parent_or_guardian: false
       social_security__single_young_person_in_exceptional_circumstances: true
@@ -54,12 +55,12 @@
         - true
         - true
 
-
 - name: Young Parent Payment in a relationship
   period: 2018-10
   absolute_error_margin: 0
   persons:
     - id: "Ruby"
+      social_security__is_ordinarily_resident_in_new_zealand: true  
       is_married_or_in_a_civil_union_or_de_facto_relationship: false
       has_been_married_or_in_a_civil_union_or_de_facto_relationship: true
       is_a_parent: true
@@ -74,8 +75,7 @@
       has_dependent_child: true
       age: 16
       is_nz_citizen: true
-      normally_lives_in_nz: true
-      monthly_income: 0.0
+      social_security__is_ordinarily_resident_in_new_zealand: true
       family_scheme__assessable_income_for_month: 10.0
     - id: "Oscar"
       is_married_or_in_a_civil_union_or_de_facto_relationship: true
@@ -84,8 +84,8 @@
       has_dependent_child: true
       age: 17
       is_permanent_resident: true
-      normally_lives_in_nz: true
-      monthly_income: 0.0
+      social_security__is_ordinarily_resident_in_new_zealand: true
+      family_scheme__assessable_income_for_month: 0.0
       social_security__single_young_person_in_exceptional_circumstances: true
   families:
     - id: "One"
@@ -115,3 +115,40 @@
         - true
         - false
         - true
+
+
+- name: Young Parent Payment Residency
+  period: 2018-10
+  absolute_error_margin: 0
+  persons:
+    - id: "Kiwi"
+      age: 19
+      has_dependent_child: true
+      is_a_parent: true
+      is_nz_citizen: true
+      family_scheme__assessable_income_for_month: 300.0
+      social_security__is_ordinarily_resident_in_new_zealand: true
+    - id: "OE"
+      age: 19
+      has_dependent_child: true
+      is_a_parent: true
+      is_nz_citizen: true
+      family_scheme__assessable_income_for_month: 300.0
+      social_security__is_ordinarily_resident_in_new_zealand: false
+  families:
+    - id: "One"
+      principal_caregiver: "Kiwi"
+    - id: "Two"
+      principal_caregiver: "OE"
+  titled_properties:
+    - id: "Tahi"
+      others:
+        - "Kiwi"
+    - id: "Rua"
+      others:
+        - "OE"
+  output_variables:
+    social_security__eligible_for_young_parent_payment:
+      2018-10:
+        - true # Lives in NZ
+        - false # doesn't live in NZ

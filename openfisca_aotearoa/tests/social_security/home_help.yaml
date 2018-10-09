@@ -9,21 +9,25 @@
       is_nz_citizen: true
       home_help__had_multiple_birth: true
       home_help__adopted_2_or_more_children: false
+      social_security__is_ordinarily_resident_in_new_zealand: true
 
     - id: "Non-Citizen"
       is_nz_citizen: false
       home_help__had_multiple_birth: true
       home_help__adopted_2_or_more_children: false
+      social_security__is_ordinarily_resident_in_new_zealand: true
 
     - id: "Has No Immediate Family"
       is_nz_citizen: true
       home_help__has_no_immediate_family: true
       has_community_services_card: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
 
     - id: "Has Immediate Family"
       is_nz_citizen: true
       home_help__has_no_immediate_family: false
       has_community_services_card: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
 
   families:
     - id: "Whanau"

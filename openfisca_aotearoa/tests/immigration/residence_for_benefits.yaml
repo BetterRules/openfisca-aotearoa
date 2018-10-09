@@ -3,25 +3,28 @@
   absolute_error_margin: 0
   persons:
     - id: "Mama"
-      normally_lives_in_nz: true
       is_resident: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
     - id: "Papa"
-      normally_lives_in_nz: true
       is_permanent_resident: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
     - id: "Tama"
-      normally_lives_in_nz: true
-      is_nz_citizen: true
       age: 5
-    - id: "Tamahine"
-      normally_lives_in_nz: true
       is_nz_citizen: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
+    - id: "Tamahine"
       age: 19
+      is_nz_citizen: true
+      social_security__is_ordinarily_resident_in_new_zealand: false
     - id: "Mary"
       immigration__is_recognised_refugee: true
       social_security__has_resided_continuously_in_nz_for_a_period_of_at_least_2_years_at_any_one_time: true
     - id: "Barry"
       immigration__is_protected_person: true
       social_security__has_resided_continuously_in_nz_for_a_period_of_at_least_2_years_at_any_one_time: true
+    - id: "Larry"
+      immigration__is_protected_person: true
+      social_security__has_resided_continuously_in_nz_for_a_period_of_at_least_2_years_at_any_one_time: false
   families:
     - id: "Whanau tahi"
       principal_caregiver: "Mama"
@@ -31,33 +34,36 @@
       others:
         - "Papa"
     - id: "Whanau rua"
-      others: ["Mary", "Barry"]
+      others: ["Mary", "Barry", "Larry"]
   titled_properties:
     - id: whare
       others: ["Mama", "Papa", "Tama", "Tamahine"]
     - id: home
-      others: ["Mary", "Barry"]
+      others: ["Mary", "Barry", "Larry"]
   output_variables:
     is_nz_citizen:
-        - false # mama (resident)
-        - false # papa (resident)
+        - false # mama
+        - false # papa
         - true # Tama
-        - true # tamahine (able bodied)
-        - false # Mary (refugee)
-        - false # Barry (protected)
+        - true # tamahine
+        - false # Mary
+        - false # Barry
+        - false # Larry
     is_citizen_or_resident:
       2018-08:
-        - true # mama (principal carer)
+        - true # mama
         - true # papa
         - true # Tama
-        - true # tamahine (able bodied)
-        - false # Mary (refugee)
-        - false # Barry (protected)
+        - true # tamahine
+        - false # Mary
+        - false # Barry
+        - false # Larry
     social_security__meets_residential_requirements_for_certain_benefits:
       2018-08:
-        - true # mama (principal carer)
+        - true # mama
         - true # papa
         - true # Tama
-        - true # tamahine (able bodied)
-        - true # Mary (refugee)
-        - true # Barry (protected)
+        - false # tamahine
+        - true # Mary
+        - true # Barry
+        - false # Larry

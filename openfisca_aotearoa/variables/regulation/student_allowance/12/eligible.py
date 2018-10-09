@@ -21,7 +21,7 @@ class student_allowance__eligible_for_certain_allowances(Variable):
         #         (ii) satisfies the chief executive that he or she is ordinarily resident in New Zealand,
         #             as lived in New Zealand for at least 3 years, and has been entitled under the
         #             Immigration Act 2009 to reside indefinitely in New Zealand for at least 3 years; or
-        normally_in_nz = persons('normally_lives_in_nz', period)
+        resides_in_nz = persons('social_security__is_ordinarily_resident_in_new_zealand', period)
         lived_in_nz_3_years = persons('number_of_years_lived_in_nz', period) >= 3
 
         #         (iii) satisfies the chief executive that he or she is recognised under the Immigration
@@ -58,7 +58,7 @@ class student_allowance__eligible_for_certain_allowances(Variable):
         #         (iii) is approved to study in a part-time course under regulation 12A.
         parttime = persons('student_allowance__approved_to_study_parttime', period)
 
-        return (is_citizen + (normally_in_nz * lived_in_nz_3_years) + refugee_or_protected) \
+        return (is_citizen + (resides_in_nz * lived_in_nz_3_years) + refugee_or_protected) \
             * under_super_age * ((fulltime * attendance) + overseas + parttime)
 
 
