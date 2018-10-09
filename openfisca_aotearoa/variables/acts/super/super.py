@@ -29,6 +29,7 @@ class super__has_partner(Variable):
     label = u"Has a partner"
     reference = "http://www.legislation.govt.nz/act/public/2001/0084/latest/DLM114223.html"
 
+
 class super__is_veteran(Variable):
     value_type = bool
     entity = Person
