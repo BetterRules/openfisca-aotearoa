@@ -14,13 +14,6 @@ class super__living_alone(Variable):
     label = u"Is a person considered as living alone"
     reference = "http://www.legislation.govt.nz/act/public/2001/0084/latest/whole.html#DLM5578822"
 
-# class super__age(Variable):
-#     value_type = int
-#     entity = Person
-#     definition_period = MONTH
-#     label = u"Applicants age"
-#     reference = "http://www.legislation.govt.nz/act/public/2001/0084/latest/whole.html#DLM113987"
-
 class super__is_receiving_compensation(Variable):
     value_type = bool
     entity = Person
