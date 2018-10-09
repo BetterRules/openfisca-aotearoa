@@ -4,21 +4,29 @@
   period: 2018-08
   absolute_error_margin: 0
   persons:
+    - id: "Is 65 or older"
+      age: 68
+      super__is_receiving_compensation: false
 
-    - id: "Is Receiving ACC"
-      is_nz_citizen: true
-      super__age: 65
+    - id: "Is younger than 65"
+      age: 33
+      super__is_receiving_compensation: false
+
+    - id: "Is receiving compensation"
+      age: 65
       super__is_receiving_compensation: true
-      super__has_partner: true
 
   families:
     - id: "Whanau"
-      others: ["Is Receiving ACC"]
+      others: ["Is 65 or older", "Is younger than 65", "Is receiving compensation"]
+
   titled_properties:
     - id: whare
-      others: ["Is Receiving ACC"]
+      others: ["Is 65 or older", "Is younger than 65", "Is receiving compensation"]
 
   output_variables:
     super__eligibility:
       2018-08:
         - true
+        - false
+        - false
