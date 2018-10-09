@@ -37,7 +37,6 @@ class super__eligibility(Variable):
     label = u"Classified as eligible for NZ Super"
     reference = "http://www.legislation.govt.nz/act/public/2001/0084/latest/DLM113985.html"
 
-
     def formula(persons, period, parameters):
         return (persons('age', period) >= 65) *\
           not_(persons('super__is_receiving_compensation', period))
