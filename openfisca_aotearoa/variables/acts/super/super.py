@@ -39,7 +39,7 @@ class super__eligibility(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    label = u'Classified as eligible for NZ Super'
+    label = u"Classified as eligible for NZ Super"
     reference = "http://www.legislation.govt.nz/act/public/2001/0084/latest/DLM113985.html"
 
     def formula(persons, period, parameters):
