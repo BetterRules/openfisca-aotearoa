@@ -12,7 +12,15 @@ class family_scheme__qualifies_for_family_tax_credit(Variable):
     reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1518484.html"
 
     def formula(persons, period, parameters):
-        return persons("family_scheme__base_qualifies", period)
+        return persons("family_scheme__base_qualifies", period) * persons("family_scheme__family_tax_credit_income_under_threshold", period)
+
+
+class family_scheme__family_tax_credit_income_under_threshold(Variable):  # this variable is a proxy for the calculation "family_scheme__family_tax_credit_entitlement" which needs to be coded
+    value_type = bool
+    entity = Person
+    definition_period = MONTH
+    label = u'Is the person income under the threshold for the family tax credit'
+    reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1518484.html"
 
 
 class family_scheme__family_tax_credit_entitlement(Variable):
@@ -36,7 +44,8 @@ class family_scheme__family_tax_credit_entitlement(Variable):
         # income_over_threshold = where((family_income - threshold) < 0, 0, family_income - threshold)
 
         # calculate the number of children
-        number_of_children = persons.family.sum(persons("income_tax__dependent_child", period))
+        number_of_children = persons.family.sum(
+            persons("income_tax__dependent_child", period))
 
         # TODO this variable is incomplete and requires the formula to be finished
         return number_of_children
