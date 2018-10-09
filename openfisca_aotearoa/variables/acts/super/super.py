@@ -39,4 +39,4 @@ class super__eligibility(Variable):
 
     def formula(persons, period, parameters):
         return (persons('age', period) >= 65) *\
-          not_(persons('super__is_receiving_compensation', period))
+            not_(persons('super__is_receiving_compensation', period))
