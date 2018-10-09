@@ -3,8 +3,13 @@
 # 5.1.1 - [#94](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/94)
 * Added NZ Super
 
+# 5.1.0 - [#92](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/92)
+* Tax and benefit system evolution.
+  - adding income test to Family Tax Credit
+  - added variables `family_scheme__in_work_tax_credit_is_full_time_earner, family_scheme__in_work_tax_credit_income_under_threshold, family_scheme__family_tax_credit_income_under_threshold`
+
 # 5.0.2 - [#88](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/88)
-* Tax and benefit system evolution. 
+* Tax and benefit system evolution.
   - added formula for is_permanent_resident
 
 # 5.0.1 - [#81](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/81)
