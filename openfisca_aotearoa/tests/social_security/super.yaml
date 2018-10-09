@@ -7,22 +7,30 @@
     - id: "Is 65 or older"
       age: 68
       super__is_receiving_compensation: false
+      super__is_veteran: false
 
     - id: "Is younger than 65"
       age: 33
       super__is_receiving_compensation: false
+      super__is_veteran: false
 
     - id: "Is receiving compensation"
       age: 65
       super__is_receiving_compensation: true
+      super__is_veteran: false
+
+    - id: "Is a Veteran"
+      age: 65
+      super__is_receiving_compensation: false
+      super__is_veteran: true
 
   families:
     - id: "Whanau"
-      others: ["Is 65 or older", "Is younger than 65", "Is receiving compensation"]
+      others: ["Is 65 or older", "Is younger than 65", "Is receiving compensation", "Is a Veteran"]
 
   titled_properties:
     - id: whare
-      others: ["Is 65 or older", "Is younger than 65", "Is receiving compensation"]
+      others: ["Is 65 or older", "Is younger than 65", "Is receiving compensation", "Is a Veteran"]
 
   output_variables:
     super__eligibility:
@@ -30,3 +38,4 @@
         - true
         - false
         - false
+        - true

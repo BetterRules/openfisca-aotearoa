@@ -27,7 +27,14 @@ class super__has_partner(Variable):
     entity = Person
     definition_period = MONTH
     label = u"Has a partner"
-    reference = "http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM105404.html#DLM105404"
+    reference = "http://www.legislation.govt.nz/act/public/2001/0084/latest/DLM114223.html"
+
+class super__is_veteran(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = MONTH
+    label = u"Applicant is a veteran"
+    reference = "http://www.legislation.govt.nz/act/public/2001/0084/latest/DLM115004.html"
 
 
 class super__eligibility(Variable):
@@ -35,8 +42,8 @@ class super__eligibility(Variable):
     entity = Person
     definition_period = MONTH
     label = u"Classified as eligible for NZ Super"
-    reference = "http://www.legislation.govt.nz/act/public/2001/0084/latest/DLM113985.html"
 
     def formula(persons, period, parameters):
         return (persons('age', period) >= 65) *\
-            not_(persons('super__is_receiving_compensation', period))
+            not_(persons('super__is_receiving_compensation', period)) +\
+            persons('super__is_veteran', period)
