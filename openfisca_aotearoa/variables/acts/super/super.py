@@ -14,20 +14,22 @@ class super__living_alone(Variable):
     reference = "http://www.legislation.govt.nz/act/public/2001/0084/latest/whole.html#DLM5578822"
 
 
-class super__has_partner(Variable):
+class super__has_partner_in_long_term_care_or_rest_home(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    label = u"Has a partner"git
+    label = u"Has a partner in long term care or rest home"
     reference = "http://www.legislation.govt.nz/act/public/2001/0084/latest/DLM114223.html"
 
 
-class super__is_veteran(Variable):
-    value_type = bool
-    entity = Person
-    definition_period = MONTH
-    label = u"Applicant is a veteran"
-    reference = "http://www.legislation.govt.nz/act/public/2001/0084/latest/DLM115004.html"
+# Veterans' Support Act 2014
+# TODO: move this variable to veterans
+# class super__is_veteran(Variable):
+#     value_type = bool
+#     entity = Person
+#     definition_period = MONTH
+#     label = u"Applicant is a veteran"
+#     reference = "http://www.legislation.govt.nz/act/public/2001/0084/latest/DLM115004.html"
 
 
 class super__eligibility(Variable):
