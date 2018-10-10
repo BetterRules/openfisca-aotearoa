@@ -7,22 +7,22 @@
     - id: "Is 65 or older"
       age: 68
       acc__is_receiving_compensation: false
-      super__is_veteran: false
+      veterans_support__is_entitled_to_be_paid_veterans_pension: false
 
     - id: "Is younger than 65"
       age: 33
       acc__is_receiving_compensation: false
-      super__is_veteran: false
+      veterans_support__is_entitled_to_be_paid_veterans_pension: false
 
     - id: "Is receiving compensation"
       age: 65
       acc__is_receiving_compensation: true
-      super__is_veteran: false
+      veterans_support__is_entitled_to_be_paid_veterans_pension: false
 
     - id: "Is a Veteran"
       age: 65
       acc__is_receiving_compensation: false
-      super__is_veteran: true
+      veterans_support__is_entitled_to_be_paid_veterans_pension: true
 
   families:
     - id: "Whanau"

@@ -22,16 +22,6 @@ class super__has_partner_in_long_term_care_or_rest_home(Variable):
     reference = "http://www.legislation.govt.nz/act/public/2001/0084/latest/DLM114223.html"
 
 
-# Veterans' Support Act 2014
-# TODO: move this variable to veterans
-# class super__is_veteran(Variable):
-#     value_type = bool
-#     entity = Person
-#     definition_period = MONTH
-#     label = u"Applicant is a veteran"
-#     reference = "http://www.legislation.govt.nz/act/public/2001/0084/latest/DLM115004.html"
-
-
 class super__eligibility(Variable):
     value_type = bool
     entity = Person
@@ -41,4 +31,4 @@ class super__eligibility(Variable):
     def formula(persons, period, parameters):
         return (persons('age', period) >= 65) *\
             not_(persons('acc__is_receiving_compensation', period)) +\
-            persons('super__is_veteran', period)
+            persons('veterans_support__is_entitled_to_be_paid_veterans_pension', period)
