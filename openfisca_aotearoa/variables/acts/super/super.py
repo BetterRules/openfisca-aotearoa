@@ -14,19 +14,11 @@ class super__living_alone(Variable):
     reference = "http://www.legislation.govt.nz/act/public/2001/0084/latest/whole.html#DLM5578822"
 
 
-class super__is_receiving_compensation(Variable):
-    value_type = bool
-    entity = Person
-    definition_period = MONTH
-    label = u"Is receiving compensation payment through ACC"
-    reference = "http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM105404.html#DLM105404"
-
-
 class super__has_partner(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    label = u"Has a partner"
+    label = u"Has a partner"git
     reference = "http://www.legislation.govt.nz/act/public/2001/0084/latest/DLM114223.html"
 
 
@@ -46,5 +38,5 @@ class super__eligibility(Variable):
 
     def formula(persons, period, parameters):
         return (persons('age', period) >= 65) *\
-            not_(persons('super__is_receiving_compensation', period)) +\
+            not_(persons('acc__is_receiving_compensation', period)) +\
             persons('super__is_veteran', period)
