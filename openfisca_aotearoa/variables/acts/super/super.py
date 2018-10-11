@@ -30,6 +30,8 @@ class super__eligibility(Variable):
     reference = "http://www.legislation.govt.nz/act/public/2001/0084/latest/DLM113987.html"
 
     def formula(persons, period, parameters):
-        return (persons('age', period) >= 65) *\
+        return persons('is_citizen_or_resident') *\
+            (persons('total_number_of_years_lived_in_nz_since_age_20') > 10) *\
+            (persons('age', period) >= 65) *\
             not_(persons('acc__is_receiving_compensation', period)) +\
             persons('veterans_support__is_entitled_to_be_paid_veterans_pension', period)
