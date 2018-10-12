@@ -49,27 +49,6 @@ class is_nz_citizen(Variable):
     reference = "Immigration Act 2009 (interpretation) http://legislation.govt.nz/act/public/2009/0051/latest/whole.html#DLM1440311"
 
 
-class number_of_years_lived_in_nz(Variable):
-    value_type = int
-    entity = Person
-    definition_period = ETERNITY
-    label = u"Number of years lived in NZ"
-
-
-class total_number_of_years_lived_in_nz_since_age_20(Variable):
-    value_type = int
-    entity = Person
-    definition_period = ETERNITY
-    label = u"Total number of years lived in NZ since age 20"
-
-
-class total_number_of_years_lived_in_nz_since_age_50(Variable):
-    value_type = int
-    entity = Person
-    definition_period = ETERNITY
-    label = u"Total number of years lived in NZ since age 50"
-
-
 class is_citizen_or_resident(Variable):
     value_type = bool
     entity = Person
