@@ -1,5 +1,8 @@
 # Changelog
 
+# 5.1.2 - [#94](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/94)
+* Added NZ Superannuation
+
 # 5.1.1 - [#93](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/93)
 * Bug fix.
   - adding residency requirements to entitlements

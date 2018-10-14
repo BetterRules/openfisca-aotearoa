@@ -49,13 +49,6 @@ class is_nz_citizen(Variable):
     reference = "Immigration Act 2009 (interpretation) http://legislation.govt.nz/act/public/2009/0051/latest/whole.html#DLM1440311"
 
 
-class number_of_years_lived_in_nz(Variable):
-    value_type = int
-    entity = Person
-    definition_period = ETERNITY
-    label = u"Number of years lived in NZ"
-
-
 class is_citizen_or_resident(Variable):
     value_type = bool
     entity = Person
