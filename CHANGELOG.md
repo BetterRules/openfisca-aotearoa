@@ -1,5 +1,11 @@
 # Changelog
 
+# 5.1.3 - [#94](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/97)
+* Refactored NZ Superannuation
+  - Added `super__eligible_age`
+  - Removed age requirement from `super__eligible`
+  - Removed `super__living_alone` and `super__has_partner_in_long_term_care_or_rest_home`
+
 # 5.1.2 - [#94](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/94)
 * Added NZ Superannuation
 
