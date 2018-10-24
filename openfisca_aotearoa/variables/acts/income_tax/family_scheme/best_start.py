@@ -70,8 +70,8 @@ class best_start__year_of_child(Variable):
         whatyear = whatyear * \
             (whatyear < 4) * \
             is_current_or_previous_year * \
-            (((persons("date_of_birth", period) >=
-               datetime64('2018-07-01')) + (persons("due_date_of_birth", period) >= datetime64('2018-07-01'))) > 0)
+            (((persons("date_of_birth", period)
+                >= datetime64('2018-07-01')) + (persons("due_date_of_birth", period) >= datetime64('2018-07-01'))) > 0)
 
         return whatyear
 

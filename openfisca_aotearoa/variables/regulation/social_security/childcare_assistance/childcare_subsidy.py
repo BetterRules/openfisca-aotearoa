@@ -43,8 +43,8 @@ class social_security__eligible_for_childcare_subsidy(Variable):
         under_6_with_disability_allowance = persons.family(
             'family_has_child_eligible_for_disability_allowance_child_under_6', period)
         return is_citizen_or_resident * is_principal_carer * \
-            (under_5_years_28_days_not_attending_school +
-             is_5_and_will_be_enrolled + under_6_with_disability_allowance)
+            (under_5_years_28_days_not_attending_school
+                + is_5_and_will_be_enrolled + under_6_with_disability_allowance)
 
 
 class family_has_resident_child_under_5_not_in_school(Variable):
