@@ -18,11 +18,12 @@ jobs:
           key: cache-root-{{ checksum "setup.py" }}
 
       - run:
+          name: Install wheel
+          command: sudo pip install --upgrade pip wheel  # pip >= 8.0 needed to be compatible with "manylinux" wheels, used by numpy >= 1.11
+
+      - run:
           name: Install execution dependencies
-          command: |
-            sudo pip install --upgrade pip wheel  # pip >= 8.0 needed to be compatible with "manylinux" wheels, used by numpy >= 1.11
-            # sudo pip install --editable git+https://github.com/openfisca/openfisca-core.git@BRANCH_NAME#egg=OpenFisca-Core  # use a specific branch of OpenFisca-Core
-            sudo pip install .[test] --upgrade
+          command: sudo pip install .[test] --upgrade
 
       - run:
           name: Install deployment dependencies
