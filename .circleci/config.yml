@@ -18,8 +18,8 @@ jobs:
           key: cache-root-{{ checksum "setup.py" }}
 
       - run:
-          name: Install wheel
-          command: sudo pip install --upgrade pip wheel  # pip >= 8.0 needed to be compatible with "manylinux" wheels, used by numpy >= 1.11
+          name: Install pip
+          command: sudo pip install --upgrade pip  # pip >= 8.0 needed to be compatible with "manylinux" wheels, used by numpy >= 1.11
 
       - run:
           name: Install execution dependencies
