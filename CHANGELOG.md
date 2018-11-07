@@ -1,5 +1,10 @@
 # Changelog
 
+# 5.1.4 - [#100](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/100)
+* Technical improvement.
+    Pin to version 24.3.0, to ensure we support legislation explorer
+    the `/entities` route was added to the API in this version
+
 # 5.1.3 - [#94](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/97)
 * Refactored NZ Superannuation
   - Added `super__eligible_age`
