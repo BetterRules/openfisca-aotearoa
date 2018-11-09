@@ -32,7 +32,7 @@ jobs:
       - save_cache:
           key: cache-root-{{ checksum "setup.py" }}
           paths:
-            - /usr/local/lib/python2.7/site-packages/
+            - /usr/local/lib/python3.6/site-packages/
             - /usr/local/bin
 
       - run:
