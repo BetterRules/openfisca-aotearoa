@@ -11,7 +11,7 @@ jobs:
           name: Allow cache restore
           command: |
             sudo chown -R circleci:circleci /usr/local/bin
-            sudo chown -R circleci:circleci /usr/local/lib/python2.7/site-packages
+            sudo chown -R circleci:circleci /usr/local/lib/python3.6/site-packages
 
       - restore_cache:
           environment:
