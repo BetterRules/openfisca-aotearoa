@@ -1,12 +1,20 @@
 # OpenFisca Aotearoa
 
+[![CircleCI](https://circleci.com/gh/ServiceInnovationLab/openfisca-aotearoa/tree/master.svg?style=svg)](https://circleci.com/gh/ServiceInnovationLab/openfisca-aotearoa/tree/master)
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/ServiceInnovationLab/openfisca-aotearoa.svg?columns=all)](https://waffle.io/ServiceInnovationLab/openfisca-aotearoa)
+
+
 ## Writing the Legislation
 
-Aotearoa New Zealand's legislation as code utilising Open Fisca. 
-Early development phase. 
+Aotearoa New Zealand's legislation as code utilising Open Fisca.
+Early development phase.
 Please also read [the wiki](https://github.com/ServiceInnovationLab/openfisca-aotearoa/wiki) as a way of introduction.
 
 The files that are outside from the `openfisca_aotearoa` folder are used to set up the development environment.
+
+## Deploy to your own platform-as-a-service
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
 ## Install Instructions for Users and Contributors
 
@@ -54,7 +62,7 @@ Additional information:
 
 :tada: You are now ready to install this OpenFisca Country Package!
 
-We offer 2 install procedures. Pick procedure A or B below depending on how you plan to use this Country Package. 
+We offer 2 install procedures. Pick procedure A or B below depending on how you plan to use this Country Package.
 
 ### A. Minimal Installation (Pip Install)
 
@@ -164,3 +172,15 @@ curl "http://localhost:5000/spec"
 This endpoint returns the [Open API specification](https://www.openapis.org/) of your API.
 
 :tada: OpenFisca Aotearoa is now served by the OpenFisca Web API! To learn more, go to the [OpenFisca Web API documentation](https://openfisca.org/doc/openfisca-web-api/index.html)
+
+## Ongoing setup updates.
+
+If you update openfisca-aotearoa after some time of having it installed you may need to update the underlying dependant libraries.
+
+In particular to update the underlying openfisca-core library if the openfisca-aotearoa dependancies have updated, run:
+
+```sh
+pip install OpenFisca-Core --upgrade --upgrade-strategy only-if-needed
+```
+
+:tada: You should now be up to date again and able to continue development.

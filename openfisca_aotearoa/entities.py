@@ -5,10 +5,10 @@ from openfisca_core.entities import build_entity
 
 
 Titled_Property = build_entity(
-    key = "titled_property",
-    plural = "titled_properties",
-    label = u'Titled Property',
-    doc = '''
+    key="titled_property",
+    plural="titled_properties",
+    label=u'Titled Property',
+    doc='''
     A Titled property represents a property that is owned by a Person or group of Persons.
 
     Example usage:
@@ -17,21 +17,27 @@ Titled_Property = build_entity(
 
     For more information on group entities, see: http://openfisca.org/doc/coding-the-legislation/50_entities.html
     ''',
-    roles = [
+    roles=[
         {
             'key': 'owner',
             'plural': 'owners',
             'label': u'Owners',
             'doc': u'The one or more persons who hold title for the property.'
+            },
+        {
+            'key': 'other',
+            'plural': 'others',
+            'label': u'Others',
+            'doc': u'People who are not in any other role'
             }
         ]
     )
 
 Person = build_entity(
-    key = "person",
-    plural = "persons",
-    label = u'Person',
-    doc = '''
+    key="person",
+    plural="persons",
+    label=u'Person',
+    doc='''
     A Person represents an individual, the minimal legal entity on which a legislation might be applied.
 
     Example:
@@ -43,28 +49,36 @@ Person = build_entity(
 
     For more information on entities, see: http://openfisca.org/doc/coding-the-legislation/50_entities.html
     ''',
-    is_person = True,
+    is_person=True,
     )
 
 Family = build_entity(
-    key = "family",
-    plural = "families",
-    label = u'Family',
-    doc = '''
+    key="family",
+    plural="families",
+    label=u'Family',
+    doc='''
     A Family represents a collection of related persons.
 
     Family entities are required for calculations across a number of entitlements including for example "Working for families" and "Paid Parental Leave"
 
-    A family can contain a number of roles, such as 'principal_caregiver', 'partner', 'dependant_child' & 'independant_child'.
+    A family can contain a number of roles, such as 'principal_caregiver', 'partner' & 'child'.
 
     For more information on entities, see: http://openfisca.org/doc/coding-the-legislation/50_entities.html
+
+    Families can have multiple principle_caregivers but as each entitlement is calculated in relation to the Principle Caregiver it is recommended for modelling to create multiple family sets per caregiver to describe each scenario
     ''',
-    roles = [
+    roles=[
         {
             'key': 'principal_caregiver',
-            'plural': 'principal_caregivers',
-            'label': u'Principal caregivers',
-            'doc': u'The one person who is the principal caregiver of a family.'
+            'label': u'Principal caregiver',
+            'doc': u'The one person who is the principal caregiver of a family.',
+            'max': 1
+            },
+        {
+            'key': 'parent',
+            'plural': 'parents',
+            'label': u'Parent',
+            'doc': u'Parent of children in the whānau',
             },
         {
             'key': 'partner',
@@ -73,16 +87,16 @@ Family = build_entity(
             'doc': u'The one or more persons who are partners of a family principal caregiver.'
             },
         {
-            'key': 'dependant_child',
-            'plural': 'dependant_children',
-            'label': u'Dependant children',
-            'doc': u'The one or more persons who are financially dependant children of a family principal caregiver.'
+            'key': 'child',
+            'plural': 'children',
+            'label': u'Children',
+            'doc': u'The children of a family.'
             },
         {
-            'key': 'independant_child',
-            'plural': 'independant_children',
-            'label': u'Independant children',
-            'doc': u'The one or more persons who are financially independant children of a family principal caregiver.'
+            'key': 'other',
+            'plural': 'others',
+            'label': u'Other',
+            'doc': u'All other members of a family/whānau.'
             }
         ]
     )

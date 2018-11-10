@@ -1,0 +1,120 @@
+{
+    "acc" : {
+        "Title":"Accident Compensation Act 2001",
+        "Type": "Act",
+        "Reference":"http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM99494.html"
+    },
+    "accommodation_supplement" : {
+        "Title":"Accommodation Supplement",
+        "Type": "Section",
+        "Reference":"http://www.legislation.govt.nz/act/public/1964/0136/latest/DLM366918.html"
+    },
+    "best_start" : {
+        "Title":"Best Start",
+        "Type": "Section",
+        "Reference":"http://www.legislation.govt.nz/act/public/2007/0097/latest/LMS63791.html"
+    },
+    "civil_union" : {
+        "Title":"Civil Union Act 2004",
+        "Type": "Act",
+        "Reference":"http://www.legislation.govt.nz/act/public/2004/0102/latest/whole.html"
+    },
+    "community_services_card" : {
+        "Title": "Community Services Card",
+        "Type": "Section",
+        "Reference": "http://www.legislation.govt.nz/regulation/public/1993/0169/latest/DLM176688.html"
+    },
+    "disability_allowance" : {
+        "Title": "Disability Allowance",
+        "Type": "Section",
+        "Reference": "http://www.legislation.govt.nz/act/public/1964/0136/latest/DLM5468377.html"
+    },
+    "family_scheme" : {
+        "Title":"Family Scheme",
+        "Type": "Section",
+        "Reference":"http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1518405.html",
+        "Children": ["best_start"]
+    },
+    "generic" : {
+        "Title":"Generic",
+        "Type": "Generic"
+    },
+    "health_entitlement_cards" : {
+        "Title": "Health Entitlement Cards Regulations 1993",
+        "Type": "Regulation",
+        "Reference": "http://www.legislation.govt.nz/regulation/public/1993/0169/latest/DLM176253.html",
+        "Children": ["community_services_card"]
+    },
+    "home_help" : {
+        "Title": "The Home Help Programme",
+        "Type": "Policy",
+        "Reference": "https://www.workandincome.govt.nz/products/a-z-benefits/home-help.html"
+    },
+    "immigration" : {
+        "Title":"Immigration Act 2009",
+        "Type": "Act",
+        "Reference":"http://www.legislation.govt.nz/act/public/2009/0051/latest/DLM1440303.html"
+    },
+    "income_tax" : {
+        "Title":"Income Tax Act 2007",
+        "Type": "Act",
+        "Reference":"http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1512301.html",
+        "Children": ["family_scheme"]
+    },
+    "jobseeker_support" : {
+        "Title":"Job Seeker Support",
+        "Type": "Section",
+        "Reference":"http://www.legislation.govt.nz/act/public/1964/0136/latest/DLM5478526.html"
+    },
+    "marriage" : {
+        "Title":"Marriage Act 1955",
+        "Type": "Act",
+        "Reference":"http://www.legislation.govt.nz/act/public/1955/0092/latest/whole.html"
+    },
+    "parental_leave" : {
+        "Title":"Parental Leave and Employment Protection Act 1987",
+        "Type": "Act",
+        "Reference":"http://www.legislation.govt.nz/act/public/1987/0129/latest/whole.html"
+    },
+    "property_relationships" : {
+        "Title":"Property (Relationships) Act 1976",
+        "Type": "Act",
+        "Reference":"http://www.legislation.govt.nz/act/public/1976/0166/latest/whole.html"
+    },
+    "rates_rebates" : {
+        "Title":"Rates Rebate Act 1973",
+        "Type": "Act",
+        "Reference":"http://www.legislation.govt.nz/act/public/1973/0005/latest/DLM409296.html"
+    },
+    "social_security" : {
+        "Title":"Social Security Act 1964",
+        "Type": "Act",
+        "Reference":"http://www.legislation.govt.nz/act/public/1964/0136/latest/DLM359107.html",
+        "Children": ["sole_parent_support","disability_allowance","jobseeker_support","accommodation_supplement","supported_living_payment"]
+    },
+    "sole_parent_support" : {
+        "Title":"Sole Parent Support",
+        "Type": "Section",
+        "Reference":"http://www.legislation.govt.nz/act/public/1964/0136/358.0/DLM5468352.html"
+    },
+    "student_allowance" : {
+        "Title":"Student Allowances Regulations 1998",
+        "Type": "Regulation",
+        "Reference":"http://www.legislation.govt.nz/regulation/public/1998/0277/latest/DLM259351.html"
+    },
+    "super" : {
+        "Title":"New Zealand Superannuation and Retirement Income Act 2001",
+        "Type": "Act",
+        "Reference":"http://www.legislation.govt.nz/act/public/2001/0084/latest/whole.html"
+    },
+    "supported_living_payment" : {
+        "Title":"Supported Living Payment",
+        "Type": "Section",
+        "Reference":"http://www.legislation.govt.nz/act/public/1964/0136/latest/DLM5468367.html"
+    },
+    "veterans_support" : {
+        "Title":"Veterans' Support Act 2014",
+        "Type": "Act",
+        "Reference":"http://www.legislation.govt.nz/act/public/2014/0056/latest/DLM5537774.html"
+    }
+}

@@ -1,0 +1,6 @@
+---
+description: Minimum age to recieve Jobseeker Support (without a dependent child)
+reference: "Social Security Act 1964 88B(2) http://www.legislation.govt.nz/act/public/1964/0136/358.0/whole.html#DLM5478527"
+values:
+  "2018":
+    value: 20

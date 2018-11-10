@@ -1,0 +1,5 @@
+description: Minimum age to recieve Sole Parent Support
+reference: MSD Policy https://www.workandincome.govt.nz/products/a-z-benefits/sole-parent-support.html#null
+values:
+  "2018":
+    value: 20

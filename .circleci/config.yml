@@ -1,9 +1,10 @@
+---
 # CircleCI 2.0 configuration file. See <https://circleci.com/docs/2.0/language-python/>.
 version: 2
 jobs:
   build:
     docker:
-      - image: circleci/python:2.7-jessie
+      - image: circleci/python:2.7-stretch
     steps:
       - checkout
       - run:
@@ -37,6 +38,23 @@ jobs:
           name: Run tests
           command: make test
 
+  lint:
+    docker:
+      - image: circleci/python:2.7-stretch
+    steps:
+      - checkout
+      - run:
+          name: Install flake8
+          command: sudo pip install --upgrade flake8
+      - run:
+          name: Python linter
+          command: flake8
+
+  version-bump:
+    docker:
+      - image: circleci/python:2.7-stretch
+    steps:
+      - checkout
       - run:
           name: Check version number has been properly updated
           command: |
@@ -45,7 +63,7 @@ jobs:
 
   deploy:
     docker:
-      - image: circleci/python:2.7-jessie
+      - image: circleci/python:2.7-stretch
     environment:
       - PYPI_USERNAME: nzlabplus-bot  # here be the name of the Government Innovation Service Lab Pypi account to automatically publish the OpenFisca-Aotearoa package to Pypi
     # - PYPI_PASSWORD: this value will have to be set in CircleCI's web interface; do not set it here, it is a secret!
@@ -59,7 +77,9 @@ workflows:
   version: 2
   build_and_test:
     jobs:
+      - lint
       - build
+      - version-bump
       # Uncomment the lines below when you have a Pypi account and you are ready to deploy your country package to reusers.
       # - deploy:
       #     requires:

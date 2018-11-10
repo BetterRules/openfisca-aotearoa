@@ -1,0 +1,151 @@
+- name: Tests Sole Parent Support
+  period: 2018-10
+  absolute_error_margin: 0
+  persons:
+    - id: "Koro"
+      is_nz_citizen: true
+      age: 81
+      social_security__is_ordinarily_resident_in_new_zealand: true
+      sole_parent_support__below_income_threshold: true
+      sole_parent_support__meets_years_in_nz_requirement: true
+    - id: "Tamaiti"
+      age: 5
+  families:
+    - id: "Whanau"
+      principal_caregiver: "Koro"
+      children:
+        - "Tamaiti"
+  titled_properties:
+    - id: whare
+      others: ["Koro", "Tamaiti"]
+  output_variables:
+    social_security__eligible_for_sole_parent_support:
+      2018-10:
+        - true # koro
+        - false # Tamaiti
+
+- name: Tests Sole Parent Support when in a relationship
+  period: 2018-10
+  absolute_error_margin: 0
+  persons:
+    - id: "Papa"
+      is_nz_citizen: true
+      age: 21
+      social_security__is_ordinarily_resident_in_new_zealand: true
+      sole_parent_support__below_income_threshold: true
+      sole_parent_support__meets_years_in_nz_requirement: true
+    - id: "Mama"
+      age: 19
+    - id: "Matilda"
+      age: 5
+  families:
+    - id: "Whanau"
+      principal_caregiver: "Papa"
+      partners:
+        - "Mama"
+      children:
+        - "Matilda"
+  titled_properties:
+    - id: whare
+      others: ["Papa", "Mama", "Matilda"]
+  output_variables:
+    social_security__eligible_for_sole_parent_support:
+      2018-10:
+        - false # papa
+        - false # mama
+        - false # Matilda
+
+
+- name: Tests Sole Parent Support when inadequately supported by partner
+  period: 2018-10
+  absolute_error_margin: 0
+  persons:
+    - id: "Papa"
+      is_nz_citizen: true
+      age: 21
+      social_security__is_ordinarily_resident_in_new_zealand: true
+      sole_parent_support__below_income_threshold: true
+      sole_parent_support__meets_years_in_nz_requirement: true
+      is_adequately_supported_by_partner: false
+    - id: "Mama"
+      age: 29
+    - id: "Matilda"
+      age: 5
+  families:
+    - id: "Whanau"
+      principal_caregiver: "Papa"
+      partners:
+        - "Mama"
+      children:
+        - "Matilda"
+  titled_properties:
+    - id: whare
+      others: ["Papa", "Mama", "Matilda"]
+  output_variables:
+    social_security__eligible_for_sole_parent_support:
+      2018-10:
+        - true # papa
+        - false # mama
+        - false # Matilda
+
+
+- name: Tests Sole Parent Support - child too old
+  period: 2018-10
+  absolute_error_margin: 0
+  persons:
+    - id: "Koro"
+      is_nz_citizen: true
+      age: 81
+      social_security__is_ordinarily_resident_in_new_zealand: true
+      sole_parent_support__below_income_threshold: true
+      sole_parent_support__meets_years_in_nz_requirement: true
+    - id: "Tamaiti"
+      age: 14
+  families:
+    - id: "Whanau"
+      principal_caregiver: "Koro"
+      children:
+        - "Tamaiti"
+  titled_properties:
+    - id: whare
+      others: ["Koro", "Tamaiti"]
+  output_variables:
+    social_security__eligible_for_sole_parent_support:
+      2018-10:
+        - false # koro
+        - false # Tamaiti
+
+
+- name: Tests Sole Parent Support - multiple children, should be eligible
+  period: 2018-10
+  absolute_error_margin: 0
+  persons:
+    - id: "Koro"
+      is_nz_citizen: true
+      age: 81
+      social_security__is_ordinarily_resident_in_new_zealand: true
+      sole_parent_support__below_income_threshold: true
+      sole_parent_support__meets_years_in_nz_requirement: true
+    - id: "Tahi"
+      age: 19
+    - id: "Rua"
+      age: 14
+    - id: "Toru"
+      age: 13
+  families:
+    - id: "Whanau"
+      principal_caregiver: "Koro"
+      children:
+        - "Tahi"
+        - "Rua"
+        - "Toru"
+  titled_properties:
+    - id: whare
+      others: ["Koro", "Tahi", "Rua", "Toru"]
+  output_variables:
+    social_security__eligible_for_sole_parent_support:
+      2018-10:
+        - true # koro
+        - false
+        - false
+        - false
