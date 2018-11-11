@@ -2,7 +2,7 @@
 
 # 6.0.0 - [#100](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/98)
 * Technical improvement.
-    Upgrade to Python 3.6
+    Upgrade to Python 3.7
 
 # 5.1.4 - [#100](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/100)
 * Technical improvement.
