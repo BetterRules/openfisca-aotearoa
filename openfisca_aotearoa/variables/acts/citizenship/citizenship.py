@@ -39,6 +39,41 @@ class citizenship__living_in_nz_for_at_least_1350_days_over_5_years
   reference = ""
 
 
+class citizenship__intend_to_keep_living_in_nz
+  value_type = bool
+  definition_period = MONTH
+  label = u""
+  reference = ""
+
+
+class citizenship__can_hold_basic_conversation_in_english
+  value_type = bool
+  definition_period = MONTH
+  label = u""
+  reference = ""
+
+
+class citizenship__been_convicted_of_a_crime_in_last_3_years
+  value_type = bool
+  definition_period = MONTH
+  label = u""
+  reference = ""
+
+
+class citizenship__spent_any_time_in_prison_in_the_last_7_years
+  value_type = bool
+  definition_period = MONTH
+  label = u""
+  reference = ""
+
+
+class citizenship__ever_had_a_prison_sentence_of_more_than_5_years
+  value_type = bool
+  definition_period = MONTH
+  label = u""
+  reference = ""
+
+
 class citizenship__eligibility(Variable):
     value_type = bool
     entity = Person
