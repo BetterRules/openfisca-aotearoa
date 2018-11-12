@@ -1,0 +1,25 @@
+---
+
+- name: "NZ citizenship"
+  period: 2018-08
+  absolute_error_margin: 0
+  persons:
+    - id: "Not eligible"
+      is_resident: false
+
+  families:
+    - id: "Whanau"
+      others: [
+        "Not eligible"
+      ]
+
+  titled_properties:
+    - id: whare
+      others: [
+        "Not eligible"
+      ]
+
+  output_variables:
+    citizenship__eligibility:
+      2018-08:
+        - false # Not eligible

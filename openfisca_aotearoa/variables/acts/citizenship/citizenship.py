@@ -82,4 +82,4 @@ class citizenship__eligibility(Variable):
     reference = ""
 
     def formula(persons, period, parameters):
-        return persons('is_citizen_or_resident', period) *\
+        return persons('is_resident', period) *\
