@@ -29,4 +29,4 @@ class citizenship__eligibility(Variable):
 
     def formula(persons, period, parameters):
         return persons('citizenship__present_for_min_1350_days_during_5_years', period) *\
-        persons('citizenship__present_for_at_least_240_days_in_each_of_those_5_years', period)
+          persons('citizenship__present_for_at_least_240_days_in_each_of_those_5_years', period)
