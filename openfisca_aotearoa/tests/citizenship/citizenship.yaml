@@ -4,23 +4,37 @@
   period: 2018-08
   absolute_error_margin: 0
   persons:
-    - id: "Not eligible"
-      is_resident: false
-      citizenship__parent_born_in_nz_or_granted_citizenship_before_you_were_born: false
+    - id: "Not eligible 1350 days"
+      citizenship__present_for_min_1350_days_during_5_years: false
+      citizenship__present_for_at_least_240_days_in_each_of_those_5_years: true
+
+    - id: "Not eligible 240 days"
+      citizenship__present_for_min_1350_days_during_5_years: true
+      citizenship__present_for_at_least_240_days_in_each_of_those_5_years: false
+
+    - id: "Eligible"
+      citizenship__present_for_min_1350_days_during_5_years: true
+      citizenship__present_for_at_least_240_days_in_each_of_those_5_years: true
 
   families:
     - id: "Whanau"
       others: [
-        "Not eligible"
+        "Not eligible 1350 days",
+        "Not eligible 240 days",
+        "Eligible"
       ]
 
   titled_properties:
     - id: whare
       others: [
-        "Not eligible"
+        "Not eligible 1350 days",
+        "Not eligible 240 days",
+        "Eligible"
       ]
 
   output_variables:
     citizenship__eligibility:
       2018-08:
-        - false # Not eligible
+        - false # Not eligible 1350 days
+        - false # Not eligible 240 days
+        - true  # Eligible

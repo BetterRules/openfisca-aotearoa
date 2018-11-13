@@ -4,84 +4,20 @@ from openfisca_core.model_api import *
 from openfisca_aotearoa.entities import Person
 
 
-class citizenship__parent_born_in_nz_or_granted_citizenship_before_you_were_born(Variable):
+class citizenship__present_for_min_1350_days_during_5_years(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    label = u""
-    reference = ""
+    label = u"Applicant was present in New Zealand for a min of 1,350 days during the 5 years immediately preceding the date of application"
+    reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
 
 
-class citizenship__samoan_citizen(Variable):
+class citizenship__present_for_at_least_240_days_in_each_of_those_5_years(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    label = u""
-    reference = ""
-
-
-class citizenship__under_16_years_of_age(Variable):
-    value_type = bool
-    entity = Person
-    definition_period = MONTH
-    label = u""
-    reference = ""
-
-
-class citizenship__living_in_nz_for_at_least_240_days_in_each_year(Variable):
-    value_type = bool
-    entity = Person
-    definition_period = MONTH
-    label = u""
-    reference = ""
-
-
-class citizenship__living_in_nz_for_at_least_1350_days_over_5_years(Variable):
-    value_type = bool
-    entity = Person
-    definition_period = MONTH
-    label = u""
-    reference = ""
-
-
-class citizenship__intend_to_keep_living_in_nz(Variable):
-    value_type = bool
-    entity = Person
-    definition_period = MONTH
-    label = u""
-    reference = ""
-
-
-class citizenship__can_hold_basic_conversation_in_english(Variable):
-    value_type = bool
-    entity = Person
-    definition_period = MONTH
-    label = u""
-    reference = ""
-
-
-class citizenship__been_convicted_of_a_crime_in_last_3_years(Variable):
-    value_type = bool
-    entity = Person
-    definition_period = MONTH
-    label = u""
-    reference = ""
-
-
-class citizenship__spent_any_time_in_prison_in_the_last_7_years(Variable):
-    value_type = bool
-    entity = Person
-    definition_period = MONTH
-    label = u""
-    reference = ""
-
-
-class citizenship__ever_had_a_prison_sentence_of_more_than_5_years(Variable):
-    value_type = bool
-    entity = Person
-    definition_period = MONTH
-    label = u""
-    reference = ""
+    label = u"Applicant was present in New Zealand for at least 240 days in each of those 5 years"
+    reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
 
 
 class citizenship__eligibility(Variable):
@@ -90,8 +26,7 @@ class citizenship__eligibility(Variable):
     entity = Person
     definition_period = MONTH
     label = u"Classified as eligible for NZ citizenship"
-    reference = ""
 
     def formula(persons, period, parameters):
-        return persons('is_resident', period) *\
-          persons('citizenship__parent_born_in_nz_or_granted_citizenship_before_you_were_born', period)
+        return persons('citizenship__present_for_min_1350_days_during_5_years', period) *\
+        persons('citizenship__present_for_at_least_240_days_in_each_of_those_5_years', period)
