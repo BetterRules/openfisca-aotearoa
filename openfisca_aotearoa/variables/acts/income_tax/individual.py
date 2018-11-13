@@ -14,7 +14,6 @@ class income_tax__residence(Variable):
 
 
 class TaxPayerFilingStatus(Enum):
-    #__order__ = "non_filing filing filing_with_schedular_income"
     non_filing = u'Non-filing taxpayer'
     filing = u'Filing taxpayer'
     filing_with_schedular_income = u'Filing taxpayer with schedular income'
