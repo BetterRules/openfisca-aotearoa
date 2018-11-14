@@ -1,5 +1,9 @@
 # Changelog
 
+# 6.0.1 - [#100](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/102)
+* Tidyup metadata
+    Shortened names and improved language in descriptions
+
 # 6.0.0 - [#100](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/98)
 * Technical improvement.
     Upgrade to Python 3.7
