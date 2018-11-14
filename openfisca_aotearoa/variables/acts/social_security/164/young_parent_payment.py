@@ -44,7 +44,8 @@ class social_security__meets_young_parent_payment_basic_requirements(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    label = u"""
+    label = "Meets young parent payment basic requirements"
+    reference = u"""
         http://legislation.govt.nz/act/public/1964/0136/latest/whole.html#DLM4686080
         (2) The basic qualifications for entitlement to a young parent payment are that the young person
             (a) is aged 16 to 19 years; and
