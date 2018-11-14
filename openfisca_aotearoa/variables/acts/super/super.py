@@ -29,3 +29,10 @@ class super__eligibility(Variable):
             not_(persons('acc__is_receiving_compensation', period)) +\
             persons(
                 'veterans_support__is_entitled_to_be_paid_veterans_pension', period)
+
+
+class super__is_being_paid_nz_superannuation(Variable):
+    value_type = bool
+    entity = Person
+    label = "New Zealand superannuation"
+    definition_period = MONTH
