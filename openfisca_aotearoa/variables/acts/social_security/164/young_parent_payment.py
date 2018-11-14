@@ -45,25 +45,24 @@ class social_security__meets_young_parent_payment_basic_requirements(Variable):
     entity = Person
     definition_period = MONTH
     label = "Meets young parent payment basic requirements"
-    reference = u"""
-        http://legislation.govt.nz/act/public/1964/0136/latest/whole.html#DLM4686080
-        (2) The basic qualifications for entitlement to a young parent payment are that the young person
-            (a) is aged 16 to 19 years; and
-            (b) is a parent or step-parent of a dependent child or dependent children; and
-            (c) either
-                (i) is undertaking or is available for a full-time course of secondary instruction, tertiary education, approved training, or approved
-                work-based learning, leading to
-                    (A) NCEA level 2; or
-                    (B) an equivalent qualification (in the opinion of the chief executive); or
-                    (C) a higher qualification; or
-                (ii) would be so available but for circumstances
-                    (A) under which the obligation to undertake education or training or work-based learning in section 170(1)﻿(a) would not, under
-                        section 170(3), apply to the young person; or
-                    (B) that would qualify the young person for an exemption under section 105 from that obligation; and
-            (d) meets the residential requirements set out in section 74AA; and
-            (e) has no income or an income of less than the amount that would fully abate the young parent payment.
-
-        """
+    reference = "http://legislation.govt.nz/act/public/1964/0136/latest/whole.html#DLM4686080"
+    u"""
+    (2) The basic qualifications for entitlement to a young parent payment are that the young person
+        (a) is aged 16 to 19 years; and
+        (b) is a parent or step-parent of a dependent child or dependent children; and
+        (c) either
+            (i) is undertaking or is available for a full-time course of secondary instruction, tertiary education, approved training, or approved
+            work-based learning, leading to
+                (A) NCEA level 2; or
+                (B) an equivalent qualification (in the opinion of the chief executive); or
+                (C) a higher qualification; or
+            (ii) would be so available but for circumstances
+                (A) under which the obligation to undertake education or training or work-based learning in section 170(1)﻿(a) would not, under
+                    section 170(3), apply to the young person; or
+                (B) that would qualify the young person for an exemption under section 105 from that obligation; and
+        (d) meets the residential requirements set out in section 74AA; and
+        (e) has no income or an income of less than the amount that would fully abate the young parent payment.
+    """
 
     def formula(persons, period, parameters):
         # (a) is aged 16 to 19 years; and
