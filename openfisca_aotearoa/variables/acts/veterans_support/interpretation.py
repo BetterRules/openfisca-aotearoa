@@ -8,7 +8,7 @@ class veterans_support__received_parents_allowance(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    label = u'Boolean for if a Person is classified as receiving a parents allowance'
+    label = u"Is classified as receiving a parent's allowance"
     reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/whole.html#DLM1518484"
 
 
@@ -16,7 +16,7 @@ class veterans_support__received_childrens_pension(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    label = u'Boolean for if a Person is classified as receiving a parents allowance'
+    label = u"Is classified as receiving a children's pension"
     reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/whole.html#DLM1518484"
 
 
