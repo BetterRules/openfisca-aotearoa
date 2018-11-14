@@ -89,7 +89,7 @@ class income_tax__taxable_income(Variable):
     value_type = float
     entity = Person
     definition_period = YEAR
-    label = "Taxable income"
+    label = "A person's taxable income for a tax year"
     reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1512344.html"
 
     def formula(person, period, parameters):
