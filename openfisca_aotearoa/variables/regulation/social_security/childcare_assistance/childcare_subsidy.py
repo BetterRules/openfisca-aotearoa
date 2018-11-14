@@ -67,6 +67,7 @@ class family_has_resident_child_aged_5_who_will_be_enrolled_in_school(Variable):
     value_type = bool
     entity = Family
     definition_period = MONTH
+    description ="Family has resident child aged 5 who will be enrolled in school"
 
     def formula(families, period, parameters):
         dependent_children = families.members(
