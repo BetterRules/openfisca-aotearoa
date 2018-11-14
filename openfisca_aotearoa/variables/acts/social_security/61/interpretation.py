@@ -61,11 +61,13 @@ class social_security__is_being_paid_jobseeker_benefit(Variable):
     label = "Is being paid Jobseeker"
     definition_period = MONTH
 
+
 class social_security__is_being_paid_sole_parent_support(Variable):
     value_type = bool
     entity = Person
     label = "Is being paid sole parent support"
     definition_period = MONTH
+
 
 class social_security__is_being_paid_a_supported_living_payment(Variable):
     value_type = bool
@@ -80,11 +82,13 @@ class social_security__is_being_paid_a_youth_payment(Variable):
     label = "Is being paid a a youth payment"
     definition_period = MONTH
 
+
 class social_security__is_being_paid_a_young_parent_payment(Variable):
     value_type = bool
     entity = Person
     label = "Is being paid a a young parent payment"
     definition_period = MONTH
+
 
 class social_security__is_being_paid_an_emergency_benefit(Variable):
     value_type = bool
