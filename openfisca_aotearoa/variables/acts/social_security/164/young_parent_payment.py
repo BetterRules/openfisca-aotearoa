@@ -9,20 +9,20 @@ class social_security__eligible_for_young_parent_payment(Variable):
     entity = Person
     definition_period = MONTH
     label = "Eligible for Young Parent Payment"
-    reference = u"""
-    http://legislation.govt.nz/act/public/1964/0136/latest/whole.html#DLM4686080
+    reference = "http://legislation.govt.nz/act/public/1964/0136/latest/whole.html#DLM4686080"
+    u"""
 
     164 Young parent payment: basic criteria
-        (1) The basic qualifications for entitlement to a young parent payment are in subsection (2). The qualifications for a single person are in section 165.
-            The qualifications for a young person who is or has been married, in a civil union, or in a de facto relationship are in section 166.
+    (1) The basic qualifications for entitlement to a young parent payment are in subsection (2). The qualifications for a single person are in section 165.
+        The qualifications for a young person who is or has been married, in a civil union, or in a de facto relationship are in section 166.
 
-        (2) <--  snip - see social_security__meets_young_parent_payment_basic_requirements -->
+    (2) <--  snip - see social_security__meets_young_parent_payment_basic_requirements -->
 
-        (3) Nothing in subsection (2)﻿(e) affects the entitlement of a young person to receive a young parent payment if, during a temporary period, the person
-            has income sufficient to fully abate the payment but the person otherwise fulfils the conditions of entitlement to the payment.
-        (4) For the purposes of subsection (2)﻿(b), a dependent child of a young person who is married, in a civil union, or in a de facto relationship must
-            also be treated as a dependent child of the young person’s spouse or partner.
-        """
+    (3) Nothing in subsection (2)﻿(e) affects the entitlement of a young person to receive a young parent payment if, during a temporary period, the person
+        has income sufficient to fully abate the payment but the person otherwise fulfils the conditions of entitlement to the payment.
+    (4) For the purposes of subsection (2)﻿(b), a dependent child of a young person who is married, in a civil union, or in a de facto relationship must
+        also be treated as a dependent child of the young person’s spouse or partner.
+    """
 
     def formula(persons, period, parameters):
         basic_requirements = persons(
