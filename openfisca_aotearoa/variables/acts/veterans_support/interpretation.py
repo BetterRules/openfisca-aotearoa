@@ -26,3 +26,10 @@ class veterans_support__is_entitled_to_be_paid_veterans_pension(Variable):
     definition_period = MONTH
     label = u"Applicant is a entitled to be paid veterans pension in a Pacific country"
     reference = "http://www.legislation.govt.nz/act/public/2014/0056/latest/DLM5537707.html"
+
+
+class veterans_support__is_being_paid_a_veterans_pension(Variable):
+    value_type = bool
+    entity = Person
+    label = "Is being paid a Veteran's Pension"
+    definition_period = MONTH
