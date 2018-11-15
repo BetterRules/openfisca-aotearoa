@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from openfisca_core.model_api import *
+from openfisca_core.model_api import Variable
+from openfisca_core.periods import MONTH, DAY
 from openfisca_aotearoa.entities import Person
 
 
@@ -20,6 +21,30 @@ class citizenship__present_for_at_least_240_days_in_each_of_those_5_years(Variab
     reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
 
 
+class present_in_new_zealand(Variable):
+    value_type = bool
+    entity = Person
+    entity = Person
+    definition_period = DAY
+
+
+class immigration__holds_indefinite_stay_visa(Variable):
+    value_type = bool
+    entity = Person
+    entity = Person
+    definition_period = MONTH
+
+
+class citizenship__meets_presence_requirement(Variable):
+    value_type = bool
+    entity = Person
+    entity = Person
+    definition_period = DAY
+
+    def formula(persons, period, parameters):
+        pass
+
+
 class citizenship__eligibility(Variable):
     value_type = bool
     entity = Person
@@ -29,4 +54,5 @@ class citizenship__eligibility(Variable):
 
     def formula(persons, period, parameters):
         return persons('citizenship__present_for_min_1350_days_during_5_years', period) *\
-            persons('citizenship__present_for_at_least_240_days_in_each_of_those_5_years', period)
+            persons(
+                'citizenship__present_for_at_least_240_days_in_each_of_those_5_years', period)
