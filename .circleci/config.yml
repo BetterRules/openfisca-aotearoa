@@ -59,6 +59,7 @@ jobs:
             pip install --upgrade pip twine wheel
             # pip install --editable git+https://github.com/openfisca/openfisca-core.git@BRANCH#egg=OpenFisca-Core[web-api]  # use a specific branch of OpenFisca-Core
             pip install --editable .[dev] --upgrade
+            pip install -e "git+git://github.com/ServiceInnovationLab/openfisca-core.git@period-day#egg=openfisca_core"
 
       - save_cache:
           key: v1-py2-{{ checksum "setup.py" }}
@@ -92,6 +93,7 @@ jobs:
             pip install --upgrade pip twine wheel
             # pip install --editable git+https://github.com/openfisca/openfisca-core.git@BRANCH#egg=OpenFisca-Core[web-api]  # use a specific branch of OpenFisca-Core
             pip install --editable .[dev] --upgrade
+            pip install -e "git+git://github.com/ServiceInnovationLab/openfisca-core.git@period-day#egg=openfisca_core"
 
       - save_cache:
           key: v1-py3-{{ checksum "setup.py" }}
