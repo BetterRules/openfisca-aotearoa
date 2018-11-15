@@ -7,7 +7,8 @@ class social_security__child_with_serious_disability(Variable):
     entity = Person
     definition_period = MONTH
     label = "Child has serious disability"
-    reference = """Social Security Act 1964 Part 1D Child disability allowance 39A
+    reference = "http://legislation.govt.nz/act/public/1964/0136/latest/whole.html#DLM361659"
+    """Social Security Act 1964 Part 1D Child disability allowance 39A
         (1)For the purposes of this section and of sections 39B to 39E, child with a serious disability means a dependent child who
         (a) has a physical or mental disability;
         (b) because of that disability needs constant care and attention; and
@@ -27,8 +28,8 @@ class social_security__has_severely_restricted_capacity_for_work(Variable):
     entity = Person
     definition_period = MONTH
     label = "Is incapable of regularly working 15 or more hours a week in open employment"
-    reference = """
-        http://legislation.govt.nz/act/public/1964/0136/latest/whole.html#DLM5468367
+    reference = "http://legislation.govt.nz/act/public/1964/0136/latest/whole.html#DLM5468367"
+    """
         40A Supported living payment: purpose
         (a) people who have, and are likely to have in the future, a severely restricted
             capacity to support themselves through open employment because of sickness, injury, or disability:
@@ -53,7 +54,8 @@ class social_security__disability_was_self_inflicted(Variable):
     definition_period = MONTH
     label = """The person's restricted capacity for work, or total blindness, was self-inflicted and brought about by
     the person with a view to qualifying for a benefit"""
-    reference = """
+    reference = "http://legislation.govt.nz/act/public/1964/0136/latest/whole.html#DLM361695"
+    """
         40B (5) A person must not be granted a supported living payment under this section if the chief
         executive is satisfied that the person's restricted capacity for work, or total blindness, was
         self-inflicted and brought about by the person with a view to qualifying for a benefit.
