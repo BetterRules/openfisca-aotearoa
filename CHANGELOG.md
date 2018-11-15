@@ -1,7 +1,7 @@
 # Changelog
 
 # 6.1.0 - [#101](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/101)
-* Added Citizenship
+* Added Citizenship by grant presence requirement
 
 # 6.0.1 - [#100](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/102)
 * Tidyup metadata
