@@ -35,19 +35,21 @@ class is_a_parent(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
+    label = "Is a parent?"
 
 
 class is_a_step_parent(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
+    label = "Is a step-parent?"
 
 
 class is_married(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    label = "is married"
+    label = "Is married?"
 
     def formula(persons, period, parameters):
         return persons('marriage__is_married', period)
@@ -57,7 +59,7 @@ class is_in_civil_union(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    label = "is in a civil union"
+    label = "Is in a civil union?"
 
     def formula(persons, period, parameters):
         return persons('civil_union__is_in_civil_union', period)
@@ -67,7 +69,7 @@ class is_in_de_facto_relationship(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    label = "is in a de facto relationship"
+    label = "Is in a de facto relationship?"
 
     def formula(persons, period, parameters):
         return persons('property_relationships__is_in_de_facto_relationship', period)
@@ -77,19 +79,14 @@ class has_been_married_or_in_a_civil_union_or_de_facto_relationship(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    reference = """
-        he or she is not married
-        but has been married or in a civil union or de facto relationship
-        """
+    label = "He or she is not married but has been married or in a civil union or de facto relationship"
 
 
 class is_married_or_in_a_civil_union_or_de_facto_relationship(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    reference = """
-        he or she is married, or in a civil union or de facto relationship
-        """
+    label = "He or she is married, or in a civil union or de facto relationship"
 
     def formula(persons, period, parameters):
         return persons('is_married', period) + persons('is_in_civil_union', period) + persons('is_in_de_facto_relationship', period)

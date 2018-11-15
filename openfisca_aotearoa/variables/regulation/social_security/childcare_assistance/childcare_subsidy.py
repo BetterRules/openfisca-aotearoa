@@ -67,6 +67,8 @@ class family_has_resident_child_aged_5_who_will_be_enrolled_in_school(Variable):
     value_type = bool
     entity = Family
     definition_period = MONTH
+    label = "Family has resident child aged 5 who will be enrolled in school"
+    reference = "http://www.legislation.govt.nz/regulation/public/2004/0268/latest/DLM282545.html"
 
     def formula(families, period, parameters):
         dependent_children = families.members(

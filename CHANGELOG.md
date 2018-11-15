@@ -3,7 +3,11 @@
 # 6.1.0 - [#101](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/101)
 * Added Citizenship
 
-# 6.0.0 - [#98](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/98)
+# 6.0.1 - [#100](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/102)
+* Tidyup metadata
+    Adding missing labels, shortened long labels and improved language in descriptions
+
+# 6.0.0 - [#100](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/98)
 * Technical improvement.
     Upgrade to Python 3.7
 
