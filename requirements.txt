@@ -1,0 +1,2 @@
+OpenFisca-Core[web-api]<25.0,>=24.4
+

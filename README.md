@@ -18,7 +18,7 @@ The files that are outside from the `openfisca_aotearoa` folder are used to set 
 
 ## Install Instructions for Users and Contributors
 
-This package requires [Python 2.7](https://www.python.org/downloads/) and [pip](https://pip.pypa.io/en/stable/installing/) .
+This package requires [Python 3](https://www.python.org/downloads/) and [pip](https://pip.pypa.io/en/stable/installing/) .
 
 Supported platforms:
 - GNU/Linux distributions (in particular Debian and Ubuntu);
@@ -37,7 +37,7 @@ We recommend using a [virtual environment](https://virtualenv.pypa.io/en/stable/
 To install pew, launch a terminal on your computer and follow these instructions:
 
 ```sh
-python --version # You should have python 2.7.9 or better installed on your computer.
+python --version # You should have python 3.7 or better installed on your computer.
 # If not, visit http://www.python.org to install it and install pip as well.
 ```
 
@@ -45,10 +45,10 @@ python --version # You should have python 2.7.9 or better installed on your comp
 pip install --upgrade pip
 pip install pew  # if asked, answer "Y" to the question about modifying your shell config file.
 ```
-To set-up and create a new a virtualenv named **openfisca** running python2.7:
+To set-up and create a new a virtualenv named **openfisca** running python3.7:
 
 ```sh
-pew new openfisca --python=python2.7
+pew new openfisca --python=python3.7
 ```
 
 The virtualenv you just created will be automatically activated. This means you will operate in the virtualenv immediately. You should see a prompt resembling this:
@@ -79,7 +79,7 @@ For more advanced uses, head to the [Advanced Installation](#advanced-installati
 Inside your virtualenv, check the prerequisites:
 
 ```sh
-python --version  # should print "Python 2.7.xx".
+python --version  # should print "Python 3.xx".
 #if not, make sure you pass the python version as an argument when creating your virtualenv
 ```
 
@@ -120,7 +120,7 @@ Set your working directory to the location where you want OpenFisca Aotearoa clo
 Inside your virtualenv, check the prerequisites:
 
 ```sh
-python --version  # should print "Python 2.7.xx".
+python --version  # should print "Python 3.xx".
 #if not, make sure you pass the python version as an argument when creating your virtualenv
 ```
 
