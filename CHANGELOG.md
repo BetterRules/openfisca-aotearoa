@@ -1,5 +1,9 @@
 # Changelog
 
+# 6.0.2 - [#100](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/103)
+* Tidyup metadata
+    Adding yet more missing labels
+
 # 6.0.1 - [#100](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/102)
 * Tidyup metadata
     Adding missing labels, shortened long labels and improved language in descriptions
