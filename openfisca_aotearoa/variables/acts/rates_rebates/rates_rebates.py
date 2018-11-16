@@ -11,13 +11,14 @@ class rates_rebates__dependants(Variable):
     value_type = int
     entity = Person
     definition_period = YEAR
-    label = u"Number of Persons classified as dependant for the purposes of rates rebates"
+    label = u"Number of Persons classified as dependant for the purposes of Rates Rebates"
 
 
 class rates_rebates__rates_total(Variable):
     value_type = float
     entity = Titled_Property
     definition_period = YEAR
+    label = "Total rates for the property"
 
 
 class rates_rebates__combined_income(Variable):
@@ -26,7 +27,8 @@ class rates_rebates__combined_income(Variable):
     definition_period = YEAR
     # Allows user to declare a salary for a year. OpenFisca will spread the yearly amount over the months contained in the year.
     set_input = set_input_divide_by_period
-    label = "Combined income"
+    label = "Combined Income of applicant and others normally resident at property for the purposes of Rates Rebates"
+    reference = "http://www.legislation.govt.nz/act/public/1973/0005/67.0/whole.html#DLM409685"
 
 
 # Reference is accurate as at the time this formula was written,
