@@ -10,7 +10,7 @@ class student_allowance__eligible_for_certain_allowances(Variable):
     entity = Person
     definition_period = MONTH
     reference = "http://legislation.govt.nz/regulation/public/1998/0277/latest/whole.html#DLM260337"
-    label = "Elible to certain allowances under Student Allowance Regulations"
+    label = "Eligible to certain allowances under Student Allowance Regulations"
 
     def formula(persons, period, parameters):
 
