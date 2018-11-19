@@ -51,6 +51,7 @@ class family_has_resident_child_under_5_not_in_school(Variable):
     value_type = bool
     entity = Family
     definition_period = MONTH
+    label = "Family has a resident child who is under 5 years old and not in school"
 
     def formula(families, period, parameters):
         dependent_children = families.members(
@@ -85,6 +86,7 @@ class family_has_child_eligible_for_disability_allowance_child_under_6(Variable)
     value_type = bool
     entity = Family
     definition_period = MONTH
+    label = "Family has a child under 6 years old and eligible for Disability Allowance"
 
     def formula(families, period, parameters):
         dependent_children = families.members(

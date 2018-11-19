@@ -41,6 +41,7 @@ class social_security__has_orphaned_child_in_family(Variable):
     entity = Family
     definition_period = MONTH
     reference = "http://www.legislation.govt.nz/act/public/1964/0136/latest/whole.html#DLM361606"
+    label = "Family is caring for an orphan as per Social Security Act 1964"
 
     def formula(families, period, parameters):
         children = families.members(

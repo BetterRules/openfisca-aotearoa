@@ -47,6 +47,7 @@ class social_security__has_unsupported_child_in_family(Variable):
     entity = Family
     definition_period = MONTH
     reference = "http://www.legislation.govt.nz/act/public/1964/0136/latest/whole.html#DLM361613"
+    label = "Family has an unsupported child"
 
     def formula(families, period, parameters):
         children = families.members('social_security__is_a_child', period)
