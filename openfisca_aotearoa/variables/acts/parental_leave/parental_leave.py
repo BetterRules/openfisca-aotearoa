@@ -41,7 +41,7 @@ class parental_leave__eligible_employee(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    label = u"Eligible employee"
+    label = u"Is employee eligible for Paid Parental Leave?"
     reference = u"http://www.legislation.govt.nz/act/public/1987/0129/latest/DLM121539.html"
 
     def formula(persons, period, parameters):
