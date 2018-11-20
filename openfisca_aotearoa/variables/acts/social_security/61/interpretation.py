@@ -95,27 +95,3 @@ class social_security__is_being_paid_an_emergency_benefit(Variable):
     entity = Person
     label = "Is being paid a a young parent payment"
     definition_period = MONTH
-
-
-class social_security__cash_assets(Variable):
-    value_type = int
-    entity = Person
-    label = "cash assets"
-    definition_period = MONTH
-    reference = "http://www.legislation.govt.nz/act/public/1964/0136/latest/DLM362802.html#DLM362817"
-    """cash assets-
-    (a)means
-    (i) money saved with a bank or other institution, money invested with a bank
-        or other institution, or money banked with a bank or other institution:
-    (ii) money invested in securities, bonds, or debentures, or advanced on mortgage:
-    (iia) money withdrawn from a KiwiSaver scheme registered under subpart 2 of
-        Part 4 of the Financial Markets Conduct Act 2013:
-    (iii) money invested in shares in a partnership or limited liability company or
-        other incorporated or unincorporated body; but
-    (ab) does not include any contributions to, or any member's interest in, any
-        KiwiSaver scheme that is registered under subpart 2 of Part 4 of the Financial
-        Markets Conduct Act 2013; and
-    (b) does not include any specified item or amount of cash assets, or cash assets
-        of a specified kind, that is declared not to be cash assets for the purposes
-        of this Act by regulations made under section 132
-    """
