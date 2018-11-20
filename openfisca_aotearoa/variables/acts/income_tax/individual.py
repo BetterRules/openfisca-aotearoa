@@ -13,24 +13,6 @@ class income_tax__residence(Variable):
     reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1518482.html"
 
 
-class TaxPayerFilingStatus(Enum):
-    # __order__ = "non_filing filing filing_with_schedular_income"
-    non_filing = u'Non-filing taxpayer'
-    filing = u'Filing taxpayer'
-    filing_with_schedular_income = u'Filing taxpayer with schedular income'
-    reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1512331.html"
-
-
-class income_tax__tax_payer_filing_status(Variable):
-    value_type = Enum
-    possible_values = TaxPayerFilingStatus
-    default_value = TaxPayerFilingStatus.non_filing
-    entity = Person
-    definition_period = YEAR
-    label = u"Filing Status"
-    reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1512331.html"
-
-
 class income_tax__annual_gross_income(Variable):
     value_type = float
     entity = Person
