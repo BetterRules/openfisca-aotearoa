@@ -1,58 +1,95 @@
 # -*- coding: utf-8 -*-
 
 from openfisca_core.model_api import Variable
-from openfisca_core.periods import MONTH, DAY
+from openfisca_core.periods import MONTH, DAY, YEAR
 from openfisca_aotearoa.entities import Person
 
 
-class citizenship__present_for_min_1350_days_during_5_years(Variable):
+class citizenship__citizenship_by_grant_may_be_authorized(Variable):
     value_type = bool
     entity = Person
-    definition_period = MONTH
+    definition_period = DAY
+    reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
+    def formula_2005_04_20(persons, period, parameters):
+      return persons('age', period) > parameters(period).citizenship.citizenship_by_grant_age_threshold * \
+        persons('is_of_full_capacity', period) * \
+        persons('citizenship__meets_minimum_presence_requirements', period) * \
+        persons('citizenship__is_of_good_character', period) * \
+        persons('citizenship__has_sufficient_knowledge_of_the_responsibilities_and_privileges_attaching_to_nz_citizenship') * \
+        persons('citizenship__has_sufficient_knowledge_of_the_english_language', period) * \
+        (persons('citizenship__intends_to_reside_in_nz', period) + persons('citizenship__intends_to_enter_or_continue_crown_service', period))
+
+
+class citizenship__meets_minimum_presence_requirements(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = DAY
     label = u"Applicant was present in New Zealand for a min of 1,350 days during the 5 years immediately preceding the date of application"
     reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
-
-
-class citizenship__present_for_at_least_240_days_in_each_of_those_5_years(Variable):
-    value_type = bool
-    entity = Person
-    definition_period = MONTH
-    label = u"Applicant was present in New Zealand for at least 240 days in each of those 5 years"
-    reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
-
+    def formula(persons, period, parameters):
+      # that the applicant was present in New Zealand—
+      # (i) for a minimum of 1350 days during the 5 years immediately preceding the date of the application; and
+      # persons('immigration__entitled_to_stay_indefinitely', period) * \
+      # (ii) for at least 240 days in each of those 5 years,—
+      # being days during which the applicant was entitled in terms of the Immigration Act 2009 to be in New Zealand indefinitely
+      return persons # TODO
 
 class present_in_new_zealand(Variable):
     value_type = bool
     entity = Person
-    entity = Person
     definition_period = DAY
+    label = "Applicant was present in New Zealand on this day"
+    reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
 
 
 class immigration__holds_indefinite_stay_visa(Variable):
     value_type = bool
     entity = Person
-    entity = Person
-    definition_period = MONTH
-
-
-class citizenship__meets_presence_requirement(Variable):
-    value_type = bool
-    entity = Person
-    entity = Person
     definition_period = DAY
+    label = "is entitled in terms of the Immigration Act 2009 to be in New Zealand indefinitely"
+    reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
 
-    def formula(persons, period, parameters):
-        pass
 
-
-class citizenship__eligibility(Variable):
+class is_of_full_capacity(Variable):
     value_type = bool
     entity = Person
-    entity = Person
-    definition_period = MONTH
-    label = u"Classified as eligible for NZ citizenship"
+    definition_period = YEAR
+    label = "is of full capacity (a person shall be deemed to be of full capacity if he is not of unsound mind)"
+    reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443689.html#DLM443689"
 
-    def formula(persons, period, parameters):
-        return persons('citizenship__present_for_min_1350_days_during_5_years', period) *\
-            persons(
-                'citizenship__present_for_at_least_240_days_in_each_of_those_5_years', period)
+class citizenship__is_of_good_character(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = YEAR
+    label = "applicant is of good character"
+    reference = ["http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html", "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443872.html"]
+
+
+class citizenship__has_sufficient_knowledge_of_the_responsibilities_and_privileges_attaching_to_nz_citizenship(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = YEAR
+    label = "applicant has sufficient knowledge of the English language"
+    reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
+
+class citizenship__has_sufficient_knowledge_of_the_english_language(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = YEAR
+    label = "has sufficient knowledge of the English language"
+    reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
+
+class citizenship__intends_to_reside_in_nz(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = YEAR
+    label = "intends to continue to reside in New Zealand"
+    reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
+
+
+class citizenship__intends_to_enter_or_continue_crown_service(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = YEAR
+    label = "intends to enter into or continue in Crown service under the New Zealand Government, or service under an international organisation of which the New Zealand Government is a member, or service in the employment of a person, company, society, or other body of persons resident or established in New Zealand"
+    reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
