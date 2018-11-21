@@ -11,7 +11,7 @@ class citizenship__citizenship_by_grant_may_be_authorized(Variable):
     definition_period = DAY
     reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
     def formula_2005_04_20(persons, period, parameters):
-      return persons('age', period) > parameters(period).citizenship.citizenship_by_grant_age_threshold * \
+      return persons('age', period) >= parameters(period).citizenship.by_grant.minimum_age_threshold * \
         persons('is_of_full_capacity', period) * \
         persons('citizenship__meets_minimum_presence_requirements', period) * \
         persons('citizenship__is_of_good_character', period) * \
@@ -32,7 +32,21 @@ class citizenship__meets_minimum_presence_requirements(Variable):
       # persons('immigration__entitled_to_stay_indefinitely', period) * \
       # (ii) for at least 240 days in each of those 5 years,—
       # being days during which the applicant was entitled in terms of the Immigration Act 2009 to be in New Zealand indefinitely
-      return persons # TODO
+      return persons('number_of_days_present_in_nz_in_preceeding_12_month') > parameters(period).citizenship.by_grant.minimum_days_present_in_preceeding_5_years
+
+
+class number_of_days_present_in_nz_in_preceeding_12_month(Variable):
+    value_type = int
+    entity = Person
+    definition_period = MONTH
+    label = u"Number of days present in NZ in last 12 months"
+    unit = 'years'
+    default_value = -9999
+    # A person's age is computed according to their birth date.
+
+    def formula(persons, period, parameters):
+        return persons + 1040
+
 
 class present_in_new_zealand(Variable):
     value_type = bool
