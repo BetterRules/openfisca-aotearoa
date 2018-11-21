@@ -3,6 +3,18 @@
 # 6.1.0 - [#101](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/101)
 * Added Citizenship by grant presence requirement
 
+# 6.0.3 - [#100](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/104)
+* Refactor to remove unused variables
+  - Removed `acc__elected_for_weekly_compensation`
+  - Removed `social_security__cash_assets`
+  - Removed `family_scheme__proportion_as_principal_carer`
+  - Removed `social_security__is_a_specified_beneficiary`
+  - Removed `income_tax__tax_payer_filing_status`
+
+# 6.0.2 - [#100](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/103)
+* Tidyup metadata
+    Adding yet more missing labels
+
 # 6.0.1 - [#100](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/102)
 * Tidyup metadata
     Adding missing labels, shortened long labels and improved language in descriptions
