@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from openfisca_core.model_api import Variable
-from openfisca_core.periods import MONTH, DAY, YEAR
+from openfisca_core.periods import MONTH, DAY, YEAR, ETERNITY
 from openfisca_aotearoa.entities import Person
 
 
@@ -40,14 +40,14 @@ class citizenship__meets_minimum_presence_requirements(Variable):
 class number_of_days_present_in_nz_in_preceeding_12_month(Variable):
     value_type = int
     entity = Person
-    definition_period = MONTH
+    definition_period = DAY
     label = u"Number of days present in NZ in last 12 months"
     unit = 'years'
     default_value = -9999
     # A person's age is computed according to their birth date.
 
-    def formula(persons, period, parameters):
-        return persons + 1040
+    # def formula(persons, period, parameters):
+    #     return persons
 
 
 class present_in_new_zealand(Variable):
@@ -66,18 +66,10 @@ class immigration__holds_indefinite_stay_visa(Variable):
     reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
 
 
-class is_of_full_capacity(Variable):
-    value_type = bool
-    entity = Person
-    definition_period = YEAR
-    label = "is of full capacity (a person shall be deemed to be of full capacity if he is not of unsound mind)"
-    reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443689.html#DLM443689"
-
-
 class citizenship__is_of_good_character(Variable):
     value_type = bool
     entity = Person
-    definition_period = YEAR
+    definition_period = ETERNITY
     label = "applicant is of good character"
     reference = ["http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html", "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443872.html"]
 
@@ -85,7 +77,7 @@ class citizenship__is_of_good_character(Variable):
 class citizenship__has_sufficient_knowledge_of_the_responsibilities_and_privileges_attaching_to_nz_citizenship(Variable):
     value_type = bool
     entity = Person
-    definition_period = YEAR
+    definition_period = ETERNITY
     label = "applicant has sufficient knowledge of the English language"
     reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
 
