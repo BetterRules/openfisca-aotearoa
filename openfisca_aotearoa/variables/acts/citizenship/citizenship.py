@@ -10,6 +10,7 @@ class citizenship__citizenship_by_grant_may_be_authorized(Variable):
     entity = Person
     definition_period = DAY
     reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
+
     def formula_2005_04_20(persons, period, parameters):
         return persons('age', period) >= parameters(period).citizenship.by_grant.minimum_age_threshold * \
             persons('is_of_full_capacity', period) * \
@@ -26,6 +27,7 @@ class citizenship__meets_minimum_presence_requirements(Variable):
     definition_period = DAY
     label = u"Applicant was present in New Zealand for a min of 1,350 days during the 5 years immediately preceding the date of application"
     reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
+
     def formula(persons, period, parameters):
         # that the applicant was present in New Zealand—
         # (i) for a minimum of 1350 days during the 5 years immediately preceding the date of the application; and
@@ -71,6 +73,7 @@ class is_of_full_capacity(Variable):
     label = "is of full capacity (a person shall be deemed to be of full capacity if he is not of unsound mind)"
     reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443689.html#DLM443689"
 
+
 class citizenship__is_of_good_character(Variable):
     value_type = bool
     entity = Person
@@ -86,12 +89,14 @@ class citizenship__has_sufficient_knowledge_of_the_responsibilities_and_privileg
     label = "applicant has sufficient knowledge of the English language"
     reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
 
+
 class citizenship__has_sufficient_knowledge_of_the_english_language(Variable):
     value_type = bool
     entity = Person
     definition_period = YEAR
     label = "has sufficient knowledge of the English language"
     reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
+
 
 class citizenship__intends_to_reside_in_nz(Variable):
     value_type = bool
