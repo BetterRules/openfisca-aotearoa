@@ -47,13 +47,13 @@ class days_present_in_new_zealand(Variable):
 
     def formula(persons, period, parameters):
 
-      sum = persons('present_in_new_zealand', period)
+      sum = persons('present_in_new_zealand', period) * 30
       for i in range(0, 11):
-        sum += persons('present_in_new_zealand', period.last_month.offset((i * -1)))
+        sum += (persons('present_in_new_zealand', period.last_month.offset((i * -1)))) * 30
       return sum
 
 class present_in_new_zealand(Variable):
-    value_type = int
+    value_type = bool
     entity = Person
     definition_period = MONTH
     label = "was present in New Zealand on this day"

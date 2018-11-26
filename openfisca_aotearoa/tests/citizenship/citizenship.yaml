@@ -6,11 +6,11 @@
   persons:
     - id: "Tahi"
       present_in_new_zealand:
-        2015-01: 1
-        2015-02: 1
-        2015-03: 1
-        2015-04: 10
-        2015-05: 1
+        2015-01: true
+        2015-02: true
+        2015-03: false
+        2015-04: true
+        2015-05: true
   families:
     - id: "Whanau"
       others: [  "Tahi" ]
@@ -19,6 +19,6 @@
       others: [  "Tahi" ]
   output_variables:
     days_present_in_new_zealand:
-      2015-04: 13
+      2015-04: 90
     citizenship__meets_minimum_presence_requirements:
       2015-04: false
