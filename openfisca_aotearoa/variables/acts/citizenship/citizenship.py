@@ -40,13 +40,13 @@ class citizenship__meets_minimum_presence_requirements(Variable):
         return persons('days_present_in_new_zealand_in_preceeding_5_years', period) >= parameters(period).citizenship.by_grant.minimum_days_present_in_preceeding_5_years
 
 
-
 class days_present_in_new_zealand_in_preceeding_5_years(Variable):
     value_type = int
     entity = Person
     definition_period = DAY
 
     def formula(persons, period, parameters):
+
       days = 0
       for i in range(0, 4):
         days += persons('days_present_in_new_zealand_in_preceeding_year', period.offset(i * 365 * -1))
@@ -67,9 +67,10 @@ class days_present_in_new_zealand_in_preceeding_year(Variable):
       sum = 0
 
       for p in [period.offset(offset) for offset in range(-365, 1)]:
-        sum += (persons('present_in_new_zealand', p) * 1)
+          sum += (persons('present_in_new_zealand', p) * 1)
 
       return sum
+
 
 class present_in_new_zealand(Variable):
     value_type = bool
