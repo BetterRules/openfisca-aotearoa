@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from openfisca_core.model_api import Variable
-from openfisca_core.periods import DAY, MONTH, YEAR, ETERNITY
+from openfisca_core.periods import DAY, MONTH, ETERNITY
 from openfisca_aotearoa.entities import Person
-from openfisca_core.entities import ADD
 
 
 class citizenship__citizenship_by_grant_may_be_authorized(Variable):
