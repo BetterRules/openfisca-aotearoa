@@ -1,16 +1,17 @@
 ---
 
 - name: "NZ citizenship"
-  period: 2018-08
+  period: 2015
   absolute_error_margin: 0
   persons:
     - id: "Tahi"
       present_in_new_zealand:
-        2015-01: true
-        2015-02: true
-        2015-03: false
-        2015-04: true
-        2015-05: true
+        "2015-01-01": true
+        "2015-01-02": true
+        "2015-01-03": false
+        "2015-01-04": true
+        "2015-01-05": true
+        "2015-01-06": false
   families:
     - id: "Whanau"
       others: [  "Tahi" ]
@@ -18,7 +19,23 @@
     - id: whare
       others: [  "Tahi" ]
   output_variables:
-    days_present_in_new_zealand:
-      2015-04: 90
+    days_present_in_new_zealand_in_preceeding_year:
+      "2014-12-30": 0
+      "2014-12-31": 0
+      "2015-01-01": 1
+      "2015-01-02": 2
+      "2015-01-04": 3
+      "2015-01-05": 4
+      "2015-02-06": 4
+      "2015-02-07": 4
+    days_present_in_new_zealand_in_preceeding_5_years:
+      "2014-12-30": 0
+      "2014-12-31": 0
+      "2015-01-01": 1
+      "2015-01-02": 2
+      "2015-01-04": 3
+      "2015-01-05": 4
+      "2015-02-06": 4
+      "2015-02-07": 4
     citizenship__meets_minimum_presence_requirements:
-      2015-04: false
+      "2015-12-04": false

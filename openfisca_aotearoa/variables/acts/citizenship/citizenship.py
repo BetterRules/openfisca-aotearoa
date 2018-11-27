@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from openfisca_core.model_api import Variable
-from openfisca_core.periods import MONTH, YEAR, ETERNITY
+from openfisca_core.periods import DAY, MONTH, YEAR, ETERNITY
 from openfisca_aotearoa.entities import Person
 from openfisca_core.entities import ADD
 
@@ -25,7 +25,7 @@ class citizenship__citizenship_by_grant_may_be_authorized(Variable):
 class citizenship__meets_minimum_presence_requirements(Variable):
     value_type = bool
     entity = Person
-    definition_period = MONTH
+    definition_period = DAY
     label = u"Applicant was present in New Zealand for a min of 1,350 days during the 5 years immediately preceding the date of application"
     reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
 
@@ -35,27 +35,47 @@ class citizenship__meets_minimum_presence_requirements(Variable):
         # persons('immigration__entitled_to_stay_indefinitely', period) * \
         # (ii) for at least 240 days in each of those 5 years,—
         # being days during which the applicant was entitled in terms of the Immigration Act 2009 to be in New Zealand indefinitely
-        return persons('days_present_in_new_zealand', period) >= parameters(period).citizenship.by_grant.minimum_days_present_in_preceeding_5_years
+        # for p in [period.offset(offset) for offset in range(-365, 1)]:
+
+        return persons('days_present_in_new_zealand_in_preceeding_5_years', period) >= parameters(period).citizenship.by_grant.minimum_days_present_in_preceeding_5_years
 
 
-class days_present_in_new_zealand(Variable):
+
+class days_present_in_new_zealand_in_preceeding_5_years(Variable):
     value_type = int
     entity = Person
-    definition_period = MONTH
+    definition_period = DAY
+
+    def formula(persons, period, parameters):
+      days = 0
+      for i in range(0, 4):
+        days += persons('days_present_in_new_zealand_in_preceeding_year', period.offset(i * 365 * -1))
+
+      return days
+
+
+class days_present_in_new_zealand_in_preceeding_year(Variable):
+    value_type = int
+    entity = Person
+    definition_period = DAY
     label = "was present this many days in the last year"
     reference = "Accumlative from `present_in_new_zealand` variable`"
+    default_value = 0
 
     def formula(persons, period, parameters):
 
-      sum = persons('present_in_new_zealand', period) * 30
-      for i in range(0, 11):
-        sum += (persons('present_in_new_zealand', period.last_month.offset((i * -1)))) * 30
+      sum = 0
+
+      for p in [period.offset(offset) for offset in range(-365, 1)]:
+        sum += (persons('present_in_new_zealand', p) * 1)
+
       return sum
 
 class present_in_new_zealand(Variable):
     value_type = bool
     entity = Person
-    definition_period = MONTH
+    definition_period = DAY
+    default_value = False
     label = "was present in New Zealand on this day"
     reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
 
@@ -63,7 +83,7 @@ class present_in_new_zealand(Variable):
 class immigration__holds_indefinite_stay_visa(Variable):
     value_type = bool
     entity = Person
-    definition_period = MONTH
+    definition_period = DAY
     label = "is entitled in terms of the Immigration Act 2009 to be in New Zealand indefinitely"
     reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
 
