@@ -64,12 +64,12 @@ class days_present_in_new_zealand_in_preceeding_year(Variable):
 
     def formula(persons, period, parameters):
 
-      sum = 0
+        sum = 0
 
-      for p in [period.offset(offset) for offset in range(-365, 1)]:
-          sum += (persons('present_in_new_zealand', p) * 1)
+        for p in [period.offset(offset) for offset in range(-365, 1)]:
+            sum += (persons('present_in_new_zealand', p) * 1)
 
-      return sum
+        return sum
 
 
 class present_in_new_zealand(Variable):
