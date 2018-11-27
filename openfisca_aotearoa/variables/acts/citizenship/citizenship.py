@@ -47,11 +47,11 @@ class days_present_in_new_zealand_in_preceeding_5_years(Variable):
 
     def formula(persons, period, parameters):
 
-      days = 0
-      for i in range(0, 4):
-          days += persons('days_present_in_new_zealand_in_preceeding_year', period.offset(i * 365 * -1))
+        days = 0
+        for i in range(0, 4):
+            days += persons('days_present_in_new_zealand_in_preceeding_year', period.offset(i * 365 * -1))
 
-      return days
+        return days
 
 
 class days_present_in_new_zealand_in_preceeding_year(Variable):
