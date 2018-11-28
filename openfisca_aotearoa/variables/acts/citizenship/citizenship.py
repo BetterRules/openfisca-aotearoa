@@ -29,25 +29,64 @@ class citizenship__meets_minimum_presence_requirements(Variable):
     reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
 
     def formula(persons, period, parameters):
-        # that the applicant was present in New Zealand—
-        # (i) for a minimum of 1350 days during the 5 years immediately preceding the date of the application; and
         # persons('immigration__entitled_to_stay_indefinitely', period) * \
         # (ii) for at least 240 days in each of those 5 years,—
         # being days during which the applicant was entitled in terms of the Immigration Act 2009 to be in New Zealand indefinitely
         # for p in [period.offset(offset) for offset in range(-365, 1)]:
+        return persons('citizenship__meets_5_year_presence_requirement', period) * \
+          persons('citizenship_meets_each_year_minimum_presence_requirements')
 
-        return persons('days_present_in_new_zealand_in_preceeding_5_years', period) >= parameters(period).citizenship.by_grant.minimum_days_present_in_preceeding_5_years
+
+class citizenship_meets_each_year_minimum_presence_requirements(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = DAY
+
+    label = "was present in New Zealand for a minimum of 1350 days during the 5 years immediately preceding the date of the application"
+    reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
+
+
+    def formula(persons, period, parameters):
+        # that the applicant was present in New Zealand—
+        # (i) for a minimum of 1350 days during the 5 years immediately preceding the date of the application; and
+        required_days = parameters(period).citizenship.by_grant.required_days_present_for_each_of_preceeding_5_years
+
+
+        return persons('days_present_in_new_zealand_in_preceeding_year', period) >= required_days
+        # TODO the other 4 years
+
+
+
+
+class citizenship__meets_5_year_presence_requirement(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = DAY
+
+    label = "was present in New Zealand for at least 240 days in each of those 5 years immediately preceding the date of the application"
+    reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
+
+    def formula(persons, period, parameters):
+        # that the applicant was present in New Zealand—
+        # (i) for a minimum of 1350 days during the 5 years immediately preceding the date of the application; and
+        required_days = parameters(period).citizenship.by_grant.minimum_days_present_in_preceeding_5_years
+
+
+        return persons('days_present_in_new_zealand_in_preceeding_5_years', period) >= required_days
+
 
 
 class days_present_in_new_zealand_in_preceeding_5_years(Variable):
     value_type = int
     entity = Person
     definition_period = DAY
+    default_value = 0
 
     def formula(persons, period, parameters):
 
         sum = 0
-        for p in [period.offset(offset) for offset in range((days_since_n_years_ago(period, 5) * -1), 1)]:
+        for offset in range((days_since_n_years_ago(period, 5) * -1), 1):
+            p = period.offset(offset)
             sum += (persons('present_in_new_zealand', p) * 1)
 
         return sum
