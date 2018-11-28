@@ -73,7 +73,6 @@ class citizenship__meets_5_year_presence_requirement(Variable):
         return persons('days_present_in_new_zealand_in_preceeding_5_years', period) >= required_days
 
 
-
 class days_present_in_new_zealand_in_preceeding_5_years(Variable):
     value_type = int
     entity = Person
