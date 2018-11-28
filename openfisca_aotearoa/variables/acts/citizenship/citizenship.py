@@ -46,11 +46,17 @@ class days_present_in_new_zealand_in_preceeding_5_years(Variable):
 
     def formula(persons, period, parameters):
 
-        days = 0
-        for i in range(0, 4):
-            days += persons('days_present_in_new_zealand_in_preceeding_year', period.offset(i * 365 * -1))
+        sum = 0
+        for p in [period.offset(offset) for offset in range((days_since_n_years_ago(period, 5) * -1), 1)]:
+            sum += (persons('present_in_new_zealand', p) * 1)
 
-        return days
+        return sum
+
+def days_since_n_years_ago(period, n=1):
+    date_n_years_ago = period.date.replace(year=period.date.year-n)
+    # The days in that rolling year could  be 365 or 366
+    days = (period.date - date_n_years_ago).days -1 # subtract one to not include that day
+    return days
 
 
 class days_present_in_new_zealand_in_preceeding_year(Variable):
@@ -65,9 +71,9 @@ class days_present_in_new_zealand_in_preceeding_year(Variable):
 
         sum = 0
 
-        for p in [period.offset(offset) for offset in range(-365, 1)]:
+        # print("{} to {} = {} days".format(one_year_ago, period.date, days_since_n_years_ago))
+        for p in [period.offset(offset) for offset in range((days_since_n_years_ago(period) * -1), 1)]:
             sum += (persons('present_in_new_zealand', p) * 1)
-
         return sum
 
 
