@@ -56,7 +56,7 @@ class days_present_in_new_zealand_in_preceeding_5_years(Variable):
 def days_since_n_years_ago(period, n=1):
     date_n_years_ago = period.date.replace(year=period.date.year - n)
     # The days in that rolling year could  be 365 or 366
-    days = (period.date - date_n_years_ago).days - 1 #  subtract one to not include that day
+    days = (period.date - date_n_years_ago).days - 1  # subtract one to not include that day
     return days
 
 
