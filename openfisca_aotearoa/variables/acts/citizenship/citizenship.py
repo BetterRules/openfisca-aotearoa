@@ -34,7 +34,7 @@ class citizenship__meets_minimum_presence_requirements(Variable):
         # being days during which the applicant was entitled in terms of the Immigration Act 2009 to be in New Zealand indefinitely
         # for p in [period.offset(offset) for offset in range(-365, 1)]:
         return persons('citizenship__meets_5_year_presence_requirement', period) * \
-          persons('citizenship_meets_each_year_minimum_presence_requirements')
+          persons('citizenship_meets_each_year_minimum_presence_requirements', period)
 
 
 class citizenship_meets_each_year_minimum_presence_requirements(Variable):
