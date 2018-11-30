@@ -49,7 +49,7 @@ class citizenship_meets_each_year_minimum_presence_requirements(Variable):
     def formula(persons, period, parameters):
         # that the applicant was present in New Zealand—
         # (i) for a minimum of 1350 days during the 5 years immediately preceding the date of the application; and
-        required_days = parameters(period).citizenship.by_grant.required_days_present_for_each_of_preceeding_5_years
+        required_days = parameters(period).citizenship.by_grant.minimum_days_present_for_each_of_preceeding_5_years
 
 
         return persons('days_present_in_new_zealand_in_preceeding_year', period) >= required_days
