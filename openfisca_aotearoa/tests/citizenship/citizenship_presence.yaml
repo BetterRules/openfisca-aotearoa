@@ -5,6 +5,7 @@
   absolute_error_margin: 0
   persons:
     - id: "Tahi"
+      # 242 days in NZ
       present_in_new_zealand:
         "2014-12-31": false
         "2015-01-01": true
@@ -250,7 +251,7 @@
         "2015-08-29": true
         "2015-08-30": true
         "2015-08-31": false
-
+        "2016": true
   families:
     - id: "Whanau"
       others: [  "Tahi" ]
@@ -258,10 +259,22 @@
     - id: whare
       others: [  "Tahi" ]
   output_variables:
+    citizenship_meets_each_year_minimum_presence_requirements:
+      "2015-08-27": false
+      "2015-08-28": true
+      "2015-08-29": true
+      "2015-12-30": true
+      "2015-12-31": true
+
+      "2016-01-01": true
+      "2016-01-02": true
+      "2016-01-03": false
+      "2016-01-04": false
+       
     days_present_in_new_zealand_in_preceeding_year:
       "2014-12-30": 0
       "2014-12-31": 0
-      #
+    
       "2015-01-01": 1
       "2015-01-02": 2
       "2015-01-03": 3
@@ -269,7 +282,9 @@
       "2015-01-05": 5
       "2015-01-06": 6
       "2015-01-07": 7
-      # When they leave
+      # When they leave (we stop adding days)
+      "2015-08-28": 240
+      "2015-08-29": 241
       "2015-08-30": 242
       "2015-08-31": 242
       # A year later
@@ -280,8 +295,11 @@
       "2016-01-02": 240
       "2016-01-03": 239
       "2016-01-04": 238
-      # # 5 years later
-      "2019-12-30": 0
-      "2019-12-31": 0
-      "2020-01-01": 0
-      "2020-01-02": 0
+
+      # 1 year later
+      "2016-08-29": 1
+      "2016-08-30": 0
+      "2016-08-31": 0
+      "2017-12-31": 0
+      "2017-01-01": 0
+      "2017-01-02": 0
