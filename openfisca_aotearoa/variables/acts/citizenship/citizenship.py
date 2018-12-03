@@ -53,11 +53,11 @@ class citizenship_meets_each_year_minimum_presence_requirements(Variable):
         meets_presence = True
 
         for n in range(0, 5):
-          n_years_ago = period.offset(days_since_n_years_ago(period, n * -1))
-          days_present = persons('days_present_in_new_zealand_in_preceeding_year', n_years_ago)
-          meets_presence_n_years_ago = (persons('days_present_in_new_zealand_in_preceeding_year', n_years_ago) >= required_days)
+            n_years_ago = period.offset(days_since_n_years_ago(period, n * -1))
+            days_present = persons('days_present_in_new_zealand_in_preceeding_year', n_years_ago)
+            meets_presence_n_years_ago = (persons('days_present_in_new_zealand_in_preceeding_year', n_years_ago) >= required_days)
 
-          meets_presence  = meets_presence_n_years_ago * meets_presence
+            meets_presence  = meets_presence_n_years_ago * meets_presence
 
         return meets_presence
 
