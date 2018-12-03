@@ -5,11 +5,17 @@
   absolute_error_margin: 0
   persons:
     - id: "Tahi"
+      date_of_birth: "1998-01-01"
+      is_of_full_capacity: true
       # 242 days in NZ
       present_in_new_zealand:
         "2015-01-01": true
         "2021-08-29": false
-
+      citizenship__intends_to_reside_in_nz: true
+      citizenship__has_sufficient_knowledge_of_the_english_language: true
+      citizenship__has_sufficient_knowledge_of_the_responsibilities_and_privileges_attaching_to_nz_citizenship: true
+      citizenship__is_of_good_character: true
+      immigration__holds_indefinite_stay_visa: true
   families:
     - id: "Whanau"
       others: [  "Tahi" ]
@@ -17,6 +23,28 @@
     - id: whare
       others: [  "Tahi" ]
   output_variables:
+    citizenship__citizenship_by_grant_may_be_authorized:
+      "2019-01-01": false
+      "2020-01-01": true
+      "2020-01-01": true
+      "2020-01-01": true
+      "2020-01-01": true
+
+      "2021-01-01": true
+      "2022-01-01": true
+      "2023-01-01": false
+      "2024-01-01": false  
+    citizenship__meets_minimum_presence_requirements:
+      "2019-01-01": false
+      "2020-01-01": true
+      "2020-01-01": true
+      "2020-01-01": true
+      "2020-01-01": true
+
+      "2021-01-01": true
+      "2022-01-01": true
+      "2023-01-01": false
+      "2024-01-01": false   
     citizenship_meets_each_year_minimum_presence_requirements:
       "2019-01-01": false
       "2020-01-01": true
@@ -28,6 +56,9 @@
       "2022-01-01": true
       "2023-01-01": false
       "2024-01-01": false
+    citizenship__meets_5_year_presence_requirement:
+      "2019-01-01": true
+      "2020-01-01": true
 
     days_present_in_new_zealand_in_preceeding_year:
       "2014-12-30": 0
