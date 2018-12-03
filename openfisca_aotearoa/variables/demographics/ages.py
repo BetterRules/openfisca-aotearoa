@@ -28,7 +28,7 @@ class due_date_of_birth(Variable):
 class age(Variable):
     value_type = int
     entity = Person
-    definition_period = MONTH
+    definition_period = DAY
     label = u"The age of a Person (in years)"
     unit = 'years'
     default_value = -9999
