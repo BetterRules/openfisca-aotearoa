@@ -60,6 +60,7 @@ class citizenship_meets_each_year_minimum_presence_requirements(Variable):
 
         return meets_presence
 
+
 class citizenship__meets_5_year_presence_requirement(Variable):
     value_type = bool
     entity = Person
