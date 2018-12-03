@@ -115,7 +115,7 @@ class days_present_in_new_zealand_in_preceeding_year(Variable):
         # print("{} to {} = {} days".format(one_year_ago, period.date, days_since_n_years_ago))
         for p in [period.offset(offset) for offset in range((days_since_n_years_ago(period) * -1), 1)]:
             sum += (persons('present_in_new_zealand', p) * 1)
-        
+
         return sum
 
 
