@@ -1,2 +1,2 @@
 -e git+git://github.com/openfisca/openfisca-core.git@day#egg=openfisca_core
-OpenFisca-Core[web-api]<25.0,>=24.4
+# OpenFisca-Core[web-api]<25.0,>=24.4
