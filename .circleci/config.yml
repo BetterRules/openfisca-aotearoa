@@ -57,7 +57,6 @@ jobs:
           name: Install dependencies
           command: |
             pip install --upgrade pip twine wheel
-            # pip install --editable git+https://github.com/openfisca/openfisca-core.git@BRANCH#egg=OpenFisca-Core[web-api]  # use a specific branch of OpenFisca-Core
             pip install --editable .[dev] --upgrade
             pip install -e "git+git://github.com/openfisca/openfisca-core.git@day#egg=openfisca_core"
 
@@ -91,7 +90,6 @@ jobs:
           name: Install dependencies
           command: |
             pip install --upgrade pip twine wheel
-            # pip install --editable git+https://github.com/openfisca/openfisca-core.git@BRANCH#egg=OpenFisca-Core[web-api]  # use a specific branch of OpenFisca-Core
             pip install --editable .[dev] --upgrade
             pip install -e "git+git://github.com/openfisca/openfisca-core.git@day#egg=openfisca_core"
 
