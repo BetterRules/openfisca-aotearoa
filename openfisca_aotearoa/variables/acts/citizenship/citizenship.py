@@ -41,8 +41,7 @@ class citizenship_meets_each_year_minimum_presence_requirements(Variable):
     value_type = bool
     entity = Person
     definition_period = DAY
-
-    label = "was present in New Zealand for a minimum of 1350 days during the 5 years immediately preceding the date of the application"
+    label = u"was present in New Zealand for a minimum of 1350 days during the 5 years immediately preceding the date of the application"
     reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
 
     def formula(persons, period, parameters):
@@ -66,7 +65,7 @@ class citizenship__meets_5_year_presence_requirement(Variable):
     entity = Person
     definition_period = DAY
 
-    label = "was present in New Zealand for at least 240 days in each of those 5 years immediately preceding the date of the application"
+    label = u"was present in New Zealand for at least 240 days in each of those 5 years immediately preceding the date of the application"
     reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
 
     def formula(persons, period, parameters):
@@ -104,7 +103,7 @@ class days_present_in_new_zealand_in_preceeding_year(Variable):
     value_type = int
     entity = Person
     definition_period = DAY
-    label = "was present this many days in the last year"
+    label = u"was present this many days in the last year"
     reference = "Accumlative from `present_in_new_zealand` variable`"
     default_value = 0
 
@@ -124,7 +123,7 @@ class present_in_new_zealand(Variable):
     entity = Person
     definition_period = DAY
     default_value = False
-    label = "was present in New Zealand on this day"
+    label = u"was present in New Zealand on this day"
     reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
 
 
@@ -132,7 +131,7 @@ class immigration__holds_indefinite_stay_visa(Variable):
     value_type = bool
     entity = Person
     definition_period = DAY
-    label = "is entitled in terms of the Immigration Act 2009 to be in New Zealand indefinitely"
+    label = u"is entitled in terms of the Immigration Act 2009 to be in New Zealand indefinitely"
     reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
 
 
@@ -140,7 +139,7 @@ class citizenship__is_of_good_character(Variable):
     value_type = bool
     entity = Person
     definition_period = ETERNITY
-    label = "is of good character"
+    label = u"is of good character"
     reference = ["http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html", "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443872.html"]
 
 
@@ -148,7 +147,7 @@ class citizenship__has_sufficient_knowledge_of_the_responsibilities_and_privileg
     value_type = bool
     entity = Person
     definition_period = ETERNITY
-    label = "has sufficient knowledge of the responsibilities and privileges attaching to New Zealand citizenship"
+    label = u"has sufficient knowledge of the responsibilities and privileges attaching to New Zealand citizenship"
     reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
 
 
@@ -156,7 +155,7 @@ class citizenship__has_sufficient_knowledge_of_the_english_language(Variable):
     value_type = bool
     entity = Person
     definition_period = ETERNITY
-    label = "has sufficient knowledge of the English language"
+    label = u"has sufficient knowledge of the English language"
     reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
 
 
@@ -164,7 +163,7 @@ class citizenship__intends_to_reside_in_nz(Variable):
     value_type = bool
     entity = Person
     definition_period = ETERNITY
-    label = "intends to continue to reside in New Zealand"
+    label = u"intends to continue to reside in New Zealand"
     reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
 
 
@@ -172,5 +171,5 @@ class citizenship__intends_to_enter_or_continue_crown_service(Variable):
     value_type = bool
     entity = Person
     definition_period = ETERNITY
-    label = "intends to enter into or continue in Crown service under the New Zealand Government, or service under an international organisation of which the New Zealand Government is a member, or service in the employment of a person, company, society, or other body of persons resident or established in New Zealand"
+    label = u"intends to enter into or continue in Crown service under the New Zealand Government, or service under an international organisation of which the New Zealand Government is a member, or service in the employment of a person, company, society, or other body of persons resident or established in New Zealand"
     reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
