@@ -34,7 +34,7 @@ class citizenship__meets_minimum_presence_requirements(Variable):
         # being days during which the applicant was entitled in terms of the Immigration Act 2009 to be in New Zealand indefinitely
         # for p in [period.offset(offset) for offset in range(-365, 1)]:
         return persons('citizenship__meets_5_year_presence_requirement', period) * \
-          persons('citizenship_meets_each_year_minimum_presence_requirements', period)
+            persons('citizenship_meets_each_year_minimum_presence_requirements', period)
 
 
 class citizenship_meets_each_year_minimum_presence_requirements(Variable):
@@ -45,16 +45,21 @@ class citizenship_meets_each_year_minimum_presence_requirements(Variable):
     label = "was present in New Zealand for a minimum of 1350 days during the 5 years immediately preceding the date of the application"
     reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
 
-
     def formula(persons, period, parameters):
         # that the applicant was present in New Zealand—
         # (i) for a minimum of 1350 days during the 5 years immediately preceding the date of the application; and
         required_days = parameters(period).citizenship.by_grant.minimum_days_present_for_each_of_preceeding_5_years
 
+        meets_presence = True
 
-        return persons('days_present_in_new_zealand_in_preceeding_year', period) >= required_days
-        # TODO the other 4 years
+        for n in range(0, 5):
+          n_years_ago = period.offset(days_since_n_years_ago(period, n * -1))
+          days_present = persons('days_present_in_new_zealand_in_preceeding_year', n_years_ago)
+          meets_presence_n_years_ago = (persons('days_present_in_new_zealand_in_preceeding_year', n_years_ago) >= required_days)
 
+          meets_presence  = meets_presence_n_years_ago * meets_presence
+
+        return meets_presence
 
 class citizenship__meets_5_year_presence_requirement(Variable):
     value_type = bool
@@ -68,7 +73,6 @@ class citizenship__meets_5_year_presence_requirement(Variable):
         # that the applicant was present in New Zealand—
         # (i) for a minimum of 1350 days during the 5 years immediately preceding the date of the application; and
         required_days = parameters(period).citizenship.by_grant.minimum_days_present_in_preceeding_5_years
-
 
         return persons('days_present_in_new_zealand_in_preceeding_5_years', period) >= required_days
 
@@ -111,6 +115,7 @@ class days_present_in_new_zealand_in_preceeding_year(Variable):
         # print("{} to {} = {} days".format(one_year_ago, period.date, days_since_n_years_ago))
         for p in [period.offset(offset) for offset in range((days_since_n_years_ago(period) * -1), 1)]:
             sum += (persons('present_in_new_zealand', p) * 1)
+        
         return sum
 
 
