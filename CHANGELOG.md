@@ -1,5 +1,27 @@
 # Changelog
 
+# 6.1.0 - [#101](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/101)
+
+* Added Citizen-by-grant presence in NZ requirements algorithm
+* Change `age` to be changing by `DAY`
+* Uses `day` branch from Open Fisca
+* New Variables
+  - `citizenship__citizenship_by_grant_may_be_authorized`
+  - `citizenship__meets_minimum_presence_requirements`
+  - `days_present_in_new_zealand_in_preceeding_5_years`
+  - `days_present_in_new_zealand_in_preceeding_year`
+  - `present_in_new_zealand`
+  - `is_of_full_capacity`
+  - `immigration__holds_indefinite_stay_visa`
+  - `citizenship__is_of_good_character`
+  - `citizenship__has_sufficient_knowledge_of_the_responsibilities_and_privileges_attaching_to_nz_citizenship`
+  - `citizenship__has_sufficient_knowledge_of_the_english_language`
+  - `citizenship__intends_to_reside_in_nz`
+  - `citizenship__intends_nz_employment`
+  - `citizenship__intends_international_service`
+  - `citizenship__intends_crown_service`
+
+
 # 6.0.3 - [#100](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/104)
 * Refactor to remove unused variables
   - Removed `acc__elected_for_weekly_compensation`

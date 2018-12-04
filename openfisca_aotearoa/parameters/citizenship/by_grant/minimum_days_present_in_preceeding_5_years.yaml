@@ -1,0 +1,5 @@
+description: minimum of days present in New Zealand during the 5 years immediately preceding the date of the application
+reference: http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html
+values:
+  2005-04-20:
+    value: 1350
