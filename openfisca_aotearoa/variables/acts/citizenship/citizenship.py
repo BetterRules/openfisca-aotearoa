@@ -178,12 +178,14 @@ class citizenship__intends_crown_service(Variable):
     label = u"intends to enter into or continue in Crown service under the New Zealand Government"
     reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
 
+
 class citizenship__intends_international_service(Variable):
     value_type = bool
     entity = Person
     definition_period = ETERNITY
     label = u"intends to enter into or continue service under an international organisation of which the New Zealand Government is a member"
     reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
+
 
 class citizenship__intends_nz_employment(Variable):
     value_type = bool
