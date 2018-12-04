@@ -10,6 +10,7 @@ class citizenship__citizenship_by_grant_may_be_authorized(Variable):
     entity = Person
     definition_period = DAY
     reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
+    label = u"statisfies criteria such that the Minister may authorise the grant of New Zealand citizenship to this person"
 
     def formula_2005_04_20(persons, period, parameters):
 
@@ -26,7 +27,7 @@ class citizenship__meets_minimum_presence_requirements(Variable):
     value_type = bool
     entity = Person
     definition_period = DAY
-    label = u"Applicant was present in New Zealand for a min of 1,350 days during the 5 years immediately preceding the date of application"
+    label = u"was present in New Zealand for a min of 1,350 days during the 5 years immediately preceding the date of application"
     reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
 
     def formula(persons, period, parameters):
