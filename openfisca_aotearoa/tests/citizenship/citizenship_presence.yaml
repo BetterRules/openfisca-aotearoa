@@ -45,7 +45,7 @@
       "2022-01-01": true
       "2023-01-01": false
       "2024-01-01": false   
-    citizenship_meets_each_year_minimum_presence_requirements:
+    citizenship__meets_each_year_minimum_presence_requirements:
       "2019-01-01": false
       "2020-01-01": true
       "2020-01-01": true
