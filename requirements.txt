@@ -1,4 +1,4 @@
--e git+git://github.com/openfisca/openfisca-core.git@day#egg=openfisca_core[web-api]
+-e git+git://github.com/ServiceInnovationLab/openfisca-core.git@day#egg=openfisca_core[web-api]
 
 # Core's dependencies
 Biryani[datetimeconv] >= 0.10.8
