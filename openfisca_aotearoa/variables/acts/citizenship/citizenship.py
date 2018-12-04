@@ -28,7 +28,7 @@ class citizenship__meets_minimum_presence_requirements(Variable):
     value_type = bool
     entity = Person
     definition_period = DAY
-    label = u"was present in New Zealand for at least 240 days in each the 5 years immediately preceding the date of application"
+    label = u"meets the two presence in NZ requirements within the Citizenship Act"
     reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
 
     def formula(persons, period, parameters):
