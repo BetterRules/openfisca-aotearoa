@@ -21,7 +21,7 @@ class citizenship__citizenship_by_grant_may_be_authorized(Variable):
             persons('citizenship__has_sufficient_knowledge_of_the_responsibilities_and_privileges_attaching_to_nz_citizenship', period) * \
             persons('citizenship__has_sufficient_knowledge_of_the_english_language', period) * \
             (persons('citizenship__intends_to_reside_in_nz', period) + persons('citizenship__intends_crown_service', period) + \
-            persons('citizenship__intends_international_service', period) + persons('citizenship__intends_nz_employment', period))
+                persons('citizenship__intends_international_service', period) + persons('citizenship__intends_nz_employment', period))
 
 
 class citizenship__meets_minimum_presence_requirements(Variable):
