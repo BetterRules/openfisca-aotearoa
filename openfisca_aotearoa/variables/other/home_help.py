@@ -32,7 +32,7 @@ class home_help__eligible_for_home_help(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    label = u"Eligible for Home Help"
+    label = u"is eligible for Home Help"
     reference = u"https://www.workandincome.govt.nz/map/legislation/welfare-programmes/home-help-programme/index.html"
 
     def formula(persons, period, parameters):
