@@ -59,7 +59,7 @@ jobs:
           command: |
             pip install --upgrade pip twine wheel
             pip install --editable .[dev] --upgrade
-            pip install -e "git+git://github.com/openfisca/openfisca-core.git@day#egg=openfisca_core"
+            pip install -e "git+git://github.com/serviceinnovationlab/openfisca-core.git@day#egg=openfisca_core" --exists-action w
       # - run:
       #     name: Install dependencies from requirements.txt
       #     command: |
@@ -96,7 +96,8 @@ jobs:
           command: |
             pip install --upgrade pip twine wheel
             pip install --editable .[dev] --upgrade
-            pip install -e "git+git://github.com/openfisca/openfisca-core.git@day#egg=openfisca_core"
+            pip install -e "git+git://github.com/serviceinnovationlab/openfisca-core.git@day#egg=openfisca_core" --exists-action w
+
       # - run:
       #     name: Install dependencies from requirements.txt
       #     command: |
