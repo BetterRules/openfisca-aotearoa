@@ -61,6 +61,18 @@ class citizenship__meets_each_year_minimum_presence_requirements(Variable):
         return meets_presence
 
 
+class citizenship__meets_preceeding_single_year_minimum_presence_requirement(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = DAY
+    label = u"was present in New Zealand for at least 240 days in one rolling year immediately preceding the date of application "
+    reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
+
+    def formula(persons, period, parameters):
+        required_days = parameters(period).citizenship.by_grant.minimum_days_present_for_each_of_preceeding_5_years
+        return persons('days_present_in_new_zealand_in_preceeding_year', period) >= required_days
+
+
 class citizenship__meets_5_year_presence_requirement(Variable):
     value_type = bool
     entity = Person
@@ -105,7 +117,7 @@ class days_present_in_new_zealand_in_preceeding_year(Variable):
     value_type = int
     entity = Person
     definition_period = DAY
-    label = u"was present this many days in the last year"
+    label = u"was present in New Zealand this many days in the last (rolling) year"
     reference = "Accumlative from `present_in_new_zealand` variable`"
     default_value = 0
 
