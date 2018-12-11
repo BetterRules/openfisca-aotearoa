@@ -1,5 +1,10 @@
 # Changelog
 
+# 6.1.1 - [#101](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/115)
+
+* New variable
+  - `citizenship__meets_preceeding_single_year_minimum_presence_requirement`
+
 # 6.1.0 - [#101](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/101)
 
 * Added Citizen-by-grant presence in NZ requirements algorithm
