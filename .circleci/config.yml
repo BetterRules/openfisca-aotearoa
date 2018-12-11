@@ -44,7 +44,7 @@ jobs:
       - checkout
 
       - restore_cache:
-          key: v1-py2-{{ checksum "requirements.txt" }}
+          key: v1-py2-{{ checksum "setup.py" }}
 
       - run:
           name: Create a virtualenv
@@ -60,13 +60,13 @@ jobs:
             pip install --upgrade pip twine wheel
             pip install --editable .[dev] --upgrade
             pip install -e "git+git://github.com/openfisca/openfisca-core.git@day#egg=openfisca_core"
-      - run:
-          name: Install dependencies from requirements.txt
-          command: |
-            pip install -r requirements.txt
+      # - run:
+      #     name: Install dependencies from requirements.txt
+      #     command: |
+      #       pip install -r requirements.txt
             
       - save_cache:
-          key: v1-py2-{{ checksum "requirements.txt" }}
+          key: v1-py2-{{ checksum "setup.py" }}
           paths:
             - /tmp/venv/aotearoa
 
@@ -82,7 +82,7 @@ jobs:
       - checkout
 
       - restore_cache:
-          key: v1-py3-{{ checksum "requirements.txt" }}
+          key: v1-py3-{{ checksum "setup.py" }}
 
       - run:
           name: Create a virtualenv
@@ -97,13 +97,13 @@ jobs:
             pip install --upgrade pip twine wheel
             pip install --editable .[dev] --upgrade
             pip install -e "git+git://github.com/openfisca/openfisca-core.git@day#egg=openfisca_core"
-      - run:
-          name: Install dependencies from requirements.txt
-          command: |
-            pip install -r requirements.txt
+      # - run:
+      #     name: Install dependencies from requirements.txt
+      #     command: |
+      #       pip install -r requirements.txt
 
       - save_cache:
-          key: v1-py3-{{ checksum "requirements.txt" }}
+          key: v1-py3-{{ checksum "setup.py" }}
           paths:
             - /tmp/venv/aotearoa
 
