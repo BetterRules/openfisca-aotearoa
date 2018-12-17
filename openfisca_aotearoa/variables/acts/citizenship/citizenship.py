@@ -120,7 +120,7 @@ def days_since_n_years_ago(day, n=1):
     except ValueError:
         # Usually means a leap day, so try from the next day (1 March)
         date_n_years_ago = (day + timedelta(days=1)).replace(year=day.year - n)
-        days = (day - date_n_years_ago).days # no need to subtract one, we already did above
+        days = (day - date_n_years_ago).days  # no need to subtract one, we already did above
 
     return days
 
