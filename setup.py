@@ -16,13 +16,13 @@ setup(
     url='https://github.com/ServiceInnovationLab/openfisca-aotearoa',
     include_package_data=True,  # Will read MANIFEST.in
     install_requires=[
-        'OpenFisca-Core >= 24.3.0, < 25.0',
+        'OpenFisca-Core >= 25.2.2, < 26.0',
         ],
     extras_require={
         'test': [
             'flake8 >=3.4.0,<3.7.0',
             'flake8-print',
-            'nose',
+            'nose'
             ]
         },
     packages=find_packages(),

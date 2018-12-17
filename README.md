@@ -120,12 +120,12 @@ Set your working directory to the location where you want OpenFisca Aotearoa clo
 Inside your virtualenv, check the prerequisites:
 
 ```sh
-python --version  # should print "Python 3.xx".
+python --version  # should print "Python 3.7x".
 #if not, make sure you pass the python version as an argument when creating your virtualenv
 ```
 
 ```sh
-pip --version  # should print at least 9.0.
+pip --version  # should print at least 18.0.
 #if not, run "pip install --upgrade pip"
 ```
 Clone OpenFisca Aotearoa on your machine:
@@ -140,7 +140,7 @@ You can make sure that everything is working by running the provided tests:
 
 ```sh
 pip install -e ".[test]"
-make test
+openfisca test openfisca_aotearoa/tests
 ```
 > [Learn more about tests](https://openfisca.org/doc/coding-the-legislation/writing_yaml_tests.html)
 

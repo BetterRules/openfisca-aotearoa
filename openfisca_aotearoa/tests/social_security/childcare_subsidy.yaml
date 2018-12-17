@@ -3,23 +3,23 @@
 - name: "Childcare Subsidy child under 5 not in school"
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-    - id: "Mama"
-      is_nz_citizen: true
-    - id: "Child"
-      is_dependent_child: true
-      age: 4
-      is_nz_citizen: true
-      is_attending_school: false
-  titled_properties:
-    - id: "Whare"
-      others: ["Mama", "Child"]
-  families:
-    - id: "Whanau"
-      principal_caregiver: "Mama"
-      children:
-        - "Child"
-  output_variables:
+  input:
+    persons:
+      Mama:
+        is_nz_citizen: true
+      Child:
+        is_dependent_child: true
+        age: 4
+        is_nz_citizen: true
+        is_attending_school: false
+    titled_properties:
+      Whare:
+        others: [Mama, Child]
+    families:
+      Whanau:
+        principal_caregiver: Mama
+        children: Child
+  output:
     family_has_resident_child_under_5_not_in_school:
       2018-08:
         - true  #  Whanau
@@ -38,26 +38,26 @@
 - name: "Childcare Subsidy - Child is older than 5 years and eligible for disability allowance"
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-    - id: "Mama"
-      is_nz_citizen: true
-    - id: "Child"
-      is_dependent_child: true
-      age: 5
-      social_security__child_with_serious_disability: true
-      social_security__requires_constant_care_and_attention: true
-      social_security__medical_certification_months: 12
-      is_nz_citizen: true
-      is_attending_school: true
-  titled_properties:
-    - id: "Whare"
-      others: ["Mama", "Child"]
-  families:
-    - id: "Whanau"
-      principal_caregiver: "Mama"
-      children:
-        - "Child"
-  output_variables:
+  input:
+    persons:
+      Mama:
+        is_nz_citizen: true
+      Child:
+        is_dependent_child: true
+        age: 5
+        social_security__child_with_serious_disability: true
+        social_security__requires_constant_care_and_attention: true
+        social_security__medical_certification_months: 12
+        is_nz_citizen: true
+        is_attending_school: true
+    titled_properties:
+      Whare:
+        others: [Mama, Child]
+    families:
+      Whanau:
+        principal_caregiver: Mama
+        children: Child
+  output:
     family_has_resident_child_under_5_not_in_school:
       2018-08:
         - false  #  Whanau
@@ -75,23 +75,23 @@
 - name: "Childcare Subsidy - Child is older than 5 years, will enrol"
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-    - id: "Mama"
-      is_nz_citizen: true
-    - id: "Child"
-      is_dependent_child: true
-      age: 5
-      is_nz_citizen: true
-      will_be_enrolled_in_school: true
-  titled_properties:
-    - id: "Whare"
-      others: ["Mama", "Child"]
-  families:
-    - id: "Whanau"
-      principal_caregiver: "Mama"
-      children:
-        - "Child"
-  output_variables:
+  input:
+    persons:
+      Mama:
+        is_nz_citizen: true
+      Child:
+        is_dependent_child: true
+        age: 5
+        is_nz_citizen: true
+        will_be_enrolled_in_school: true
+    titled_properties:
+      Whare:
+        others: [Mama, Child]
+    families:
+      Whanau:
+        principal_caregiver: Mama
+        children: Child
+  output:
     family_has_resident_child_under_5_not_in_school:
       2018-08:
         - false  #  Whanau
@@ -112,23 +112,23 @@
 - name: "Childcare Subsidy - not eligible because child is attending school"
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-    - id: "Mama"
-      is_nz_citizen: true
-    - id: "Child"
-      is_dependent_child: true
-      age: 4
-      is_nz_citizen: true
-      is_attending_school: true
-  titled_properties:
-    - id: "Whare"
-      others: ["Mama", "Child"]
-  families:
-    - id: "Whanau"
-      principal_caregiver: "Mama"
-      children:
-        - "Child"
-  output_variables:
+  input:
+    persons:
+      Mama:
+        is_nz_citizen: true
+      Child:
+        is_dependent_child: true
+        age: 4
+        is_nz_citizen: true
+        is_attending_school: true
+    titled_properties:
+      Whare:
+        others: [Mama, Child]
+    families:
+      Whanau:
+        principal_caregiver: Mama
+        children: Child
+  output:
     social_security__eligible_for_childcare_subsidy:
       2018-08:
         - false  #  Mama
@@ -137,23 +137,23 @@
 - name: "Childcare Subsidy - not eligible because child too old"
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-    - id: "Mama"
-      is_nz_citizen: true
-    - id: "Child"
-      is_dependent_child: true
-      age: 7
-      is_nz_citizen: true
-      is_attending_school: false
-  titled_properties:
-    - id: "Whare"
-      others: ["Mama", "Child"]
-  families:
-    - id: "Whanau"
-      principal_caregiver: "Mama"
-      children:
-        - "Child"
-  output_variables:
+  input:
+    persons:
+      Mama:
+        is_nz_citizen: true
+      Child:
+        is_dependent_child: true
+        age: 7
+        is_nz_citizen: true
+        is_attending_school: false
+    titled_properties:
+      Whare:
+        others: [Mama, Child]
+    families:
+      Whanau:
+        principal_caregiver: Mama
+        children: Child
+  output:
     social_security__eligible_for_childcare_subsidy:
       2018-08:
         - false  #  Mama

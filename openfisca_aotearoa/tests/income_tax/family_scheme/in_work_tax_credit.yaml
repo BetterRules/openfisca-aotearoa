@@ -2,113 +2,117 @@
 - name: Tests persons age eligibility in relation to the in work tax credit
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-    - id: "Papatūānuku"
-      date_of_birth: 1999-01-01
-      family_scheme__assessable_income:
-        2018: 20000
-      family_scheme__in_work_tax_credit_income_under_threshold: true
-      family_scheme__in_work_tax_credit_is_full_time_earner: true
-    - id: "Rakinui"
-      date_of_birth: 1996-01-01
-      family_scheme__assessable_income:
-        2018: 20000
-    - id: "Tāne"
-      date_of_birth: 2005-01-24
-    - id: "Rongo"
-      date_of_birth: 2007-03-08
-    - id: "Ikatere"
-      date_of_birth: 2012-03-08
-  families:
-    - id: "Whanau"
-      principal_caregiver: "Papatūānuku"
-      partners: ["Rakinui"]
-      children: ["Tāne", "Rongo", "Ikatere"]
-  titled_properties:
-    - id: "Whare"
-      others: ["Papatūānuku", "Rakinui", "Tāne", "Rongo", "Ikatere"]
-  output_variables:
+  input:
+    persons:
+      "Papatūānuku":
+        date_of_birth: 1999-01-01
+        family_scheme__assessable_income:
+          2018: 20000
+        family_scheme__in_work_tax_credit_income_under_threshold: true
+        family_scheme__in_work_tax_credit_is_full_time_earner: true
+      "Rakinui":
+        date_of_birth: 1996-01-01
+        family_scheme__assessable_income:
+          2018: 20000
+      "Tāne":
+        date_of_birth: 2005-01-24
+      "Rongo":
+        date_of_birth: 2007-03-08
+      "Ikatere":
+        date_of_birth: 2012-03-08
+    families:
+      Whanau:
+        principal_caregiver: "Papatūānuku"
+        partners: ["Rakinui"]
+        children: ["Tāne", "Rongo", "Ikatere"]
+    titled_properties:
+      Whare:
+        others: ["Papatūānuku", "Rakinui", "Tāne", "Rongo", "Ikatere"]
+  output:
     family_scheme__qualifies_for_in_work_tax_credit: [1, 0, 0, 0, 0]
 - name: Tests persons income under threshold requirement in relation to the in work tax credit
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-    - id: "Papatūānuku"
-      date_of_birth: 1999-01-01
-      family_scheme__assessable_income:
-        2018: 20000
-      family_scheme__in_work_tax_credit_income_under_threshold: false
-      family_scheme__in_work_tax_credit_is_full_time_earner: true
-    - id: "Rakinui"
-      date_of_birth: 1996-01-01
-      family_scheme__assessable_income:
-        2018: 20000
-    - id: "Tāne"
-      date_of_birth: 2005-01-24
-    - id: "Rongo"
-      date_of_birth: 2007-03-08
-    - id: "Ikatere"
-      date_of_birth: 2012-03-08
-  families:
-    - id: "Whanau"
-      principal_caregiver: "Papatūānuku"
-      partners: ["Rakinui"]
-      children: ["Tāne", "Rongo", "Ikatere"]
-  titled_properties:
-    - id: "Whare"
-      others: ["Papatūānuku", "Rakinui", "Tāne", "Rongo", "Ikatere"]
-  output_variables:
+  input:
+    persons:
+      "Papatūānuku":
+        date_of_birth: 1999-01-01
+        family_scheme__assessable_income:
+          2018: 20000
+        family_scheme__in_work_tax_credit_income_under_threshold: false
+        family_scheme__in_work_tax_credit_is_full_time_earner: true
+      "Rakinui":
+        date_of_birth: 1996-01-01
+        family_scheme__assessable_income:
+          2018: 20000
+      "Tāne":
+        date_of_birth: 2005-01-24
+      "Rongo":
+        date_of_birth: 2007-03-08
+      "Ikatere":
+        date_of_birth: 2012-03-08
+    families:
+      Whanau:
+        principal_caregiver: "Papatūānuku"
+        partners: ["Rakinui"]
+        children: ["Tāne", "Rongo", "Ikatere"]
+    titled_properties:
+      Whare:
+        others: ["Papatūānuku", "Rakinui", "Tāne", "Rongo", "Ikatere"]
+  output:
     family_scheme__qualifies_for_in_work_tax_credit: [0, 0, 0, 0, 0]
 - name: Tests persons full time earner requirement in relation to the in work tax credit
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-    - id: "Papatūānuku"
-      date_of_birth: 1999-01-01
-      family_scheme__assessable_income:
-        2018: 20000
-      family_scheme__in_work_tax_credit_income_under_threshold: true
-      family_scheme__in_work_tax_credit_is_full_time_earner: false
-    - id: "Rakinui"
-      date_of_birth: 1996-01-01
-      family_scheme__assessable_income:
-        2018: 20000
-    - id: "Tāne"
-      date_of_birth: 2005-01-24
-    - id: "Rongo"
-      date_of_birth: 2007-03-08
-    - id: "Ikatere"
-      date_of_birth: 2012-03-08
-  families:
-    - id: "Whanau"
-      principal_caregiver: "Papatūānuku"
-      partners: ["Rakinui"]
-      children: ["Tāne", "Rongo", "Ikatere"]
-  titled_properties:
-    - id: "Whare"
-      others: ["Papatūānuku", "Rakinui", "Tāne", "Rongo", "Ikatere"]
-  output_variables:
+  input:
+    persons:
+      "Papatūānuku":
+        date_of_birth: 1999-01-01
+        family_scheme__assessable_income:
+          2018: 20000
+        family_scheme__in_work_tax_credit_income_under_threshold: true
+        family_scheme__in_work_tax_credit_is_full_time_earner: false
+      "Rakinui":
+        date_of_birth: 1996-01-01
+        family_scheme__assessable_income:
+          2018: 20000
+      "Tāne":
+        date_of_birth: 2005-01-24
+      "Rongo":
+        date_of_birth: 2007-03-08
+      "Ikatere":
+        date_of_birth: 2012-03-08
+    families:
+      Whanau:
+        principal_caregiver: "Papatūānuku"
+        partners: ["Rakinui"]
+        children: ["Tāne", "Rongo", "Ikatere"]
+    titled_properties:
+      Whare:
+        others: ["Papatūānuku", "Rakinui", "Tāne", "Rongo", "Ikatere"]
+  output:
     family_scheme__qualifies_for_in_work_tax_credit: [0, 0, 0, 0, 0]
 - name: Tests persons age eligibility in relation to if they have children
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-    - id: "Papatūānuku"
-      date_of_birth: 1999-01-01
-      family_scheme__assessable_income:
-        2018: 20000
-      family_scheme__in_work_tax_credit_income_under_threshold: true
-      family_scheme__in_work_tax_credit_is_full_time_earner: true
-    - id: "Rakinui"
-      date_of_birth: 1996-01-01
-      family_scheme__assessable_income:
-        2018: 20000
-  families:
-    - id: "Whanau"
-      principal_caregiver: "Papatūānuku"
-      partners: ["Rakinui"]
-  titled_properties:
-    - id: "Whare"
-      others: ["Papatūānuku", "Rakinui"]
-  output_variables:
+  input:
+    persons:
+      "Papatūānuku":
+        date_of_birth: 1999-01-01
+        family_scheme__assessable_income:
+          2018: 20000
+        family_scheme__in_work_tax_credit_income_under_threshold: true
+        family_scheme__in_work_tax_credit_is_full_time_earner: true
+      "Rakinui":
+        date_of_birth: 1996-01-01
+        family_scheme__assessable_income:
+          2018: 20000
+    families:
+      Whanau:
+        principal_caregiver: "Papatūānuku"
+        partners: ["Rakinui"]
+    titled_properties:
+      Whare:
+        others: ["Papatūānuku", "Rakinui"]
+  output:
     family_scheme__qualifies_for_in_work_tax_credit: [0, 0]
