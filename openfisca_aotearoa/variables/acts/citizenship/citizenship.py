@@ -5,6 +5,7 @@ from openfisca_core.periods import DAY, ETERNITY
 from openfisca_aotearoa.entities import Person
 from datetime import timedelta
 
+
 class citizenship__citizenship_by_grant_may_be_authorized(Variable):
     value_type = bool
     entity = Person
