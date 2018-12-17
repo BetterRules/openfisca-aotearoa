@@ -110,9 +110,9 @@ class days_present_in_new_zealand_in_preceeding_5_years(Variable):
 def days_since_n_years_ago(day, n=1):
     """
     Note does not include the day itself.
-        e.g. days since 1 years ago for
-        1-June-2013 would count from 2-June-2012,
-        to 1-June-2013, thus 365 days
+    e.g. days since 1 years ago for
+    1-June-2013 would count from 2-June-2012,
+    to 1-June-2013, thus 365 days
     """
     try:
         date_n_years_ago = day.replace(year=day.year - n)
