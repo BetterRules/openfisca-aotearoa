@@ -1,5 +1,11 @@
 # Changelog
 
+# 6.2.0 - [#118](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/118)
+
+* Upgrade Core to 25.2.2
+* Rewrite of tests to work with new standard
+* Update to README with small changes.
+
 # 6.1.1 - [#101](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/115)
 
 * New variable
