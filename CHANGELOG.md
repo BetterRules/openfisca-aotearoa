@@ -1,5 +1,9 @@
 # Changelog
 
+# 6.1.2 - [#101](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/117)
+* Bug fix
+  - no longer throws unhandled exception when working on leap days
+
 # 6.1.1 - [#101](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/115)
 
 * New variable
