@@ -106,13 +106,13 @@ class days_present_in_new_zealand_in_preceeding_5_years(Variable):
         return sum
 
 
+def days_since_n_years_ago(day, n=1):
 """
 Note does not include the day itself.
     e.g. days since 1 years ago for
     1-June-2013 would count from 2-June-2012,
     to 1-June-2013, thus 365 days
 """
-def days_since_n_years_ago(day, n=1):
     try:
         date_n_years_ago = day.replace(year=day.year - n)
         # The days in that rolling year could  be 365 or 366
