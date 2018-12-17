@@ -1,0 +1,24 @@
+---
+
+- name: "NZ citizenship"
+  period: 2015
+  absolute_error_margin: 0
+  persons:
+    - id: "Tahi"
+      present_in_new_zealand:
+        "2001-01-01": true
+  families:
+    - id: "Whanau"
+      others: [  "Tahi" ]
+  titled_properties:
+    - id: whare
+      others: [  "Tahi" ]
+  output_variables:
+    days_present_in_new_zealand_in_preceeding_year:
+      "2014-02-28": 365
+      "2015-02-28": 365
+      "2016-02-28": 365
+      "2016-02-29": 366
+      "2016-03-01": 366
+      "2017-02-28": 366
+      "2017-03-01": 365
