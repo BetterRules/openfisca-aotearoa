@@ -28,7 +28,9 @@ class student_allowance__eligible_for_basic_grant(Variable):
 
         student_allowance__eligible_for_certain_allowances = persons('student_allowance__eligible_for_certain_allowances', period)
 
-        return (criteria_a + criteria_b + criteria_c) * student_allowance__eligible_for_certain_allowances
+        normally_in_nz = persons("social_security__is_ordinarily_resident_in_new_zealand", period)
+
+        return (criteria_a + criteria_b + criteria_c) * student_allowance__eligible_for_certain_allowances * normally_in_nz
 
     """
     TODO:
