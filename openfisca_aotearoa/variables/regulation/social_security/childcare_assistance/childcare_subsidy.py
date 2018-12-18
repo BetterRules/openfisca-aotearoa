@@ -34,6 +34,8 @@ class social_security__eligible_for_childcare_subsidy(Variable):
 
     def formula(persons, period, parameters):
         is_citizen_or_resident = persons('is_citizen_or_resident', period)
+        normally_in_nz = persons("social_security__is_ordinarily_resident_in_new_zealand", period)
+
         is_principal_carer = persons.has_role(Family.PRINCIPAL_CAREGIVER)
 
         under_5_years_28_days_not_attending_school = persons.family(
@@ -42,7 +44,7 @@ class social_security__eligible_for_childcare_subsidy(Variable):
             'family_has_resident_child_aged_5_who_will_be_enrolled_in_school', period)
         under_6_with_disability_allowance = persons.family(
             'family_has_child_eligible_for_disability_allowance_child_under_6', period)
-        return is_citizen_or_resident * is_principal_carer * \
+        return is_citizen_or_resident * normally_in_nz * is_principal_carer * \
             (under_5_years_28_days_not_attending_school
                 + is_5_and_will_be_enrolled + under_6_with_disability_allowance)
 
