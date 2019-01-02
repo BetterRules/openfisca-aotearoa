@@ -25,7 +25,7 @@ class will_be_enrolled_in_school(Variable):
     reference = "http://www.legislation.govt.nz/regulation/public/2004/0268/latest/DLM282545.html"
 
 
-class social_security__eligible_for_childcare_subsidy(Variable):
+class social_security_regulation__eligible_for_childcare_subsidy(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH

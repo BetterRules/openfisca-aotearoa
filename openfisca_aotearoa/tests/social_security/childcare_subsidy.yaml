@@ -30,7 +30,7 @@
     social_security_regulation__family_has_child_eligible_for_disability_allowance_child_under_6:
       2018-08:
         - false  #  Whanau
-    social_security__eligible_for_childcare_subsidy:
+    social_security_regulation__eligible_for_childcare_subsidy:
       2018-08:
         - true  #  Mama
         - false #  child
@@ -69,7 +69,7 @@
     social_security_regulation__family_has_child_eligible_for_disability_allowance_child_under_6:
       2018-08:
         - true  #  Whanau
-    social_security__eligible_for_childcare_subsidy:
+    social_security_regulation__eligible_for_childcare_subsidy:
       2018-08:
         - true  #  Mama
         - false #  child
@@ -104,7 +104,7 @@
     social_security_regulation__family_has_child_eligible_for_disability_allowance_child_under_6:
       2018-08:
         - false  #  Whanau
-    social_security__eligible_for_childcare_subsidy:
+    social_security_regulation__eligible_for_childcare_subsidy:
       2018-08:
         - true  #  Mama
         - false #  child
@@ -133,7 +133,7 @@
       children:
         - "Child"
   output_variables:
-    social_security__eligible_for_childcare_subsidy:
+    social_security_regulation__eligible_for_childcare_subsidy:
       2018-08:
         - false  #  Mama
         - false #  child
@@ -159,7 +159,7 @@
       children:
         - "Child"
   output_variables:
-    social_security__eligible_for_childcare_subsidy:
+    social_security_regulation__eligible_for_childcare_subsidy:
       2018-08:
         - false  #  Mama
         - false #  child
