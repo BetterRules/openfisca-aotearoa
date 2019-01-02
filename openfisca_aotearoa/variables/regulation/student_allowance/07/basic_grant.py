@@ -2,6 +2,7 @@
 
 from openfisca_core.model_api import *
 from openfisca_aotearoa.entities import Person
+from numpy import invert
 
 
 class student_allowance__eligible_for_basic_grant(Variable):
@@ -28,9 +29,13 @@ class student_allowance__eligible_for_basic_grant(Variable):
 
         student_allowance__eligible_for_certain_allowances = persons('student_allowance__eligible_for_certain_allowances', period)
 
+        #social_security__received_income_tested_benefit
+
         normally_in_nz = persons("social_security__is_ordinarily_resident_in_new_zealand", period)
 
-        return (criteria_a + criteria_b + criteria_c) * student_allowance__eligible_for_certain_allowances * normally_in_nz
+        partner_or_person_receives_certain_allowances = invert(persons("student_allowance__partner_or_person_receiving_certain_allowances", period))
+
+        return (criteria_a + criteria_b + criteria_c) * student_allowance__eligible_for_certain_allowances * normally_in_nz * partner_or_person_receives_certain_allowances
 
     """
     TODO:
