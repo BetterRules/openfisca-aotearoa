@@ -1,5 +1,5 @@
 # Complex family setup, doesn't actually make for a great test but was written to ensure this sort of complexity could be handled
-- name: Tests complex paid parental leave eligibility
+- name: Tests complex best start eligibility
   period: 2018
   absolute_error_margin: 0
   persons:
@@ -70,7 +70,7 @@
       2018-07: [0, 0, 0, 0, 0, 0, 0, 260, 0, 0, 0, 0, 0, 0]
       2018-08: [0, 0, 0, 0, 0, 0, 260, 260, 0, 0, 0, 0, 0, 0]
 
-- name: Tests paid parental leave eligibility based on due date of baby only
+- name: Tests best start child eligibility
   period: 2018
   absolute_error_margin: 0
   persons:
@@ -131,7 +131,7 @@
     best_start__entitlement:
       2018-07: [260, 0, 0, 0]
 
-- name: Tests paid parental leave entitlement value with baby due date after 1st July 2018
+- name: Tests best start tax credit eligibility with baby due date after 1st July 2018
   period: 2018
   absolute_error_margin: 0
   persons:
@@ -163,7 +163,39 @@
     best_start__entitlement:
       2018-07: [260, 0, 0, 0]
 
-- name: Tests paid parental leave entitlement value with baby due date after 1st July 2018
+- name: Tests best start tax credit ineligibility with social_security__is_ordinarily_resident_in_new_zealand false and baby due date after 1st July 2018
+  period: 2018
+  absolute_error_margin: 0
+  persons:
+    - id: "Papatūānuku"
+      date_of_birth: 1979-08-30
+      social_security__is_ordinarily_resident_in_new_zealand:
+        2018-07: false
+    - id: "Rakinui"
+      date_of_birth: 1977-10-13
+      family_scheme__assessable_income:
+        2018: 90000
+        2019: 82000
+    - id: "Hemi-junior"
+      date_of_birth: 2016-07-18
+    - id: "Hemi-junior-early"
+      date_of_birth: 2018-06-30
+      due_date_of_birth: 2018-07-03
+  families:
+    - id: "First family"
+      principal_caregiver: "Papatūānuku"
+      partners: ["Rakinui"]
+      children: ["Hemi-junior", "Hemi-junior-early"]
+  titled_properties:
+    - id: "Earth"
+      others: ["Papatūānuku", "Rakinui", "Hemi-junior", "Hemi-junior-early"]
+  output_variables:
+    best_start__tax_credit_per_child:
+      2018-07: [0, 0, 0, 260 ]
+    best_start__entitlement:
+      2018-07: [0, 0, 0, 0]
+
+- name: Tests best_start__entitlement with baby due date after 1st July 2018
   period: 2018
   absolute_error_margin: 0
   persons:
