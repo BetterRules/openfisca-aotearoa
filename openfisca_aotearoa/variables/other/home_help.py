@@ -41,11 +41,10 @@ class home_help__eligible_for_home_help(Variable):
 
         return resident_or_citizen * in_nz * persons.has_role(Family.PRINCIPAL_CAREGIVER) *\
             (
-                persons('home_help__had_multiple_birth', period) +\
-                persons('home_help__adopted_2_or_more_children', period) +\
-                (
-                    persons('has_dependent_child', period) * persons('home_help__has_no_immediate_family', period) *\
-                    (persons('has_community_services_card', period) + persons('social_security__eligible_for_community_services_card', period))
+                persons('home_help__had_multiple_birth', period)
+                + persons('home_help__adopted_2_or_more_children', period)
+                + (
+                    persons('has_dependent_child', period) * persons('home_help__has_no_immediate_family', period)
+                    * (persons('has_community_services_card', period) + persons('social_security__eligible_for_community_services_card', period))
+                    )
                 )
-            )
-

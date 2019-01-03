@@ -29,8 +29,6 @@ class student_allowance__eligible_for_basic_grant(Variable):
 
         student_allowance__eligible_for_certain_allowances = persons('student_allowance__eligible_for_certain_allowances', period)
 
-        #social_security__received_income_tested_benefit
-
         normally_in_nz = persons("social_security__is_ordinarily_resident_in_new_zealand", period)
 
         partner_or_person_receives_certain_allowances = invert(persons("student_allowance__partner_or_person_receiving_certain_allowances", period))

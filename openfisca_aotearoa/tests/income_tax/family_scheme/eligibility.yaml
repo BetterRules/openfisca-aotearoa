@@ -60,6 +60,7 @@
     - id: "Papatūānuku"
       date_of_birth: 1996-01-01
       income_tax__residence: false
+      social_security__is_ordinarily_resident_in_new_zealand: true
     - id: "Rakinui"
       date_of_birth: 1996-01-01
       income_tax__residence: true
@@ -67,8 +68,10 @@
       veterans_support__received_childrens_pension: False
       social_security__received_income_tested_benefit:
         2018: False
+      social_security__is_ordinarily_resident_in_new_zealand: true
     - id: "Tāne"
       date_of_birth: 2006-01-01
+      social_security__is_ordinarily_resident_in_new_zealand: true
   families:
     - id: "Whanau"
       principal_caregiver: "Rakinui"
@@ -79,6 +82,36 @@
       owners: ["Papatūānuku", "Rakinui", "Tāne"]
   output_variables:
     family_scheme__qualifies_for_working_for_families: [False, True, False]
+- name: A Person would be qualified for working for families but is not ordinarily resident
+  period: 2018-08
+  absolute_error_margin: 0
+  persons:
+    - id: "Papatūānuku"
+      date_of_birth: 1996-01-01
+      income_tax__residence: false
+      social_security__is_ordinarily_resident_in_new_zealand: true
+    - id: "Rakinui"
+      date_of_birth: 1996-01-01
+      income_tax__residence: true
+      veterans_support__received_parents_allowance: False
+      veterans_support__received_childrens_pension: False
+      social_security__received_income_tested_benefit:
+        2018: False
+      social_security__is_ordinarily_resident_in_new_zealand: false
+    - id: "Tāne"
+      date_of_birth: 2006-01-01
+      social_security__is_ordinarily_resident_in_new_zealand: true
+  families:
+    - id: "Whanau"
+      principal_caregiver: "Rakinui"
+      partners: ["Papatūānuku"]
+      children: ["Tāne"]
+  titled_properties:
+    - id: "Whare"
+      owners: ["Papatūānuku", "Rakinui", "Tāne"]
+  output_variables:
+    family_scheme__qualifies_for_working_for_families: [False, False, False]
+
 - name: A Person in a two people family would be qualified for the working for families tax credit
   period: 2018-08
   absolute_error_margin: 0
@@ -90,6 +123,7 @@
       veterans_support__received_childrens_pension: False
       social_security__received_income_tested_benefit:
         2018: False
+      social_security__is_ordinarily_resident_in_new_zealand: true
     - id: "Tāne"
       date_of_birth: 2012-01-01
   families:

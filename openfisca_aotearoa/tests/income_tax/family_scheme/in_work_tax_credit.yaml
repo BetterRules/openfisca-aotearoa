@@ -9,10 +9,12 @@
         2018: 20000
       family_scheme__in_work_tax_credit_income_under_threshold: true
       family_scheme__in_work_tax_credit_is_full_time_earner: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
     - id: "Rakinui"
       date_of_birth: 1996-01-01
       family_scheme__assessable_income:
         2018: 20000
+      social_security__is_ordinarily_resident_in_new_zealand: true
     - id: "Tāne"
       date_of_birth: 2005-01-24
     - id: "Rongo"
@@ -39,10 +41,12 @@
         2018: 20000
       family_scheme__in_work_tax_credit_income_under_threshold: false
       family_scheme__in_work_tax_credit_is_full_time_earner: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
     - id: "Rakinui"
       date_of_birth: 1996-01-01
       family_scheme__assessable_income:
         2018: 20000
+      social_security__is_ordinarily_resident_in_new_zealand: true
     - id: "Tāne"
       date_of_birth: 2005-01-24
     - id: "Rongo"
@@ -69,10 +73,12 @@
         2018: 20000
       family_scheme__in_work_tax_credit_income_under_threshold: true
       family_scheme__in_work_tax_credit_is_full_time_earner: false
+      social_security__is_ordinarily_resident_in_new_zealand: true
     - id: "Rakinui"
       date_of_birth: 1996-01-01
       family_scheme__assessable_income:
         2018: 20000
+      social_security__is_ordinarily_resident_in_new_zealand: true
     - id: "Tāne"
       date_of_birth: 2005-01-24
     - id: "Rongo"
@@ -99,10 +105,12 @@
         2018: 20000
       family_scheme__in_work_tax_credit_income_under_threshold: true
       family_scheme__in_work_tax_credit_is_full_time_earner: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
     - id: "Rakinui"
       date_of_birth: 1996-01-01
       family_scheme__assessable_income:
         2018: 20000
+      social_security__is_ordinarily_resident_in_new_zealand: true
   families:
     - id: "Whanau"
       principal_caregiver: "Papatūānuku"
@@ -112,3 +120,31 @@
       others: ["Papatūānuku", "Rakinui"]
   output_variables:
     family_scheme__qualifies_for_in_work_tax_credit: [0, 0]
+- name: Otherwise eligibility person is not normally resident in NZ in relation to the in work tax credit
+  period: 2018-08
+  absolute_error_margin: 0
+  persons:
+    - id: "Papatūānuku"
+      date_of_birth: 1999-01-01
+      family_scheme__assessable_income:
+        2018: 20000
+      family_scheme__in_work_tax_credit_income_under_threshold: true
+      family_scheme__in_work_tax_credit_is_full_time_earner: true
+      social_security__is_ordinarily_resident_in_new_zealand: false
+    - id: "Rakinui"
+      date_of_birth: 1996-01-01
+      family_scheme__assessable_income:
+        2018: 20000
+      social_security__is_ordinarily_resident_in_new_zealand: true
+    - id: "Tāne"
+      date_of_birth: 2005-01-24
+  families:
+    - id: "Whanau"
+      principal_caregiver: "Papatūānuku"
+      partners: ["Rakinui"]
+      children: ["Tāne"]
+  titled_properties:
+    - id: "Whare"
+      others: ["Papatūānuku", "Rakinui", "Tāne"]
+  output_variables:
+    family_scheme__qualifies_for_in_work_tax_credit: [0, 0, 0]

@@ -15,4 +15,3 @@ class student_allowance__partner_or_person_receiving_certain_allowances(Variable
 # not using social_security__received_income_tested_benefit here because
 # a) student allowances eligibility also apply to spouse
 # b) the "orphan's benefit" and "unsupported child’s benefit" appear to be excluded
-

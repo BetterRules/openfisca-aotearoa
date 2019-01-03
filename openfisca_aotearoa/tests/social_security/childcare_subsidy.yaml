@@ -6,6 +6,7 @@
   persons:
     - id: "Mama"
       is_nz_citizen: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
     - id: "Child"
       is_dependent_child: true
       age: 4
@@ -42,6 +43,7 @@
   persons:
     - id: "Mama"
       is_nz_citizen: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
     - id: "Child"
       is_dependent_child: true
       age: 5
@@ -80,6 +82,7 @@
   persons:
     - id: "Mama"
       is_nz_citizen: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
     - id: "Child"
       is_dependent_child: true
       age: 5
@@ -118,6 +121,7 @@
   persons:
     - id: "Mama"
       is_nz_citizen: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
     - id: "Child"
       is_dependent_child: true
       age: 4
@@ -144,6 +148,7 @@
   persons:
     - id: "Mama"
       is_nz_citizen: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
     - id: "Child"
       is_dependent_child: true
       age: 7

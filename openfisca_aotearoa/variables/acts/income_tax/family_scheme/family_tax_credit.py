@@ -13,8 +13,8 @@ class family_scheme__qualifies_for_family_tax_credit(Variable):
 
     def formula(persons, period, parameters):
         return persons("family_scheme__base_qualifies", period) *\
-         persons("family_scheme__family_tax_credit_income_under_threshold", period) *\
-         persons("family_scheme__full_time_earner", period)
+            persons("family_scheme__family_tax_credit_income_under_threshold", period) *\
+            persons("family_scheme__full_time_earner", period)
 
 
 class family_scheme__family_tax_credit_income_under_threshold(Variable):  # this variable is a proxy for the calculation "family_scheme__family_tax_credit_entitlement" which needs to be coded
@@ -38,7 +38,7 @@ class family_scheme__full_time_earner(Variable):
         hours_per_week_threshold_with_partner = parameters(period).entitlements.social_security.family_scheme.hours_per_week_threshold_with_partner
 
         return ((has_partner == 0) * (persons("hours_per_week_employed", period) >= hours_per_week_threshold)) +\
-         ((has_partner > 0) * (persons.family.sum(persons.family.members("hours_per_week_employed", period, role=Family.PARTNER)) >= hours_per_week_threshold_with_partner))
+            ((has_partner > 0) * (persons.family.sum(persons.family.members("hours_per_week_employed", period, role=Family.PARTNER)) >= hours_per_week_threshold_with_partner))
 
 
 class family_scheme__family_tax_credit_entitlement(Variable):
