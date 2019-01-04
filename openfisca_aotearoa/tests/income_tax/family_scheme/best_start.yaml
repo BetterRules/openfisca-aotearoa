@@ -1,12 +1,16 @@
 # Complex family setup, doesn't actually make for a great test but was written to ensure this sort of complexity could be handled
-- name: Tests complex paid parental leave eligibility
+- name: Tests complex best start eligibility
   period: 2018
   absolute_error_margin: 0
   persons:
     - id: "Papatūānuku"
       date_of_birth: 1979-08-30
+      income_tax__residence:
+        2018: true
     - id: "Rakinui"
       date_of_birth: 1977-10-13
+      income_tax__residence:
+        2018: true
     - id: "Tāne"
       date_of_birth: 2005-01-24
     - id: "Rongo"
@@ -17,8 +21,12 @@
       date_of_birth: 2011-12-29
     - id: "Papatūānuku-2"
       date_of_birth: 1979-08-30
+      income_tax__residence:
+        2018: true
       family_scheme__assessable_income: 41000
     - id: "Papatūānuku-3"
+      income_tax__residence:
+        2018: true
       date_of_birth: 1979-08-30
     - id: "Hemi"
       date_of_birth: 1977-10-13
@@ -61,14 +69,19 @@
     best_start__entitlement:
       2018-07: [0, 0, 0, 0, 0, 0, 0, 260, 0, 0, 0, 0, 0, 0]
       2018-08: [0, 0, 0, 0, 0, 0, 260, 260, 0, 0, 0, 0, 0, 0]
-- name: Tests paid parental leave eligibility based on due date of baby only
+
+- name: Tests best start child eligibility
   period: 2018
   absolute_error_margin: 0
   persons:
     - id: "Papatūānuku"
       date_of_birth: 1979-08-30
+      income_tax__residence:
+        2018-07: true
     - id: "Rakinui"
       date_of_birth: 1977-10-13
+      income_tax__residence:
+        2018-07: true
     - id: "Hemi-junior-early"
       date_of_birth: 2018-07-30
       due_date_of_birth: 2018-07-03
@@ -85,15 +98,20 @@
       2018-07: [1]
     best_start__eligibility:
       2018-07: [1, 0, 0]
+
 - name: Tests paid parental leave entitlement value full entitlement with baby due date after 1st July 2018
   period: 2018
   absolute_error_margin: 0
   persons:
     - id: "Papatūānuku"
       date_of_birth: 1979-08-30
+      income_tax__residence:
+        2018-07: true
     - id: "Rakinui"
       date_of_birth: 1977-10-13
       family_scheme__assessable_income: 60000
+      income_tax__residence:
+        2018-07: true
     - id: "Hemi-junior"
       date_of_birth: 2018-07-18
     - id: "Hemi-junior-early"
@@ -112,12 +130,15 @@
       2018-07: [0, 0, 0, 260]
     best_start__entitlement:
       2018-07: [260, 0, 0, 0]
-- name: Tests paid parental leave entitlement value with baby due date after 1st July 2018
+
+- name: Tests best start tax credit eligibility with baby due date after 1st July 2018
   period: 2018
   absolute_error_margin: 0
   persons:
     - id: "Papatūānuku"
       date_of_birth: 1979-08-30
+      income_tax__residence:
+        2018-07: true
     - id: "Rakinui"
       date_of_birth: 1977-10-13
       family_scheme__assessable_income:
@@ -141,12 +162,51 @@
       2018-07: [0, 0, 0, 260 ]
     best_start__entitlement:
       2018-07: [260, 0, 0, 0]
-- name: Tests paid parental leave entitlement value with baby due date after 1st July 2018
+
+- name: Tests best start tax credit ineligibility with income_tax__residence false and baby due date after 1st July 2018
+  period: 2018
+  absolute_error_margin: 0
+  persons:
+    - id: "Papatūānuku"
+      date_of_birth: 1979-08-30
+      income_tax__residence:
+        2018-07: false
+    - id: "Rakinui"
+      date_of_birth: 1977-10-13
+      family_scheme__assessable_income:
+        2018: 90000
+        2019: 82000
+    - id: "Hemi-junior"
+      date_of_birth: 2016-07-18
+    - id: "Hemi-junior-early"
+      date_of_birth: 2018-06-30
+      due_date_of_birth: 2018-07-03
+  families:
+    - id: "First family"
+      principal_caregiver: "Papatūānuku"
+      partners: ["Rakinui"]
+      children: ["Hemi-junior", "Hemi-junior-early"]
+  titled_properties:
+    - id: "Earth"
+      others: ["Papatūānuku", "Rakinui", "Hemi-junior", "Hemi-junior-early"]
+  output_variables:
+    best_start__tax_credit_per_child:
+      2018-07: [0, 0, 0, 260 ]
+    best_start__entitlement:
+      2018-07: [0, 0, 0, 0]
+
+- name: Tests best_start__entitlement with baby due date after 1st July 2018
   period: 2018
   absolute_error_margin: 0
   persons:
     - id: "Papatūānuku"
       date_of_birth: 1979-02-01
+      income_tax__residence:
+        2018: true
+        2019: true
+        2020: true
+        2021: true
+        2022: true
     - id: "Rakinui"
       date_of_birth: 1977-10-13
       family_scheme__assessable_income:

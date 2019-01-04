@@ -9,10 +9,12 @@
         2018: 20000
       family_scheme__in_work_tax_credit_income_under_threshold: true
       family_scheme__in_work_tax_credit_is_full_time_earner: true
+      income_tax__residence: true
     - id: "Rakinui"
       date_of_birth: 1996-01-01
       family_scheme__assessable_income:
         2018: 20000
+      income_tax__residence: true
     - id: "Tāne"
       date_of_birth: 2005-01-24
     - id: "Rongo"
@@ -29,6 +31,34 @@
       others: ["Papatūānuku", "Rakinui", "Tāne", "Rongo", "Ikatere"]
   output_variables:
     family_scheme__qualifies_for_in_work_tax_credit: [1, 0, 0, 0, 0]
+- name: Tests persons age eligibility in relation to the in work tax credit
+  period: 2018-08
+  absolute_error_margin: 0
+  persons:
+    - id: "Papatūānuku"
+      date_of_birth: 1999-01-01
+      family_scheme__assessable_income:
+        2018: 20000
+      family_scheme__in_work_tax_credit_income_under_threshold: true
+      family_scheme__in_work_tax_credit_is_full_time_earner: true
+      income_tax__residence: false
+    - id: "Rakinui"
+      date_of_birth: 1996-01-01
+      family_scheme__assessable_income:
+        2018: 20000
+      income_tax__residence: true
+    - id: "Tāne"
+      date_of_birth: 2005-01-24
+  families:
+    - id: "Whanau"
+      principal_caregiver: "Papatūānuku"
+      partners: ["Rakinui"]
+      children: ["Tāne"]
+  titled_properties:
+    - id: "Whare"
+      others: ["Papatūānuku", "Rakinui", "Tāne"]
+  output_variables:
+    family_scheme__qualifies_for_in_work_tax_credit: [0, 0, 0]
 - name: Tests persons income under threshold requirement in relation to the in work tax credit
   period: 2018-08
   absolute_error_margin: 0
@@ -39,10 +69,12 @@
         2018: 20000
       family_scheme__in_work_tax_credit_income_under_threshold: false
       family_scheme__in_work_tax_credit_is_full_time_earner: true
+      income_tax__residence: true
     - id: "Rakinui"
       date_of_birth: 1996-01-01
       family_scheme__assessable_income:
         2018: 20000
+      income_tax__residence: true
     - id: "Tāne"
       date_of_birth: 2005-01-24
     - id: "Rongo"
@@ -69,10 +101,12 @@
         2018: 20000
       family_scheme__in_work_tax_credit_income_under_threshold: true
       family_scheme__in_work_tax_credit_is_full_time_earner: false
+      income_tax__residence: true
     - id: "Rakinui"
       date_of_birth: 1996-01-01
       family_scheme__assessable_income:
         2018: 20000
+      income_tax__residence: true
     - id: "Tāne"
       date_of_birth: 2005-01-24
     - id: "Rongo"
@@ -99,10 +133,12 @@
         2018: 20000
       family_scheme__in_work_tax_credit_income_under_threshold: true
       family_scheme__in_work_tax_credit_is_full_time_earner: true
+      income_tax__residence: true
     - id: "Rakinui"
       date_of_birth: 1996-01-01
       family_scheme__assessable_income:
         2018: 20000
+      income_tax__residence: true
   families:
     - id: "Whanau"
       principal_caregiver: "Papatūānuku"
@@ -112,3 +148,31 @@
       others: ["Papatūānuku", "Rakinui"]
   output_variables:
     family_scheme__qualifies_for_in_work_tax_credit: [0, 0]
+- name: Otherwise eligibility person is not normally resident in NZ in relation to the in work tax credit
+  period: 2018-08
+  absolute_error_margin: 0
+  persons:
+    - id: "Papatūānuku"
+      date_of_birth: 1999-01-01
+      family_scheme__assessable_income:
+        2018: 20000
+      family_scheme__in_work_tax_credit_income_under_threshold: true
+      family_scheme__in_work_tax_credit_is_full_time_earner: true
+      income_tax__residence: false
+    - id: "Rakinui"
+      date_of_birth: 1996-01-01
+      family_scheme__assessable_income:
+        2018: 20000
+      income_tax__residence: true
+    - id: "Tāne"
+      date_of_birth: 2005-01-24
+  families:
+    - id: "Whanau"
+      principal_caregiver: "Papatūānuku"
+      partners: ["Rakinui"]
+      children: ["Tāne"]
+  titled_properties:
+    - id: "Whare"
+      others: ["Papatūānuku", "Rakinui", "Tāne"]
+  output_variables:
+    family_scheme__qualifies_for_in_work_tax_credit: [0, 0, 0]

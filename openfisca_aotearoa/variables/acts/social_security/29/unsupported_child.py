@@ -26,6 +26,7 @@ class social_security__eligible_for_unsupported_childs_benefit(Variable):
 
     def formula(persons, period, parameters):
         resident_or_citizen = persons('is_citizen_or_resident', period)
+        normally_in_nz = persons("social_security__is_ordinarily_resident_in_new_zealand", period)
 
         age_test = persons('age', period) >= 18
 
@@ -39,7 +40,7 @@ class social_security__eligible_for_unsupported_childs_benefit(Variable):
         has_unsupported_child_in_family = persons.family(
             'social_security__has_unsupported_child_in_family', period)
 
-        return resident_or_citizen * age_test * not_the_parent * one_year * is_principal_carer * has_unsupported_child_in_family
+        return resident_or_citizen * normally_in_nz * age_test * not_the_parent * one_year * is_principal_carer * has_unsupported_child_in_family
 
 
 class social_security__has_unsupported_child_in_family(Variable):

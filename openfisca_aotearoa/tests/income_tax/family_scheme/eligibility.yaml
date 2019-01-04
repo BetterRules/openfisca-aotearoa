@@ -35,24 +35,6 @@
       owners: ["Papatūānuku", "Rakinui", "Tāne"]
   output_variables:
     family_scheme__qualifies_as_principal_carer: [True, False, False]
-- name: A Person is qualified as a income tax residence for the family scheme
-  period: 2018-08
-  absolute_error_margin: 0
-  persons:
-    - id: "Papatūānuku"
-      date_of_birth: 1996-01-01
-      income_tax__residence: true
-    - id: "Rakinui"
-      date_of_birth: 1996-01-01
-      income_tax__residence: false
-  families:
-    - id: "Whanau"
-      partners: ["Papatūānuku", "Rakinui"]
-  titled_properties:
-    - id: "Whare"
-      owners: ["Papatūānuku", "Rakinui"]
-  output_variables:
-    income_tax__residence: [True, False]
 - name: A Person is qualified for working for families
   period: 2018-08
   absolute_error_margin: 0
@@ -65,10 +47,9 @@
       income_tax__residence: true
       veterans_support__received_parents_allowance: False
       veterans_support__received_childrens_pension: False
-      social_security__received_income_tested_benefit:
-        2018: False
     - id: "Tāne"
       date_of_birth: 2006-01-01
+      income_tax__residence: true
   families:
     - id: "Whanau"
       principal_caregiver: "Rakinui"
@@ -79,17 +60,41 @@
       owners: ["Papatūānuku", "Rakinui", "Tāne"]
   output_variables:
     family_scheme__qualifies_for_working_for_families: [False, True, False]
+- name: A Person would be qualified for working for families but is not ordinarily resident
+  period: 2018-08
+  absolute_error_margin: 0
+  persons:
+    - id: "Papatūānuku"
+      date_of_birth: 1996-01-01
+      income_tax__residence: false
+    - id: "Rakinui"
+      date_of_birth: 1996-01-01
+      income_tax__residence: False
+      veterans_support__received_parents_allowance: False
+      veterans_support__received_childrens_pension: False
+    - id: "Tāne"
+      date_of_birth: 2006-01-01
+      income_tax__residence: true
+  families:
+    - id: "Whanau"
+      principal_caregiver: "Rakinui"
+      partners: ["Papatūānuku"]
+      children: ["Tāne"]
+  titled_properties:
+    - id: "Whare"
+      owners: ["Papatūānuku", "Rakinui", "Tāne"]
+  output_variables:
+    family_scheme__qualifies_for_working_for_families: [False, False, False]
+
 - name: A Person in a two people family would be qualified for the working for families tax credit
   period: 2018-08
   absolute_error_margin: 0
   persons:
     - id: "Rakinui"
       date_of_birth: 1996-01-01
-      income_tax__residence: true
+      income_tax__residence: True
       veterans_support__received_parents_allowance: False
       veterans_support__received_childrens_pension: False
-      social_security__received_income_tested_benefit:
-        2018: False
     - id: "Tāne"
       date_of_birth: 2012-01-01
   families:
@@ -101,17 +106,16 @@
       owners: ["Rakinui", "Tāne"]
   output_variables:
     family_scheme__qualifies_for_working_for_families: [True, False]
+
 - name: A Person would be qualified for working for families but gets veterans support parent allowance
   period: 2018-08
   absolute_error_margin: 0
   persons:
     - id: "Rakinui"
       date_of_birth: 1996-01-01
-      income_tax__residence: true
+      income_tax__residence: false
       veterans_support__received_parents_allowance: True
       veterans_support__received_childrens_pension: False
-      social_security__received_income_tested_benefit:
-        2018: False
     - id: "Tāne"
       date_of_birth: 2012-01-01
   families:
@@ -129,11 +133,9 @@
   persons:
     - id: "Rakinui"
       date_of_birth: 2000-01-01
-      income_tax__residence: true
+      income_tax__residence: false
       veterans_support__received_parents_allowance: False
       veterans_support__received_childrens_pension: True
-      social_security__received_income_tested_benefit:
-        2018: False
     - id: "Tāne"
       date_of_birth: 2012-01-01
   families:
@@ -154,8 +156,6 @@
       income_tax__residence: true
       veterans_support__received_parents_allowance: False
       veterans_support__received_childrens_pension: False
-      social_security__received_income_tested_benefit:
-        2018: True
     - id: "Tāne"
       date_of_birth: 2012-01-01
   families:
@@ -167,4 +167,3 @@
       owners: ["Rakinui", "Tāne"]
   output_variables:
     family_scheme__qualifies_for_in_work_tax_credit: [False, False]
-
