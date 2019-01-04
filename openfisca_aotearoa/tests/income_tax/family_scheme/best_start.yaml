@@ -5,11 +5,11 @@
   persons:
     - id: "Papatūānuku"
       date_of_birth: 1979-08-30
-      social_security__is_ordinarily_resident_in_new_zealand:
+      income_tax__residence:
         2018: true
     - id: "Rakinui"
       date_of_birth: 1977-10-13
-      social_security__is_ordinarily_resident_in_new_zealand:
+      income_tax__residence:
         2018: true
     - id: "Tāne"
       date_of_birth: 2005-01-24
@@ -21,11 +21,11 @@
       date_of_birth: 2011-12-29
     - id: "Papatūānuku-2"
       date_of_birth: 1979-08-30
-      social_security__is_ordinarily_resident_in_new_zealand:
+      income_tax__residence:
         2018: true
       family_scheme__assessable_income: 41000
     - id: "Papatūānuku-3"
-      social_security__is_ordinarily_resident_in_new_zealand:
+      income_tax__residence:
         2018: true
       date_of_birth: 1979-08-30
     - id: "Hemi"
@@ -76,11 +76,11 @@
   persons:
     - id: "Papatūānuku"
       date_of_birth: 1979-08-30
-      social_security__is_ordinarily_resident_in_new_zealand:
+      income_tax__residence:
         2018-07: true
     - id: "Rakinui"
       date_of_birth: 1977-10-13
-      social_security__is_ordinarily_resident_in_new_zealand:
+      income_tax__residence:
         2018-07: true
     - id: "Hemi-junior-early"
       date_of_birth: 2018-07-30
@@ -105,12 +105,12 @@
   persons:
     - id: "Papatūānuku"
       date_of_birth: 1979-08-30
-      social_security__is_ordinarily_resident_in_new_zealand:
+      income_tax__residence:
         2018-07: true
     - id: "Rakinui"
       date_of_birth: 1977-10-13
       family_scheme__assessable_income: 60000
-      social_security__is_ordinarily_resident_in_new_zealand:
+      income_tax__residence:
         2018-07: true
     - id: "Hemi-junior"
       date_of_birth: 2018-07-18
@@ -137,7 +137,7 @@
   persons:
     - id: "Papatūānuku"
       date_of_birth: 1979-08-30
-      social_security__is_ordinarily_resident_in_new_zealand:
+      income_tax__residence:
         2018-07: true
     - id: "Rakinui"
       date_of_birth: 1977-10-13
@@ -163,13 +163,13 @@
     best_start__entitlement:
       2018-07: [260, 0, 0, 0]
 
-- name: Tests best start tax credit ineligibility with social_security__is_ordinarily_resident_in_new_zealand false and baby due date after 1st July 2018
+- name: Tests best start tax credit ineligibility with income_tax__residence false and baby due date after 1st July 2018
   period: 2018
   absolute_error_margin: 0
   persons:
     - id: "Papatūānuku"
       date_of_birth: 1979-08-30
-      social_security__is_ordinarily_resident_in_new_zealand:
+      income_tax__residence:
         2018-07: false
     - id: "Rakinui"
       date_of_birth: 1977-10-13
@@ -201,7 +201,7 @@
   persons:
     - id: "Papatūānuku"
       date_of_birth: 1979-02-01
-      social_security__is_ordinarily_resident_in_new_zealand:
+      income_tax__residence:
         2018: true
         2019: true
         2020: true

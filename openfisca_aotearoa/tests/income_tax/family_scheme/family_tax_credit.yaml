@@ -8,13 +8,13 @@
       family_scheme__assessable_income:
         2018: 20000
       family_scheme__family_tax_credit_income_under_threshold: true
-      social_security__is_ordinarily_resident_in_new_zealand: true
+      income_tax__residence: true
       hours_per_week_employed: 40
     - id: "Rakinui"
       date_of_birth: 1996-01-01
       family_scheme__assessable_income:
         2018: 20000
-      social_security__is_ordinarily_resident_in_new_zealand: true
+      income_tax__residence: true
     - id: "Tāne"
       date_of_birth: 2005-01-24
     - id: "Rongo"
@@ -41,13 +41,13 @@
       family_scheme__assessable_income:
         2018: 20000
       family_scheme__family_tax_credit_income_under_threshold: false
-      social_security__is_ordinarily_resident_in_new_zealand:
+      income_tax__residence:
         2018: true
     - id: "Rakinui"
       date_of_birth: 1996-01-01
       family_scheme__assessable_income:
         2018: 20000
-      social_security__is_ordinarily_resident_in_new_zealand:
+      income_tax__residence:
         2018: true
     - id: "Tāne"
       date_of_birth: 2005-01-24
@@ -73,7 +73,7 @@
       date_of_birth: 1999-01-01
       family_scheme__assessable_income:
         2018: 42700
-      social_security__is_ordinarily_resident_in_new_zealand:
+      income_tax__residence:
         2018: true
   families:
     - id: "Whanau"
@@ -94,13 +94,13 @@
       date_of_birth: 1999-01-01
       family_scheme__assessable_income:
         2018: 14233
-      social_security__is_ordinarily_resident_in_new_zealand:
+      income_tax__residence:
         2018: true
     - id: "Rakinui"
       date_of_birth: 1996-01-01
       family_scheme__assessable_income:
         2018: 28470
-      social_security__is_ordinarily_resident_in_new_zealand:
+      income_tax__residence:
         2018: true
   families:
     - id: "Whanau"
@@ -123,13 +123,13 @@
       family_scheme__assessable_income:
         2018: 20000
       family_scheme__family_tax_credit_income_under_threshold: true
-      social_security__is_ordinarily_resident_in_new_zealand: false
+      income_tax__residence: false
       hours_per_week_employed: 40
     - id: "Rakinui"
       date_of_birth: 1996-01-01
       family_scheme__assessable_income:
         2018: 20000
-      social_security__is_ordinarily_resident_in_new_zealand: true
+      income_tax__residence: true
     - id: "Tāne"
       date_of_birth: 2005-01-24
   families:
@@ -152,13 +152,13 @@
       family_scheme__assessable_income:
         2018: 20000
       family_scheme__family_tax_credit_income_under_threshold: true
-      social_security__is_ordinarily_resident_in_new_zealand: true
+      income_tax__residence: true
       hours_per_week_employed: 29
     - id: "Rakinui"
       date_of_birth: 1996-01-01
       family_scheme__assessable_income:
         2018: 20000
-      social_security__is_ordinarily_resident_in_new_zealand: true
+      income_tax__residence: true
     - id: "Tāne"
       date_of_birth: 2005-01-24
   families:
@@ -181,7 +181,7 @@
       family_scheme__assessable_income:
         2018: 20000
       family_scheme__family_tax_credit_income_under_threshold: true
-      social_security__is_ordinarily_resident_in_new_zealand: true
+      income_tax__residence: true
     - id: "Rakinui"
       date_of_birth: 1996-01-01
       family_scheme__assessable_income:
@@ -209,7 +209,7 @@
       family_scheme__assessable_income:
         2018: 20000
       family_scheme__family_tax_credit_income_under_threshold: true
-      social_security__is_ordinarily_resident_in_new_zealand: true
+      income_tax__residence: true
       hours_per_week_employed: 15
     - id: "Rakinui"
       date_of_birth: 1996-01-01
@@ -238,7 +238,7 @@
       family_scheme__assessable_income:
         2018: 20000
       family_scheme__family_tax_credit_income_under_threshold: true
-      social_security__is_ordinarily_resident_in_new_zealand: true
+      income_tax__residence: true
       hours_per_week_employed: 20
     - id: "Tāne"
       date_of_birth: 2005-01-24
@@ -261,7 +261,7 @@
       family_scheme__assessable_income:
         2018: 20000
       family_scheme__family_tax_credit_income_under_threshold: true
-      social_security__is_ordinarily_resident_in_new_zealand: true
+      income_tax__residence: true
       hours_per_week_employed: 19
     - id: "Tāne"
       date_of_birth: 2005-01-24

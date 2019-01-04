@@ -15,9 +15,8 @@ class family_scheme__base_qualifies(Variable):
         age_qualifies = persons("family_scheme__caregiver_age_qualifies", period)
         principle_carer = persons("family_scheme__qualifies_as_principal_carer", period)
         residence = persons("income_tax__residence", period)  # this is for caregiver OR child, clarify the test
-        normally_in_nz = persons("social_security__is_ordinarily_resident_in_new_zealand", period)
 
-        return age_qualifies * principle_carer * residence * normally_in_nz
+        return age_qualifies * principle_carer * residence
 
 
 class family_scheme__caregiver_age_qualifies(Variable):
