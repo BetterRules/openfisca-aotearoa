@@ -18,6 +18,7 @@
       others: ["Mama", "Child"]
   families:
     - id: "Whanau"
+      social_security_regulation__household_income_below_childcare_subsidy_threshold: true
       principal_caregiver: "Mama"
       children:
         - "Child"
@@ -34,6 +35,43 @@
     social_security_regulation__eligible_for_childcare_subsidy:
       2018-08:
         - true  #  Mama
+        - false #  child
+
+- name: "Family income over threshold"
+  period: 2018-08
+  absolute_error_margin: 0
+  persons:
+    - id: "Mama"
+      is_nz_citizen: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
+    - id: "Child"
+      is_dependent_child: true
+      age: 4
+      early_childcare_hours_participation_per_week: 3
+      is_nz_citizen: true
+      is_attending_school: false
+  titled_properties:
+    - id: "Whare"
+      others: ["Mama", "Child"]
+  families:
+    - id: "Whanau"
+      social_security_regulation__household_income_below_childcare_subsidy_threshold: false
+      principal_caregiver: "Mama"
+      children:
+        - "Child"
+  output_variables:
+    social_security_regulation__family_has_resident_child_under_5_not_in_school:
+      2018-08:
+        - true  #  Whanau
+    social_security_regulation__family_has_resident_child_aged_5_who_will_be_enrolled_in_school:
+      2018-08:
+        - false #  Whanau
+    social_security_regulation__family_has_child_eligible_for_disability_allowance_child_under_6:
+      2018-08:
+        - false  #  Whanau
+    social_security_regulation__eligible_for_childcare_subsidy:
+      2018-08:
+        - false  #  Mama
         - false #  child
 
 
@@ -58,6 +96,7 @@
       others: ["Mama", "Child"]
   families:
     - id: "Whanau"
+      social_security_regulation__household_income_below_childcare_subsidy_threshold: true
       principal_caregiver: "Mama"
       children:
         - "Child"
@@ -95,6 +134,7 @@
   families:
     - id: "Whanau"
       principal_caregiver: "Mama"
+      social_security_regulation__household_income_below_childcare_subsidy_threshold: true
       children:
         - "Child"
   output_variables:
@@ -134,6 +174,7 @@
   families:
     - id: "Whanau"
       principal_caregiver: "Mama"
+      social_security_regulation__household_income_below_childcare_subsidy_threshold: true
       children:
         - "Child"
   output_variables:
@@ -161,6 +202,7 @@
   families:
     - id: "Whanau"
       principal_caregiver: "Mama"
+      social_security_regulation__household_income_below_childcare_subsidy_threshold: true
       children:
         - "Child"
   output_variables:

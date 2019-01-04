@@ -35,6 +35,7 @@ class social_security_regulation__eligible_for_childcare_subsidy(Variable):
     def formula(persons, period, parameters):
         is_citizen_or_resident = persons('is_citizen_or_resident', period)
         normally_in_nz = persons("social_security__is_ordinarily_resident_in_new_zealand", period)
+        income_below_threshold = persons.family("social_security_regulation__household_income_below_childcare_subsidy_threshold", period)
 
         is_principal_carer = persons.has_role(Family.PRINCIPAL_CAREGIVER)
 
@@ -44,7 +45,7 @@ class social_security_regulation__eligible_for_childcare_subsidy(Variable):
             'social_security_regulation__family_has_resident_child_aged_5_who_will_be_enrolled_in_school', period)
         under_6_with_disability_allowance = persons.family(
             'social_security_regulation__family_has_child_eligible_for_disability_allowance_child_under_6', period)
-        return is_citizen_or_resident * normally_in_nz * is_principal_carer * \
+        return is_citizen_or_resident * normally_in_nz * is_principal_carer * income_below_threshold * \
             (under_5_years_28_days_not_attending_school
                 + is_5_and_will_be_enrolled + under_6_with_disability_allowance)
 
@@ -118,3 +119,11 @@ class social_security_regulation__family_has_child_eligible_for_disability_allow
             'is_citizen_or_resident', period)
         meets_early_childcare_hours_threshold = families.members('early_childcare_hours_participation_per_week', period) >= minimum_hours_participating
         return families.any((dependent_children * citizens_and_residents * eligible_children * under_6 * meets_early_childcare_hours_threshold), role=Family.CHILD)
+
+
+class social_security_regulation__household_income_below_childcare_subsidy_threshold(Variable): # this variable is a proxy for the thresholds calculation which needs to be coded
+    value_type = bool
+    default_value = True
+    entity = Family
+    label = u"Household income is below Childcare Subsidy threshold"
+    definition_period = MONTH
