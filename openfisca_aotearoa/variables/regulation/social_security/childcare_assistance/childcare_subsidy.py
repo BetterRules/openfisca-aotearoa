@@ -121,7 +121,7 @@ class social_security_regulation__family_has_child_eligible_for_disability_allow
         return families.any((dependent_children * citizens_and_residents * eligible_children * under_6 * meets_early_childcare_hours_threshold), role=Family.CHILD)
 
 
-class social_security_regulation__household_income_below_childcare_subsidy_threshold(Variable): # this variable is a proxy for the thresholds calculation which needs to be coded
+class social_security_regulation__household_income_below_childcare_subsidy_threshold(Variable):
     value_type = bool
     default_value = True
     entity = Family
