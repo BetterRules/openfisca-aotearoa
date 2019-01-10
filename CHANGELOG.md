@@ -1,5 +1,9 @@
 # Changelog
 
+# 8.0.0 - [#125](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/125)
+* Renamed variables:
+  - `family_scheme__in_work_tax_credit_is_full_time_earner` replaced with `family_scheme__full_time_earner`
+
 # 7.0.0 - [#124](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/124)
 * Renamed variables:
   - `social_security__eligible_for_childcare_subsidy` to `social_security_regulation__eligible_for_childcare_subsidy`
