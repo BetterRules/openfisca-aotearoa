@@ -9,12 +9,11 @@ class family_scheme__qualifies_for_family_tax_credit(Variable):
     entity = Person
     definition_period = MONTH
     label = u'Is a person qualified as eligible for the family tax credit'
-    reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1518484.html"
+    reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1518515.html#DLM1518515"
 
     def formula(persons, period, parameters):
         return persons("family_scheme__base_qualifies", period) *\
-            persons("family_scheme__family_tax_credit_income_under_threshold", period) *\
-            persons("family_scheme__full_time_earner", period)
+            persons("family_scheme__family_tax_credit_income_under_threshold", period)
 
 
 class family_scheme__family_tax_credit_income_under_threshold(Variable):  # this variable is a proxy for the calculation "family_scheme__family_tax_credit_entitlement" which needs to be coded
@@ -23,22 +22,6 @@ class family_scheme__family_tax_credit_income_under_threshold(Variable):  # this
     definition_period = MONTH
     label = u'Is the person income under the threshold for the family tax credit'
     reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1518484.html"
-
-
-class family_scheme__full_time_earner(Variable):
-    value_type = int
-    entity = Person
-    definition_period = MONTH
-    label = u'Does the hours per week the person is employed for qualify them as a full time earner'
-    reference = "http://legislation.govt.nz/act/public/2007/0097/latest/DLM1518419.html"
-
-    def formula(persons, period, parameters):
-        has_partner = (persons('has_a_partner', period) > 0)
-        hours_per_week_threshold = parameters(period).entitlements.social_security.family_scheme.hours_per_week_threshold
-        hours_per_week_threshold_with_partner = parameters(period).entitlements.social_security.family_scheme.hours_per_week_threshold_with_partner
-
-        return ((has_partner == 0) * (persons("hours_per_week_employed", period) >= hours_per_week_threshold)) +\
-            ((has_partner > 0) * (persons.family.sum(persons.family.members("hours_per_week_employed", period, role=Family.PARTNER)) >= hours_per_week_threshold_with_partner))
 
 
 class family_scheme__family_tax_credit_entitlement(Variable):

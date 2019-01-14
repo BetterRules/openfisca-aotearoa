@@ -1,5 +1,9 @@
 # Changelog
 
+# 8.0.1 - [#126](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/126)
+* Changed Formula:
+  - Removed `family_scheme__full_time_earner` from `family_scheme__qualifies_for_family_tax_credit`
+
 # 8.0.0 - [#125](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/125)
 * Renamed variables:
   - `family_scheme__in_work_tax_credit_is_full_time_earner` replaced with `family_scheme__full_time_earner`
