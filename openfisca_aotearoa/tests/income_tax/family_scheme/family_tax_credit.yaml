@@ -9,7 +9,6 @@
         2018: 20000
       family_scheme__family_tax_credit_income_under_threshold: true
       income_tax__residence: true
-      hours_per_week_employed: 40
     - id: "Rakinui"
       date_of_birth: 1996-01-01
       family_scheme__assessable_income:
@@ -124,7 +123,6 @@
         2018: 20000
       family_scheme__family_tax_credit_income_under_threshold: true
       income_tax__residence: false
-      hours_per_week_employed: 40
     - id: "Rakinui"
       date_of_birth: 1996-01-01
       family_scheme__assessable_income:
@@ -142,135 +140,3 @@
       others: ["Papatūānuku", "Rakinui", "Tāne"]
   output_variables:
     family_scheme__qualifies_for_family_tax_credit: [0, 0, 0]
-
-- name: Tests hours per week employed with partner
-  period: 2018-08
-  absolute_error_margin: 0
-  persons:
-    - id: "Papatūānuku"
-      date_of_birth: 1999-01-01
-      family_scheme__assessable_income:
-        2018: 20000
-      family_scheme__family_tax_credit_income_under_threshold: true
-      income_tax__residence: true
-      hours_per_week_employed: 29
-    - id: "Rakinui"
-      date_of_birth: 1996-01-01
-      family_scheme__assessable_income:
-        2018: 20000
-      income_tax__residence: true
-    - id: "Tāne"
-      date_of_birth: 2005-01-24
-  families:
-    - id: "Whanau"
-      principal_caregiver: "Papatūānuku"
-      partners: ["Rakinui"]
-      children: ["Tāne"]
-  titled_properties:
-    - id: "Whare"
-      others: ["Papatūānuku", "Rakinui", "Tāne"]
-  output_variables:
-    family_scheme__qualifies_for_family_tax_credit: [0, 0, 0]
-
-- name: Tests partners hours per week employed
-  period: 2018-08
-  absolute_error_margin: 0
-  persons:
-    - id: "Papatūānuku"
-      date_of_birth: 1999-01-01
-      family_scheme__assessable_income:
-        2018: 20000
-      family_scheme__family_tax_credit_income_under_threshold: true
-      income_tax__residence: true
-    - id: "Rakinui"
-      date_of_birth: 1996-01-01
-      family_scheme__assessable_income:
-        2018: 20000
-      hours_per_week_employed: 30
-    - id: "Tāne"
-      date_of_birth: 2005-01-24
-  families:
-    - id: "Whanau"
-      principal_caregiver: "Papatūānuku"
-      partners: ["Rakinui"]
-      children: ["Tāne"]
-  titled_properties:
-    - id: "Whare"
-      others: ["Papatūānuku", "Rakinui", "Tāne"]
-  output_variables:
-    family_scheme__qualifies_for_family_tax_credit: [1, 0, 0]
-
-- name: Tests combined hours per week employed
-  period: 2018-08
-  absolute_error_margin: 0
-  persons:
-    - id: "Papatūānuku"
-      date_of_birth: 1999-01-01
-      family_scheme__assessable_income:
-        2018: 20000
-      family_scheme__family_tax_credit_income_under_threshold: true
-      income_tax__residence: true
-      hours_per_week_employed: 15
-    - id: "Rakinui"
-      date_of_birth: 1996-01-01
-      family_scheme__assessable_income:
-        2018: 20000
-      hours_per_week_employed: 15
-    - id: "Tāne"
-      date_of_birth: 2005-01-24
-  families:
-    - id: "Whanau"
-      principal_caregiver: "Papatūānuku"
-      partners: ["Rakinui"]
-      children: ["Tāne"]
-  titled_properties:
-    - id: "Whare"
-      others: ["Papatūānuku", "Rakinui", "Tāne"]
-  output_variables:
-    family_scheme__qualifies_for_family_tax_credit: [1, 0, 0]
-
-- name: Tests hours per week employed with no partner
-  period: 2018-08
-  absolute_error_margin: 0
-  persons:
-    - id: "Papatūānuku"
-      date_of_birth: 1999-01-01
-      family_scheme__assessable_income:
-        2018: 20000
-      family_scheme__family_tax_credit_income_under_threshold: true
-      income_tax__residence: true
-      hours_per_week_employed: 20
-    - id: "Tāne"
-      date_of_birth: 2005-01-24
-  families:
-    - id: "Whanau"
-      principal_caregiver: "Papatūānuku"
-      children: ["Tāne"]
-  titled_properties:
-    - id: "Whare"
-      others: ["Papatūānuku", "Tāne"]
-  output_variables:
-    family_scheme__qualifies_for_family_tax_credit: [1, 0]
-
-- name: Tests not enouh hours per week employed with no partner
-  period: 2018-08
-  absolute_error_margin: 0
-  persons:
-    - id: "Papatūānuku"
-      date_of_birth: 1999-01-01
-      family_scheme__assessable_income:
-        2018: 20000
-      family_scheme__family_tax_credit_income_under_threshold: true
-      income_tax__residence: true
-      hours_per_week_employed: 19
-    - id: "Tāne"
-      date_of_birth: 2005-01-24
-  families:
-    - id: "Whanau"
-      principal_caregiver: "Papatūānuku"
-      children: ["Tāne"]
-  titled_properties:
-    - id: "Whare"
-      others: ["Papatūānuku", "Tāne"]
-  output_variables:
-    family_scheme__qualifies_for_family_tax_credit: [0, 0]
