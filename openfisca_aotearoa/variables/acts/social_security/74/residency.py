@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from openfisca_aotearoa.entities import Person
-from openfisca_core.model_api import Variable, MONTH, ETERNITY
+from openfisca_core.model_api import Variable, MONTH, ETERNITY, set_input_dispatch_by_period
 
 
 class social_security__meets_residential_requirements_for_certain_benefits(Variable):
@@ -10,26 +10,6 @@ class social_security__meets_residential_requirements_for_certain_benefits(Varia
     label = u"Residential requirements for certain benefits"
     definition_period = MONTH
     reference = "http://www.legislation.govt.nz/act/public/1964/0136/latest/DLM363796.html"
-
-    """
-    74AA Residential requirements for certain benefits
-        (1) A person who applies for a benefit of a kind stated in subsection
-        (2) after 27 May 2007 is not eligible for it unless he or she
-            (a) is a New Zealand citizen, or is a person who holds a residence
-            class visa under the Immigration Act 2009; and
-            (b) is ordinarily resident in New Zealand when he or she first
-            applies for the benefit; and
-            (c) except in the case of a person who is recognised as a refugee
-            or a protected person in New Zealand under
-            the Immigration Act 2009, has resided continuously in New Zealand
-            for a period of at least 2 years at any one time,
-        (i) if subsection (1A) applies to the person,
-            (A) before he or she applies for the benefit; or
-            (B) before a decision on his or her claim for the benefit is made
-            under section 12; and
-        (ii) in any other case, after the day on which paragraph (a) first
-        applied to him or her.
-        """
 
     def formula(persons, period, parameters):
         # (a) is a New Zealand citizen, or is a person who holds a residence
@@ -62,6 +42,7 @@ class social_security__is_ordinarily_resident_in_new_zealand(Variable):
     entity = Person
     label = u"is ordinarily resident in New Zealand"
     definition_period = MONTH
+    set_input = set_input_dispatch_by_period
     reference = "http://www.legislation.govt.nz/act/public/1964/0136/latest/DLM363772.html"
 
 

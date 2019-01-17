@@ -1,0 +1,6 @@
+---
+description: Hours worked per week to qualify as a full time earner for purposes of the Family Scheme (with a partner)
+reference: "Income Tax Act 2007 http://legislation.govt.nz/act/public/2007/0097/latest/DLM1518419.html"
+values:
+  "2018":
+    value: 30

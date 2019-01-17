@@ -1,5 +1,31 @@
 # Changelog
 
+# 8.0.1 - [#126](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/126)
+* Changed Formula:
+  - Removed `family_scheme__full_time_earner` from `family_scheme__qualifies_for_family_tax_credit`
+
+# 8.0.0 - [#125](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/125)
+* Renamed variables:
+  - `family_scheme__in_work_tax_credit_is_full_time_earner` replaced with `family_scheme__full_time_earner`
+
+# 7.0.0 - [#124](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/124)
+* Renamed variables:
+  - `social_security__eligible_for_childcare_subsidy` to `social_security_regulation__eligible_for_childcare_subsidy`
+  - `sole_parent__family_has_child_under_age_limit` to `sole_parent_support__family_has_child_under_age_limit`
+  - `family_has_resident_child_under_5_not_in_school` to `social_security_regulation__family_has_resident_child_under_5_not_in_school`
+  - `family_has_resident_child_aged_5_who_will_be_enrolled_in_school` to `social_security_regulation__family_has_resident_child_aged_5_who_will_be_enrolled_in_school`
+  - `family_has_child_eligible_for_disability_allowance_child_under_6` to `social_security_regulation__family_has_child_eligible_for_disability_allowance_child_under_6`
+* New variables:
+  - `family_scheme__full_time_earner`
+  - `hours_per_week_employed`
+  - `early_childcare_hours_participation_per_week`
+  - `student_allowance__partner_or_person_receiving_certain_allowances`
+* New parameters:
+  - `entitlements.social_security.family_scheme.hours_per_week_threshold`
+  - `entitlements.social_security.family_scheme.hours_per_week_threshold_with_partner`
+  - `entitlements.social_security.childcare_subsidy.minimum_hours_in_childcare`
+* Added `social_security_regulation` to structure.json
+
 # 6.1.2 - [#117](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/117)
 * Bug fix
   - no longer throws unhandled exception when working on leap days
