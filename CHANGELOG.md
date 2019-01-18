@@ -26,7 +26,6 @@
   - `entitlements.social_security.childcare_subsidy.minimum_hours_in_childcare`
 * Added `social_security_regulation` to structure.json
 
-
 # 6.1.2 - [#117](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/117)
 * Bug fix
   - no longer throws unhandled exception when working on leap days
@@ -58,7 +57,7 @@
   - `citizenship__intends_crown_service`
 
 
-# 6.0.3 - [#100](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/104)
+# 6.0.3 - [#104](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/104)
 * Refactor to remove unused variables
   - Removed `acc__elected_for_weekly_compensation`
   - Removed `social_security__cash_assets`
@@ -66,15 +65,15 @@
   - Removed `social_security__is_a_specified_beneficiary`
   - Removed `income_tax__tax_payer_filing_status`
 
-# 6.0.2 - [#100](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/103)
+# 6.0.2 - [#103](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/103)
 * Tidyup metadata
     Adding yet more missing labels
 
-# 6.0.1 - [#100](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/102)
+# 6.0.1 - [#102](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/102)
 * Tidyup metadata
     Adding missing labels, shortened long labels and improved language in descriptions
 
-# 6.0.0 - [#100](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/98)
+# 6.0.0 - [#98](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/98)
 * Technical improvement.
     Upgrade to Python 3.7
 
@@ -83,7 +82,7 @@
     Pin to version 24.3.0, to ensure we support legislation explorer
     the `/entities` route was added to the API in this version
 
-# 5.1.3 - [#94](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/97)
+# 5.1.3 - [#97](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/97)
 * Refactored NZ Superannuation
   - Added `super__eligible_age`
   - Removed age requirement from `super__eligible`
