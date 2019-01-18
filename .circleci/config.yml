@@ -54,16 +54,16 @@ jobs:
             echo "source /tmp/venv/aotearoa/bin/activate" >> $BASH_ENV
 
 
-      # - run:
-      #     name: Install dependencies
-      #     command: |
-      #       pip install --upgrade pip twine wheel
-      #       pip install --editable .[dev] --upgrade
-      #       pip install -e "git+git://github.com/openfisca/openfisca-core.git@day#egg=openfisca_core"
       - run:
-          name: Install dependencies from requirements.txt
+          name: Install dependencies
           command: |
-            pip install -r requirements.txt
+            pip install --upgrade pip twine wheel
+            pip install --editable .[dev] --upgrade
+            pip install -e "git+git://github.com/serviceinnovationlab/openfisca-core.git@day#egg=openfisca_core" --exists-action w
+      # - run:
+      #     name: Install dependencies from requirements.txt
+      #     command: |
+      #       pip install -r requirements.txt
             
       - save_cache:
           key: v1-py2-{{ checksum "setup.py" }}
@@ -91,16 +91,17 @@ jobs:
             python -m venv /tmp/venv/aotearoa
             echo "source /tmp/venv/aotearoa/bin/activate" >> $BASH_ENV
 
-      # - run:
-      #     name: Install dependencies
-      #     command: |
-      #       pip install --upgrade pip twine wheel
-      #       pip install --editable .[dev] --upgrade
-      #       pip install -e "git+git://github.com/openfisca/openfisca-core.git@day#egg=openfisca_core"
       - run:
-          name: Install dependencies from requirements.txt
+          name: Install dependencies
           command: |
-            pip install -r requirements.txt
+            pip install --upgrade pip twine wheel
+            pip install --editable .[dev] --upgrade
+            pip install -e "git+git://github.com/serviceinnovationlab/openfisca-core.git@day#egg=openfisca_core" --exists-action w
+
+      # - run:
+      #     name: Install dependencies from requirements.txt
+      #     command: |
+      #       pip install -r requirements.txt
 
       - save_cache:
           key: v1-py3-{{ checksum "setup.py" }}

@@ -30,7 +30,7 @@ class social_security__eligible_for_sole_parent_support(Variable):
 
         years_in_nz = persons('sole_parent_support__meets_years_in_nz_requirement', period)
         age_requirement = persons('sole_parent_support__meets_age_threshold', period)
-        child_age_requirement = persons.family('sole_parent__family_has_child_under_age_limit', period)
+        child_age_requirement = persons.family('sole_parent_support__family_has_child_under_age_limit', period)
 
         relationship_test = persons('sole_parent_support__meets_relationship_qualification', period)
         # TODO isInadequatelySupportedByPartner
@@ -70,7 +70,7 @@ class sole_parent_support__meets_relationship_qualification(Variable):
         return no_partners + not_supported
 
 
-class sole_parent__family_has_child_under_age_limit(Variable):
+class sole_parent_support__family_has_child_under_age_limit(Variable):
     value_type = bool
     entity = Family
     definition_period = MONTH
