@@ -1,5 +1,8 @@
 # Changelog
 
+# 9.0.0 - [#132](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/132)
+* Removed duplicate parameter `general/age_of_superannuation`
+
 # 8.0.1 - [#126](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/126)
 * Changed Formula:
   - Removed `family_scheme__full_time_earner` from `family_scheme__qualifies_for_family_tax_credit`

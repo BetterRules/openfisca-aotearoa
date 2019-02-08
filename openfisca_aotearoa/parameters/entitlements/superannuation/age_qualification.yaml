@@ -3,5 +3,5 @@ description: Age qualification for New Zealand superannuation
 reference: >
     http://www.legislation.govt.nz/act/public/2001/0084/latest/DLM113987.html#DLM113987
 values:
-  "2011":
+  1898-01-01: # http://blog.tepapa.govt.nz/2017/03/09/a-brief-history-of-superannuation-in-new-zealand-1898-2020/
     value: 65
