@@ -3,6 +3,7 @@
 from openfisca_core.model_api import Variable
 from openfisca_core.periods import DAY, ETERNITY
 from openfisca_aotearoa.entities import Person
+from datetime import timedelta
 
 
 class citizenship__citizenship_by_grant_may_be_authorized(Variable):
@@ -53,12 +54,24 @@ class citizenship__meets_each_year_minimum_presence_requirements(Variable):
         meets_presence = True
 
         for n in range(0, 5):
-            n_years_ago = period.offset(days_since_n_years_ago(period, n * -1))
+            n_years_ago = period.offset(days_since_n_years_ago(period.date, n * -1))
             meets_presence_n_years_ago = (persons('days_present_in_new_zealand_in_preceeding_year', n_years_ago) >= required_days)
 
             meets_presence = meets_presence_n_years_ago * meets_presence
 
         return meets_presence
+
+
+class citizenship__meets_preceeding_single_year_minimum_presence_requirement(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = DAY
+    label = u"was present in New Zealand for at least 240 days in one rolling year immediately preceding the date of application "
+    reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
+
+    def formula(persons, period, parameters):
+        required_days = parameters(period).citizenship.by_grant.minimum_days_present_for_each_of_preceeding_5_years
+        return persons('days_present_in_new_zealand_in_preceeding_year', period) >= required_days
 
 
 class citizenship__meets_5_year_presence_requirement(Variable):
@@ -87,17 +100,29 @@ class days_present_in_new_zealand_in_preceeding_5_years(Variable):
     def formula(persons, period, parameters):
 
         sum = 0
-        for offset in range((days_since_n_years_ago(period, 5) * -1), 1):
+        for offset in range((days_since_n_years_ago(period.date, 5) * -1), 1):
             p = period.offset(offset)
             sum += (persons('present_in_new_zealand', p) * 1)
 
         return sum
 
 
-def days_since_n_years_ago(period, n=1):
-    date_n_years_ago = period.date.replace(year=period.date.year - n)
-    # The days in that rolling year could  be 365 or 366
-    days = (period.date - date_n_years_ago).days - 1  # subtract one to not include that day
+def days_since_n_years_ago(day, n=1):
+    """
+    Note does not include the day itself.
+    e.g. days since 1 years ago for
+    1-June-2013 would count from 2-June-2012,
+    to 1-June-2013, thus 365 days
+    """
+    try:
+        date_n_years_ago = day.replace(year=day.year - n)
+        # The days in that rolling year could  be 365 or 366
+        days = (day - date_n_years_ago).days - 1  # subtract one to not include that day
+    except ValueError:
+        # Usually means a leap day, so try from the next day (1 March)
+        date_n_years_ago = (day + timedelta(days=1)).replace(year=day.year - n)
+        days = (day - date_n_years_ago).days  # no need to subtract one, we already did above
+
     return days
 
 
@@ -105,7 +130,7 @@ class days_present_in_new_zealand_in_preceeding_year(Variable):
     value_type = int
     entity = Person
     definition_period = DAY
-    label = u"was present this many days in the last year"
+    label = u"was present in New Zealand this many days in the last (rolling) year"
     reference = "Accumlative from `present_in_new_zealand` variable`"
     default_value = 0
 
@@ -113,8 +138,7 @@ class days_present_in_new_zealand_in_preceeding_year(Variable):
 
         sum = 0
 
-        # print("{} to {} = {} days".format(one_year_ago, period.date, days_since_n_years_ago))
-        for p in [period.offset(offset) for offset in range((days_since_n_years_ago(period) * -1), 1)]:
+        for p in [period.offset(offset) for offset in range((days_since_n_years_ago(period.date) * -1), 1)]:
             sum += (persons('present_in_new_zealand', p) * 1)
 
         return sum
