@@ -1,5 +1,9 @@
 # Changelog
 
+# 9.0.1 - [#121]https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/121
+* Added unit (years) to ages
+* Added unit (NZD) to best_start__entitlement
+
 # 9.0.0 - [#132](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/132)
 * Removed duplicate parameter `general/age_of_superannuation`
 
