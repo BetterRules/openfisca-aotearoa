@@ -119,6 +119,7 @@ class best_start__tax_credit_per_child(Variable):
 
 class best_start__entitlement(Variable):
     value_type = float
+    unit = 'NZD'
     entity = Person
     definition_period = MONTH
     label = u'The total value the principal carer is entitled to for the best start tax credit'
