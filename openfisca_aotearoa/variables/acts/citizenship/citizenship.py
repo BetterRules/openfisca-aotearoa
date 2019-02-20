@@ -54,26 +54,27 @@ class citizenship__meets_each_year_minimum_presence_requirements(Variable):
         meets_presence = True
 
         for n in range(0, 5):
-            #print("Checking year", n, "ending on", period.date)
+            # print("Checking year", n, "ending on", period.date)
 
             number_of_days_ago = days_since_n_years_ago(period.date, n)
-            #print("the day to end our rolling year on is (the day before)", number_of_days_ago, "days before", period.date)
+            # print("the day to end our rolling year on is (the day before)", number_of_days_ago, "days before", period.date)
 
-            day_n_years_ago = period.offset(number_of_days_ago *-1)
-            #print("day_n_years_ago", day_n_years_ago)
+            # Go back in time by n years
+            day_n_years_ago = period.offset(number_of_days_ago * -1)
+            # print("day_n_years_ago", day_n_years_ago)
 
 
             days_present = persons('days_present_in_new_zealand_in_preceeding_year', day_n_years_ago)
-            #print("days present on rolling year ending at", day_n_years_ago, "is", days_present)
+            # print("days present on rolling year ending at", day_n_years_ago, "is", days_present)
 
             meets_presence_n_years_ago = (days_present >= required_days)
             
-            #print("Meets rquirement??", meets_presence_n_years_ago)
+            # print("Meets rquirement??", meets_presence_n_years_ago)
 
             # Accumulate the each year
             meets_presence = meets_presence_n_years_ago * meets_presence
 
-            #print("======================")
+            # print("======================")
 
         return meets_presence
 
@@ -134,7 +135,7 @@ def days_since_n_years_ago(day, n=1):
     try:
         date_n_years_ago = day.replace(year=day.year - n)
         
-        #print("date_n_years_ago", day, " subtract", n, "-->", date_n_years_ago)
+        # print("date_n_years_ago", day, " subtract", n, "-->", date_n_years_ago)
         # The days in that rolling year could  be 365 or 366
         days = (day - date_n_years_ago).days  # subtract one to not include that day
     except ValueError:
@@ -161,7 +162,7 @@ class days_present_in_new_zealand_in_preceeding_year(Variable):
             was_present = persons('present_in_new_zealand', p)
             sum += (was_present * 1)
             
-            #print("day", p, "presence =", was_present, "sum =", sum)
+            # print("day", p, "presence =", was_present, "sum =", sum)
 
         return sum
 
