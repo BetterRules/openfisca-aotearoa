@@ -1,5 +1,11 @@
-FROM python:2-stretch
+FROM python:3-stretch
 COPY . /openfisca
 WORKDIR /openfisca
-RUN pip install -e .
-CMD [ "/usr/local/bin/openfisca", "serve", "--port", "5000" ]
+
+RUN pip install --upgrade pip && \
+    pip install -e . && \
+    pip install -r requirements.txt
+
+EXPOSE 5000
+
+CMD [ "/usr/local/bin/openfisca", "serve", "-b", "0.0.0.0:5000" ]
