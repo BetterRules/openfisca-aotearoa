@@ -1,0 +1,96 @@
+
+# {
+#   "ruby_2017-10-01"=>{
+#   "citizenship__meets_minimum_presence_requirements"=>{
+#   "2017-10-01"=>null}
+#   , "citizenship__meets_each_year_minimum_presence_requirements"=>{
+#   "2017-10-01"=>null}
+#   , "citizenship__meets_5_year_presence_requirement"=>{
+#   "2017-10-01"=>null}
+#   , "days_present_in_new_zealand_in_preceeding_year"=>{
+#   "2017-10-01"=>null, "2016-10-01"=>null, "2015-10-01"=>null, "2014-10-01"=>null, "2013-10-01"=>null}
+#   , "citizenship__meets_preceeding_single_year_minimum_presence_requirement"=>{
+#   "2017-10-01"=>null, "2016-10-01"=>null, "2015-10-01"=>null, "2014-10-01"=>null, "2013-10-01"=>null}
+#   , "present_in_new_zealand"=>{
+#   "2013-02-04"=>true, "2014-03-10"=>false, "2014-03-15"=>true, "2015-08-30"=>true, "2016-03-10"=>false, "2016-03-15"=>true, "2016-08-27"=>false, "2016-11-02"=>false, "2016-11-16"=>true, "2017-05-27"=>false, "2017-06-20"=>true, "2018-01-21"=>false, "2018-02-12"=>true}
+# }
+
+
+
+---
+
+- name: "Presence - adding days"
+  period: 2015
+  absolute_error_margin: 0
+  persons:
+    - id: "ruby_2017-10-01"
+      date_of_birth: "1998-01-01"
+      is_of_full_capacity: true
+      # 242 days in NZ
+      present_in_new_zealand:
+        "2013-02-04": true
+        "2014-03-10": false
+        "2014-03-15": true
+        "2015-08-30": true
+        "2016-03-10": false
+        "2016-03-15": true
+        "2016-08-27": false
+        "2016-11-02": false
+        "2016-11-16": true
+        "2017-05-27": false
+        "2017-06-20": true
+        "2018-01-21": false
+        "2018-02-12": true
+  families:
+    - id: "Whanau"
+      others: [  "ruby_2017-10-01" ]
+  titled_properties:
+    - id: whare
+      others: [  "ruby_2017-10-01" ]
+  output_variables:
+    # citizenship__meets_minimum_presence_requirements:
+    #   "2017-10-01": true
+    # citizenship__meets_5_year_presence_requirement:
+    #   "2017-10-01": true
+    days_present_in_new_zealand_in_preceeding_year:
+      "2017-10-01": 295
+      "2016-10-01": 326
+      "2015-10-01": 365
+      "2014-10-01": 360
+      "2013-10-01": 239
+      "2013-10-02": 240
+    # citizenship__meets_preceeding_single_year_minimum_presence_requirement:
+    #   "2017-10-01": true
+    #   "2016-10-01": true
+    #   "2015-10-01": true
+    #   "2014-10-01": true
+    #   "2013-10-01": true
+    # Were all 5 years true
+    citizenship__meets_each_year_minimum_presence_requirements:
+      "2017-10-01": false
+      "2017-10-02": true
+# 0
+# -1
+# 2017-10-01
+# [296]
+# [ True]
+# 1
+# -366
+# 2016-10-01
+# [325]
+# [ True]
+# 2
+# -731
+# 2015-10-02
+# [365]
+# [ True]
+# 3
+# -1097
+# 2014-10-01
+# [360]
+# [ True]
+# 4
+# -1462
+# 2013-10-01
+# [240]
+# [ True]

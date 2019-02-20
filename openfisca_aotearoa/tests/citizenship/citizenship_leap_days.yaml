@@ -16,9 +16,10 @@
   output_variables:
     days_present_in_new_zealand_in_preceeding_year:
       "2014-02-28": 365
-      "2015-02-28": 365
+      "2015-02-28": 365 # from 28-feb-2014 to 27-feb-2015
       "2016-02-28": 365
-      "2016-02-29": 366
-      "2016-03-01": 366
+      "2016-02-29": 365 # from 28-feb-2015 to 27-feb-2016 (no leap day)
+      "2016-03-01": 366 # from 01-mar-2015 to 29-feb-2016 (1 leap day)
+      "2016-03-02": 366 # from 01-mar-2015 to 01-mar-2016 (1 leap day)
       "2017-02-28": 366
       "2017-03-01": 365
