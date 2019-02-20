@@ -134,10 +134,8 @@ def days_since_n_years_ago(day, n=1):
     """
     try:
         date_n_years_ago = day.replace(year=day.year - n)
-        
-        # print("date_n_years_ago", day, " subtract", n, "-->", date_n_years_ago)
         # The days in that rolling year could  be 365 or 366
-        days = (day - date_n_years_ago).days  # subtract one to not include that day
+        days = (day - date_n_years_ago).days
     except ValueError:
         # Usually means a leap day, so try from the next day (1 March)
         date_n_years_ago = (day + timedelta(days=1)).replace(year=day.year - n)
