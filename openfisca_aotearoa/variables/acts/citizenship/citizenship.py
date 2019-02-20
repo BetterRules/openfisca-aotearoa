@@ -135,13 +135,11 @@ def days_since_n_years_ago(day, n=1):
     try:
         date_n_years_ago = day.replace(year=day.year - n)
         # The days in that rolling year could  be 365 or 366
-        days = (day - date_n_years_ago).days
+        return (day - date_n_years_ago).days
     except ValueError:
         # Usually means a leap day, so try from the next day (1 March)
         date_n_years_ago = (day + timedelta(days=1)).replace(year=day.year - n)
-        days = (day - date_n_years_ago).days  # no need to subtract one, we already did above
-
-    return days
+        return (day - date_n_years_ago).days
 
 
 class days_present_in_new_zealand_in_preceeding_year(Variable):
@@ -156,11 +154,9 @@ class days_present_in_new_zealand_in_preceeding_year(Variable):
 
         sum = 0
 
-        for p in [period.offset(offset) for offset in range((days_since_n_years_ago(period.date) * -1), 0)]:
-            was_present = persons('present_in_new_zealand', p)
-            sum += (was_present * 1)
-            
-            # print("day", p, "presence =", was_present, "sum =", sum)
+        start_date = days_since_n_years_ago(period.date)
+        for p in [period.offset(offset) for offset in range((start_date * -1), 0)]:
+            sum += (persons('present_in_new_zealand', p) * 1)
 
         return sum
 
