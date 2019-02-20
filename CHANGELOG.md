@@ -1,5 +1,8 @@
 # Changelog
 
+# 9.1.0 - [#139]https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/139
+* Fix calculation of number of days present in NZ for Citizenship by Grant
+
 # 9.0.1 - [#121]https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/121
 * Added unit (years) to ages
 * Added unit (NZD) to best_start__entitlement
