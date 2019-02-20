@@ -56,10 +56,10 @@ class citizenship__meets_each_year_minimum_presence_requirements(Variable):
         for n in range(0, 5):
             #print("Checking year", n, "ending on", period.date)
 
-            days_ago = days_since_n_years_ago(period.date, n)
-            #print("the day to end our rolling year on is (the day before)", days_ago, "days before", period.date)
+            number_of_days_ago = days_since_n_years_ago(period.date, n)
+            #print("the day to end our rolling year on is (the day before)", number_of_days_ago, "days before", period.date)
 
-            day_n_years_ago = period.offset(days_ago *-1)
+            day_n_years_ago = period.offset(number_of_days_ago *-1)
             #print("day_n_years_ago", day_n_years_ago)
 
 
