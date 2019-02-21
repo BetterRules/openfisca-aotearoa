@@ -158,15 +158,16 @@ class days_present_in_new_zealand_in_preceeding_year(Variable):
 
         return sum
 
+
 class was_present_in_nz_and_entitled_to_indefinite_stay(Variable):
         value_type = int
         entity = Person
         definition_period = DAY
         label = u"was present in New Zealand and entitled to indefinite stay"
         reference = "Whether both `present_in_new_zealand` and `immigration__entitled_to_indefinite_stay` were true"
-       
+
         def formula(persons, period, parameters):
-            present = persons('present_in_new_zealand', period) 
+            present = persons('present_in_new_zealand', period)
             entitled = persons('immigration__entitled_to_indefinite_stay', period)
             return present * entitled
 
