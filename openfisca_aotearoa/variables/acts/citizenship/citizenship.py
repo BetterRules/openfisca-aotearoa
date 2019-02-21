@@ -118,7 +118,7 @@ class days_present_in_new_zealand_in_preceeding_5_years(Variable):
         "\t\t** -> days_present_in_new_zealand_in_preceeding_5_years"
         for offset in range((days_since_n_years_ago(period.date, 5) * -1), 1):
             p = period.offset(offset)
-            sum += (persons('present_in_new_zealand', p) * 1)
+            sum += (persons('was_present_in_nz_and_entitled_to_indefinite_stay', p) * 1)
 
         return sum
 
@@ -145,7 +145,7 @@ class days_present_in_new_zealand_in_preceeding_year(Variable):
     entity = Person
     definition_period = DAY
     label = u"was present in New Zealand this many days in the last (rolling) year"
-    reference = "Accumlative from `present_in_new_zealand` variable`"
+    reference = "Accumlative from `was_present_in_nz_and_entitled_to_indefinite_stay` variable`"
     default_value = 0
 
     def formula(persons, period, parameters):
@@ -154,10 +154,21 @@ class days_present_in_new_zealand_in_preceeding_year(Variable):
 
         start_date = days_since_n_years_ago(period.date)
         for p in [period.offset(offset) for offset in range((start_date * -1), 0)]:
-            sum += (persons('present_in_new_zealand', p) * 1)
+            sum += (persons('was_present_in_nz_and_entitled_to_indefinite_stay', p) * 1)
 
         return sum
 
+class was_present_in_nz_and_entitled_to_indefinite_stay(Variable):
+        value_type = int
+        entity = Person
+        definition_period = DAY
+        label = u"was present in New Zealand and entitled to indefinite stay"
+        reference = "Whether both `present_in_new_zealand` and `immigration__entitled_to_indefinite_stay` were true"
+       
+        def formula(persons, period, parameters):
+            present = persons('present_in_new_zealand', period) 
+            entitled = persons('immigration__entitled_to_indefinite_stay', period)
+            return present * entitled
 
 class present_in_new_zealand(Variable):
     value_type = bool
@@ -165,14 +176,6 @@ class present_in_new_zealand(Variable):
     definition_period = DAY
     default_value = False
     label = u"was present in New Zealand on this day"
-    reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
-
-
-class immigration__holds_indefinite_stay_visa(Variable):
-    value_type = bool
-    entity = Person
-    definition_period = DAY
-    label = u"is entitled in terms of the Immigration Act 2009 to be in New Zealand indefinitely"
     reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
 
 
