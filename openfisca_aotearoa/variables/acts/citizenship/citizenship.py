@@ -171,6 +171,7 @@ class was_present_in_nz_and_entitled_to_indefinite_stay(Variable):
             entitled = persons('immigration__entitled_to_indefinite_stay', period)
             return present * entitled
 
+
 class present_in_new_zealand(Variable):
     value_type = bool
     entity = Person
