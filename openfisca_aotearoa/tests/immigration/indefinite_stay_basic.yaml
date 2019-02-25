@@ -1,4 +1,4 @@
-- name: "Indefinite Stay"
+- name: "Indefinite Stay Basic"
   period: 2015
   absolute_error_margin: 0
   persons:
