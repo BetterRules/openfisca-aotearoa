@@ -41,6 +41,20 @@
         "2017-06-20": true
         "2018-01-21": false
         "2018-02-12": true
+      immigration__entitled_to_indefinite_stay:
+        "2013-02-04": true
+        "2014-03-10": false
+        "2014-03-15": true
+        "2015-08-30": true
+        "2016-03-10": false
+        "2016-03-15": true
+        "2016-08-27": false
+        "2016-11-02": false
+        "2016-11-16": true
+        "2017-05-27": false
+        "2017-06-20": true
+        "2018-01-21": false
+        "2018-02-12": true
   families:
     - id: "Whanau"
       others: [  "ruby_2017-10-01" ]

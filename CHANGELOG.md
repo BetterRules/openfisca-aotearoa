@@ -1,5 +1,8 @@
 # Changelog
 
+# 9.2.0 - https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/141
+* add `immigration__entitled_to_indefinite_stay` for use in citizenship presence calculations
+
 # 9.1.0 - [#139]https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/139
 * Fix calculation of number of days present in NZ for Citizenship by Grant
 
