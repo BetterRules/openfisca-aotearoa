@@ -136,3 +136,37 @@
       2019-03:
         - false
         - false
+
+
+
+- name: "Paid Parental Leave Act - Multiple partners"
+  period: 2019-03
+  absolute_error_margin: 0
+  persons:
+    - id: "biological mother"
+      parental_leave__is_the_biological_mother: true
+      parental_leave__transferred_her_entitlement_to_spouse: true
+    - id: "co-parent"
+    - id: "another co-parenting partner"
+  families:
+    - id: "Happy family"
+      principal_caregiver: "co-parent"
+      partners:
+        - "biological mother"
+        - "another co-parenting partner"
+  titled_properties:
+    - id: whare
+      others: ["biological mother", "co-parent", "another co-parenting partner"]
+  output_variables:
+    parental_leave__is_spouse_or_partner_of_the_biological_mother:
+      2019-03:
+        # the two partners of the bio mother 
+        - false
+        - true
+        - true
+    parental_leave__is_primary_carer:
+      2019-03:
+        # but only one may be nominated as carer
+        - false
+        - true
+        - false
