@@ -26,7 +26,7 @@
         - true
 
 
-- name: "Paid Parental Leave Act - Partner tests"
+- name: "Paid Parental Leave Act - other permanent carers"
   period: 2019-03
   absolute_error_margin: 0
   persons:
@@ -58,4 +58,26 @@
         - true
         - false
 
-
+- name: "Paid Parental Leave Act - other carer, but not permanent"
+  period: 2019-03
+  absolute_error_margin: 0
+  persons:
+    - id: "foster mother"
+    - id: "another foster parent"
+  families:
+    - id: "one"
+      principal_caregiver: "foster mother"
+      partners: 
+        - "another foster parent"     
+  titled_properties:
+    - id: whare
+      others: ["foster mother", "another foster parent"]
+  output_variables:
+    parental_leave__a_person_other_than_biological_mother_or_her_spouse:
+      2019-03:
+        - true
+        - true
+    parental_leave__is_primary_carer:
+      2019-03:
+        - false
+        - false
