@@ -13,14 +13,17 @@ class parental_leave__is_primary_carer(Variable):
 
     def formula_1987(persons, period, parameters):
         biological_mother = persons('parental_leave__is_the_biological_mother', period)
+        
         her_spouse = persons('parental_leave__is_spouse_or_partner_of_the_biological_mother', period)
+        received_transferred_entitlement = persons('parental_leave__has_spouse_who_transferred_her_entitlement', period)
+
         other = persons('parental_leave__a_person_other_than_biological_mother_or_her_spouse', period)
         permanent = persons('parental_leave__taking_permanent_primary_responsibility_for_child', period)
 
         # Mark who is the principal caregiver, as there may be >1 eligible
         nominated = persons.has_role(Family.PRINCIPAL_CAREGIVER)
 
-        return nominated * (biological_mother + her_spouse + (other * permanent))
+        return nominated * (biological_mother + (her_spouse * received_transferred_entitlement) + (other * permanent))
 
 
 class parental_leave__is_the_biological_mother(Variable):
@@ -39,12 +42,45 @@ class parental_leave__is_spouse_or_partner_of_the_biological_mother(Variable):
     reference = "http://www.legislation.govt.nz/act/public/1987/0129/latest/DLM120458.html"
 
     def formula_1987(persons, period, parameters):
-        is_principal = persons.has_role(Family.PRINCIPAL_CAREGIVER)
+        # true for people who are not the biological mother, but the biological mother is in their family with role of partner
+        return persons.family('parental_leave__family_includes_biological_mother_as_partner', period) * \
+          not_(persons('parental_leave__is_the_biological_mother', period))
 
-        biological_mother = persons.family.members('parental_leave__is_the_biological_mother', period)
-        partner_is_biological_mother = persons.family.any(biological_mother, role=Family.PARTNER)
 
-        return is_principal * partner_is_biological_mother
+class parental_leave__family_includes_biological_mother_as_partner(Variable):
+    value_type = bool
+    entity = Family
+    definition_period = MONTH
+    reference = "http://www.legislation.govt.nz/act/public/1964/0136/latest/whole.html#DLM361606"
+    label = "Family is caring for an orphan as per Social Security Act 1964"
+
+    def formula(families, period, parameters):
+        biological_mothers = families.members('parental_leave__is_the_biological_mother', period)
+        return families.any(biological_mothers, role=Family.PARTNER)
+
+
+
+class parental_leave__transferred_her_entitlement_to_spouse(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = MONTH
+    label = "has transferred all or part of her entitlement to a parental leave payment to that spouse or partner"
+    reference = "http://www.legislation.govt.nz/act/public/1987/0129/latest/DLM120458.html"
+
+
+class parental_leave__has_spouse_who_transferred_her_entitlement(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = MONTH
+    label = "is the spouse of the biological mother, and she transferred her entitlement to this spouse"
+    reference = "http://www.legislation.govt.nz/act/public/1987/0129/latest/DLM120458.html"
+
+    def formula_1987(persons, period, parameters):
+        is_spouse = persons('parental_leave__is_spouse_or_partner_of_the_biological_mother', period)
+        family_has_transferring_entitlement = persons.family.members('parental_leave__transferred_her_entitlement_to_spouse', period)
+
+        print(is_spouse, family_has_transferring_entitlement)
+        return persons.family.any(family_has_transferring_entitlement)  * is_spouse
 
 
 class parental_leave__a_person_other_than_biological_mother_or_her_spouse(Variable):

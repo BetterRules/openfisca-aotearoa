@@ -1,11 +1,12 @@
 ---
 
-- name: "Paid Parental Leave Act - Partner tests"
+- name: "Paid Parental Leave Act - Mother transfers entitlement"
   period: 2019-03
   absolute_error_margin: 0
   persons:
     - id: "biological mother"
       parental_leave__is_the_biological_mother: true
+      parental_leave__transferred_her_entitlement_to_spouse: true
     - id: "other mum"
   families:
     - id: "Happy family"
@@ -24,6 +25,34 @@
       2019-03:
         - false
         - true
+
+
+- name: "Paid Parental Leave Act - Mother *DOES NOT* transfer entitlement"
+  period: 2019-03
+  absolute_error_margin: 0
+  persons:
+    - id: "biological mother"
+      parental_leave__is_the_biological_mother: true
+      parental_leave__transferred_her_entitlement_to_spouse: false
+    - id: "other mum"
+  families:
+    - id: "Happy family"
+      principal_caregiver: "other mum"
+      partners:
+        - "biological mother"
+  titled_properties:
+    - id: whare
+      others: ["biological mother", "other mum"]
+  output_variables:
+    parental_leave__is_spouse_or_partner_of_the_biological_mother:
+      2019-03:
+        - false
+        - true
+    parental_leave__is_primary_carer:
+      2019-03:
+        - false
+        - false
+
 
 
 - name: "Paid Parental Leave Act - other permanent carers"
@@ -88,9 +117,10 @@
   persons:
     - id: "biological mother"
       parental_leave__is_the_biological_mother: true
+      parental_leave__transferred_her_entitlement_to_spouse: true # Doesn't make sense, as this person doesn't have  spouse
     - id: "biological father"
   families:
-    - id: "who am i to judge"
+    - id: "a family"
       principal_caregiver: "biological father"
       others:
         - "biological mother"

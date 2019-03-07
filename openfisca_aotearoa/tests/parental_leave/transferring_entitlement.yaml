@@ -1,0 +1,91 @@
+
+- name: "Paid Parental Leave Act - transferring entitlement to spouse"
+  period: 2019-03
+  absolute_error_margin: 0
+  persons:
+    - id: "biological mother"
+      parental_leave__is_the_biological_mother: true
+      parental_leave__transferred_her_entitlement_to_spouse: true
+    - id: "biological father"
+  families:
+    - id: "a family"
+      partners:
+        - "biological mother"
+      principal_caregiver: "biological father"
+  titled_properties:
+    - id: whare
+      others: ["biological mother", "biological father"]
+  output_variables:
+    parental_leave__is_spouse_or_partner_of_the_biological_mother:
+      2019-03:
+        - false
+        - true
+    parental_leave__has_spouse_who_transferred_her_entitlement:
+      2019-03:
+        - false
+        - true
+
+- name: "Paid Parental Leave Act - not transferring entitlement to spouse"
+  period: 2019-03
+  absolute_error_margin: 0
+  persons:
+    - id: "biological mother"
+      parental_leave__is_the_biological_mother: true
+      parental_leave__transferred_her_entitlement_to_spouse: false
+    - id: "biological father"
+  families:
+    - id: "a family"
+      partners:
+        - "biological mother"
+      principal_caregiver: "biological father"
+  titled_properties:
+    - id: whare
+      others: ["biological mother", "biological father"]
+  output_variables:
+    parental_leave__has_spouse_who_transferred_her_entitlement:
+      2019-03:
+        - false
+        - false
+
+- name: "Paid Parental Leave Act - attempting to transfer entitlement when not the biological mother"
+  period: 2019-03
+  absolute_error_margin: 0
+  persons:
+    - id: "not the biological mother"
+      parental_leave__transferred_her_entitlement_to_spouse: true
+    - id: "biological father"
+  families:
+    - id: "a family"
+      partners:
+        - "not the biological mother"
+      principal_caregiver: "biological father"
+  titled_properties:
+    - id: whare
+      others: ["not the biological mother", "biological father"]
+  output_variables:
+    parental_leave__has_spouse_who_transferred_her_entitlement:
+      2019-03:
+        - false
+        - false
+
+- name: "Paid Parental Leave Act - attempting to transfer entitlement when not in a relationship"
+  period: 2019-03
+  absolute_error_margin: 0
+  persons:
+    - id: "biological mother"
+      parental_leave__is_the_biological_mother: true
+      parental_leave__transferred_her_entitlement_to_spouse: true
+    - id: "biological father"
+  families:
+    - id: "a family"
+      others:
+        - "biological mother"
+      principal_caregiver: "biological father"
+  titled_properties:
+    - id: whare
+      others: ["biological mother", "biological father"]
+  output_variables:
+    parental_leave__has_spouse_who_transferred_her_entitlement:
+      2019-03:
+        - false
+        - false
