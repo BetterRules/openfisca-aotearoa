@@ -25,7 +25,7 @@ class parental_leave__threshold_tests(Variable):
     value_type = int
     entity = Person
     definition_period = MONTH
-    label = u"Parental Leave Threshold Tests"
+    label = u"satisfies Parental Leave Threshold Tests (tests are used to determine an employee's entitlements to parental leave)"
     reference = u"http://www.legislation.govt.nz/act/public/1987/0129/latest/DLM6810651.html"
 
 
