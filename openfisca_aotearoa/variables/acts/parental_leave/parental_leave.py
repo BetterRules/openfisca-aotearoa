@@ -13,7 +13,7 @@ class parental_leave__is_primary_carer(Variable):
 
     def formula_1987(persons, period, parameters):
         biological_mother = persons('parental_leave__is_the_biological_mother', period)
-        
+
         her_spouse = persons('parental_leave__is_spouse_or_partner_of_the_biological_mother', period)
         received_transferred_entitlement = persons('parental_leave__has_spouse_who_transferred_her_entitlement', period)
 
@@ -45,7 +45,7 @@ class parental_leave__is_spouse_or_partner_of_the_biological_mother(Variable):
     def formula_1987(persons, period, parameters):
         # true for people who are not the biological mother, but the biological mother is in their family with role of partner
         return persons.family('parental_leave__family_includes_biological_mother_as_partner', period) * \
-          not_(persons('parental_leave__is_the_biological_mother', period))
+            not_(persons('parental_leave__is_the_biological_mother', period))
 
 
 class parental_leave__family_includes_biological_mother_as_partner(Variable):
@@ -58,7 +58,6 @@ class parental_leave__family_includes_biological_mother_as_partner(Variable):
     def formula(families, period, parameters):
         biological_mothers = families.members('parental_leave__is_the_biological_mother', period)
         return families.any(biological_mothers, role=Family.PARTNER)
-
 
 
 class parental_leave__transferred_her_entitlement_to_spouse(Variable):
@@ -81,7 +80,7 @@ class parental_leave__has_spouse_who_transferred_her_entitlement(Variable):
         family_has_transferring_entitlement = persons.family.members('parental_leave__transferred_her_entitlement_to_spouse', period)
 
         print(is_spouse, family_has_transferring_entitlement)
-        return persons.family.any(family_has_transferring_entitlement)  * is_spouse
+        return persons.family.any(family_has_transferring_entitlement) * is_spouse
 
 
 class parental_leave__a_person_other_than_biological_mother_or_her_spouse(Variable):
@@ -91,13 +90,11 @@ class parental_leave__a_person_other_than_biological_mother_or_her_spouse(Variab
     label = u"a person, other than the biological mother or her spouse or partner"
     reference = "http://www.legislation.govt.nz/act/public/1987/0129/latest/DLM120458.html"
 
-
     def formula_1987(persons, period, parameters):
         biological_mother = persons.family.members('parental_leave__is_the_biological_mother', period)
         partner_is_biological_mother = persons.family.any(biological_mother, role=Family.PARTNER)
 
         return not_(biological_mother) * not_(partner_is_biological_mother)
-
 
 
 class parental_leave__taking_permanent_primary_responsibility_for_child(Variable):
