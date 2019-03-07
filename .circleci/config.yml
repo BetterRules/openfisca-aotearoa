@@ -59,11 +59,7 @@ jobs:
           command: |
             pip install --upgrade pip twine wheel
             pip install --editable .[dev] --upgrade
-            pip install -e "git+git://github.com/serviceinnovationlab/openfisca-core.git@day#egg=openfisca_core" --exists-action w
-      # - run:
-      #     name: Install dependencies from requirements.txt
-      #     command: |
-      #       pip install -r requirements.txt
+            pip install -r requirements.txt
             
       - save_cache:
           key: v1-py2-{{ checksum "setup.py" }}
@@ -96,12 +92,7 @@ jobs:
           command: |
             pip install --upgrade pip twine wheel
             pip install --editable .[dev] --upgrade
-            pip install -e "git+git://github.com/serviceinnovationlab/openfisca-core.git@day#egg=openfisca_core" --exists-action w
-
-      # - run:
-      #     name: Install dependencies from requirements.txt
-      #     command: |
-      #       pip install -r requirements.txt
+            pip install -r requirements.txt
 
       - save_cache:
           key: v1-py3-{{ checksum "setup.py" }}
