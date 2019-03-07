@@ -1,5 +1,8 @@
 # Changelog
 
+# 9.3.0 - https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/142
+* Add formula for Primary Carer in Paid Parental Leave
+
 # 9.2.0 - https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/141
 * add `immigration__entitled_to_indefinite_stay` for use in citizenship presence calculations
 
