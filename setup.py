@@ -16,7 +16,7 @@ setup(
     url='https://github.com/ServiceInnovationLab/openfisca-aotearoa',
     include_package_data=True,  # Will read MANIFEST.in
     install_requires=[
-        'OpenFisca-Core >= 24.3.0, < 25.0',
+        'OpenFisca-Core >= 25.0.0, < 26.0',
         ],
     extras_require={
         'test': [
