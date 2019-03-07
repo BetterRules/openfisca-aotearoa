@@ -54,10 +54,25 @@ class citizenship__meets_each_year_minimum_presence_requirements(Variable):
         meets_presence = True
 
         for n in range(0, 5):
-            n_years_ago = period.offset(days_since_n_years_ago(period.date, n * -1))
-            meets_presence_n_years_ago = (persons('days_present_in_new_zealand_in_preceeding_year', n_years_ago) >= required_days)
+            # print("Checking year", n, "ending on", period.date)
 
+            number_of_days_ago = days_since_n_years_ago(period.date, n)
+            # print("the day to end our rolling year on is (the day before)", number_of_days_ago, "days before", period.date)
+
+            # Go back in time by n years
+            day_n_years_ago = period.offset(number_of_days_ago * -1)
+            # print("day_n_years_ago", day_n_years_ago)
+
+            days_present = persons('days_present_in_new_zealand_in_preceeding_year', day_n_years_ago)
+            # print("days present on rolling year ending at", day_n_years_ago, "is", days_present)
+
+            meets_presence_n_years_ago = (days_present >= required_days)
+            # print("Meets rquirement??", meets_presence_n_years_ago)
+
+            # Accumulate the each year
             meets_presence = meets_presence_n_years_ago * meets_presence
+
+            # print("======================")
 
         return meets_presence
 
@@ -100,9 +115,10 @@ class days_present_in_new_zealand_in_preceeding_5_years(Variable):
     def formula(persons, period, parameters):
 
         sum = 0
+        "\t\t** -> days_present_in_new_zealand_in_preceeding_5_years"
         for offset in range((days_since_n_years_ago(period.date, 5) * -1), 1):
             p = period.offset(offset)
-            sum += (persons('present_in_new_zealand', p) * 1)
+            sum += (persons('was_present_in_nz_and_entitled_to_indefinite_stay', p) * 1)
 
         return sum
 
@@ -117,13 +133,11 @@ def days_since_n_years_ago(day, n=1):
     try:
         date_n_years_ago = day.replace(year=day.year - n)
         # The days in that rolling year could  be 365 or 366
-        days = (day - date_n_years_ago).days - 1  # subtract one to not include that day
+        return (day - date_n_years_ago).days
     except ValueError:
         # Usually means a leap day, so try from the next day (1 March)
         date_n_years_ago = (day + timedelta(days=1)).replace(year=day.year - n)
-        days = (day - date_n_years_ago).days  # no need to subtract one, we already did above
-
-    return days
+        return (day - date_n_years_ago).days
 
 
 class days_present_in_new_zealand_in_preceeding_year(Variable):
@@ -131,17 +145,31 @@ class days_present_in_new_zealand_in_preceeding_year(Variable):
     entity = Person
     definition_period = DAY
     label = u"was present in New Zealand this many days in the last (rolling) year"
-    reference = "Accumlative from `present_in_new_zealand` variable`"
+    reference = "Accumlative from `was_present_in_nz_and_entitled_to_indefinite_stay` variable`"
     default_value = 0
 
     def formula(persons, period, parameters):
 
         sum = 0
 
-        for p in [period.offset(offset) for offset in range((days_since_n_years_ago(period.date) * -1), 1)]:
-            sum += (persons('present_in_new_zealand', p) * 1)
+        start_date = days_since_n_years_ago(period.date)
+        for p in [period.offset(offset) for offset in range((start_date * -1), 0)]:
+            sum += (persons('was_present_in_nz_and_entitled_to_indefinite_stay', p) * 1)
 
         return sum
+
+
+class was_present_in_nz_and_entitled_to_indefinite_stay(Variable):
+    value_type = int
+    entity = Person
+    definition_period = DAY
+    label = u"was present in New Zealand and entitled to indefinite stay"
+    reference = "Whether both `present_in_new_zealand` and `immigration__entitled_to_indefinite_stay` were true"
+
+    def formula(persons, period, parameters):
+        present = persons('present_in_new_zealand', period)
+        entitled = persons('immigration__entitled_to_indefinite_stay', period)
+        return present * entitled
 
 
 class present_in_new_zealand(Variable):
@@ -150,14 +178,6 @@ class present_in_new_zealand(Variable):
     definition_period = DAY
     default_value = False
     label = u"was present in New Zealand on this day"
-    reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
-
-
-class immigration__holds_indefinite_stay_visa(Variable):
-    value_type = bool
-    entity = Person
-    definition_period = DAY
-    label = u"is entitled in terms of the Immigration Act 2009 to be in New Zealand indefinitely"
     reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
 
 

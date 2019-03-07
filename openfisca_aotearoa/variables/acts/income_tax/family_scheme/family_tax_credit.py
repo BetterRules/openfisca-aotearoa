@@ -9,10 +9,11 @@ class family_scheme__qualifies_for_family_tax_credit(Variable):
     entity = Person
     definition_period = MONTH
     label = u'Is a person qualified as eligible for the family tax credit'
-    reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1518484.html"
+    reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1518515.html#DLM1518515"
 
     def formula(persons, period, parameters):
-        return persons("family_scheme__base_qualifies", period) * persons("family_scheme__family_tax_credit_income_under_threshold", period)
+        return persons("family_scheme__base_qualifies", period) *\
+            persons("family_scheme__family_tax_credit_income_under_threshold", period)
 
 
 class family_scheme__family_tax_credit_income_under_threshold(Variable):  # this variable is a proxy for the calculation "family_scheme__family_tax_credit_entitlement" which needs to be coded

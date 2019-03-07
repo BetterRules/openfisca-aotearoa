@@ -8,6 +8,7 @@ class income_tax__residence(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
+    set_input = set_input_dispatch_by_period
     default_value = True
     label = u'Boolean for if a Person is classified as meeting residence requirements'
     reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1518482.html"

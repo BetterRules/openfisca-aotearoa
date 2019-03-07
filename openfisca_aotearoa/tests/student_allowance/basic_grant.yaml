@@ -11,7 +11,7 @@
       student_allowance__is_tertiary_student: true
       student_allowance__is_enrolled_fulltime: true
       student_allowance__meets_attendance_and_performance_requirements: true
-
+      student_allowance__partner_or_person_receiving_certain_allowances: false
 
     - id: "Parttime student"
       age: 18
@@ -19,6 +19,7 @@
       social_security__is_ordinarily_resident_in_new_zealand: true
       student_allowance__is_tertiary_student: true
       student_allowance__approved_to_study_parttime: true
+      student_allowance__partner_or_person_receiving_certain_allowances: false
 
     - id: "Overseas student"
       age: 27
@@ -26,6 +27,7 @@
       social_security__is_ordinarily_resident_in_new_zealand: true
       student_allowance__is_tertiary_student: true
       student_allowance__approved_to_study_overseas: true
+      student_allowance__partner_or_person_receiving_certain_allowances: false
 
     - id: "Refugee"
       age: 25
@@ -33,19 +35,31 @@
       student_allowance__is_tertiary_student: true
       student_allowance__is_enrolled_fulltime: true
       student_allowance__meets_attendance_and_performance_requirements: true
+      student_allowance__partner_or_person_receiving_certain_allowances: false
+      social_security__is_ordinarily_resident_in_new_zealand: true
+
+    - id: "Refugee not normally resident in NZ"
+      age: 25
+      immigration__is_recognised_refugee: true
+      student_allowance__is_tertiary_student: true
+      student_allowance__is_enrolled_fulltime: true
+      student_allowance__meets_attendance_and_performance_requirements: true
+      social_security__is_ordinarily_resident_in_new_zealand: false
+      student_allowance__partner_or_person_receiving_certain_allowances: false
 
     - id: "Not a student"
       age: 50
       is_nz_citizen: true
       social_security__is_ordinarily_resident_in_new_zealand: true
       student_allowance__is_tertiary_student: false
+      student_allowance__partner_or_person_receiving_certain_allowances: false
 
   families:
     - id: "Whanau"
-      others: ["fulltime uni student", "Overseas student", "Refugee", "Not a student", "Parttime student"]
+      others: ["fulltime uni student", "Overseas student", "Refugee", "Refugee not normally resident in NZ", "Not a student", "Parttime student"]
   titled_properties:
     - id: whare
-      others: ["fulltime uni student", "Overseas student", "Refugee", "Not a student", "Parttime student"]
+      others: ["fulltime uni student", "Overseas student", "Refugee", "Refugee not normally resident in NZ", "Not a student", "Parttime student"]
 
   output_variables:
     student_allowance__eligible_for_basic_grant:
@@ -54,6 +68,7 @@
         - true  # part time
         - true  # overseas
         - true  # refugee
+        - true  # Refugee not normally resident in NZ
         - false  # Not a student
 
 
@@ -70,7 +85,7 @@
       student_allowance__has_a_supported_child: true
       student_allowance__is_enrolled_fulltime: true
       student_allowance__meets_attendance_and_performance_requirements: true
-
+      student_allowance__partner_or_person_receiving_certain_allowances: false
 
     - id: "not married secondary school student with child"
       age: 16
@@ -81,6 +96,7 @@
       student_allowance__has_a_supported_child: true
       student_allowance__is_enrolled_fulltime: true
       student_allowance__meets_attendance_and_performance_requirements: true
+      student_allowance__partner_or_person_receiving_certain_allowances: false
 
     - id: "childless married secondary school student"
       age: 16
@@ -91,6 +107,7 @@
       student_allowance__has_a_supported_child: false
       student_allowance__is_enrolled_fulltime: true
       student_allowance__meets_attendance_and_performance_requirements: true
+      student_allowance__partner_or_person_receiving_certain_allowances: false
 
     - id: "18yo secondary student"
       age: 18
@@ -99,7 +116,7 @@
       student_allowance__is_secondary_student: true
       student_allowance__is_enrolled_fulltime: true
       student_allowance__meets_attendance_and_performance_requirements: true
-
+      student_allowance__partner_or_person_receiving_certain_allowances: false
 
   families:
     - id: "Whanau"
@@ -140,12 +157,14 @@
       student_allowance__is_tertiary_student: true
       student_allowance__is_enrolled_fulltime: true
       student_allowance__meets_attendance_and_performance_requirements: false
+      student_allowance__partner_or_person_receiving_certain_allowances: false
 
     - id: "not citizen or resident"
       age: 21
       student_allowance__is_tertiary_student: true
       student_allowance__is_enrolled_fulltime: true
       student_allowance__meets_attendance_and_performance_requirements: true
+      student_allowance__partner_or_person_receiving_certain_allowances: false
 
   families:
     - id: "Whanau"
@@ -180,6 +199,7 @@
       student_allowance__is_tertiary_student: true
       student_allowance__is_enrolled_fulltime: true
       student_allowance__meets_attendance_and_performance_requirements: true
+      student_allowance__partner_or_person_receiving_certain_allowances: false
 
     - id: "Parttime student"
       age: 68
@@ -187,6 +207,7 @@
       social_security__is_ordinarily_resident_in_new_zealand: true
       student_allowance__is_tertiary_student: true
       student_allowance__approved_to_study_parttime: true
+      student_allowance__partner_or_person_receiving_certain_allowances: false
 
     - id: "Overseas student"
       age: 70
@@ -194,6 +215,7 @@
       social_security__is_ordinarily_resident_in_new_zealand: true
       student_allowance__is_tertiary_student: true
       student_allowance__approved_to_study_overseas: true
+      student_allowance__partner_or_person_receiving_certain_allowances: false
 
     - id: "Refugee"
       age: 99
@@ -201,6 +223,7 @@
       student_allowance__is_tertiary_student: true
       student_allowance__is_enrolled_fulltime: true
       student_allowance__meets_attendance_and_performance_requirements: true
+      student_allowance__partner_or_person_receiving_certain_allowances: false
 
   families:
     - id: "Whanau"
@@ -226,4 +249,87 @@
         - false  # refugee
 
 
+- name: "Student Allowance Tertiary Students but not ordinarily resident in new zealand"
+  period: 2018-08
+  absolute_error_margin: 0
+  persons:
+    - id: "fulltime uni student"
+      age: 21
+      is_nz_citizen: false
+      social_security__is_ordinarily_resident_in_new_zealand: false
+      student_allowance__is_tertiary_student: true
+      student_allowance__is_enrolled_fulltime: true
+      student_allowance__meets_attendance_and_performance_requirements: true
+      student_allowance__partner_or_person_receiving_certain_allowances: false
 
+    - id: "Parttime student"
+      age: 18
+      is_nz_citizen: false
+      social_security__is_ordinarily_resident_in_new_zealand: false
+      student_allowance__is_tertiary_student: true
+      student_allowance__approved_to_study_parttime: true
+      student_allowance__partner_or_person_receiving_certain_allowances: false
+
+    - id: "Overseas student"
+      age: 27
+      is_nz_citizen: false
+      social_security__is_ordinarily_resident_in_new_zealand: false
+      student_allowance__is_tertiary_student: true
+      student_allowance__approved_to_study_overseas: true
+      student_allowance__partner_or_person_receiving_certain_allowances: false
+
+    - id: "Refugee not normally resident in NZ"
+      age: 25
+      social_security__is_ordinarily_resident_in_new_zealand: false
+      student_allowance__is_tertiary_student: true
+      student_allowance__is_enrolled_fulltime: true
+      student_allowance__meets_attendance_and_performance_requirements: true
+      student_allowance__partner_or_person_receiving_certain_allowances: false
+
+    - id: "Not a student"
+      age: 50
+      is_nz_citizen: false
+      social_security__is_ordinarily_resident_in_new_zealand: false
+      student_allowance__is_tertiary_student: false
+      student_allowance__partner_or_person_receiving_certain_allowances: false
+
+  families:
+    - id: "Whanau"
+      others: ["fulltime uni student", "Overseas student", "Refugee not normally resident in NZ", "Not a student", "Parttime student"]
+  titled_properties:
+    - id: whare
+      others: ["fulltime uni student", "Overseas student", "Refugee not normally resident in NZ", "Not a student", "Parttime student"]
+
+  output_variables:
+    student_allowance__eligible_for_basic_grant:
+      2018-08:
+        - false  # fulltime uni student
+        - false  # part time
+        - false  # overseas
+        - false # Refugee normally resident in NZ
+        - false  # Not a student
+
+- name: "Student Allowance Tertiary Student eligible but receiving other certain allowances"
+  period: 2018-08
+  absolute_error_margin: 0
+  persons:
+    - id: "fulltime uni student"
+      age: 21
+      is_nz_citizen: true
+      social_security__is_ordinarily_resident_in_new_zealand: true
+      student_allowance__is_tertiary_student: true
+      student_allowance__is_enrolled_fulltime: true
+      student_allowance__meets_attendance_and_performance_requirements: true
+      student_allowance__partner_or_person_receiving_certain_allowances: true
+
+  families:
+    - id: "Whanau"
+      others: ["fulltime uni student"]
+  titled_properties:
+    - id: whare
+      others: ["fulltime uni student"]
+
+  output_variables:
+    student_allowance__eligible_for_basic_grant:
+      2018-08:
+        - false  # fulltime uni student
