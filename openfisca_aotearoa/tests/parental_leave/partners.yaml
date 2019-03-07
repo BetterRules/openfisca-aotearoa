@@ -1,0 +1,61 @@
+---
+
+- name: "Paid Parental Leave Act - Partner tests"
+  period: 2019-03
+  absolute_error_margin: 0
+  persons:
+    - id: "biological mother"
+      parental_leave__is_the_biological_mother: true
+    - id: "other mum"
+  families:
+    - id: "Happy family"
+      principal_caregiver: "other mum"
+      partners:
+        - "biological mother"
+  titled_properties:
+    - id: whare
+      others: ["biological mother", "other mum"]
+  output_variables:
+    parental_leave__is_spouse_or_partner_of_the_biological_mother:
+      2019-03:
+        - false
+        - true
+    parental_leave__is_primary_carer:
+      2019-03:
+        - false
+        - true
+
+
+- name: "Paid Parental Leave Act - Partner tests"
+  period: 2019-03
+  absolute_error_margin: 0
+  persons:
+    - id: "biological mother"
+      parental_leave__is_the_biological_mother: true
+    - id: "adopting mother"
+      parental_leave__taking_permanent_primary_responsibility_for_child: true
+    - id: "another adopting parent"
+  families:
+    - id: "one"
+      principal_caregiver: "adopting mother"
+      partners: 
+        - "another adopting parent"     
+    - id: "two"
+      others:
+        - "biological mother"
+  titled_properties:
+    - id: whare
+      others: ["biological mother", "adopting mother", "another adopting parent"]
+  output_variables:
+    parental_leave__a_person_other_than_biological_mother_or_her_spouse:
+      2019-03:
+        - false
+        - true
+        - true
+    parental_leave__is_primary_carer:
+      2019-03:
+        - false
+        - true
+        - false
+
+
