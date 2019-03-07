@@ -21,6 +21,7 @@ class parental_leave__is_primary_carer(Variable):
         permanent = persons('parental_leave__taking_permanent_primary_responsibility_for_child', period)
 
         # Mark who is the principal caregiver, as there may be >1 eligible
+        # PPL Section 7 (2)
         nominated = persons.has_role(Family.PRINCIPAL_CAREGIVER)
 
         return nominated * (biological_mother + (her_spouse * received_transferred_entitlement) + (other * permanent))
