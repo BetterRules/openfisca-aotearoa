@@ -1,6 +1,6 @@
 ---
 
-- name: "Paid Parental Leave Act - Mother transfers entitlement"
+- name: "Parental Leave and Employment Protection Act - Mother transfers entitlement"
   period: 2019-03
   absolute_error_margin: 0
   persons:
@@ -27,7 +27,7 @@
         - true
 
 
-- name: "Paid Parental Leave Act - Mother *DOES NOT* transfer entitlement"
+- name: "Parental Leave and Employment Protection Act - Mother *DOES NOT* transfer entitlement"
   period: 2019-03
   absolute_error_margin: 0
   persons:
@@ -55,7 +55,7 @@
 
 
 
-- name: "Paid Parental Leave Act - other permanent carers"
+- name: "Parental Leave and Employment Protection Act - other permanent carers"
   period: 2019-03
   absolute_error_margin: 0
   persons:
@@ -87,7 +87,7 @@
         - true
         - false
 
-- name: "Paid Parental Leave Act - other carer, but not permanent"
+- name: "Parental Leave and Employment Protection Act - other carer, but not permanent"
   period: 2019-03
   absolute_error_margin: 0
   persons:
@@ -111,7 +111,7 @@
         - false
         - false
 
-- name: "Paid Parental Leave Act - when father is not the spouse"
+- name: "Parental Leave and Employment Protection Act - when father is not the spouse"
   period: 2019-03
   absolute_error_margin: 0
   persons:
@@ -139,7 +139,7 @@
 
 
 
-- name: "Paid Parental Leave Act - Multiple partners"
+- name: "Parental Leave and Employment Protection Act - Multiple partners"
   period: 2019-03
   absolute_error_margin: 0
   persons:
