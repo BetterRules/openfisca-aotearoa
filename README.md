@@ -16,6 +16,12 @@ The files that are outside from the `openfisca_aotearoa` folder are used to set 
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
+## Run the application using Docker
+
+- [Install Docker](https://www.docker.com/get-started).
+- Build the docker image: `docker build -t openfisca-aotearoa`
+- Run the image: `docker run -it -p 5000:5000 openfisca-aotearoa`
+
 ## Install Instructions for Users and Contributors
 
 This package requires [Python 3](https://www.python.org/downloads/) and [pip](https://pip.pypa.io/en/stable/installing/) .
