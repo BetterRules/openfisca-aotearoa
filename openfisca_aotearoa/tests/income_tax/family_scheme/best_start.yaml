@@ -1,5 +1,5 @@
 # Complex family setup, doesn't actually make for a great test but was written to ensure this sort of complexity could be handled
-- name: Tests complex paid parental leave eligibility
+- name: Tests complex Best Start eligibility
   period: 2018
   absolute_error_margin: 0
   input:
@@ -76,7 +76,7 @@
     best_start__entitlement:
       2018-07: [0, 0, 0, 0, 0, 0, 0, 260, 0, 0, 0, 0, 0, 0]
       2018-08: [0, 0, 0, 0, 0, 0, 260, 260, 0, 0, 0, 0, 0, 0]
-- name: Tests paid parental leave eligibility based on due date of baby only
+- name: Tests Best Start eligibility based on due date of baby only
   period: 2018
   absolute_error_margin: 0
   input:
@@ -101,7 +101,7 @@
       2018-07: [1]
     best_start__eligibility:
       2018-07: [1, 0, 0]
-- name: Tests paid parental leave entitlement value full entitlement with baby due date after 1st July 2018
+- name: Tests Best Start entitlement value full entitlement with baby due date after 1st July 2018
   period: 2018
   absolute_error_margin: 0
   input:
@@ -129,7 +129,7 @@
       2018-07: [0, 0, 0, 260]
     best_start__entitlement:
       2018-07: [260, 0, 0, 0]
-- name: Tests paid parental leave entitlement value with baby due date after 1st July 2018
+- name: Tests Best Start entitlement value with baby due date after 1st July 2018
   period: 2018
   absolute_error_margin: 0
   input:
@@ -159,7 +159,7 @@
       2018-07: [0, 0, 0, 260 ]
     best_start__entitlement:
       2018-07: [260, 0, 0, 0]
-- name: Tests paid parental leave entitlement value with baby due date after 1st July 2018
+- name: Tests Best Start entitlement value with baby due date after 1st July 2018
   period: 2018
   absolute_error_margin: 0
   input:
