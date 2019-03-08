@@ -2,27 +2,27 @@
 
 - name: Unsupported Child benefit
   period: 2018-08
-  absolute_error_margin: 0
-  persons:
-    - id: "Mama"
-      age: 21
-      is_resident: true
-      social_security__is_the_parent_of_dependent_child: false
-      social_security__is_principal_carer_for_one_year_from_application_date: true
-      social_security__is_ordinarily_resident_in_new_zealand: true
-    - id: "Tama"
-      is_resident: true
-      age: 5
-      social_security__parents_unable_to_provide_sufficient_care: true
-  families:
-    - id: "Whanau tahi"
-      principal_caregiver: "Mama"
-      children:
-        - "Tama"
-  titled_properties:
-    - id: whare
-      others: ["Mama", "Tama"]
-  output_variables:
+  input:
+    persons:
+      "Mama":
+        age: 21
+        is_resident: true
+        social_security__is_the_parent_of_dependent_child: false
+        social_security__is_principal_carer_for_one_year_from_application_date: true
+        social_security__is_ordinarily_resident_in_new_zealand: true
+      "Tama":
+        is_resident: true
+        age: 5
+        social_security__parents_unable_to_provide_sufficient_care: true
+    families:
+      "Whanau tahi":
+        principal_caregiver: "Mama"
+        children:
+          - "Tama"
+    titled_properties:
+      whare:
+        others: ["Mama", "Tama"]
+  output:
     social_security__eligible_for_unsupported_childs_benefit:
       2018-08:
         - true # mama (principal carer)
@@ -30,27 +30,27 @@
 
 - name: Unsupported Child benefit but not ordinarily resident in New Zealand
   period: 2018-08
-  absolute_error_margin: 0
-  persons:
-    - id: "Mama"
-      age: 21
-      is_resident: true
-      social_security__is_the_parent_of_dependent_child: false
-      social_security__is_principal_carer_for_one_year_from_application_date: true
-      social_security__is_ordinarily_resident_in_new_zealand: false
-    - id: "Tama"
-      is_resident: true
-      age: 5
-      social_security__parents_unable_to_provide_sufficient_care: true
-  families:
-    - id: "Whanau tahi"
-      principal_caregiver: "Mama"
-      children:
-        - "Tama"
-  titled_properties:
-    - id: whare
-      others: ["Mama", "Tama"]
-  output_variables:
+  input:
+    persons:
+      "Mama":
+        age: 21
+        is_resident: true
+        social_security__is_the_parent_of_dependent_child: false
+        social_security__is_principal_carer_for_one_year_from_application_date: true
+        social_security__is_ordinarily_resident_in_new_zealand: false
+      "Tama":
+        is_resident: true
+        age: 5
+        social_security__parents_unable_to_provide_sufficient_care: true
+    families:
+      "Whanau tahi":
+        principal_caregiver: "Mama"
+        children:
+          - "Tama"
+    titled_properties:
+      whare:
+        others: ["Mama", "Tama"]
+  output:
     social_security__eligible_for_unsupported_childs_benefit:
       2018-08:
         - false # mama (principal carer)
@@ -58,27 +58,27 @@
 
 - name: Unsupported Child benefit, not for actual parent
   period: 2018-08
-  absolute_error_margin: 0
-  persons:
-    - id: "Mama"
-      age: 21
-      is_resident: true
-      social_security__is_the_parent_of_dependent_child: true
-      social_security__is_principal_carer_for_one_year_from_application_date: true
-      social_security__is_ordinarily_resident_in_new_zealand: true
-    - id: "Tama"
-      is_resident: true
-      age: 5
-      social_security__parents_unable_to_provide_sufficient_care: true
-  families:
-    - id: "Whanau tahi"
-      principal_caregiver: "Mama"
-      children:
-        - "Tama"
-  titled_properties:
-    - id: whare
-      others: ["Mama", "Tama"]
-  output_variables:
+  input:
+    persons:
+      "Mama":
+        age: 21
+        is_resident: true
+        social_security__is_the_parent_of_dependent_child: true
+        social_security__is_principal_carer_for_one_year_from_application_date: true
+        social_security__is_ordinarily_resident_in_new_zealand: true
+      "Tama":
+        is_resident: true
+        age: 5
+        social_security__parents_unable_to_provide_sufficient_care: true
+    families:
+      "Whanau tahi":
+        principal_caregiver: "Mama"
+        children:
+          - "Tama"
+    titled_properties:
+      whare:
+        others: ["Mama", "Tama"]
+  output:
     social_security__eligible_for_unsupported_childs_benefit:
       2018-08:
         - false # mama (principal carer)
@@ -86,27 +86,27 @@
 
 - name: Unsupported Child benefit - not resident
   period: 2018-08
-  absolute_error_margin: 0
-  persons:
-    - id: "Mama"
-      age: 21
-      is_resident: false
-      social_security__is_the_parent_of_dependent_child: false
-      social_security__is_principal_carer_for_one_year_from_application_date: true
-      social_security__is_ordinarily_resident_in_new_zealand: true
-    - id: "Tama"
-      is_resident: true
-      age: 5
-      social_security__parents_unable_to_provide_sufficient_care: true
-  families:
-    - id: "Whanau tahi"
-      principal_caregiver: "Mama"
-      children:
-        - "Tama"
-  titled_properties:
-    - id: whare
-      others: ["Mama", "Tama"]
-  output_variables:
+  input:
+    persons:
+      "Mama":
+        age: 21
+        is_resident: false
+        social_security__is_the_parent_of_dependent_child: false
+        social_security__is_principal_carer_for_one_year_from_application_date: true
+        social_security__is_ordinarily_resident_in_new_zealand: true
+      "Tama":
+        is_resident: true
+        age: 5
+        social_security__parents_unable_to_provide_sufficient_care: true
+    families:
+      "Whanau tahi":
+        principal_caregiver: "Mama"
+        children:
+          - "Tama"
+    titled_properties:
+      whare:
+        others: ["Mama", "Tama"]
+  output:
     social_security__eligible_for_unsupported_childs_benefit:
       2018-08:
         - false # mama (principal carer)
@@ -115,26 +115,26 @@
 
 - name: Unsupported Child benefit - Parent are able to care
   period: 2018-08
-  absolute_error_margin: 0
-  persons:
-    - id: "Mama"
-      age: 21
-      is_resident: true
-      social_security__is_the_parent_of_dependent_child: false
-      social_security__is_principal_carer_for_one_year_from_application_date: true
-      social_security__is_ordinarily_resident_in_new_zealand: true
-    - id: "Tama"
-      is_resident: true
-      age: 5
-  families:
-    - id: "Whanau tahi"
-      principal_caregiver: "Mama"
-      children:
-        - "Tama"
-  titled_properties:
-    - id: whare
-      others: ["Mama", "Tama"]
-  output_variables:
+  input:
+    persons:
+      "Mama":
+        age: 21
+        is_resident: true
+        social_security__is_the_parent_of_dependent_child: false
+        social_security__is_principal_carer_for_one_year_from_application_date: true
+        social_security__is_ordinarily_resident_in_new_zealand: true
+      "Tama":
+        is_resident: true
+        age: 5
+    families:
+      "Whanau tahi":
+        principal_caregiver: "Mama"
+        children:
+          - "Tama"
+    titled_properties:
+      whare:
+        others: ["Mama", "Tama"]
+  output:
     social_security__eligible_for_unsupported_childs_benefit:
       2018-08:
         - false # mama (principal carer)
@@ -142,27 +142,27 @@
 
 - name: Unsupported Child benefit - too young
   period: 2018-08
-  absolute_error_margin: 0
-  persons:
-    - id: "Mama"
-      age: 17
-      is_resident: true
-      social_security__is_the_parent_of_dependent_child: false
-      social_security__is_principal_carer_for_one_year_from_application_date: true
-      social_security__is_ordinarily_resident_in_new_zealand: true
-    - id: "Tama"
-      is_resident: true
-      age: 5
-      social_security__parents_unable_to_provide_sufficient_care: true
-  families:
-    - id: "Whanau tahi"
-      principal_caregiver: "Mama"
-      children:
-        - "Tama"
-  titled_properties:
-    - id: whare
-      others: ["Mama", "Tama"]
-  output_variables:
+  input:
+    persons:
+      "Mama":
+        age: 17
+        is_resident: true
+        social_security__is_the_parent_of_dependent_child: false
+        social_security__is_principal_carer_for_one_year_from_application_date: true
+        social_security__is_ordinarily_resident_in_new_zealand: true
+      "Tama":
+        is_resident: true
+        age: 5
+        social_security__parents_unable_to_provide_sufficient_care: true
+    families:
+      "Whanau tahi":
+        principal_caregiver: "Mama"
+        children:
+          - "Tama"
+    titled_properties:
+      whare:
+        others: ["Mama", "Tama"]
+  output:
     social_security__eligible_for_unsupported_childs_benefit:
       2018-08:
         - false # mama (principal carer)
@@ -171,21 +171,21 @@
 
 - name: Unsupported Child benefit  - no child
   period: 2018-08
-  absolute_error_margin: 0
-  persons:
-    - id: "Mama"
-      age: 21
-      is_resident: true
-      social_security__is_the_parent_of_dependent_child: false
-      social_security__is_principal_carer_for_one_year_from_application_date: true
-      social_security__is_ordinarily_resident_in_new_zealand: true
-  families:
-    - id: "Whanau tahi"
-      principal_caregiver: "Mama"
-  titled_properties:
-    - id: whare
-      others: ["Mama"]
-  output_variables:
+  input:
+    persons:
+      "Mama":
+        age: 21
+        is_resident: true
+        social_security__is_the_parent_of_dependent_child: false
+        social_security__is_principal_carer_for_one_year_from_application_date: true
+        social_security__is_ordinarily_resident_in_new_zealand: true
+    families:
+      "Whanau tahi":
+        principal_caregiver: "Mama"
+    titled_properties:
+      whare:
+        others: ["Mama"]
+  output:
     social_security__eligible_for_unsupported_childs_benefit:
       2018-08:
         - false # mama (principal carer)

@@ -1,7 +1,7 @@
 - name: Accommodation Supplement for a resident
   period: 2018-06
   absolute_error_margin: 0
-  input_variables:
+  input:
     age: 30
     is_resident: true
     social_security__is_ordinarily_resident_in_new_zealand: true
@@ -9,13 +9,13 @@
     eligible_for_social_housing: false
     accommodation_supplement__below_income_threshold: true
     accommodation_supplement__below_cash_threshold: true
-  output_variables:
+  output:
     social_security__eligible_for_accommodation_supplement: true
 
 - name: Accommodation Supplement for a permanent resident
   period: 2018-06
   absolute_error_margin: 0
-  input_variables:
+  input:
     age: 30
     is_permanent_resident: true
     social_security__is_ordinarily_resident_in_new_zealand: true
@@ -23,13 +23,13 @@
     eligible_for_social_housing: false
     accommodation_supplement__below_income_threshold: true
     accommodation_supplement__below_cash_threshold: true
-  output_variables:
+  output:
     social_security__eligible_for_accommodation_supplement: true
 
 - name: Accommodation Supplement for a citizen
   period: 2018-06
   absolute_error_margin: 0
-  input_variables:
+  input:
     age: 30
     is_nz_citizen: true
     social_security__is_ordinarily_resident_in_new_zealand: true
@@ -37,13 +37,13 @@
     eligible_for_social_housing: false
     accommodation_supplement__below_income_threshold: true
     accommodation_supplement__below_cash_threshold: true
-  output_variables:
+  output:
     social_security__eligible_for_accommodation_supplement: true
 
 - name: Tests Accommodation Supplement, when applicant has no costs
   period: 2018-06
   absolute_error_margin: 0
-  input_variables:
+  input:
     age: 30
     is_resident: true
     social_security__is_ordinarily_resident_in_new_zealand: true
@@ -51,13 +51,13 @@
     eligible_for_social_housing: false
     accommodation_supplement__below_income_threshold: true
     accommodation_supplement__below_cash_threshold: true
-  output_variables:
+  output:
     social_security__eligible_for_accommodation_supplement: false
 
 - name: Tests Accommodation Supplement, when applicant is too young
   period: 2018-06
   absolute_error_margin: 0
-  input_variables:
+  input:
     age: 15
     is_resident: true
     social_security__is_ordinarily_resident_in_new_zealand: true
@@ -65,13 +65,13 @@
     eligible_for_social_housing: false
     accommodation_supplement__below_income_threshold: true
     accommodation_supplement__below_cash_threshold: true
-  output_variables:
+  output:
     social_security__eligible_for_accommodation_supplement: false
 
 - name: Tests Accommodation Supplement, when applicant has social housing
   period: 2018-06
   absolute_error_margin: 0
-  input_variables:
+  input:
     age: 45
     is_resident: true
     social_security__is_ordinarily_resident_in_new_zealand: true
@@ -79,5 +79,5 @@
     eligible_for_social_housing: true
     accommodation_supplement__below_income_threshold: true
     accommodation_supplement__below_cash_threshold: true
-  output_variables:
+  output:
     social_security__eligible_for_accommodation_supplement: false

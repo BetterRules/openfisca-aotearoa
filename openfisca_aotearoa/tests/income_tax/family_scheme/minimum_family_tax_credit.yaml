@@ -1,93 +1,47 @@
 # We can run this test on our command line using `openfisca-run-test openfisca_aotearoa/tests/income_tax/family_scheme/minimum_family_tax_credit.yaml`
-- name: A Person qualified for the working for the minumum family tax credit
-  period: 2018-08
-  absolute_error_margin: 0
-  persons:
-    - id: "Rakinui"
-      date_of_birth: 2000-01-01
-      income_tax__residence: true
-      family_scheme__full_time_earner: true
-      veterans_support__received_parents_allowance: False
-      veterans_support__received_childrens_pension: False
-      social_security__received_income_tested_benefit:
-        2018: False
-    - id: "Tāne"
-      date_of_birth: 2012-01-01
-  families:
-    - id: "Whanau"
-      principal_caregiver: "Rakinui"
-      children: ["Tāne"]
-  titled_properties:
-    - id: "Whare"
-      owners: ["Rakinui", "Tāne"]
-  output_variables:
-    family_scheme__qualifies_for_minimum_family_tax_credit: [True, False]
 - name: A Person would be qualified for the working for the minumum family tax credit but receives a parents allowance
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-    - id: "Rakinui"
-      date_of_birth: 2000-01-01
-      income_tax__residence: true
-      family_scheme__full_time_earner: true
-      veterans_support__received_parents_allowance: True
-      veterans_support__received_childrens_pension: False
-      social_security__received_income_tested_benefit:
-        2018: False
-    - id: "Tāne"
-      date_of_birth: 2012-01-01
-  families:
-    - id: "Whanau"
-      principal_caregiver: "Rakinui"
-      children: ["Tāne"]
-  titled_properties:
-    - id: "Whare"
-      owners: ["Rakinui", "Tāne"]
-  output_variables:
+  input:
+    persons:
+      "Rakinui":
+        date_of_birth: 2000-01-01
+        income_tax__residence: true
+        veterans_support__received_parents_allowance: True
+        veterans_support__received_childrens_pension: False
+        social_security__received_income_tested_benefit:
+          2018: False
+      "Tāne":
+        date_of_birth: 2012-01-01
+    families:
+      Whanau:
+        principal_caregiver: "Rakinui"
+        children: ["Tāne"]
+    titled_properties:
+      Whare:
+        owners: ["Rakinui", "Tāne"]
+  output:
     family_scheme__qualifies_for_minimum_family_tax_credit: [False, False]
 - name: A Person would be qualified for the working for the minumum family tax credit but receives a parents allowance
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-    - id: "Rakinui"
-      date_of_birth: 2000-01-01
-      income_tax__residence: true
-      family_scheme__full_time_earner: true
-      veterans_support__received_parents_allowance: True
-      veterans_support__received_childrens_pension: False
-      social_security__received_income_tested_benefit:
-        2018: False
-    - id: "Tāne"
-      date_of_birth: 2012-01-01
-  families:
-    - id: "Whanau"
-      principal_caregiver: "Rakinui"
-      children: ["Tāne"]
-  titled_properties:
-    - id: "Whare"
-      owners: ["Rakinui", "Tāne"]
-  output_variables:
-    family_scheme__qualifies_for_minimum_family_tax_credit: [False, False]
-- name: A Person would be qualified for the working for the minumum family tax credit but is not a full time earner
-  period: 2018-08
-  absolute_error_margin: 0
-  persons:
-    - id: "Rakinui"
-      date_of_birth: 2000-01-01
-      income_tax__residence: true
-      family_scheme__full_time_earner: false
-      veterans_support__received_parents_allowance: False
-      veterans_support__received_childrens_pension: False
-      social_security__received_income_tested_benefit:
-        2018: False
-    - id: "Tāne"
-      date_of_birth: 2012-01-01
-  families:
-    - id: "Whanau"
-      principal_caregiver: "Rakinui"
-      children: ["Tāne"]
-  titled_properties:
-    - id: "Whare"
-      owners: ["Rakinui", "Tāne"]
-  output_variables:
+  input:
+    persons:
+      "Rakinui":
+        date_of_birth: 2000-01-01
+        income_tax__residence: true
+        veterans_support__received_parents_allowance: True
+        veterans_support__received_childrens_pension: False
+        social_security__received_income_tested_benefit:
+          2018: False
+      "Tāne":
+        date_of_birth: 2012-01-01
+    families:
+      Whanau:
+        principal_caregiver: "Rakinui"
+        children: ["Tāne"]
+    titled_properties:
+      Whare:
+        owners: ["Rakinui", "Tāne"]
+  output:
     family_scheme__qualifies_for_minimum_family_tax_credit: [False, False]
