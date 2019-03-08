@@ -1,5 +1,18 @@
 # Changelog
 
+# 9.2.0 - https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/141
+* add `immigration__entitled_to_indefinite_stay` for use in citizenship presence calculations
+
+# 9.1.0 - [#139]https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/139
+* Fix calculation of number of days present in NZ for Citizenship by Grant
+
+# 9.0.1 - [#121]https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/121
+* Added unit (years) to ages
+* Added unit (NZD) to best_start__entitlement
+
+# 9.0.0 - [#132](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/132)
+* Removed duplicate parameter `general/age_of_superannuation`
+
 # 8.0.1 - [#126](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/126)
 * Changed Formula:
   - Removed `family_scheme__full_time_earner` from `family_scheme__qualifies_for_family_tax_credit`

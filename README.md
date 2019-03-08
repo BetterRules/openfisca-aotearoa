@@ -16,6 +16,12 @@ The files that are outside from the `openfisca_aotearoa` folder are used to set 
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
+## Run the application using Docker
+
+- [Install Docker](https://www.docker.com/get-started).
+- Build the docker image: `docker build -t openfisca-aotearoa`
+- Run the image: `docker run -it -p 5000:5000 openfisca-aotearoa`
+
 ## Install Instructions for Users and Contributors
 
 This package requires [Python 3](https://www.python.org/downloads/) and [pip](https://pip.pypa.io/en/stable/installing/) .
@@ -27,38 +33,56 @@ Supported platforms:
 
 Other OS should work if they can execute Python and NumPy.
 
-### Setting-up a Virtual Environment with Pew
+## Setup Python - Use either pyenv(new) or pew
+## Using pyenv
+> ### Install pyenv
+>
+>    curl https://pyenv.run | bash
+>
+> ### Install python
+>
+>     pyenv install 3.7.2
+>
+> ### If `ModuleNotFoundError: No module named '_ctypes'`
+>
+>     sudo apt-get update
+>     sudo apt-get install libffi-dev
+>
+> #### More problems? [Try the instructions here](https://stackoverflow.com/questions/27022373/python3-importerror-no-module-named-ctypes-when-using-value-from-module-mul#41310760)
 
-We recommend using a [virtual environment](https://virtualenv.pypa.io/en/stable/) (abbreviated as "virtualenv") with a virtualenv manager such as [pew](https://github.com/berdario/pew).
-
-- A [virtualenv](https://virtualenv.pypa.io/en/stable/) is a project specific environment created to suit the needs of the project you are working on.
-- A virtualenv manager, such as [pew](https://github.com/berdario/pew), lets you easily create, remove and toggle between several virtualenvs.
-
-To install pew, launch a terminal on your computer and follow these instructions:
-
-```sh
-python --version # You should have python 3.7 or better installed on your computer.
-# If not, visit http://www.python.org to install it and install pip as well.
-```
-
-```sh
-pip install --upgrade pip
-pip install pew  # if asked, answer "Y" to the question about modifying your shell config file.
-```
-To set-up and create a new a virtualenv named **openfisca** running python3.7:
-
-```sh
-pew new openfisca --python=python3.7
-```
-
-The virtualenv you just created will be automatically activated. This means you will operate in the virtualenv immediately. You should see a prompt resembling this:
-```sh
-Installing setuptools, pip, wheel...done.
-Launching subshell in virtual environment. Type 'exit' or 'Ctrl+D' to return.
-```
-Additional information:
-- Exit the virtualenv with `exit` (or Ctrl-D).
-- Re-enter with `pew workon openfisca`.
+## OR Using Pew
+> ### Setting-up a Virtual Environment with Pew
+>
+>We recommend using a [virtual environment](https://virtualenv.pypa.io/en/stable/) (abbreviated as "virtualenv") with a virtualenv manager such as [pew](https://github.com/berdario/pew).
+>
+>- A [virtualenv](https://virtualenv.pypa.io/en/stable/) is a project specific environment >created to suit the needs of the project you are working on.
+>- A virtualenv manager, such as [pew](https://github.com/berdario/pew), lets you easily create, remove and toggle between several virtualenvs.
+>
+>To install pew, launch a terminal on your computer and follow these instructions:
+>
+>```sh
+> python --version # You should have python 3.7 or better installed on your computer.
+> # If not, visit http://www.python.org to install it and install pip as well.
+>```
+>
+>```sh
+> pip install --upgrade pip
+>pip install pew  # if asked, answer "Y" to the question about modifying your shell config file.
+>```
+>To set-up and create a new a virtualenv named **openfisca** running python3.7:
+>
+>```sh
+>pew new openfisca --python=python3.7
+>```
+>
+>The virtualenv you just created will be automatically activated. This means you will operate in the virtualenv immediately. You should see a prompt resembling this:
+>```sh
+>Installing setuptools, pip, wheel...done.
+>Launching subshell in virtual environment. Type 'exit' or 'Ctrl+D' to return.
+>```
+>Additional information:
+>- Exit the virtualenv with `exit` (or Ctrl-D).
+>- Re-enter with `pew workon openfisca`.
 
 :tada: You are now ready to install this OpenFisca Country Package!
 
