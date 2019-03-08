@@ -1,6 +1,10 @@
 # Changelog
 
-# 9.2.0 - https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/141
+# 10.0.0 [145]https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/145
+* Upgrade to Open Fisca core 25.0
+* Updated all yaml tests to new format
+
+# 9.2.0 - [141]https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/141
 * add `immigration__entitled_to_indefinite_stay` for use in citizenship presence calculations
 
 # 9.1.0 - [#139]https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/139
