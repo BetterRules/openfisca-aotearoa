@@ -2,7 +2,6 @@
 
 - name: "Student Allowance Tertiary Students"
   period: 2018-08
-  absolute_error_margin: 0
   input:
     persons:
       fulltime_uni_student:
@@ -56,10 +55,8 @@
         - true  # refugee
         - false  # Not a student
 
-
 - name: Student Allowance Secondard school Students
   period: 2018-08
-  absolute_error_margin: 0
   input:
     persons:
       married_secondary_school_student_with_child:
@@ -100,18 +97,20 @@
         student_allowance__is_secondary_student: true
         student_allowance__is_enrolled_fulltime: true
         student_allowance__meets_attendance_and_performance_requirements: true
-
-
     families:
       Whanau:
         others:
-          - married_secondary_school_student_with_child, not_married_secondary_school_student_with_child
-          - childless_married_secondary_school_student, 18yo_secondary_student
+          - married_secondary_school_student_with_child
+          - not_married_secondary_school_student_with_child
+          - childless_married_secondary_school_student
+          - 18yo_secondary_student
     titled_properties:
       whare:
         others:
-          - married_secondary_school_student_with_child, not_married_secondary_school_student_with_child
-          - childless_married_secondary_school_student, 18yo_secondary_student
+          - married_secondary_school_student_with_child
+          - not_married_secondary_school_student_with_child
+          - childless_married_secondary_school_student
+          - 18yo_secondary_student
 
   output:
     student_allowance__eligible_for_basic_grant:
@@ -123,7 +122,6 @@
 
 - name: "Not students or not attending"
   period: 2018-08
-  absolute_error_margin: 0
   input:
     persons:
       default:
@@ -159,7 +157,6 @@
 
 - name: "Student Allowance - Eligible but too old"
   period: 2018-08
-  absolute_error_margin: 0
   input:
     persons:
       fulltime_uni_studdent:
