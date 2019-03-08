@@ -5,7 +5,6 @@
   absolute_error_margin: 0
   input:
     persons:
-
       Passes_employee_test:
         is_nz_citizen: true
         parental_leave__is_primary_carer: true
@@ -50,9 +49,8 @@
 
   output:
     parental_leave__eligible_employee:
-      2018-08:
-        - false   # Passes employee test
-        - false   # Not a NZ Citizen
-        - true    # A Primary Carer
-        - false   # Not a Primary Carer
-        - true    # Received Parental Leave
+      - false   # Passes employee test
+      - false   # Not a NZ Citizen
+      - true    # A Primary Carer
+      - false   # Not a Primary Carer
+      - true    # Received Parental Leave

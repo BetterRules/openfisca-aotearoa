@@ -24,9 +24,8 @@
         others: ["Mama", "Tama"]
   output:
     social_security__eligible_for_orphans_benefit:
-      2018-08:
-        - true # mama (principal carer)
-        - false # Tama
+      - true # mama (principal carer)
+      - false # Tama
 
 - name: Orphans benefit - eligible carer but not ordinarily in New Zealand
   period: 2018-08
@@ -52,9 +51,8 @@
         others: ["Mama", "Tama"]
   output:
     social_security__eligible_for_orphans_benefit:
-      2018-08:
-        - false # mama (principal carer)
-        - false # Tama
+      - false # mama (principal carer)
+      - false # Tama
 
 - name: Orphans benefit - too young
   period: 2018-08
@@ -80,10 +78,8 @@
         others: ["Mama", "Tama"]
   output:
     social_security__eligible_for_orphans_benefit:
-      2018-08:
-        - false # mama (principal carer)
-        - false # Tama
-
+      - false # mama (principal carer)
+      - false # Tama
 
 - name: Orphans benefit - but not orphaned
   period: 2018-08
@@ -108,9 +104,8 @@
         others: ["Mama", "Tama"]
   output:
     social_security__eligible_for_orphans_benefit:
-      2018-08:
-        - false # mama (principal carer)
-        - false # Tama
+      - false # mama (principal carer)
+      - false # Tama
 
 
 - name: Orphans benefit - but not expected to be carer
@@ -136,9 +131,8 @@
         others: ["Mama", "Tama"]
   output:
     social_security__eligible_for_orphans_benefit:
-      2018-08:
-        - false # mama (principal carer)
-        - false # Tama
+      - false # mama (principal carer)
+      - false # Tama
 
 
 - name: Orphans benefit - but orphan is not a resident
@@ -164,9 +158,8 @@
         others: ["Mama", "Tama"]
   output:
     social_security__eligible_for_orphans_benefit:
-      2018-08:
-        - false # mama (principal carer)
-        - false # Tama
+      - false # mama (principal carer)
+      - false # Tama
 
 
 - name: Orphans benefit - but carer is not a resident

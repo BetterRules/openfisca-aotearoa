@@ -16,8 +16,7 @@
         others: Ruby
   output:
     social_security__eligible_for_supported_living_payment:
-      2018-10:
-        - false
+      - false
 
 - name: Tests Supported Living Payment - totally blind
   period: 2018-10
@@ -60,8 +59,7 @@
         others: Ruby
   output:
     social_security__eligible_for_supported_living_payment:
-      2018-10:
-        - true
+      - true
 
 
 - name: Tests Supported Living Payment - self inflicted injury
@@ -84,8 +82,7 @@
         others: Ruby
   output:
     social_security__eligible_for_supported_living_payment:
-      2018-10:
-        - false
+      - false
 
 - name: Tests Supported Living Payment - Carer looking after another person
   period: 2018-10
@@ -106,8 +103,7 @@
         others: Ruby
   output:
     social_security__eligible_for_supported_living_payment:
-      2018-10:
-        - true
+      - true
 
 
 - name: Carer looking after another person, not in NZ
@@ -129,5 +125,4 @@
         others: Ruby
   output:
     social_security__eligible_for_supported_living_payment:
-      2018-10:
-        - false
+      - false

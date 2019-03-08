@@ -29,11 +29,10 @@
         others: [Mama, Papa, Tama_disabled_child, Tamahine_able_bodied_teenager]
   output:
     social_security__eligible_for_child_disability_allowance:
-      2018-08:
-        - true  # mama (principal carer)
-        - false  # papa
-        - false  # Tama (disabled child)
-        - false  # tamahine (able bodied)
+      - true  # mama (principal carer)
+      - false  # papa
+      - false  # Tama (disabled child)
+      - false  # tamahine (able bodied)
 
 - name: Tests - Eligible
   period: 2018-08
@@ -58,9 +57,8 @@
         others: [Koro, Tama_disabled_child]
   output:
     social_security__eligible_for_child_disability_allowance:
-      2018-08:
-        - true # Koro
-        - false # Tama
+      - true # Koro
+      - false # Tama
 
 - name: Tests - constant care not needed
   period: 2018-08
@@ -85,9 +83,8 @@
         others: [Koro, Tama_disabled_child]
   output:
     social_security__eligible_for_child_disability_allowance:
-      2018-08:
-        - false # Koro
-        - false # Tama
+      - false # Koro
+      - false # Tama
 
 
 - name: Tests - no principal carer
@@ -112,10 +109,8 @@
         others: [Koro, Tama_disabled_child]
   output:
     social_security__eligible_for_child_disability_allowance:
-      2018-08:
-        - false # Koro
-        - false # Tama
-
+      - false # Koro
+      - false # Tama
 
 - name: Tests - child too old
   period: 2018-08
@@ -139,9 +134,8 @@
         others: [Koro, Tama_disabled_child]
   output:
     social_security__eligible_for_child_disability_allowance:
-      2018-08:
-        - false # Koro
-        - false # Tama
+      - false # Koro
+      - false # Tama
 
 
 - name: Tests - Disable for less than 12 months
@@ -166,6 +160,5 @@
         others: [Koro, Tama_disabled_child]
   output:
     social_security__eligible_for_child_disability_allowance:
-      2018-08:
-        - false # Koro
-        - false # Tama
+      - false # Koro
+      - false # Tama

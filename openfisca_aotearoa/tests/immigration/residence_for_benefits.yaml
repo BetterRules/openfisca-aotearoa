@@ -43,29 +43,26 @@
         others: [Mary, Barry, Larry]
   output:
     is_nz_citizen:
-      2018-08:
-        - false # mama
-        - false # papa
-        - true # Tama
-        - true # tamahine
-        - false # Mary
-        - false # Barry
-        - false # Larry
+      - false # mama
+      - false # papa
+      - true # Tama
+      - true # tamahine
+      - false # Mary
+      - false # Barry
+      - false # Larry
     is_citizen_or_resident:
-      2018-08:
-        - true # mama
-        - true # papa
-        - true # Tama
-        - true # tamahine
-        - false # Mary
-        - false # Barry
-        - false # Larry
+      - true # mama
+      - true # papa
+      - true # Tama
+      - true # tamahine
+      - false # Mary
+      - false # Barry
+      - false # Larry
     social_security__meets_residential_requirements_for_certain_benefits:
-      2018-08:
-        - true # mama
-        - true # papa
-        - true # Tama
-        - false # tamahine
-        - true # Mary
-        - true # Barry
-        - false # Larry
+      - true # mama
+      - true # papa
+      - true # Tama
+      - false # tamahine
+      - true # Mary
+      - true # Barry
+      - false # Larry

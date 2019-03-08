@@ -28,9 +28,8 @@
         others: [Bob, Fred, Mary]
   output:
     has_a_partner:
-      2018-10:
-        - true # mama
-        - true # papa
-        - true # Bob
-        - true # Fred
-        - false # Mary
+      - true # mama
+      - true # papa
+      - true # Bob
+      - true # Fred
+      - false # Mary

@@ -98,24 +98,22 @@
 
   output:
     super__eligibility:
-      2018-08:
-        - false # Not eligible
-        - true # Is citizen
-        - true # Is PR
-        - true # Is resident
-        - false # Is receiving compensation
-        - true # Is a Veteran
-        - true # Is a NZ Citizen
-        - true # Lived in nz for more than 10 years since age 20
-        - true # Lived in nz for more than 5 years since age 50
+      - false # Not eligible
+      - true # Is citizen
+      - true # Is PR
+      - true # Is resident
+      - false # Is receiving compensation
+      - true # Is a Veteran
+      - true # Is a NZ Citizen
+      - true # Lived in nz for more than 10 years since age 20
+      - true # Lived in nz for more than 5 years since age 50
     super___eligibility_age:
-      2018-08:
-        - 0 # Not eligible
-        - 65 # Is citizen
-        - 65 # Is PR
-        - 65 # Is resident
-        - 0 # Is receiving compensation
-        - 65 # Is a Veteran
-        - 65 # Is a NZ Citizen
-        - 65 # Lived in nz for more than 10 years since age 20
-        - 65 # Lived in nz for more than 5 years since age 50
+      - 0 # Not eligible
+      - 65 # Is citizen
+      - 65 # Is PR
+      - 65 # Is resident
+      - 0 # Is receiving compensation
+      - 65 # Is a Veteran
+      - 65 # Is a NZ Citizen
+      - 65 # Lived in nz for more than 10 years since age 20
+      - 65 # Lived in nz for more than 5 years since age 50
