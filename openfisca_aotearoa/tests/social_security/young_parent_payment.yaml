@@ -39,20 +39,17 @@
         others: [Ruby, Oliver, Oscar]
   output:
     social_security__income_under_young_parent_payment_threshold:
-      2018-10:
-        - false # Ruby earns too much
-        - true
-        - true
+      - false # Ruby earns too much
+      - true
+      - true
     social_security__meets_young_parent_payment_basic_requirements:
-      2018-10:
-        - false  # Ruby earns too much
-        - true
-        - true
+      - false  # Ruby earns too much
+      - true
+      - true
     social_security__eligible_for_young_parent_payment:
-      2018-10:
-        - false
-        - true
-        - true
+      - false
+      - true
+      - true
 
 - name: Young Parent Payment in a relationship
   period: 2018-10
@@ -98,20 +95,17 @@
         others: [Ruby, Oliver, Oscar]
   output:
     social_security__meets_young_parent_payment_in_relationship_requirements:
-      2018-10:
-        - true # previously married
-        - false # never married
-        - true # still married
+      - true # previously married
+      - false # never married
+      - true # still married
     social_security__meets_young_parent_payment_basic_requirements:
-      2018-10:
-        - true
-        - true
-        - true
+      - true
+      - true
+      - true
     social_security__eligible_for_young_parent_payment:
-      2018-10:
-        - true
-        - false
-        - true
+      - true
+      - false
+      - true
 
 
 - name: Young Parent Payment Residency
@@ -145,6 +139,5 @@
         others: OE
   output:
     social_security__eligible_for_young_parent_payment:
-      2018-10:
-        - true # Lives in NZ
-        - false # doesn't live in NZ
+      - true # Lives in NZ
+      - false # doesn't live in NZ

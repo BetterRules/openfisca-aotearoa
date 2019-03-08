@@ -14,11 +14,9 @@
         others: Brad
   output:
     is_married_or_in_a_civil_union_or_de_facto_relationship:
-      2018-08:
-        - true
+      - true
     is_married:
-      2018-08:
-        - true
+      - true
 
 - name: "Civil Union"
   period: 2018-08
@@ -35,11 +33,9 @@
         others: Brad
   output:
     is_married_or_in_a_civil_union_or_de_facto_relationship:
-      2018-08:
-        true
+      true
     is_in_civil_union:
-      2018-08:
-        - true
+      - true
 
 - name: "De facto relationship"
   period: 2018-08
@@ -56,11 +52,9 @@
         others: Brad
   output:
     is_married_or_in_a_civil_union_or_de_facto_relationship:
-      2018-08:
-        - true
+      - true
     is_in_de_facto_relationship:
-      2018-08:
-        - true
+      - true
 
 - name: "Not Married Brad"
   period: 2018-08
@@ -77,8 +71,6 @@
         others: Brad
   output:
     is_married_or_in_a_civil_union_or_de_facto_relationship:
-      2018-08:
-        - false
+      - false
     is_married:
-      2018-08:
-        - false
+      - false

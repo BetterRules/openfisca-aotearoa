@@ -19,8 +19,7 @@
 
   output:
     home_help__eligible_for_home_help:
-      2018-08:
-        - false
+      - false
 
 - name: "Home Help, eligible as principal caregiver"
   period: 2018-08
@@ -41,8 +40,7 @@
         others: ["NZ-Citizen"]
   output:
     home_help__eligible_for_home_help:
-      2018-08:
-        - true
+      - true
 
 - name: "Home Help, ineligible as non citizen"
   period: 2018-08
@@ -84,8 +82,7 @@
         others: ["NZ-Citizen"]
   output:
     home_help__eligible_for_home_help:
-      2018-08:
-        - true
+      - true
 
 - name: "Home Help, has immediate family"
   period: 2018-08

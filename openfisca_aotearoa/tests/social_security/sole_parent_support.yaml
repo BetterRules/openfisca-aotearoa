@@ -20,9 +20,8 @@
         others: [Koro, Tamaiti]
   output:
     social_security__eligible_for_sole_parent_support:
-      2018-10:
-        - true # koro
-        - false # Tamaiti
+      - true # koro
+      - false # Tamaiti
 
 - name: Tests Sole Parent Support when in a relationship
   period: 2018-10
@@ -49,10 +48,9 @@
         others: [Papa, Mama, Matilda]
   output:
     social_security__eligible_for_sole_parent_support:
-      2018-10:
-        - false # papa
-        - false # mama
-        - false # Matilda
+      - false # papa
+      - false # mama
+      - false # Matilda
 
 
 - name: Tests Sole Parent Support when inadequately supported by partner
@@ -81,10 +79,9 @@
         others: [Papa, Mama, Matilda]
   output:
     social_security__eligible_for_sole_parent_support:
-      2018-10:
-        - true # papa
-        - false # mama
-        - false # Matilda
+      - true # papa
+      - false # mama
+      - false # Matilda
 
 
 - name: Tests Sole Parent Support - child too old
@@ -110,9 +107,8 @@
         others: [Koro, Tamaiti]
   output:
     social_security__eligible_for_sole_parent_support:
-      2018-10:
-        - false # koro
-        - false # Tamaiti
+      - false # koro
+      - false # Tamaiti
 
 
 - name: Tests Sole Parent Support - multiple children, should be eligible
@@ -141,8 +137,7 @@
         others: [Koro, Tahi, Rua, Toru]
   output:
     social_security__eligible_for_sole_parent_support:
-      2018-10:
-        - true # koro
-        - false
-        - false
-        - false
+      - true # koro
+      - false
+      - false
+      - false

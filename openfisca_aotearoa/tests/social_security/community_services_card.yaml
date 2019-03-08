@@ -15,8 +15,7 @@
         others: [Mama]
   output:
     social_security__eligible_for_community_services_card:
-      2018-08:
-        - false  # mama
+      - false  # mama
 
 
 - name: Community Services Card - eligible for people on income tested benefit
@@ -37,8 +36,7 @@
         others: [Mama]
   output:
     social_security__eligible_for_community_services_card:
-      2018-08:
-        - true  # mama
+      - true  # mama
 
 
 - name: Community Services Card - eligible for child on orphans benefit
@@ -62,9 +60,8 @@
         others: [Mama, Tama]
   output:
     social_security__eligible_for_community_services_card:
-      2018-08:
-        - false  # mama
-        - true  # tama (child)
+      - false  # mama
+      - true  # tama (child)
 
 
 - name: >
@@ -89,9 +86,8 @@
         others: [Mama, Tama]
   output:
     social_security__eligible_for_community_services_card:
-      2018-08:
-        - false  # mama
-        - true  # tama (child)
+      - false  # mama
+      - true  # tama (child)
 
 
 - name: >
@@ -117,9 +113,8 @@
         others: [Mama, Tama]
   output:
     social_security__eligible_for_community_services_card:
-      2018-08:
-        - false  # mama
-        - true  # tama (child)
+      - false  # mama
+      - true  # tama (child)
 
 
 - name: >
@@ -140,8 +135,7 @@
         others: [Mama]
   output:
     social_security__eligible_for_community_services_card:
-      2018-08:
-        - true  # mama
+      - true  # mama
 
 
 - name: Community Services Card - eligible if receive super
@@ -162,8 +156,7 @@
         others: [Mama]
   output:
     social_security__eligible_for_community_services_card:
-      2018-08:
-        - true  # mama
+      - true  # mama
 
 
 - name: Community Services Card - not eligible if above threshold
@@ -184,8 +177,7 @@
         others: [Mama]
   output:
     social_security__eligible_for_community_services_card:
-      2018-08:
-        - false  # mama
+      - false  # mama
 
 
 - name: Community Services Card - eligible if receive veterans pension
@@ -205,8 +197,7 @@
         others: [Mama]
   output:
     social_security__eligible_for_community_services_card:
-      2018-08:
-        - true  # mama
+      - true  # mama
 
 
 - name: Community Services Card - eligible if receive weekly INCOME compensation
@@ -226,8 +217,7 @@
         others: [Mama]
   output:
     social_security__eligible_for_community_services_card:
-      2018-08:
-        - true  # mama
+      - true  # mama
 
 - name: Community Services Card - eligible if receive weekly compensation
   period: 2018-08
@@ -246,8 +236,7 @@
         others: [Mama]
   output:
     social_security__eligible_for_community_services_card:
-      2018-08:
-        - true  # mama
+      - true  # mama
 
 
 - name: Community Services Card - eligible if fulltime student
@@ -268,8 +257,7 @@
         others: [Mama]
   output:
     social_security__eligible_for_community_services_card:
-      2018-08:
-        - true  # mama
+      - true  # mama
 
 
 - name: Community Services Card - not eligible if above threshold
@@ -290,8 +278,7 @@
         others: [Mama]
   output:
     social_security__eligible_for_community_services_card:
-      2018-08:
-        - false  # mama
+      - false  # mama
 
 - name: >
     Community Services Card - eligibility for resident with dependent children
@@ -312,8 +299,7 @@
         others: [Mama]
   output:
     social_security__eligible_for_community_services_card:
-      2018-08:
-        - true  # mama
+      - true  # mama
 
 - name: >
     Community Services Card - for non resident with dependent children
@@ -338,8 +324,7 @@
         others: [Mama]
   output:
     social_security__eligible_for_community_services_card:
-      2018-08:
-        - true  # mama
+      - true  # mama
 
 
 - name: Community Services Card - eligibility for person without dependents
@@ -364,5 +349,4 @@
         others: [Mama]
   output:
     social_security__eligible_for_community_services_card:
-      2018-08:
-        - true  # mama
+      - true  # mama

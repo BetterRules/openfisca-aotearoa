@@ -48,12 +48,11 @@
 
   output:
     student_allowance__eligible_for_basic_grant:
-      2018-08:
-        - true  # fulltime uni student
-        - true  # part time
-        - true  # overseas
-        - true  # refugee
-        - false  # Not a student
+      - true  # fulltime uni student
+      - true  # part time
+      - true  # overseas
+      - true  # refugee
+      - false  # Not a student
 
 - name: Student Allowance Secondard school Students
   period: 2018-08
@@ -114,11 +113,10 @@
 
   output:
     student_allowance__eligible_for_basic_grant:
-      2018-08:
-        - true  # married secondary school student
-        - false  # not married secondary school student
-        - false  # childless married secondary school student
-        - true  # 18yo secondary student
+      - true  # married secondary school student
+      - false  # not married secondary school student
+      - false  # childless married secondary school student
+      - true  # 18yo secondary student
 
 - name: "Not students or not attending"
   period: 2018-08
@@ -150,10 +148,9 @@
 
   output:
     student_allowance__eligible_for_basic_grant:
-      2018-08:
-        - false # default
-        - false # not_attending
-        - false # not_citizen_or_resident
+      - false # default
+      - false # not_attending
+      - false # not_citizen_or_resident
 
 - name: "Student Allowance - Eligible but too old"
   period: 2018-08
@@ -197,8 +194,7 @@
 
   output:
     student_allowance__eligible_for_basic_grant:
-      2018-08:
-        - false  # fulltime uni student
-        - false  # part time
-        - false  # overseas
-        - false  # refugee
+      - false  # fulltime uni student
+      - false  # part time
+      - false  # overseas
+      - false  # refugee

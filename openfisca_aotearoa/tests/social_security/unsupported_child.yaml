@@ -24,9 +24,8 @@
         others: ["Mama", "Tama"]
   output:
     social_security__eligible_for_unsupported_childs_benefit:
-      2018-08:
-        - true # mama (principal carer)
-        - false # Tama
+      - true # mama (principal carer)
+      - false # Tama
 
 - name: Unsupported Child benefit but not ordinarily resident in New Zealand
   period: 2018-08
@@ -52,9 +51,8 @@
         others: ["Mama", "Tama"]
   output:
     social_security__eligible_for_unsupported_childs_benefit:
-      2018-08:
-        - false # mama (principal carer)
-        - false # Tama
+      - false # mama (principal carer)
+      - false # Tama
 
 - name: Unsupported Child benefit, not for actual parent
   period: 2018-08
@@ -80,9 +78,8 @@
         others: ["Mama", "Tama"]
   output:
     social_security__eligible_for_unsupported_childs_benefit:
-      2018-08:
-        - false # mama (principal carer)
-        - false # Tama
+      - false # mama (principal carer)
+      - false # Tama
 
 - name: Unsupported Child benefit - not resident
   period: 2018-08
@@ -108,9 +105,8 @@
         others: ["Mama", "Tama"]
   output:
     social_security__eligible_for_unsupported_childs_benefit:
-      2018-08:
-        - false # mama (principal carer)
-        - false # Tama
+      - false # mama (principal carer)
+      - false # Tama
 
 
 - name: Unsupported Child benefit - Parent are able to care
@@ -136,9 +132,8 @@
         others: ["Mama", "Tama"]
   output:
     social_security__eligible_for_unsupported_childs_benefit:
-      2018-08:
-        - false # mama (principal carer)
-        - false # Tama
+      - false # mama (principal carer)
+      - false # Tama
 
 - name: Unsupported Child benefit - too young
   period: 2018-08
@@ -164,9 +159,8 @@
         others: ["Mama", "Tama"]
   output:
     social_security__eligible_for_unsupported_childs_benefit:
-      2018-08:
-        - false # mama (principal carer)
-        - false # Tama
+      - false # mama (principal carer)
+      - false # Tama
 
 
 - name: Unsupported Child benefit  - no child
@@ -187,5 +181,4 @@
         others: ["Mama"]
   output:
     social_security__eligible_for_unsupported_childs_benefit:
-      2018-08:
-        - false # mama (principal carer)
+      - false # mama (principal carer)
