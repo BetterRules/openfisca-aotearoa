@@ -44,7 +44,8 @@
         - true
         - true
     social_security__meets_young_parent_payment_basic_requirements:
-        - false # Ruby earns too much
+      2018-10:
+        - false  # Ruby earns too much
         - true
         - true
     social_security__eligible_for_young_parent_payment:

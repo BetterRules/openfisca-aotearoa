@@ -30,12 +30,10 @@
   output:
     social_security__eligible_for_child_disability_allowance:
       2018-08:
-        - true # mama (principal carer)
-        - false # papa
-        - false # Tama (disabled child)
-        - false # tamahine (able bodied)
-
-
+        - true  # mama (principal carer)
+        - false  # papa
+        - false  # Tama (disabled child)
+        - false  # tamahine (able bodied)
 
 - name: Tests - Eligible
   period: 2018-08

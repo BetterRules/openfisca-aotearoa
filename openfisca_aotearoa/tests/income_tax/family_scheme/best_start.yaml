@@ -50,7 +50,21 @@
         children: ["Hemi-junior-early"]
     titled_properties:
       "Earth":
-        others: ["Papatūānuku", "Rakinui", "Tāne", "Rongo", "Ikatere", "Tāwhirimātea", "Papatūānuku-2", "Papatūānuku-3", "Tāne-2", "Samuel", "Rongo-2", "Hemi", "Hemi-junior", "Hemi-junior-early"]
+        others:
+          - "Papatūānuku"
+          - "Rakinui"
+          - "Tāne"
+          - "Rongo"
+          - "Ikatere"
+          - "Tāwhirimātea"
+          - "Papatūānuku-2"
+          - "Papatūānuku-3"
+          - "Tāne-2"
+          - "Samuel"
+          - "Rongo-2"
+          - "Hemi"
+          - "Hemi-junior"
+          - "Hemi-junior-early"
   output:
     best_start__family_has_children_eligible:
       2018-07: [0, 1, 1]

@@ -19,19 +19,19 @@
           "2015-07-01": true
     families:
       "Whanau":
-        others: [  "Tahi" ]
+        others: ["Tahi"]
     titled_properties:
       whare:
-        others: [  "Tahi" ]
+        others: ["Tahi"]
   output:
     was_present_in_nz_and_entitled_to_indefinite_stay:
-        "2000-12-31": false
-        "2001-01-01": true
-        "2013-03-30": true
-        "2013-03-31": false
-        "2013-05-04": false
-        "2013-05-05": true
-        "2015-06-20": false
-        "2015-06-21": false
-        "2015-06-30": false
-        "2015-07-01": true
+      "2000-12-31": false
+      "2001-01-01": true
+      "2013-03-30": true
+      "2013-03-31": false
+      "2013-05-04": false
+      "2013-05-05": true
+      "2015-06-20": false
+      "2015-06-21": false
+      "2015-06-30": false
+      "2015-07-01": true

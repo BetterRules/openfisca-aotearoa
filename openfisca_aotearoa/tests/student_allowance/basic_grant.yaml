@@ -104,10 +104,14 @@
 
     families:
       Whanau:
-        others: [married_secondary_school_student_with_child, not_married_secondary_school_student_with_child, childless_married_secondary_school_student, 18yo_secondary_student]
+        others:
+          - married_secondary_school_student_with_child, not_married_secondary_school_student_with_child
+          - childless_married_secondary_school_student, 18yo_secondary_student
     titled_properties:
       whare:
-        others: [married_secondary_school_student_with_child, not_married_secondary_school_student_with_child, childless_married_secondary_school_student, 18yo_secondary_student]
+        others:
+          - married_secondary_school_student_with_child, not_married_secondary_school_student_with_child
+          - childless_married_secondary_school_student, 18yo_secondary_student
 
   output:
     student_allowance__eligible_for_basic_grant:
@@ -116,8 +120,6 @@
         - false  # not married secondary school student
         - false  # childless married secondary school student
         - true  # 18yo secondary student
-
-
 
 - name: "Not students or not attending"
   period: 2018-08
@@ -154,8 +156,6 @@
         - false # default
         - false # not_attending
         - false # not_citizen_or_resident
-
-
 
 - name: "Student Allowance - Eligible but too old"
   period: 2018-08
@@ -205,6 +205,3 @@
         - false  # part time
         - false  # overseas
         - false  # refugee
-
-
-
