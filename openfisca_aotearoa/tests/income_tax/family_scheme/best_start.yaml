@@ -1,64 +1,57 @@
 # Complex family setup, doesn't actually make for a great test but was written to ensure this sort of complexity could be handled
-- name: Tests complex best start eligibility
+- name: Tests complex paid parental leave eligibility
   period: 2018
   absolute_error_margin: 0
-  persons:
-    - id: "Papatūānuku"
-      date_of_birth: 1979-08-30
-      income_tax__residence:
-        2018: true
-    - id: "Rakinui"
-      date_of_birth: 1977-10-13
-      income_tax__residence:
-        2018: true
-    - id: "Tāne"
-      date_of_birth: 2005-01-24
-    - id: "Rongo"
-      date_of_birth: 2007-03-08
-    - id: "Ikatere"
-      date_of_birth: 2008-12-27
-    - id: "Tāwhirimātea"
-      date_of_birth: 2011-12-29
-    - id: "Papatūānuku-2"
-      date_of_birth: 1979-08-30
-      income_tax__residence:
-        2018: true
-      family_scheme__assessable_income: 41000
-    - id: "Papatūānuku-3"
-      income_tax__residence:
-        2018: true
-      date_of_birth: 1979-08-30
-    - id: "Hemi"
-      date_of_birth: 1977-10-13
-      family_scheme__assessable_income: 40000
-    - id: "Samuel"
-      date_of_birth: 1968-10-13
-    - id: "Hemi-junior"
-      date_of_birth: 2018-07-18
-    - id: "Hemi-junior-early"
-      date_of_birth: 2018-05-30
-      due_date_of_birth: 2018-07-03
-    - id: "Tāne-2"
-      date_of_birth: 2017-05-24
-    - id: "Rongo-2"
-      date_of_birth: 2016-03-08
-  families:
-    - id: "First family"
-      principal_caregiver: "Papatūānuku"
-      partners: ["Rakinui"]
-      children: ["Tāne", "Rongo", "Ikatere", "Tāwhirimātea"]
-    - id: "Second family"
-      principal_caregiver: "Papatūānuku-2"
-      partners: ["Hemi"]
-      children: ["Tāne-2", "Rongo-2", "Hemi-junior"]
-    - id: "Third family"
-      principal_caregiver: "Papatūānuku-3"
-      partners: ["Samuel"]
-      children: ["Hemi-junior-early"]
-  titled_properties:
-    - id: "Earth"
-      others: ["Papatūānuku", "Rakinui", "Tāne", "Rongo", "Ikatere", "Tāwhirimātea", "Papatūānuku-2", "Papatūānuku-3", "Tāne-2", "Samuel", "Rongo-2", "Hemi", "Hemi-junior", "Hemi-junior-early"]
-  output_variables:
+  input:
+    persons:
+      "Papatūānuku":
+        date_of_birth: 1979-08-30
+      "Rakinui":
+        date_of_birth: 1977-10-13
+      "Tāne":
+        date_of_birth: 2005-01-24
+      "Rongo":
+        date_of_birth: 2007-03-08
+      "Ikatere":
+        date_of_birth: 2008-12-27
+      "Tāwhirimātea":
+        date_of_birth: 2011-12-29
+      "Papatūānuku-2":
+        date_of_birth: 1979-08-30
+        family_scheme__assessable_income: 41000
+      "Papatūānuku-3":
+        date_of_birth: 1979-08-30
+      "Hemi":
+        date_of_birth: 1977-10-13
+        family_scheme__assessable_income: 40000
+      "Samuel":
+        date_of_birth: 1968-10-13
+      "Hemi-junior":
+        date_of_birth: 2018-07-18
+      "Hemi-junior-early":
+        date_of_birth: 2018-05-30
+        due_date_of_birth: 2018-07-03
+      "Tāne-2":
+        date_of_birth: 2017-05-24
+      "Rongo-2":
+        date_of_birth: 2016-03-08
+    families:
+      "First family":
+        principal_caregiver: "Papatūānuku"
+        partners: ["Rakinui"]
+        children: ["Tāne", "Rongo", "Ikatere", "Tāwhirimātea"]
+      "Second family":
+        principal_caregiver: "Papatūānuku-2"
+        partners: ["Hemi"]
+        children: ["Tāne-2", "Rongo-2", "Hemi-junior"]
+      "Third family":
+        principal_caregiver: "Papatūānuku-3"
+        partners: ["Samuel"]
+        children: ["Hemi-junior-early"]
+    titled_properties:
+      "Earth":
+        others: ["Papatūānuku", "Rakinui", "Tāne", "Rongo", "Ikatere", "Tāwhirimātea", "Papatūānuku-2", "Papatūānuku-3", "Tāne-2", "Samuel", "Rongo-2", "Hemi", "Hemi-junior", "Hemi-junior-early"]
+  output:
     best_start__family_has_children_eligible:
       2018-07: [0, 1, 1]
     best_start__eligibility:
@@ -69,166 +62,118 @@
     best_start__entitlement:
       2018-07: [0, 0, 0, 0, 0, 0, 0, 260, 0, 0, 0, 0, 0, 0]
       2018-08: [0, 0, 0, 0, 0, 0, 260, 260, 0, 0, 0, 0, 0, 0]
-
-- name: Tests best start child eligibility
+- name: Tests paid parental leave eligibility based on due date of baby only
   period: 2018
   absolute_error_margin: 0
-  persons:
-    - id: "Papatūānuku"
-      date_of_birth: 1979-08-30
-      income_tax__residence:
-        2018-07: true
-    - id: "Rakinui"
-      date_of_birth: 1977-10-13
-      income_tax__residence:
-        2018-07: true
-    - id: "Hemi-junior-early"
-      date_of_birth: 2018-07-30
-      due_date_of_birth: 2018-07-03
-  families:
-    - id: "First family"
-      principal_caregiver: "Papatūānuku"
-      partners: ["Rakinui"]
-      children: ["Hemi-junior-early"]
-  titled_properties:
-    - id: "Earth"
-      others: ["Papatūānuku", "Rakinui", "Hemi-junior-early"]
-  output_variables:
+  input:
+    persons:
+      "Papatūānuku":
+        date_of_birth: 1979-08-30
+      "Rakinui":
+        date_of_birth: 1977-10-13
+      "Hemi-junior-early":
+        date_of_birth: 2018-07-30
+        due_date_of_birth: 2018-07-03
+    families:
+      "First family":
+        principal_caregiver: "Papatūānuku"
+        partners: ["Rakinui"]
+        children: ["Hemi-junior-early"]
+    titled_properties:
+      "Earth":
+        others: ["Papatūānuku", "Rakinui", "Hemi-junior-early"]
+  output:
     best_start__family_has_children_eligible:
       2018-07: [1]
     best_start__eligibility:
       2018-07: [1, 0, 0]
-
 - name: Tests paid parental leave entitlement value full entitlement with baby due date after 1st July 2018
   period: 2018
   absolute_error_margin: 0
-  persons:
-    - id: "Papatūānuku"
-      date_of_birth: 1979-08-30
-      income_tax__residence:
-        2018-07: true
-    - id: "Rakinui"
-      date_of_birth: 1977-10-13
-      family_scheme__assessable_income: 60000
-      income_tax__residence:
-        2018-07: true
-    - id: "Hemi-junior"
-      date_of_birth: 2018-07-18
-    - id: "Hemi-junior-early"
-      date_of_birth: 2018-06-30
-      due_date_of_birth: 2018-07-03
-  families:
-    - id: "First family"
-      principal_caregiver: "Papatūānuku"
-      partners: ["Rakinui"]
-      children: ["Hemi-junior", "Hemi-junior-early"]
-  titled_properties:
-    - id: "Earth"
-      others: ["Papatūānuku", "Rakinui", "Hemi-junior", "Hemi-junior-early"]
-  output_variables:
+  input:
+    persons:
+      "Papatūānuku":
+        date_of_birth: 1979-08-30
+      "Rakinui":
+        date_of_birth: 1977-10-13
+        family_scheme__assessable_income: 60000
+      "Hemi-junior":
+        date_of_birth: 2018-07-18
+      "Hemi-junior-early":
+        date_of_birth: 2018-06-30
+        due_date_of_birth: 2018-07-03
+    families:
+      "First family":
+        principal_caregiver: "Papatūānuku"
+        partners: ["Rakinui"]
+        children: ["Hemi-junior", "Hemi-junior-early"]
+    titled_properties:
+      "Earth":
+        others: ["Papatūānuku", "Rakinui", "Hemi-junior", "Hemi-junior-early"]
+  output:
     best_start__tax_credit_per_child:
       2018-07: [0, 0, 0, 260]
     best_start__entitlement:
       2018-07: [260, 0, 0, 0]
-
-- name: Tests best start tax credit eligibility with baby due date after 1st July 2018
+- name: Tests paid parental leave entitlement value with baby due date after 1st July 2018
   period: 2018
   absolute_error_margin: 0
-  persons:
-    - id: "Papatūānuku"
-      date_of_birth: 1979-08-30
-      income_tax__residence:
-        2018-07: true
-    - id: "Rakinui"
-      date_of_birth: 1977-10-13
-      family_scheme__assessable_income:
-        2018: 90000
-        2019: 82000
-    - id: "Hemi-junior"
-      date_of_birth: 2016-07-18
-    - id: "Hemi-junior-early"
-      date_of_birth: 2018-06-30
-      due_date_of_birth: 2018-07-03
-  families:
-    - id: "First family"
-      principal_caregiver: "Papatūānuku"
-      partners: ["Rakinui"]
-      children: ["Hemi-junior", "Hemi-junior-early"]
-  titled_properties:
-    - id: "Earth"
-      others: ["Papatūānuku", "Rakinui", "Hemi-junior", "Hemi-junior-early"]
-  output_variables:
+  input:
+    persons:
+      "Papatūānuku":
+        date_of_birth: 1979-08-30
+      "Rakinui":
+        date_of_birth: 1977-10-13
+        family_scheme__assessable_income:
+          2018: 90000
+          2019: 82000
+      "Hemi-junior":
+        date_of_birth: 2016-07-18
+      "Hemi-junior-early":
+        date_of_birth: 2018-06-30
+        due_date_of_birth: 2018-07-03
+    families:
+      "First family":
+        principal_caregiver: "Papatūānuku"
+        partners: ["Rakinui"]
+        children: ["Hemi-junior", "Hemi-junior-early"]
+    titled_properties:
+      "Earth":
+        others: ["Papatūānuku", "Rakinui", "Hemi-junior", "Hemi-junior-early"]
+  output:
     best_start__tax_credit_per_child:
       2018-07: [0, 0, 0, 260 ]
     best_start__entitlement:
       2018-07: [260, 0, 0, 0]
-
-- name: Tests best start tax credit ineligibility with income_tax__residence false and baby due date after 1st July 2018
+- name: Tests paid parental leave entitlement value with baby due date after 1st July 2018
   period: 2018
   absolute_error_margin: 0
-  persons:
-    - id: "Papatūānuku"
-      date_of_birth: 1979-08-30
-      income_tax__residence:
-        2018-07: false
-    - id: "Rakinui"
-      date_of_birth: 1977-10-13
-      family_scheme__assessable_income:
-        2018: 90000
-        2019: 82000
-    - id: "Hemi-junior"
-      date_of_birth: 2016-07-18
-    - id: "Hemi-junior-early"
-      date_of_birth: 2018-06-30
-      due_date_of_birth: 2018-07-03
-  families:
-    - id: "First family"
-      principal_caregiver: "Papatūānuku"
-      partners: ["Rakinui"]
-      children: ["Hemi-junior", "Hemi-junior-early"]
-  titled_properties:
-    - id: "Earth"
-      others: ["Papatūānuku", "Rakinui", "Hemi-junior", "Hemi-junior-early"]
-  output_variables:
-    best_start__tax_credit_per_child:
-      2018-07: [0, 0, 0, 260 ]
-    best_start__entitlement:
-      2018-07: [0, 0, 0, 0]
-
-- name: Tests best_start__entitlement with baby due date after 1st July 2018
-  period: 2018
-  absolute_error_margin: 0
-  persons:
-    - id: "Papatūānuku"
-      date_of_birth: 1979-02-01
-      income_tax__residence:
-        2018: true
-        2019: true
-        2020: true
-        2021: true
-        2022: true
-    - id: "Rakinui"
-      date_of_birth: 1977-10-13
-      family_scheme__assessable_income:
-        2018: 90000
-        2019: 82000
-        2020: 82000
-        2021: 82000
-        2022: 77000
-    - id: "Hemi-junior"
-      date_of_birth: 2019-04-18
-    - id: "Hemi-junior-early"
-      date_of_birth: 2018-06-30
-      due_date_of_birth: 2018-07-03
-  families:
-    - id: "First family"
-      principal_caregiver: "Papatūānuku"
-      partners: ["Rakinui"]
-      children: ["Hemi-junior", "Hemi-junior-early"]
-  titled_properties:
-    - id: "Earth"
-      others: ["Papatūānuku", "Rakinui", "Hemi-junior", "Hemi-junior-early"]
-  output_variables:
+  input:
+    persons:
+      "Papatūānuku":
+        date_of_birth: 1979-02-01
+      "Rakinui":
+        date_of_birth: 1977-10-13
+        family_scheme__assessable_income:
+          2018: 90000
+          2019: 82000
+          2020: 82000
+          2021: 82000
+          2022: 77000
+      "Hemi-junior":
+        date_of_birth: 2019-04-18
+      "Hemi-junior-early":
+        date_of_birth: 2018-06-30
+        due_date_of_birth: 2018-07-03
+    families:
+      "First family":
+        principal_caregiver: "Papatūānuku"
+        partners: ["Rakinui"]
+        children: ["Hemi-junior", "Hemi-junior-early"]
+    titled_properties:
+      "Earth":
+        others: ["Papatūānuku", "Rakinui", "Hemi-junior", "Hemi-junior-early"]
+  output:
     best_start__tax_credit_per_child:
       2019-04: [0, 0, 0, 260 ]
     best_start__entitlement:

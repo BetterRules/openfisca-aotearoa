@@ -1,19 +1,18 @@
 ---
-- name: Married Person
+- name: "Married Brad"
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-  - id: "Person"
-    marriage__is_married: true
-  families:
-    - id: "Beatles"
-      others:
-        - Person
-  titled_properties:
-    - id: whare
-      others:
-        - Person
-  output_variables:
+  input:
+    persons:
+      Brad:
+        marriage__is_married: true
+    families:
+      Beatles:
+        others: Brad
+    titled_properties:
+      whare:
+        others: Brad
+  output:
     is_married_or_in_a_civil_union_or_de_facto_relationship:
       2018-08:
         - true
@@ -21,21 +20,20 @@
       2018-08:
         - true
 
-- name: Civil Union
+- name: "Civil Union"
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-  - id: "Person"
-    civil_union__is_in_civil_union: true
-  families:
-    - id: "Beatles"
-      others:
-        - Person
-  titled_properties:
-    - id: whare
-      others:
-        - Person
-  output_variables:
+  input:
+    persons:
+      Brad:
+        civil_union__is_in_civil_union: true
+    families:
+      Beatles:
+        others: Brad
+    titled_properties:
+      whare:
+        others: Brad
+  output:
     is_married_or_in_a_civil_union_or_de_facto_relationship:
       2018-08:
         true
@@ -43,21 +41,20 @@
       2018-08:
         - true
 
-- name: De facto relationship
+- name: "De facto relationship"
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-  - id: "Person"
-    property_relationships__is_in_de_facto_relationship: true
-  families:
-    - id: "Beatles"
-      others:
-        - Person
-  titled_properties:
-    - id: whare
-      others:
-        - Person
-  output_variables:
+  input:
+    persons:
+      Brad:
+        property_relationships__is_in_de_facto_relationship: true
+    families:
+      Beatles:
+        others: Brad
+    titled_properties:
+      whare:
+        others: Brad
+  output:
     is_married_or_in_a_civil_union_or_de_facto_relationship:
       2018-08:
         - true
@@ -65,21 +62,20 @@
       2018-08:
         - true
 
-- name: Not Married Person
+- name: "Not Married Brad"
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-  - id: "Person"
-    is_married: false
-  families:
-    - id: "Beatles"
-      others:
-        - Person
-  titled_properties:
-    - id: whare
-      others:
-        - Person
-  output_variables:
+  input:
+    persons:
+      Brad:
+        is_married: false
+    families:
+      Beatles:
+        others: Brad
+    titled_properties:
+      whare:
+        others: Brad
+  output:
     is_married_or_in_a_civil_union_or_de_facto_relationship:
       2018-08:
         - false

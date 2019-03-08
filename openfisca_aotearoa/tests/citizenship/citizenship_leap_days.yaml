@@ -2,20 +2,20 @@
 
 - name: "NZ citizenship"
   period: 2015
-  absolute_error_margin: 0
-  persons:
-    - id: "Tahi"
-      present_in_new_zealand:
-        "2001-01-01": true
-      immigration__entitled_to_indefinite_stay:
-        "2001-01-01": true
-  families:
-    - id: "Whanau"
-      others: [  "Tahi" ]
-  titled_properties:
-    - id: whare
-      others: [  "Tahi" ]
-  output_variables:
+  input:
+    persons:
+      "Tahi":
+        present_in_new_zealand:
+          "2001-01-01": true
+        immigration__entitled_to_indefinite_stay:
+          "2001-01-01": true
+    families:
+      "Whanau":
+        others: [  "Tahi" ]
+    titled_properties:
+      whare:
+        others: [  "Tahi" ]
+  output:
     days_present_in_new_zealand_in_preceeding_year:
       "2014-02-28": 365
       "2015-02-28": 365 # from 28-feb-2014 to 27-feb-2015
