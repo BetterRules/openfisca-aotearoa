@@ -1,7 +1,8 @@
 # Changelog
 
 # 10.0.0 [145]https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/145
-* Upgrade to Open Fisca core 25.0
+* Upgrades to Open Fisca core 25.0
+* Removed support for Python 2.7
 * Updated all yaml tests to new format
 
 # 9.2.0 - [141]https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/141
