@@ -19,7 +19,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install flake8
+          name: Install yamllint
           command: sudo pip install --upgrade yamllint
       - run:
           name: Yaml linter
