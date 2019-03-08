@@ -2,7 +2,7 @@
 # CircleCI 2.0 configuration file. See <https://circleci.com/docs/2.0/language-python/>.
 version: 2
 jobs:
-  lint:
+  pythonlint:
     docker:
       - image: circleci/python:3.7.0
     steps:
@@ -13,10 +13,17 @@ jobs:
       - run:
           name: Python linter
           command: flake8
+  yamllint:
+    docker:
+      - image: circleci/python:3.7.0
+    steps:
+      - checkout
+      - run:
+          name: Install flake8
+          command: sudo pip install --upgrade yamllint
       - run:
           name: Yaml linter
           command: yamllint .
-
   version-bump:
     docker:
       - image: circleci/python:3.7.0
@@ -78,6 +85,7 @@ workflows:
   version: 2
   build_and_test:
     jobs:
-      - lint
+      - pythonlint
+      - yamllint
       - version-bump
       - build_python3
