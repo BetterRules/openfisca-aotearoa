@@ -23,6 +23,7 @@ setup(
             'flake8 >=3.4.0,<3.7.0',
             'flake8-print',
             'nose',
+            'yamllint'
             ]
         },
     packages=find_packages(),
