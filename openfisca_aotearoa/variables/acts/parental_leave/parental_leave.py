@@ -52,7 +52,7 @@ class parental_leave__family_includes_biological_mother_as_partner(Variable):
     value_type = bool
     entity = Family
     definition_period = MONTH
-    reference = "http://www.legislation.govt.nz/act/public/1964/0136/latest/whole.html#DLM361606"
+    reference = "http://www.legislation.govt.nz/act/public/1987/0129/latest/DLM120458.html"
 
     def formula(families, period, parameters):
         biological_mothers = families.members('parental_leave__is_the_biological_mother', period)
