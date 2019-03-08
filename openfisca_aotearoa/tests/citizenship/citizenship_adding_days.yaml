@@ -22,21 +22,19 @@
 
     families:
       "Whanau":
-        others: [  "Tahi" ]
+        others: ["Tahi"]
     titled_properties:
       whare:
-        others: [  "Tahi" ]
+        others: ["Tahi"]
   output:
     days_present_in_new_zealand_in_preceeding_year:
       "2014-12-30": 0
       "2014-12-31": 0
-      
-      "2014-12-31": 0
 
       # This is the day they arrive in NZ, but we count
       # from the rolling year from day before
-      "2015-01-01": 0 
-      
+      "2015-01-01": 0
+
       "2015-01-02": 1
       "2015-01-03": 2
       "2015-01-04": 2
@@ -67,7 +65,7 @@
     days_present_in_new_zealand_in_preceeding_5_years:
       "2014-12-30": 0
       "2014-12-31": 0
-      # 
+
       "2015-01-01": 1
       "2015-01-02": 2
       "2015-01-03": 2

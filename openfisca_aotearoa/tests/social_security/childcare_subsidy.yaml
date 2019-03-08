@@ -152,9 +152,6 @@
         - true  #  Mama
         - false #  child
 
-
-
-
 - name: "Childcare Subsidy - not eligible because child is attending school"
   period: 2018-08
   input:

@@ -43,6 +43,7 @@
         others: [Mary, Barry, Larry]
   output:
     is_nz_citizen:
+      2018-08:
         - false # mama
         - false # papa
         - true # Tama
