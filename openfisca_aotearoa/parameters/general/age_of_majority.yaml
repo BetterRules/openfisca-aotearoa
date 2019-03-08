@@ -4,5 +4,6 @@ values:
   # This parameter has last changed on the 1st of Jan 1971.
   1970-12-02:
     value: 20.0
-  # proposed 2018 https://www.parliament.nz/en/pb/bills-and-laws/proposed-members-bills/document/52HOH_MEMBILL007_1/age-of-majority-attainment-at-18-years-amendment-bill
+  # proposed 2018
+  # https://www.parliament.nz/en/pb/bills-and-laws/proposed-members-bills/document/52HOH_MEMBILL007_1/age-of-majority-attainment-at-18-years-amendment-bill
   # value: 18.0
