@@ -36,40 +36,6 @@ jobs:
           name: Upload package to Pypi if functional changes were made
           command: ./.circleci/deploy-if-version-bump.sh
 
-  build_python2:
-    docker:
-      - image: python:2.7.14
-
-    steps:
-      - checkout
-
-      - restore_cache:
-          key: v1-py2-{{ checksum "setup.py" }}
-
-      - run:
-          name: Create a virtualenv
-          command: |
-            mkdir -p /tmp/venv/aotearoa
-            virtualenv /tmp/venv/aotearoa
-            echo "source /tmp/venv/aotearoa/bin/activate" >> $BASH_ENV
-
-
-      - run:
-          name: Install dependencies
-          command: |
-            pip install --upgrade pip twine wheel
-            pip install --editable .[dev] --upgrade
-            pip install -r requirements.txt
-            
-      - save_cache:
-          key: v1-py2-{{ checksum "setup.py" }}
-          paths:
-            - /tmp/venv/aotearoa
-
-      - run:
-          name: Run tests
-          command: make test
-
   build_python3:
     docker:
       - image: python:3.7
@@ -109,7 +75,6 @@ workflows:
     jobs:
       - lint
       - version-bump
-      - build_python2
       - build_python3
       # Uncomment the lines below when you have a Pypi account and you are ready to deploy your country package to reusers.
       # - deploy:
