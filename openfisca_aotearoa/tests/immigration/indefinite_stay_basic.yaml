@@ -1,18 +1,18 @@
 - name: "Indefinite Stay Basic"
   period: 2015
-  absolute_error_margin: 0
-  persons:
-    - id: "Tahi"
-      present_in_new_zealand:
-        "2001-01-01": true
-      immigration__entitled_to_indefinite_stay:
-        "2001-01-01": true
-  families:
-    - id: "Whanau"
-      others: [  "Tahi" ]
-  titled_properties:
-    - id: whare
-      others: [  "Tahi" ]
-  output_variables:
+  input:
+    persons:
+      Tahi:
+        present_in_new_zealand:
+          "2001-01-01": true
+        immigration__entitled_to_indefinite_stay:
+          "2001-01-01": true
+    families:
+      "Whanau":
+        others: [ Tahi ]
+    titled_properties:
+      whare:
+        others: [ Tahi ]
+  output:
     was_present_in_nz_and_entitled_to_indefinite_stay:
       "2001-01-01": true

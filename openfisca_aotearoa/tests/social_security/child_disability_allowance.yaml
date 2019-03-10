@@ -3,168 +3,162 @@
 - name: Tests Child disability allowance
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-    - id: "Mama"
-      social_security__is_ordinarily_resident_in_new_zealand: true
-      is_resident: true
-    - id: "Papa"
-      social_security__is_ordinarily_resident_in_new_zealand: true
-      is_resident: true
-    - id: "Tama (disabled child)"
-      age: 5
-      social_security__child_with_serious_disability: true
-      social_security__is_ordinarily_resident_in_new_zealand: true
-      social_security__medical_certification_months: 12
-      social_security__requires_constant_care_and_attention: true
-    - id: "Tamahine (able bodied teenager)"
-      age: 19
-  families:
-    - id: "Whanau tahi"
-      principal_caregiver: "Mama"
-      children:
-        - "Tama (disabled child)"
-        - "Tamahine (able bodied teenager)"
-      others:
-        - "Papa"
-  titled_properties:
-    - id: whare
-      others: ["Mama", "Papa", "Tama (disabled child)", "Tamahine (able bodied teenager)"]
-  output_variables:
+  input:
+    persons:
+      Mama:
+        social_security__is_ordinarily_resident_in_new_zealand: true
+        is_resident: true
+      Papa:
+        social_security__is_ordinarily_resident_in_new_zealand: true
+        is_resident: true
+      Tama_disabled_child:
+        age: 5
+        social_security__child_with_serious_disability: true
+        social_security__is_ordinarily_resident_in_new_zealand: true
+        social_security__medical_certification_months: 12
+        social_security__requires_constant_care_and_attention: true
+      Tamahine_able_bodied_teenager:
+        age: 19
+    families:
+      Whanau_tahi:
+        principal_caregiver: Mama
+        children: [ Tama_disabled_child, Tamahine_able_bodied_teenager]
+        others: Papa
+    titled_properties:
+      whare:
+        others: [Mama, Papa, Tama_disabled_child, Tamahine_able_bodied_teenager]
+  output:
     social_security__eligible_for_child_disability_allowance:
-      2018-08:
-        - true # mama (principal carer)
-        - false # papa
-        - false # Tama (disabled child)
-        - false # tamahine (able bodied)
-
-
+      - true  # mama (principal carer)
+      - false  # papa
+      - false  # Tama (disabled child)
+      - false  # tamahine (able bodied)
 
 - name: Tests - Eligible
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-    - id: "Koro"
-      is_resident: true
-      social_security__is_ordinarily_resident_in_new_zealand: true
-    - id: "Tama (disabled child)"
-      age: 17
-      social_security__child_with_serious_disability: true
-      social_security__is_ordinarily_resident_in_new_zealand: true
-      social_security__medical_certification_months: 12
-      social_security__requires_constant_care_and_attention: true
-  families:
-    - id: "Whanau"
-      children: ["Tama (disabled child)"]
-      principal_caregiver: "Koro"
-  titled_properties:
-    - id: whare
-      others: ["Koro", "Tama (disabled child)"]
-  output_variables:
+  input:
+    persons:
+      Koro:
+        is_resident: true
+        social_security__is_ordinarily_resident_in_new_zealand: true
+      Tama_disabled_child:
+        age: 17
+        social_security__child_with_serious_disability: true
+        social_security__is_ordinarily_resident_in_new_zealand: true
+        social_security__medical_certification_months: 12
+        social_security__requires_constant_care_and_attention: true
+    families:
+      Whanau:
+        children: [Tama_disabled_child]
+        principal_caregiver: Koro
+    titled_properties:
+      whare:
+        others: [Koro, Tama_disabled_child]
+  output:
     social_security__eligible_for_child_disability_allowance:
-      2018-08:
-        - true # Koro
-        - false # Tama
+      - true # Koro
+      - false # Tama
 
 - name: Tests - constant care not needed
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-    - id: "Koro"
-      is_resident: true
-      social_security__is_ordinarily_resident_in_new_zealand: true
-    - id: "Tama (disabled child)"
-      age: 17
-      social_security__child_with_serious_disability: true
-      social_security__is_ordinarily_resident_in_new_zealand: true
-      social_security__medical_certification_months: 12
-      social_security__requires_constant_care_and_attention: false
-  families:
-    - id: "Whanau"
-      principal_caregiver: "Koro"
-      children: ["Tama (disabled child)"]
-  titled_properties:
-    - id: whare
-      others: ["Koro", "Tama (disabled child)"]
-  output_variables:
+  input:
+    persons:
+      Koro:
+        is_resident: true
+        social_security__is_ordinarily_resident_in_new_zealand: true
+      Tama_disabled_child:
+        age: 17
+        social_security__child_with_serious_disability: true
+        social_security__is_ordinarily_resident_in_new_zealand: true
+        social_security__medical_certification_months: 12
+        social_security__requires_constant_care_and_attention: false
+    families:
+      Whanau:
+        principal_caregiver: Koro
+        children: [Tama_disabled_child]
+    titled_properties:
+      whare:
+        others: [Koro, Tama_disabled_child]
+  output:
     social_security__eligible_for_child_disability_allowance:
-      2018-08:
-        - false # Koro
-        - false # Tama
+      - false # Koro
+      - false # Tama
 
 
 - name: Tests - no principal carer
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-    - id: "Koro"
-      is_resident: true
-      social_security__is_ordinarily_resident_in_new_zealand: true
-    - id: "Tama (disabled child)"
-      age: 5
-      social_security__child_with_serious_disability: true
-      social_security__requires_constant_care_and_attention: true
-      social_security__medical_certification_months: 12
-  families:
-    - id: "Whanau"
-      children: ["Tama (disabled child)"]
-      others: ["Koro"]
-  titled_properties:
-    - id: whare
-      others: ["Koro", "Tama (disabled child)"]
-  output_variables:
+  input:
+    persons:
+      Koro:
+        is_resident: true
+        social_security__is_ordinarily_resident_in_new_zealand: true
+      Tama_disabled_child:
+        age: 5
+        social_security__child_with_serious_disability: true
+        social_security__requires_constant_care_and_attention: true
+        social_security__medical_certification_months: 12
+    families:
+      Whanau:
+        children: [Tama_disabled_child]
+        others: [Koro]
+    titled_properties:
+      whare:
+        others: [Koro, Tama_disabled_child]
+  output:
     social_security__eligible_for_child_disability_allowance:
-      2018-08:
-        - false # Koro
-        - false # Tama
-
+      - false # Koro
+      - false # Tama
 
 - name: Tests - child too old
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-    - id: "Koro"
-      is_resident: true
-      social_security__is_ordinarily_resident_in_new_zealand: true
-    - id: "Tama (disabled child)"
-      age: 19
-      social_security__child_with_serious_disability: true
-      social_security__requires_constant_care_and_attention: true
-      social_security__medical_certification_months: 12
-  families:
-    - id: "Whanau"
-      children: ["Tama (disabled child)"]
-      principal_caregiver: "Koro"
-  titled_properties:
-    - id: whare
-      others: ["Koro", "Tama (disabled child)"]
-  output_variables:
+  input:
+    persons:
+      Koro:
+        is_resident: true
+        social_security__is_ordinarily_resident_in_new_zealand: true
+      Tama_disabled_child:
+        age: 19
+        social_security__child_with_serious_disability: true
+        social_security__requires_constant_care_and_attention: true
+        social_security__medical_certification_months: 12
+    families:
+      Whanau:
+        children: [Tama_disabled_child]
+        principal_caregiver: Koro
+    titled_properties:
+      whare:
+        others: [Koro, Tama_disabled_child]
+  output:
     social_security__eligible_for_child_disability_allowance:
-      2018-08:
-        - false # Koro
-        - false # Tama
+      - false # Koro
+      - false # Tama
 
 
 - name: Tests - Disable for less than 12 months
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-    - id: "Koro"
-      is_resident: true
-      social_security__is_ordinarily_resident_in_new_zealand: true
-    - id: "Tama (disabled child)"
-      age: 17
-      social_security__child_with_serious_disability: true
-      social_security__requires_constant_care_and_attention: true
-      social_security__medical_certification_months: 11
-  families:
-    - id: "Whanau"
-      children: ["Tama (disabled child)"]
-      principal_caregiver: "Koro"
-  titled_properties:
-    - id: whare
-      others: ["Koro", "Tama (disabled child)"]
-  output_variables:
+  input:
+    persons:
+      Koro:
+        is_resident: true
+        social_security__is_ordinarily_resident_in_new_zealand: true
+      Tama_disabled_child:
+        age: 17
+        social_security__child_with_serious_disability: true
+        social_security__requires_constant_care_and_attention: true
+        social_security__medical_certification_months: 11
+    families:
+      Whanau:
+        children: [Tama_disabled_child]
+        principal_caregiver: Koro
+    titled_properties:
+      whare:
+        others: [Koro, Tama_disabled_child]
+  output:
     social_security__eligible_for_child_disability_allowance:
-      2018-08:
-        - false # Koro
-        - false # Tama
+      - false # Koro
+      - false # Tama

@@ -2,60 +2,63 @@
 - name: Tests persons age eligibility in relation to the family scheme
   period: 2018
   absolute_error_margin: 0
-  persons:
-    - id: "Papatūānuku"
-      date_of_birth: 2003-01-01
-    - id: "Rakinui"
-      date_of_birth: 2002-01-01
-  families:
-    - id: "First family"
-      principal_caregiver: "Papatūānuku"
-      partners: ["Rakinui"]
-  titled_properties:
-    - id: "Earth"
-      owners: ["Papatūānuku", "Rakinui"]
-  output_variables:
+  input:
+    persons:
+      "Papatūānuku":
+        date_of_birth: 2003-01-01
+      "Rakinui":
+        date_of_birth: 2002-01-01
+    families:
+      "First family":
+        principal_caregiver: "Papatūānuku"
+        partners: ["Rakinui"]
+    titled_properties:
+      "Earth":
+        owners: ["Papatūānuku", "Rakinui"]
+  output:
     family_scheme__caregiver_age_qualifies:
       2018-07: [0, 1]
 - name: Tests if family has dependent children in relation to the family scheme
   period: 2018
   absolute_error_margin: 0
-  persons:
-    - id: "Papatūānuku"
-      date_of_birth: 1988-01-01
-    - id: "Hemi"
-      date_of_birth: 2002-01-01
-  families:
-    - id: "First family"
-      principal_caregiver: "Papatūānuku"
-      children: ["Hemi"]
-  titled_properties:
-    - id: "Earth"
-      owners: ["Papatūānuku", "Hemi"]
-  output_variables:
+  input:
+    persons:
+      "Papatūānuku":
+        date_of_birth: 1988-01-01
+      "Hemi":
+        date_of_birth: 2002-01-01
+    families:
+      "First family":
+        principal_caregiver: "Papatūānuku"
+        children: ["Hemi"]
+    titled_properties:
+      "Earth":
+        owners: ["Papatūānuku", "Hemi"]
+  output:
     family_scheme__has_dependent_children:
       2018-07: [1]
 - name: Tests the number of dependent children a family has in relation to the family scheme
   period: 2018
   absolute_error_margin: 0
-  persons:
-    - id: "Papatūānuku"
-      date_of_birth: 1988-01-01
-    - id: "Hemi"
-      date_of_birth: 2002-01-01
-    - id: "Tāne"
-      date_of_birth: 2005-01-24
-    - id: "Rongo"
-      date_of_birth: 2007-03-08
-    - id: "Ikatere"
-      date_of_birth: 2012-03-08
-  families:
-    - id: "Whanau"
-      principal_caregiver: "Papatūānuku"
-      children: ["Hemi", "Tāne", "Rongo", "Ikatere"]
-  titled_properties:
-    - id: "Whare"
-      others: ["Papatūānuku", "Hemi", "Tāne", "Rongo", "Ikatere"]
-  output_variables:
+  input:
+    persons:
+      "Papatūānuku":
+        date_of_birth: 1988-01-01
+      "Hemi":
+        date_of_birth: 2002-01-01
+      "Tāne":
+        date_of_birth: 2005-01-24
+      "Rongo":
+        date_of_birth: 2007-03-08
+      "Ikatere":
+        date_of_birth: 2012-03-08
+    families:
+      Whanau:
+        principal_caregiver: "Papatūānuku"
+        children: ["Hemi", "Tāne", "Rongo", "Ikatere"]
+    titled_properties:
+      Whare:
+        others: ["Papatūānuku", "Hemi", "Tāne", "Rongo", "Ikatere"]
+  output:
     family_scheme__has_dependent_children:
       2018-07: [1]

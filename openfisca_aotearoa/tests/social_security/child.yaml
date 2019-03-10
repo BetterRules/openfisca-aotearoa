@@ -2,33 +2,33 @@
 - name: Child status
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-  - id: "Paul"
-    age: 21
-  - id: "John"
-    age: 18
-  - id: "George"
-    age: 6
-  - id: "Ringo"
-    age: 17
-    social_security__is_financially_independent: true
-  - id: "Derek"
-    age: 16
-  - id: "Neil"
-    age: 17
-  families:
-    - id: "Beatles"
-      children: ["Paul", "John", "George", "Ringo"]
-      others: ["Derek", "Neil"]
-  titled_properties:
-    - id: whare
-      others: ["Paul", "John", "George", "Ringo", "Derek", "Neil"]
-  output_variables:
+  input:
+    persons:
+      Paul:
+        age: 21
+      John:
+        age: 18
+      George:
+        age: 6
+      Ringo:
+        age: 17
+        social_security__is_financially_independent: true
+      Derek:
+        age: 16
+      Neil:
+        age: 17
+    families:
+      Beatles:
+        children: [Paul, John, George, Ringo]
+        others: [Derek, Neil]
+    titled_properties:
+      whare:
+        others: [Paul, John, George, Ringo, Derek, Neil]
+  output:
     social_security__is_a_child:
-      2018-08:
-        - false  # paul
-        - false  # john
-        - true  # george
-        - false  # ringo
-        - true  # derek
-        - true  # neil
+      - false  # paul
+      - false  # john
+      - true  # george
+      - false  # ringo
+      - true  # derek
+      - true  # neil

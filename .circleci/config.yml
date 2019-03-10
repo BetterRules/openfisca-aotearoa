@@ -2,7 +2,7 @@
 # CircleCI 2.0 configuration file. See <https://circleci.com/docs/2.0/language-python/>.
 version: 2
 jobs:
-  lint:
+  pythonlint:
     docker:
       - image: circleci/python:3.7.0
     steps:
@@ -13,7 +13,17 @@ jobs:
       - run:
           name: Python linter
           command: flake8
-
+  yamllint:
+    docker:
+      - image: circleci/python:3.7.0
+    steps:
+      - checkout
+      - run:
+          name: Install yamllint
+          command: sudo pip install --upgrade yamllint
+      - run:
+          name: Yaml linter
+          command: yamllint .
   version-bump:
     docker:
       - image: circleci/python:3.7.0
@@ -29,50 +39,14 @@ jobs:
     docker:
       - image: circleci/python:3.7.0
     environment:
-      - PYPI_USERNAME: nzlabplus-bot  # here be the name of the Government Innovation Service Lab Pypi account to automatically publish the OpenFisca-Aotearoa package to Pypi
+      # here be the name of the Government Innovation Service Lab Pypi account
+      # to automatically publish the OpenFisca-Aotearoa package to Pypi
+      - PYPI_USERNAME: nzlabplus-bot
     # - PYPI_PASSWORD: this value will have to be set in CircleCI's web interface; do not set it here, it is a secret!
     steps:
       - run:
           name: Upload package to Pypi if functional changes were made
           command: ./.circleci/deploy-if-version-bump.sh
-
-  build_python2:
-    docker:
-      - image: python:2.7.14
-
-    steps:
-      - checkout
-
-      - restore_cache:
-          key: v1-py2-{{ checksum "setup.py" }}
-
-      - run:
-          name: Create a virtualenv
-          command: |
-            mkdir -p /tmp/venv/aotearoa
-            virtualenv /tmp/venv/aotearoa
-            echo "source /tmp/venv/aotearoa/bin/activate" >> $BASH_ENV
-
-
-      - run:
-          name: Install dependencies
-          command: |
-            pip install --upgrade pip twine wheel
-            pip install --editable .[dev] --upgrade
-            pip install -e "git+git://github.com/serviceinnovationlab/openfisca-core.git@day#egg=openfisca_core" --exists-action w
-      # - run:
-      #     name: Install dependencies from requirements.txt
-      #     command: |
-      #       pip install -r requirements.txt
-            
-      - save_cache:
-          key: v1-py2-{{ checksum "setup.py" }}
-          paths:
-            - /tmp/venv/aotearoa
-
-      - run:
-          name: Run tests
-          command: make test
 
   build_python3:
     docker:
@@ -95,13 +69,8 @@ jobs:
           name: Install dependencies
           command: |
             pip install --upgrade pip twine wheel
-            pip install --editable .[dev] --upgrade
-            pip install -e "git+git://github.com/serviceinnovationlab/openfisca-core.git@day#egg=openfisca_core" --exists-action w
-
-      # - run:
-      #     name: Install dependencies from requirements.txt
-      #     command: |
-      #       pip install -r requirements.txt
+            pip install --editable .[test] --upgrade
+            pip install -r requirements.txt
 
       - save_cache:
           key: v1-py3-{{ checksum "setup.py" }}
@@ -116,15 +85,7 @@ workflows:
   version: 2
   build_and_test:
     jobs:
-      - lint
+      - pythonlint
+      - yamllint
       - version-bump
-      - build_python2
       - build_python3
-      # Uncomment the lines below when you have a Pypi account and you are ready to deploy your country package to reusers.
-      # - deploy:
-      #     requires:
-      #       - build
-      #     filters:
-      #       # owner: ServiceInnovationLab  # prevent failed builds on forks # This filter is not valid yet in CircleCI 2.0, see <https://discuss.circleci.com/t/20443>
-      #       branches:
-      #         only: master

@@ -3,118 +3,117 @@
 - name: "NZ Super"
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-    - id: "Not eligible"
-      is_nz_citizen: false
-      acc__is_receiving_compensation: false
-      veterans_support__is_entitled_to_be_paid_veterans_pension: false
-      total_number_of_years_lived_in_nz_since_age_20: 12
-      total_number_of_years_lived_in_nz_since_age_50: 6
+  input:
+    persons:
+      Not_eligible:
+        is_nz_citizen: false
+        acc__is_receiving_compensation: false
+        veterans_support__is_entitled_to_be_paid_veterans_pension: false
+        total_number_of_years_lived_in_nz_since_age_20: 12
+        total_number_of_years_lived_in_nz_since_age_50: 6
 
-    - id: "Is Permanent Resident"
-      is_permanent_resident: true
-      acc__is_receiving_compensation: false
-      veterans_support__is_entitled_to_be_paid_veterans_pension: false
-      total_number_of_years_lived_in_nz_since_age_20: 11
-      total_number_of_years_lived_in_nz_since_age_50: 6
+      Is_Permanent_Resident:
+        is_permanent_resident: true
+        acc__is_receiving_compensation: false
+        veterans_support__is_entitled_to_be_paid_veterans_pension: false
+        total_number_of_years_lived_in_nz_since_age_20: 11
+        total_number_of_years_lived_in_nz_since_age_50: 6
 
-    - id: "Is Resident"
-      is_resident: true
-      acc__is_receiving_compensation: false
-      veterans_support__is_entitled_to_be_paid_veterans_pension: false
-      total_number_of_years_lived_in_nz_since_age_20: 11
-      total_number_of_years_lived_in_nz_since_age_50: 6
+      Is_Resident:
+        is_resident: true
+        acc__is_receiving_compensation: false
+        veterans_support__is_entitled_to_be_paid_veterans_pension: false
+        total_number_of_years_lived_in_nz_since_age_20: 11
+        total_number_of_years_lived_in_nz_since_age_50: 6
 
-    - id: "Is citizen"
-      is_nz_citizen: true
-      acc__is_receiving_compensation: false
-      veterans_support__is_entitled_to_be_paid_veterans_pension: false
-      total_number_of_years_lived_in_nz_since_age_20: 11
-      total_number_of_years_lived_in_nz_since_age_50: 6
+      Is_citizen:
+        is_nz_citizen: true
+        acc__is_receiving_compensation: false
+        veterans_support__is_entitled_to_be_paid_veterans_pension: false
+        total_number_of_years_lived_in_nz_since_age_20: 11
+        total_number_of_years_lived_in_nz_since_age_50: 6
 
-    - id: "Is receiving compensation"
-      is_nz_citizen: true
-      acc__is_receiving_compensation: true
-      veterans_support__is_entitled_to_be_paid_veterans_pension: false
-      total_number_of_years_lived_in_nz_since_age_20: 11
-      total_number_of_years_lived_in_nz_since_age_50: 6
+      Is_receiving_compensation:
+        is_nz_citizen: true
+        acc__is_receiving_compensation: true
+        veterans_support__is_entitled_to_be_paid_veterans_pension: false
+        total_number_of_years_lived_in_nz_since_age_20: 11
+        total_number_of_years_lived_in_nz_since_age_50: 6
 
-    - id: "Is a Veteran"
-      is_nz_citizen: true
-      acc__is_receiving_compensation: false
-      veterans_support__is_entitled_to_be_paid_veterans_pension: true
-      total_number_of_years_lived_in_nz_since_age_20: 11
-      total_number_of_years_lived_in_nz_since_age_50: 6
+      Is_a_Veteran:
+        is_nz_citizen: true
+        acc__is_receiving_compensation: false
+        veterans_support__is_entitled_to_be_paid_veterans_pension: true
+        total_number_of_years_lived_in_nz_since_age_20: 11
+        total_number_of_years_lived_in_nz_since_age_50: 6
 
-    - id: "Is a NZ Citizen"
-      is_nz_citizen: true
-      acc__is_receiving_compensation: false
-      veterans_support__is_entitled_to_be_paid_veterans_pension: false
-      total_number_of_years_lived_in_nz_since_age_20: 11
-      total_number_of_years_lived_in_nz_since_age_50: 6
+      Is_a_NZ_Citizen:
+        is_nz_citizen: true
+        acc__is_receiving_compensation: false
+        veterans_support__is_entitled_to_be_paid_veterans_pension: false
+        total_number_of_years_lived_in_nz_since_age_20: 11
+        total_number_of_years_lived_in_nz_since_age_50: 6
 
-    - id: "Lived in nz for more than 10 years since age 20"
-      is_nz_citizen: true
-      acc__is_receiving_compensation: false
-      veterans_support__is_entitled_to_be_paid_veterans_pension: false
-      total_number_of_years_lived_in_nz_since_age_20: 11
-      total_number_of_years_lived_in_nz_since_age_50: 6
+      Lived_in_nz_for_more_than_10_years_since_age_20:
+        is_nz_citizen: true
+        acc__is_receiving_compensation: false
+        veterans_support__is_entitled_to_be_paid_veterans_pension: false
+        total_number_of_years_lived_in_nz_since_age_20: 11
+        total_number_of_years_lived_in_nz_since_age_50: 6
 
-    - id: "Lived in nz for more than 5 years since age 50"
-      is_nz_citizen: true
-      acc__is_receiving_compensation: false
-      veterans_support__is_entitled_to_be_paid_veterans_pension: false
-      total_number_of_years_lived_in_nz_since_age_20: 11
-      total_number_of_years_lived_in_nz_since_age_50: 6
+      Lived_in_nz_for_more_than_5_years_since_age_50:
+        is_nz_citizen: true
+        acc__is_receiving_compensation: false
+        veterans_support__is_entitled_to_be_paid_veterans_pension: false
+        total_number_of_years_lived_in_nz_since_age_20: 11
+        total_number_of_years_lived_in_nz_since_age_50: 6
 
-  families:
-    - id: "Whanau"
-      others: [
-        "Not eligible",
-        "Is citizen",
-        "Is Permanent Resident",
-        "Is Resident",
-        "Is receiving compensation",
-        "Is a Veteran",
-        "Is a NZ Citizen",
-        "Lived in nz for more than 10 years since age 20",
-        "Lived in nz for more than 5 years since age 50"
-      ]
+    families:
+      Whanau:
+        others: [
+          Not_eligible,
+          Is_citizen,
+          Is_Permanent_Resident,
+          Is_Resident,
+          Is_receiving_compensation,
+          Is_a_Veteran,
+          Is_a_NZ_Citizen,
+          Lived_in_nz_for_more_than_10_years_since_age_20,
+          Lived_in_nz_for_more_than_5_years_since_age_50
+        ]
 
-  titled_properties:
-    - id: whare
-      others: [
-        "Not eligible",
-        "Is citizen",
-        "Is Permanent Resident",
-        "Is Resident",
-        "Is receiving compensation",
-        "Is a Veteran",
-        "Is a NZ Citizen",
-        "Lived in nz for more than 10 years since age 20",
-        "Lived in nz for more than 5 years since age 50"
-      ]
+    titled_properties:
+      whare:
+        others: [
+          Not_eligible,
+          Is_citizen,
+          Is_Permanent_Resident,
+          Is_Resident,
+          Is_receiving_compensation,
+          Is_a_Veteran,
+          Is_a_NZ_Citizen,
+          Lived_in_nz_for_more_than_10_years_since_age_20,
+          Lived_in_nz_for_more_than_5_years_since_age_50
+        ]
 
-  output_variables:
+  output:
     super__eligibility:
-      2018-08:
-        - false # Not eligible
-        - true # Is citizen
-        - true # Is PR
-        - true # Is resident
-        - false # Is receiving compensation
-        - true # Is a Veteran
-        - true # Is a NZ Citizen
-        - true # Lived in nz for more than 10 years since age 20
-        - true # Lived in nz for more than 5 years since age 50
+      - false # Not eligible
+      - true # Is citizen
+      - true # Is PR
+      - true # Is resident
+      - false # Is receiving compensation
+      - true # Is a Veteran
+      - true # Is a NZ Citizen
+      - true # Lived in nz for more than 10 years since age 20
+      - true # Lived in nz for more than 5 years since age 50
     super___eligibility_age:
-      2018-08:
-        - 0 # Not eligible
-        - 65 # Is citizen
-        - 65 # Is PR
-        - 65 # Is resident
-        - 0 # Is receiving compensation
-        - 65 # Is a Veteran
-        - 65 # Is a NZ Citizen
-        - 65 # Lived in nz for more than 10 years since age 20
-        - 65 # Lived in nz for more than 5 years since age 50
+      - 0 # Not eligible
+      - 65 # Is citizen
+      - 65 # Is PR
+      - 65 # Is resident
+      - 0 # Is receiving compensation
+      - 65 # Is a Veteran
+      - 65 # Is a NZ Citizen
+      - 65 # Lived in nz for more than 10 years since age 20
+      - 65 # Lived in nz for more than 5 years since age 50
