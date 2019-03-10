@@ -1,22 +1,42 @@
 ---
 
+- name: "Parental Leave and Employment Protection Act - solo mum"
+  period: 2019-01
+  input:
+    persons:
+      "biological mother":
+        parental_leave__is_the_biological_mother: true
+    families:
+      "Happy solo family":
+        principal_caregiver: "biological mother"
+    titled_properties:
+      whare:
+        others: ["biological mother"]
+  output:
+    parental_leave__is_spouse_or_partner_of_the_biological_mother:
+      2019-03:
+        - false
+    parental_leave__is_primary_carer:
+      2019-03:
+        - true
+
 - name: "Parental Leave and Employment Protection Act - Mother transfers entitlement"
-  period: 2019-03
-  absolute_error_margin: 0
-  persons:
-    - id: "biological mother"
-      parental_leave__is_the_biological_mother: true
-      parental_leave__transferred_her_entitlement_to_spouse: true
-    - id: "other mum"
-  families:
-    - id: "Happy family"
-      principal_caregiver: "other mum"
-      partners:
-        - "biological mother"
-  titled_properties:
-    - id: whare
-      others: ["biological mother", "other mum"]
-  output_variables:
+  period: 2019-01
+  input:
+    persons:
+      "biological mother":
+        parental_leave__is_the_biological_mother: true
+        parental_leave__transferred_her_entitlement_to_spouse: true
+      "other mum":
+        parental_leave__is_the_biological_mother: false
+    families:
+      "Happy family":
+        principal_caregiver: "other mum"
+        partners: ["biological mother"]
+    titled_properties:
+      whare:
+        others: ["biological mother", "other mum"]
+  output:
     parental_leave__is_spouse_or_partner_of_the_biological_mother:
       2019-03:
         - false
@@ -25,25 +45,25 @@
       2019-03:
         - false
         - true
-
 
 - name: "Parental Leave and Employment Protection Act - Mother *DOES NOT* transfer entitlement"
   period: 2019-03
-  absolute_error_margin: 0
-  persons:
-    - id: "biological mother"
-      parental_leave__is_the_biological_mother: true
-      parental_leave__transferred_her_entitlement_to_spouse: false
-    - id: "other mum"
-  families:
-    - id: "Happy family"
-      principal_caregiver: "other mum"
-      partners:
-        - "biological mother"
-  titled_properties:
-    - id: whare
-      others: ["biological mother", "other mum"]
-  output_variables:
+  input:
+    persons:
+      "biological mother":
+        parental_leave__is_the_biological_mother: true
+        parental_leave__transferred_her_entitlement_to_spouse: false
+      "other mum":
+        parental_leave__is_the_biological_mother: false
+    families:
+      "Happy family":
+        principal_caregiver: "other mum"
+        partners:
+          - "biological mother"
+    titled_properties:
+      whare:
+        others: ["biological mother", "other mum"]
+  output:
     parental_leave__is_spouse_or_partner_of_the_biological_mother:
       2019-03:
         - false
@@ -53,29 +73,28 @@
         - false
         - false
 
-
-
 - name: "Parental Leave and Employment Protection Act - other permanent carers"
   period: 2019-03
-  absolute_error_margin: 0
-  persons:
-    - id: "biological mother"
-      parental_leave__is_the_biological_mother: true
-    - id: "adopting mother"
-      parental_leave__taking_permanent_primary_responsibility_for_child: true
-    - id: "another adopting parent"
-  families:
-    - id: "one"
-      principal_caregiver: "adopting mother"
-      partners:
-        - "another adopting parent"
-    - id: "two"
-      others:
-        - "biological mother"
-  titled_properties:
-    - id: whare
-      others: ["biological mother", "adopting mother", "another adopting parent"]
-  output_variables:
+  input:
+    persons:
+      "biological mother":
+        parental_leave__is_the_biological_mother: true
+      "adopting mother":
+        parental_leave__taking_permanent_primary_responsibility_for_child: true
+      "another adopting parent":
+        parental_leave__is_the_biological_mother: false
+    families:
+      "one":
+        principal_caregiver: "adopting mother"
+        partners:
+          - "another adopting parent"
+      "two":
+        others:
+          - "biological mother"
+    titled_properties:
+      whare:
+        others: ["biological mother", "adopting mother", "another adopting parent"]
+  output:
     parental_leave__a_person_other_than_biological_mother_or_her_spouse:
       2019-03:
         - false
@@ -89,19 +108,21 @@
 
 - name: "Parental Leave and Employment Protection Act - other carer, but not permanent"
   period: 2019-03
-  absolute_error_margin: 0
-  persons:
-    - id: "foster mother"
-    - id: "another foster parent"
-  families:
-    - id: "one"
-      principal_caregiver: "foster mother"
-      partners:
-        - "another foster parent"
-  titled_properties:
-    - id: whare
-      others: ["foster mother", "another foster parent"]
-  output_variables:
+  input:
+    persons:
+      "foster mother":
+        parental_leave__is_the_biological_mother: false
+      "another foster parent":
+        parental_leave__is_the_biological_mother: false
+    families:
+      "one":
+        principal_caregiver: "foster mother"
+        partners:
+          - "another foster parent"
+    titled_properties:
+      whare:
+        others: ["foster mother", "another foster parent"]
+  output:
     parental_leave__a_person_other_than_biological_mother_or_her_spouse:
       2019-03:
         - true
@@ -113,21 +134,22 @@
 
 - name: "Parental Leave and Employment Protection Act - when father is not the spouse"
   period: 2019-03
-  absolute_error_margin: 0
-  persons:
-    - id: "biological mother"
-      parental_leave__is_the_biological_mother: true
-      parental_leave__transferred_her_entitlement_to_spouse: true # Doesn't make sense, as this person doesn't have  spouse
-    - id: "biological father"
-  families:
-    - id: "a family"
-      principal_caregiver: "biological father"
-      others:
-        - "biological mother"
-  titled_properties:
-    - id: whare
-      others: ["biological mother", "biological father"]
-  output_variables:
+  input:
+    persons:
+      "biological mother":
+        parental_leave__is_the_biological_mother: true
+        parental_leave__transferred_her_entitlement_to_spouse: true # Doesn't make sense, as this person doesn't have  spouse
+      "biological father":
+          parental_leave__is_the_biological_mother: false
+    families:
+      "a family":
+        principal_caregiver: "biological father"
+        others:
+          - "biological mother"
+    titled_properties:
+      whare:
+        others: ["biological mother", "biological father"]
+  output:
     parental_leave__is_spouse_or_partner_of_the_biological_mother:
       2019-03:
         - false
@@ -137,27 +159,27 @@
         - false
         - false
 
-
-
 - name: "Parental Leave and Employment Protection Act - Multiple partners"
   period: 2019-03
-  absolute_error_margin: 0
-  persons:
-    - id: "biological mother"
-      parental_leave__is_the_biological_mother: true
-      parental_leave__transferred_her_entitlement_to_spouse: true
-    - id: "co-parent"
-    - id: "another co-parenting partner"
-  families:
-    - id: "Happy family"
-      principal_caregiver: "co-parent"
-      partners:
-        - "biological mother"
-        - "another co-parenting partner"
-  titled_properties:
-    - id: whare
-      others: ["biological mother", "co-parent", "another co-parenting partner"]
-  output_variables:
+  input:
+    persons:
+      "biological mother":
+        parental_leave__is_the_biological_mother: true
+        parental_leave__transferred_her_entitlement_to_spouse: true
+      "co-parent":
+        parental_leave__is_the_biological_mother: false
+      "another co-parenting partner":
+        parental_leave__is_the_biological_mother: false
+    families:
+      "Happy family":
+        principal_caregiver: "co-parent"
+        partners:
+          - "biological mother"
+          - "another co-parenting partner"
+    titled_properties:
+      whare:
+        others: ["biological mother", "co-parent", "another co-parenting partner"]
+  output:
     parental_leave__is_spouse_or_partner_of_the_biological_mother:
       2019-03:
         # the two partners of the bio mother
