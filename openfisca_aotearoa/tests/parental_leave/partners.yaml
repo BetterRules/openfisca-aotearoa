@@ -67,8 +67,8 @@
   families:
     - id: "one"
       principal_caregiver: "adopting mother"
-      partners: 
-        - "another adopting parent"     
+      partners:
+        - "another adopting parent"
     - id: "two"
       others:
         - "biological mother"
@@ -96,8 +96,8 @@
   families:
     - id: "one"
       principal_caregiver: "foster mother"
-      partners: 
-        - "another foster parent"     
+      partners:
+        - "another foster parent"
   titled_properties:
     - id: whare
       others: ["foster mother", "another foster parent"]
@@ -160,7 +160,7 @@
   output_variables:
     parental_leave__is_spouse_or_partner_of_the_biological_mother:
       2019-03:
-        # the two partners of the bio mother 
+        # the two partners of the bio mother
         - false
         - true
         - true
