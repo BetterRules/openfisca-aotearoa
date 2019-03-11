@@ -4,7 +4,7 @@ version: 2
 jobs:
   pythonlint:
     docker:
-      - image: circleci/python:3.7.0
+      - image: circleci/python:3.7.2
     steps:
       - checkout
       - run:
@@ -15,7 +15,7 @@ jobs:
           command: flake8
   yamllint:
     docker:
-      - image: circleci/python:3.7.0
+      - image: circleci/python:3.7.2
     steps:
       - checkout
       - run:
@@ -26,7 +26,7 @@ jobs:
           command: yamllint .
   version-bump:
     docker:
-      - image: circleci/python:3.7.0
+      - image: circleci/python:3.7.2
     steps:
       - checkout
       - run:
@@ -37,7 +37,7 @@ jobs:
 
   deploy:
     docker:
-      - image: circleci/python:3.7.0
+      - image: circleci/python:3.7.2
     environment:
       # here be the name of the Government Innovation Service Lab Pypi account
       # to automatically publish the OpenFisca-Aotearoa package to Pypi
