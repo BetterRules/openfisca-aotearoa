@@ -1,5 +1,8 @@
 # Changelog
 
+# 10.1.0 - https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/142
+* Add formula for Primary Carer in Paid Parental Leave
+
 # 10.0.0 [145]https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/145
 * Upgrades to Open Fisca core 25.0
 * Removed support for Python 2.7
