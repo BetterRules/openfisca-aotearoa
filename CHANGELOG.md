@@ -1,6 +1,6 @@
 # Changelog
 
-# 10.1.0 - https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/142
+# 10.1.0 [142]https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/142
 * Add formula for Primary Carer in Paid Parental Leave
 
 # 10.0.0 [145]https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/145
