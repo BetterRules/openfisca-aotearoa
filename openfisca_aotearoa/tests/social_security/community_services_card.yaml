@@ -3,350 +3,350 @@
 - name: Community Services Card - default test
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-    - id: "Mama"
-      age: 28
-  families:
-    - id: "Whanau tahi"
-      principal_caregiver: "Mama"
-  titled_properties:
-    - id: whare
-      others: ["Mama"]
-  output_variables:
+  input:
+    persons:
+      Mama:
+        age: 28
+    families:
+      Whanau_tahi:
+        principal_caregiver: Mama
+    titled_properties:
+      whare:
+        others: [Mama]
+  output:
     social_security__eligible_for_community_services_card:
-      2018-08:
-        - false  # mama
+      - false  # mama
 
 
 - name: Community Services Card - eligible for people on income tested benefit
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-    - id: "Mama"
-      age: 28
-      social_security__is_ordinarily_resident_in_new_zealand: true
-      social_security__received_income_tested_benefit:
-        2018: true
-  families:
-    - id: "Whanau tahi"
-      principal_caregiver: "Mama"
-  titled_properties:
-    - id: whare
-      others: ["Mama"]
-  output_variables:
+  input:
+    persons:
+      Mama:
+        age: 28
+        social_security__is_ordinarily_resident_in_new_zealand: true
+        social_security__received_income_tested_benefit:
+          2018: true
+    families:
+      Whanau_tahi:
+        principal_caregiver: Mama
+    titled_properties:
+      whare:
+        others: [Mama]
+  output:
     social_security__eligible_for_community_services_card:
-      2018-08:
-        - true  # mama
+      - true  # mama
 
 
 - name: Community Services Card - eligible for child on orphans benefit
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-    - id: "Mama"
-      age: 28
-      social_security__is_ordinarily_resident_in_new_zealand: true
-    - id: "Tama"
-      age: 3
-      social_security__is_ordinarily_resident_in_new_zealand: true
-      social_security__received_orphans_benefit: true
-  families:
-    - id: "Whanau tahi"
-      principal_caregiver: "Mama"
-      children: ["Tama"]
-  titled_properties:
-    - id: whare
-      others: ["Mama", "Tama"]
-  output_variables:
+  input:
+    persons:
+      Mama:
+        age: 28
+        social_security__is_ordinarily_resident_in_new_zealand: true
+      Tama:
+        age: 3
+        social_security__is_ordinarily_resident_in_new_zealand: true
+        social_security__received_orphans_benefit: true
+    families:
+      Whanau_tahi:
+        principal_caregiver: Mama
+        children: [Tama]
+    titled_properties:
+      whare:
+        others: [Mama, Tama]
+  output:
     social_security__eligible_for_community_services_card:
-      2018-08:
-        - false  # mama
-        - true  # tama (child)
+      - false  # mama
+      - true  # tama (child)
 
 
 - name: >
     Community Services Card - eligible for child on unsupported child benefit
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-    - id: "Mama"
-      age: 28
-      social_security__is_ordinarily_resident_in_new_zealand: true
-    - id: "Tama"
-      age: 8
-      social_security__is_ordinarily_resident_in_new_zealand: true
-      social_security__received_unsupported_childs_benefit: true
-  families:
-    - id: "Whanau tahi"
-      principal_caregiver: "Mama"
-      children: ["Tama"]
-  titled_properties:
-    - id: whare
-      others: ["Mama", "Tama"]
-  output_variables:
+  input:
+    persons:
+      Mama:
+        age: 28
+        social_security__is_ordinarily_resident_in_new_zealand: true
+      Tama:
+        age: 8
+        social_security__is_ordinarily_resident_in_new_zealand: true
+        social_security__received_unsupported_childs_benefit: true
+    families:
+      Whanau_tahi:
+        principal_caregiver: Mama
+        children: [Tama]
+    titled_properties:
+      whare:
+        others: [Mama, Tama]
+  output:
     social_security__eligible_for_community_services_card:
-      2018-08:
-        - false  # mama
-        - true  # tama (child)
+      - false  # mama
+      - true  # tama (child)
 
 
 - name: >
     Community Services Card - eligible for child on disability allowance benefit
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-    - id: "Mama"
-      age: 28
-      social_security__is_ordinarily_resident_in_new_zealand: true
-    - id: "Tama"
-      age: 8
-      social_security__received_child_disability_allowance: true
-      social_security__is_ordinarily_resident_in_new_zealand: true
-  families:
-    - id: "Whanau tahi"
-      principal_caregiver: "Mama"
-      family_scheme__has_dependent_children: true
-      children: ["Tama"]
-  titled_properties:
-    - id: whare
-      others: ["Mama", "Tama"]
-  output_variables:
+  input:
+    persons:
+      Mama:
+        age: 28
+        social_security__is_ordinarily_resident_in_new_zealand: true
+      Tama:
+        age: 8
+        social_security__received_child_disability_allowance: true
+        social_security__is_ordinarily_resident_in_new_zealand: true
+    families:
+      Whanau_tahi:
+        principal_caregiver: Mama
+        family_scheme__has_dependent_children: true
+        children: [Tama]
+    titled_properties:
+      whare:
+        others: [Mama, Tama]
+  output:
     social_security__eligible_for_community_services_card:
-      2018-08:
-        - false  # mama
-        - true  # tama (child)
+      - false  # mama
+      - true  # tama (child)
 
 
 - name: >
     Community Services Card - eligible if receive a residential care subsidy
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-    - id: "Mama"
-      age: 28
-      social_security__is_ordinarily_resident_in_new_zealand: true
-      social_security__received_residential_care_subsidy: true
-  families:
-    - id: "Whanau tahi"
-      principal_caregiver: "Mama"
-  titled_properties:
-    - id: whare
-      others: ["Mama"]
-  output_variables:
+  input:
+    persons:
+      Mama:
+        age: 28
+        social_security__is_ordinarily_resident_in_new_zealand: true
+        social_security__received_residential_care_subsidy: true
+    families:
+      Whanau_tahi:
+        principal_caregiver: Mama
+    titled_properties:
+      whare:
+        others: [Mama]
+  output:
     social_security__eligible_for_community_services_card:
-      2018-08:
-        - true  # mama
+      - true  # mama
 
 
 - name: Community Services Card - eligible if receive super
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-    - id: "Mama"
-      age: 28
-      community_services_card__below_income_threshold: true
-      social_security__is_ordinarily_resident_in_new_zealand: true
-      social_security__received_superannuation: true
-  families:
-    - id: "Whanau tahi"
-      principal_caregiver: "Mama"
-  titled_properties:
-    - id: whare
-      others: ["Mama"]
-  output_variables:
+  input:
+    persons:
+      Mama:
+        age: 28
+        community_services_card__below_income_threshold: true
+        social_security__is_ordinarily_resident_in_new_zealand: true
+        social_security__received_superannuation: true
+    families:
+      Whanau_tahi:
+        principal_caregiver: Mama
+    titled_properties:
+      whare:
+        others: [Mama]
+  output:
     social_security__eligible_for_community_services_card:
-      2018-08:
-        - true  # mama
+      - true  # mama
 
 
 - name: Community Services Card - not eligible if above threshold
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-    - id: "Mama"
-      age: 28
-      community_services_card__below_income_threshold: false
-      social_security__received_superannuation: true
-      social_security__is_ordinarily_resident_in_new_zealand: true
-  families:
-    - id: "Whanau tahi"
-      principal_caregiver: "Mama"
-  titled_properties:
-    - id: whare
-      others: ["Mama"]
-  output_variables:
+  input:
+    persons:
+      Mama:
+        age: 28
+        community_services_card__below_income_threshold: false
+        social_security__received_superannuation: true
+        social_security__is_ordinarily_resident_in_new_zealand: true
+    families:
+      Whanau_tahi:
+        principal_caregiver: Mama
+    titled_properties:
+      whare:
+        others: [Mama]
+  output:
     social_security__eligible_for_community_services_card:
-      2018-08:
-        - false  # mama
+      - false  # mama
 
 
 - name: Community Services Card - eligible if receive veterans pension
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-    - id: "Mama"
-      age: 28
-      veterans_support__received_veterans_pension: true
-      social_security__is_ordinarily_resident_in_new_zealand: true
-  families:
-    - id: "Whanau tahi"
-      principal_caregiver: "Mama"
-  titled_properties:
-    - id: whare
-      others: ["Mama"]
-  output_variables:
+  input:
+    persons:
+      Mama:
+        age: 28
+        veterans_support__received_veterans_pension: true
+        social_security__is_ordinarily_resident_in_new_zealand: true
+    families:
+      Whanau_tahi:
+        principal_caregiver: Mama
+    titled_properties:
+      whare:
+        others: [Mama]
+  output:
     social_security__eligible_for_community_services_card:
-      2018-08:
-        - true  # mama
+      - true  # mama
 
 
 - name: Community Services Card - eligible if receive weekly INCOME compensation
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-    - id: "Mama"
-      age: 28
-      veterans_support__received_weekly_income_compensation: true
-      social_security__is_ordinarily_resident_in_new_zealand: true
-  families:
-    - id: "Whanau tahi"
-      principal_caregiver: "Mama"
-  titled_properties:
-    - id: whare
-      others: ["Mama"]
-  output_variables:
+  input:
+    persons:
+      Mama:
+        age: 28
+        veterans_support__received_weekly_income_compensation: true
+        social_security__is_ordinarily_resident_in_new_zealand: true
+    families:
+      Whanau_tahi:
+        principal_caregiver: Mama
+    titled_properties:
+      whare:
+        others: [Mama]
+  output:
     social_security__eligible_for_community_services_card:
-      2018-08:
-        - true  # mama
+      - true  # mama
 
 - name: Community Services Card - eligible if receive weekly compensation
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-    - id: "Mama"
-      age: 28
-      veterans_support__received_weekly_compensation: true
-      social_security__is_ordinarily_resident_in_new_zealand: true
-  families:
-    - id: "Whanau tahi"
-      principal_caregiver: "Mama"
-  titled_properties:
-    - id: whare
-      others: ["Mama"]
-  output_variables:
+  input:
+    persons:
+      Mama:
+        age: 28
+        veterans_support__received_weekly_compensation: true
+        social_security__is_ordinarily_resident_in_new_zealand: true
+    families:
+      Whanau_tahi:
+        principal_caregiver: Mama
+    titled_properties:
+      whare:
+        others: [Mama]
+  output:
     social_security__eligible_for_community_services_card:
-      2018-08:
-        - true  # mama
+      - true  # mama
 
 
 - name: Community Services Card - eligible if fulltime student
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-    - id: "Mama"
-      age: 28
-      social_security__is_fulltime_student: true
-      community_services_card__below_income_threshold: true
-      social_security__is_ordinarily_resident_in_new_zealand: true
-  families:
-    - id: "Whanau tahi"
-      principal_caregiver: "Mama"
-  titled_properties:
-    - id: whare
-      others: ["Mama"]
-  output_variables:
+  input:
+    persons:
+      Mama:
+        age: 28
+        social_security__is_fulltime_student: true
+        community_services_card__below_income_threshold: true
+        social_security__is_ordinarily_resident_in_new_zealand: true
+    families:
+      Whanau_tahi:
+        principal_caregiver: Mama
+    titled_properties:
+      whare:
+        others: [Mama]
+  output:
     social_security__eligible_for_community_services_card:
-      2018-08:
-        - true  # mama
+      - true  # mama
 
 
 - name: Community Services Card - not eligible if above threshold
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-    - id: "Mama"
-      age: 28
-      social_security__is_fulltime_student: true
-      community_services_card__below_income_threshold: false
-      social_security__is_ordinarily_resident_in_new_zealand: true
-  families:
-    - id: "Whanau tahi"
-      principal_caregiver: "Mama"
-  titled_properties:
-    - id: whare
-      others: ["Mama"]
-  output_variables:
+  input:
+    persons:
+      Mama:
+        age: 28
+        social_security__is_fulltime_student: true
+        community_services_card__below_income_threshold: false
+        social_security__is_ordinarily_resident_in_new_zealand: true
+    families:
+      Whanau_tahi:
+        principal_caregiver: Mama
+    titled_properties:
+      whare:
+        others: [Mama]
+  output:
     social_security__eligible_for_community_services_card:
-      2018-08:
-        - false  # mama
+      - false  # mama
 
 - name: >
     Community Services Card - eligibility for resident with dependent children
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-    - id: "Mama"
-      age: 28
-      community_services_card__below_income_threshold: true
-      is_citizen_or_resident: true
-      social_security__is_ordinarily_resident_in_new_zealand: true
-  families:
-    - id: "Whanau tahi"
-      principal_caregiver: "Mama"
-  titled_properties:
-    - id: whare
-      others: ["Mama"]
-  output_variables:
+  input:
+    persons:
+      Mama:
+        age: 28
+        community_services_card__below_income_threshold: true
+        is_citizen_or_resident: true
+        social_security__is_ordinarily_resident_in_new_zealand: true
+    families:
+      Whanau_tahi:
+        principal_caregiver: Mama
+    titled_properties:
+      whare:
+        others: [Mama]
+  output:
     social_security__eligible_for_community_services_card:
-      2018-08:
-        - true  # mama
+      - true  # mama
 
 - name: >
     Community Services Card - for non resident with dependent children
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-    - id: "Mama"
-      age: 28
-      community_services_card__below_income_threshold: true
-      is_citizen_or_resident: false
-      social_security__has_dependant_child: true
-      social_security__is_ordinarily_resident_in_new_zealand: true
-      family_scheme__qualifies_for_working_for_families:
-        2018-08:
-          true
-  families:
-    - id: "Whanau tahi"
-      principal_caregiver: "Mama"
-  titled_properties:
-    - id: whare
-      others: ["Mama"]
-  output_variables:
+  input:
+    persons:
+      Mama:
+        age: 28
+        community_services_card__below_income_threshold: true
+        is_citizen_or_resident: false
+        social_security__has_dependant_child: true
+        social_security__is_ordinarily_resident_in_new_zealand: true
+        family_scheme__qualifies_for_working_for_families:
+          2018-08:
+            true
+    families:
+      Whanau_tahi:
+        principal_caregiver: Mama
+    titled_properties:
+      whare:
+        others: [Mama]
+  output:
     social_security__eligible_for_community_services_card:
-      2018-08:
-        - true  # mama
+      - true  # mama
 
 
 - name: Community Services Card - eligibility for person without dependents
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-    - id: "Mama"
-      age: 28
-      community_services_card__below_income_threshold: true
-      is_citizen_or_resident: true
-      social_security__has_dependant_child: false
-      social_security__is_ordinarily_resident_in_new_zealand: true
-      family_scheme__qualifies_for_working_for_families:
-        2018-08:
-          true
-  families:
-    - id: "Whanau tahi"
-      principal_caregiver: "Mama"
-  titled_properties:
-    - id: whare
-      others: ["Mama"]
-  output_variables:
+  input:
+    persons:
+      Mama:
+        age: 28
+        community_services_card__below_income_threshold: true
+        is_citizen_or_resident: true
+        social_security__has_dependant_child: false
+        social_security__is_ordinarily_resident_in_new_zealand: true
+        family_scheme__qualifies_for_working_for_families:
+          2018-08:
+            true
+    families:
+      Whanau_tahi:
+        principal_caregiver: Mama
+    titled_properties:
+      whare:
+        others: [Mama]
+  output:
     social_security__eligible_for_community_services_card:
-      2018-08:
-        - true  # mama
+      - true  # mama

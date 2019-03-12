@@ -1,33 +1,35 @@
 - name: Tests Relationship status
   period: 2018-10
   absolute_error_margin: 0
-  persons:
-    - id: "Mama"
-    - id: "Papa"
-    - id: "Bob"
-    - id: "Fred"
-    - id: "Mary"
-  families:
-    - id: "One"
-      principal_caregiver: "Mama"
-      partners:
-        - "Papa"
-    - id: "Two"
-      partners:
-        - "Bob"
-        - "Fred"
-    - id: "Three"
-      principal_caregiver: "Mary"
-  titled_properties:
-    - id: One
-      others: ["Mama", "Papa"]
-    - id: Two
-      others: ["Bob", "Fred", "Mary"]
-  output_variables:
+  input:
+    persons:
+      Mama:
+        age: 30
+      Papa:
+        age: 30
+      Bob:
+        age: 30
+      Fred:
+        age: 30
+      Mary:
+        age: 30
+    families:
+      One:
+        principal_caregiver: Mama
+        partners: Papa
+      Two:
+        partners: [Bob, Fred]
+      Three:
+        principal_caregiver: Mary
+    titled_properties:
+      One:
+        others: [Mama, Papa]
+      Two:
+        others: [Bob, Fred, Mary]
+  output:
     has_a_partner:
-      2018-10:
-        - true # mama
-        - true # papa
-        - true # Bob
-        - true # Fred
-        - false # Mary
+      - true # mama
+      - true # papa
+      - true # Bob
+      - true # Fred
+      - false # Mary
