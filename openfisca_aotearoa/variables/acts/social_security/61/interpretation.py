@@ -93,5 +93,5 @@ class social_security__is_being_paid_a_young_parent_payment(Variable):
 class social_security__is_being_paid_an_emergency_benefit(Variable):
     value_type = bool
     entity = Person
-    label = "Is being paid a a young parent payment"
+    label = "Is being paid a young parent payment"
     definition_period = MONTH
