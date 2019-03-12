@@ -1,5 +1,8 @@
 # Changelog
 
+# 10.1.1 [122](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/122)
+* Grammar fix up in variable labels
+
 # 10.1.0 [142](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/142)
 * Add formula for Primary Carer in Paid Parental Leave
 
