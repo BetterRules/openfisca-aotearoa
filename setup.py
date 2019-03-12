@@ -9,7 +9,7 @@ setup(
     name='OpenFisca-Aotearoa',
     version='10.1.0',
     author='New Zealand Government, Service Innovation Lab',
-    author_email='brenda.wallace@dia.govt.nz',
+    author_email='brenda.wallace@dia.govt.nz,hamish.fraser@dia.govt.nz',
     description=u'OpenFisca tax and benefit system for Aotearoa',
     keywords='benefit microsimulation social tax',
     license='http://www.fsf.org/licensing/licenses/agpl-3.0.html',
