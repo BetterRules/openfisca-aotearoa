@@ -1,61 +1,61 @@
 - name: Tests Job Seeker Support Scenarios
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-    - id: "Mama"
-      age: 21
-      social_security__is_ordinarily_resident_in_new_zealand: true
-      is_resident: true
-      number_of_years_lived_in_nz: 10
-      jobseeker_support__below_income_threshold: true
-      jobseeker_support__is_prepared_for_employment: true
+  input:
+    persons:
+      Mama:
+        age: 21
+        social_security__is_ordinarily_resident_in_new_zealand: true
+        is_resident: true
+        number_of_years_lived_in_nz: 10
+        jobseeker_support__below_income_threshold: true
+        jobseeker_support__is_prepared_for_employment: true
 
-    - id: "Dada"
-      age: 18
-      social_security__is_ordinarily_resident_in_new_zealand: true
-      is_resident: true
-      number_of_years_lived_in_nz: 10
-      social_security__has_dependant_child: true
-      jobseeker_support__below_income_threshold: true
-      jobseeker_support__is_prepared_for_employment: true
+      Dada:
+        age: 18
+        social_security__is_ordinarily_resident_in_new_zealand: true
+        is_resident: true
+        number_of_years_lived_in_nz: 10
+        social_security__has_dependant_child: true
+        jobseeker_support__below_income_threshold: true
+        jobseeker_support__is_prepared_for_employment: true
 
-    - id: "Tama"
-      age: 6
-      social_security__is_ordinarily_resident_in_new_zealand: true
-      is_resident: true
-      number_of_years_lived_in_nz: 2
-      jobseeker_support__below_income_threshold: true
-      jobseeker_support__is_prepared_for_employment: true
+      Tama:
+        age: 6
+        social_security__is_ordinarily_resident_in_new_zealand: true
+        is_resident: true
+        number_of_years_lived_in_nz: 2
+        jobseeker_support__below_income_threshold: true
+        jobseeker_support__is_prepared_for_employment: true
 
-    - id: "Papa"
-      age: 99
-      social_security__is_ordinarily_resident_in_new_zealand: true
-      is_resident: true
-      number_of_years_lived_in_nz: 5
-      jobseeker_support__below_income_threshold: true
-      jobseeker_support__is_prepared_for_employment: false
+      Papa:
+        age: 99
+        social_security__is_ordinarily_resident_in_new_zealand: true
+        is_resident: true
+        number_of_years_lived_in_nz: 5
+        jobseeker_support__below_income_threshold: true
+        jobseeker_support__is_prepared_for_employment: false
 
-    - id: "Alan"
-      age: 50
-      social_security__is_ordinarily_resident_in_new_zealand: true
-      is_resident: true
-      number_of_years_lived_in_nz: 50
-      jobseeker_support__below_income_threshold: false
-      jobseeker_support__is_prepared_for_employment: false
+      Alan:
+        age: 50
+        social_security__is_ordinarily_resident_in_new_zealand: true
+        is_resident: true
+        number_of_years_lived_in_nz: 50
+        jobseeker_support__below_income_threshold: false
+        jobseeker_support__is_prepared_for_employment: false
 
-  families:
-    - id: "Whanau"
-      principal_caregiver: "Mama"
-      others: ["Tama", "Papa", "Alan", "Dada"]
-  titled_properties:
-    - id: whare
-      others: ["Mama", "Tama", "Papa", "Alan", "Dada"]
+    families:
+      Whanau:
+        principal_caregiver: Mama
+        others: [Tama, Papa, Alan, Dada]
+    titled_properties:
+      whare:
+        others: [Mama, Tama, Papa, Alan, Dada]
 
-  output_variables:
+  output:
     social_security__eligible_for_jobseeker_support:
-      2018-08:
-        - true # mama
-        - true # dada
-        - false # tama
-        - false # papa
-        - false # alan
+      - true # mama
+      - true # dada
+      - false # tama
+      - false # papa
+      - false # alan

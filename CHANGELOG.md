@@ -1,12 +1,23 @@
 # Changelog
 
-# 9.2.0 - https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/141
+# 10.1.1 [122](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/122)
+* Grammar fix up in variable labels
+
+# 10.1.0 [142](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/142)
+* Add formula for Primary Carer in Paid Parental Leave
+
+# 10.0.0 [145](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/145)
+* Upgrades to Open Fisca core 25.0
+* Removed support for Python 2.7
+* Updated all yaml tests to new format
+
+# 9.2.0 - [141](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/141)
 * add `immigration__entitled_to_indefinite_stay` for use in citizenship presence calculations
 
-# 9.1.0 - [#139]https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/139
+# 9.1.0 - [#139](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/139)
 * Fix calculation of number of days present in NZ for Citizenship by Grant
 
-# 9.0.1 - [#121]https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/121
+# 9.0.1 - [#121](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/121)
 * Added unit (years) to ages
 * Added unit (NZD) to best_start__entitlement
 
