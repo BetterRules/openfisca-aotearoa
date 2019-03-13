@@ -82,6 +82,8 @@ jobs:
           command: make test
 
   tag_release:
+    docker:
+      - image: circleci/python:3.7.2
     steps:
       - checkout
       - run:
