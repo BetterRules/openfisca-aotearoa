@@ -1,5 +1,8 @@
 # Changelog
 
+# 10.1.2 [150](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/150)
+* Automate git tagging of release
+
 # 10.1.1 [122](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/122)
 * Grammar fix up in variable labels
 
