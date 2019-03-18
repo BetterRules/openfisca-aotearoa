@@ -7,7 +7,10 @@
 ## Writing the Legislation
 
 Aotearoa New Zealand's legislation as code utilising Open Fisca.
-Early development phase.
+
+From late January 2018, the Service Innovation Lab (LabPlus) facilitated a cross-agency and multidisciplinary team in a 3 week Discovery Sprint exploring the challenges and opportunities of developing human and machine consumable legislation for effective and efficient service delivery.
+
+
 Please also read [the wiki](https://github.com/ServiceInnovationLab/openfisca-aotearoa/wiki) as a way of introduction.
 
 The files that are outside from the `openfisca_aotearoa` folder are used to set up the development environment.
