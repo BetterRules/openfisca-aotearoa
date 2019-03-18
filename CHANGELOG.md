@@ -1,5 +1,8 @@
 # Changelog
 
+# 10.1.3 [148](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/148)
+* Add Hamish to maintainers
+
 # 10.1.2 [150](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/150)
 * Automate git tagging of release
 
