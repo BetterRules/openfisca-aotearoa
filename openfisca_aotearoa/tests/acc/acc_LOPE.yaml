@@ -1,0 +1,101 @@
+---
+- name: Test LOPE for person in last day of continous training since their 18th birthday
+  period: 2020-09
+  absolute_error_margin: 0
+  input:
+    persons:
+      Scott:
+        date_of_birth: "2002-08-03"
+        date_of_injury: "2020-08-05"
+        acc_part_2__suffered_personal_injury: true
+        acc__has_cover:
+          "2010-08-03": true
+        incapacity_for_employment__corporation_determination: true
+        acc_part_3__has_lodged_claim: true
+        incapacity_for_employment__by_covered_injury: true
+
+        finish_date_of_full_time_study_training_bridging_18th_birthday: "2020-08-05"
+
+        acc_sched_1__engaged_fulltime_study_or_training: false
+
+        acc__earner: false
+        acc_sched_1__incapacitated_for_6_months: true
+
+        acc_sched_1__weekly_earnings: 500
+    families:
+      Whanau_tahi:
+        others: Scott
+    titled_properties:
+      whare:
+        others: Scott
+  output:
+    acc__potential_earner:
+      "2020-08-06": true
+    acc_sched_1__lope_eligible:
+      "2020-09-06": true
+    acc_part_2__suffered_personal_injury:
+      "2020-08-06": true
+    acc__has_cover:
+      "2020-08-06": true
+    age:
+      "2020-08-06": 18
+
+- name: Test LOPE for person injured day after their last day of continous training since their 18th birthday
+  period: 2020-09
+  absolute_error_margin: 0
+  input:
+    persons:
+      Scott:
+        date_of_birth: "2002-08-03"
+        date_of_injury: "2021-08-06"
+        acc_part_2__suffered_personal_injury: true
+        acc__has_cover: true
+        incapacity_for_employment__corporation_determination: true
+        acc_part_3__has_lodged_claim: true
+        incapacity_for_employment__by_covered_injury: true
+
+        finish_date_of_full_time_study_training_bridging_18th_birthday: "2021-08-05"
+
+        acc_sched_1__engaged_fulltime_study_or_training: false
+        acc__earner: false
+        acc_sched_1__incapacitated_for_6_months: true
+    families:
+      Whanau_tahi:
+        others: Scott
+    titled_properties:
+      whare:
+        others: [Scott]
+  output:
+    acc_sched_1__lope_eligible:
+      "2021-08-06": false
+
+- name: Simple test for LOPE eligibility for person before and after their 18th birthday
+  period: 2020-09
+  absolute_error_margin: 0
+  input:
+    persons:
+      Scott:
+        date_of_birth: "2002-08-03"
+        date_of_injury: "2019-02-02"
+        acc_part_2__suffered_personal_injury: true
+        acc__has_cover: true
+        incapacity_for_employment__corporation_determination: true
+        acc_part_3__has_lodged_claim: true
+        incapacity_for_employment__by_covered_injury: true
+
+        acc_sched_1__engaged_fulltime_study_or_training: false
+        acc__earner: false
+        acc_sched_1__incapacitated_for_6_months: true
+    families:
+      Whanau_tahi:
+        others: Scott
+    titled_properties:
+      whare:
+        others: [Scott]
+  output:
+    acc_sched_1__lope_eligible:
+      "2018-01-01": false
+      "2019-01-01": false
+      "2020-01-01": false
+      "2021-01-01": true
+      "2022-01-01": true
