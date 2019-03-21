@@ -5,23 +5,19 @@
   input:
     persons:
       Scott:
-        date_of_birth: "2002-08-03"
-        date_of_injury: "2020-08-05"
-        acc_part_2__suffered_personal_injury: true
+        acc__earner: false
         acc__has_cover:
           "2010-08-03": true
-        incapacity_for_employment__corporation_determination: true
+        acc_part_2__suffered_personal_injury: true
         acc_part_3__has_lodged_claim: true
-        incapacity_for_employment__by_covered_injury: true
-
-        finish_date_of_full_time_study_training_bridging_18th_birthday: "2020-08-05"
-
         acc_sched_1__engaged_fulltime_study_or_training: false
-
-        acc__earner: false
         acc_sched_1__incapacitated_for_6_months: true
-
         acc_sched_1__weekly_earnings: 500
+        date_of_birth: "2002-08-03"
+        date_of_injury: "2020-08-05"
+        finish_date_of_full_time_study_training_bridging_18th_birthday: "2020-08-05"
+        incapacity_for_employment__corporation_determination: true
+        incapacity_for_employment__by_covered_injury: true
     families:
       Whanau_tahi:
         others: Scott
@@ -46,19 +42,17 @@
   input:
     persons:
       Scott:
+        acc__earner: false
+        acc__has_cover: true
+        acc_part_2__suffered_personal_injury: true
+        acc_part_3__has_lodged_claim: true
+        acc_sched_1__engaged_fulltime_study_or_training: false
+        acc_sched_1__incapacitated_for_6_months: true
         date_of_birth: "2002-08-03"
         date_of_injury: "2021-08-06"
-        acc_part_2__suffered_personal_injury: true
-        acc__has_cover: true
-        incapacity_for_employment__corporation_determination: true
-        acc_part_3__has_lodged_claim: true
-        incapacity_for_employment__by_covered_injury: true
-
         finish_date_of_full_time_study_training_bridging_18th_birthday: "2021-08-05"
-
-        acc_sched_1__engaged_fulltime_study_or_training: false
-        acc__earner: false
-        acc_sched_1__incapacitated_for_6_months: true
+        incapacity_for_employment__by_covered_injury: true
+        incapacity_for_employment__corporation_determination: true
     families:
       Whanau_tahi:
         others: Scott
@@ -75,17 +69,16 @@
   input:
     persons:
       Scott:
+        acc__earner: false
+        acc__has_cover: true
+        acc_part_2__suffered_personal_injury: true
+        acc_part_3__has_lodged_claim: true
+        acc_sched_1__engaged_fulltime_study_or_training: false
+        acc_sched_1__incapacitated_for_6_months: true
         date_of_birth: "2002-08-03"
         date_of_injury: "2019-02-02"
-        acc_part_2__suffered_personal_injury: true
-        acc__has_cover: true
         incapacity_for_employment__corporation_determination: true
-        acc_part_3__has_lodged_claim: true
         incapacity_for_employment__by_covered_injury: true
-
-        acc_sched_1__engaged_fulltime_study_or_training: false
-        acc__earner: false
-        acc_sched_1__incapacitated_for_6_months: true
     families:
       Whanau_tahi:
         others: Scott
