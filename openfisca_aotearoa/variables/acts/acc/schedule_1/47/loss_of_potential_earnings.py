@@ -4,14 +4,14 @@
 from openfisca_core.model_api import *
 # Import the entities specifically defined for this tax and entitlement system
 from openfisca_aotearoa.entities import Person
-from numpy import logical_not
+from numpy import logical_not, clip
 
 
 class acc_sched_1__incapacitated_for_6_months(Variable):
     value_type = bool
     entity = Person
     definition_period = ETERNITY
-    label = u"Incapacited for 6 months"
+    label = u"Incapacitated for 6 months"
     reference = "http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM104891.html"
 
 class acc_sched_1__loe_more_than_lope(Variable):
@@ -62,4 +62,28 @@ class acc_sched_1__lope_eligible(Variable):
             not_engaged_in_study_at_entitlement *\
             not_earner_with_higher_loe *\
             six_months
+
+
+class acc_sched_1__weekly_earnings(Variable):
+    value_type = float
+    entity = Person
+    definition_period = DAY
+    label = u"Weekly earnings"
+    reference = "http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM104891.html"
+
+
+class acc_sched_1__lope_weekly_compensation(Variable):
+    value_type = float
+    entity = Person
+    definition_period = DAY
+    label = u"Compensation per week"
+    reference = "http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM104891.html"
+
+    def formula(persons, period, parameters):
+        hourly_rate_week = parameters(period).minimum_wage.adult_rate * 40
+        minimum_earnings = clip(persons('acc_sched_1__minimum_weekly_earnings', period), hourly_rate_week, None)
+        abatement = minimum_earnings * parameters(period).acc.weekly_compensation_abatement
+        weekly_earnings = persons('acc_sched_1__weekly_earnings', period)
+        return clip((abatement - (abatement + weekly_earnings - minimum_earnings)), 0, None) * persons('acc_sched_1__lope_eligible', period)
+
 

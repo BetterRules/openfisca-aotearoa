@@ -99,3 +99,47 @@
       "2020-01-01": false
       "2021-01-01": true
       "2022-01-01": true
+
+- name: Simple test for LOPE eligibility with entitlement calculation
+  period: 2020-09
+  absolute_error_margin: 0
+  input:
+    persons:
+      Scott:
+        date_of_birth: "2002-08-03"
+        date_of_injury: "2019-02-02"
+        acc_part_2__suffered_personal_injury: true
+        acc__has_cover: true
+        incapacity_for_employment__corporation_determination: true
+        acc_part_3__has_lodged_claim: true
+        incapacity_for_employment__by_covered_injury: true
+
+        acc_sched_1__engaged_fulltime_study_or_training: false
+        acc__earner: false
+        acc_sched_1__incapacitated_for_6_months: true
+        acc_sched_1__minimum_weekly_earnings: 900
+        acc_sched_1__weekly_earnings:
+          "2018-01-01": 0
+          "2019-01-01": 0
+          "2020-01-01": 300
+          "2021-01-01": 0
+          "2022-01-01": 300
+    families:
+      Whanau_tahi:
+        others: Scott
+    titled_properties:
+      whare:
+        others: [Scott]
+  output:
+    acc_sched_1__lope_eligible:
+      "2018-01-01": false
+      "2019-01-01": false
+      "2020-01-01": false
+      "2021-01-01": true
+      "2022-01-01": true
+    acc_sched_1__lope_weekly_compensation:
+      "2018-01-01": 0
+      "2019-01-01": 0
+      "2020-01-01": 0
+      "2021-01-01": 708
+      "2022-01-01": 408
