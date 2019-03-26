@@ -78,7 +78,6 @@ class parental_leave__has_spouse_who_transferred_her_entitlement(Variable):
         is_spouse = persons('parental_leave__is_spouse_or_partner_of_the_biological_mother', period)
         family_has_transferring_entitlement = persons.family.members('parental_leave__transferred_her_entitlement_to_spouse', period)
 
-        print(is_spouse, family_has_transferring_entitlement)
         return persons.family.any(family_has_transferring_entitlement) * is_spouse
 
 
