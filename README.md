@@ -2,7 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/ServiceInnovationLab/openfisca-aotearoa/tree/master.svg?style=svg)](https://circleci.com/gh/ServiceInnovationLab/openfisca-aotearoa/tree/master)
 
-## Writing the Legislation
+## Legislation as Machine Code
 
 This is an experiment. We've coded large swathes of New Zealand's legislation, regulation, and some government policy into rules that run in the Open Fisca calculation engine. We've released all the code here, for anyone to use.
 
