@@ -7,7 +7,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='OpenFisca-Aotearoa',
-    version='10.1.3',
+    version='10.2.0',
     author='New Zealand Government, Service Innovation Lab',
     author_email='brenda.wallace@dia.govt.nz,hamish.fraser@dia.govt.nz',
     description=u'OpenFisca tax and benefit system for Aotearoa',
@@ -16,7 +16,7 @@ setup(
     url='https://github.com/ServiceInnovationLab/openfisca-aotearoa',
     include_package_data=True,  # Will read MANIFEST.in
     install_requires=[
-        'OpenFisca-Core >=25.0.0,<26.0',
+        'OpenFisca-Core >=26.0.0,<27.0',
         ],
     extras_require={
         'test': [

@@ -1,5 +1,8 @@
 # Changelog
 
+# 10.2.0 [153](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/153)
+* Update to Openfisca Core 26.0
+
 # 10.1.3 [148](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/148)
 * Add Hamish to maintainers
 
