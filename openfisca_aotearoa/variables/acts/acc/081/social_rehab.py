@@ -3,8 +3,6 @@
 from openfisca_core.model_api import *
 from openfisca_aotearoa.entities import Person
 
-# (a) # aids and appliances:
-# (b) # attendant care:
 
 class acc__is_entitled_to_attendant_care(Variable):
     value_type = bool
@@ -13,10 +11,13 @@ class acc__is_entitled_to_attendant_care(Variable):
     reference = "Section 81 & 82 http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM101425.html"
 
     def formula(persons, period, parameters):
-        return (persons('acc__has_a_covered_injury', period)
-                * persons('acc__lodges_a_claim_for_entitlement', period)
-                * persons('acc__assessed_as_having_a_need_caused_by_this_covered_injury', period)
-                * person('acc__the_corporation_decides_to_provide_or_contribute_to_attendant_care', period))
+        return (
+            persons('acc__has_a_covered_injury', period)
+            * persons('acc__lodges_a_claim_for_entitlement', period)
+            * persons('acc__assessed_as_having_a_need_caused_by_this_covered_injury', period)
+            * person('acc__the_corporation_decides_to_provide_or_contribute_to_attendant_care', period)
+            * (person('acc__is_present_in_nz', period)
+               + person('acc__number_of_days_outside_nz', period) <= 28)) # TODO move 28 to a parameter
 
 
 class acc__has_a_covered_injury(Variable):
@@ -24,10 +25,12 @@ class acc__has_a_covered_injury(Variable):
     entity = Person
     definition_period = MONTH
 
+
 class acc__lodges_a_claim_for_entitlement(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
+
 
 class acc__assessed_as_having_a_need_caused_by_this_covered_injury(Variable):
     value_type = bool
@@ -41,7 +44,7 @@ class acc__assessed_as_having_a_need_caused_by_this_covered_injury(Variable):
     #   (c)    # the limitations suffered by a claimant as a result of the personal injury:
     #   (d)    # the kinds of social rehabilitation that are appropriate for a claimant to minimise those limitations:
     #   (e)    # the rehabilitation outcome that would be achieved by providing particular social rehabilitation:
-    #   (f)    # the alternatives and options available for providing particular social rehabilitation so as to achieve the relevant rehabilitation outcome in the most cost effective way: 
+    #   (f)    # the alternatives and options available for providing particular social rehabilitation so as to achieve the relevant rehabilitation outcome in the most cost effective way:
     #   (g)    # any social rehabilitation (not provided as vocational rehabilitation) that may reasonably be provided to enable a claimant who is entitled to vocational rehabilitation to participate in employment:
     #   (h)    # the geographical location in which a claimant lives:
     #   (i)    # in the case of a reassessment,—
