@@ -135,3 +135,147 @@
       "2020-01-01": 0
       "2021-01-01": 708
       "2022-01-01": 408
+
+- name: Under 18 at date of injury, not in full-time study and has cover
+  period: 2019-09
+  absolute_error_margin: 0
+  input:
+    persons:
+      Bob:
+        acc__earner: false
+        acc__has_cover:
+          "2000-08-03": true
+        acc_part_2__suffered_personal_injury: true
+        acc_part_3__has_lodged_claim: true
+        acc_sched_1__engaged_fulltime_study_or_training: false
+        acc_sched_1__incapacitated_for_6_months: true
+        acc_sched_1__weekly_earnings: 400
+        date_of_birth: "2000-08-03"
+        date_of_injury: "2018-08-01"
+        finish_date_of_full_time_study_training_bridging_18th_birthday: null
+        incapacity_for_employment__corporation_determination: true
+        incapacity_for_employment__by_covered_injury: true
+    families:
+      Whanau_tahi:
+        others: Bob
+    titled_properties:
+      whare:
+        others: Bob
+  output:
+    acc_sched_1__lope_eligible:
+      "2020-09-06": true
+
+- name: The injury was post 18 while in continuos study and they are no longer in continuos study
+  period: 2020-09
+  absolute_error_margin: 0
+  input:
+    persons:
+      Mary:
+        acc__earner: false
+        acc__has_cover:
+          "2000-08-03": true
+        acc_part_2__suffered_personal_injury: true
+        acc_part_3__has_lodged_claim: true
+        acc_sched_1__engaged_fulltime_study_or_training: false
+        acc_sched_1__incapacitated_for_6_months: true
+        acc_sched_1__weekly_earnings: 400
+        date_of_birth: "2000-08-03"
+        date_of_injury: "2019-08-03"
+        finish_date_of_full_time_study_training_bridging_18th_birthday: "2019-08-04"
+        incapacity_for_employment__corporation_determination: true
+        incapacity_for_employment__by_covered_injury: true
+    families:
+      Whanau_tahi:
+        others: Mary
+    titled_properties:
+      whare:
+        others: Mary
+  output:
+    acc_sched_1__lope_eligible:
+      "2020-09-06": true
+
+- name: The injury was post 18 while in continuos study and they are no longer in continuos study
+  period: 2020-09
+  absolute_error_margin: 0
+  input:
+    persons:
+      Pete:
+        acc__earner: false
+        acc__has_cover:
+          "2000-08-03": true
+        acc_part_2__suffered_personal_injury: true
+        acc_part_3__has_lodged_claim: true
+        acc_sched_1__engaged_fulltime_study_or_training: true
+        acc_sched_1__incapacitated_for_6_months: true
+        acc_sched_1__weekly_earnings: 400
+        date_of_birth: "2000-08-03"
+        date_of_injury: "2019-08-03"
+        finish_date_of_full_time_study_training_bridging_18th_birthday: "2019-08-04"
+        incapacity_for_employment__corporation_determination: true
+        incapacity_for_employment__by_covered_injury: false
+    families:
+      Whanau_tahi:
+        others: Pete
+    titled_properties:
+      whare:
+        others: Pete
+  output:
+    acc_sched_1__lope_eligible:
+      "2020-09-06": false
+
+- name: The injury was post 18 while in continuos study and they are no longer in continuos study
+  period: 2020-09
+  absolute_error_margin: 0
+  input:
+    persons:
+      Pete:
+        acc__earner: false
+        acc__has_cover:
+          "2000-08-03": true
+        acc_part_2__suffered_personal_injury: true
+        acc_part_3__has_lodged_claim: true
+        acc_sched_1__engaged_fulltime_study_or_training: true
+        acc_sched_1__incapacitated_for_6_months: true
+        acc_sched_1__weekly_earnings: 400
+        date_of_birth: "2000-08-03"
+        date_of_injury: "2019-08-03"
+        finish_date_of_full_time_study_training_bridging_18th_birthday: "2019-08-04"
+        incapacity_for_employment__corporation_determination: true
+        incapacity_for_employment__by_covered_injury: true
+    families:
+      Whanau_tahi:
+        others: Pete
+    titled_properties:
+      whare:
+        others: Pete
+  output:
+    acc_sched_1__lope_eligible:
+      "2020-09-06": false
+
+- name: The injury was post 18 while in continuos study and they are no longer in continuos study
+  period: 2020-09
+  absolute_error_margin: 0
+  input:
+    persons:
+      Elijah:
+        acc__earner: false
+        acc__has_cover: true
+        acc_part_2__suffered_personal_injury: true
+        acc_part_3__has_lodged_claim: true
+        acc_sched_1__engaged_fulltime_study_or_training: true
+        acc_sched_1__incapacitated_for_6_months: true
+        acc_sched_1__weekly_earnings: 400
+        date_of_birth: "2000-08-03"
+        date_of_injury: "2019-08-03"
+        # finish_date_of_full_time_study_training_bridging_18th_birthday: "2019-08-04"
+        incapacity_for_employment__corporation_determination: true
+        incapacity_for_employment__by_covered_injury: true
+    families:
+      Whanau_tahi:
+        others: Elijah
+    titled_properties:
+      whare:
+        others: Elijah
+  output:
+    acc_sched_1__lope_eligible:
+      "2020-09-06": false
