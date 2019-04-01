@@ -1,47 +1,10 @@
 ---
-- name: Test LOPE for person in last day of continous training since their 18th birthday
-  period: 2020-09
-  absolute_error_margin: 0
-  input:
-    persons:
-      Scott:
-        acc__earner: false
-        acc__has_cover:
-          "2010-08-03": true
-        acc_part_2__suffered_personal_injury: true
-        acc_part_3__has_lodged_claim: true
-        acc_sched_1__engaged_fulltime_study_or_training: false
-        acc_sched_1__incapacitated_for_6_months: true
-        acc_sched_1__weekly_earnings: 500
-        date_of_birth: "2002-08-03"
-        date_of_injury: "2020-08-05"
-        finish_date_of_full_time_study_training_bridging_18th_birthday: "2020-08-05"
-        incapacity_for_employment__corporation_determination: true
-        incapacity_for_employment__by_covered_injury: true
-    families:
-      Whanau_tahi:
-        others: Scott
-    titled_properties:
-      whare:
-        others: Scott
-  output:
-    acc__potential_earner:
-      "2020-08-06": true
-    acc_sched_1__lope_eligible:
-      "2020-09-06": true
-    acc_part_2__suffered_personal_injury:
-      "2020-08-06": true
-    acc__has_cover:
-      "2020-08-06": true
-    age:
-      "2020-08-06": 18
-
 - name: Test LOPE for person injured day after their last day of continous training since their 18th birthday
   period: 2020-09
   absolute_error_margin: 0
   input:
     persons:
-      Scott:
+      Sio:
         acc__earner: false
         acc__has_cover: true
         acc_part_2__suffered_personal_injury: true
@@ -50,50 +13,22 @@
         acc_sched_1__incapacitated_for_6_months: true
         date_of_birth: "2002-08-03"
         date_of_injury: "2021-08-06"
+        acc_sched_1__loe_more_than_lope: false
         finish_date_of_full_time_study_training_bridging_18th_birthday: "2021-08-05"
         incapacity_for_employment__by_covered_injury: true
         incapacity_for_employment__corporation_determination: true
     families:
       Whanau_tahi:
-        others: Scott
+        others: Sio
     titled_properties:
       whare:
-        others: [Scott]
+        others: [Sio]
   output:
     acc_sched_1__lope_eligible:
       "2021-08-06": false
 
-- name: Simple test for LOPE eligibility for person before and after their 18th birthday
-  period: 2020-09
-  absolute_error_margin: 0
-  input:
-    persons:
-      Scott:
-        acc__earner: false
-        acc__has_cover: true
-        acc_part_2__suffered_personal_injury: true
-        acc_part_3__has_lodged_claim: true
-        acc_sched_1__engaged_fulltime_study_or_training: false
-        acc_sched_1__incapacitated_for_6_months: true
-        date_of_birth: "2002-08-03"
-        date_of_injury: "2019-02-02"
-        incapacity_for_employment__corporation_determination: true
-        incapacity_for_employment__by_covered_injury: true
-    families:
-      Whanau_tahi:
-        others: Scott
-    titled_properties:
-      whare:
-        others: [Scott]
-  output:
-    acc_sched_1__lope_eligible:
-      "2018-01-01": false
-      "2019-01-01": false
-      "2020-01-01": false
-      "2021-01-01": true
-      "2022-01-01": true
 
-- name: Simple test for LOPE eligibility with entitlement calculation
+- name: KEEP ME FOR FINACIAL CALCULATION Simple test for LOPE eligibility with entitlement calculation
   period: 2020-09
   absolute_error_margin: 0
   input:
@@ -136,6 +71,8 @@
       "2021-01-01": 708
       "2022-01-01": 408
 
+#hackathon
+
 - name: Under 18 at date of injury, not in full-time study and has cover
   period: 2019-09
   absolute_error_margin: 0
@@ -152,6 +89,7 @@
         acc_sched_1__weekly_earnings: 400
         date_of_birth: "2000-08-03"
         date_of_injury: "2018-08-01"
+        acc_sched_1__loe_more_than_lope: false
         finish_date_of_full_time_study_training_bridging_18th_birthday: null
         incapacity_for_employment__corporation_determination: true
         incapacity_for_employment__by_covered_injury: true
@@ -179,6 +117,7 @@
         acc_sched_1__engaged_fulltime_study_or_training: false
         acc_sched_1__incapacitated_for_6_months: true
         acc_sched_1__weekly_earnings: 400
+        acc_sched_1__loe_more_than_lope: false
         date_of_birth: "2000-08-03"
         date_of_injury: "2019-08-03"
         finish_date_of_full_time_study_training_bridging_18th_birthday: "2019-08-04"
@@ -208,6 +147,7 @@
         acc_sched_1__engaged_fulltime_study_or_training: true
         acc_sched_1__incapacitated_for_6_months: true
         acc_sched_1__weekly_earnings: 400
+        acc_sched_1__loe_more_than_lope: false
         date_of_birth: "2000-08-03"
         date_of_injury: "2019-08-03"
         finish_date_of_full_time_study_training_bridging_18th_birthday: "2019-08-04"
@@ -228,12 +168,13 @@
   absolute_error_margin: 0
   input:
     persons:
-      Pete:
+      Felipe:
         acc__earner: false
         acc__has_cover:
           "2000-08-03": true
         acc_part_2__suffered_personal_injury: true
         acc_part_3__has_lodged_claim: true
+        acc_sched_1__loe_more_than_lope: false
         acc_sched_1__engaged_fulltime_study_or_training: true
         acc_sched_1__incapacitated_for_6_months: true
         acc_sched_1__weekly_earnings: 400
@@ -244,10 +185,10 @@
         incapacity_for_employment__by_covered_injury: true
     families:
       Whanau_tahi:
-        others: Pete
+        others: Felipe
     titled_properties:
       whare:
-        others: Pete
+        others: Felipe
   output:
     acc_sched_1__lope_eligible:
       "2020-09-06": false
@@ -276,6 +217,96 @@
     titled_properties:
       whare:
         others: Elijah
+  output:
+    acc_sched_1__lope_eligible:
+      "2020-09-06": false
+
+- name: Lucy has a serious injury caused at birth, she's not in study and not an earner.
+  period: 2020-09
+  absolute_error_margin: 0
+  input:
+    persons:
+      Lucy:
+        acc__earner: false
+        acc__has_cover: true
+        acc_part_2__suffered_personal_injury: true
+        acc_part_3__has_lodged_claim: true
+        acc_sched_1__loe_more_than_lope: false
+        acc_sched_1__engaged_fulltime_study_or_training: false
+        acc_sched_1__incapacitated_for_6_months: true
+        acc_sched_1__weekly_earnings: 400
+        date_of_birth: "2000-01-01"
+        date_of_injury: "2000-01-01"
+        # finish_date_of_full_time_study_training_bridging_18th_birthday: "2019-08-04"
+        incapacity_for_employment__corporation_determination:
+          "2000-01-01": true
+        incapacity_for_employment__by_covered_injury: true
+    families:
+      Whanau_tahi:
+        others: Lucy
+    titled_properties:
+      whare:
+        others: Lucy
+  output:
+    acc_sched_1__lope_eligible:
+      "2020-09-06": true
+
+- name: Tom is a sensitive claiment who is not studying and is not an earner.
+  period: 2020-09
+  absolute_error_margin: 0
+  input:
+    persons:
+      Tom:
+        acc__earner: false
+        acc__has_cover: true
+        acc_part_2__suffered_personal_injury: true
+        acc_part_3__has_lodged_claim: true
+        acc_sched_1__loe_more_than_lope: false
+        acc_sched_1__engaged_fulltime_study_or_training: false
+        acc_sched_1__incapacitated_for_6_months: true
+        acc_sched_1__weekly_earnings: 400
+        date_of_birth: "2000-02-02"
+        date_of_injury: "2015-05-05"
+        # finish_date_of_full_time_study_training_bridging_18th_birthday: "2019-08-04"
+        incapacity_for_employment__corporation_determination:
+          "2018-03-03": true
+        incapacity_for_employment__by_covered_injury: true
+    families:
+      Whanau_tahi:
+        others: Tom
+    titled_properties:
+      whare:
+        others: Tom
+  output:
+    acc_sched_1__lope_eligible:
+      "2020-09-06": true
+
+- name: Stacey is a sensitive claiment who is an earner and entitled to higher LOE and who has studied full-time but is no longer in study.
+  period: 2020-09
+  absolute_error_margin: 0
+  input:
+    persons:
+      Stacey:
+        acc__earner: true
+        acc__has_cover: true
+        acc_part_2__suffered_personal_injury: true
+        acc_part_3__has_lodged_claim: true
+        acc_sched_1__loe_more_than_lope: true
+        acc_sched_1__engaged_fulltime_study_or_training: false
+        acc_sched_1__incapacitated_for_6_months: true
+        acc_sched_1__weekly_earnings: 400
+        date_of_birth: "2000-02-02"
+        date_of_injury: "2014-05-05"
+        finish_date_of_full_time_study_training_bridging_18th_birthday: "2015-05-05"
+        incapacity_for_employment__corporation_determination:
+          "2018-08-03": true
+        incapacity_for_employment__by_covered_injury: true
+    families:
+      Whanau_tahi:
+        others: Stacey
+    titled_properties:
+      whare:
+        others: Stacey
   output:
     acc_sched_1__lope_eligible:
       "2020-09-06": false
