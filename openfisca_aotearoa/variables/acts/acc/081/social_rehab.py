@@ -13,10 +13,10 @@ class acc__is_entitled_to_attendant_care(Variable):
     reference = "Section 81 & 82 http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM101425.html"
 
     def formula(persons, period, parameters):
-        return persons('acc__has_a_covered_injury', period)
-            * persons('acc__lodges_a_claim_for_entitlement', period)
-            * persons('acc__assessed_as_having_a_need_caused_by_this_covered_injury', period)
-            * person('acc__the_corporation_decides_to_provide_or_contribute_to_attendant_care', period)
+        return (persons('acc__has_a_covered_injury', period)
+                * persons('acc__lodges_a_claim_for_entitlement', period)
+                * persons('acc__assessed_as_having_a_need_caused_by_this_covered_injury', period)
+                * person('acc__the_corporation_decides_to_provide_or_contribute_to_attendant_care', period))
 
 
 class acc__has_a_covered_injury(Variable):
