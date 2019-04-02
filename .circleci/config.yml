@@ -4,7 +4,7 @@ version: 2
 jobs:
   pythonlint:
     docker:
-      - image: circleci/python:3.7.0
+      - image: circleci/python:3.7.2
     steps:
       - checkout
       - run:
@@ -15,7 +15,7 @@ jobs:
           command: flake8
   yamllint:
     docker:
-      - image: circleci/python:3.7.0
+      - image: circleci/python:3.7.2
     steps:
       - checkout
       - run:
@@ -26,7 +26,7 @@ jobs:
           command: yamllint .
   version-bump:
     docker:
-      - image: circleci/python:3.7.0
+      - image: circleci/python:3.7.2
     steps:
       - checkout
       - run:
@@ -37,7 +37,7 @@ jobs:
 
   deploy:
     docker:
-      - image: circleci/python:3.7.0
+      - image: circleci/python:3.7.2
     environment:
       # here be the name of the Government Innovation Service Lab Pypi account
       # to automatically publish the OpenFisca-Aotearoa package to Pypi
@@ -50,36 +50,12 @@ jobs:
 
   build_python3:
     docker:
-      - image: python:3.7
-
+      - image: circleci/python:3.7.2
     steps:
       - checkout
-
-      - restore_cache:
-          key: v1-py3-{{ checksum "setup.py" }}
-
       - run:
-          name: Create a virtualenv
-          command: |
-            mkdir -p /tmp/venv/aotearoa
-            python -m venv /tmp/venv/aotearoa
-            echo "source /tmp/venv/aotearoa/bin/activate" >> $BASH_ENV
-
-      - run:
-          name: Install dependencies
-          command: |
-            pip install --upgrade pip twine wheel
-            pip install --editable .[test] --upgrade
-            pip install -r requirements.txt
-
-      - save_cache:
-          key: v1-py3-{{ checksum "setup.py" }}
-          paths:
-            - /tmp/venv/aotearoa
-
-      - run:
-          name: Run tests
-          command: make test
+          name: "git tag the release"
+          command: "./.circleci/git_tag.sh"
 
 workflows:
   version: 2
@@ -89,3 +65,10 @@ workflows:
       - yamllint
       - version-bump
       - build_python3
+      - tag_release:
+          requires:
+            - version-bump
+            - build_python3
+          filters:
+            branches:
+              only: master

@@ -1,30 +1,29 @@
 # OpenFisca Aotearoa
 
 [![CircleCI](https://circleci.com/gh/ServiceInnovationLab/openfisca-aotearoa/tree/master.svg?style=svg)](https://circleci.com/gh/ServiceInnovationLab/openfisca-aotearoa/tree/master)
-[![Waffle.io - Columns and their card count](https://badge.waffle.io/ServiceInnovationLab/openfisca-aotearoa.svg?columns=all)](https://waffle.io/ServiceInnovationLab/openfisca-aotearoa)
-
 
 ## Writing the Legislation
 
-Aotearoa New Zealand's legislation as code utilising Open Fisca.
-Early development phase.
+This is an experiment. We've coded large swathes of New Zealand's legislation, regulation, and some government policy into rules that run in the Open Fisca calculation engine. We've released all the code here, for anyone to use.
+
+From late January 2018, the Service Innovation Lab (LabPlus) facilitated a cross-agency and multidisciplinary team in a 3 week Discovery Sprint exploring the challenges and opportunities of developing human and machine consumable legislation for effective and efficient service delivery.
+
 Please also read [the wiki](https://github.com/ServiceInnovationLab/openfisca-aotearoa/wiki) as a way of introduction.
 
-The files that are outside from the `openfisca_aotearoa` folder are used to set up the development environment.
+### The Lab Team's server
 
-## Deploy to your own platform-as-a-service
+An instance of Open Fisca is running at
+[http://api.rules.nz/](http://api.rules.nz/)
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+and an app called "Rapu Ture" is available to explore which variables exist
+[https://www.rules.nz/](http://www.rules.nz/)
 
-## Run the application using Docker
-
-- [Install Docker](https://www.docker.com/get-started).
-- Build the docker image: `docker build -t openfisca-aotearoa`
-- Run the image: `docker run -it -p 5000:5000 openfisca-aotearoa`
 
 ## Install Instructions for Users and Contributors
 
 This package requires [Python 3](https://www.python.org/downloads/) and [pip](https://pip.pypa.io/en/stable/installing/) .
+
+## Installing this Country Package (Aotearoa New Zealand)
 
 Supported platforms:
 - GNU/Linux distributions (in particular Debian and Ubuntu);
@@ -33,178 +32,31 @@ Supported platforms:
 
 Other OS should work if they can execute Python and NumPy.
 
-## Setup Python - Use either pyenv(new) or pew
-## Using pyenv
-> ### Install pyenv
->
->    curl https://pyenv.run | bash
->
-> ### Install python
->
->     pyenv install 3.7.2
->
-> ### If `ModuleNotFoundError: No module named '_ctypes'`
->
->     sudo apt-get update
->     sudo apt-get install libffi-dev
->
-> #### More problems? [Try the instructions here](https://stackoverflow.com/questions/27022373/python3-importerror-no-module-named-ctypes-when-using-value-from-module-mul#41310760)
+Pick option (A) (B) or (B)
 
-## OR Using Pew
-> ### Setting-up a Virtual Environment with Pew
->
->We recommend using a [virtual environment](https://virtualenv.pypa.io/en/stable/) (abbreviated as "virtualenv") with a virtualenv manager such as [pew](https://github.com/berdario/pew).
->
->- A [virtualenv](https://virtualenv.pypa.io/en/stable/) is a project specific environment >created to suit the needs of the project you are working on.
->- A virtualenv manager, such as [pew](https://github.com/berdario/pew), lets you easily create, remove and toggle between several virtualenvs.
->
->To install pew, launch a terminal on your computer and follow these instructions:
->
->```sh
-> python --version # You should have python 3.7 or better installed on your computer.
-> # If not, visit http://www.python.org to install it and install pip as well.
->```
->
->```sh
-> pip install --upgrade pip
->pip install pew  # if asked, answer "Y" to the question about modifying your shell config file.
->```
->To set-up and create a new a virtualenv named **openfisca** running python3.7:
->
->```sh
->pew new openfisca --python=python3.7
->```
->
->The virtualenv you just created will be automatically activated. This means you will operate in the virtualenv immediately. You should see a prompt resembling this:
->```sh
->Installing setuptools, pip, wheel...done.
->Launching subshell in virtual environment. Type 'exit' or 'Ctrl+D' to return.
->```
->Additional information:
->- Exit the virtualenv with `exit` (or Ctrl-D).
->- Re-enter with `pew workon openfisca`.
 
-:tada: You are now ready to install this OpenFisca Country Package!
-
-We offer 2 install procedures. Pick procedure A or B below depending on how you plan to use this Country Package.
-
-### A. Minimal Installation (Pip Install)
+### A. Minimal Installation - for users running the rules
 
 Follow this installation if you wish to:
-- run calculations on a large population;
-- create tax & benefits simulations;
-- write an extension to this legislation (e.g. city specific tax & benefits);
-- serve your Country Package with the OpenFisca Web API.
+  - run calculations on a large population;
+  - run your own instance of OpenFisca-Aotearoa
+  - run your own instance of the OpenFisca-Aotearoa rules package, as an OpenFisca Web API.
+  - **not** modify the rules
 
-For more advanced uses, head to the [Advanced Installation](#advanced-installation-git-clone).
+There are 3 documented ways to do this - Pick your tech:
+  * [Run in docker](SETUP-docker.md) to run on an instance or your laptop
+  * [Setup pew and install from pip](SETUP-pew.md) to manage virtualenvs
+  * [Run on heroku's PaaS cloud](https://heroku.com/deploy)
 
-#### Install this Country Package with Pip Install
+### B. Advanced Installation - for devs, modifying the rules and code
 
-Inside your virtualenv, check the prerequisites:
+Follow this tutorial if you wish to change the OpenFisca-Aotearoa rules or contribute to the source code.
 
-```sh
-python --version  # should print "Python 3.xx".
-#if not, make sure you pass the python version as an argument when creating your virtualenv
-```
+Read the [Setup Aotearoa Open Fisca in pyenv](SETUP-pyenv.md) instructions to manage python runtimes and eggs
 
-```sh
-pip --version  # should print at least 9.0.
-#if not, run "pip install --upgrade pip"
-```
-Install the Country Package:
+`pyenv` is simular to rbenv/rvm (for ruby) and nvm (for nodejs).
 
-```sh
-pip install openfisca_aotearoa
-```
-
-:tada: This OpenFisca Country Package is now installed and ready!
-
-#### Next Steps
-
-- To learn how to use OpenFisca, follow our [tutorials](https://openfisca.org/doc/getting-started.html).
-- To serve this Country Package, serve the [OpenFisca web API](#serve-your-country-package-with-the-openFisca-web-api).
-
-Depending on what you want to do with OpenFisca, you may want to install yet other packages in your virtualenv:
-- To install extensions or write on top of this Country Package, head to the [Extensions documentation](https://openfisca.org/doc/contribute/extensions.html).
-- To plot simulation results, try [matplotlib](http://matplotlib.org/).
-- To manage data, check out [pandas](http://pandas.pydata.org/).
-
-### B. Advanced Installation (Git Clone)
-
-Follow this tutorial if you wish to:
-- create or change this Country Package's legislation;
-- contribute to the source code.
-
-#### Clone OpenFisca Aotearoa with Git
-
-First of all, make sure [Git](https://www.git-scm.com/) is installed on your machine.
-
-Set your working directory to the location where you want OpenFisca Aotearoa cloned.
-
-Inside your virtualenv, check the prerequisites:
-
-```sh
-python --version  # should print "Python 3.xx".
-#if not, make sure you pass the python version as an argument when creating your virtualenv
-```
-
-```sh
-pip --version  # should print at least 9.0.
-#if not, run "pip install --upgrade pip"
-```
-Clone OpenFisca Aotearoa on your machine:
-
-```sh
-git clone https://github.com/ServiceInnovationLab/openfisca-aotearoa.git
-cd openfisca-aotearoa
-pip install -e .
-```
-
-You can make sure that everything is working by running the provided tests:
-
-```sh
-pip install -e ".[test]"
-make test
-```
-> [Learn more about tests](https://openfisca.org/doc/coding-the-legislation/writing_yaml_tests.html)
-
-:tada: This OpenFisca Aotearoa Package is now installed and ready!
-
-#### Next Steps
+## Next Steps
 
 - To write new legislation, read [the wiki](https://github.com/ServiceInnovationLab/openfisca-aotearoa/wiki) along with the OpenFisca [Coding the legislation](https://openfisca.org/doc/coding-the-legislation/index.html) section.
 - To contribute to the code, read our [contribution doc](https://github.com/ServiceInnovationLab/openfisca-aotearoa/blob/master/CONTRIBUTING.md).
-
-## Serve OpenFisca Aotearoa with the OpenFisca Web API
-
-If you are considering building a web application, you can use the packaged OpenFisca Web API.
-
-To serve the Openfisca Web API locally, run:
-
-```sh
-openfisca serve --port 5000
-```
-
-To read more about the `openfisca serve` command, check out its [documentation](https://openfisca.readthedocs.io/en/latest/openfisca_serve.html).
-
-You can make sure that your instance of the API is working by requesting:
-
-```sh
-curl "http://localhost:5000/spec"
-```
-
-This endpoint returns the [Open API specification](https://www.openapis.org/) of your API.
-
-:tada: OpenFisca Aotearoa is now served by the OpenFisca Web API! To learn more, go to the [OpenFisca Web API documentation](https://openfisca.org/doc/openfisca-web-api/index.html)
-
-## Ongoing setup updates.
-
-If you update openfisca-aotearoa after some time of having it installed you may need to update the underlying dependant libraries.
-
-In particular to update the underlying openfisca-core library if the openfisca-aotearoa dependancies have updated, run:
-
-```sh
-pip install OpenFisca-Core --upgrade --upgrade-strategy only-if-needed
-```
-
-:tada: You should now be up to date again and able to continue development.
