@@ -73,7 +73,7 @@
 
 #hackathon
 
-- name: Under 18 at date of injury, not in full-time study and has cover
+- name: Under 18 at date of injury, not in full-time study and has cover. Bob had an accident just before his birthday
   period: 2019-09
   absolute_error_margin: 0
   input:
@@ -103,7 +103,7 @@
     acc_sched_1__lope_eligible:
       "2020-09-06": true
 
-- name: The injury was post 18 while in continuos study and they are no longer in continuos study
+- name: Over 18, continuos stufy till 17, injury happened at 19 the day before she stopped studying. Only that she is continuos study to the point that she has injuries
   period: 2020-09
   absolute_error_margin: 0
   input:
@@ -151,6 +151,7 @@
         date_of_birth: "2000-08-03"
         date_of_injury: "2019-08-03"
         finish_date_of_full_time_study_training_bridging_18th_birthday: "2019-08-04"
+        # different to merridys
         incapacity_for_employment__corporation_determination: true
         incapacity_for_employment__by_covered_injury: false
     families:
@@ -163,7 +164,7 @@
     acc_sched_1__lope_eligible:
       "2020-09-06": false
 
-- name: The injury was post 18 while in continuos study and they are no longer in continuos study
+- name: The injury was post 18 while in continuos study and they are no longer in continuos study. Felipe has gone back to study.
   period: 2020-09
   absolute_error_margin: 0
   input:
@@ -193,7 +194,7 @@
     acc_sched_1__lope_eligible:
       "2020-09-06": false
 
-- name: The injury was post 18 while in continuos study and they are no longer in continuos study
+- name: The injury was post 18 while in continuos study and they are no longer in continuos study. 19 year old who is still studying.
   period: 2020-09
   absolute_error_margin: 0
   input:
