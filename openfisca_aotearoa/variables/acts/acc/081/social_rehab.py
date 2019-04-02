@@ -17,7 +17,8 @@ class acc__is_entitled_to_attendant_care(Variable):
             * persons('acc__assessed_as_having_a_need_caused_by_this_covered_injury', period)
             * person('acc__the_corporation_decides_to_provide_or_contribute_to_attendant_care', period)
             * (person('acc__is_present_in_nz', period)
-               + person('acc__number_of_days_outside_nz', period) <= 28)) # TODO move 28 to a parameter
+               + persons('acc__number_of_days_outside_nz', period) <= 28)
+               + persons('acc__the_corporation_exercised_descretion_as_per_section_68_3', period)) # TODO move 28 to a parameter
 
 
 class acc__has_a_covered_injury(Variable):

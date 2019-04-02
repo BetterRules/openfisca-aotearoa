@@ -8,7 +8,7 @@
         acc__has_a_covered_injury: true
         acc__lodges_a_claim_for_entitlement: true
         acc__assessed_as_having_a_need_caused_by_this_covered_injury: true
-        acc__the_corporation_decides_to_provide_contribute_or_contribute_to_attendant_care: true
+        acc__the_corporation_decides_to_provide_or_contribute_to_attendant_care: true
     families:
       Whanau_tahi:
         others: Scott
