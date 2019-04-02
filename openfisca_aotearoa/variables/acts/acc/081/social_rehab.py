@@ -38,8 +38,8 @@ class acc__is_entitled_to_child_care(Variable):
     def formula(persons, period, parameters):
         return (
             (persons('acc__claminant_has_child_care_eligible_children', period)
-              + persons('acc__the_corporation_exercised_descretion_for_child_care_as_per_section_68_3', period)
-              )
+             + persons('acc__the_corporation_exercised_descretion_for_child_care_as_per_section_68_3', period)
+             )
             * persons('acc__has_a_covered_injury', period)
             * persons('acc__part_3__has_lodged_claim', period)
             * persons('acc__assessed_as_having_a_need_caused_by_this_covered_injury', period)
@@ -49,12 +49,14 @@ class acc__is_entitled_to_child_care(Variable):
             * persons('acc__is_present_in_nz', period)
             )
 
+
 class acc__claminant_has_child_care_eligible_children(Variable):
     # TODO any child in family who is 14 or under
     # OR 14+ and needs care due to phydical or mental condition
     value_type = bool
     entity = Person
     definition_period = MONTH
+
     def formula(persons, period, parameters):
         return persons.family("acc__family_has_child_care_eligible_children", period)
 
