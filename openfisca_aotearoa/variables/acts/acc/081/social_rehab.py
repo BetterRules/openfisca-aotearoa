@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from openfisca_core.model_api import *
-from openfisca_aotearoa.entities import Person
+from openfisca_aotearoa.entities import Person, Family
 
 
 class acc__is_entitled_to_aids_and_appliances(Variable):
@@ -37,7 +37,7 @@ class acc__is_entitled_to_child_care(Variable):
 
     def formula(persons, period, parameters):
         return (
-            (persons('acc__claminant_has_childc_are_eligible_children', period)
+            (persons('acc__claminant_has_child_care_eligible_children', period)
               + persons('acc__the_corporation_exercised_descretion_for_child_care_as_per_section_68_3', period)
               )
             * persons('acc__has_a_covered_injury', period)
@@ -52,7 +52,9 @@ class acc__is_entitled_to_child_care(Variable):
 class acc__claminant_has_child_care_eligible_children(Variable):
     # TODO any child in family who is 14 or under
     # OR 14+ and needs care due to phydical or mental condition
-
+    value_type = bool
+    entity = Person
+    definition_period = MONTH
     def formula(persons, period, parameters):
         return persons.family("acc__family_has_child_care_eligible_children", period)
 
