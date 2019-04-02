@@ -53,6 +53,33 @@ jobs:
       - image: circleci/python:3.7.2
     steps:
       - checkout
+      - restore_cache:
+          key: v1-py3-{{ checksum "setup.py" }}-{{checksum "requirements.txt"}}
+      - run:
+          name: Create a virtualenv
+          command: |
+            mkdir -p /tmp/venv/aotearoa
+            python -m venv /tmp/venv/aotearoa
+            echo "source /tmp/venv/aotearoa/bin/activate" >> $BASH_ENV
+      - run:
+          name: Install dependencies
+          command: |
+            pip install --upgrade pip twine wheel
+            pip install --editable .[test] --upgrade
+            pip install -r requirements.txt
+      - save_cache:
+          key: v1-py3-{{ checksum "setup.py" }}-{{checksum "requirements.txt"}}
+          paths:
+            - /tmp/venv/aotearoa
+      - run:
+          name: Run tests
+          command: make test
+
+  tag_release:
+    docker:
+      - image: circleci/python:3.7.2
+    steps:
+      - checkout
       - run:
           name: "git tag the release"
           command: "./.circleci/git_tag.sh"
