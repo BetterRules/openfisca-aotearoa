@@ -12,4 +12,3 @@ class acc_part_2__suffered_personal_injury(Variable):
     definition_period = ETERNITY
     label = u"Has suffered a personal injury"
     reference = "http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM100910.html"
-

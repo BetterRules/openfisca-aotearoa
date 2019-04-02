@@ -12,4 +12,3 @@ class acc__part_3__has_lodged_claim(Variable):
     definition_period = ETERNITY
     label = u"Has lodged a claim with the Corporation"
     reference = "http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM100910.html"
-
