@@ -8,4 +8,3 @@ class acc__the_corporation_decides_to_provide_or_contribute_to_attendant_care(Va
     value_type = bool
     entity = Person
     definition_period = MONTH
-

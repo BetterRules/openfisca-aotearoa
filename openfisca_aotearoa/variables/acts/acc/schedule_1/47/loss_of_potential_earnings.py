@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Import from openfisca-core the common python objects used to code the legislation in OpenFisca
 from openfisca_core.model_api import *
-# Import the entities specifically defined for this tax and entitlement system
 from openfisca_aotearoa.entities import Person
 from numpy import logical_not, clip
 
@@ -13,6 +11,7 @@ class acc_sched_1__incapacitated_for_6_months(Variable):
     definition_period = ETERNITY
     label = u"Incapacitated for 6 months"
     reference = "http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM104891.html"
+
 
 class acc_sched_1__loe_more_than_lope(Variable):
     value_type = bool
@@ -85,5 +84,3 @@ class acc_sched_1__lope_weekly_compensation(Variable):
         abatement = minimum_earnings * parameters(period).acc.weekly_compensation_abatement
         weekly_earnings = persons('acc_sched_1__weekly_earnings', period)
         return clip((abatement - (abatement + weekly_earnings - minimum_earnings)), 0, None) * persons('acc_sched_1__lope_eligible', period)
-
-

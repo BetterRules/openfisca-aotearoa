@@ -12,4 +12,3 @@ class weekly_compensation__lodges_a_claim(Variable):
     definition_period = ETERNITY
     label = u"A claimant who has cover and who lodges a claim for weekly compensation"
     reference = "http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM100910.html"
-
