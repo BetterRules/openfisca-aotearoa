@@ -26,7 +26,7 @@ class acc__is_entitled_to_attendant_care(Variable):
                 * persons('acc__key_aspect_is_of_the_quality_required_for_that_purpose', period)
                 * (persons('acc__is_present_in_nz', period)
                    + persons('acc__number_of_days_outside_nz', period) <= 28)
-                + persons('acc__the_corporation_exercised_descretion_as_per_section_68_3', period))  # TODO move 28 to a parameter
+                + persons('acc__the_corporation_exercised_descretion_for_attendant_care_as_per_section_68_3', period))  # TODO move 28 to a parameter
 
 
 class acc__is_entitled_to_child_care(Variable):
@@ -37,7 +37,9 @@ class acc__is_entitled_to_child_care(Variable):
 
     def formula(persons, period, parameters):
         return (
-            persons('acc__claminant_has_children', period)
+            (persons('acc__claminant_has_childc_are_eligible_children', period)
+              + persons('acc__the_corporation_exercised_descretion_for_child_care_as_per_section_68_3', period)
+              )
             * persons('acc__has_a_covered_injury', period)
             * persons('acc__part_3__has_lodged_claim', period)
             * persons('acc__assessed_as_having_a_need_caused_by_this_covered_injury', period)
@@ -47,16 +49,15 @@ class acc__is_entitled_to_child_care(Variable):
             * persons('acc__is_present_in_nz', period)
             )
 
-
-class acc__claminant_has_children(Variable):
+class acc__claminant_has_child_care_eligible_children(Variable):
     # TODO any child in family who is 14 or under
     # OR 14+ and needs care due to phydical or mental condition
 
     def formula(persons, period, parameters):
-        return persons.family("acc__family_has_children", period)
+        return persons.family("acc__family_has_child_care_eligible_children", period)
 
 
-class acc__family_has_children(Variable):
+class acc__family_has_child_care_eligible_children(Variable):
     value_type = bool
     entity = Family
     definition_period = MONTH
@@ -65,9 +66,11 @@ class acc__family_has_children(Variable):
 
     def formula(families, period, parameters):
         needs_care = families.members('acc__needs_child_care_because_of_his_or_her_physical_or_mental_condition', period)
+        already_receiving = families.members('acc__already_receiving_child_care_from_acc_as_a_child_of_a_desceased_claimant', period)
         children = families.members('age', period) < 14
-        child_or_needs_care = children + needs_care
-        return families.any(child_or_needs_care, role=Family.CHILD)
+        # is a child, or needs care because of ability  AND not already reciving as a child of a deceased claimant
+        childcare_eligible = ((children + needs_care) * not_(already_receiving))
+        return families.any(childcare_eligible, role=Family.CHILD)
 
 
 class acc__is_entitled_to_education_support(Variable):

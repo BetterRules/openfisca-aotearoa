@@ -123,7 +123,7 @@
         acc__assessed_as_having_a_need_caused_by_this_covered_injury: true
         acc__the_corporation_decides_to_provide_or_contribute_to_attendant_care: true
         acc__number_of_days_outside_nz: 31
-        acc__the_corporation_exercised_descretion_as_per_section_68_3: true
+        acc__the_corporation_exercised_descretion_for_attendant_care_as_per_section_68_3: true
         acc__key_aspect_is_necessary_and_appropriate: true
         acc__key_aspect_is_of_the_quality_required_for_that_purpose: true
     families:
