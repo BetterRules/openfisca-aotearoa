@@ -35,12 +35,20 @@ class acc__is_entitled_to_child_care(Variable):
     definition_period = MONTH
     reference = "Section 81 & 82 http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM101425.html"
 
+    def formula(persons, period, parameters):
+        return (persons('acc__is_present_in_nz', period)
+          + persons('acc__the_corporation_exercised_descretion_as_per_section_68_3', period))
+
 
 class acc__is_entitled_to_education_support(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
     reference = "Section 81 & 82 http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM101425.html"
+
+    def formula(persons, period, parameters):
+        return (persons('acc__is_present_in_nz', period)
+          + persons('acc__the_corporation_exercised_descretion_as_per_section_68_3', period))
 
 
 class acc__is_entitled_to_home_help(Variable):
@@ -49,12 +57,20 @@ class acc__is_entitled_to_home_help(Variable):
     definition_period = MONTH
     reference = "Section 81 & 82 http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM101425.html"
 
+    def formula(persons, period, parameters):
+        return (persons('acc__is_present_in_nz', period)
+          + persons('acc__the_corporation_exercised_descretion_as_per_section_68_3', period))
+
 
 class acc__is_entitled_to_modifications_to_the_home(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
     reference = "Section 81 & 82 http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM101425.html"
+
+    def formula(persons, period, parameters):
+        return (persons('acc__is_present_in_nz', period)
+          + persons('acc__the_corporation_exercised_descretion_as_per_section_68_3', period))
 
 
 class acc__is_entitled_to_training_for_indepence(Variable):
@@ -63,12 +79,20 @@ class acc__is_entitled_to_training_for_indepence(Variable):
     definition_period = MONTH
     reference = "Section 81 & 82 http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM101425.html"
 
+    def formula(persons, period, parameters):
+        return (persons('acc__is_present_in_nz', period)
+          + persons('acc__the_corporation_exercised_descretion_as_per_section_68_3', period))
+
 
 class acc__is_entitled_to_transport_for_indepence(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
     reference = "Section 81 & 82 http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM101425.html"
+
+    def formula(persons, period, parameters):
+        return (persons('acc__is_present_in_nz', period)
+          + persons('acc__the_corporation_exercised_descretion_as_per_section_68_3', period))
 
 
 class acc__has_a_covered_injury(Variable):
