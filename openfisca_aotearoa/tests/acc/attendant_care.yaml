@@ -6,7 +6,7 @@
     persons:
       Scott:
         acc__has_a_covered_injury: true
-        acc_part_3__has_lodged_claim: true
+        acc__part_3__has_lodged_claim: true
         acc__assessed_as_having_a_need_caused_by_this_covered_injury: true
         acc__the_corporation_decides_to_provide_or_contribute_to_attendant_care: true
         acc__key_aspect_is_necessary_and_appropriate: true
@@ -29,7 +29,7 @@
     persons:
       Scott:
         acc__has_a_covered_injury: true
-        acc_part_3__has_lodged_claim: true
+        acc__part_3__has_lodged_claim: true
         acc__assessed_as_having_a_need_caused_by_this_covered_injury: true
         acc__the_corporation_decides_to_provide_or_contribute_to_attendant_care: false
         acc__key_aspect_is_necessary_and_appropriate: true
@@ -51,7 +51,7 @@
     persons:
       Scott:
         acc__has_a_covered_injury: false
-        acc_part_3__has_lodged_claim: true
+        acc__part_3__has_lodged_claim: true
         acc__assessed_as_having_a_need_caused_by_this_covered_injury: true
         acc__the_corporation_decides_to_provide_or_contribute_to_attendant_care: true
         acc__key_aspect_is_necessary_and_appropriate: true
@@ -73,7 +73,7 @@
     persons:
       Scott:
         acc__has_a_covered_injury: true
-        acc_part_3__has_lodged_claim: true
+        acc__part_3__has_lodged_claim: true
         acc__assessed_as_having_a_need_caused_by_this_covered_injury: true
         acc__the_corporation_decides_to_provide_or_contribute_to_attendant_care: true
         acc__key_aspect_is_necessary_and_appropriate: true
@@ -96,7 +96,7 @@
     persons:
       Scott:
         acc__has_a_covered_injury: true
-        acc_part_3__has_lodged_claim: true
+        acc__part_3__has_lodged_claim: true
         acc__assessed_as_having_a_need_caused_by_this_covered_injury: true
         acc__the_corporation_decides_to_provide_or_contribute_to_attendant_care: true
         acc__key_aspect_is_necessary_and_appropriate: true
@@ -119,7 +119,7 @@
     persons:
       Scott:
         acc__has_a_covered_injury: true
-        acc_part_3__has_lodged_claim: true
+        acc__part_3__has_lodged_claim: true
         acc__assessed_as_having_a_need_caused_by_this_covered_injury: true
         acc__the_corporation_decides_to_provide_or_contribute_to_attendant_care: true
         acc__number_of_days_outside_nz: 31

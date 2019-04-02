@@ -19,7 +19,7 @@ class acc__is_entitled_to_attendant_care(Variable):
 
     def formula(persons, period, parameters):
         return (persons('acc__has_a_covered_injury', period)
-            * persons('acc_part_3__has_lodged_claim', period)
+            * persons('acc__part_3__has_lodged_claim', period)
             * persons('acc__assessed_as_having_a_need_caused_by_this_covered_injury', period)
             * persons('acc__the_corporation_decides_to_provide_or_contribute_to_attendant_care', period)
             * persons('acc__key_aspect_is_necessary_and_appropriate', period)

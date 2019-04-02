@@ -6,7 +6,7 @@ from openfisca_core.model_api import *
 from openfisca_aotearoa.entities import Person
 
 
-class acc_part_3__has_lodged_claim(Variable):
+class acc__part_3__has_lodged_claim(Variable):
     value_type = bool
     entity = Person
     definition_period = ETERNITY
