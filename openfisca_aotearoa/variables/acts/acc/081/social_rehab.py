@@ -19,14 +19,14 @@ class acc__is_entitled_to_attendant_care(Variable):
 
     def formula(persons, period, parameters):
         return (persons('acc__has_a_covered_injury', period)
-            * persons('acc__part_3__has_lodged_claim', period)
-            * persons('acc__assessed_as_having_a_need_caused_by_this_covered_injury', period)
-            * persons('acc__the_corporation_decides_to_provide_or_contribute_to_attendant_care', period)
-            * persons('acc__key_aspect_is_necessary_and_appropriate', period)
-            * persons('acc__key_aspect_is_of_the_quality_required_for_that_purpose', period)
-            * (persons('acc__is_present_in_nz', period)
-               + persons('acc__number_of_days_outside_nz', period) <= 28)
-            + persons('acc__the_corporation_exercised_descretion_as_per_section_68_3', period))  # TODO move 28 to a parameter
+                * persons('acc__part_3__has_lodged_claim', period)
+                * persons('acc__assessed_as_having_a_need_caused_by_this_covered_injury', period)
+                * persons('acc__the_corporation_decides_to_provide_or_contribute_to_attendant_care', period)
+                * persons('acc__key_aspect_is_necessary_and_appropriate', period)
+                * persons('acc__key_aspect_is_of_the_quality_required_for_that_purpose', period)
+                * (persons('acc__is_present_in_nz', period)
+                   + persons('acc__number_of_days_outside_nz', period) <= 28)
+                + persons('acc__the_corporation_exercised_descretion_as_per_section_68_3', period))  # TODO move 28 to a parameter
 
 
 class acc__is_entitled_to_child_care(Variable):
@@ -36,8 +36,38 @@ class acc__is_entitled_to_child_care(Variable):
     reference = "Section 81 & 82 http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM101425.html"
 
     def formula(persons, period, parameters):
-        return (persons('acc__is_present_in_nz', period)
-          + persons('acc__the_corporation_exercised_descretion_as_per_section_68_3', period))
+        return (
+            persons('acc__claminant_has_children', period)
+            * persons('acc__has_a_covered_injury', period)
+            * persons('acc__part_3__has_lodged_claim', period)
+            * persons('acc__assessed_as_having_a_need_caused_by_this_covered_injury', period)
+            * persons('acc__the_corporation_decides_to_provide_or_contribute_to_attendant_care', period)
+            * persons('acc__key_aspect_is_necessary_and_appropriate', period)
+            * persons('acc__key_aspect_is_of_the_quality_required_for_that_purpose', period)
+            * persons('acc__is_present_in_nz', period)
+            )
+
+
+class acc__claminant_has_children(Variable):
+    # TODO any child in family who is 14 or under
+    # OR 14+ and needs care due to phydical or mental condition
+
+    def formula(persons, period, parameters):
+        return persons.family("acc__family_has_children", period)
+
+
+class acc__family_has_children(Variable):
+    value_type = bool
+    entity = Family
+    definition_period = MONTH
+    label = u''
+    # reference = "http://legislation.govt.nz/bill/government/2017/0004/15.0/DLM7512349.html"
+
+    def formula(families, period, parameters):
+        needs_care = families.members('acc__needs_child_care_because_of_his_or_her_physical_or_mental_condition', period)
+        children = families.members('age', period) < 14
+        child_or_needs_care = children + needs_care
+        return families.any(child_or_needs_care, role=Family.CHILD)
 
 
 class acc__is_entitled_to_education_support(Variable):
@@ -47,8 +77,7 @@ class acc__is_entitled_to_education_support(Variable):
     reference = "Section 81 & 82 http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM101425.html"
 
     def formula(persons, period, parameters):
-        return (persons('acc__is_present_in_nz', period)
-          + persons('acc__the_corporation_exercised_descretion_as_per_section_68_3', period))
+        return persons('acc__is_present_in_nz', period)
 
 
 class acc__is_entitled_to_home_help(Variable):
@@ -58,8 +87,7 @@ class acc__is_entitled_to_home_help(Variable):
     reference = "Section 81 & 82 http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM101425.html"
 
     def formula(persons, period, parameters):
-        return (persons('acc__is_present_in_nz', period)
-          + persons('acc__the_corporation_exercised_descretion_as_per_section_68_3', period))
+        return persons('acc__is_present_in_nz', period)
 
 
 class acc__is_entitled_to_modifications_to_the_home(Variable):
@@ -69,8 +97,7 @@ class acc__is_entitled_to_modifications_to_the_home(Variable):
     reference = "Section 81 & 82 http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM101425.html"
 
     def formula(persons, period, parameters):
-        return (persons('acc__is_present_in_nz', period)
-          + persons('acc__the_corporation_exercised_descretion_as_per_section_68_3', period))
+        return persons('acc__is_present_in_nz', period)
 
 
 class acc__is_entitled_to_training_for_indepence(Variable):
@@ -80,8 +107,7 @@ class acc__is_entitled_to_training_for_indepence(Variable):
     reference = "Section 81 & 82 http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM101425.html"
 
     def formula(persons, period, parameters):
-        return (persons('acc__is_present_in_nz', period)
-          + persons('acc__the_corporation_exercised_descretion_as_per_section_68_3', period))
+        return persons('acc__is_present_in_nz', period)
 
 
 class acc__is_entitled_to_transport_for_indepence(Variable):
@@ -91,8 +117,7 @@ class acc__is_entitled_to_transport_for_indepence(Variable):
     reference = "Section 81 & 82 http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM101425.html"
 
     def formula(persons, period, parameters):
-        return (persons('acc__is_present_in_nz', period)
-          + persons('acc__the_corporation_exercised_descretion_as_per_section_68_3', period))
+        return persons('acc__is_present_in_nz', period)
 
 
 class acc__has_a_covered_injury(Variable):
@@ -103,6 +128,8 @@ class acc__has_a_covered_injury(Variable):
 
 # IS this needed?
 # will we say really "No, you're not entitled because you've not lodged a claim"
+
+
 class acc__lodges_a_claim_for_entitlement(Variable):
     value_type = bool
     entity = Person
@@ -115,7 +142,7 @@ class acc__assessed_as_having_a_need_caused_by_this_covered_injury(Variable):
     entity = Person
     definition_period = MONTH
     reference = "Section 84 http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM101430.html"
-    label ="was assess as having a need caused by this covered injury"
+    label = "was assess as having a need caused by this covered injury"
 
     # (4)      # The matters to be taken into account in an assessment or reassessment include—
     #   (a)    # the level of independence a claimant had before suffering the personal injury:
