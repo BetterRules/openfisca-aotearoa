@@ -1,5 +1,9 @@
 # Changelog
 
+# 10.2.1 [1539(https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/159)
+* No functional changes.
+  - Removed debug print statement
+
 # 10.2.0 [153](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/153)
 * Update to Openfisca Core 26.0
 
