@@ -1,6 +1,9 @@
 # Changelog
 
-# 10.2.1 [1539(https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/159)
+# 11.0.0 [??](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/??)
+* Upgrade to Open Fisca 27.0
+
+# 10.2.1 [159](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/159)
 * No functional changes.
   - Removed debug print statement
 
