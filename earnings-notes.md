@@ -71,5 +71,10 @@ Earnings after
     - c * 0.80
     - c = `minimum_earnings_amount`
 
+- `ceased_weekly_compensation`:  (AC ACt 2001, s 105, 105, 117(1), 117(3), case 4, case 3, case 2)
+
+
+- `ceased_weekly_compensation_voc_independence`:  (AC ACt 2001, s 107 - 113)
+
 
 
