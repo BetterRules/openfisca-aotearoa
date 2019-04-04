@@ -15,7 +15,7 @@ class acc__fullfils_purpose_of_act(Variable):
     def formula(persons, period, parameters):
         return (
             (persons('acc__promotes_measures_to_reduce_incidence_and_severity_of_personal_injury', period)
-             + persons('acc__the_corporation_exercised_descretion_for_child_care_as_per_section_68_3', period)
+             + persons('acc__the_corporation_exercised_discretion_for_child_care_as_per_section_68_3', period)
              )
             * persons('acc__has_a_covered_injury', period)
             * persons('acc__part_3__has_lodged_claim', period)

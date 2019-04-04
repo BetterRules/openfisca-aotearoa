@@ -26,7 +26,7 @@ class acc__is_entitled_to_attendant_care(Variable):
                 * persons('acc__key_aspect_is_of_the_quality_required_for_that_purpose', period)
                 * (persons('acc__is_present_in_nz', period)
                    + persons('acc__number_of_days_outside_nz', period) <= 28)
-                + persons('acc__the_corporation_exercised_descretion_for_attendant_care_as_per_section_68_3', period))  # TODO move 28 to a parameter
+                + persons('acc__the_corporation_exercised_discretion_for_attendant_care_as_per_section_68_3', period))  # TODO move 28 to a parameter
 
 
 class acc__is_entitled_to_child_care(Variable):
@@ -37,8 +37,8 @@ class acc__is_entitled_to_child_care(Variable):
 
     def formula(persons, period, parameters):
         return (
-            (persons('acc__claminant_has_child_care_eligible_children', period)
-             + persons('acc__the_corporation_exercised_descretion_for_child_care_as_per_section_68_3', period)
+            (persons('acc__claimant_has_child_care_eligible_children', period)
+             + persons('acc__the_corporation_exercised_discretion_for_child_care_as_per_section_68_3', period)
              )
             * persons('acc__has_a_covered_injury', period)
             * persons('acc__part_3__has_lodged_claim', period)
@@ -71,7 +71,7 @@ class acc__person_provided_care_before_claimants_injury:
     entity = Person
     definition_period = MONTH
 
-class acc__claminant_has_child_care_eligible_children(Variable):
+class acc__claimant_has_child_care_eligible_children(Variable):
     # TODO any child in family who is 14 or under
     # OR 14+ and needs care due to phydical or mental condition
     value_type = bool
@@ -167,7 +167,7 @@ class acc__lodges_a_claim_for_entitlement(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    label = "lodges a claim for entitilement"
+    label = "lodges a claim for entitlement"
 
 
 class acc__assessed_as_having_a_need_caused_by_this_covered_injury(Variable):

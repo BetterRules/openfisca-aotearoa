@@ -9,7 +9,7 @@ class student_allowance__eligible_for_basic_grant(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    label = u"eligibily for Student Allowance basic grant"
+    label = u"eligibility for Student Allowance basic grant"
     reference = "http://legislation.govt.nz/regulation/public/1998/0277/latest/whole.html#DLM260306"
 
     def formula(persons, period, parameters):
