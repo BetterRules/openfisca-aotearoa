@@ -26,6 +26,7 @@ OR
   - b = `reasonable_renumeration_as_director_of_company_for_a_given_tax_year`(AC Act 2001, s 15(s)(a)(ii))
 
 
+
 - `earnings_self_employed`:
   - = a - b
   - a = `income_from_personal_exersions` (AC Act 2001, s 15(s)(b)) 
@@ -59,3 +60,10 @@ Earnings after
     - a = `earnings_shareholder_employee`
     - c = `overseas_income_payment`
     - d = `organ_donor_compensation_payment`
+
+
+- `amount_of_weekly_compensation_for_self_employed`:  (AC ACt 2001, Sch 1, cls 38, 42, 45)
+    - (c / d) * 0.80
+    - c = `estimate_of_reasonable_remuneration`
+    - d = `estimate_of_period_reasonable_remuneration_was_earned`
+
