@@ -62,13 +62,13 @@ Earnings after
     - d = `organ_donor_compensation_payment`
 
 
-- `amount_of_weekly_compensation_for_self_employed_or_shareholder`:  (AC ACt 2001, Sch 1, cls 38, 42, 45)
+- `amount_of_weekly_compensation_loe_for_self_employed_or_shareholder`:  (AC ACt 2001, Sch 1, cls 38, 42, 45)
     - (c / d) * 0.80
     - c = `estimate_of_reasonable_remuneration`
     - d = `estimate_of_period_reasonable_remuneration_was_earned`
-      - `Following must be true`
-      - `the amount of earnings for the claimant is not readily ascertainable`
-      - `3 months from the start of incapacity`
-      - `the income tax return for the relevant year becoming available`
 
+
+- `amount_of_weekly_compensation_loe_advanced_payment`:  (AC ACt 2001, s 131. Minimum Wages Act, s 4)
+    - c * 0.80
+    - c = `minimum_earnings_amount`
 
