@@ -17,7 +17,7 @@
         date_of_injury: "2020-08-05"
         finish_date_of_full_time_study_training_bridging_18th_birthday: "2020-08-05"
         incapacity_for_employment__corporation_determination: true
-        incapacity_for_employment__by_covered_injury: true
+        acc__lope__incapacity_for_employment__by_covered_injury: true
     families:
       Whanau_tahi:
         others: Scott
@@ -51,7 +51,7 @@
         date_of_birth: "2002-08-03"
         date_of_injury: "2021-08-06"
         finish_date_of_full_time_study_training_bridging_18th_birthday: "2021-08-05"
-        incapacity_for_employment__by_covered_injury: true
+        acc__lope__incapacity_for_employment__by_covered_injury: true
         incapacity_for_employment__corporation_determination: true
     families:
       Whanau_tahi:
@@ -78,7 +78,7 @@
         date_of_birth: "2002-08-03"
         date_of_injury: "2019-02-02"
         incapacity_for_employment__corporation_determination: true
-        incapacity_for_employment__by_covered_injury: true
+        acc__lope__incapacity_for_employment__by_covered_injury: true
     families:
       Whanau_tahi:
         others: Scott
@@ -115,7 +115,7 @@
         date_of_birth: "2002-08-03"
         date_of_injury: "2019-02-02"
         incapacity_for_employment__corporation_determination: true
-        incapacity_for_employment__by_covered_injury: true
+        acc__lope__incapacity_for_employment__by_covered_injury: true
     families:
       Whanau_tahi:
         others: Scott
