@@ -53,14 +53,11 @@ class acc__is_entitled_to_child_care(Variable):
             )
 
 
-
-
 class acc__person_provided_child_care_before_claimants_injury:
     label = 'who lives in the claimant’s home or lived in the claimant’s home'
     value_type = bool
     entity = Person
     definition_period = MONTH
-
 
 
 class acc__is_entitled_to_education_support(Variable):
@@ -135,12 +132,14 @@ class acc__lodges_a_claim_for_entitlement(Variable):
     definition_period = MONTH
     label = "lodges a claim for entitlement"
 
+
 class acc__assessed_as_having_a_child_care_need_caused_by_this_covered_injury(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
     reference = "Section 84 http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM101430.html"
     label = "was assess as having a Child Care need caused by this covered injury"
+
 
 class acc__assessed_as_having_an_attendant_care_need_caused_by_this_covered_injury(Variable):
     value_type = bool
@@ -185,4 +184,3 @@ class acc__child_care_is_of_the_quality_required_for_that_purpose(Variable):
     definition_period = MONTH
     label = "Child Care (key aspect) is of the quality required for that purpose"
     reference = "section 81 (4) (c) (iv) http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM101426.html"
-
