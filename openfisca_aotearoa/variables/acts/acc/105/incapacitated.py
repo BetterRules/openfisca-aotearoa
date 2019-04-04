@@ -12,7 +12,7 @@ class incapacity_for_employment__corporation_determination(Variable):
     reference = "http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM101462.html"
 
 
-class incapacity_for_employment__by_covered_injury(Variable):
+class acc__lope__incapacity_for_employment__by_covered_injury(Variable):
     value_type = bool
     entity = Person
     definition_period = ETERNITY
