@@ -20,8 +20,8 @@ class acc__is_entitled_to_attendant_care(Variable):
     def formula(persons, period, parameters):
         return (persons('acc__has_a_covered_injury', period)
                 * persons('acc__part_3__has_lodged_claim', period)
-                * persons('acc__assessed_as_having_an_attendant_care_need_caused_by_this_covered_injury', period)
-                * persons('acc__the_corporation_decides_to_provide_or_contribute_to_attendant_care', period)
+                * persons('acc__attendant_care__assessed_as_having_a_need_caused_by_this_covered_injury', period)
+                * persons('acc__attendant_care__the_corporation_decides_to_provide_or_contribute_care', period)
                 * persons('acc__attendant_care_is_necessary_and_appropriate', period)
                 * persons('acc__attendant_care_is_of_the_quality_required_for_that_purpose', period)
                 * (persons('acc__is_present_in_nz', period)
@@ -37,13 +37,13 @@ class acc__is_entitled_to_child_care(Variable):
 
     def formula(persons, period, parameters):
         return (
-            (persons('acc__claimant_has_child_care_eligible_children', period)
+            (persons.family("acc__family_has_child_care_eligible_children", period)
              + persons('acc__the_corporation_exercised_discretion_for_child_care_as_per_section_68_3', period)
              )
             * persons('acc__has_a_covered_injury', period)
             * persons('acc__part_3__has_lodged_claim', period)
             * persons('acc__assessed_as_having_a_child_care_need_caused_by_this_covered_injury', period)
-            * persons('acc__the_corporation_decides_to_provide_or_contribute_to_child_care', period)
+            * persons('acc__entitlements__child_care__the_corporation_decides_to_provide_or_contribute', period)
             * persons('acc__child_care_is_necessary_and_appropriate', period)
             * persons('acc__child_care_is_of_the_quality_required_for_that_purpose', period)
             * persons('acc__is_present_in_nz', period)
@@ -141,7 +141,7 @@ class acc__assessed_as_having_a_child_care_need_caused_by_this_covered_injury(Va
     label = "was assess as having a Child Care need caused by this covered injury"
 
 
-class acc__assessed_as_having_an_attendant_care_need_caused_by_this_covered_injury(Variable):
+class acc__attendant_care__assessed_as_having_a_need_caused_by_this_covered_injury(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH

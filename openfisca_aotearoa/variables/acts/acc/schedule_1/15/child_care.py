@@ -17,17 +17,6 @@ class acc__corporation_has_regard_to_provide_or_contribute_to_child_care(Variabl
             )
 
 
-class acc__claimant_has_child_care_eligible_children(Variable):
-    # TODO any child in family who is 14 or under
-    # OR 14+ and needs care due to phydical or mental condition
-    value_type = bool
-    entity = Person
-    definition_period = MONTH
-
-    def formula(persons, period, parameters):
-        return persons.family("acc__family_has_child_care_eligible_children", period)
-
-
 class acc__child_care_is_necessary_and_appropriate(Variable):
     value_type = bool
     entity = Person
@@ -135,7 +124,7 @@ class acc__person_provided_child_care_before_claimants_injury_and_continues_to_p
     definition_period = MONTH
 
 
-class acc__the_corporation_decides_to_provide_or_contribute_to_child_care(Variable):
+class acc__entitlements__child_care__the_corporation_decides_to_provide_or_contribute(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH

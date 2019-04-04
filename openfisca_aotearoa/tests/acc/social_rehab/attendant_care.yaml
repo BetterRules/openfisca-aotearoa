@@ -4,8 +4,8 @@
   input:
     acc__has_a_covered_injury: true
     acc__part_3__has_lodged_claim: true
-    acc__assessed_as_having_an_attendant_care_need_caused_by_this_covered_injury: true
-    acc__the_corporation_decides_to_provide_or_contribute_to_attendant_care: true
+    acc__attendant_care__assessed_as_having_a_need_caused_by_this_covered_injury: true
+    acc__attendant_care__the_corporation_decides_to_provide_or_contribute_care: true
     acc__attendant_care_is_necessary_and_appropriate: true
     acc__attendant_care_is_of_the_quality_required_for_that_purpose: true
     acc__is_present_in_nz: true
@@ -18,8 +18,8 @@
   input:
     acc__has_a_covered_injury: true
     acc__part_3__has_lodged_claim: true
-    acc__assessed_as_having_an_attendant_care_need_caused_by_this_covered_injury: true
-    acc__the_corporation_decides_to_provide_or_contribute_to_attendant_care: false
+    acc__attendant_care__assessed_as_having_a_need_caused_by_this_covered_injury: true
+    acc__attendant_care__the_corporation_decides_to_provide_or_contribute_care: false
     acc__attendant_care_is_necessary_and_appropriate: true
     acc__attendant_care_is_of_the_quality_required_for_that_purpose: true
     acc__is_present_in_nz: true
@@ -31,8 +31,8 @@
   input:
     acc__has_a_covered_injury: false
     acc__part_3__has_lodged_claim: true
-    acc__assessed_as_having_an_attendant_care_need_caused_by_this_covered_injury: true
-    acc__the_corporation_decides_to_provide_or_contribute_to_attendant_care: true
+    acc__attendant_care__assessed_as_having_a_need_caused_by_this_covered_injury: true
+    acc__attendant_care__the_corporation_decides_to_provide_or_contribute_care: true
     acc__attendant_care_is_necessary_and_appropriate: true
     acc__attendant_care_is_of_the_quality_required_for_that_purpose: true
     acc__is_present_in_nz: true
@@ -44,8 +44,8 @@
   input:
     acc__has_a_covered_injury: true
     acc__part_3__has_lodged_claim: true
-    acc__assessed_as_having_an_attendant_care_need_caused_by_this_covered_injury: true
-    acc__the_corporation_decides_to_provide_or_contribute_to_attendant_care: true
+    acc__attendant_care__assessed_as_having_a_need_caused_by_this_covered_injury: true
+    acc__attendant_care__the_corporation_decides_to_provide_or_contribute_care: true
     acc__attendant_care_is_necessary_and_appropriate: true
     acc__attendant_care_is_of_the_quality_required_for_that_purpose: true
     acc__number_of_days_outside_nz: 25
@@ -58,8 +58,8 @@
   input:
     acc__has_a_covered_injury: true
     acc__part_3__has_lodged_claim: true
-    acc__assessed_as_having_an_attendant_care_need_caused_by_this_covered_injury: true
-    acc__the_corporation_decides_to_provide_or_contribute_to_attendant_care: true
+    acc__attendant_care__assessed_as_having_a_need_caused_by_this_covered_injury: true
+    acc__attendant_care__the_corporation_decides_to_provide_or_contribute_care: true
     acc__attendant_care_is_necessary_and_appropriate: true
     acc__attendant_care_is_of_the_quality_required_for_that_purpose: true
     acc__number_of_days_outside_nz: 31
@@ -72,8 +72,8 @@
   input:
     acc__has_a_covered_injury: true
     acc__part_3__has_lodged_claim: true
-    acc__assessed_as_having_an_attendant_care_need_caused_by_this_covered_injury: true
-    acc__the_corporation_decides_to_provide_or_contribute_to_attendant_care: true
+    acc__attendant_care__assessed_as_having_a_need_caused_by_this_covered_injury: true
+    acc__attendant_care__the_corporation_decides_to_provide_or_contribute_care: true
     acc__number_of_days_outside_nz: 31
     acc__the_corporation_exercised_discretion_for_attendant_care_as_per_section_68_3: true
     acc__attendant_care_is_necessary_and_appropriate: true
