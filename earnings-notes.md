@@ -4,7 +4,7 @@ Earnings upfront - AC Act 2001, s6
 - `earnings_as_employee`:
   - (a + b) - c
   - a = `have_paye_income_payments` (Income Tax Act s RD 3)
-  - b = `earnings_as_private_domestic_worker` (AC Act 2001, s 13) 
+  - b = `earnings_as_private_domestic_worker` (AC Act 2001, s 13)
   - c = exclusions section AC Act 2001, 9 & 10
     - `payments_to_spouse`
     - `income_tested_benefit`
@@ -21,19 +21,19 @@ Earnings upfront - AC Act 2001, s6
 
 OR
   - = a + b
-  - a = `reasonable_renumeration_as_employee_for_a_given_tax_year` (AC Act 2001, s 15(s)(a)(i)) 
+  - a = `reasonable_renumeration_as_employee_for_a_given_tax_year` (AC Act 2001, s 15(s)(a)(i))
   - b = `reasonable_renumeration_as_director_of_company_for_a_given_tax_year`(AC Act 2001, s 15(s)(a)(ii))
 
 
 
 - `earnings_self_employed`:
   - = a - b
-  - a = `income_from_personal_exersions` (AC Act 2001, s 15(s)(b)) 
+  - a = `income_from_personal_exersions` (AC Act 2001, s 15(s)(b))
     = a - c - d
     - c = `earnings_as_employee`
     - d = `earnings_shareholder_employee`
   - b = `self_employed_deductions`
-  
+
 
 Earnings after
 - `earnings_as_employee_for_abatement`: (AC ACt 2001, Sch 1, cls 49, 51)
