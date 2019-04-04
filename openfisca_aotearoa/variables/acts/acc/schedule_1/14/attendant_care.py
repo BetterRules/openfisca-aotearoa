@@ -38,7 +38,7 @@ class acc__entitlements__attendant_care__to_engage_in_vocational_or_educational_
     entity = Person
     definition_period = DAY
     reference = "Schedule 1 clause 14 http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM104597.html"
-    
+
     def formula(persons, period, parameters):
         return (
             persons('acc__employment', period)
