@@ -16,6 +16,7 @@ class acc__corporation_has_regard_to_provide_or_contribute_to_child_care(Variabl
             * persons('acc__entitlements__child_care__need_to_avoid_disruption_to_other_family_members', period)
             )
 
+
 class acc__claimant_has_child_care_eligible_children(Variable):
     # TODO any child in family who is 14 or under
     # OR 14+ and needs care due to phydical or mental condition
@@ -25,6 +26,12 @@ class acc__claimant_has_child_care_eligible_children(Variable):
 
     def formula(persons, period, parameters):
         return persons.family("acc__family_has_child_care_eligible_children", period)
+
+
+class acc__child_care_is_necessary_and_appropriate(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = MONTH
 
 
 class acc__child_care_continues_to_be_provided_by_person_who_lives_in_house(Variable):
@@ -40,6 +47,7 @@ class acc__child_care_continues_to_be_provided_by_person_who_lives_in_house(Vari
                    + persons('acc__child_carer_currently_lives_in_claimants_home', period)
                    )
                 )
+
 
 class acc__entitlements__child_care__will_contribute_to_rehabilitation_outcome(Variable):
     label = 'any rehabilitation outcome that would be achieved by providing it'

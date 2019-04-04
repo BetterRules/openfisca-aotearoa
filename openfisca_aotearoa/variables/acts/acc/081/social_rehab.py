@@ -22,8 +22,8 @@ class acc__is_entitled_to_attendant_care(Variable):
                 * persons('acc__part_3__has_lodged_claim', period)
                 * persons('acc__assessed_as_having_an_attendant_care_need_caused_by_this_covered_injury', period)
                 * persons('acc__the_corporation_decides_to_provide_or_contribute_to_attendant_care', period)
-                * persons('acc__key_aspect_is_necessary_and_appropriate', period)
-                * persons('acc__key_aspect_is_of_the_quality_required_for_that_purpose', period)
+                * persons('acc__attendant_care_is_necessary_and_appropriate', period)
+                * persons('acc__attendant_care_is_of_the_quality_required_for_that_purpose', period)
                 * (persons('acc__is_present_in_nz', period)
                    + persons('acc__number_of_days_outside_nz', period) <= 28)
                 + persons('acc__the_corporation_exercised_discretion_for_attendant_care_as_per_section_68_3', period))  # TODO move 28 to a parameter
@@ -44,8 +44,8 @@ class acc__is_entitled_to_child_care(Variable):
             * persons('acc__part_3__has_lodged_claim', period)
             * persons('acc__assessed_as_having_a_child_care_need_caused_by_this_covered_injury', period)
             * persons('acc__the_corporation_decides_to_provide_or_contribute_to_child_care', period)
-            * persons('acc__key_aspect_is_necessary_and_appropriate', period)
-            * persons('acc__key_aspect_is_of_the_quality_required_for_that_purpose', period)
+            * persons('acc__child_care_is_necessary_and_appropriate', period)
+            * persons('acc__child_care_is_of_the_quality_required_for_that_purpose', period)
             * persons('acc__is_present_in_nz', period)
             * persons('acc__corporation_has_regard_to_provide_or_contribute_to_child_care', period)
             * persons('acc__child_care_continues_to_be_provided_by_person_who_lives_in_house', period)
@@ -135,13 +135,19 @@ class acc__lodges_a_claim_for_entitlement(Variable):
     definition_period = MONTH
     label = "lodges a claim for entitlement"
 
+class acc__assessed_as_having_a_child_care_need_caused_by_this_covered_injury(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = MONTH
+    reference = "Section 84 http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM101430.html"
+    label = "was assess as having a Child Care need caused by this covered injury"
 
 class acc__assessed_as_having_an_attendant_care_need_caused_by_this_covered_injury(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
     reference = "Section 84 http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM101430.html"
-    label = "was assess as having a need caused by this covered injury"
+    label = "was assess as having an Attendant Care need caused by this covered injury"
 
     # (4)      # The matters to be taken into account in an assessment or reassessment include—
     #   (a)    # the level of independence a claimant had before suffering the personal injury:
@@ -157,7 +163,7 @@ class acc__assessed_as_having_an_attendant_care_need_caused_by_this_covered_inju
     #     (ii) # changes in the claimant’s condition or circumstances since the last assessment was undertaken.
 
 
-class acc__key_aspect_is_necessary_and_appropriate(Variable):
+class acc__attendant_care_is_necessary_and_appropriate(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
@@ -165,9 +171,18 @@ class acc__key_aspect_is_necessary_and_appropriate(Variable):
     reference = "section 81 (4) (c) (iv) http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM101426.html"
 
 
-class acc__key_aspect_is_of_the_quality_required_for_that_purpose(Variable):
+class acc__attendant_care_is_of_the_quality_required_for_that_purpose(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
-    label = "key aspect is of the quality required for that purpose"
+    label = "Attendant Care (key aspect) is of the quality required for that purpose"
     reference = "section 81 (4) (c) (iv) http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM101426.html"
+
+
+class acc__child_care_is_of_the_quality_required_for_that_purpose(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = MONTH
+    label = "Child Care (key aspect) is of the quality required for that purpose"
+    reference = "section 81 (4) (c) (iv) http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM101426.html"
+
