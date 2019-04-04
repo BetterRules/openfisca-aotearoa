@@ -8,7 +8,7 @@ class acc__is_present_in_nz(Variable):
     definition_period = DAY
 
 
-class acc__number_of_days_outside_nz(Variable):
+class acc__number_of_days_outside_new_zealand(Variable):
     value_type = int
     entity = Person
     definition_period = DAY
