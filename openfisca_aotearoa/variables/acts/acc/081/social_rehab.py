@@ -24,9 +24,21 @@ class acc__is_entitled_to_attendant_care(Variable):
                 * persons('acc__attendant_care__the_corporation_decides_to_provide_or_contribute_care', period)
                 * persons('acc__attendant_care_is_necessary_and_appropriate', period)
                 * persons('acc__attendant_care_is_of_the_quality_required_for_that_purpose', period)
-                * (persons('acc__is_present_in_nz', period)
-                   + persons('acc__number_of_days_outside_nz', period) <= 28)
-                + persons('acc__the_corporation_exercised_discretion_for_attendant_care_as_per_section_68_3', period))  # TODO move 28 to a parameter
+                * (
+                  # They're either in NZ and costs were in nz (i.e. not incurred outside NZ)
+                  (persons('acc__is_present_in_new_zealand', period)
+                   * not_(persons('acc__costs_incurred_outside_new_zealand', period))
+                   # OR
+                   # They're outside NZ, but for less <= 28 days, (AND the costs can be incurred anywhere)
+                   + (not_(persons('acc__is_present_in_new_zealand', period))
+                      * persons('acc__number_of_days_outside_new_zealand', period) <= 28)
+                   # OR
+                   # Some discretion by ACC to cover attendant care beyond 28 days outside NZ
+                   + (not_(persons('acc__is_present_in_new_zealand', period))
+                      * persons('acc__the_corporation_exercised_discretion_for_attendant_care_as_per_section_68_3', period))
+                   )
+            )
+            )
 
 
 class acc__is_entitled_to_child_care(Variable):
@@ -48,8 +60,9 @@ class acc__is_entitled_to_child_care(Variable):
             * persons('acc__child_care__corporation_has_regard_to_provide_or_contribute', period)
             * persons('acc__child_care_is_necessary_and_appropriate', period)
             * persons('acc__child_care_is_of_the_quality_required_for_that_purpose', period)
-            * persons('acc__is_present_in_nz', period)
+            * persons('acc__is_present_in_new_zealand', period)
             * not_(persons('acc__child_care_continues_to_be_provided_by_person_who_lives_in_house', period))
+            * not_(persons('acc__costs_incurred_outside_new_zealand', period))
             )
 
 
@@ -67,7 +80,7 @@ class acc__is_entitled_to_education_support(Variable):
     reference = 'Section 81 & 82 http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM101425.html'
 
     def formula(persons, period, parameters):
-        return persons('acc__is_present_in_nz', period)
+        return persons('acc__is_present_in_new_zealand', period)
 
 
 class acc__is_entitled_to_home_help(Variable):
@@ -77,7 +90,7 @@ class acc__is_entitled_to_home_help(Variable):
     reference = 'Section 81 & 82 http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM101425.html'
 
     def formula(persons, period, parameters):
-        return persons('acc__is_present_in_nz', period)
+        return persons('acc__is_present_in_new_zealand', period)
 
 
 class acc__is_entitled_to_modifications_to_the_home(Variable):
@@ -87,7 +100,7 @@ class acc__is_entitled_to_modifications_to_the_home(Variable):
     reference = 'Section 81 & 82 http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM101425.html'
 
     def formula(persons, period, parameters):
-        return persons('acc__is_present_in_nz', period)
+        return persons('acc__is_present_in_new_zealand', period)
 
 
 class acc__is_entitled_to_training_for_independence(Variable):
@@ -97,7 +110,7 @@ class acc__is_entitled_to_training_for_independence(Variable):
     reference = 'Section 81 & 82 http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM101425.html'
 
     def formula(persons, period, parameters):
-        return persons('acc__is_present_in_nz', period)
+        return persons('acc__is_present_in_new_zealand', period)
 
 
 class acc__is_entitled_to_transport_for_indepence(Variable):
@@ -107,7 +120,7 @@ class acc__is_entitled_to_transport_for_indepence(Variable):
     reference = 'Section 81 & 82 http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM101425.html'
 
     def formula(persons, period, parameters):
-        return persons('acc__is_present_in_nz', period)
+        return persons('acc__is_present_in_new_zealand', period)
 
 
 class acc__child_is_in_reciept_of_attendent_care_or_education_support_or_training_for_independence(Variable):

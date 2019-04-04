@@ -2,7 +2,7 @@ from openfisca_core.model_api import *
 from openfisca_aotearoa.entities import Person
 
 
-class acc__is_present_in_nz(Variable):
+class acc__is_present_in_new_zealand(Variable):
     value_type = bool
     entity = Person
     definition_period = DAY
@@ -15,4 +15,4 @@ class acc__number_of_days_outside_new_zealand(Variable):
 
     def formula(persons, period, parameters):
         # TODO calculate from last time they left
-        return (persons('acc__is_present_in_nz', period) * 0)
+        return (persons('acc__is_present_in_new_zealand', period) * 0)

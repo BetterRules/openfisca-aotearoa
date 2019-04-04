@@ -7,21 +7,27 @@
         acc__has_a_covered_injury: true
         acc__part_3__has_lodged_claim: true
         acc__assessed_as_having_a_child_care_need_caused_by_this_covered_injury: true
-        acc__child_care__corporation_has_regard_to_provide_or_contribute: true
+        acc__entitlements__child_care__the_corporation_decides_to_provide_or_contribute: true
         acc__child_care_is_necessary_and_appropriate: true
         acc__child_care_is_of_the_quality_required_for_that_purpose: true
-        acc__is_present_in_nz: true
+        acc__is_present_in_new_zealand: true
       Child_Mary:
         age: 3
     families:
-      Whanau:
-        others: ["Claimant_Scot", "Child_Mary"]
+      Smiths:
+        parents: ["Claimant_Scot"]
+        children: ["Child_Mary"]
     titled_properties:
       whare:
         others: ["Claimant_Scot", "Child_Mary"]
   output:
-    acc__is_entitled_to_child_care:
+    acc__family_has_child_care_eligible_children:
       - true
+    # acc__is_entitled_to_child_care:
+    #   - true
+    #   - false
+    acc__child_care_continues_to_be_provided_by_person_who_lives_in_house:
+      - false
       - false
 
 # - name: Child Care - ACC decides no
@@ -33,7 +39,7 @@
 #     acc__child_care__corporation_has_regard_to_provide_or_contribute: false
 #     acc__child_care_is_necessary_and_appropriate: true
 #     acc__child_care_is_of_the_quality_required_for_that_purpose: true
-#     acc__is_present_in_nz: true
+#     acc__is_present_in_new_zealand: true
 #   output:
 #     acc__is_entitled_to_child_care: false
 
@@ -46,7 +52,7 @@
 #     acc__child_care__corporation_has_regard_to_provide_or_contribute: true
 #     acc__child_care_is_necessary_and_appropriate: true
 #     acc__child_care_is_of_the_quality_required_for_that_purpose: true
-#     acc__is_present_in_nz: true
+#     acc__is_present_in_new_zealand: true
 #   output:
 #     acc__is_entitled_to_child_care: false
 
@@ -59,7 +65,7 @@
 #     acc__child_care__corporation_has_regard_to_provide_or_contribute: true
 #     acc__child_care_is_necessary_and_appropriate: true
 #     acc__child_care_is_of_the_quality_required_for_that_purpose: true
-#     acc__number_of_days_outside_nz: 25
+#     acc__number_of_days_outside_new_zealand: 25
 #   output:
 #     acc__is_entitled_to_child_care: true
 
@@ -73,7 +79,7 @@
 #     acc__child_care__corporation_has_regard_to_provide_or_contribute: true
 #     acc__child_care_is_necessary_and_appropriate: true
 #     acc__child_care_is_of_the_quality_required_for_that_purpose: true
-#     acc__number_of_days_outside_nz: 31
+#     acc__number_of_days_outside_new_zealand: 31
 #   output:
 #     acc__is_entitled_to_child_care: false
 
@@ -85,7 +91,7 @@
 #     acc__part_3__has_lodged_claim: true
 #     acc__assessed_as_having_a_child_care_need_caused_by_this_covered_injury: true
 #     acc__child_care__corporation_has_regard_to_provide_or_contribute: true
-#     acc__number_of_days_outside_nz: 31
+#     acc__number_of_days_outside_new_zealand: 31
 #     acc__the_corporation_exercised_discretion_for_attendant_care_as_per_section_68_3: true
 #     acc__child_care_is_necessary_and_appropriate: true
 #     acc__child_care_is_of_the_quality_required_for_that_purpose: true

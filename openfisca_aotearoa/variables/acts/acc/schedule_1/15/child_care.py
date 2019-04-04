@@ -10,8 +10,8 @@ class acc__child_care__corporation_has_regard_to_provide_or_contribute(Variable)
 
     def formula(persons, period, parameters):
         return (
-            persons('acc__entitlements__child_care__will_contribute_to_rehabilitation_outcome', period)
-            * persons('acc__entitlements__child_care__number_of_claiments_children_requiring_child_care', period)
+            persons('acc__child_care_will_contribute_to_rehabilitation_outcome', period)
+            * persons('acc__entitlements__child_care__number_of_claimants_children_requiring_child_care', period)
             * persons('acc__entitlements__child_care__previous_child_care_was_provided_by_household_family_members', period)
             * persons('acc__entitlements__child_care__need_to_avoid_disruption_to_other_family_members', period)
             )
@@ -46,7 +46,7 @@ class acc__child_care_continues_to_be_provided_by_person_who_lives_in_house(Vari
                 )
 
 
-class acc__entitlements__child_care__will_contribute_to_rehabilitation_outcome(Variable):
+class acc__child_care_will_contribute_to_rehabilitation_outcome(Variable):
     label = 'any rehabilitation outcome that would be achieved by providing it'
     value_type = bool
     entity = Person

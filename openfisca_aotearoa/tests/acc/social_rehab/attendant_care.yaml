@@ -8,7 +8,7 @@
     acc__attendant_care__the_corporation_decides_to_provide_or_contribute_care: true
     acc__attendant_care_is_necessary_and_appropriate: true
     acc__attendant_care_is_of_the_quality_required_for_that_purpose: true
-    acc__is_present_in_nz: true
+    acc__is_present_in_new_zealand: true
   output:
     acc__is_entitled_to_attendant_care: true
 
@@ -22,7 +22,7 @@
     acc__attendant_care__the_corporation_decides_to_provide_or_contribute_care: false
     acc__attendant_care_is_necessary_and_appropriate: true
     acc__attendant_care_is_of_the_quality_required_for_that_purpose: true
-    acc__is_present_in_nz: true
+    acc__is_present_in_new_zealand: true
   output:
     acc__is_entitled_to_attendant_care: false
 
@@ -35,7 +35,7 @@
     acc__attendant_care__the_corporation_decides_to_provide_or_contribute_care: true
     acc__attendant_care_is_necessary_and_appropriate: true
     acc__attendant_care_is_of_the_quality_required_for_that_purpose: true
-    acc__is_present_in_nz: true
+    acc__is_present_in_new_zealand: true
   output:
     acc__is_entitled_to_attendant_care: false
 
