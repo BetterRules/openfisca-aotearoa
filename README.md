@@ -32,7 +32,7 @@ Supported platforms:
 
 Other OS should work if they can execute Python and NumPy.
 
-Pick option (A) (B) or (B)
+Pick option (A) or (B)
 
 
 ### A. Minimal Installation - for users running the rules

@@ -17,13 +17,13 @@ Earnings upfront - AC Act 2001, s6
 - `earnings_shareholder_employee`:
   - = a + b
   - a = `paye_income_payments_from_company_where_person_is_shareholder_and_employee` (Income Tax Act s RD 3)
-  - b = `all_income_other_than_paye_of_person_who_is_shareholder_employee` (AC Act 2001, s 15b) 
-    - this seems like a loophole, mike to follow up
+  - b = `amounts_paid_to_shareholder_employee_as_employee_of_company` (AC Act 2001, s 15b, Income Tax Act s RD 3B (3), RD 3C)
 
 OR
   - = a + b
   - a = `reasonable_renumeration_as_employee_for_a_given_tax_year` (AC Act 2001, s 15(s)(a)(i)) 
   - b = `reasonable_renumeration_as_director_of_company_for_a_given_tax_year`(AC Act 2001, s 15(s)(a)(ii))
+
 
 
 - `earnings_self_employed`:
@@ -59,3 +59,17 @@ Earnings after
     - a = `earnings_shareholder_employee`
     - c = `overseas_income_payment`
     - d = `organ_donor_compensation_payment`
+
+
+- `amount_of_weekly_compensation_loe_for_self_employed_or_shareholder`:  (AC ACt 2001, Sch 1, cls 38, 42, 45)
+    - (c / d) * 0.80
+    - c = `estimate_of_reasonable_remuneration`
+    - d = `estimate_of_period_reasonable_remuneration_was_earned`
+
+
+- `amount_of_weekly_compensation_loe_advanced_payment`:  (AC ACt 2001, s 131. Minimum Wages Act, s 4)
+    - c * 0.80
+    - c = `minimum_earnings_amount`
+
+
+
