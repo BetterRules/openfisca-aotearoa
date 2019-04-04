@@ -2,7 +2,7 @@ from openfisca_core.model_api import *
 from openfisca_aotearoa.entities import Person, Family
 
 
-class acc__corporation_has_regard_to_provide_or_contribute_to_child_care(Variable):
+class acc__child_care__corporation_has_regard_to_provide_or_contribute(Variable):
     label = 'deciding whether to provide or contribute to the cost of child care, the Corporation must have regard to'
     value_type = bool
     entity = Person
@@ -28,9 +28,17 @@ class acc__child_care_continues_to_be_provided_by_person_who_lives_in_house(Vari
     value_type = bool
     entity = Person
     definition_period = MONTH
-    reference = "Section 81 & 82 http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM101425.html"
+    # NOTE: This reference is WRONG
+    reference = "http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM104598.html"
 
     def formula(persons, period, parameters):
+        """The Corporation is not required to pay for child care to the extent that
+        child care continues to be provided after a claimant’s personal injury by a person—
+        (a)   who lives in the claimant’s home or lived in the claimant’s home immediately
+              before the claimant suffered his or her personal injury; and
+        (b)   who provided child care before the claimant suffered his or her personal injury.
+        """
+
         return (persons('acc__person_provided_child_care_before_claimants_injury_and_continues_to_provide_that_care', period)
                 * (persons('acc__child_carer_lived_in_claimants_home_immediately_before', period)
                    + persons('acc__child_carer_currently_lives_in_claimants_home', period)
@@ -134,3 +142,21 @@ class acc__is_child_of_claimant_and_needs_child_care_because_of_his_or_her_physi
     value_type = bool
     entity = Person
     definition_period = MONTH
+
+
+
+class acc__child_care_is_of_the_quality_required_for_that_purpose(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = MONTH
+    label = 'Child Care (key aspect) is of the quality required for that purpose'
+    reference = 'section 81 (4) (c) (iv) http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM101426.html'
+
+
+class acc__assessed_as_having_a_child_care_need_caused_by_this_covered_injury(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = MONTH
+    reference = 'Section 84 http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM101430.html'
+    label = 'was assess as having a Child Care need caused by this covered injury'
+

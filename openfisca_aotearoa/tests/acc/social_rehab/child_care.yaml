@@ -7,7 +7,7 @@
         acc__has_a_covered_injury: true
         acc__part_3__has_lodged_claim: true
         acc__assessed_as_having_a_child_care_need_caused_by_this_covered_injury: true
-        acc__corporation_has_regard_to_provide_or_contribute_to_child_care: true
+        acc__child_care__corporation_has_regard_to_provide_or_contribute: true
         acc__child_care_is_necessary_and_appropriate: true
         acc__child_care_is_of_the_quality_required_for_that_purpose: true
         acc__is_present_in_nz: true
@@ -30,7 +30,7 @@
 #     acc__has_a_covered_injury: true
 #     acc__part_3__has_lodged_claim: true
 #     acc__assessed_as_having_a_child_care_need_caused_by_this_covered_injury: true
-#     acc__corporation_has_regard_to_provide_or_contribute_to_child_care: false
+#     acc__child_care__corporation_has_regard_to_provide_or_contribute: false
 #     acc__child_care_is_necessary_and_appropriate: true
 #     acc__child_care_is_of_the_quality_required_for_that_purpose: true
 #     acc__is_present_in_nz: true
@@ -43,7 +43,7 @@
 #     acc__has_a_covered_injury: false
 #     acc__part_3__has_lodged_claim: true
 #     acc__assessed_as_having_a_child_care_need_caused_by_this_covered_injury: true
-#     acc__corporation_has_regard_to_provide_or_contribute_to_child_care: true
+#     acc__child_care__corporation_has_regard_to_provide_or_contribute: true
 #     acc__child_care_is_necessary_and_appropriate: true
 #     acc__child_care_is_of_the_quality_required_for_that_purpose: true
 #     acc__is_present_in_nz: true
@@ -56,7 +56,7 @@
 #     acc__has_a_covered_injury: true
 #     acc__part_3__has_lodged_claim: true
 #     acc__assessed_as_having_a_child_care_need_caused_by_this_covered_injury: true
-#     acc__corporation_has_regard_to_provide_or_contribute_to_child_care: true
+#     acc__child_care__corporation_has_regard_to_provide_or_contribute: true
 #     acc__child_care_is_necessary_and_appropriate: true
 #     acc__child_care_is_of_the_quality_required_for_that_purpose: true
 #     acc__number_of_days_outside_nz: 25
@@ -70,7 +70,7 @@
 #     acc__has_a_covered_injury: true
 #     acc__part_3__has_lodged_claim: true
 #     acc__assessed_as_having_a_child_care_need_caused_by_this_covered_injury: true
-#     acc__corporation_has_regard_to_provide_or_contribute_to_child_care: true
+#     acc__child_care__corporation_has_regard_to_provide_or_contribute: true
 #     acc__child_care_is_necessary_and_appropriate: true
 #     acc__child_care_is_of_the_quality_required_for_that_purpose: true
 #     acc__number_of_days_outside_nz: 31
@@ -84,7 +84,7 @@
 #     acc__has_a_covered_injury: true
 #     acc__part_3__has_lodged_claim: true
 #     acc__assessed_as_having_a_child_care_need_caused_by_this_covered_injury: true
-#     acc__corporation_has_regard_to_provide_or_contribute_to_child_care: true
+#     acc__child_care__corporation_has_regard_to_provide_or_contribute: true
 #     acc__number_of_days_outside_nz: 31
 #     acc__the_corporation_exercised_discretion_for_attendant_care_as_per_section_68_3: true
 #     acc__child_care_is_necessary_and_appropriate: true
