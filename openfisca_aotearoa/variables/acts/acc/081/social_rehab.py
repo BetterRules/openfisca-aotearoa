@@ -52,6 +52,7 @@ class acc__is_entitled_to_child_care(Variable):
 
             )
 
+
 class acc__child_care_continues_to_be_provided_by_person_who_lives_in_house(Variable):
     label = 'who lives in the claimant’s home or lived in the claimant’s home'
     value_type = bool
@@ -60,16 +61,19 @@ class acc__child_care_continues_to_be_provided_by_person_who_lives_in_house(Vari
     reference = "Section 81 & 82 http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM101425.html"
 
     def formula(persons, period, parameters):
-        return (persons('acc__person_provided_care_before_claimants_injury_and_continues_to_provide_that_care', period)
-                * (persons('acc__carer_lived_in_claimants_home_immediately_before', period)
-             + persons('acc__carer_currently_lives_in_claimants_home', period)
-             )
-        )
+        return (persons('acc__person_provided_child_care_before_claimants_injury_and_continues_to_provide_that_care', period)
+                * (persons('acc__child_carer_lived_in_claimants_home_immediately_before', period)
+                   + persons('acc__child_carer_currently_lives_in_claimants_home', period)
+                   )
+                )
+
+
 class acc__person_provided_care_before_claimants_injury:
     label = 'who lives in the claimant’s home or lived in the claimant’s home'
     value_type = bool
     entity = Person
     definition_period = MONTH
+
 
 class acc__claimant_has_child_care_eligible_children(Variable):
     # TODO any child in family who is 14 or under
@@ -80,23 +84,6 @@ class acc__claimant_has_child_care_eligible_children(Variable):
 
     def formula(persons, period, parameters):
         return persons.family("acc__family_has_child_care_eligible_children", period)
-
-
-class acc__family_has_child_care_eligible_children(Variable):
-    value_type = bool
-    entity = Family
-    definition_period = MONTH
-    label = u''
-    # reference = "http://legislation.govt.nz/bill/government/2017/0004/15.0/DLM7512349.html"
-
-    def formula(families, period, parameters):
-        needs_care = families.members('acc__needs_child_care_because_of_his_or_her_physical_or_mental_condition', period)
-        already_receiving_fatal = families.members('acc__already_receiving_child_care_from_acc_as_a_child_of_a_desceased_claimant', period)
-        already_receiving_general = families.members('acc__child_is_in_reciept_of_attendent_care_or_education_support_or_training_for_independence', period)
-        children = families.members('age', period) < 14
-        # is a child, or needs care because of ability  AND not already reciving as a child of a deceased claimant
-        childcare_eligible = ((children + needs_care) * not_(already_receiving))
-        return families.any(childcare_eligible, role=Family.CHILD)
 
 
 class acc__is_entitled_to_education_support(Variable):
@@ -148,10 +135,12 @@ class acc__is_entitled_to_transport_for_indepence(Variable):
     def formula(persons, period, parameters):
         return persons('acc__is_present_in_nz', period)
 
+
 class acc__child_is_in_reciept_of_attendent_care_or_education_support_or_training_for_independence(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
+
 
 class acc__has_a_covered_injury(Variable):
     value_type = bool

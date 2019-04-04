@@ -1,0 +1,82 @@
+---
+- name: Attendant care entitlement
+  period: 2019-02
+  input:
+    acc__has_a_covered_injury: true
+    acc__part_3__has_lodged_claim: true
+    acc__assessed_as_having_a_need_caused_by_this_covered_injury: true
+    acc__the_corporation_decides_to_provide_or_contribute_to_attendant_care: true
+    acc__key_aspect_is_necessary_and_appropriate: true
+    acc__key_aspect_is_of_the_quality_required_for_that_purpose: true
+    acc__is_present_in_nz: true
+  output:
+    acc__is_entitled_to_attendant_care: true
+
+
+- name: Attendant care - ACC decides no
+  period: 2019-02
+  input:
+    acc__has_a_covered_injury: true
+    acc__part_3__has_lodged_claim: true
+    acc__assessed_as_having_a_need_caused_by_this_covered_injury: true
+    acc__the_corporation_decides_to_provide_or_contribute_to_attendant_care: false
+    acc__key_aspect_is_necessary_and_appropriate: true
+    acc__key_aspect_is_of_the_quality_required_for_that_purpose: true
+    acc__is_present_in_nz: true
+  output:
+    acc__is_entitled_to_attendant_care: false
+
+- name: Attendant care - but there's no injury
+  period: 2019-02
+  input:
+    acc__has_a_covered_injury: false
+    acc__part_3__has_lodged_claim: true
+    acc__assessed_as_having_a_need_caused_by_this_covered_injury: true
+    acc__the_corporation_decides_to_provide_or_contribute_to_attendant_care: true
+    acc__key_aspect_is_necessary_and_appropriate: true
+    acc__key_aspect_is_of_the_quality_required_for_that_purpose: true
+    acc__is_present_in_nz: true
+  output:
+    acc__is_entitled_to_attendant_care: false
+
+- name: Attendant care - but they left NZ
+  period: 2019-02
+  input:
+    acc__has_a_covered_injury: true
+    acc__part_3__has_lodged_claim: true
+    acc__assessed_as_having_a_need_caused_by_this_covered_injury: true
+    acc__the_corporation_decides_to_provide_or_contribute_to_attendant_care: true
+    acc__key_aspect_is_necessary_and_appropriate: true
+    acc__key_aspect_is_of_the_quality_required_for_that_purpose: true
+    acc__number_of_days_outside_nz: 25
+  output:
+    acc__is_entitled_to_attendant_care: true
+
+
+- name: Attendant care - but they left NZ
+  period: 2019-02
+  input:
+    acc__has_a_covered_injury: true
+    acc__part_3__has_lodged_claim: true
+    acc__assessed_as_having_a_need_caused_by_this_covered_injury: true
+    acc__the_corporation_decides_to_provide_or_contribute_to_attendant_care: true
+    acc__key_aspect_is_necessary_and_appropriate: true
+    acc__key_aspect_is_of_the_quality_required_for_that_purpose: true
+    acc__number_of_days_outside_nz: 31
+  output:
+    acc__is_entitled_to_attendant_care: false
+
+
+- name: Attendant care - they left NZ, but ACC okays this
+  period: 2019-02
+  input:
+    acc__has_a_covered_injury: true
+    acc__part_3__has_lodged_claim: true
+    acc__assessed_as_having_a_need_caused_by_this_covered_injury: true
+    acc__the_corporation_decides_to_provide_or_contribute_to_attendant_care: true
+    acc__number_of_days_outside_nz: 31
+    acc__the_corporation_exercised_discretion_for_attendant_care_as_per_section_68_3: true
+    acc__key_aspect_is_necessary_and_appropriate: true
+    acc__key_aspect_is_of_the_quality_required_for_that_purpose: true
+  output:
+    acc__is_entitled_to_attendant_care: true
