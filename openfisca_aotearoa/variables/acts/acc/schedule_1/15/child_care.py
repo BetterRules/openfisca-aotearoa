@@ -16,6 +16,30 @@ class acc__corporation_has_regard_to_provide_or_contribute_to_child_care(Variabl
             * persons('acc__entitlements__child_care__need_to_avoid_disruption_to_other_family_members', period)
             )
 
+class acc__claimant_has_child_care_eligible_children(Variable):
+    # TODO any child in family who is 14 or under
+    # OR 14+ and needs care due to phydical or mental condition
+    value_type = bool
+    entity = Person
+    definition_period = MONTH
+
+    def formula(persons, period, parameters):
+        return persons.family("acc__family_has_child_care_eligible_children", period)
+
+
+class acc__child_care_continues_to_be_provided_by_person_who_lives_in_house(Variable):
+    label = 'who lives in the claimant’s home or lived in the claimant’s home'
+    value_type = bool
+    entity = Person
+    definition_period = MONTH
+    reference = "Section 81 & 82 http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM101425.html"
+
+    def formula(persons, period, parameters):
+        return (persons('acc__person_provided_child_care_before_claimants_injury_and_continues_to_provide_that_care', period)
+                * (persons('acc__child_carer_lived_in_claimants_home_immediately_before', period)
+                   + persons('acc__child_carer_currently_lives_in_claimants_home', period)
+                   )
+                )
 
 class acc__entitlements__child_care__will_contribute_to_rehabilitation_outcome(Variable):
     label = 'any rehabilitation outcome that would be achieved by providing it'

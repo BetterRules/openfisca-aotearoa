@@ -20,7 +20,7 @@ class acc__is_entitled_to_attendant_care(Variable):
     def formula(persons, period, parameters):
         return (persons('acc__has_a_covered_injury', period)
                 * persons('acc__part_3__has_lodged_claim', period)
-                * persons('acc__assessed_as_having_a_need_caused_by_this_covered_injury', period)
+                * persons('acc__assessed_as_having_an_attendant_care_need_caused_by_this_covered_injury', period)
                 * persons('acc__the_corporation_decides_to_provide_or_contribute_to_attendant_care', period)
                 * persons('acc__key_aspect_is_necessary_and_appropriate', period)
                 * persons('acc__key_aspect_is_of_the_quality_required_for_that_purpose', period)
@@ -42,7 +42,7 @@ class acc__is_entitled_to_child_care(Variable):
              )
             * persons('acc__has_a_covered_injury', period)
             * persons('acc__part_3__has_lodged_claim', period)
-            * persons('acc__assessed_as_having_a_need_caused_by_this_covered_injury', period)
+            * persons('acc__assessed_as_having_a_child_care_need_caused_by_this_covered_injury', period)
             * persons('acc__the_corporation_decides_to_provide_or_contribute_to_child_care', period)
             * persons('acc__key_aspect_is_necessary_and_appropriate', period)
             * persons('acc__key_aspect_is_of_the_quality_required_for_that_purpose', period)
@@ -53,37 +53,14 @@ class acc__is_entitled_to_child_care(Variable):
             )
 
 
-class acc__child_care_continues_to_be_provided_by_person_who_lives_in_house(Variable):
-    label = 'who lives in the claimant’s home or lived in the claimant’s home'
-    value_type = bool
-    entity = Person
-    definition_period = MONTH
-    reference = "Section 81 & 82 http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM101425.html"
-
-    def formula(persons, period, parameters):
-        return (persons('acc__person_provided_child_care_before_claimants_injury_and_continues_to_provide_that_care', period)
-                * (persons('acc__child_carer_lived_in_claimants_home_immediately_before', period)
-                   + persons('acc__child_carer_currently_lives_in_claimants_home', period)
-                   )
-                )
 
 
-class acc__person_provided_care_before_claimants_injury:
+class acc__person_provided_child_care_before_claimants_injury:
     label = 'who lives in the claimant’s home or lived in the claimant’s home'
     value_type = bool
     entity = Person
     definition_period = MONTH
 
-
-class acc__claimant_has_child_care_eligible_children(Variable):
-    # TODO any child in family who is 14 or under
-    # OR 14+ and needs care due to phydical or mental condition
-    value_type = bool
-    entity = Person
-    definition_period = MONTH
-
-    def formula(persons, period, parameters):
-        return persons.family("acc__family_has_child_care_eligible_children", period)
 
 
 class acc__is_entitled_to_education_support(Variable):
@@ -116,7 +93,7 @@ class acc__is_entitled_to_modifications_to_the_home(Variable):
         return persons('acc__is_present_in_nz', period)
 
 
-class acc__is_entitled_to_training_for_indepence(Variable):
+class acc__is_entitled_to_training_for_independence(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
@@ -159,7 +136,7 @@ class acc__lodges_a_claim_for_entitlement(Variable):
     label = "lodges a claim for entitlement"
 
 
-class acc__assessed_as_having_a_need_caused_by_this_covered_injury(Variable):
+class acc__assessed_as_having_an_attendant_care_need_caused_by_this_covered_injury(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
