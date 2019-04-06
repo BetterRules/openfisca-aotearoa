@@ -23,7 +23,7 @@ class acc__fullfils_purpose_of_act(Variable):
             * persons('acc__assessed_as_having_a_need_caused_by_this_covered_injury', period)
         )
 
-    
+
 class acc__promotes_measures_to_reduce_incidence_and_severity_of_personal_injury(Variable):
     value_type = bool
     entity = Person
