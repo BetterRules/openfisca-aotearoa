@@ -5,6 +5,7 @@ from openfisca_core.model_api import *
 # Import the entities specifically defined for this tax and entitlement system
 from openfisca_aotearoa.entities import Person
 
+
 class acc__fullfils_purpose_of_act(Variable):
     label = "The purpose of this Act is to enhance the public good and reinforce the social contract represented by the first accident compensation scheme by providing for a fair and sustainable scheme for managing personal injury that has, as its overriding goals, minimising both the overall incidence of injury in the community, and the impact of injury on the community (including economic, social, and personal costs),"
     value_type = bool
@@ -22,6 +23,7 @@ class acc__fullfils_purpose_of_act(Variable):
             * persons('acc__assessed_as_having_a_need_caused_by_this_covered_injury', period)
         )
 
+    
 class acc__promotes_measures_to_reduce_incidence_and_severity_of_personal_injury(Variable):
     value_type = bool
     entity = Person
