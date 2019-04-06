@@ -91,6 +91,8 @@ workflows:
       - pythonlint
       - yamllint
       - version-bump
+          requires:
+            - build_python3
       - build_python3
       - tag_release:
           requires:
