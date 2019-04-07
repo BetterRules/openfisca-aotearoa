@@ -24,7 +24,7 @@ jobs:
       - run:
           name: Yaml linter
           command: yamllint .
-  version-bump:
+  version_bump:
     docker:
       - image: circleci/python:3.7.2
     steps:
@@ -90,9 +90,9 @@ workflows:
     jobs:
       - pythonlint
       - yamllint
-  version_bump:
+  versioning:
     jobs:
-      - version-bump:
+      - version_bump:
   test:
     jobs:
       - build_python3
