@@ -99,12 +99,12 @@ workflows:
   release:
     jobs:
       - build_python3:
-        filters:
-          branches:
-            only: master
+          filters:
+            branches:
+              only: master
       - tag_release:
-        requires:
-          - build_python3
-        filters:
-          branches:
-            only: master
+          requires:
+            - build_python3
+          filters:
+            branches:
+              only: master
