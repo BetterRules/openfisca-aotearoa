@@ -90,7 +90,7 @@ workflows:
     jobs:
       - pythonlint
       - yamllint
-      - version-bump
+      - version-bump:
         requires:
           - build_python3
       - build_python3
