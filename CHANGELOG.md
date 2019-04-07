@@ -1,7 +1,7 @@
 # Changelog
 
-# 11.1.0
-* Accident Compensation Act. 
+# 11.1.0 [161](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/161)
+* Accident Compensation Act.
 
 # 11.0.0 [163](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/163)
 * Upgrade to Open Fisca 29.x
