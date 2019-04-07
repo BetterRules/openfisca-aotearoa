@@ -92,7 +92,7 @@ workflows:
       - yamllint
   versioning:
     jobs:
-      - version_bump:
+      - version_bump
   test:
     jobs:
       - build_python3
