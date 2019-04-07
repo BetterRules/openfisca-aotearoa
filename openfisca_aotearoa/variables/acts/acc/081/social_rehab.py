@@ -25,7 +25,7 @@ class acc__is_entitled_to_attendant_care(Variable):
                 * persons('acc__attendant_care_is_necessary_and_appropriate', period)
                 * persons('acc__attendant_care_is_of_the_quality_required_for_that_purpose', period)
                 * (
-                  # They're either in NZ and costs were in nz (i.e. not incurred outside NZ)
+            # They're either in NZ and costs were in nz (i.e. not incurred outside NZ)
                   (persons('acc__is_present_in_new_zealand', period)
                    * not_(persons('acc__costs_incurred_outside_new_zealand', period))
                    # OR
