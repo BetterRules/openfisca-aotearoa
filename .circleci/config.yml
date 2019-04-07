@@ -86,20 +86,18 @@ jobs:
 
 workflows:
   version: 2
-  linters:
+  test_and_lint:
     jobs:
       - pythonlint
       - yamllint
-  build:
-    jobs:
       - version-bump
-          requires:
-            - build_python3
+        requires:
+          - build_python3
       - build_python3
       - tag_release:
-          requires:
-            - version-bump
-            - build_python3
-          filters:
-            branches:
-              only: master
+        requires:
+          - version-bump
+          - build_python3
+        filters:
+          branches:
+            only: master
