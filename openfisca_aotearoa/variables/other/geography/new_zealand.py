@@ -28,15 +28,18 @@ from openfisca_aotearoa.entities import Person, Family
 (b) does not go beyond a limit of 300 nautical miles from any point or points in New Zealand.
 """
 
+
 class longitude(Variable):
     value_type = float
     entity = Person
     definition_period = DAY
 
+
 class latitude(Variable):
     value_type = float
     entity = Person
     definition_period = DAY
+
 
 class in_the_north_island(Variable):
     value_type = bool
@@ -44,11 +47,13 @@ class in_the_north_island(Variable):
     definition_period = DAY
     label = "In the North Island"
 
+
 class in_the_south_island(Variable):
     value_type = bool
     entity = Person
     definition_period = DAY
     label = "In the South Island"
+
 
 class on_stewart_island(Variable):
     value_type = bool
@@ -56,11 +61,13 @@ class on_stewart_island(Variable):
     definition_period = DAY
     label = "on Stewart Island"
 
+
 class in_the_chatham_islands(Variable):
     value_type = bool
     entity = Person
     definition_period = DAY
     label = "in the Chatham Islands"
+
 
 class within_the_internal_waters_of_new_zealand(Variable):
     value_type = bool
@@ -74,4 +81,3 @@ class within_territorial_sea_of_new_zealand_adjacent(Variable):
     entity = Person
     definition_period = DAY
     label = "those parts of the territorial sea of New Zealand (as defined by section 3 of the Territorial Sea, Contiguous Zone, and Exclusive Economic Zone Act 1977) adjacent to the land territories, islands, and islets referred to in paragraphs (a) and (b);"
-
