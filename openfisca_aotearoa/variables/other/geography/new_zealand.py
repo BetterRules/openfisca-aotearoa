@@ -1,5 +1,5 @@
 from openfisca_core.model_api import *
-from openfisca_aotearoa.entities import Person, Family
+from openfisca_aotearoa.entities import Person
 
 """
 16 New Zealand

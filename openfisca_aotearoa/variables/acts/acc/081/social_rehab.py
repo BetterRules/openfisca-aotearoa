@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from openfisca_core.model_api import *
-from openfisca_aotearoa.entities import Person, Family
+from openfisca_aotearoa.entities import Person
 
 
 class acc__is_entitled_to_aids_and_appliances(Variable):

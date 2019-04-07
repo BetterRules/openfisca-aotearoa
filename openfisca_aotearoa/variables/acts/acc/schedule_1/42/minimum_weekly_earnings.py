@@ -2,7 +2,6 @@
 
 from openfisca_core.model_api import *
 from openfisca_aotearoa.entities import Person
-from numpy import logical_not
 
 
 class acc_sched_1__minimum_weekly_earnings(Variable):

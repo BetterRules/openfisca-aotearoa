@@ -1,5 +1,5 @@
 from openfisca_core.model_api import *
-from openfisca_aotearoa.entities import Person, Family
+from openfisca_aotearoa.entities import Person
 
 
 class on_continental_shelf(Variable):
