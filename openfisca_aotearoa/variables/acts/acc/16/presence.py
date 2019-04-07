@@ -62,4 +62,3 @@ class acc__on_drilling_rig_or_installation(Variable):
     (ii) any installation or drilling rig, whether permanent or temporary:
     (ii) any aircraft, floating platform, ship, or other device that is for the time being in, on, or above the continental shelf and is being used in connection with any installation or drilling rig.
     """
-

@@ -14,7 +14,7 @@ class acc__attendant_care__the_corporation_decides_to_provide_or_contribute_care
             persons('acc__entitlements__attendant_care__will_contribute_to_rehabilitation_outcome', period)
             * persons('acc__entitlements__attendant_care__extent_of_personal_injury_and_degree_of_impairment', period)
             * persons('acc__entitlements__attendant_care__to_engage_in_vocational_or_educational_activity', period)
-        )
+            )
 
 
 class acc__entitlements__attendant_care__will_contribute_to_rehabilitation_outcome(Variable):
@@ -112,5 +112,3 @@ class acc__attendant_care__assessed_as_having_a_need_caused_by_this_covered_inju
     #   (i)    # in the case of a reassessment,—
     #     (i)  # whether any item that the Corporation provided for the purposes of social rehabilitation is in such a condition as to need replacing:
     #     (ii) # changes in the claimant’s condition or circumstances since the last assessment was undertaken.
-    
-

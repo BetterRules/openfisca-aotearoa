@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Import from openfisca-core the common python objects used to code the legislation in OpenFisca
 from openfisca_core.model_api import *
-# Import the entities specifically defined for this tax and entitlement system
 from openfisca_aotearoa.entities import Person
 
 
@@ -21,7 +19,7 @@ class acc__fullfils_purpose_of_act(Variable):
             * persons('acc__has_a_covered_injury', period)
             * persons('acc__part_3__has_lodged_claim', period)
             * persons('acc__assessed_as_having_a_need_caused_by_this_covered_injury', period)
-        )
+            )
 
 
 class acc__promotes_measures_to_reduce_incidence_and_severity_of_personal_injury(Variable):

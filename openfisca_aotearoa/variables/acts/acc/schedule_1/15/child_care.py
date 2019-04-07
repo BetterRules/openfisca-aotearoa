@@ -144,7 +144,6 @@ class acc__is_child_of_claimant_and_needs_child_care_because_of_his_or_her_physi
     definition_period = MONTH
 
 
-
 class acc__child_care_is_of_the_quality_required_for_that_purpose(Variable):
     value_type = bool
     entity = Person
@@ -159,4 +158,3 @@ class acc__assessed_as_having_a_child_care_need_caused_by_this_covered_injury(Va
     definition_period = MONTH
     reference = 'Section 84 http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM101430.html'
     label = 'was assess as having a Child Care need caused by this covered injury'
-
