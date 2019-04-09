@@ -95,13 +95,14 @@ class acc__already_receiving_child_care_from_acc_as_a_child_of_a_desceased_claim
     value_type = bool
     entity = Person
     definition_period = DAY
+    label = "child is already recieving child care from ACC as a child of a deceased claimant"
 
 
 class acc__family_has_child_care_eligible_children(Variable):
     value_type = bool
     entity = Family
     definition_period = MONTH
-    label = u'Family has children eligible to be considered children and needing child care'
+    label = u'Family has children eligible to be considered children and needing child care, and not already recieving as child of a deceased claimant'
     # reference = "http://legislation.govt.nz/bill/government/2017/0004/15.0/DLM7512349.html"
 
     def formula(families, period, parameters):
@@ -118,30 +119,35 @@ class acc__child_carer_currently_lives_in_claimants_home(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
+    label = "child carer currently lives in the claimant’s home"
 
 
 class acc__child_carer_lived_in_claimants_home_immediately_before(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
+    label = "child carer live in the claimant's home immediately before the injury"
 
 
 class acc__person_provided_child_care_before_claimants_injury_and_continues_to_provide_that_care(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
+    label = "this person provided child care before the claimant's injury and continues to provide that care"
 
 
 class acc__entitlements__child_care__the_corporation_decides_to_provide_or_contribute(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
+    label = "the Accident Compensation Corporation has decided to provide or contribute to child care"
 
 
 class acc__is_child_of_claimant_and_needs_child_care_because_of_his_or_her_physical_or_mental_condition(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
+    label = "person is a child of the claimant and needs childcare because of his or her physical or mental condition"
 
 
 class acc__child_care_is_of_the_quality_required_for_that_purpose(Variable):
@@ -157,4 +163,4 @@ class acc__assessed_as_having_a_child_care_need_caused_by_this_covered_injury(Va
     entity = Person
     definition_period = MONTH
     reference = 'Section 84 http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM101430.html'
-    label = 'was assess as having a Child Care need caused by this covered injury'
+    label = 'was assessed as having a Child Care need caused by this covered injury'
