@@ -8,7 +8,7 @@
         acc__earner: false
         acc__has_cover:
           "2010-08-03": true
-        acc__part__2__suffered_personal_injury: true
+        acc__part_2__suffered_personal_injury: true
         acc__part_3__has_lodged_claim: true
         acc__sched_1__engaged_fulltime_study_or_training: false
         acc__sched_1__incapacitated_for_6_months: true
@@ -27,7 +27,7 @@
   output:
     acc__potential_earner:
       "2020-08-06": true
-    acc_sched_1__lope_eligible:
+    acc__sched_1__lope_eligible:
       "2020-09-06": true
     acc__part_2__suffered_personal_injury:
       "2020-08-06": true

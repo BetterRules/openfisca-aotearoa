@@ -4,7 +4,7 @@ from openfisca_core.model_api import *
 from openfisca_aotearoa.entities import Person
 
 
-class acc_sched_1__minimum_weekly_earnings(Variable):
+class acc__sched_1__minimum_weekly_earnings(Variable):
     value_type = float
     entity = Person
     definition_period = DAY

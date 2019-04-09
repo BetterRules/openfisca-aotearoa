@@ -29,7 +29,7 @@ class acc__sched_1__engaged_fulltime_study_or_training(Variable):
     reference = "http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM104891.html"
 
 
-class acc_sched_1__lope_eligible(Variable):
+class acc__sched_1__lope_eligible(Variable):
     value_type = bool
     entity = Person
     definition_period = DAY
@@ -71,7 +71,7 @@ class acc__sched_1__weekly_earnings(Variable):
     reference = "http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM104891.html"
 
 
-class acc_sched_1__lope_weekly_compensation(Variable):
+class acc__sched_1__lope_weekly_compensation(Variable):
     value_type = float
     entity = Person
     definition_period = DAY
@@ -80,7 +80,7 @@ class acc_sched_1__lope_weekly_compensation(Variable):
 
     def formula(persons, period, parameters):
         hourly_rate_week = parameters(period).minimum_wage.adult_rate * 40
-        minimum_earnings = clip(persons('acc_sched_1__minimum_weekly_earnings', period), hourly_rate_week, None)
+        minimum_earnings = clip(persons('acc__sched_1__minimum_weekly_earnings', period), hourly_rate_week, None)
         abatement = minimum_earnings * parameters(period).acc.weekly_compensation_abatement
         weekly_earnings = persons('acc__sched_1__weekly_earnings', period)
-        return clip((abatement - (abatement + weekly_earnings - minimum_earnings)), 0, None) * persons('acc_sched_1__lope_eligible', period)
+        return clip((abatement - (abatement + weekly_earnings - minimum_earnings)), 0, None) * persons('acc__sched_1__lope_eligible', period)
