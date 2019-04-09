@@ -8,11 +8,11 @@
         acc__earner: false
         acc__has_cover:
           "2010-08-03": true
-        acc_part_2__suffered_personal_injury: true
+        acc__part__2__suffered_personal_injury: true
         acc__part_3__has_lodged_claim: true
-        acc_sched_1__engaged_fulltime_study_or_training: false
-        acc_sched_1__incapacitated_for_6_months: true
-        acc_sched_1__weekly_earnings: 500
+        acc__sched_1__engaged_fulltime_study_or_training: false
+        acc__sched_1__incapacitated_for_6_months: true
+        acc__sched_1__weekly_earnings: 500
         date_of_birth: "2002-08-03"
         date_of_injury: "2020-08-05"
         finish_date_of_full_time_study_training_bridging_18th_birthday: "2020-08-05"
@@ -29,7 +29,7 @@
       "2020-08-06": true
     acc_sched_1__lope_eligible:
       "2020-09-06": true
-    acc_part_2__suffered_personal_injury:
+    acc__part_2__suffered_personal_injury:
       "2020-08-06": true
     acc__has_cover:
       "2020-08-06": true
@@ -44,10 +44,10 @@
       Scott:
         acc__earner: false
         acc__has_cover: true
-        acc_part_2__suffered_personal_injury: true
+        acc__part_2__suffered_personal_injury: true
         acc__part_3__has_lodged_claim: true
-        acc_sched_1__engaged_fulltime_study_or_training: false
-        acc_sched_1__incapacitated_for_6_months: true
+        acc__sched_1__engaged_fulltime_study_or_training: false
+        acc__sched_1__incapacitated_for_6_months: true
         date_of_birth: "2002-08-03"
         date_of_injury: "2021-08-06"
         finish_date_of_full_time_study_training_bridging_18th_birthday: "2021-08-05"
@@ -60,7 +60,7 @@
       whare:
         others: [Scott]
   output:
-    acc_sched_1__lope_eligible:
+    acc__sched_1__lope_eligible:
       "2021-08-06": false
 
 - name: Simple test for LOPE eligibility for person before and after their 18th birthday
@@ -71,10 +71,10 @@
       Scott:
         acc__earner: false
         acc__has_cover: true
-        acc_part_2__suffered_personal_injury: true
+        acc__part_2__suffered_personal_injury: true
         acc__part_3__has_lodged_claim: true
-        acc_sched_1__engaged_fulltime_study_or_training: false
-        acc_sched_1__incapacitated_for_6_months: true
+        acc__sched_1__engaged_fulltime_study_or_training: false
+        acc__sched_1__incapacitated_for_6_months: true
         date_of_birth: "2002-08-03"
         date_of_injury: "2019-02-02"
         incapacity_for_employment__corporation_determination: true
@@ -86,7 +86,7 @@
       whare:
         others: [Scott]
   output:
-    acc_sched_1__lope_eligible:
+    acc__sched_1__lope_eligible:
       "2018-01-01": false
       "2019-01-01": false
       "2020-01-01": false
@@ -101,17 +101,17 @@
       Scott:
         acc__earner: false
         acc__has_cover: true
-        acc_part_2__suffered_personal_injury: true
+        acc__part_2__suffered_personal_injury: true
         acc__part_3__has_lodged_claim: true
-        acc_sched_1__engaged_fulltime_study_or_training: false
-        acc_sched_1__incapacitated_for_6_months: true
-        acc_sched_1__weekly_earnings:
+        acc__sched_1__engaged_fulltime_study_or_training: false
+        acc__sched_1__incapacitated_for_6_months: true
+        acc__sched_1__weekly_earnings:
           "2018-01-01": 0
           "2019-01-01": 0
           "2020-01-01": 300
           "2021-01-01": 0
           "2022-01-01": 300
-        acc_sched_1__minimum_weekly_earnings: 900
+        acc__sched_1__minimum_weekly_earnings: 900
         date_of_birth: "2002-08-03"
         date_of_injury: "2019-02-02"
         incapacity_for_employment__corporation_determination: true
@@ -123,13 +123,13 @@
       whare:
         others: [Scott]
   output:
-    acc_sched_1__lope_eligible:
+    acc__sched_1__lope_eligible:
       "2018-01-01": false
       "2019-01-01": false
       "2020-01-01": false
       "2021-01-01": true
       "2022-01-01": true
-    acc_sched_1__lope_weekly_compensation:
+    acc__sched_1__lope_weekly_compensation:
       "2018-01-01": 0
       "2019-01-01": 0
       "2020-01-01": 0
