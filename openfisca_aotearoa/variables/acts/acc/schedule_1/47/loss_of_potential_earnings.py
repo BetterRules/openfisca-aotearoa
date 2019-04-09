@@ -5,7 +5,7 @@ from openfisca_aotearoa.entities import Person
 from numpy import logical_not, clip
 
 
-class acc_sched_1__incapacitated_for_6_months(Variable):
+class acc__sched_1__incapacitated_for_6_months(Variable):
     value_type = bool
     entity = Person
     definition_period = ETERNITY
@@ -13,7 +13,7 @@ class acc_sched_1__incapacitated_for_6_months(Variable):
     reference = "http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM104891.html"
 
 
-class acc_sched_1__loe_more_than_lope(Variable):
+class acc__sched_1__loe_more_than_lope(Variable):
     value_type = bool
     entity = Person
     definition_period = ETERNITY
@@ -21,7 +21,7 @@ class acc_sched_1__loe_more_than_lope(Variable):
     reference = "http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM104891.html"
 
 
-class acc_sched_1__engaged_fulltime_study_or_training(Variable):
+class acc__sched_1__engaged_fulltime_study_or_training(Variable):
     value_type = bool
     entity = Person
     definition_period = DAY
@@ -37,7 +37,7 @@ class acc_sched_1__lope_eligible(Variable):
     reference = "http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM104891.html"
 
     def formula(persons, period, parameters):
-        suffered_personal_injury = persons('acc_part_2__suffered_personal_injury', period)
+        suffered_personal_injury = persons('acc__part_2__suffered_personal_injury', period)
         has_cover = persons('acc__has_cover', period)
         incapacitated = persons('incapacity_for_employment__corporation_determination', period)
         lodged_claim = persons('acc__part_3__has_lodged_claim', period)
@@ -45,11 +45,11 @@ class acc_sched_1__lope_eligible(Variable):
         potential_earner = persons('acc__potential_earner', period)
 
         over_or_equal_18 = (persons('age', period) >= 18)
-        not_engaged_in_study_at_entitlement = logical_not(persons('acc_sched_1__engaged_fulltime_study_or_training', period))
+        not_engaged_in_study_at_entitlement = logical_not(persons('acc__sched_1__engaged_fulltime_study_or_training', period))
         earner = persons('acc__earner', period)
-        not_earner_with_higher_loe = logical_not(earner * persons('acc_sched_1__loe_more_than_lope', period))
+        not_earner_with_higher_loe = logical_not(earner * persons('acc__sched_1__loe_more_than_lope', period))
 
-        six_months = persons('acc_sched_1__incapacitated_for_6_months', period)
+        six_months = persons('acc__sched_1__incapacitated_for_6_months', period)
 
         return (suffered_personal_injury
                 * has_cover
@@ -63,7 +63,7 @@ class acc_sched_1__lope_eligible(Variable):
                 * six_months)
 
 
-class acc_sched_1__weekly_earnings(Variable):
+class acc__sched_1__weekly_earnings(Variable):
     value_type = float
     entity = Person
     definition_period = DAY
@@ -82,5 +82,5 @@ class acc_sched_1__lope_weekly_compensation(Variable):
         hourly_rate_week = parameters(period).minimum_wage.adult_rate * 40
         minimum_earnings = clip(persons('acc_sched_1__minimum_weekly_earnings', period), hourly_rate_week, None)
         abatement = minimum_earnings * parameters(period).acc.weekly_compensation_abatement
-        weekly_earnings = persons('acc_sched_1__weekly_earnings', period)
+        weekly_earnings = persons('acc__sched_1__weekly_earnings', period)
         return clip((abatement - (abatement + weekly_earnings - minimum_earnings)), 0, None) * persons('acc_sched_1__lope_eligible', period)
