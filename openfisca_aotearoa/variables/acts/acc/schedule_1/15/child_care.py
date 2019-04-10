@@ -28,7 +28,6 @@ class acc__child_care_continues_to_be_provided_by_person_who_lives_in_house(Vari
     value_type = bool
     entity = Person
     definition_period = MONTH
-    # NOTE: This reference is WRONG
     reference = "http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM104598.html"
 
     def formula(persons, period, parameters):
@@ -52,7 +51,6 @@ class acc__child_care_will_contribute_to_rehabilitation_outcome(Variable):
     entity = Person
     definition_period = DAY
     reference = "Schedule 1 clause 15 http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM104598.html"
-    # needs more precise reference
 
 
 class acc__entitlements__child_care__number_of_claimants_children_requiring_child_care(Variable):
@@ -61,7 +59,6 @@ class acc__entitlements__child_care__number_of_claimants_children_requiring_chil
     entity = Person
     definition_period = DAY
     reference = "Schedule 1 clause 15 http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM104598.html"
-    # needs more precise reference
 
 
 class acc__entitlements__child_care__previous_child_care_was_provided_by_household_family_members(Variable):
@@ -70,7 +67,6 @@ class acc__entitlements__child_care__previous_child_care_was_provided_by_househo
     entity = Person
     definition_period = DAY
     reference = "Schedule 1 clause 15 http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM104598.html"
-    # needs more precise reference
 
 
 class acc__entitlements__child_care__household_family_might_reasonably_provide_care_after_injury(Variable):
@@ -79,7 +75,6 @@ class acc__entitlements__child_care__household_family_might_reasonably_provide_c
     entity = Person
     definition_period = DAY
     reference = "Schedule 1 clause 15 http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM104598.html"
-    # needs more precise reference
 
 
 class acc__entitlements__child_care__need_to_avoid_disruption_to_other_family_members(Variable):
@@ -88,7 +83,6 @@ class acc__entitlements__child_care__need_to_avoid_disruption_to_other_family_me
     entity = Person
     definition_period = DAY
     reference = "Schedule 1 clause 15 http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM104598.html"
-    # needs more precise reference
 
 
 class acc__already_receiving_child_care_from_acc_as_a_child_of_a_desceased_claimant(Variable):

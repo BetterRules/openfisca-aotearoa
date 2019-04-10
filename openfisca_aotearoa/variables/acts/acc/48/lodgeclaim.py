@@ -18,6 +18,6 @@ class acc__part_3__has_lodged_claim(Variable):
             + persons('acc__assessed_as_having_a_need_caused_by_this_covered_injury', period)
             )
 
-# - a specified entitlement for his or her personal injury, once the Corporation has accepted the person has cover for the personal injury.
-
-# class acc__(Variable):
+## Missing variables
+# acc__lodged_claim_for_cover_and_specified_entitlement_for_personal_injury
+# acc__assessed_as_having_a_need_caused_by_this_covered_injury

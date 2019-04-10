@@ -23,7 +23,6 @@ class acc__entitlements__attendant_care__will_contribute_to_rehabilitation_outco
     entity = Person
     definition_period = DAY
     reference = "Schedule 1 clause 14 http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM104597.html"
-    # needs more precise reference
 
 
 class acc__entitlements__attendant_care__extent_of_personal_injury_and_degree_of_impairment(Variable):
@@ -32,7 +31,6 @@ class acc__entitlements__attendant_care__extent_of_personal_injury_and_degree_of
     entity = Person
     definition_period = DAY
     reference = "Schedule 1 clause 14 http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM104597.html"
-    # needs more precise reference
 
 
 class acc__entitlements__attendant_care__to_engage_in_vocational_or_educational_activity(Variable):
@@ -56,7 +54,6 @@ class acc__entitlements__attendant_care__household_family_might_reasonably_provi
     entity = Person
     definition_period = DAY
     reference = "Schedule 1 clause 14 http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM104597.html"
-    # needs more precise reference
 
 
 class acc__entitlements__attendant_care__needed_to_give_break_to_household_family_members_or_family_members(Variable):
@@ -65,7 +62,6 @@ class acc__entitlements__attendant_care__needed_to_give_break_to_household_famil
     entity = Person
     definition_period = DAY
     reference = "Schedule 1 clause 14 http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM104597.html"
-    # needs more precise reference
 
 
 class acc__entitlements__attendant_care__need_to_avoid_disruption_to_other_household_family_members_or_family_members(Variable):
@@ -74,7 +70,6 @@ class acc__entitlements__attendant_care__need_to_avoid_disruption_to_other_house
     entity = Person
     definition_period = DAY
     reference = "Schedule 1 clause 14 http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM104597.html"
-    # needs more precise reference
 
 
 class acc__attendant_care_is_necessary_and_appropriate(Variable):
