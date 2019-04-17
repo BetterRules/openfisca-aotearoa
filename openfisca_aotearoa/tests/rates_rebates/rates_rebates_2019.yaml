@@ -1,0 +1,62 @@
+- name: Someone earning 32103 with no dependants and rates of 2000
+  period: 2018
+  absolute_error_margin: 1.0
+  input:
+    rates_rebates__combined_income: 32103
+    rates_rebates__dependants: 0
+    rates_rebates__rates_total: 2000
+  output:
+    rates_rebates__rebate: 312.67
+
+
+- name: Someone earning 32103 with no dependants and rates of 2000
+  period: 2018
+  absolute_error_margin: 1.0
+  input:
+    persons:
+      Fred:
+        rates_rebates__combined_income: 32103
+        rates_rebates__dependants: 0
+    titled_properties:
+      whare:
+        rates_rebates__rates_total: 2000
+        owners: [Fred]
+  output:
+    titled_properties:
+      whare:
+        rates_rebates__rebate:
+          312.67
+
+
+- name: Someone earning 32103 with no dependants and rates of 2000
+  period: 2018
+  absolute_error_margin: 1.0
+  input:
+    persons:
+      Fred:
+        rates_rebates__combined_income: 32103
+        rates_rebates__dependants: 0
+    titled_properties:
+      whare:
+        rates_rebates__rates_total: 2000
+        owners: [Fred]
+  output:
+    titled_properties:
+      whare:
+        rates_rebates__rebate:
+          312.67
+
+- name: Earns too much
+  absolute_error_margin: 1.0
+  period: 2019
+  input:
+    persons:
+      Mama:
+        rates_rebates__combined_income: 34992.34
+        rates_rebates__dependants: 0
+    titled_properties:
+      Home:
+        rates_rebates__rates_total: 2000
+        owners: [Mama]
+  output:
+    rates_rebates__rebate: 0.0

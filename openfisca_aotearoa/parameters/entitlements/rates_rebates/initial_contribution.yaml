@@ -13,6 +13,7 @@ values:
     value: 40.0
   1990-07:
     value: 160.0
+    reference: http://www.legislation.govt.nz/act/public/1973/0005/latest/DLM409673.html
 
 # best practice indicates we should repeat values when a value is determined in an Act, even if it's the same
 # as such this file needs revisiting to complete a more accurate picture of the legislative history

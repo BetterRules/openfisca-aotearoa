@@ -3,7 +3,7 @@
 # These tests have been created with the Universal Rates Rebate Calculator spreadsheet provided by the DIA Rates Rebate team
 - name: Someone earning 32103 with no dependants and rates of 2000
   period: 2018
-  absolute_error_margin: 1
+  absolute_error_margin: 1.0
   input:
     rates_rebates__combined_income: 32103
     rates_rebates__dependants: 0
@@ -12,7 +12,7 @@
     rates_rebates__rebate: 312.67
 - name: Someone earning 35000 with two dependants and rates of 2200
   period: 2018
-  absolute_error_margin: 1
+  absolute_error_margin: 1.0
   input:
     rates_rebates__combined_income: 35000
     rates_rebates__dependants: 2
@@ -21,7 +21,7 @@
     rates_rebates__rebate: 209
 - name: Someone earning 70000 with two dependants and rates of 2200
   period: 2018
-  absolute_error_margin: 1
+  absolute_error_margin: 1.0
   input:
     rates_rebates__combined_income: 70000
     rates_rebates__dependants: 2
@@ -30,7 +30,7 @@
     rates_rebates__rebate: 0
 - name: The minimum income required for no rebate with 2 dependants and rates of $2000
   period: 2018
-  absolute_error_margin: 1
+  absolute_error_margin: 1.0
   input:
     rates_rebates__dependants: 2
     rates_rebates__rates_total: 2000
@@ -38,7 +38,7 @@
     rates_rebates__minimum_income_for_no_rebate: 35603
 - name: The maximum income required for the full rebate with 3 dependants and rates of $2400
   period: 2018
-  absolute_error_margin: 1
+  absolute_error_margin: 1.0
   input:
     rates_rebates__dependants: 3
     rates_rebates__rates_total: 2400
@@ -46,7 +46,7 @@
     rates_rebates__maximum_income_for_full_rebate: 33276
 - name: Proof of maximum income required for the full rebate with 3 dependants and rates of $2400
   period: 2018
-  absolute_error_margin: 1
+  absolute_error_margin: 1.0
   input:
     rates_rebates__combined_income: 31776
     rates_rebates__dependants: 3
