@@ -59,7 +59,8 @@
         others: ["Papatūānuku", "Rakinui", "Tāne", "Rongo", "Ikatere"]
   output:
     family_scheme__qualifies_for_family_tax_credit: [0, 0, 0, 0, 0]
-- name: Family tax credit - too much income
+
+- name: Family tax credit - solo parent with too much income
   period: 2018-08
   absolute_error_margin: 0
   input:
@@ -79,7 +80,7 @@
       2018-08:
         - false
 
-- name: Family tax credit - too much income
+- name: Family tax credit - couple with too much income
   period: 2018-08
   absolute_error_margin: 0
   input:
