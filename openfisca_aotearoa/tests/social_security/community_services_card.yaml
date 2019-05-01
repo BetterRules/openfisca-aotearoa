@@ -159,7 +159,7 @@
       - true  # mama
 
 
-- name: Community Services Card - not eligible if above threshold
+- name: Community Services Card - Super, but not eligible if above threshold
   period: 2018-08
   absolute_error_margin: 0
   input:
@@ -260,7 +260,7 @@
       - true  # mama
 
 
-- name: Community Services Card - not eligible if above threshold
+- name: Community Services Card - Student but not eligible if above threshold
   period: 2018-08
   absolute_error_margin: 0
   input:
