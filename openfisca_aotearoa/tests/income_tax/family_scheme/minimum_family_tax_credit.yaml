@@ -22,26 +22,3 @@
         owners: ["Rakinui", "Tāne"]
   output:
     family_scheme__qualifies_for_minimum_family_tax_credit: [False, False]
-- name: A Person would be qualified for the working for the minumum family tax credit but receives a parents allowance
-  period: 2018-08
-  absolute_error_margin: 0
-  input:
-    persons:
-      "Rakinui":
-        date_of_birth: 2000-01-01
-        income_tax__residence: true
-        veterans_support__received_parents_allowance: True
-        veterans_support__received_childrens_pension: False
-        social_security__received_income_tested_benefit:
-          2018: False
-      "Tāne":
-        date_of_birth: 2012-01-01
-    families:
-      Whanau:
-        principal_caregiver: "Rakinui"
-        children: ["Tāne"]
-    titled_properties:
-      Whare:
-        owners: ["Rakinui", "Tāne"]
-  output:
-    family_scheme__qualifies_for_minimum_family_tax_credit: [False, False]
