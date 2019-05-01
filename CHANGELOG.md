@@ -1,5 +1,8 @@
 # Changelog
 
+# 11.1.1 [167](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/167)
+* Rename duplicate tests (same name, different test)
+
 # 11.1.0 [167](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/167)
 * Adds values for Rates Rebates 2018 to 2019
 
