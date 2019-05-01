@@ -1,6 +1,6 @@
 # We can run this test on our command line using `openfisca-run-test openfisca_aotearoa/tests/income_tax/family_scheme/in_work_tax_credit.yaml`
 
-- name: Tests persons age eligibility in relation to the in work tax credit
+- name: Family age eligibility in relation to the in work tax credit
   period: 2018-08
   input:
     persons:
