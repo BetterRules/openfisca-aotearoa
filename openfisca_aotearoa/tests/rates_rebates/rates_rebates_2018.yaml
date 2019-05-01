@@ -44,7 +44,7 @@
     rates_rebates__rates_total: 2400
   output:
     rates_rebates__maximum_income_for_full_rebate: 33276
-- name: Proof of maximum income required for the full rebate with 3 dependants and rates of $2400
+- name: Calculate rebate for the full rebate with 3 dependants and rates of $2400
   period: 2018
   absolute_error_margin: 1.0
   input:
@@ -53,7 +53,7 @@
     rates_rebates__rates_total: 2400
   output:
     rates_rebates__rebate: 620
-- name: Proof of maximum income required for the full rebate with 3 dependants and rates of $2400
+- name: Expect full rebate with 3 dependants and rates of $2400
   period: 2018
   absolute_error_margin: 0.5
   input:
