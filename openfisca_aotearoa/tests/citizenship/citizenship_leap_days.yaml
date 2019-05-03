@@ -9,12 +9,6 @@
           "2001-01-01": true
         immigration__entitled_to_indefinite_stay:
           "2001-01-01": true
-    families:
-      "Whanau":
-        others: ["Tahi"]
-    titled_properties:
-      whare:
-        others: ["Tahi"]
   output:
     days_present_in_new_zealand_in_preceeding_year:
       "2014-02-28": 365

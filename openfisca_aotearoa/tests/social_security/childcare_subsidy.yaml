@@ -13,9 +13,6 @@
         early_childcare_hours_participation_per_week: 3
         is_nz_citizen: true
         is_attending_school: false
-    titled_properties:
-      "Whare":
-        others: ["Mama", "Child"]
     families:
       "Whanau":
         social_security_regulation__household_income_below_childcare_subsidy_threshold: true
@@ -46,9 +43,6 @@
         early_childcare_hours_participation_per_week: 3
         is_nz_citizen: true
         is_attending_school: false
-    titled_properties:
-      "Whare":
-        others: ["Mama", "Child"]
     families:
       "Whanau":
         social_security_regulation__household_income_below_childcare_subsidy_threshold: false
@@ -83,9 +77,6 @@
         social_security__medical_certification_months: 12
         is_nz_citizen: true
         is_attending_school: true
-    titled_properties:
-      "Whare":
-        others: ["Mama", "Child"]
     families:
       "Whanau":
         social_security_regulation__household_income_below_childcare_subsidy_threshold: true
@@ -116,9 +107,6 @@
         early_childcare_hours_participation_per_week: 3
         is_nz_citizen: true
         will_be_enrolled_in_school: true
-    titled_properties:
-      "Whare":
-        others: ["Mama", "Child"]
     families:
       "Whanau":
         principal_caregiver: "Mama"
@@ -150,9 +138,6 @@
         early_childcare_hours_participation_per_week: 3
         is_nz_citizen: true
         is_attending_school: true
-    titled_properties:
-      "Whare":
-        others: ["Mama", "Child"]
     families:
       "Whanau":
         principal_caregiver: "Mama"
@@ -177,9 +162,6 @@
         early_childcare_hours_participation_per_week: 3
         is_nz_citizen: true
         is_attending_school: false
-    titled_properties:
-      "Whare":
-        others: ["Mama", "Child"]
     families:
       "Whanau":
         principal_caregiver: "Mama"

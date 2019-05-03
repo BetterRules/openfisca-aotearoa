@@ -17,9 +17,6 @@
       Whanau:
         principal_caregiver: "Rakinui"
         children: ["Tāne"]
-    titled_properties:
-      Whare:
-        owners: ["Rakinui", "Tāne"]
   output:
     family_scheme__qualifies_for_minimum_family_tax_credit: [False, False]
 - name: A Person would be qualified for the working for the minumum family tax credit but receives a parents allowance
@@ -40,8 +37,5 @@
       Whanau:
         principal_caregiver: "Rakinui"
         children: ["Tāne"]
-    titled_properties:
-      Whare:
-        owners: ["Rakinui", "Tāne"]
   output:
     family_scheme__qualifies_for_minimum_family_tax_credit: [False, False]

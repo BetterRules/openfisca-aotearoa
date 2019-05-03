@@ -15,9 +15,6 @@
       Whanau:
         principal_caregiver: Koro
         children: Tamaiti
-    titled_properties:
-      whare:
-        others: [Koro, Tamaiti]
   output:
     social_security__eligible_for_sole_parent_support:
       - true # koro
@@ -43,9 +40,6 @@
         principal_caregiver: Papa
         partners: Mama
         children: Matilda
-    titled_properties:
-      whare:
-        others: [Papa, Mama, Matilda]
   output:
     social_security__eligible_for_sole_parent_support:
       - false # papa
@@ -74,9 +68,6 @@
         principal_caregiver: Papa
         partners: Mama
         children: Matilda
-    titled_properties:
-      whare:
-        others: [Papa, Mama, Matilda]
   output:
     social_security__eligible_for_sole_parent_support:
       - true # papa
@@ -102,9 +93,6 @@
         principal_caregiver: Koro
         children:
           - Tamaiti
-    titled_properties:
-      whare:
-        others: [Koro, Tamaiti]
   output:
     social_security__eligible_for_sole_parent_support:
       - false # koro
@@ -132,9 +120,6 @@
       Whanau:
         principal_caregiver: Koro
         children: [Tahi, Rua, Toru]
-    titled_properties:
-      whare:
-        others: [Koro, Tahi, Rua, Toru]
   output:
     social_security__eligible_for_sole_parent_support:
       - true # koro

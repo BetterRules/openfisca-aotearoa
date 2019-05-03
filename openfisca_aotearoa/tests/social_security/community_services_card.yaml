@@ -10,9 +10,6 @@
     families:
       Whanau_tahi:
         principal_caregiver: Mama
-    titled_properties:
-      whare:
-        others: [Mama]
   output:
     social_security__eligible_for_community_services_card:
       - false  # mama
@@ -31,9 +28,6 @@
     families:
       Whanau_tahi:
         principal_caregiver: Mama
-    titled_properties:
-      whare:
-        others: [Mama]
   output:
     social_security__eligible_for_community_services_card:
       - true  # mama
@@ -55,9 +49,6 @@
       Whanau_tahi:
         principal_caregiver: Mama
         children: [Tama]
-    titled_properties:
-      whare:
-        others: [Mama, Tama]
   output:
     social_security__eligible_for_community_services_card:
       - false  # mama
@@ -81,9 +72,6 @@
       Whanau_tahi:
         principal_caregiver: Mama
         children: [Tama]
-    titled_properties:
-      whare:
-        others: [Mama, Tama]
   output:
     social_security__eligible_for_community_services_card:
       - false  # mama
@@ -108,9 +96,6 @@
         principal_caregiver: Mama
         family_scheme__has_dependent_children: true
         children: [Tama]
-    titled_properties:
-      whare:
-        others: [Mama, Tama]
   output:
     social_security__eligible_for_community_services_card:
       - false  # mama
@@ -130,9 +115,6 @@
     families:
       Whanau_tahi:
         principal_caregiver: Mama
-    titled_properties:
-      whare:
-        others: [Mama]
   output:
     social_security__eligible_for_community_services_card:
       - true  # mama
@@ -151,9 +133,6 @@
     families:
       Whanau_tahi:
         principal_caregiver: Mama
-    titled_properties:
-      whare:
-        others: [Mama]
   output:
     social_security__eligible_for_community_services_card:
       - true  # mama
@@ -172,9 +151,6 @@
     families:
       Whanau_tahi:
         principal_caregiver: Mama
-    titled_properties:
-      whare:
-        others: [Mama]
   output:
     social_security__eligible_for_community_services_card:
       - false  # mama
@@ -192,9 +168,6 @@
     families:
       Whanau_tahi:
         principal_caregiver: Mama
-    titled_properties:
-      whare:
-        others: [Mama]
   output:
     social_security__eligible_for_community_services_card:
       - true  # mama
@@ -212,9 +185,6 @@
     families:
       Whanau_tahi:
         principal_caregiver: Mama
-    titled_properties:
-      whare:
-        others: [Mama]
   output:
     social_security__eligible_for_community_services_card:
       - true  # mama
@@ -231,9 +201,6 @@
     families:
       Whanau_tahi:
         principal_caregiver: Mama
-    titled_properties:
-      whare:
-        others: [Mama]
   output:
     social_security__eligible_for_community_services_card:
       - true  # mama
@@ -252,9 +219,6 @@
     families:
       Whanau_tahi:
         principal_caregiver: Mama
-    titled_properties:
-      whare:
-        others: [Mama]
   output:
     social_security__eligible_for_community_services_card:
       - true  # mama
@@ -273,9 +237,6 @@
     families:
       Whanau_tahi:
         principal_caregiver: Mama
-    titled_properties:
-      whare:
-        others: [Mama]
   output:
     social_security__eligible_for_community_services_card:
       - false  # mama
@@ -294,9 +255,6 @@
     families:
       Whanau_tahi:
         principal_caregiver: Mama
-    titled_properties:
-      whare:
-        others: [Mama]
   output:
     social_security__eligible_for_community_services_card:
       - true  # mama
@@ -319,9 +277,6 @@
     families:
       Whanau_tahi:
         principal_caregiver: Mama
-    titled_properties:
-      whare:
-        others: [Mama]
   output:
     social_security__eligible_for_community_services_card:
       - true  # mama
@@ -344,9 +299,6 @@
     families:
       Whanau_tahi:
         principal_caregiver: Mama
-    titled_properties:
-      whare:
-        others: [Mama]
   output:
     social_security__eligible_for_community_services_card:
       - true  # mama

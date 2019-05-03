@@ -38,14 +38,6 @@
         is_nz_citizen: true
         social_security__is_ordinarily_resident_in_new_zealand: true
         student_allowance__is_tertiary_student: false
-
-    families:
-      Whanau:
-        others: [fulltime_uni_student, Overseas_student, Refugee, Not_a_student, Parttime_student]
-    titled_properties:
-      whare:
-        others: [fulltime_uni_student, Overseas_student, Refugee, Not_a_student, Parttime_student]
-
   output:
     student_allowance__eligible_for_basic_grant:
       - true  # fulltime uni student
@@ -96,21 +88,6 @@
         student_allowance__is_secondary_student: true
         student_allowance__is_enrolled_fulltime: true
         student_allowance__meets_attendance_and_performance_requirements: true
-    families:
-      Whanau:
-        others:
-          - married_secondary_school_student_with_child
-          - not_married_secondary_school_student_with_child
-          - childless_married_secondary_school_student
-          - 18yo_secondary_student
-    titled_properties:
-      whare:
-        others:
-          - married_secondary_school_student_with_child
-          - not_married_secondary_school_student_with_child
-          - childless_married_secondary_school_student
-          - 18yo_secondary_student
-
   output:
     student_allowance__eligible_for_basic_grant:
       - true  # married secondary school student
@@ -138,13 +115,6 @@
         student_allowance__is_tertiary_student: true
         student_allowance__is_enrolled_fulltime: true
         student_allowance__meets_attendance_and_performance_requirements: true
-
-    families:
-      Whanau:
-        others: [default, not_attending, not_citizen_or_resident]
-    titled_properties:
-      whare:
-        others: [default, not_attending, not_citizen_or_resident]
 
   output:
     student_allowance__eligible_for_basic_grant:
@@ -184,14 +154,6 @@
         student_allowance__is_tertiary_student: true
         student_allowance__is_enrolled_fulltime: true
         student_allowance__meets_attendance_and_performance_requirements: true
-
-    families:
-      Whanau:
-        others: [fulltime_uni_studdent, Parttime_student, Overseas_student, Refugee]
-    titled_properties:
-      whare:
-        others: [fulltime_uni_studdent, Parttime_student, Overseas_student, Refugee]
-
   output:
     student_allowance__eligible_for_basic_grant:
       - false  # fulltime uni student

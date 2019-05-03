@@ -34,9 +34,6 @@
         others: [Oliver]
       Two:
         principal_caregiver: Oscar
-    titled_properties:
-      whare:
-        others: [Ruby, Oliver, Oscar]
   output:
     social_security__income_under_young_parent_payment_threshold:
       - false # Ruby earns too much
@@ -90,9 +87,6 @@
         others: [Oliver]
       Two:
         principal_caregiver: Oscar
-    titled_properties:
-      whare:
-        others: [Ruby, Oliver, Oscar]
   output:
     social_security__meets_young_parent_payment_in_relationship_requirements:
       - true # previously married
@@ -132,11 +126,6 @@
         principal_caregiver: Kiwi
       Two:
         principal_caregiver: OE
-    titled_properties:
-      Tahi:
-        others: Kiwi
-      Rua:
-        others: OE
   output:
     social_security__eligible_for_young_parent_payment:
       - true # Lives in NZ

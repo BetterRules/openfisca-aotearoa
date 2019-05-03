@@ -11,9 +11,6 @@
     families:
       Whanau:
         partners: ["Papatūānuku", "Rakinui"]
-    titled_properties:
-      Whare:
-        owners: ["Papatūānuku", "Rakinui"]
   output:
     family_scheme__caregiver_age_qualifies: [False, True]
 - name: A Person is qualified as a principal caregiver for the family scheme
@@ -32,9 +29,6 @@
         principal_caregiver: "Papatūānuku"
         partners: ["Rakinui"]
         children: ["Tāne"]
-    titled_properties:
-      Whare:
-        owners: ["Papatūānuku", "Rakinui", "Tāne"]
   output:
     family_scheme__qualifies_as_principal_carer: [True, False, False]
 - name: A Person is qualified as a income tax residence for the family scheme
@@ -101,9 +95,6 @@
       Whanau:
         principal_caregiver: "Rakinui"
         children: ["Tāne"]
-    titled_properties:
-      Whare:
-        owners: ["Rakinui", "Tāne"]
   output:
     family_scheme__qualifies_for_working_for_families: [True, False]
 - name: A Person would be qualified for working for families but gets veterans support parent allowance
@@ -124,9 +115,6 @@
       Whanau:
         principal_caregiver: "Rakinui"
         children: ["Tāne"]
-    titled_properties:
-      Whare:
-        owners: ["Rakinui", "Tāne"]
   output:
     family_scheme__qualifies_for_working_for_families: [False, False]
 - name: A Person would be qualified for the working for families tax credit but gets a childrens pension
@@ -147,9 +135,6 @@
       Whanau:
         principal_caregiver: "Rakinui"
         children: ["Tāne"]
-    titled_properties:
-      Whare:
-        owners: ["Rakinui", "Tāne"]
   output:
     family_scheme__qualifies_for_working_for_families: [False, False]
 - name: A Person would be qualified for the working for in-work tax credit but receives an income tested benefit
@@ -170,8 +155,5 @@
       Whanau:
         principal_caregiver: "Rakinui"
         children: ["Tāne"]
-    titled_properties:
-      Whare:
-        owners: ["Rakinui", "Tāne"]
   output:
     family_scheme__qualifies_for_in_work_tax_credit: [False, False]

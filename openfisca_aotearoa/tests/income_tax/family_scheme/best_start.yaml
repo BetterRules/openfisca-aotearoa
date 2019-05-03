@@ -48,23 +48,6 @@
         principal_caregiver: "Papatūānuku-3"
         partners: ["Samuel"]
         children: ["Hemi-junior-early"]
-    titled_properties:
-      "Earth":
-        others:
-          - "Papatūānuku"
-          - "Rakinui"
-          - "Tāne"
-          - "Rongo"
-          - "Ikatere"
-          - "Tāwhirimātea"
-          - "Papatūānuku-2"
-          - "Papatūānuku-3"
-          - "Tāne-2"
-          - "Samuel"
-          - "Rongo-2"
-          - "Hemi"
-          - "Hemi-junior"
-          - "Hemi-junior-early"
   output:
     best_start__family_has_children_eligible:
       2018-07: [0, 1, 1]
@@ -93,9 +76,6 @@
         principal_caregiver: "Papatūānuku"
         partners: ["Rakinui"]
         children: ["Hemi-junior-early"]
-    titled_properties:
-      "Earth":
-        others: ["Papatūānuku", "Rakinui", "Hemi-junior-early"]
   output:
     best_start__family_has_children_eligible:
       2018-07: [1]
@@ -121,9 +101,6 @@
         principal_caregiver: "Papatūānuku"
         partners: ["Rakinui"]
         children: ["Hemi-junior", "Hemi-junior-early"]
-    titled_properties:
-      "Earth":
-        others: ["Papatūānuku", "Rakinui", "Hemi-junior", "Hemi-junior-early"]
   output:
     best_start__tax_credit_per_child:
       2018-07: [0, 0, 0, 260]
@@ -151,9 +128,6 @@
         principal_caregiver: "Papatūānuku"
         partners: ["Rakinui"]
         children: ["Hemi-junior", "Hemi-junior-early"]
-    titled_properties:
-      "Earth":
-        others: ["Papatūānuku", "Rakinui", "Hemi-junior", "Hemi-junior-early"]
   output:
     best_start__tax_credit_per_child:
       2018-07: [0, 0, 0, 260 ]
@@ -184,9 +158,6 @@
         principal_caregiver: "Papatūānuku"
         partners: ["Rakinui"]
         children: ["Hemi-junior", "Hemi-junior-early"]
-    titled_properties:
-      "Earth":
-        others: ["Papatūānuku", "Rakinui", "Hemi-junior", "Hemi-junior-early"]
   output:
     best_start__tax_credit_per_child:
       2019-04: [0, 0, 0, 260 ]
