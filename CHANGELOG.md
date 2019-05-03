@@ -1,6 +1,9 @@
 # Changelog
 
-# 11.1.1 [167](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/167)
+# 11.1.2 [167](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/170)
+*  Removing unnecesary family/titled_property groups in tests
+
+# 11.1.1 [167](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/169)
 * Rename duplicate tests (same name, different test)
 
 # 11.1.0 [167](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/167)
