@@ -92,10 +92,12 @@ jobs:
 
 workflows:
   version: 2
-  build_and_test:
+  lint:
     jobs:
       - pythonlint
       - yamllint
+  build_and_test:
+    jobs:
       - version-bump
       - build_python3
       - tag_release:
