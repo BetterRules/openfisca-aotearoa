@@ -1,4 +1,4 @@
-- name: Someone earning 32103 with no dependants and rates of 2000
+- name: Input/output test of earning 32103 with no dependants and rates of 2000
   period: 2018
   absolute_error_margin: 1.0
   input:
@@ -9,7 +9,7 @@
     rates_rebates__rebate: 312.67
 
 
-- name: Someone earning 32103 with no dependants and rates of 2000
+- name: Family scenario of earning 32103 with no dependants and rates of 2000
   period: 2018
   absolute_error_margin: 1.0
   input:
