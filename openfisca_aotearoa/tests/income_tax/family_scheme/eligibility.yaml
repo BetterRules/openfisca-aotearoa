@@ -45,9 +45,6 @@
     families:
       Whanau:
         partners: ["Papatūānuku", "Rakinui"]
-    titled_properties:
-      Whare:
-        owners: ["Papatūānuku", "Rakinui"]
   output:
     income_tax__residence: [True, False]
 - name: A Person is qualified for working for families
@@ -72,9 +69,6 @@
         principal_caregiver: "Rakinui"
         partners: ["Papatūānuku"]
         children: ["Tāne"]
-    titled_properties:
-      Whare:
-        owners: ["Papatūānuku", "Rakinui", "Tāne"]
   output:
     family_scheme__qualifies_for_working_for_families: [False, True, False]
 - name: A Person in a two people family would be qualified for the working for families tax credit
