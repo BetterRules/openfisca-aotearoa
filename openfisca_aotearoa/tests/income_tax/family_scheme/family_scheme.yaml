@@ -12,9 +12,6 @@
       "First family":
         principal_caregiver: "Papatūānuku"
         partners: ["Rakinui"]
-    titled_properties:
-      "Earth":
-        owners: ["Papatūānuku", "Rakinui"]
   output:
     family_scheme__caregiver_age_qualifies:
       2018-07: [0, 1]
@@ -31,9 +28,6 @@
       "First family":
         principal_caregiver: "Papatūānuku"
         children: ["Hemi"]
-    titled_properties:
-      "Earth":
-        owners: ["Papatūānuku", "Hemi"]
   output:
     family_scheme__has_dependent_children:
       2018-07: [1]
@@ -56,9 +50,6 @@
       Whanau:
         principal_caregiver: "Papatūānuku"
         children: ["Hemi", "Tāne", "Rongo", "Ikatere"]
-    titled_properties:
-      Whare:
-        others: ["Papatūānuku", "Hemi", "Tāne", "Rongo", "Ikatere"]
   output:
     family_scheme__has_dependent_children:
       2018-07: [1]

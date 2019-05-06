@@ -14,9 +14,6 @@
         partners:
           - "biological mother"
         principal_caregiver: "biological father"
-    titled_properties:
-      whare:
-        others: ["biological mother", "biological father"]
   output:
     parental_leave__is_spouse_or_partner_of_the_biological_mother:
       2019-03:
@@ -41,9 +38,6 @@
         partners:
           - "biological mother"
         principal_caregiver: "biological father"
-    titled_properties:
-      whare:
-        others: ["biological mother", "biological father"]
   output:
     parental_leave__has_spouse_who_transferred_her_entitlement:
       2019-03:
@@ -63,9 +57,6 @@
         partners:
           - "not the biological mother"
         principal_caregiver: "biological father"
-    titled_properties:
-      whare:
-        others: ["not the biological mother", "biological father"]
   output:
     parental_leave__has_spouse_who_transferred_her_entitlement:
       2019-03:
@@ -86,9 +77,6 @@
         others:
           - "biological mother"
         principal_caregiver: "biological father"
-    titled_properties:
-      whare:
-        others: ["biological mother", "biological father"]
   output:
     parental_leave__has_spouse_who_transferred_her_entitlement:
       2019-03:

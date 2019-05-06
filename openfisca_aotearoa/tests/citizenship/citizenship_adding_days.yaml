@@ -19,13 +19,6 @@
           "2015-01-04": true
           "2015-01-05": true
           "2015-01-06": false
-
-    families:
-      "Whanau":
-        others: ["Tahi"]
-    titled_properties:
-      whare:
-        others: ["Tahi"]
   output:
     days_present_in_new_zealand_in_preceeding_year:
       "2014-12-30": 0

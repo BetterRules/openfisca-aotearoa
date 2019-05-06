@@ -9,9 +9,6 @@
     families:
       "Happy solo family":
         principal_caregiver: "biological mother"
-    titled_properties:
-      whare:
-        others: ["biological mother"]
   output:
     parental_leave__is_spouse_or_partner_of_the_biological_mother:
       2019-03:
@@ -33,9 +30,6 @@
       "Happy family":
         principal_caregiver: "other mum"
         partners: ["biological mother"]
-    titled_properties:
-      whare:
-        others: ["biological mother", "other mum"]
   output:
     parental_leave__is_spouse_or_partner_of_the_biological_mother:
       2019-03:
@@ -60,9 +54,6 @@
         principal_caregiver: "other mum"
         partners:
           - "biological mother"
-    titled_properties:
-      whare:
-        others: ["biological mother", "other mum"]
   output:
     parental_leave__is_spouse_or_partner_of_the_biological_mother:
       2019-03:
@@ -91,9 +82,6 @@
       "two":
         others:
           - "biological mother"
-    titled_properties:
-      whare:
-        others: ["biological mother", "adopting mother", "another adopting parent"]
   output:
     parental_leave__a_person_other_than_biological_mother_or_her_spouse:
       2019-03:
@@ -119,9 +107,6 @@
         principal_caregiver: "foster mother"
         partners:
           - "another foster parent"
-    titled_properties:
-      whare:
-        others: ["foster mother", "another foster parent"]
   output:
     parental_leave__a_person_other_than_biological_mother_or_her_spouse:
       2019-03:
@@ -146,9 +131,6 @@
         principal_caregiver: "biological father"
         others:
           - "biological mother"
-    titled_properties:
-      whare:
-        others: ["biological mother", "biological father"]
   output:
     parental_leave__is_spouse_or_partner_of_the_biological_mother:
       2019-03:
@@ -176,9 +158,6 @@
         partners:
           - "biological mother"
           - "another co-parenting partner"
-    titled_properties:
-      whare:
-        others: ["biological mother", "co-parent", "another co-parenting partner"]
   output:
     parental_leave__is_spouse_or_partner_of_the_biological_mother:
       2019-03:

@@ -24,9 +24,6 @@
         principal_caregiver: "Papatūānuku"
         partners: ["Rakinui"]
         children: ["Tāne", "Rongo", "Ikatere"]
-    titled_properties:
-      Whare:
-        others: ["Papatūānuku", "Rakinui", "Tāne", "Rongo", "Ikatere"]
   output:
     family_scheme__qualifies_for_family_tax_credit: [1, 0, 0, 0, 0]
 - name: Tests persons income over threshold and not elible for family tax credit
@@ -54,9 +51,6 @@
         principal_caregiver: "Papatūānuku"
         partners: ["Rakinui"]
         children: ["Tāne", "Rongo", "Ikatere"]
-    titled_properties:
-      Whare:
-        others: ["Papatūānuku", "Rakinui", "Tāne", "Rongo", "Ikatere"]
   output:
     family_scheme__qualifies_for_family_tax_credit: [0, 0, 0, 0, 0]
 
@@ -72,9 +66,6 @@
     families:
       Whanau:
         principal_caregiver: "Papatūānuku"
-    titled_properties:
-      Whare:
-        others: ["Papatūānuku"]
   output:
     family_scheme__qualifies_for_family_tax_credit:
       2018-08:
@@ -97,9 +88,6 @@
       Whanau:
         principal_caregiver: "Papatūānuku"
         partners: ["Rakinui"]
-    titled_properties:
-      Whare:
-        others: ["Papatūānuku", "Rakinui"]
   output:
     family_scheme__qualifies_for_family_tax_credit:
       2018-08:

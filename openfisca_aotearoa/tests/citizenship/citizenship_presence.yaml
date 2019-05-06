@@ -18,12 +18,6 @@
         immigration__entitled_to_indefinite_stay:
           "2015-01-01": true
           "2021-08-29": false
-    families:
-      "Whanau":
-        others: ["Tahi"]
-    titled_properties:
-      whare:
-        others: ["Tahi"]
   output:
     citizenship__citizenship_by_grant_may_be_authorized:
       "2019-01-01": false

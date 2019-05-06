@@ -7,12 +7,6 @@
           "2001-01-01": true
         immigration__entitled_to_indefinite_stay:
           "2001-01-01": true
-    families:
-      "Whanau":
-        others: [ Tahi ]
-    titled_properties:
-      whare:
-        others: [ Tahi ]
   output:
     was_present_in_nz_and_entitled_to_indefinite_stay:
       "2001-01-01": true

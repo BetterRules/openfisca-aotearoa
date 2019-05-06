@@ -48,9 +48,6 @@
       Whanau:
         principal_caregiver: Mama
         others: [Tama, Papa, Alan, Dada]
-    titled_properties:
-      whare:
-        others: [Mama, Tama, Papa, Alan, Dada]
 
   output:
     social_security__eligible_for_jobseeker_support:

@@ -67,35 +67,6 @@
         veterans_support__is_entitled_to_be_paid_veterans_pension: false
         total_number_of_years_lived_in_nz_since_age_20: 11
         total_number_of_years_lived_in_nz_since_age_50: 6
-
-    families:
-      Whanau:
-        others: [
-          Not_eligible,
-          Is_citizen,
-          Is_Permanent_Resident,
-          Is_Resident,
-          Is_receiving_compensation,
-          Is_a_Veteran,
-          Is_a_NZ_Citizen,
-          Lived_in_nz_for_more_than_10_years_since_age_20,
-          Lived_in_nz_for_more_than_5_years_since_age_50
-        ]
-
-    titled_properties:
-      whare:
-        others: [
-          Not_eligible,
-          Is_citizen,
-          Is_Permanent_Resident,
-          Is_Resident,
-          Is_receiving_compensation,
-          Is_a_Veteran,
-          Is_a_NZ_Citizen,
-          Lived_in_nz_for_more_than_10_years_since_age_20,
-          Lived_in_nz_for_more_than_5_years_since_age_50
-        ]
-
   output:
     super__eligibility:
       - false # Not eligible

@@ -19,9 +19,6 @@
         principal_caregiver: "Mama"
         children:
           - "Tama"
-    titled_properties:
-      whare:
-        others: ["Mama", "Tama"]
   output:
     social_security__eligible_for_unsupported_childs_benefit:
       - true # mama (principal carer)
@@ -46,9 +43,6 @@
         principal_caregiver: "Mama"
         children:
           - "Tama"
-    titled_properties:
-      whare:
-        others: ["Mama", "Tama"]
   output:
     social_security__eligible_for_unsupported_childs_benefit:
       - false # mama (principal carer)
@@ -73,9 +67,6 @@
         principal_caregiver: "Mama"
         children:
           - "Tama"
-    titled_properties:
-      whare:
-        others: ["Mama", "Tama"]
   output:
     social_security__eligible_for_unsupported_childs_benefit:
       - false # mama (principal carer)
@@ -100,9 +91,6 @@
         principal_caregiver: "Mama"
         children:
           - "Tama"
-    titled_properties:
-      whare:
-        others: ["Mama", "Tama"]
   output:
     social_security__eligible_for_unsupported_childs_benefit:
       - false # mama (principal carer)
@@ -127,9 +115,6 @@
         principal_caregiver: "Mama"
         children:
           - "Tama"
-    titled_properties:
-      whare:
-        others: ["Mama", "Tama"]
   output:
     social_security__eligible_for_unsupported_childs_benefit:
       - false # mama (principal carer)
@@ -154,9 +139,6 @@
         principal_caregiver: "Mama"
         children:
           - "Tama"
-    titled_properties:
-      whare:
-        others: ["Mama", "Tama"]
   output:
     social_security__eligible_for_unsupported_childs_benefit:
       - false # mama (principal carer)
@@ -176,9 +158,6 @@
     families:
       "Whanau tahi":
         principal_caregiver: "Mama"
-    titled_properties:
-      whare:
-        others: ["Mama"]
   output:
     social_security__eligible_for_unsupported_childs_benefit:
       - false # mama (principal carer)

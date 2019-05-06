@@ -26,21 +26,6 @@
       Larry:
         immigration__is_protected_person: true
         social_security__has_resided_continuously_in_nz_for_a_period_of_at_least_2_years_at_any_one_time: false
-    families:
-      Whanau_tahi:
-        principal_caregiver: Mama
-        children:
-          - Tama
-          - Tamahine
-        others:
-          - Papa
-      Whanau_rua:
-        others: [Mary, Barry, Larry]
-    titled_properties:
-      whare:
-        others: [Mama, Papa, Tama, Tamahine]
-      home:
-        others: [Mary, Barry, Larry]
   output:
     is_nz_citizen:
       - false # mama

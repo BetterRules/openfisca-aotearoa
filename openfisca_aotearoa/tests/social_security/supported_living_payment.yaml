@@ -11,9 +11,6 @@
     families:
       Whanau:
         others: Ruby
-    titled_properties:
-      whare:
-        others: Ruby
   output:
     social_security__eligible_for_supported_living_payment:
       - false
@@ -31,9 +28,6 @@
         social_security__meets_residential_requirements_for_certain_benefits: true
     families:
       Whanau:
-        others: Ruby
-    titled_properties:
-      whare:
         others: Ruby
   output:
     social_security__eligible_for_supported_living_payment:
@@ -53,9 +47,6 @@
         social_security__meets_residential_requirements_for_certain_benefits: true
     families:
       Whanau:
-        others: Ruby
-    titled_properties:
-      whare:
         others: Ruby
   output:
     social_security__eligible_for_supported_living_payment:
@@ -77,9 +68,6 @@
     families:
       Whanau:
         others: Ruby
-    titled_properties:
-      whare:
-        others: Ruby
   output:
     social_security__eligible_for_supported_living_payment:
       - false
@@ -98,9 +86,6 @@
     families:
       Whanau:
         principal_caregiver: Ruby
-    titled_properties:
-      whare:
-        others: Ruby
   output:
     social_security__eligible_for_supported_living_payment:
       - true
@@ -120,9 +105,6 @@
     families:
       Whanau:
         principal_caregiver: Ruby
-    titled_properties:
-      whare:
-        others: Ruby
   output:
     social_security__eligible_for_supported_living_payment:
       - false

@@ -13,9 +13,6 @@
     families:
       "Whanau":
         others: ["NZ-Citizen"]
-    titled_properties:
-      whare:
-        others: ["NZ-Citizen"]
 
   output:
     home_help__eligible_for_home_help:
@@ -35,9 +32,6 @@
     families:
       "Whanau":
         principal_caregiver: "NZ-Citizen"
-    titled_properties:
-      whare:
-        others: ["NZ-Citizen"]
   output:
     home_help__eligible_for_home_help:
       - true
@@ -56,9 +50,6 @@
     families:
       "Whanau":
         principal_caregiver: "Non-Citizen"
-    titled_properties:
-      whare:
-        others: ["Non-Citizen"]
   output:
     home_help__eligible_for_home_help:
       2018-08:
@@ -77,9 +68,6 @@
     families:
       "Whanau":
         principal_caregiver: "NZ-Citizen"
-    titled_properties:
-      whare:
-        others: ["NZ-Citizen"]
   output:
     home_help__eligible_for_home_help:
       - true
@@ -96,9 +84,6 @@
         date_of_birth: 2000-12-10
     families:
       "Whanau":
-        others: ["Immediate Family"]
-    titled_properties:
-      whare:
         others: ["Immediate Family"]
 
   output:

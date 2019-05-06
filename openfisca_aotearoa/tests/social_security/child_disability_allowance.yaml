@@ -24,9 +24,6 @@
         principal_caregiver: Mama
         children: [ Tama_disabled_child, Tamahine_able_bodied_teenager]
         others: Papa
-    titled_properties:
-      whare:
-        others: [Mama, Papa, Tama_disabled_child, Tamahine_able_bodied_teenager]
   output:
     social_security__eligible_for_child_disability_allowance:
       - true  # mama (principal carer)
@@ -52,9 +49,6 @@
       Whanau:
         children: [Tama_disabled_child]
         principal_caregiver: Koro
-    titled_properties:
-      whare:
-        others: [Koro, Tama_disabled_child]
   output:
     social_security__eligible_for_child_disability_allowance:
       - true # Koro
@@ -78,9 +72,6 @@
       Whanau:
         principal_caregiver: Koro
         children: [Tama_disabled_child]
-    titled_properties:
-      whare:
-        others: [Koro, Tama_disabled_child]
   output:
     social_security__eligible_for_child_disability_allowance:
       - false # Koro
@@ -104,9 +95,6 @@
       Whanau:
         children: [Tama_disabled_child]
         others: [Koro]
-    titled_properties:
-      whare:
-        others: [Koro, Tama_disabled_child]
   output:
     social_security__eligible_for_child_disability_allowance:
       - false # Koro
@@ -129,9 +117,6 @@
       Whanau:
         children: [Tama_disabled_child]
         principal_caregiver: Koro
-    titled_properties:
-      whare:
-        others: [Koro, Tama_disabled_child]
   output:
     social_security__eligible_for_child_disability_allowance:
       - false # Koro
@@ -155,9 +140,6 @@
       Whanau:
         children: [Tama_disabled_child]
         principal_caregiver: Koro
-    titled_properties:
-      whare:
-        others: [Koro, Tama_disabled_child]
   output:
     social_security__eligible_for_child_disability_allowance:
       - false # Koro

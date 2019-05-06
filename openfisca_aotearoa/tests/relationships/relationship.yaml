@@ -9,9 +9,6 @@
     families:
       Beatles:
         others: Brad
-    titled_properties:
-      whare:
-        others: Brad
   output:
     is_married_or_in_a_civil_union_or_de_facto_relationship:
       - true
@@ -27,9 +24,6 @@
         civil_union__is_in_civil_union: true
     families:
       Beatles:
-        others: Brad
-    titled_properties:
-      whare:
         others: Brad
   output:
     is_married_or_in_a_civil_union_or_de_facto_relationship:
@@ -47,9 +41,6 @@
     families:
       Beatles:
         others: Brad
-    titled_properties:
-      whare:
-        others: Brad
   output:
     is_married_or_in_a_civil_union_or_de_facto_relationship:
       - true
@@ -65,9 +56,6 @@
         is_married: false
     families:
       Beatles:
-        others: Brad
-    titled_properties:
-      whare:
         others: Brad
   output:
     is_married_or_in_a_civil_union_or_de_facto_relationship:
