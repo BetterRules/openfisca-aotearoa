@@ -1,5 +1,5 @@
 ---
-- name: Child status
+- name: Child status as per the Social Security Act
   period: 2018-08
   absolute_error_margin: 0
   input:
