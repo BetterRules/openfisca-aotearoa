@@ -1,5 +1,10 @@
 # Changelog
 
+# 11.1.3 [174](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/174)
+* No functional changes.
+  - Removing unnecesary family groups in tests
+  - Better names for tests
+
 # 11.1.2 [170](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/170)
 * No functional changes.
   - Removing unnecesary family/titled_property groups in tests
