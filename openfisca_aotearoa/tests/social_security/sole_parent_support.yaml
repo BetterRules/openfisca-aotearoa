@@ -1,4 +1,4 @@
-- name: Tests Sole Parent Support
+- name: Sole Parent Support
   period: 2018-10
   absolute_error_margin: 0
   input:
@@ -20,7 +20,7 @@
       - true # koro
       - false # Tamaiti
 
-- name: Tests Sole Parent Support when in a relationship
+- name: Sole Parent Support when in a relationship
   period: 2018-10
   absolute_error_margin: 0
   input:
@@ -47,7 +47,7 @@
       - false # Matilda
 
 
-- name: Tests Sole Parent Support when inadequately supported by partner
+- name: Sole Parent Support when inadequately supported by partner
   period: 2018-10
   absolute_error_margin: 0
   input:
@@ -75,7 +75,7 @@
       - false # Matilda
 
 
-- name: Tests Sole Parent Support - child too old
+- name: Sole Parent Support - child too old
   period: 2018-10
   absolute_error_margin: 0
   input:
@@ -99,7 +99,7 @@
       - false # Tamaiti
 
 
-- name: Tests Sole Parent Support - multiple children, should be eligible
+- name: Sole Parent Support - multiple children, should be eligible
   period: 2018-10
   absolute_error_margin: 0
   input:
