@@ -39,10 +39,6 @@
         parental_leave__threshold_tests: 12
         parental_leave__applied_for_leave_or_stopped_working: true
         parental_leave__had_previous_parental_leave_in_last_six_months: false
-
-    families:
-      Whanau:
-        others: [Passes_employee_test, Non_Citizen, A_Primary_Carer, Not_A_Primary_Carer, Received_Parental_Leave]
   output:
     parental_leave__eligible_employee:
       - false   # Passes employee test
