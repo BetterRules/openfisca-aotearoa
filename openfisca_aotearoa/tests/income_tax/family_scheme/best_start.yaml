@@ -50,9 +50,9 @@
         children: ["Hemi-junior-early"]
   output:
     best_start__family_has_children_eligible:
-      2018-07: [0, 1, 1]
+      2018-07: [false, true, true]
     best_start__eligibility:
-      2018-07: [0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0]
+      2018-07: [false, false, false, false, false, false, true, true, false, false, false, false, false, false]
     best_start__tax_credit_per_child:
       2018-07: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 260, 0, 0]
       2018-08: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 260, 260, 0, 0]
@@ -105,7 +105,7 @@
     best_start__tax_credit_per_child:
       2018-07: [0, 0, 0, 260]
     best_start__entitlement:
-      2018-07: [260, 0, 0, 0]
+      2018-07: [260.0, 0.0, 0.0, 0.0]
 
 - name: Best Start entitlement value with baby due date after 1st July 2018 with older sibling
   period: 2018
