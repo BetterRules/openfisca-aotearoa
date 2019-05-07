@@ -1,5 +1,5 @@
 # We can run this test on our command line using `openfisca-run-test openfisca_aotearoa/tests/income_tax/family_scheme/family_scheme.yaml`
-- name: Tests persons age eligibility in relation to the family scheme
+- name: persons age eligibility in relation to the family scheme
   period: 2018
   absolute_error_margin: 0
   input:
@@ -14,8 +14,8 @@
         partners: ["Rakinui"]
   output:
     family_scheme__caregiver_age_qualifies:
-      2018-07: [0, 1]
-- name: Tests if family has dependent children in relation to the family scheme
+      2018-07: [false, true]
+- name: if family has dependent children in relation to the family scheme
   period: 2018
   absolute_error_margin: 0
   input:
@@ -31,7 +31,7 @@
   output:
     family_scheme__has_dependent_children:
       2018-07: [1]
-- name: Tests the number of dependent children a family has in relation to the family scheme
+- name: the number of dependent children a family has in relation to the family scheme
   period: 2018
   absolute_error_margin: 0
   input:

@@ -1,5 +1,5 @@
 ---
-- name: Child status
+- name: Child status as per the Social Security Act
   period: 2018-08
   absolute_error_margin: 0
   input:
@@ -17,10 +17,6 @@
         age: 16
       Neil:
         age: 17
-    families:
-      Beatles:
-        children: [Paul, John, George, Ringo]
-        others: [Derek, Neil]
   output:
     social_security__is_a_child:
       - false  # paul

@@ -1,64 +1,36 @@
 ---
-- name: "Married Brad"
+- name: "Married"
   period: 2018-08
   absolute_error_margin: 0
   input:
-    persons:
-      Brad:
-        marriage__is_married: true
-    families:
-      Beatles:
-        others: Brad
+    marriage__is_married: true
   output:
-    is_married_or_in_a_civil_union_or_de_facto_relationship:
-      - true
-    is_married:
-      - true
+    is_married_or_in_a_civil_union_or_de_facto_relationship: true
+    is_married: true
 
 - name: "Civil Union"
   period: 2018-08
   absolute_error_margin: 0
   input:
-    persons:
-      Brad:
-        civil_union__is_in_civil_union: true
-    families:
-      Beatles:
-        others: Brad
+    civil_union__is_in_civil_union: true
   output:
-    is_married_or_in_a_civil_union_or_de_facto_relationship:
-      true
-    is_in_civil_union:
-      - true
+    is_married_or_in_a_civil_union_or_de_facto_relationship: true
+    is_in_civil_union: true
 
 - name: "De facto relationship"
   period: 2018-08
   absolute_error_margin: 0
   input:
-    persons:
-      Brad:
-        property_relationships__is_in_de_facto_relationship: true
-    families:
-      Beatles:
-        others: Brad
+    property_relationships__is_in_de_facto_relationship: true
   output:
-    is_married_or_in_a_civil_union_or_de_facto_relationship:
-      - true
-    is_in_de_facto_relationship:
-      - true
+    is_married_or_in_a_civil_union_or_de_facto_relationship: true
+    is_in_de_facto_relationship: true
 
-- name: "Not Married Brad"
+- name: "Not Married"
   period: 2018-08
   absolute_error_margin: 0
   input:
-    persons:
-      Brad:
-        is_married: false
-    families:
-      Beatles:
-        others: Brad
+    is_married: false
   output:
-    is_married_or_in_a_civil_union_or_de_facto_relationship:
-      - false
-    is_married:
-      - false
+    is_married_or_in_a_civil_union_or_de_facto_relationship: false
+    is_married: false

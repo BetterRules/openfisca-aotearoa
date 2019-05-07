@@ -1,4 +1,4 @@
-- name: Tests Relationship status
+- name: Relationship status
   period: 2018-10
   absolute_error_margin: 0
   input:
@@ -21,11 +21,6 @@
         partners: [Bob, Fred]
       Three:
         principal_caregiver: Mary
-    titled_properties:
-      One:
-        others: [Mama, Papa]
-      Two:
-        others: [Bob, Fred, Mary]
   output:
     has_a_partner:
       - true # mama

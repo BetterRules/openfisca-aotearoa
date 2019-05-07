@@ -1,4 +1,4 @@
-- name: Tests the net_income formula
+- name: net income formula
   period: 2018
   absolute_error_margin: 1
   input:
@@ -6,7 +6,7 @@
     income_tax__annual_total_deduction: 12000
   output:
     income_tax__net_income: 58000
-- name: Tests the net_income formula for zero on negative calculation
+- name: net income formula for zero on negative calculation
   period: 2018
   absolute_error_margin: 1
   input:
@@ -14,7 +14,7 @@
     income_tax__annual_total_deduction: 82000
   output:
     income_tax__net_income: 0
-- name: Tests the net_loss formula
+- name: net loss formula
   period: 2018
   absolute_error_margin: 1
   input:
@@ -22,7 +22,7 @@
     income_tax__annual_total_deduction: 82000
   output:
     income_tax__net_loss: -12000
-- name: Tests the net_income formula for zero when no loss
+- name: net income formula for zero when no loss
   period: 2018
   absolute_error_margin: 1
   input:
@@ -30,7 +30,7 @@
     income_tax__annual_total_deduction: 12000
   output:
     income_tax__net_loss: 0
-- name: Tests the taxable_income formula calculation
+- name: taxable income formula calculation
   period: 2018
   absolute_error_margin: 1
   input:
@@ -38,7 +38,7 @@
     income_tax__available_tax_loss: 12000
   output:
     income_tax__taxable_income: 48000
-- name: Tests the taxable_income formula calculation with a potential negative result
+- name: taxable income formula calculation with a potential negative result
   period: 2018
   absolute_error_margin: 1
   input:
