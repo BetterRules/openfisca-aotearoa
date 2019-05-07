@@ -14,7 +14,7 @@
         partners: ["Rakinui"]
   output:
     family_scheme__caregiver_age_qualifies:
-      2018-07: [0, 1]
+      2018-07: [false, true]
 - name: if family has dependent children in relation to the family scheme
   period: 2018
   absolute_error_margin: 0
