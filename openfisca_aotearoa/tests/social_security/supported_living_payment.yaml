@@ -1,6 +1,6 @@
 ---
 
-- name: Tests Supported Living Payment - default false
+- name: Supported Living Payment - default false
   period: 2018-10
   absolute_error_margin: 0
   input:
@@ -15,7 +15,7 @@
     social_security__eligible_for_supported_living_payment:
       - false
 
-- name: Tests Supported Living Payment - totally blind
+- name: Supported Living Payment - totally blind
   period: 2018-10
   absolute_error_margin: 0
   input:
@@ -34,7 +34,7 @@
       2018-10:
         - true
 
-- name: Tests Supported Living Payment - "severely" disabled
+- name: Supported Living Payment - "severely" disabled
   period: 2018-10
   absolute_error_margin: 0
   input:
@@ -53,7 +53,7 @@
       - true
 
 
-- name: Tests Supported Living Payment - self inflicted injury
+- name: Supported Living Payment - self inflicted injury
   period: 2018-10
   absolute_error_margin: 0
   input:
@@ -72,7 +72,7 @@
     social_security__eligible_for_supported_living_payment:
       - false
 
-- name: Tests Supported Living Payment - Carer looking after another person
+- name: Supported Living Payment - Carer looking after another person
   period: 2018-10
   absolute_error_margin: 0
   input:
