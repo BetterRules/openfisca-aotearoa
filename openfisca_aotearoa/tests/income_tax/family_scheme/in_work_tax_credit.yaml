@@ -1,6 +1,6 @@
 # We can run this test on our command line using `openfisca-run-test openfisca_aotearoa/tests/income_tax/family_scheme/in_work_tax_credit.yaml`
 
-- name: Family age eligibility in relation to the in work tax credit
+- name: In Work Tax Credit - Family age eligibility in relation to the in work tax credit
   period: 2018-08
   input:
     persons:
@@ -30,7 +30,7 @@
   output:
     family_scheme__qualifies_for_in_work_tax_credit: [1, 0, 0, 0, 0]
 
-- name: Persons age eligibility in relation to the in work tax credit
+- name: In Work Tax Credit - Persons age eligibility in relation to the in work tax credit
   period: 2018-08
   input:
     persons:
@@ -56,7 +56,7 @@
   output:
     family_scheme__qualifies_for_in_work_tax_credit: [0, 0, 0]
 
-- name: Persons income under threshold requirement in relation to the in work tax credit
+- name: In Work Tax Credit - Persons income under threshold requirement in relation to the in work tax credit
   period: 2018-08
   input:
     persons:
@@ -86,7 +86,7 @@
   output:
     family_scheme__qualifies_for_in_work_tax_credit: [0, 0, 0, 0, 0]
 
-- name: Persons full time earner requirement in relation to the in work tax credit
+- name: In Work Tax Credit - Persons full time earner requirement in relation to the in work tax credit
   period: 2018-08
   input:
     persons:
@@ -114,9 +114,9 @@
         partners: ["Rakinui"]
         children: ["Tāne", "Rongo", "Ikatere"]
   output:
-    family_scheme__qualifies_for_in_work_tax_credit: [0, 0, 0, 0, 0]
+    family_scheme__qualifies_for_in_work_tax_credit: [false, false, false, false, false]
 
-- name: Persons age eligibility in relation to if they have children
+- name: In Work Tax Credit - Persons age eligibility in relation to if they have children
   period: 2018-08
   input:
     persons:
@@ -137,9 +137,9 @@
         principal_caregiver: "Papatūānuku"
         partners: ["Rakinui"]
   output:
-    family_scheme__qualifies_for_in_work_tax_credit: [0, 0]
+    family_scheme__qualifies_for_in_work_tax_credit: [false, false]
 
-- name: Otherwise eligibility person is not normally resident in NZ in relation to the in work tax credit
+- name: In Work Tax Credit - Otherwise eligibility person is not normally resident in NZ in relation to the in work tax credit
   period: 2018-08
   input:
     persons:
@@ -163,4 +163,4 @@
         partners: ["Rakinui"]
         children: ["Tāne"]
   output:
-    family_scheme__qualifies_for_in_work_tax_credit: [0, 0, 0]
+    family_scheme__qualifies_for_in_work_tax_credit: [false, false, false]
