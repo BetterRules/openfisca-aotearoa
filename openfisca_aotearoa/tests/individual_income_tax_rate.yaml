@@ -1,4 +1,4 @@
-- name: net_income formula
+- name: net income formula
   period: 2018
   absolute_error_margin: 1
   input:
@@ -6,7 +6,7 @@
     income_tax__annual_total_deduction: 12000
   output:
     income_tax__net_income: 58000
-- name: net_income formula for zero on negative calculation
+- name: net income formula for zero on negative calculation
   period: 2018
   absolute_error_margin: 1
   input:
@@ -14,7 +14,7 @@
     income_tax__annual_total_deduction: 82000
   output:
     income_tax__net_income: 0
-- name: net_loss formula
+- name: net loss formula
   period: 2018
   absolute_error_margin: 1
   input:
@@ -22,7 +22,7 @@
     income_tax__annual_total_deduction: 82000
   output:
     income_tax__net_loss: -12000
-- name: net_income formula for zero when no loss
+- name: net income formula for zero when no loss
   period: 2018
   absolute_error_margin: 1
   input:
