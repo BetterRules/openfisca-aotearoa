@@ -1,6 +1,6 @@
 ---
 
-- name: "Childcare Subsidy child under 5 not in school"
+- name: "Childcare Subsidy - child under 5 not in school"
   period: 2018-08
   input:
     persons:
@@ -30,7 +30,7 @@
       - true  #  Mama
       - false #  child
 
-- name: "Family income over threshold"
+- name: "Childcare Subsidy - Family income over threshold"
   period: 2018-08
   input:
     persons:
