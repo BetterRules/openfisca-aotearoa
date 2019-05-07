@@ -1,4 +1,4 @@
-- name: Tests Job Seeker Support Scenarios
+- name: Job Seeker Support Scenarios
   period: 2018-08
   absolute_error_margin: 0
   input:
@@ -43,11 +43,6 @@
         number_of_years_lived_in_nz: 50
         jobseeker_support__below_income_threshold: false
         jobseeker_support__is_prepared_for_employment: false
-
-    families:
-      Whanau:
-        principal_caregiver: Mama
-        others: [Tama, Papa, Alan, Dada]
 
   output:
     social_security__eligible_for_jobseeker_support:
