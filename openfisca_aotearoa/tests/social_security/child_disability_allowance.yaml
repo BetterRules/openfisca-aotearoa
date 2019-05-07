@@ -1,6 +1,6 @@
 ---
 
-- name: Tests Child disability allowance
+- name: Child disability allowance
   period: 2018-08
   absolute_error_margin: 0
   input:
@@ -54,7 +54,7 @@
       - true # Koro
       - false # Tama
 
-- name: Tests - constant care not needed
+- name: Child disability allowance - constant care not needed
   period: 2018-08
   absolute_error_margin: 0
   input:
@@ -78,7 +78,7 @@
       - false # Tama
 
 
-- name: Tests - no principal carer
+- name: Child disability allowance - no principal carer
   period: 2018-08
   absolute_error_margin: 0
   input:
@@ -100,7 +100,7 @@
       - false # Koro
       - false # Tama
 
-- name: Tests - child too old
+- name: Child disability allowance - child too old
   period: 2018-08
   absolute_error_margin: 0
   input:
@@ -123,7 +123,7 @@
       - false # Tama
 
 
-- name: Tests - Disable for less than 12 months
+- name: Child disability allowance - Disabled for less than 12 months
   period: 2018-08
   absolute_error_margin: 0
   input:
