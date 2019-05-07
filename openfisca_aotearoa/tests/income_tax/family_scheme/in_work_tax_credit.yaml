@@ -30,7 +30,7 @@
   output:
     family_scheme__qualifies_for_in_work_tax_credit: [1, 0, 0, 0, 0]
 
-- name: Tests persons age eligibility in relation to the in work tax credit
+- name: Persons age eligibility in relation to the in work tax credit
   period: 2018-08
   input:
     persons:
@@ -56,7 +56,7 @@
   output:
     family_scheme__qualifies_for_in_work_tax_credit: [0, 0, 0]
 
-- name: Tests persons income under threshold requirement in relation to the in work tax credit
+- name: Persons income under threshold requirement in relation to the in work tax credit
   period: 2018-08
   input:
     persons:
@@ -86,7 +86,7 @@
   output:
     family_scheme__qualifies_for_in_work_tax_credit: [0, 0, 0, 0, 0]
 
-- name: Tests persons full time earner requirement in relation to the in work tax credit
+- name: Persons full time earner requirement in relation to the in work tax credit
   period: 2018-08
   input:
     persons:
@@ -116,7 +116,7 @@
   output:
     family_scheme__qualifies_for_in_work_tax_credit: [0, 0, 0, 0, 0]
 
-- name: Tests persons age eligibility in relation to if they have children
+- name: Persons age eligibility in relation to if they have children
   period: 2018-08
   input:
     persons:
