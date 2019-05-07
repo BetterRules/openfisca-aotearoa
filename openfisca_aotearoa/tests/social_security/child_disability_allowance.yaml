@@ -31,7 +31,7 @@
       - false  # Tama (disabled child)
       - false  # tamahine (able bodied)
 
-- name: Tests - Eligible
+- name: Child Disability Allowance, eligible
   period: 2018-08
   absolute_error_margin: 0
   input:
