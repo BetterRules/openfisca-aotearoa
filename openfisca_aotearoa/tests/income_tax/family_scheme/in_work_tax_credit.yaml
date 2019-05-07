@@ -28,7 +28,7 @@
         partners: ["Rakinui"]
         children: ["Tāne", "Rongo", "Ikatere"]
   output:
-    family_scheme__qualifies_for_in_work_tax_credit: [1, 0, 0, 0, 0]
+    family_scheme__qualifies_for_in_work_tax_credit: [true, false, false, false, false]
 
 - name: In Work Tax Credit - Persons age eligibility in relation to the in work tax credit
   period: 2018-08
@@ -54,7 +54,7 @@
         partners: ["Rakinui"]
         children: ["Tāne"]
   output:
-    family_scheme__qualifies_for_in_work_tax_credit: [0, 0, 0]
+    family_scheme__qualifies_for_in_work_tax_credit: [false, false, false]
 
 - name: In Work Tax Credit - Persons income under threshold requirement in relation to the in work tax credit
   period: 2018-08
@@ -84,7 +84,7 @@
         partners: ["Rakinui"]
         children: ["Tāne", "Rongo", "Ikatere"]
   output:
-    family_scheme__qualifies_for_in_work_tax_credit: [0, 0, 0, 0, 0]
+    family_scheme__qualifies_for_in_work_tax_credit: [false, false, false, false, false]
 
 - name: In Work Tax Credit - Persons full time earner requirement in relation to the in work tax credit
   period: 2018-08
