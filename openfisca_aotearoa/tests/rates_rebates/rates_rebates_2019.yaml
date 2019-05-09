@@ -1,62 +1,57 @@
-- name: Input/output test of earning 32103 with no dependants and rates of 2000
-  period: 2018
+# We can run this test on our command line using `openfisca-run-test openfisca_aotearoa/tests/rates_rebates.yaml`
+
+# These tests have been created with the Universal Rates Rebate Calculator spreadsheet provided by the DIA Rates Rebate team
+- name: Someone earning 32103 with no dependants and rates of 1000
+  period: 2019
   absolute_error_margin: 1.0
   input:
-    rates_rebates__combined_income: 32103
+    rates_rebates__combined_income: 24000
+    rates_rebates__dependants: 0
+    rates_rebates__rates_total: 1000
+  output:
+    rates_rebates__rebate: 560
+- name: Someone earning 32103 with no dependants and rates of 1000
+  period: 2019
+  absolute_error_margin: 1.0
+  input:
+    rates_rebates__combined_income: 24000
     rates_rebates__dependants: 0
     rates_rebates__rates_total: 2000
   output:
-    rates_rebates__rebate: 312.67
-
-
-- name: Family scenario of earning 32103 with no dependants and rates of 2000
-  period: 2018
-  absolute_error_margin: 1.0
-  input:
-    persons:
-      Fred:
-        rates_rebates__combined_income: 32103
-        rates_rebates__dependants: 0
-    titled_properties:
-      whare:
-        rates_rebates__rates_total: 2000
-        owners: [Fred]
-  output:
-    titled_properties:
-      whare:
-        rates_rebates__rebate:
-          312.67
-
-
-- name: Someone earning 32103 with no dependants and rates of 2000
-  period: 2018
-  absolute_error_margin: 1.0
-  input:
-    persons:
-      Fred:
-        rates_rebates__combined_income: 32103
-        rates_rebates__dependants: 0
-    titled_properties:
-      whare:
-        rates_rebates__rates_total: 2000
-        owners: [Fred]
-  output:
-    titled_properties:
-      whare:
-        rates_rebates__rebate:
-          312.67
-
-- name: Earns too much
-  absolute_error_margin: 1.0
+    rates_rebates__rebate: 630
+- name: Someone earning 32103 with no dependants and rates of 1000
   period: 2019
+  absolute_error_margin: 1.0
   input:
-    persons:
-      Mama:
-        rates_rebates__combined_income: 34992.34
-        rates_rebates__dependants: 0
-    titled_properties:
-      Home:
-        rates_rebates__rates_total: 2000
-        owners: [Mama]
+    rates_rebates__combined_income: 29000
+    rates_rebates__dependants: 0
+    rates_rebates__rates_total: 1000
   output:
-    rates_rebates__rebate: 0.0
+    rates_rebates__rebate: 83
+- name: Someone earning 32103 with no dependants and rates of 1000
+  period: 2019
+  absolute_error_margin: 1.0
+  input:
+    rates_rebates__combined_income: 30000
+    rates_rebates__dependants: 0
+    rates_rebates__rates_total: 1000
+  output:
+    rates_rebates__rebate: 0
+- name: Someone earning 32103 with no dependants and rates of 1000
+  period: 2019
+  absolute_error_margin: 1.0
+  input:
+    rates_rebates__combined_income: 38000
+    rates_rebates__dependants: 0
+    rates_rebates__rates_total: 2600
+  output:
+    rates_rebates__rebate: 24.67
+- name: Someone earning 32103 with no dependants and rates of 1000
+  period: 2019
+  absolute_error_margin: 1.0
+  input:
+    rates_rebates__combined_income: 40000
+    rates_rebates__dependants: 27
+    rates_rebates__rates_total: 1000
+  output:
+    rates_rebates__rebate: 395

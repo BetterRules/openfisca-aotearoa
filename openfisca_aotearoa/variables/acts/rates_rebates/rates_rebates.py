@@ -51,6 +51,7 @@ class rates_rebates__rebate(Variable):
 
         # wrapping floor math function is non legislative and only to conform output of variable with existing infrastracture.
         excess_income = floor((titled_properties.sum(titled_properties.members('rates_rebates__combined_income', period)) - allowable_income) / 8)
+        excess_income = clip(excess_income, 0, excess_income)
 
         # minus the initial contribution
         rates_minus_contribution = titled_properties('rates_rebates__rates_total', period) - initial_contribution
