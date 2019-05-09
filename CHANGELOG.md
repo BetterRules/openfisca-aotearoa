@@ -1,5 +1,9 @@
 # Changelog
 
+# 11.2.0 [176](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/176)
+* Bug Fix
+  - Rates Rebate algorithm formula incorrectly allowed negative excess income
+
 # 11.1.3 [174](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/174)
 * No functional changes.
   - Removing unnecessary family groups in tests
