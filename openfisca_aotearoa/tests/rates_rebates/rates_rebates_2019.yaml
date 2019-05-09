@@ -1,62 +1,51 @@
-- name: Input/output test of earning 32103 with no dependants and rates of 2000
-  period: 2018
-  absolute_error_margin: 1.0
-  input:
-    rates_rebates__combined_income: 32103
-    rates_rebates__dependants: 0
-    rates_rebates__rates_total: 2000
-  output:
-    rates_rebates__rebate: 312.67
-
-
-- name: Family scenario of earning 32103 with no dependants and rates of 2000
-  period: 2018
-  absolute_error_margin: 1.0
-  input:
-    persons:
-      Fred:
-        rates_rebates__combined_income: 32103
-        rates_rebates__dependants: 0
-    titled_properties:
-      whare:
-        rates_rebates__rates_total: 2000
-        owners: [Fred]
-  output:
-    titled_properties:
-      whare:
-        rates_rebates__rebate:
-          312.67
-
-
-- name: Someone earning 32103 with no dependants and rates of 2000
-  period: 2018
-  absolute_error_margin: 1.0
-  input:
-    persons:
-      Fred:
-        rates_rebates__combined_income: 32103
-        rates_rebates__dependants: 0
-    titled_properties:
-      whare:
-        rates_rebates__rates_total: 2000
-        owners: [Fred]
-  output:
-    titled_properties:
-      whare:
-        rates_rebates__rebate:
-          312.67
-
-- name: Earns too much
-  absolute_error_margin: 1.0
+# Copied from the 2018/2019 Form
+- name: Rates Rebate - 2018-2019 form example 1x1
+  absolute_error_margin: 0.01
   period: 2019
   input:
-    persons:
-      Mama:
-        rates_rebates__combined_income: 34992.34
-        rates_rebates__dependants: 0
-    titled_properties:
-      Home:
-        rates_rebates__rates_total: 2000
-        owners: [Mama]
+    rates_rebates__combined_income: 24000
+    rates_rebates__dependants: 0
+    rates_rebates__rates_total: 1000
   output:
-    rates_rebates__rebate: 0.0
+    rates_rebates__rebate: 560.00
+    rates_rebates__maximum_income_for_full_rebate: 24620
+
+- name: Rates Rebate - 2018-2019 form example 1x2. income $25,000 rates $1,000
+  absolute_error_margin: 0.01
+  period: 2019
+  input:
+    rates_rebates__combined_income: 25000
+    rates_rebates__dependants: 0
+    rates_rebates__rates_total: 1000
+  output:
+    rates_rebates__rebate: 560.00
+
+- name: Rates Rebate - 2018-2019 form example 1x3. income $26,000 rates $1,000
+  absolute_error_margin: 0.01
+  period: 2019
+  input:
+    rates_rebates__combined_income: 26000
+    rates_rebates__dependants: 0
+    rates_rebates__rates_total: 1000
+  output:
+    rates_rebates__rebate: 458.00
+
+- name: Rates Rebate - 2018-2019 form example. income $32,000 rates $1,800
+  absolute_error_margin: 0.01
+  period: 2019
+  input:
+    rates_rebates__combined_income: 32000
+    rates_rebates__dependants: 0
+    rates_rebates__rates_total: 1800
+  output:
+    rates_rebates__rebate: 241.33
+
+- name: Rates Rebate - 2018-2019 form example. income $42,000 rates $3,500
+  absolute_error_margin: 0.01
+  period: 2019
+  input:
+    rates_rebates__combined_income: 42000
+    rates_rebates__dependants: 0
+    rates_rebates__rates_total: 3500
+  output:
+    rates_rebates__rebate: 124.67
