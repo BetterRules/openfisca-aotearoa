@@ -2,7 +2,34 @@
     "acc" : {
         "Title":"Accident Compensation Act 2001",
         "Type": "Act",
-        "Reference":"http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM99494.html"
+        "Reference":"http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM99494.html",
+        "Children": ["acc_sched_1", "acc_part_2", "acc_part_4"]
+    },
+    "acc_sched_1" : {
+        "Title":"Accident Compensation Act 2001, Schedule 1",
+        "Type": "Schedule",
+        "Reference":"http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM104541.html"
+    },
+    "acc_part_2" : {
+        "Title":"Accident Compensation Act 2001, Part 2",
+        "Type": "Part",
+        "Reference":"http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM100676.html"
+    },
+    "acc_part_4" : {
+        "Title":"Accident Compensation Act 2001, Part 4",
+        "Type": "Part",
+        "Reference":"http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM100999.html",
+        "Children": ["incapacity_for_employment", "weekly_compensation"]
+    },
+    "weekly_compensation" : {
+        "Title":"Incapacity for employment, 100 - 101",
+        "Type": "Section",
+        "Reference":"http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM101452.html"
+    },
+    "incapacity_for_employment" : {
+        "Title":"Incapacity for employment, 102 - 106",
+        "Type": "Section",
+        "Reference":"http://www.legislation.govt.nz/act/public/2001/0049/latest/DLM100999.html"
     },
     "accommodation_supplement" : {
         "Title":"Accommodation Supplement",
