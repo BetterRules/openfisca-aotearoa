@@ -17,8 +17,8 @@ cd openfisca-aotearoa
 We want to use the exact version of python we use on the official servers
 
 ```sh
- pyenv install < .python-verion
- python --version # You should have python 3.7 or better installed on your computer.
+ pyenv install < .python-version
+ python --version # This should match the version in .python-version file
 ```
 
 ### If `ModuleNotFoundError: No module named '_ctypes'`
