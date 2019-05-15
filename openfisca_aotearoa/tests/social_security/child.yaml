@@ -1,6 +1,6 @@
 ---
 - name: Child status as per the Social Security Act
-  period: 2018-08
+  period: "2018-08-04"
   absolute_error_margin: 0
   input:
     persons:
@@ -12,7 +12,8 @@
         age: 6
       Ringo:
         age: 17
-        social_security__is_financially_independent: true
+        social_security__is_financially_independent:
+          "2018-08": true
       Derek:
         age: 16
       Neil:
