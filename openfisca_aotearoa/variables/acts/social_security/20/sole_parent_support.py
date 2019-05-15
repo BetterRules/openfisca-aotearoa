@@ -78,7 +78,7 @@ class sole_parent_support__family_has_child_under_age_limit(Variable):
 
     def formula(families, period, parameters):
         youngest_child_age_threshold = parameters(period).entitlements.social_security.sole_parent_support.youngest_child_age_threshold
-        youngest_ages = families('age_of_youngest', period)
+        youngest_ages = families('age_of_youngest', period.start)
         return youngest_ages < youngest_child_age_threshold
 
 
@@ -93,7 +93,7 @@ class sole_parent_support__meets_age_threshold(Variable):
     def formula(persons, period, parameters):
         # old enough?
         age_threshold = parameters(period).entitlements.social_security.sole_parent_support.age_threshold
-        return persons("age", period) >= age_threshold
+        return persons("age", period.start) >= age_threshold
 
 
 class sole_parent_support__meets_years_in_nz_requirement(Variable):

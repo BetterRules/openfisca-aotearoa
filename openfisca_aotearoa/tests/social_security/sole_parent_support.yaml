@@ -5,12 +5,14 @@
     persons:
       Koro:
         is_nz_citizen: true
-        age: 81
+        age:
+          "2018-10-01": 81
         social_security__is_ordinarily_resident_in_new_zealand: true
         sole_parent_support__below_income_threshold: true
         sole_parent_support__meets_years_in_nz_requirement: true
       Tamaiti:
-        age: 5
+        age:
+          "2018-10-01": 5
     families:
       Whanau:
         principal_caregiver: Koro
@@ -27,14 +29,17 @@
     persons:
       Papa:
         is_nz_citizen: true
-        age: 21
+        age:
+          "2018-10-01": 21
         social_security__is_ordinarily_resident_in_new_zealand: true
         sole_parent_support__below_income_threshold: true
         sole_parent_support__meets_years_in_nz_requirement: true
       Mama:
-        age: 19
+        age:
+          "2018-10-01": 19
       Matilda:
-        age: 5
+        age:
+          "2018-10-01": 5
     families:
       Whanau:
         principal_caregiver: Papa
@@ -54,15 +59,18 @@
     persons:
       Papa:
         is_nz_citizen: true
-        age: 21
+        age:
+          "2018-10-01": 21
         social_security__is_ordinarily_resident_in_new_zealand: true
         sole_parent_support__below_income_threshold: true
         sole_parent_support__meets_years_in_nz_requirement: true
         is_adequately_supported_by_partner: false
       Mama:
-        age: 29
+        age:
+          "2018-10-01": 29
       Matilda:
-        age: 5
+        age:
+          "2018-10-01": 5
     families:
       Whanau:
         principal_caregiver: Papa
@@ -82,12 +90,14 @@
     persons:
       Koro:
         is_nz_citizen: true
-        age: 81
+        age:
+          "2018-10-01": 81
         social_security__is_ordinarily_resident_in_new_zealand: true
         sole_parent_support__below_income_threshold: true
         sole_parent_support__meets_years_in_nz_requirement: true
       Tamaiti:
-        age: 14
+        age:
+          "2018-10-01": 14
     families:
       Whanau:
         principal_caregiver: Koro
@@ -106,16 +116,20 @@
     persons:
       Koro:
         is_nz_citizen: true
-        age: 81
+        age:
+          "2018-10-01": 81
         social_security__is_ordinarily_resident_in_new_zealand: true
         sole_parent_support__below_income_threshold: true
         sole_parent_support__meets_years_in_nz_requirement: true
       Tahi:
-        age: 19
+        age:
+          "2018-10-01": 19
       Rua:
-        age: 14
+        age:
+          "2018-10-01": 14
       Toru:
-        age: 13
+        age:
+          "2018-10-01": 13
     families:
       Whanau:
         principal_caregiver: Koro
