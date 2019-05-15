@@ -39,8 +39,10 @@ class best_start__family_has_children_eligible(Variable):
             families.members("date_of_birth", period) >= datetime64('2018-07-01'))
         families_have_children_due_after_launch_date = families.max(
             families.members("due_date_of_birth", period) >= datetime64('2018-07-01'))
+        # NOTE: using the age at the start of the month
+        # Age changes on a DAY, but this calculation only has a granularity of MONTH
         families_have_children_younger_than_three_years = families(
-            "age_of_youngest", period) < 3
+            "age_of_youngest", period.start) < 3
         return ((families_have_children_born_after_launch_date + families_have_children_due_after_launch_date) > 0) * \
             families_have_children_younger_than_three_years
 
