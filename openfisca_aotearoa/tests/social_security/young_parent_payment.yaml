@@ -6,14 +6,16 @@
       Ruby:
         is_a_parent: true
         has_dependent_child: true
-        age: 19
+        age:
+          "2018-10-01": 19
         is_nz_citizen: true
         social_security__is_ordinarily_resident_in_new_zealand: true
         monthly_income: 80000.0
       Oliver:
         is_a_parent: true
         has_dependent_child: true
-        age: 16
+        age:
+          "2018-10-01": 16
         is_nz_citizen: true
         social_security__is_ordinarily_resident_in_new_zealand: true
         monthly_income: 0.0
@@ -22,7 +24,8 @@
       Oscar:
         is_a_parent: true
         has_dependent_child: true
-        age: 17
+        age:
+          "2018-10-01": 17
         is_permanent_resident: true
         social_security__is_ordinarily_resident_in_new_zealand: true
         monthly_income: 0.0
@@ -59,7 +62,8 @@
         has_been_married_or_in_a_civil_union_or_de_facto_relationship: true
         is_a_parent: true
         has_dependent_child: true
-        age: 19
+        age:
+          "2018-10-01": 19
         is_nz_citizen: true
         monthly_income: 10.0
       Oliver:
@@ -67,7 +71,8 @@
         has_been_married_or_in_a_civil_union_or_de_facto_relationship: false
         is_a_parent: true
         has_dependent_child: true
-        age: 16
+        age:
+          "2018-10-01": 16
         is_nz_citizen: true
         social_security__is_ordinarily_resident_in_new_zealand: true
         family_scheme__assessable_income_for_month: 10.0
@@ -76,7 +81,8 @@
         has_been_married_or_in_a_civil_union_or_de_facto_relationship: false
         is_a_parent: true
         has_dependent_child: true
-        age: 17
+        age:
+          "2018-10-01": 17
         is_permanent_resident: true
         social_security__is_ordinarily_resident_in_new_zealand: true
         family_scheme__assessable_income_for_month: 0.0
@@ -108,14 +114,16 @@
   input:
     persons:
       Kiwi:
-        age: 19
+        age:
+          "2018-10-01": 19
         has_dependent_child: true
         is_a_parent: true
         is_nz_citizen: true
         family_scheme__assessable_income_for_month: 300.0
         social_security__is_ordinarily_resident_in_new_zealand: true
       OE:
-        age: 19
+        age:
+          "2018-10-01": 19
         has_dependent_child: true
         is_a_parent: true
         is_nz_citizen: true
