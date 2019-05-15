@@ -40,7 +40,9 @@ class social_security__eligible_for_community_services_card(Variable):
         # The applicant
         resident_or_citizen = persons('is_citizen_or_resident', period)
         in_nz = persons('social_security__is_ordinarily_resident_in_new_zealand', period)
-        age_requirement = persons("age", period) >= parameters(
+        # NOTE: using the age at the start of the month
+        # Age changes on a DAY, but this calculation only has a granularity of MONTH
+        age_requirement = persons("age", period.start) >= parameters(
             period).entitlements.social_security.community_services_card.age_threshold
         low_income = persons(
             'community_services_card__below_income_threshold', period)

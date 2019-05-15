@@ -12,6 +12,8 @@ class income_tax__dependent_child(Variable):
     reference = "http://legislation.govt.nz/act/public/2007/0097/latest/DLM1520575.html#DLM1520883"
 
     def formula(person, period, parameters):
+        # NOTE: using the age at the start of the month
+        # Age changes on a DAY, but this calculation only has a granularity of MONTH
         age = person('age', period.start)
         # TODO - It's not this simple, this needs to be tweaked to include the edge criteria above.
         # not in a marriage, civil union, or de facto relationship
