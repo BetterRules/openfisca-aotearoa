@@ -4,7 +4,8 @@
   input:
     persons:
       Mama:
-        age: 21
+        age:
+          "2018-08-01": 21
         social_security__is_ordinarily_resident_in_new_zealand: true
         is_resident: true
         number_of_years_lived_in_nz: 10
@@ -12,7 +13,8 @@
         jobseeker_support__is_prepared_for_employment: true
 
       Dada:
-        age: 18
+        age:
+          "2018-08-01": 18
         social_security__is_ordinarily_resident_in_new_zealand: true
         is_resident: true
         number_of_years_lived_in_nz: 10
@@ -21,7 +23,8 @@
         jobseeker_support__is_prepared_for_employment: true
 
       Tama:
-        age: 6
+        age:
+          "2018-08-01": 6
         social_security__is_ordinarily_resident_in_new_zealand: true
         is_resident: true
         number_of_years_lived_in_nz: 2
@@ -29,7 +32,8 @@
         jobseeker_support__is_prepared_for_employment: true
 
       Papa:
-        age: 99
+        age:
+          "2018-08-01": 99
         social_security__is_ordinarily_resident_in_new_zealand: true
         is_resident: true
         number_of_years_lived_in_nz: 5
@@ -37,7 +41,8 @@
         jobseeker_support__is_prepared_for_employment: false
 
       Alan:
-        age: 50
+        age:
+          "2018-08-01": 50
         social_security__is_ordinarily_resident_in_new_zealand: true
         is_resident: true
         number_of_years_lived_in_nz: 50
