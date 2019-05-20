@@ -2,100 +2,92 @@
 - name: Tests persons age eligibility in relation to the family tax credit
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-    - id: "Papatūānuku"
-      date_of_birth: 1999-01-01
-      family_scheme__assessable_income:
-        2018: 20000
-      family_scheme__family_tax_credit_income_under_threshold: true
-    - id: "Rakinui"
-      date_of_birth: 1996-01-01
-      family_scheme__assessable_income:
-        2018: 20000
-    - id: "Tāne"
-      date_of_birth: 2005-01-24
-    - id: "Rongo"
-      date_of_birth: 2007-03-08
-    - id: "Ikatere"
-      date_of_birth: 2012-03-08
-  families:
-    - id: "Whanau"
-      principal_caregiver: "Papatūānuku"
-      partners: ["Rakinui"]
-      children: ["Tāne", "Rongo", "Ikatere"]
-  titled_properties:
-    - id: "Whare"
-      others: ["Papatūānuku", "Rakinui", "Tāne", "Rongo", "Ikatere"]
-  output_variables:
-    family_scheme__qualifies_for_family_tax_credit: [1, 0, 0, 0, 0]
+  input:
+    persons:
+      "Papatūānuku":
+        date_of_birth: 1999-01-01
+        family_scheme__assessable_income:
+          2018: 20000
+        family_scheme__family_tax_credit_income_under_threshold: true
+      "Rakinui":
+        date_of_birth: 1996-01-01
+        family_scheme__assessable_income:
+          2018: 20000
+      "Tāne":
+        date_of_birth: 2005-01-24
+      "Rongo":
+        date_of_birth: 2007-03-08
+      "Ikatere":
+        date_of_birth: 2012-03-08
+    families:
+      Whanau:
+        principal_caregiver: "Papatūānuku"
+        partners: ["Rakinui"]
+        children: ["Tāne", "Rongo", "Ikatere"]
+  output:
+    family_scheme__qualifies_for_family_tax_credit: [true, false, false, false, false]
 - name: Tests persons income over threshold and not elible for family tax credit
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-    - id: "Papatūānuku"
-      date_of_birth: 1999-01-01
-      family_scheme__assessable_income:
-        2018: 20000
-      family_scheme__family_tax_credit_income_under_threshold: false
-    - id: "Rakinui"
-      date_of_birth: 1996-01-01
-      family_scheme__assessable_income:
-        2018: 20000
-    - id: "Tāne"
-      date_of_birth: 2005-01-24
-    - id: "Rongo"
-      date_of_birth: 2007-03-08
-    - id: "Ikatere"
-      date_of_birth: 2012-03-08
-  families:
-    - id: "Whanau"
-      principal_caregiver: "Papatūānuku"
-      partners: ["Rakinui"]
-      children: ["Tāne", "Rongo", "Ikatere"]
-  titled_properties:
-    - id: "Whare"
-      others: ["Papatūānuku", "Rakinui", "Tāne", "Rongo", "Ikatere"]
-  output_variables:
-    family_scheme__qualifies_for_family_tax_credit: [0, 0, 0, 0, 0]
-- name: Family tax credit - too much income
-  period: 2018-08
-  absolute_error_margin: 0
-  persons:
-    - id: "Papatūānuku"
-      date_of_birth: 1999-01-01
-      family_scheme__assessable_income:
-        2018: 42700
-  families:
-    - id: "Whanau"
-      principal_caregiver: "Papatūānuku"
-  titled_properties:
-    - id: "Whare"
-      others: ["Papatūānuku"]
-  output_variables:
-    family_scheme__qualifies_for_family_tax_credit:
-      2018-08:
-        - false
+  input:
+    persons:
+      "Papatūānuku":
+        date_of_birth: 1999-01-01
+        family_scheme__assessable_income:
+          2018: 20000
 
-- name: Family tax credit - too much income
+
+
+        family_scheme__family_tax_credit_income_under_threshold: false
+      "Rakinui":
+        date_of_birth: 1996-01-01
+        family_scheme__assessable_income:
+          2018: 20000
+      "Tāne":
+        date_of_birth: 2005-01-24
+      "Rongo":
+        date_of_birth: 2007-03-08
+      "Ikatere":
+        date_of_birth: 2012-03-08
+    families:
+      Whanau:
+        principal_caregiver: "Papatūānuku"
+        partners: ["Rakinui"]
+        children: ["Tāne", "Rongo", "Ikatere"]
+  output:
+    family_scheme__qualifies_for_family_tax_credit: [false, false, false, false, false]
+
+- name: Family tax credit - solo parent with too much income
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-    - id: "Papatūānuku"
-      date_of_birth: 1999-01-01
-      family_scheme__assessable_income:
-        2018: 14233
-    - id: "Rakinui"
-      date_of_birth: 1996-01-01
-      family_scheme__assessable_income:
-        2018: 28470
-  families:
-    - id: "Whanau"
-      principal_caregiver: "Papatūānuku"
-      partners: ["Rakinui"]
-  titled_properties:
-    - id: "Whare"
-      others: ["Papatūānuku", "Rakinui"]
-  output_variables:
-    family_scheme__qualifies_for_family_tax_credit:
-      2018-08:
-        - false
+  input:
+    persons:
+      "Papatūānuku":
+        date_of_birth: 1999-01-01
+        family_scheme__assessable_income:
+          2018: 42700
+    families:
+      Whanau:
+        principal_caregiver: "Papatūānuku"
+  output:
+    family_scheme__qualifies_for_family_tax_credit: false
+
+- name: Family tax credit - couple with too much income
+  period: 2018-08
+  absolute_error_margin: 0
+  input:
+    persons:
+      "Papatūānuku":
+        date_of_birth: 1999-01-01
+        family_scheme__assessable_income:
+          2018: 14233
+      "Rakinui":
+        date_of_birth: 1996-01-01
+        family_scheme__assessable_income:
+          2018: 28470
+    families:
+      Whanau:
+        principal_caregiver: "Papatūānuku"
+        partners: ["Rakinui"]
+  output:
+    family_scheme__qualifies_for_family_tax_credit: false

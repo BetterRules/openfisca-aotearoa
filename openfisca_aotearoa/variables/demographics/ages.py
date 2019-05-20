@@ -28,7 +28,7 @@ class due_date_of_birth(Variable):
 class age(Variable):
     value_type = int
     entity = Person
-    definition_period = MONTH
+    definition_period = DAY
     label = u"The age of a Person (in years)"
     unit = 'years'
     default_value = -9999
@@ -48,6 +48,7 @@ class age_of_youngest(Variable):
     value_type = int
     entity = Family
     definition_period = MONTH
+    unit = 'years'
     label = u"The age of the youngest member of a family"
     # A person's age is computed according to their birth date.
 
@@ -59,6 +60,7 @@ class age_of_partner(Variable):
     value_type = int
     entity = Person
     definition_period = MONTH
+    unit = 'years'
     label = u"The age of partner in a family"
 
     def formula(persons, period, parameters):

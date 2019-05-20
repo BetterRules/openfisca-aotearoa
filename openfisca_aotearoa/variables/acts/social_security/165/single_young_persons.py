@@ -58,6 +58,7 @@ class social_security__family_income_under_young_parent_payment_threshold(Variab
     value_type = bool
     entity = Person
     definition_period = MONTH
+    label = "Person's family income is under the young parent payment threshold"
 
     def formula(persons, period, parameters):
         yearly_income_threshold = 52 * parameters(period).entitlements.social_security.young_parent_payment.weekly_income_threshold

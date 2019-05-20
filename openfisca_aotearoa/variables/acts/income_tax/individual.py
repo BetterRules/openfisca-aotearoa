@@ -8,27 +8,10 @@ class income_tax__residence(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
+    set_input = set_input_dispatch_by_period
     default_value = True
     label = u'Boolean for if a Person is classified as meeting residence requirements'
     reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1518482.html"
-
-
-class TaxPayerFilingStatus(Enum):
-    __order__ = "non_filing filing filing_with_schedular_income"
-    non_filing = u'Non-filing taxpayer'
-    filing = u'Filing taxpayer'
-    filing_with_schedular_income = u'Filing taxpayer with schedular income'
-    reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1512331.html"
-
-
-class income_tax__tax_payer_filing_status(Variable):
-    value_type = Enum
-    possible_values = TaxPayerFilingStatus
-    default_value = TaxPayerFilingStatus.non_filing
-    entity = Person
-    definition_period = YEAR
-    label = u"Filing Status"
-    reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1512331.html"
 
 
 class income_tax__annual_gross_income(Variable):
@@ -89,7 +72,7 @@ class income_tax__taxable_income(Variable):
     value_type = float
     entity = Person
     definition_period = YEAR
-    label = "Taxable income"
+    label = "A person's taxable income for a tax year"
     reference = "http://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1512344.html"
 
     def formula(person, period, parameters):

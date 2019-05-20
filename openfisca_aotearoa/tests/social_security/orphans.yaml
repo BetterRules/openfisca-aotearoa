@@ -2,161 +2,167 @@
 
 - name: Orphans benefit - eligible carer
   period: 2018-08
-  absolute_error_margin: 0
-  persons:
-    - id: "Mama"
-      age: 21
-      is_resident: true
-      social_security__is_the_parent_of_dependent_child: false
-      social_security__is_principal_carer_for_one_year_from_application_date: true
-    - id: "Tama"
-      is_resident: true
-      age: 5
-      social_security__is_orphaned: true
-  families:
-    - id: "Whanau tahi"
-      principal_caregiver: "Mama"
-      children:
-        - "Tama"
-  titled_properties:
-    - id: whare
-      others: ["Mama", "Tama"]
-  output_variables:
+  input:
+    persons:
+      "Mama":
+        age: 21
+        is_resident: true
+        social_security__is_the_parent_of_dependent_child: false
+        social_security__is_principal_carer_for_one_year_from_application_date: true
+        social_security__is_ordinarily_resident_in_new_zealand: true
+      "Tama":
+        is_resident: true
+        age: 5
+        social_security__is_orphaned: true
+    families:
+      "Whanau tahi":
+        principal_caregiver: "Mama"
+        children:
+          - "Tama"
+  output:
     social_security__eligible_for_orphans_benefit:
-      2018-08:
-        - true # mama (principal carer)
-        - false # Tama
+      - true # mama (principal carer)
+      - false # Tama
+
+- name: Orphans benefit - eligible carer but not ordinarily in New Zealand
+  period: 2018-08
+  input:
+    persons:
+      "Mama":
+        age: 21
+        is_resident: true
+        social_security__is_the_parent_of_dependent_child: false
+        social_security__is_principal_carer_for_one_year_from_application_date: true
+        social_security__is_ordinarily_resident_in_new_zealand: false
+      "Tama":
+        is_resident: true
+        age: 5
+        social_security__is_orphaned: true
+    families:
+      "Whanau tahi":
+        principal_caregiver: "Mama"
+        children:
+          - "Tama"
+  output:
+    social_security__eligible_for_orphans_benefit:
+      - false # mama (principal carer)
+      - false # Tama
 
 - name: Orphans benefit - too young
   period: 2018-08
-  absolute_error_margin: 0
-  persons:
-    - id: "Mama"
-      age: 16
-      is_resident: true
-      social_security__is_the_parent_of_dependent_child: false
-      social_security__is_principal_carer_for_one_year_from_application_date: true
-    - id: "Tama"
-      is_resident: true
-      age: 5
-      social_security__is_orphaned: true
-  families:
-    - id: "Whanau tahi"
-      principal_caregiver: "Mama"
-      children:
-        - "Tama"
-  titled_properties:
-    - id: whare
-      others: ["Mama", "Tama"]
-  output_variables:
+  input:
+    persons:
+      "Mama":
+        age: 16
+        is_resident: true
+        social_security__is_the_parent_of_dependent_child: false
+        social_security__is_principal_carer_for_one_year_from_application_date: true
+        social_security__is_ordinarily_resident_in_new_zealand: true
+      "Tama":
+        is_resident: true
+        age: 5
+        social_security__is_orphaned: true
+    families:
+      "Whanau tahi":
+        principal_caregiver: "Mama"
+        children:
+          - "Tama"
+  output:
     social_security__eligible_for_orphans_benefit:
-      2018-08:
-        - false # mama (principal carer)
-        - false # Tama
-
+      - false # mama (principal carer)
+      - false # Tama
 
 - name: Orphans benefit - but not orphaned
   period: 2018-08
-  absolute_error_margin: 0
-  persons:
-    - id: "Mama"
-      age: 21
-      is_resident: true
-      social_security__is_the_parent_of_dependent_child: false
-      social_security__is_principal_carer_for_one_year_from_application_date: true
-    - id: "Tama"
-      is_resident: true
-      age: 5
-  families:
-    - id: "Whanau tahi"
-      principal_caregiver: "Mama"
-      children:
-        - "Tama"
-  titled_properties:
-    - id: whare
-      others: ["Mama", "Tama"]
-  output_variables:
+  input:
+    persons:
+      "Mama":
+        age: 21
+        is_resident: true
+        social_security__is_the_parent_of_dependent_child: false
+        social_security__is_principal_carer_for_one_year_from_application_date: true
+        social_security__is_ordinarily_resident_in_new_zealand: true
+      "Tama":
+        is_resident: true
+        age: 5
+    families:
+      "Whanau tahi":
+        principal_caregiver: "Mama"
+        children:
+          - "Tama"
+  output:
     social_security__eligible_for_orphans_benefit:
-      2018-08:
-        - false # mama (principal carer)
-        - false # Tama
+      - false # mama (principal carer)
+      - false # Tama
 
 
 - name: Orphans benefit - but not expected to be carer
   period: 2018-08
-  absolute_error_margin: 0
-  persons:
-    - id: "Mama"
-      age: 21
-      is_resident: true
-      social_security__is_the_parent_of_dependent_child: false
-    - id: "Tama"
-      is_resident: true
-      age: 5
-      social_security__is_orphaned: true
-  families:
-    - id: "Whanau tahi"
-      principal_caregiver: "Mama"
-      children:
-        - "Tama"
-  titled_properties:
-    - id: whare
-      others: ["Mama", "Tama"]
-  output_variables:
+  input:
+    persons:
+      "Mama":
+        age: 21
+        is_resident: true
+        social_security__is_the_parent_of_dependent_child: false
+        social_security__is_ordinarily_resident_in_new_zealand: true
+      "Tama":
+        is_resident: true
+        age: 5
+        social_security__is_orphaned: true
+    families:
+      "Whanau tahi":
+        principal_caregiver: "Mama"
+        children:
+          - "Tama"
+  output:
     social_security__eligible_for_orphans_benefit:
-      2018-08:
-        - false # mama (principal carer)
-        - false # Tama
+      - false # mama (principal carer)
+      - false # Tama
 
 
 - name: Orphans benefit - but orphan is not a resident
   period: 2018-08
-  absolute_error_margin: 0
-  persons:
-    - id: "Mama"
-      age: 21
-      is_resident: true
-      social_security__is_the_parent_of_dependent_child: false
-      social_security__is_principal_carer_for_one_year_from_application_date: true
-    - id: "Tama"
-      age: 5
-      social_security__is_orphaned: true
-  families:
-    - id: "Whanau tahi"
-      principal_caregiver: "Mama"
-      children:
-        - "Tama"
-  titled_properties:
-    - id: whare
-      others: ["Mama", "Tama"]
-  output_variables:
+  input:
+    persons:
+      "Mama":
+        age: 21
+        is_resident: true
+        social_security__is_the_parent_of_dependent_child: false
+        social_security__is_principal_carer_for_one_year_from_application_date: true
+        social_security__is_ordinarily_resident_in_new_zealand: true
+      "Tama":
+        age: 5
+        social_security__is_orphaned: true
+    families:
+      "Whanau tahi":
+        principal_caregiver: "Mama"
+        children:
+          - "Tama"
+  output:
     social_security__eligible_for_orphans_benefit:
-      2018-08:
-        - false # mama (principal carer)
-        - false # Tama
+      - false # mama (principal carer)
+      - false # Tama
 
 
 - name: Orphans benefit - but carer is not a resident
   period: 2018-08
-  absolute_error_margin: 0
-  persons:
-    - id: "Mama"
-      age: 21
-      social_security__is_the_parent_of_dependent_child: false
-      social_security__is_principal_carer_for_one_year_from_application_date: true
-    - id: "Tama"
-      is_resident: true
-      age: 5
-      social_security__is_orphaned: true
-  families:
-    - id: "Whanau tahi"
-      principal_caregiver: "Mama"
-      children:
-        - "Tama"
-  titled_properties:
-    - id: whare
-      others: ["Mama", "Tama"]
-  output_variables:
+  input:
+    persons:
+      "Mama":
+        age: 21
+        social_security__is_the_parent_of_dependent_child: false
+        social_security__is_principal_carer_for_one_year_from_application_date: true
+        social_security__is_ordinarily_resident_in_new_zealand: true
+      "Tama":
+        is_resident: true
+        age: 5
+        social_security__is_orphaned: true
+    families:
+      "Whanau tahi":
+        principal_caregiver: "Mama"
+        children:
+          - "Tama"
+  output:
     social_security__eligible_for_orphans_benefit:
       2018-08:
         - false # mama (principal carer)
@@ -165,26 +171,24 @@
 
 - name: Orphans benefit - but not the principal carer
   period: 2018-08
-  absolute_error_margin: 0
-  persons:
-    - id: "Mama"
-      age: 21
-      is_resident: true
-      social_security__is_the_parent_of_dependent_child: false
-      social_security__is_principal_carer_for_one_year_from_application_date: true
-    - id: "Tama"
-      is_resident: true
-      age: 5
-      social_security__is_orphaned: true
-  families:
-    - id: "Whanau tahi"
-      others: "Mama"
-      children:
-        - "Tama"
-  titled_properties:
-    - id: whare
-      others: ["Mama", "Tama"]
-  output_variables:
+  input:
+    persons:
+      "Mama":
+        age: 21
+        is_resident: true
+        social_security__is_the_parent_of_dependent_child: false
+        social_security__is_principal_carer_for_one_year_from_application_date: true
+        social_security__is_ordinarily_resident_in_new_zealand: true
+      "Tama":
+        is_resident: true
+        age: 5
+        social_security__is_orphaned: true
+    families:
+      "Whanau tahi":
+        others: "Mama"
+        children:
+          - "Tama"
+  output:
     social_security__eligible_for_orphans_benefit:
       2018-08:
         - false # mama (principal carer)
@@ -193,26 +197,24 @@
 
 - name: Orphans benefit for citizens too
   period: 2018-08
-  absolute_error_margin: 0
-  persons:
-    - id: "Mama"
-      age: 21
-      is_nz_citizen: true
-      social_security__is_the_parent_of_dependent_child: false
-      social_security__is_principal_carer_for_one_year_from_application_date: true
-    - id: "Tama"
-      is_nz_citizen: true
-      age: 5
-      social_security__is_orphaned: true
-  families:
-    - id: "Whanau tahi"
-      principal_caregiver: "Mama"
-      children:
-        - "Tama"
-  titled_properties:
-    - id: whare
-      others: ["Mama", "Tama"]
-  output_variables:
+  input:
+    persons:
+      "Mama":
+        age: 21
+        is_nz_citizen: true
+        social_security__is_the_parent_of_dependent_child: false
+        social_security__is_principal_carer_for_one_year_from_application_date: true
+        social_security__is_ordinarily_resident_in_new_zealand: true
+      "Tama":
+        is_nz_citizen: true
+        age: 5
+        social_security__is_orphaned: true
+    families:
+      "Whanau tahi":
+        principal_caregiver: "Mama"
+        children:
+          - "Tama"
+  output:
     social_security__eligible_for_orphans_benefit:
       2018-08:
         - true # mama (principal carer)

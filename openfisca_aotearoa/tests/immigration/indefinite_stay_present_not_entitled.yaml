@@ -1,0 +1,29 @@
+- name: "Indefinite Stay Enter and Leave"
+  period: 2015
+  input:
+    persons:
+      "Tahi":
+        present_in_new_zealand:
+          "2001-01-01": true
+          "2013-01-31": false
+          "2013-02-05": true
+          "2015-02-20": false
+          "2015-03-01": true
+
+        immigration__entitled_to_indefinite_stay:
+          "2001-01-01": true
+          "2013-01-31": false
+          "2013-02-10": true
+          "2015-02-20": false
+          "2015-03-15": true
+  output:
+    was_present_in_nz_and_entitled_to_indefinite_stay:
+      "2000-12-01": false
+      "2001-01-01": true
+      "2013-02-01": false
+      "2013-02-05": false
+      "2013-02-10": true
+      "2015-03-01": false
+      "2015-03-14": false
+      "2015-03-15": true
+      "2015-03-16": true

@@ -1,0 +1,41 @@
+- name: Rates Rebates - Max/Min calculation tests.
+  absolute_error_margin: 0.01
+  period: 2019
+  input:
+    persons:
+      Mama:
+        rates_rebates__combined_income: 34996.00
+        rates_rebates__dependants: 0
+    titled_properties:
+      Home:
+        rates_rebates__rates_total: 2000
+        owners: [Mama]
+  output:
+    titled_properties:
+      Home:
+        rates_rebates__rebate: 0.00
+        rates_rebates__maximum_income_for_full_rebate: 29953.33
+        rates_rebates__minimum_income_for_no_rebate: 34993.33
+
+- name: Rates Rebate - 2018-2019 form example 1x1 earns too much for a rebate
+  absolute_error_margin: 0.01
+  period: 2019
+  input:
+    rates_rebates__combined_income: 29660
+    rates_rebates__dependants: 0
+    rates_rebates__rates_total: 1000
+  output:
+    rates_rebates__rebate: 0
+    rates_rebates__minimum_income_for_no_rebate: 29660
+
+- name: Rates Rebate - 2018-2019 form example 1x1 small enough for full rebate
+  absolute_error_margin: 0.01
+  period: 2019
+  input:
+    rates_rebates__combined_income: 24620
+    rates_rebates__dependants: 0
+    rates_rebates__rates_total: 1000
+  output:
+    # The max is not full 630 because income is below the income threshold
+    rates_rebates__rebate: 560
+    rates_rebates__maximum_income_for_full_rebate: 24620

@@ -2,45 +2,9 @@
 # CircleCI 2.0 configuration file. See <https://circleci.com/docs/2.0/language-python/>.
 version: 2
 jobs:
-  build:
+  pythonlint:
     docker:
-      - image: circleci/python:2.7-stretch
-    steps:
-      - checkout
-      - run:
-          name: Allow cache restore
-          command: |
-            sudo chown -R circleci:circleci /usr/local/bin
-            sudo chown -R circleci:circleci /usr/local/lib/python2.7/site-packages
-
-      - restore_cache:
-          environment:
-          key: cache-root-{{ checksum "setup.py" }}
-
-      - run:
-          name: Install execution dependencies
-          command: |
-            sudo pip install --upgrade pip wheel  # pip >= 8.0 needed to be compatible with "manylinux" wheels, used by numpy >= 1.11
-            # sudo pip install --editable git+https://github.com/openfisca/openfisca-core.git@BRANCH_NAME#egg=OpenFisca-Core  # use a specific branch of OpenFisca-Core
-            sudo pip install .[test] --upgrade
-
-      - run:
-          name: Install deployment dependencies
-          command: sudo pip install twine
-
-      - save_cache:
-          key: cache-root-{{ checksum "setup.py" }}
-          paths:
-            - /usr/local/lib/python2.7/site-packages/
-            - /usr/local/bin
-
-      - run:
-          name: Run tests
-          command: make test
-
-  lint:
-    docker:
-      - image: circleci/python:2.7-stretch
+      - image: circleci/python:3.7.2
     steps:
       - checkout
       - run:
@@ -49,10 +13,20 @@ jobs:
       - run:
           name: Python linter
           command: flake8
-
+  yamllint:
+    docker:
+      - image: circleci/python:3.7.2
+    steps:
+      - checkout
+      - run:
+          name: Install yamllint
+          command: sudo pip install --upgrade yamllint
+      - run:
+          name: Yaml linter
+          command: yamllint .
   version-bump:
     docker:
-      - image: circleci/python:2.7-stretch
+      - image: circleci/python:3.7.2
     steps:
       - checkout
       - run:
@@ -63,28 +37,73 @@ jobs:
 
   deploy:
     docker:
-      - image: circleci/python:2.7-stretch
+      - image: circleci/python:3.7.2
     environment:
-      - PYPI_USERNAME: nzlabplus-bot  # here be the name of the Government Innovation Service Lab Pypi account to automatically publish the OpenFisca-Aotearoa package to Pypi
+      # here be the name of the Government Innovation Service Lab Pypi account
+      # to automatically publish the OpenFisca-Aotearoa package to Pypi
+      - PYPI_USERNAME: nzlabplus-bot
     # - PYPI_PASSWORD: this value will have to be set in CircleCI's web interface; do not set it here, it is a secret!
     steps:
       - run:
           name: Upload package to Pypi if functional changes were made
           command: ./.circleci/deploy-if-version-bump.sh
 
+  build_python3:
+    docker:
+      - image: python:3.7
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          key: v1-py3-{{ checksum "setup.py" }}-{{checksum "requirements.txt"}}
+
+      - run:
+          name: Create a virtualenv
+          command: |
+            mkdir -p /tmp/venv/aotearoa
+            python -m venv /tmp/venv/aotearoa
+            echo "source /tmp/venv/aotearoa/bin/activate" >> $BASH_ENV
+
+      - run:
+          name: Install dependencies
+          command: |
+            pip install --upgrade pip twine wheel
+            pip install --editable .[test] --upgrade
+            pip install -r requirements.txt
+
+      - save_cache:
+          key: v1-py3-{{ checksum "setup.py" }}-{{checksum "requirements.txt"}}
+          paths:
+            - /tmp/venv/aotearoa
+
+      - run:
+          name: Run tests
+          command: make test
+
+  tag_release:
+    docker:
+      - image: circleci/python:3.7.2
+    steps:
+      - checkout
+      - run:
+          name: "git tag the release"
+          command: "./.circleci/git_tag.sh"
 
 workflows:
   version: 2
+  lint:
+    jobs:
+      - pythonlint
+      - yamllint
   build_and_test:
     jobs:
-      - lint
-      - build
       - version-bump
-      # Uncomment the lines below when you have a Pypi account and you are ready to deploy your country package to reusers.
-      # - deploy:
-      #     requires:
-      #       - build
-      #     filters:
-      #       # owner: ServiceInnovationLab  # prevent failed builds on forks # This filter is not valid yet in CircleCI 2.0, see <https://discuss.circleci.com/t/20443>
-      #       branches:
-      #         only: master
+      - build_python3
+      - tag_release:
+          requires:
+            - version-bump
+            - build_python3
+          filters:
+            branches:
+              only: master

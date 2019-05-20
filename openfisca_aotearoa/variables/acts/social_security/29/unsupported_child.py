@@ -26,6 +26,7 @@ class social_security__eligible_for_unsupported_childs_benefit(Variable):
 
     def formula(persons, period, parameters):
         resident_or_citizen = persons('is_citizen_or_resident', period)
+        normally_in_nz = persons("social_security__is_ordinarily_resident_in_new_zealand", period)
 
         age_test = persons('age', period) >= 18
 
@@ -39,7 +40,7 @@ class social_security__eligible_for_unsupported_childs_benefit(Variable):
         has_unsupported_child_in_family = persons.family(
             'social_security__has_unsupported_child_in_family', period)
 
-        return resident_or_citizen * age_test * not_the_parent * one_year * is_principal_carer * has_unsupported_child_in_family
+        return resident_or_citizen * normally_in_nz * age_test * not_the_parent * one_year * is_principal_carer * has_unsupported_child_in_family
 
 
 class social_security__has_unsupported_child_in_family(Variable):
@@ -47,6 +48,7 @@ class social_security__has_unsupported_child_in_family(Variable):
     entity = Family
     definition_period = MONTH
     reference = "http://www.legislation.govt.nz/act/public/1964/0136/latest/whole.html#DLM361613"
+    label = "Family has an unsupported child"
 
     def formula(families, period, parameters):
         children = families.members('social_security__is_a_child', period)
@@ -63,12 +65,14 @@ class social_security__is_the_parent_of_dependent_child(Variable):
     entity = Person
     definition_period = ETERNITY
     default_value = True
+    label = "Is the parent of their dependent child"
 
 
 class social_security__is_principal_carer_for_one_year_from_application_date(Variable):
     value_type = bool
     entity = Person
     definition_period = MONTH
+    label = "Is the principal carer for one year (or more) from the application date"
 
 
 class social_security__parents_unable_to_provide_sufficient_care(Variable):

@@ -29,6 +29,9 @@ values:
     value: 610.0
   2017-07:
     value: 620.0
+  2018-07:
+    reference: http://www.legislation.govt.nz/act/public/1973/0005/latest/DLM409673.html
+    value: 630.0
 
 # best practice indicates we should repeat values when a value is determined in an Act, even if it's the same
 # as such this file needs revisiting to complete a more accurate picture of the legislative history

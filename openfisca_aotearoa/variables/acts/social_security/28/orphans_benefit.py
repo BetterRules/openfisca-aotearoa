@@ -20,6 +20,7 @@ class social_security__eligible_for_orphans_benefit(Variable):
 
     def formula(persons, period, parameters):
         resident_or_citizen = persons('is_citizen_or_resident', period)
+        normally_in_nz = persons("social_security__is_ordinarily_resident_in_new_zealand", period)
 
         age_test = persons('age', period) >= 18
 
@@ -33,7 +34,7 @@ class social_security__eligible_for_orphans_benefit(Variable):
         has_orphaned_child_in_family = persons.family(
             'social_security__has_orphaned_child_in_family', period)
 
-        return resident_or_citizen * age_test * not_the_parent * one_year * is_principal_carer * has_orphaned_child_in_family
+        return resident_or_citizen * normally_in_nz * age_test * not_the_parent * one_year * is_principal_carer * has_orphaned_child_in_family
 
 
 class social_security__has_orphaned_child_in_family(Variable):
@@ -41,6 +42,7 @@ class social_security__has_orphaned_child_in_family(Variable):
     entity = Family
     definition_period = MONTH
     reference = "http://www.legislation.govt.nz/act/public/1964/0136/latest/whole.html#DLM361606"
+    label = "Family is caring for an orphan as per Social Security Act 1964"
 
     def formula(families, period, parameters):
         children = families.members(

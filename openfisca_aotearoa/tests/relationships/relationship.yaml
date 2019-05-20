@@ -1,88 +1,36 @@
 ---
-- name: Married Person
+- name: "Married"
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-  - id: "Person"
+  input:
     marriage__is_married: true
-  families:
-    - id: "Beatles"
-      others:
-        - Person
-  titled_properties:
-    - id: whare
-      others:
-        - Person
-  output_variables:
-    is_married_or_in_a_civil_union_or_de_facto_relationship:
-      2018-08:
-        - true
-    is_married:
-      2018-08:
-        - true
+  output:
+    is_married_or_in_a_civil_union_or_de_facto_relationship: true
+    is_married: true
 
-- name: Civil Union
+- name: "Civil Union"
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-  - id: "Person"
+  input:
     civil_union__is_in_civil_union: true
-  families:
-    - id: "Beatles"
-      others:
-        - Person
-  titled_properties:
-    - id: whare
-      others:
-        - Person
-  output_variables:
-    is_married_or_in_a_civil_union_or_de_facto_relationship:
-      2018-08:
-        true
-    is_in_civil_union:
-      2018-08:
-        - true
+  output:
+    is_married_or_in_a_civil_union_or_de_facto_relationship: true
+    is_in_civil_union: true
 
-- name: De facto relationship
+- name: "De facto relationship"
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-  - id: "Person"
+  input:
     property_relationships__is_in_de_facto_relationship: true
-  families:
-    - id: "Beatles"
-      others:
-        - Person
-  titled_properties:
-    - id: whare
-      others:
-        - Person
-  output_variables:
-    is_married_or_in_a_civil_union_or_de_facto_relationship:
-      2018-08:
-        - true
-    is_in_de_facto_relationship:
-      2018-08:
-        - true
+  output:
+    is_married_or_in_a_civil_union_or_de_facto_relationship: true
+    is_in_de_facto_relationship: true
 
-- name: Not Married Person
+- name: "Not Married"
   period: 2018-08
   absolute_error_margin: 0
-  persons:
-  - id: "Person"
+  input:
     is_married: false
-  families:
-    - id: "Beatles"
-      others:
-        - Person
-  titled_properties:
-    - id: whare
-      others:
-        - Person
-  output_variables:
-    is_married_or_in_a_civil_union_or_de_facto_relationship:
-      2018-08:
-        - false
-    is_married:
-      2018-08:
-        - false
+  output:
+    is_married_or_in_a_civil_union_or_de_facto_relationship: false
+    is_married: false

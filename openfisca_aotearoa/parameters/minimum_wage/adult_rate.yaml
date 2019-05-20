@@ -1,0 +1,9 @@
+description: Minimum Wage - Adult Rates
+reference: http://www.legislation.govt.nz/regulation/public/2019/0022/latest/whole.html
+values:
+  2017-04-01:
+    value: 15.75
+  2018-04-01:
+    value: 16.5
+  2019-04-01:
+    value: 17.7

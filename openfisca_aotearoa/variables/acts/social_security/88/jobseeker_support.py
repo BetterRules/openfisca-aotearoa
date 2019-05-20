@@ -17,13 +17,7 @@ class jobseeker_support__meets_age_threshold(Variable):
     entity = Person
     label = u"Meets the age test for Jobseeker Support?"
     definition_period = MONTH
-    reference = """
-    88B Jobseeker support: standard eligibility requirements
-    An applicant for jobseeker support
-        (a) must be aged at least 18 years, in the case of an applicant without a dependent child:
-        (b) must be aged at least 20 years, in any other case.
-    http://legislation.govt.nz/act/public/1964/0136/latest/whole.html#DLM5478527
-    """
+    reference = "http://legislation.govt.nz/act/public/1964/0136/latest/DLM5478527.html"
 
     def formula(persons, period, parameters):
         # over the simpler age threshold
@@ -43,21 +37,7 @@ class social_security__eligible_for_jobseeker_support(Variable):
     entity = Person
     definition_period = MONTH
     label = "Eligible for Job Seeker Support"
-    reference = """
-    88B Jobseeker support: standard eligibility requirements
-        (1) A person is entitled to jobseeker support if he or she satisfies the criteria in subsections (2), (3), and (4), and
-        (a) is not in full-time employment, but
-            (i) is seeking it; and
-            (ii) is available for it; and
-            (iii) is willing and able to undertake it; and
-            (iv) has taken reasonable steps to find it; or
-        (b) is not in full-time employment, but would comply with subparagraphs (i) to (iv) of paragraph (a) but for circumstances that would qualify the person
-            for an exemption under section 105 from some or all work test obligations; or
-        (c) is not in full-time employment and is willing to undertake it but, because of sickness, injury, or disability, is limited in his or her capacity to
-            seek, undertake, or be available for it; or
-        (d) is in employment, but is losing earnings because, through sickness or injury, he or she is not working at all, or is working only at a
-            reduced level.
-        """
+    reference = "http://legislation.govt.nz/act/public/1964/0136/latest/DLM5478527.html"
 
     def formula(persons, period, parameters):
         # The applicant
