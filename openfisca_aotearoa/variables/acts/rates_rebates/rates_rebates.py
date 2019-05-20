@@ -49,7 +49,6 @@ class rates_rebates__rebate(Variable):
         # sum allowable income including all the dependants for property
         allowable_income = (titled_properties.sum(titled_properties.members('rates_rebates__dependants', period)) * additional_per_dependant) + income_threshold
 
-        # wrapping floor math function is non legislative and only to conform output of variable with existing infrastracture.
         excess_income = (titled_properties.sum(titled_properties.members('rates_rebates__combined_income', period)) - allowable_income) // 8
         excess_income = clip(excess_income, 0, excess_income)
 
