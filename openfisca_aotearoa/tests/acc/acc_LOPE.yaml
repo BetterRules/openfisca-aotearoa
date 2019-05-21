@@ -41,7 +41,7 @@
     acc__part_2__suffered_personal_injury: true
     acc__part_3__has_lodged_claim: true
     acc__sched_1__engaged_fulltime_study_or_training:
-        "2020-09-01": false
+      "2020-09-01": false
     acc__sched_1__incapacitated_for_6_months: true
     date_of_birth: "2002-08-03"
     date_of_injury: "2021-08-06"
