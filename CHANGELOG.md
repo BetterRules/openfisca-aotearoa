@@ -1,5 +1,9 @@
 # Changelog
 
+# 11.3.2 [184](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/184)
+* No functional changes.
+  - Added regression test for age calculations
+
 # 11.3.0 [178](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/178)
 * Accident Compensation Act - Loss of Earnings and Loss of Potential Earnings
 
