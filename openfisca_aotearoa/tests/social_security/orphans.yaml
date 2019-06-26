@@ -5,14 +5,16 @@
   input:
     persons:
       "Mama":
-        age: 21
+        age:
+          "2018-08-01": 21
         is_resident: true
         social_security__is_the_parent_of_dependent_child: false
         social_security__is_principal_carer_for_one_year_from_application_date: true
         social_security__is_ordinarily_resident_in_new_zealand: true
       "Tama":
         is_resident: true
-        age: 5
+        age:
+          "2018-08-01": 5
         social_security__is_orphaned: true
     families:
       "Whanau tahi":
@@ -29,14 +31,16 @@
   input:
     persons:
       "Mama":
-        age: 21
+        age:
+          "2018-08-01": 21
         is_resident: true
         social_security__is_the_parent_of_dependent_child: false
         social_security__is_principal_carer_for_one_year_from_application_date: true
         social_security__is_ordinarily_resident_in_new_zealand: false
       "Tama":
         is_resident: true
-        age: 5
+        age:
+          "2018-08-01": 5
         social_security__is_orphaned: true
     families:
       "Whanau tahi":
@@ -53,14 +57,16 @@
   input:
     persons:
       "Mama":
-        age: 16
+        age:
+          "2018-08-01": 16
         is_resident: true
         social_security__is_the_parent_of_dependent_child: false
         social_security__is_principal_carer_for_one_year_from_application_date: true
         social_security__is_ordinarily_resident_in_new_zealand: true
       "Tama":
         is_resident: true
-        age: 5
+        age:
+          "2018-08-01": 5
         social_security__is_orphaned: true
     families:
       "Whanau tahi":
@@ -77,14 +83,16 @@
   input:
     persons:
       "Mama":
-        age: 21
+        age:
+          "2018-08-01": 21
         is_resident: true
         social_security__is_the_parent_of_dependent_child: false
         social_security__is_principal_carer_for_one_year_from_application_date: true
         social_security__is_ordinarily_resident_in_new_zealand: true
       "Tama":
         is_resident: true
-        age: 5
+        age:
+          "2018-08-01": 5
     families:
       "Whanau tahi":
         principal_caregiver: "Mama"
@@ -101,13 +109,15 @@
   input:
     persons:
       "Mama":
-        age: 21
+        age:
+          "2018-08-01": 21
         is_resident: true
         social_security__is_the_parent_of_dependent_child: false
         social_security__is_ordinarily_resident_in_new_zealand: true
       "Tama":
         is_resident: true
-        age: 5
+        age:
+          "2018-08-01": 5
         social_security__is_orphaned: true
     families:
       "Whanau tahi":
@@ -125,13 +135,15 @@
   input:
     persons:
       "Mama":
-        age: 21
+        age:
+          "2018-08-01": 21
         is_resident: true
         social_security__is_the_parent_of_dependent_child: false
         social_security__is_principal_carer_for_one_year_from_application_date: true
         social_security__is_ordinarily_resident_in_new_zealand: true
       "Tama":
-        age: 5
+        age:
+          "2018-08-01": 5
         social_security__is_orphaned: true
     families:
       "Whanau tahi":
@@ -149,13 +161,15 @@
   input:
     persons:
       "Mama":
-        age: 21
+        age:
+          "2018-08-01": 21
         social_security__is_the_parent_of_dependent_child: false
         social_security__is_principal_carer_for_one_year_from_application_date: true
         social_security__is_ordinarily_resident_in_new_zealand: true
       "Tama":
         is_resident: true
-        age: 5
+        age:
+          "2018-08-01": 5
         social_security__is_orphaned: true
     families:
       "Whanau tahi":
@@ -174,14 +188,16 @@
   input:
     persons:
       "Mama":
-        age: 21
+        age:
+          "2018-08-01": 21
         is_resident: true
         social_security__is_the_parent_of_dependent_child: false
         social_security__is_principal_carer_for_one_year_from_application_date: true
         social_security__is_ordinarily_resident_in_new_zealand: true
       "Tama":
         is_resident: true
-        age: 5
+        age:
+          "2018-08-01": 5
         social_security__is_orphaned: true
     families:
       "Whanau tahi":
@@ -200,14 +216,16 @@
   input:
     persons:
       "Mama":
-        age: 21
+        age:
+          "2018-08-01": 21
         is_nz_citizen: true
         social_security__is_the_parent_of_dependent_child: false
         social_security__is_principal_carer_for_one_year_from_application_date: true
         social_security__is_ordinarily_resident_in_new_zealand: true
       "Tama":
         is_nz_citizen: true
-        age: 5
+        age:
+          "2018-08-01": 5
         social_security__is_orphaned: true
     families:
       "Whanau tahi":

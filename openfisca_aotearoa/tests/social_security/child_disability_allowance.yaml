@@ -12,13 +12,15 @@
         social_security__is_ordinarily_resident_in_new_zealand: true
         is_resident: true
       Tama_disabled_child:
-        age: 5
+        age:
+          "2018-08-01": 5
         social_security__child_with_serious_disability: true
         social_security__is_ordinarily_resident_in_new_zealand: true
         social_security__medical_certification_months: 12
         social_security__requires_constant_care_and_attention: true
       Tamahine_able_bodied_teenager:
-        age: 19
+        age:
+          "2018-08-01": 19
     families:
       Whanau_tahi:
         principal_caregiver: Mama
@@ -40,7 +42,8 @@
         is_resident: true
         social_security__is_ordinarily_resident_in_new_zealand: true
       Tama_disabled_child:
-        age: 17
+        age:
+          "2018-08-01": 17
         social_security__child_with_serious_disability: true
         social_security__is_ordinarily_resident_in_new_zealand: true
         social_security__medical_certification_months: 12
@@ -63,7 +66,8 @@
         is_resident: true
         social_security__is_ordinarily_resident_in_new_zealand: true
       Tama_disabled_child:
-        age: 17
+        age:
+          "2018-08-01": 17
         social_security__child_with_serious_disability: true
         social_security__is_ordinarily_resident_in_new_zealand: true
         social_security__medical_certification_months: 12
@@ -87,7 +91,8 @@
         is_resident: true
         social_security__is_ordinarily_resident_in_new_zealand: true
       Tama_disabled_child:
-        age: 5
+        age:
+          "2018-08-01": 5
         social_security__child_with_serious_disability: true
         social_security__requires_constant_care_and_attention: true
         social_security__medical_certification_months: 12
@@ -109,7 +114,8 @@
         is_resident: true
         social_security__is_ordinarily_resident_in_new_zealand: true
       Tama_disabled_child:
-        age: 19
+        age:
+          "2018-08-01": 19
         social_security__child_with_serious_disability: true
         social_security__requires_constant_care_and_attention: true
         social_security__medical_certification_months: 12
@@ -132,7 +138,8 @@
         is_resident: true
         social_security__is_ordinarily_resident_in_new_zealand: true
       Tama_disabled_child:
-        age: 17
+        age:
+          "2018-08-01": 17
         social_security__child_with_serious_disability: true
         social_security__requires_constant_care_and_attention: true
         social_security__medical_certification_months: 11

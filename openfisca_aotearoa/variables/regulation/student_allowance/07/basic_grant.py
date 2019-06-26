@@ -17,9 +17,11 @@ class student_allowance__eligible_for_basic_grant(Variable):
         is_secondary_student = persons('student_allowance__is_secondary_student', period)
         is_tertiary_student = persons('student_allowance__is_tertiary_student', period)
 
-        is_or_over_16 = persons('age', period) >= 16
-        is_under_18 = persons('age', period) < 18
-        is_or_over_18 = persons('age', period) >= 18
+        # NOTE: using the age at the start of the month
+        # Age changes on a DAY, but this calculation only has a granularity of MONTH
+        is_or_over_16 = persons('age', period.start) >= 16
+        is_under_18 = persons('age', period.start) < 18
+        is_or_over_18 = persons('age', period.start) >= 18
 
         is_married_or_partnered = persons('student_allowance__is_married_or_partnered', period)
 

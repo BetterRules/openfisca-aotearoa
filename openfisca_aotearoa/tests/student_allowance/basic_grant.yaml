@@ -5,7 +5,8 @@
   input:
     persons:
       fulltime_uni_student:
-        age: 21
+        age:
+          "2018-08-01": 21
         is_nz_citizen: true
         social_security__is_ordinarily_resident_in_new_zealand: true
         student_allowance__is_tertiary_student: true
@@ -13,28 +14,32 @@
         student_allowance__meets_attendance_and_performance_requirements: true
 
       Parttime_student:
-        age: 18
+        age:
+          "2018-08-01": 18
         is_nz_citizen: true
         social_security__is_ordinarily_resident_in_new_zealand: true
         student_allowance__is_tertiary_student: true
         student_allowance__approved_to_study_parttime: true
 
       Overseas_student:
-        age: 27
+        age:
+          "2018-08-01": 27
         is_nz_citizen: true
         social_security__is_ordinarily_resident_in_new_zealand: true
         student_allowance__is_tertiary_student: true
         student_allowance__approved_to_study_overseas: true
 
       Refugee:
-        age: 25
+        age:
+          "2018-08-01": 25
         immigration__is_recognised_refugee: true
         student_allowance__is_tertiary_student: true
         student_allowance__is_enrolled_fulltime: true
         student_allowance__meets_attendance_and_performance_requirements: true
 
       Not_a_student:
-        age: 50
+        age:
+          "2018-08-01": 50
         is_nz_citizen: true
         social_security__is_ordinarily_resident_in_new_zealand: true
         student_allowance__is_tertiary_student: false
@@ -51,7 +56,8 @@
   input:
     persons:
       married_secondary_school_student_with_child:
-        age: 16
+        age:
+          "2018-08-01": 16
         is_nz_citizen: true
         social_security__is_ordinarily_resident_in_new_zealand: true
         student_allowance__is_secondary_student: true
@@ -62,7 +68,8 @@
 
 
       not_married_secondary_school_student_with_child:
-        age: 16
+        age:
+          "2018-08-01": 16
         is_nz_citizen: true
         social_security__is_ordinarily_resident_in_new_zealand: true
         student_allowance__is_secondary_student: true
@@ -72,7 +79,8 @@
         student_allowance__meets_attendance_and_performance_requirements: true
 
       childless_married_secondary_school_student:
-        age: 16
+        age:
+          "2018-08-01": 16
         is_nz_citizen: true
         social_security__is_ordinarily_resident_in_new_zealand: true
         student_allowance__is_secondary_student: true
@@ -82,7 +90,8 @@
         student_allowance__meets_attendance_and_performance_requirements: true
 
       18yo_secondary_student:
-        age: 18
+        age:
+          "2018-08-01": 18
         is_nz_citizen: true
         social_security__is_ordinarily_resident_in_new_zealand: true
         student_allowance__is_secondary_student: true
@@ -100,10 +109,12 @@
   input:
     persons:
       default:
-        age: 22
+        age:
+          "2018-08-01": 22
 
       not_attending:
-        age: 21
+        age:
+          "2018-08-01": 21
         is_nz_citizen: true
         social_security__is_ordinarily_resident_in_new_zealand: true
         student_allowance__is_tertiary_student: true
@@ -111,7 +122,8 @@
         student_allowance__meets_attendance_and_performance_requirements: false
 
       not_citizen_or_resident:
-        age: 21
+        age:
+          "2018-08-01": 21
         student_allowance__is_tertiary_student: true
         student_allowance__is_enrolled_fulltime: true
         student_allowance__meets_attendance_and_performance_requirements: true
@@ -127,7 +139,8 @@
   input:
     persons:
       fulltime_uni_studdent:
-        age: 67
+        age:
+          "2018-08-01": 67
         is_nz_citizen: true
         social_security__is_ordinarily_resident_in_new_zealand: true
         student_allowance__is_tertiary_student: true
@@ -135,21 +148,24 @@
         student_allowance__meets_attendance_and_performance_requirements: true
 
       Parttime_student:
-        age: 68
+        age:
+          "2018-08-01": 68
         is_nz_citizen: true
         social_security__is_ordinarily_resident_in_new_zealand: true
         student_allowance__is_tertiary_student: true
         student_allowance__approved_to_study_parttime: true
 
       Overseas_student:
-        age: 70
+        age:
+          "2018-08-01": 70
         is_nz_citizen: true
         social_security__is_ordinarily_resident_in_new_zealand: true
         student_allowance__is_tertiary_student: true
         student_allowance__approved_to_study_overseas: true
 
       Refugee:
-        age: 99
+        age:
+          "2018-08-01": 99
         immigration__is_recognised_refugee: true
         student_allowance__is_tertiary_student: true
         student_allowance__is_enrolled_fulltime: true

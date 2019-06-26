@@ -112,8 +112,10 @@ class student_allowance__has_a_spouse(Variable):
         (b) one or both of them are younger than 24 and at least 1 of them has a supported child
     """
     def formula(persons, period, parameters):
-        part_a = (persons('age', period) >= 24) * (persons('age_of_partner', period) >= 24)
-        part_b = ((persons('age', period) >= 24) + (persons('age_of_partner', period) >= 24)) * \
+        # NOTE: using the age at the start of the month
+        # Age changes on a DAY, but this calculation only has a granularity of MONTH
+        part_a = (persons('age', period.start) >= 24) * (persons('age_of_partner', period.start) >= 24)
+        part_b = ((persons('age', period.start) >= 24) + (persons('age_of_partner', period.start) >= 24)) * \
             (persons('student_allowance__has_a_supported_child', period) + persons('student_allowance__partner_has_a_supported_child', period))
 
         return part_a + part_b

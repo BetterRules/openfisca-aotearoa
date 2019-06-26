@@ -1,5 +1,11 @@
 # Changelog
 
+# 12.0.0 [183](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/183)
+* Upgrade to Open Fisca Core 30.x
+* Breaking changes:
+ - no longer accepts MONTH period values for variables that are by DAY
+ - age variables must be set for a DAY period, not MONTH or YEAR
+
 # 11.3.2 [184](https://github.com/ServiceInnovationLab/openfisca-aotearoa/pull/184)
 * No functional changes.
   - Added regression test for age calculations

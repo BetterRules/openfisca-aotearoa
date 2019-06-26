@@ -63,7 +63,7 @@ class social_security__eligible_for_supported_living_payment(Variable):
 
         # 40B (1A) An applicant for the supported living payment under
         # this section must be aged at least 16 years.
-        is_old_enough = persons('age', period) >= 16
+        is_old_enough = persons('age', period.start) >= 16
 
         # 40B (1B) An applicant for the supported living payment under
         # this section must meet the residential requirements in section 74AA.

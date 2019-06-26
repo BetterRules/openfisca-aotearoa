@@ -33,8 +33,8 @@ class social_security__meets_young_parent_payment_single_persons_requirements(Va
         """
 
     def formula(persons, period, parameters):
-        sixteen_or_seventeen = (persons('age', period) >= 16) * (persons('age', period) < 18)
-        eighteen_or_nineteen = (persons('age', period) >= 18) * (persons('age', period) < 20)
+        sixteen_or_seventeen = (persons('age', period.start) >= 16) * (persons('age', period.start) < 18)
+        eighteen_or_nineteen = (persons('age', period.start) >= 18) * (persons('age', period.start) < 20)
 
         living_with_parent_or_guardian = persons('living_with_parent_or_guardian', period)
         financially_supported_by_parent_or_guardian = persons('financially_supported_by_parent_or_guardian', period)

@@ -1,18 +1,23 @@
 - name: Relationship status
-  period: 2018-10
+  period: "2018-10"
   absolute_error_margin: 0
   input:
     persons:
       Mama:
-        age: 30
+        age:
+          "2018-10-01": 30
       Papa:
-        age: 30
+        age:
+          "2018-10-01": 30
       Bob:
-        age: 30
+        age:
+          "2018-10-01": 30
       Fred:
-        age: 30
+        age:
+          "2018-10-01": 30
       Mary:
-        age: 30
+        age:
+          "2018-10-01": 30
     families:
       One:
         principal_caregiver: Mama

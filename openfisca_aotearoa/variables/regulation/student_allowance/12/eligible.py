@@ -45,7 +45,8 @@ class student_allowance__eligible_for_certain_allowances(Variable):
         # (ab) if the allowance is in respect of a course of study commencing on or after 1 January 2014,
         #     he or she is, when the course of study commences, under the age specified in section 7(1) of
         #     the New Zealand Superannuation and Retirement Income Act 2001; and
-        under_super_age = persons('age', period) < parameters(period).entitlements.superannuation.age_qualification
+        # NOTE: Uses the age at the start of the month
+        under_super_age = persons('age', period.start) < parameters(period).entitlements.superannuation.age_qualification
 
         #     (b) he or she makes an application for an allowance in accordance with Part 7; and
         #     (c) he or she either—

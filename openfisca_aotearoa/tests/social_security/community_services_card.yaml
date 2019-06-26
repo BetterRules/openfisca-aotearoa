@@ -6,7 +6,8 @@
   input:
     persons:
       Mama:
-        age: 28
+        age:
+          "2018-08-01": 28
     families:
       Whanau_tahi:
         principal_caregiver: Mama
@@ -21,7 +22,8 @@
   input:
     persons:
       Mama:
-        age: 28
+        age:
+          "2018-08-01": 28
         social_security__is_ordinarily_resident_in_new_zealand: true
         social_security__received_income_tested_benefit:
           2018: true
@@ -39,10 +41,12 @@
   input:
     persons:
       Mama:
-        age: 28
+        age:
+          "2018-08-01": 28
         social_security__is_ordinarily_resident_in_new_zealand: true
       Tama:
-        age: 3
+        age:
+          "2018-08-01": 3
         social_security__is_ordinarily_resident_in_new_zealand: true
         social_security__received_orphans_benefit: true
     families:
@@ -62,10 +66,12 @@
   input:
     persons:
       Mama:
-        age: 28
+        age:
+          "2018-08-01": 28
         social_security__is_ordinarily_resident_in_new_zealand: true
       Tama:
-        age: 8
+        age:
+          "2018-08-01": 8
         social_security__is_ordinarily_resident_in_new_zealand: true
         social_security__received_unsupported_childs_benefit: true
     families:
@@ -85,10 +91,12 @@
   input:
     persons:
       Mama:
-        age: 28
+        age:
+          "2018-08-01": 28
         social_security__is_ordinarily_resident_in_new_zealand: true
       Tama:
-        age: 8
+        age:
+          "2018-08-01": 8
         social_security__received_child_disability_allowance: true
         social_security__is_ordinarily_resident_in_new_zealand: true
     families:
@@ -109,7 +117,8 @@
   input:
     persons:
       Mama:
-        age: 28
+        age:
+          "2018-08-01": 28
         social_security__is_ordinarily_resident_in_new_zealand: true
         social_security__received_residential_care_subsidy: true
     families:
@@ -126,7 +135,8 @@
   input:
     persons:
       Mama:
-        age: 28
+        age:
+          "2018-08-01": 28
         community_services_card__below_income_threshold: true
         social_security__is_ordinarily_resident_in_new_zealand: true
         social_security__received_superannuation: true
@@ -144,7 +154,8 @@
   input:
     persons:
       Mama:
-        age: 28
+        age:
+          "2018-08-01": 28
         community_services_card__below_income_threshold: false
         social_security__received_superannuation: true
         social_security__is_ordinarily_resident_in_new_zealand: true
@@ -162,7 +173,8 @@
   input:
     persons:
       Mama:
-        age: 28
+        age:
+          "2018-08-01": 28
         veterans_support__received_veterans_pension: true
         social_security__is_ordinarily_resident_in_new_zealand: true
     families:
@@ -179,7 +191,8 @@
   input:
     persons:
       Mama:
-        age: 28
+        age:
+          "2018-08-01": 28
         veterans_support__received_weekly_income_compensation: true
         social_security__is_ordinarily_resident_in_new_zealand: true
     families:
@@ -195,7 +208,8 @@
   input:
     persons:
       Mama:
-        age: 28
+        age:
+          "2018-08-01": 28
         veterans_support__received_weekly_compensation: true
         social_security__is_ordinarily_resident_in_new_zealand: true
     families:
@@ -212,7 +226,8 @@
   input:
     persons:
       Mama:
-        age: 28
+        age:
+          "2018-08-01": 28
         social_security__is_fulltime_student: true
         community_services_card__below_income_threshold: true
         social_security__is_ordinarily_resident_in_new_zealand: true
@@ -230,7 +245,8 @@
   input:
     persons:
       Mama:
-        age: 28
+        age:
+          "2018-08-01": 28
         social_security__is_fulltime_student: true
         community_services_card__below_income_threshold: false
         social_security__is_ordinarily_resident_in_new_zealand: true
@@ -248,7 +264,8 @@
   input:
     persons:
       Mama:
-        age: 28
+        age:
+          "2018-08-01": 28
         community_services_card__below_income_threshold: true
         is_citizen_or_resident: true
         social_security__is_ordinarily_resident_in_new_zealand: true
@@ -266,7 +283,8 @@
   input:
     persons:
       Mama:
-        age: 28
+        age:
+          "2018-08-01": 28
         community_services_card__below_income_threshold: true
         is_citizen_or_resident: false
         social_security__has_dependant_child: true
@@ -288,7 +306,8 @@
   input:
     persons:
       Mama:
-        age: 28
+        age:
+          "2018-08-01": 28
         community_services_card__below_income_threshold: true
         is_citizen_or_resident: true
         social_security__has_dependant_child: false

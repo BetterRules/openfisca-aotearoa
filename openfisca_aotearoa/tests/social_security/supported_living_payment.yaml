@@ -4,7 +4,8 @@
   period: 2018-10
   absolute_error_margin: 0
   input:
-    age: 25
+    age:
+      "2018-10-01": 25
     is_nz_citizen: true
   output:
     social_security__eligible_for_supported_living_payment: false
@@ -13,7 +14,8 @@
   period: 2018-10
   absolute_error_margin: 0
   input:
-    age: 25
+    age:
+      "2018-10-01": 25
     is_nz_citizen: true
     social_security__is_totally_blind: true
     supported_living_payment__below_income_threshold: true
@@ -27,7 +29,8 @@
   period: 2018-10
   absolute_error_margin: 0
   input:
-    age: 25
+    age:
+      "2018-10-01": 25
     is_nz_citizen: true
     social_security__has_severely_restricted_capacity_for_work: true
     supported_living_payment__below_income_threshold: true
@@ -40,7 +43,8 @@
   period: 2018-10
   absolute_error_margin: 0
   input:
-    age: 25
+    age:
+      "2018-10-01": 25
     is_nz_citizen: true
     social_security__has_severely_restricted_capacity_for_work: true
     supported_living_payment__below_income_threshold: true
@@ -53,7 +57,8 @@
   period: 2018-10
   absolute_error_margin: 0
   input:
-    age: 25
+    age:
+      "2018-10-01": 25
     is_nz_citizen: true
     social_security__is_required_to_give_fulltime_care: true
     supported_living_payment__below_income_threshold: true
@@ -66,7 +71,8 @@
   period: 2018-10
   absolute_error_margin: 0
   input:
-    age: 25
+    age:
+      "2018-10-01": 25
     is_nz_citizen: true
     social_security__is_required_to_give_fulltime_care: true
     supported_living_payment__below_income_threshold: true

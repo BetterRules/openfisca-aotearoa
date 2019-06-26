@@ -2,7 +2,8 @@
   period: 2018-06
   absolute_error_margin: 0
   input:
-    age: 30
+    age:
+      "2018-06-01": 30
     is_resident: true
     social_security__is_ordinarily_resident_in_new_zealand: true
     social_security__has_accomodation_costs: true
@@ -16,7 +17,8 @@
   period: 2018-06
   absolute_error_margin: 0
   input:
-    age: 30
+    age:
+      "2018-06-01": 30
     is_permanent_resident: true
     social_security__is_ordinarily_resident_in_new_zealand: true
     social_security__has_accomodation_costs: true
@@ -30,7 +32,8 @@
   period: 2018-06
   absolute_error_margin: 0
   input:
-    age: 30
+    age:
+      "2018-06-01": 30
     is_nz_citizen: true
     social_security__is_ordinarily_resident_in_new_zealand: true
     social_security__has_accomodation_costs: true
@@ -44,7 +47,8 @@
   period: 2018-06
   absolute_error_margin: 0
   input:
-    age: 30
+    age:
+      "2018-06-01": 30
     is_resident: true
     social_security__is_ordinarily_resident_in_new_zealand: true
     social_security__has_accomodation_costs: false
@@ -58,7 +62,8 @@
   period: 2018-06
   absolute_error_margin: 0
   input:
-    age: 15
+    age:
+      "2018-06-01": 15
     is_resident: true
     social_security__is_ordinarily_resident_in_new_zealand: true
     social_security__has_accomodation_costs: true
@@ -72,7 +77,8 @@
   period: 2018-06
   absolute_error_margin: 0
   input:
-    age: 45
+    age:
+      "2018-06-01": 45
     is_resident: true
     social_security__is_ordinarily_resident_in_new_zealand: true
     social_security__has_accomodation_costs: true

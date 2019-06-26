@@ -22,12 +22,12 @@ class jobseeker_support__meets_age_threshold(Variable):
     def formula(persons, period, parameters):
         # over the simpler age threshold
         jobseeker_age = parameters(period).entitlements.social_security.jobseeker_support.age_threshold
-        over_age_threshold = persons("age", period) >= jobseeker_age
+        over_age_threshold = persons("age", period.start) >= jobseeker_age
 
         # over the threshold for appliants with a dependent child
         jobseeker_age_with_dependent_child = parameters(period).entitlements.social_security.jobseeker_support.age_threshold_with_dependent_child
         has_dependent_child = persons('social_security__has_dependant_child', period)
-        over_age_threshold_with_dependent_child = (persons("age", period) >= jobseeker_age_with_dependent_child) * has_dependent_child
+        over_age_threshold_with_dependent_child = (persons("age", period.start) >= jobseeker_age_with_dependent_child) * has_dependent_child
 
         return over_age_threshold + over_age_threshold_with_dependent_child
 
