@@ -66,8 +66,8 @@ class social_security__meets_young_parent_payment_basic_requirements(Variable):
 
     def formula(persons, period, parameters):
         # (a) is aged 16 to 19 years; and
-        age_test = (persons('age', period) >= 16) * \
-            (persons('age', period) < 20)
+        age_test = (persons('age', period.start) >= 16) * \
+            (persons('age', period.start) < 20)
 
         # (b) is a parent or step-parent of a dependent child or dependent children; and
         is_parent_of_dependent_children = (persons('is_a_parent', period) + persons(

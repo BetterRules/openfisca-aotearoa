@@ -72,7 +72,7 @@ class social_security_regulation__family_has_resident_child_under_5_not_in_schoo
             'social_security__is_dependent_child', period)
         not_in_school = not_(families.members(
             'is_attending_school', period))
-        under_5 = families.members('age', period) < 5
+        under_5 = families.members('age', period.start) < 5
         citizens_and_residents = families.members(
             'is_citizen_or_resident', period)
         meets_early_childcare_hours_threshold = families.members('early_childcare_hours_participation_per_week', period) >= minimum_hours_participating
@@ -93,7 +93,7 @@ class social_security_regulation__family_has_resident_child_aged_5_who_will_be_e
             'social_security__is_dependent_child', period)
         children_to_be_enrolled = families.members(
             'will_be_enrolled_in_school', period)
-        aged_5 = (families.members('age', period) == 5)
+        aged_5 = (families.members('age', period.start) == 5)
         citizens_and_residents = families.members(
             'is_citizen_or_resident', period)
         meets_early_childcare_hours_threshold = families.members('early_childcare_hours_participation_per_week', period) >= minimum_hours_participating
@@ -114,7 +114,7 @@ class social_security_regulation__family_has_child_eligible_for_disability_allow
             'social_security__is_dependent_child', period)
         eligible_children = families(
             'disability_allowance__family_has_eligible_child', period)
-        under_6 = families.members('age', period) < 6
+        under_6 = families.members('age', period.start) < 6
         citizens_and_residents = families.members(
             'is_citizen_or_resident', period)
         meets_early_childcare_hours_threshold = families.members('early_childcare_hours_participation_per_week', period) >= minimum_hours_participating

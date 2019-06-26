@@ -27,7 +27,9 @@ class family_scheme__caregiver_age_qualifies(Variable):
     reference = "http://legislation.govt.nz/act/public/2007/0097/latest/DLM1518479.html#DLM1518479"
 
     def formula(persons, period, parameters):
-        return persons("age", period) >= parameters(period).entitlements.income_tax.family_scheme.principal_caregiver_age_threshold
+        print(period)
+        print(period.start)
+        return persons("age", period.start) >= parameters(period).entitlements.income_tax.family_scheme.principal_caregiver_age_threshold
 
 
 class family_scheme__qualifies_as_principal_carer(Variable):
@@ -94,4 +96,4 @@ class family_scheme__has_dependent_children(Variable):
     reference = "http://legislation.govt.nz/act/public/2007/0097/latest/DLM1518480.html"
 
     def formula(families, period, parameters):
-        return families.max(families.members("income_tax__dependent_child", period))
+        return families.max(families.members("income_tax__dependent_child", period.start))

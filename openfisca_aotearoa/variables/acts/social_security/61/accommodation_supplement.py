@@ -23,8 +23,9 @@ class social_security__eligible_for_accommodation_supplement(Variable):
         # https://www.workandincome.govt.nz/products/a-z-benefits/accommodation-supplement.html
         age_threshold = parameters(
             period).entitlements.social_security.accommodation_supplement.age_threshold
-
-        age_requirement = persons("age", period) >= age_threshold
+        # NOTE: using the age at the start of the month
+        # Age changes on a DAY, but this calculation only has a granularity of MONTH
+        age_requirement = persons("age", period.start) >= age_threshold
 
         """
         http://www.legislation.govt.nz/act/public/1964/0136/latest/DLM363772.html

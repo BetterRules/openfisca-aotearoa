@@ -22,8 +22,8 @@ class social_security__is_a_child(Variable):
     reference = u""
 
     def formula(persons, period, parameters):
-        under_16 = persons('age', period) < 16
-        under_18 = persons('age', period) < 18
+        under_16 = persons('age', period.start) < 16
+        under_18 = persons('age', period.start) < 18
 
         financially_independent = persons(
             'social_security__is_financially_independent', period)

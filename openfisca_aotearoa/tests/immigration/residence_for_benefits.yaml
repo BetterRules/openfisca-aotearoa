@@ -10,11 +10,13 @@
         is_permanent_resident: true
         social_security__is_ordinarily_resident_in_new_zealand: true
       Tama:
-        age: 5
+        age:
+          "2018-08-01": 5
         is_nz_citizen: true
         social_security__is_ordinarily_resident_in_new_zealand: true
       Tamahine:
-        age: 19
+        age:
+          "2018-08-01": 19
         is_nz_citizen: true
         social_security__is_ordinarily_resident_in_new_zealand: false
       Mary:

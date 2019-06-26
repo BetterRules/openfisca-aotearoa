@@ -22,7 +22,7 @@ class social_security__eligible_for_orphans_benefit(Variable):
         resident_or_citizen = persons('is_citizen_or_resident', period)
         normally_in_nz = persons("social_security__is_ordinarily_resident_in_new_zealand", period)
 
-        age_test = persons('age', period) >= 18
+        age_test = persons('age', period.start) >= 18
 
         not_the_parent = not_(
             persons('social_security__is_the_parent_of_dependent_child', period))
