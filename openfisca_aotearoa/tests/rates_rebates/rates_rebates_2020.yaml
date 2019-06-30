@@ -8,7 +8,6 @@
     rates_rebates__rates_total: 1200
   output:
     rates_rebates__rebate: 640.00
-    # rates_rebates__maximum_income_for_full_rebate: 24620
 
 - name: Rates Rebate - 2019 to 2020 form example 1x2. income $25,000 rates $1,400
   absolute_error_margin: 0.01
