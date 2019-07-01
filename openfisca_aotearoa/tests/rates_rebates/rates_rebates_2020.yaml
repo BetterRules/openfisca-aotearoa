@@ -1,0 +1,50 @@
+# Copied from the 2019/2020 Form
+- name: Rates Rebate - 2019 to 2020 form - income $25,000 rates $1,200
+  absolute_error_margin: 0.01
+  period: 2020
+  input:
+    rates_rebates__combined_income: 25000
+    rates_rebates__dependants: 0
+    rates_rebates__rates_total: 1200
+  output:
+    rates_rebates__rebate: 640.00
+
+- name: Rates Rebate - 2019 to 2020 form example 1x2. income $25,000 rates $1,400
+  absolute_error_margin: 0.01
+  period: 2020
+  input:
+    rates_rebates__combined_income: 25000
+    rates_rebates__dependants: 0
+    rates_rebates__rates_total: 1400
+  output:
+    rates_rebates__rebate: 640.00
+
+- name: Rates Rebate - 2019 to 2020 form example income $28,000 rates $1,200
+  absolute_error_margin: 0.01
+  period: 2020
+  input:
+    rates_rebates__combined_income: 28000
+    rates_rebates__dependants: 0
+    rates_rebates__rates_total: 1200
+  output:
+    rates_rebates__rebate: 401.33
+
+- name: Rates Rebate - 2019 to 2020 form example - income $40,000 rates $3,000
+  absolute_error_margin: 0.01
+  period: 2020
+  input:
+    rates_rebates__combined_income: 40000
+    rates_rebates__dependants: 0
+    rates_rebates__rates_total: 3000
+  output:
+    rates_rebates__rebate: 101.33
+
+- name: Rates Rebate - 2019 to 2020 form example - income $44,000 rates $3,500
+  absolute_error_margin: 0.01
+  period: 2020
+  input:
+    rates_rebates__combined_income: 44000
+    rates_rebates__dependants: 0
+    rates_rebates__rates_total: 3500
+  output:
+    rates_rebates__rebate: 0.00
