@@ -113,8 +113,9 @@ Business = build_entity(
     registered charities
     Non-government organisations (NGOs)
     and post-settlement governance entities.
-    '''
-    roles=[
+    ''',
+
+    roles = [
         {
             'key': 'business owner',
             'plural': 'business owners',

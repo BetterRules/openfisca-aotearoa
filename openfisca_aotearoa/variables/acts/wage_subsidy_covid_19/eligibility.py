@@ -1,5 +1,6 @@
 from openfisca_core.model_api import *
-from openfisca_aotearoa.entities import Person, Business
+from openfisca_aotearoa.entities import Business
+
 
 class registered_in_NZ(Variable):
     value_type = bool
@@ -85,17 +86,16 @@ class covid_19_wage_subsidy__eligibility(Variable):
     reference = "https://workandincome.govt.nz/products/a-z-benefits/covid-19-support.html"
 
     def formula(business, period, parameters):
-        conditions_for_sole_traders = business('sole_trader_has_IRD_number',
-        period) * business('sole_trader_has_applicable_licenses', period) *
-        business('qualifications_or_registration_for_trade', period)
+        conditions_for_sole_traders = business('sole_trader_has_IRD_number', period) \
+            * business('sole_trader_has_applicable_licenses', period) \
+            * business('qualifications_or_registration_for_trade', period)
 
-        conditions_for_all_businesses = business('registered_in_NZ', period)
-        * business('located_in_NZ', period)
-        * business('employees_legally_work_in_NZ', period)
-        * business('decline_in_business_revenue_due_to_covid_19', period)
-        * not_(business('already_applied_for_wage_subsidy', period))
+        conditions_for_all_businesses = business('registered_in_NZ', period) \
+            * business('located_in_NZ', period) \
+            * business('employees_legally_work_in_NZ', period) \
+            * business('decline_in_business_revenue_due_to_covid_19', period) \
+            * not_(business('already_applied_for_wage_subsidy', period))
 
-        return conditions_for_all_businesses *
-        ((business('sole_trader_operates_business', period) *
-        conditions_for_sole_traders) +
-        (not_(business('sole_trader_operates_business', period))))
+        return conditions_for_all_businesses \
+            * (business('sole_trader_operates_business', period) * conditions_for_sole_traders) \
+            + (not_(business('sole_trader_operates_business', period)))
