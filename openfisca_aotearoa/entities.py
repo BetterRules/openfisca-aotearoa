@@ -101,4 +101,33 @@ Family = build_entity(
         ]
     )
 
-entities = [Titled_Property, Person, Family]
+Business = build_entity(
+    key="business",
+    plural="businesses",
+    label=u'business',
+    doc='''
+    This term includes:
+    self-employed and sole traders
+    contractors
+    incorporated societies
+    registered charities
+    Non-government organisations (NGOs)
+    and post-settlement governance entities.
+    '''
+    roles=[
+        {
+            'key': 'business owner',
+            'plural': 'business owners',
+            'label': u'Business owner',
+            'doc': u'The one or more persons who are owners of the business.'
+            },
+        {
+            'key': 'other',
+            'plural': 'others',
+            'label': u'Others',
+            'doc': u'People who are not in any other role'
+            }
+        ]
+    )
+
+entities = [Titled_Property, Person, Family, Business]
