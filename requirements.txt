@@ -11,7 +11,8 @@ PyYAML >= 3.10
 sortedcontainers==1.5.9
 flask == 1.0.2
 flask-cors ==3.0.7
-gunicorn >= 19.7.1
+gunicorn <= 19.9.0
+werkzeug < 1.0.0
 
 
 # Old requirements, to install stable core instead of git
