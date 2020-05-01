@@ -106,7 +106,7 @@ Business = build_entity(
     and post-settlement governance entities.
     ''',
 
-    roles = [
+    roles=[
         {
             'key': 'business owner',
             'plural': 'business owners',
