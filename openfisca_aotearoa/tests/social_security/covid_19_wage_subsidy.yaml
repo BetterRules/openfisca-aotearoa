@@ -1,0 +1,26 @@
+- name: Sole trader, eligible for wage subsidy
+  period: 2020-6
+  input:
+    sole_trader_operates_business: True
+    sole_trader_has_IRD_number: True
+    sole_trader_has_applicable_licenses: True
+    qualifications_or_registration_for_trade: True
+    registered_in_NZ: True
+    employees_legally_work_in_NZ: True
+    decline_in_business_revenue_due_to_covid_19: True
+    already_applied_for_wage_subsidy: False
+  output:
+    covid_19_wage_subsidy__eligibility: True
+- name: Sole trader, does not have IRD number, not eligible for wage subsidy
+  period: 2020-6
+  input:
+    sole_trader_operates_business: True
+    sole_trader_has_IRD_number: True
+    sole_trader_has_applicable_licenses: True
+    qualifications_or_registration_for_trade: True
+    registered_in_NZ: True
+    employees_legally_work_in_NZ: True
+    decline_in_business_revenue_due_to_covid_19: True
+    already_applied_for_wage_subsidy: False
+  output:
+    covid_19_wage_subsidy__eligibility: True
