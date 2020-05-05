@@ -10,11 +10,9 @@ Titled_Property = build_entity(
     label=u'Titled Property',
     doc='''
     A Titled property represents a property that is owned by a Person or group of Persons.
-
     Example usage:
     Check the number of individuals of a specific role: check how many persons co-own the property: `titled_properties.nb_persons(Titled_Property.OWNER)`.
     Calculate a variable applied to each tenant of the group entity: calculate the income of each member of the Property: `tenants_incomes = titled_properties.members('income', period = MONTH); tenants_total_income = titled_properties.sum(tenants_incomes)`.
-
     For more information on group entities, see: http://openfisca.org/doc/coding-the-legislation/50_entities.html
     ''',
     roles=[
@@ -39,14 +37,11 @@ Person = build_entity(
     label=u'Person',
     doc='''
     A Person represents an individual, the minimal legal entity on which a legislation might be applied.
-
     Example:
     The 'salary' and 'income_tax' variables are usually defined for the entity 'Person'.
-
     Usage:
     Calculate a variable applied to a 'Person' (e.g. access the 'salary' of a specific month with person('salary', "2017-05")).
     Check the role of a 'Person' in a group entity (e.g. check if a the 'Person' is a 'owner' in a 'Titled_Property' entity with person.has_role(Titled_Property.owner)).
-
     For more information on entities, see: http://openfisca.org/doc/coding-the-legislation/50_entities.html
     ''',
     is_person=True,
@@ -58,13 +53,9 @@ Family = build_entity(
     label=u'Family',
     doc='''
     A Family represents a collection of related persons.
-
     Family entities are required for calculations across a number of entitlements including for example "Working for families" and "Paid Parental Leave"
-
     A family can contain a number of roles, such as 'principal_caregiver', 'partner' & 'child'.
-
     For more information on entities, see: http://openfisca.org/doc/coding-the-legislation/50_entities.html
-
     Families can have multiple principle_caregivers but as each entitlement is calculated in relation to the Principle Caregiver it is recommended for modelling to create multiple family sets per caregiver to describe each scenario
     ''',
     roles=[
@@ -101,4 +92,34 @@ Family = build_entity(
         ]
     )
 
-entities = [Titled_Property, Person, Family]
+Business = build_entity(
+    key="business",
+    plural="businesses",
+    label=u'business',
+    doc='''
+    This term includes:
+    self-employed and sole traders
+    contractors
+    incorporated societies
+    registered charities
+    Non-government organisations (NGOs)
+    and post-settlement governance entities.
+    ''',
+
+    roles=[
+        {
+            'key': 'business owner',
+            'plural': 'business owners',
+            'label': u'Business owner',
+            'doc': u'The one or more persons who are owners of the business.'
+            },
+        {
+            'key': 'other',
+            'plural': 'others',
+            'label': u'Others',
+            'doc': u'People who are not in any other role'
+            }
+        ]
+    )
+
+entities = [Titled_Property, Person, Family, Business]
