@@ -15,7 +15,7 @@
   period: 2020-6
   input:
     sole_trader_operates_business: True
-    sole_trader_has_IRD_number: True
+    sole_trader_has_IRD_number: False
     sole_trader_has_applicable_licenses: True
     qualifications_or_registration_for_trade: True
     registered_in_NZ: True
