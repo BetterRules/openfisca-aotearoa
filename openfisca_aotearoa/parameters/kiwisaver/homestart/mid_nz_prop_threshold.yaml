@@ -1,0 +1,5 @@
+description: Property price threshold to be eligible for the Homestart grant in the areas of Hamilton, Tauranga, Western Bay of Plenty, Kapiti Coast, Porirua, Upper Hutt, Hutt City, Wellington, Tasman, Nelson, Waimakariri, Christchurch, Selwyn, Queenstown Lakes Disctrict
+reference:
+values:
+  2006-01: # find date this was set
+    value: 500000

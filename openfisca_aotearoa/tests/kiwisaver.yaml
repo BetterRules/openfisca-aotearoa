@@ -1,0 +1,31 @@
+- name: If contributed for less than 3 years, not entitled to grant
+  period: 2018-01
+  absolute_error_margin: 0
+  input_variables:
+    kiwisaver__contrib_duration: 2
+  output_variables:
+    kiwisaver__homestart_grant: 0
+
+- name: If contributed for 3 years, entitled to $3000
+  period: 2018-01
+  absolute_error_margin: 0
+  input_variables:
+    kiwisaver__contrib_duration: 3
+  output_variables:
+    kiwisaver__homestart_grant: 3000
+
+- name: If contributed for 4 years, entitled to $4000
+  period: 2018-01
+  absolute_error_margin: 0
+  input_variables:
+    kiwisaver__contrib_duration: 4
+  output_variables:
+    kiwisaver__homestart_grant: 4000
+
+- name: If contributed for over 5 years, entitled to $5000
+  period: 2018-01
+  absolute_error_margin: 0
+  input_variables:
+    kiwisaver__contrib_duration: 7
+  output_variables:
+    kiwisaver__homestart_grant: 5000
