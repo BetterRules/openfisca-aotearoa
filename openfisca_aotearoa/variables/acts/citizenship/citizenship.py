@@ -11,7 +11,7 @@ class citizenship__citizenship_by_grant_may_be_authorized(Variable):
     entity = Person
     definition_period = DAY
     reference = "http://www.legislation.govt.nz/act/public/1977/0061/latest/DLM443855.html"
-    label = u"statisfies criteria such that the Minister may authorise the grant of New Zealand citizenship to this person"
+    label = u"satisfies criteria such that the Minister may authorise the grant of New Zealand citizenship to this person"
 
     def formula_2005_04_20(persons, period, parameters):
 
