@@ -6,6 +6,12 @@
 - Build the docker image: `docker build . -t openfisca-aotearoa`
 - Run the image: `docker run -it -p 5000:5000 openfisca-aotearoa`
 
+## Run tests using Docker
+
+- [Install Docker](https://www.docker.com/get-started).
+- Run the tests using docker compose: `docker compose run openfisca_test`
+
+
 ## Serve OpenFisca Aotearoa with the OpenFisca Web API
 
 If you are considering building a web application, you can use the packaged OpenFisca Web API.
