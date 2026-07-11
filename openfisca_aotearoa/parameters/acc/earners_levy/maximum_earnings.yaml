@@ -1,0 +1,20 @@
+description: Maximum earnings subject to ACC earners' levy in a levy year
+# Source verified 2026-07-09:
+# https://www.ird.govt.nz/income-tax/income-tax-for-individuals/acc-clients-and-carers/acc-earners-levy-rates
+metadata:
+  unit: currency-NZD
+  reference:
+    2023-04-01:
+      title: ACC earners' levy rates — maximum earnings (IRD)
+      href: https://www.ird.govt.nz/income-tax/income-tax-for-individuals/acc-clients-and-carers/acc-earners-levy-rates
+values:
+  2023-04-01:
+    value: 139384
+  2024-04-01:
+    value: 142283
+  2025-04-01:
+    value: 152790
+  2026-04-01:
+    value: 156641
+  2027-04-01:
+    value: 160244

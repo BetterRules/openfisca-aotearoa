@@ -1,0 +1,21 @@
+description: ACC earners' levy rate including GST (flat rate per dollar of liable earnings)
+# IRD publishes the earners' levy as $X per $100 of earnings, including GST.
+# Source verified 2026-07-09:
+# https://www.ird.govt.nz/income-tax/income-tax-for-individuals/acc-clients-and-carers/acc-earners-levy-rates
+metadata:
+  unit: /1
+  reference:
+    2023-04-01:
+      title: ACC earners' levy rates (IRD)
+      href: https://www.ird.govt.nz/income-tax/income-tax-for-individuals/acc-clients-and-carers/acc-earners-levy-rates
+values:
+  2023-04-01:
+    value: 0.0153
+  2024-04-01:
+    value: 0.0160
+  2025-04-01:
+    value: 0.0167
+  2026-04-01:
+    value: 0.0175
+  2027-04-01:
+    value: 0.0183

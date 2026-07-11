@@ -1,0 +1,24 @@
+description: Minimum compulsory employer KiwiSaver contribution rate of employee's gross salary or wages
+# Sources verified 2026-07-09:
+# - https://www.ird.govt.nz/kiwisaver-changes
+# - https://www.ird.govt.nz/kiwisaver/kiwisaver-employers/contributions-and-deductions/employer-contributions-to-kiwisaver-and-complying-funds
+# Compulsory employer contribution was 3% until 31 March 2026; rises to 3.5% from 1 April 2026 and 4% from 1 April 2028.
+metadata:
+  unit: /1
+  reference:
+    2013-04-01:
+      title: Compulsory employer contributions (historical minimum 3%)
+      href: https://www.ird.govt.nz/kiwisaver/kiwisaver-employers/contributions-and-deductions/employer-contributions-to-kiwisaver-and-complying-funds
+    2026-04-01:
+      title: KiwiSaver changes — employer minimum 3.5% from 1 April 2026
+      href: https://www.ird.govt.nz/kiwisaver-changes
+    2028-04-01:
+      title: KiwiSaver changes — employer minimum 4% from 1 April 2028
+      href: https://www.ird.govt.nz/kiwisaver-changes
+values:
+  2013-04-01:
+    value: 0.03
+  2026-04-01:
+    value: 0.035
+  2028-04-01:
+    value: 0.04

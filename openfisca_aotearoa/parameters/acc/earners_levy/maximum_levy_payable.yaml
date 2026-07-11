@@ -1,0 +1,21 @@
+description: Maximum ACC earners' levy payable (including GST) in a levy year
+# Equals maximum_earnings * rate_including_gst (published by IRD for cross-check).
+# Source verified 2026-07-09:
+# https://www.ird.govt.nz/income-tax/income-tax-for-individuals/acc-clients-and-carers/acc-earners-levy-rates
+metadata:
+  unit: currency-NZD
+  reference:
+    2023-04-01:
+      title: ACC earners' levy rates — maximum levy payable (IRD)
+      href: https://www.ird.govt.nz/income-tax/income-tax-for-individuals/acc-clients-and-carers/acc-earners-levy-rates
+values:
+  2023-04-01:
+    value: 2132.57
+  2024-04-01:
+    value: 2276.52
+  2025-04-01:
+    value: 2551.59
+  2026-04-01:
+    value: 2741.22
+  2027-04-01:
+    value: 2932.47

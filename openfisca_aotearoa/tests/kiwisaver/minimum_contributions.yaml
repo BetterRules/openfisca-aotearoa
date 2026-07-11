@@ -1,0 +1,39 @@
+# KiwiSaver minimum employee/employer contribution rates.
+# https://www.ird.govt.nz/kiwisaver-changes
+# 3% until 31 March 2026; 3.5% from 1 April 2026; 4% from 1 April 2028.
+
+- name: kiwisaver_minimum_contributions_2025_at_3_percent
+  period: 2025
+  absolute_error_margin: 0.01
+  input:
+    kiwisaver__gross_salary_or_wages: 100000
+  output:
+    kiwisaver__employee_minimum_contribution: 3000
+    kiwisaver__employer_minimum_contribution: 3000
+
+- name: kiwisaver_minimum_contributions_2026_at_3_5_percent
+  period: 2026
+  absolute_error_margin: 0.01
+  input:
+    kiwisaver__gross_salary_or_wages: 100000
+  output:
+    kiwisaver__employee_minimum_contribution: 3500
+    kiwisaver__employer_minimum_contribution: 3500
+
+- name: kiwisaver_minimum_contributions_2028_at_4_percent
+  period: 2028
+  absolute_error_margin: 0.01
+  input:
+    kiwisaver__gross_salary_or_wages: 100000
+  output:
+    kiwisaver__employee_minimum_contribution: 4000
+    kiwisaver__employer_minimum_contribution: 4000
+
+- name: kiwisaver_negative_salary_does_not_create_contributions
+  period: 2026
+  absolute_error_margin: 0.01
+  input:
+    kiwisaver__gross_salary_or_wages: -100
+  output:
+    kiwisaver__employee_minimum_contribution: 0
+    kiwisaver__employer_minimum_contribution: 0

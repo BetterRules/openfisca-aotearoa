@@ -1,0 +1,60 @@
+# Schedule 1 progressive income tax before credits.
+# Expected values match IRD progressive application of rates from 1 April 2025
+# (used for calendar year 2026 simulations via April parameter lookup):
+# https://www.ird.govt.nz/income-tax/income-tax-for-individuals/tax-codes-and-tax-rates-for-individuals/tax-rates-for-individuals
+#
+# Tax on 15600 @ 10.5% = 1638
+# Tax on 53500 = 15600*0.105 + (53500-15600)*0.175 = 8270.5
+# Tax on 180000 = 8270.5 + (78100-53500)*0.30 + (180000-78100)*0.33 = 49277.5
+# Tax on 200000 = 49277.5 + 20000*0.39 = 57077.5
+
+- name: schedule_1_first_bracket_upper_bound_2026
+  period: 2026
+  absolute_error_margin: 0.01
+  input:
+    income_tax__taxable_income: 15600
+  output:
+    income_tax__schedule_1_tax_before_credits: 1638
+    income_tax__income_tax_before_credits: 1638
+
+- name: schedule_1_second_bracket_upper_bound_2026
+  period: 2026
+  absolute_error_margin: 0.01
+  input:
+    income_tax__taxable_income: 53500
+  output:
+    income_tax__schedule_1_tax_before_credits: 8270.5
+
+- name: schedule_1_fourth_bracket_upper_bound_2026
+  period: 2026
+  absolute_error_margin: 0.01
+  input:
+    income_tax__taxable_income: 180000
+  output:
+    income_tax__schedule_1_tax_before_credits: 49277.5
+
+- name: schedule_1_top_bracket_income_2026
+  period: 2026
+  absolute_error_margin: 0.01
+  input:
+    income_tax__taxable_income: 200000
+  output:
+    income_tax__schedule_1_tax_before_credits: 57077.5
+
+- name: schedule_1_nonpositive_taxable_income_2026
+  period: 2026
+  absolute_error_margin: 0.01
+  input:
+    income_tax__taxable_income: 0
+  output:
+    income_tax__schedule_1_tax_before_credits: 0
+
+- name: schedule_1_via_net_income_path_2026
+  period: 2026
+  absolute_error_margin: 0.01
+  input:
+    income_tax__annual_gross_income: 60000
+    income_tax__annual_total_deduction: 6500
+  output:
+    income_tax__taxable_income: 53500
+    income_tax__schedule_1_tax_before_credits: 8270.5

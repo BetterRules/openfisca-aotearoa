@@ -1,0 +1,48 @@
+# ACC earners' levy (standard employee calculation, rates include GST).
+# IRD 1 April 2026 – 31 March 2027: 1.75% up to $156,641; max levy $2,741.22
+# https://www.ird.govt.nz/income-tax/income-tax-for-individuals/acc-clients-and-carers/acc-earners-levy-rates
+#
+# Calendar year period 2026 looks up parameters at 2026-04-01.
+
+- name: earners_levy_standard_2026_earnings_below_cap
+  period: 2026
+  absolute_error_margin: 0.01
+  input:
+    acc__earnings_for_earners_levy: 100000
+  output:
+    acc__earners_levy_including_gst: 1750
+    acc__earners_levy: 1750
+
+- name: earners_levy_standard_2026_earnings_at_cap
+  period: 2026
+  absolute_error_margin: 0.01
+  input:
+    acc__earnings_for_earners_levy: 156641
+  output:
+    acc__earners_levy_including_gst: 2741.2175
+
+- name: earners_levy_standard_2026_earnings_above_cap
+  period: 2026
+  absolute_error_margin: 0.02
+  input:
+    acc__earnings_for_earners_levy: 200000
+  output:
+    # min(200000, 156641) * 0.0175 = 2741.2175 (IRD published max 2741.22)
+    acc__earners_levy_including_gst: 2741.2175
+
+- name: earners_levy_standard_negative_earnings
+  period: 2026
+  absolute_error_margin: 0.01
+  input:
+    acc__earnings_for_earners_levy: -100
+  output:
+    acc__earners_levy_including_gst: 0
+
+- name: earners_levy_standard_2025_rate
+  period: 2025
+  absolute_error_margin: 0.01
+  input:
+    acc__earnings_for_earners_levy: 100000
+  output:
+    # 2025-04-01 rate 1.67%
+    acc__earners_levy_including_gst: 1670

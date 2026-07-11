@@ -1,5 +1,29 @@
 # Changelog
 
+### Unreleased — income tax / ACC earners levy / KiwiSaver coverage (#199)
+
+* Tax and benefit system evolution.
+* Impacted periods: 2021-04 onwards (income tax); 2023-04 onwards (ACC earners levy); 2013-04 / 2026-04 / 2028-04 (KiwiSaver rates).
+* Impacted areas:
+  - `parameters/taxes/income_tax/individual_income_tax_rate.yaml`
+  - `parameters/acc/earners_levy/`
+  - `parameters/kiwisaver/`
+  - `variables/acts/income_tax/individual.py`
+  - `variables/acts/acc/earners_levy.py`
+  - `variables/acts/kiwisaver/contributions.py`
+* Added variables:
+  - `income_tax__schedule_1_tax_before_credits`
+  - `income_tax__income_tax_before_credits` (alias)
+  - `acc__earnings_for_earners_levy`
+  - `acc__earners_levy_including_gst`
+  - `acc__earners_levy` (alias)
+  - `kiwisaver__gross_salary_or_wages`
+  - `kiwisaver__employee_minimum_contribution`
+  - `kiwisaver__employer_minimum_contribution`
+* Notes:
+  - YEAR formulas look up 1 April parameters for the calendar year of the period (NZ tax/levy year convention).
+  - Rates cited from IRD public pages; Schedule 1 progressive tax is before credits and excludes ACC levy.
+
 ### 22.0.0 - [69](https://github.com/digitalaotearoa/openfisca-aotearoa/pull/64)
 
 * Tax and benefit system evolution.

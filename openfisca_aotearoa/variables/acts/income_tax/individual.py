@@ -86,3 +86,53 @@ class income_tax__taxable_income(Variable):
         return (
             taxable_income * (taxable_income > 0)
             )
+
+
+def _nz_tax_year_april_instant(period):
+    """NZ tax / levy years generally commence 1 April.
+
+    OpenFisca YEAR periods start on 1 January. For annual assessments that use
+    rates in force for the April–March tax year, look up parameters as at
+    1 April of the same calendar year as ``period.start``.
+
+    Example: period ``2026`` (calendar) → parameter instant ``2026-04-01``.
+    """
+    return period.start.offset(3, "month")
+
+
+class income_tax__schedule_1_tax_before_credits(Variable):
+    value_type = float
+    entity = Person
+    definition_period = YEAR
+    unit = "NZD"
+    label = (
+        "Schedule 1 individual income tax on taxable income before credits "
+        "(progressive marginal scale; excludes ACC earners' levy and tax credits)"
+        )
+    reference = [
+        "https://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1523138.html",
+        "https://www.ird.govt.nz/income-tax/income-tax-for-individuals/tax-codes-and-tax-rates-for-individuals/tax-rates-for-individuals",
+        ]
+
+    def formula(person, period, parameters):
+        taxable_income = person("income_tax__taxable_income", period)
+        # Non-positive taxable income yields zero tax (scale also returns 0 for negatives).
+        scale = parameters(_nz_tax_year_april_instant(period)).taxes.income_tax.individual_income_tax_rate
+        return scale.calc(taxable_income)
+
+
+class income_tax__income_tax_before_credits(Variable):
+    """Alias aligned with comparative / RuleSpec naming."""
+
+    value_type = float
+    entity = Person
+    definition_period = YEAR
+    unit = "NZD"
+    label = "Individual income tax before credits (alias of income_tax__schedule_1_tax_before_credits)"
+    reference = [
+        "https://www.legislation.govt.nz/act/public/2007/0097/latest/DLM1523138.html",
+        "https://www.ird.govt.nz/income-tax/income-tax-for-individuals/tax-codes-and-tax-rates-for-individuals/tax-rates-for-individuals",
+        ]
+
+    def formula(person, period, parameters):
+        return person("income_tax__schedule_1_tax_before_credits", period)
