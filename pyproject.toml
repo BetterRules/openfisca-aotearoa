@@ -1,6 +1,6 @@
 [project]
 name = "openfisca-aotearoa"
-version = "22.0.0"
+version = "23.0.0"
 dependencies = [
     "openfisca-core[web-api] >=41.4.5, <42",
     "pandas>=2.2.1",

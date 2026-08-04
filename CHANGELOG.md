@@ -1,5 +1,21 @@
 # Changelog
 
+### 23.0.0 - [#201](https://github.com/BetterRules/openfisca-aotearoa/pull/201)
+
+* Technical improvement.
+* Impacted periods: all.
+* Impacted areas:
+  - `variables/acts/social_security/interpretation/financially_independent`
+
+* Renamed variables:
+ - `social_security__recieves_goverment_assisted_scheme_payments` renamed to `social_security__receives_government_assisted_scheme_payments`
+ - `social_security__recieves_main_benefit` renamed to `social_security__receives_main_benefit`
+
+* Details:
+  - Corrected the spelling of two variable names: "recieves" to "receives", "goverment" to "government" (fixes #137).
+  - Also fixed a typo in a variable label: "Socal Security Act" to "Social Security Act".
+  - No calculation logic changed. Anyone referencing the old variable names (by API call, formula, or test) must switch to the new names.
+
 ### 22.0.0 - [69](https://github.com/digitalaotearoa/openfisca-aotearoa/pull/64)
 
 * Tax and benefit system evolution.
