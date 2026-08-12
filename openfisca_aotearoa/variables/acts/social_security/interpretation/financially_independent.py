@@ -22,20 +22,20 @@ class social_security__financially_independent(variables.Variable):
 
     def formula(persons, period, parameters):
         in_full_employment = persons("social_security__full_employment", period)
-        recieves_grant = persons("social_security__in_receipt_of_basic_grant", period.first_month)
-        recieves_gov_assisted_payments = persons("social_security__recieves_goverment_assisted_scheme_payments", period.first_month)
-        recieves_benefit = persons("social_security__recieves_main_benefit", period.first_month)
+        receives_grant = persons("social_security__in_receipt_of_basic_grant", period.first_month)
+        receives_gov_assisted_payments = persons("social_security__receives_government_assisted_scheme_payments", period.first_month)
+        receives_benefit = persons("social_security__receives_main_benefit", period.first_month)
 
-        return in_full_employment + recieves_grant + recieves_gov_assisted_payments + recieves_benefit
+        return in_full_employment + receives_grant + receives_gov_assisted_payments + receives_benefit
 
 
 # TODO: Review against the new 2018 act
-class social_security__recieves_goverment_assisted_scheme_payments(variables.Variable):
+class social_security__receives_government_assisted_scheme_payments(variables.Variable):
     value_type = bool
     entity = entities.Person
     default_value = False
     definition_period = periods.MONTH
-    label = "In receipt of payments under a Government-assisted scheme which the chief executive considers analogous to a main benefit under Socal Security Act"
+    label = "In receipt of payments under a Government-assisted scheme which the chief executive considers analogous to a main benefit under Social Security Act"
 
 
 # TODO: Review against the new 2018 act
@@ -48,7 +48,7 @@ class social_security__in_receipt_of_basic_grant(variables.Variable):
 
 
 # TODO: Review against the new 2018 act
-class social_security__recieves_main_benefit(variables.Variable):
+class social_security__receives_main_benefit(variables.Variable):
     value_type = bool
     entity = entities.Person
     default_value = False
